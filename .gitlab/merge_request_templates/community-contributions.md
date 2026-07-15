@@ -1,5 +1,4 @@
-<details open>
-<summary><strong>Checks</strong></summary>
+### Checks
 
 - **Please check and remove this text:**
   - Searched the [merge requests](https://gitlab.com/openfoam/core/openfoam/-/merge_requests) for duplicates.
@@ -8,11 +7,8 @@
   - Cleaned up commit history (no temporary files/WIP commits).
   - Used [GitLab Flavored Markdown](https://docs.gitlab.com/user/markdown/).
   - Used the `Preview` button to check formatting.
-</details>
 
-
-<details open>
-<summary><strong>Summary</strong></summary>
+### Summary
 
 <!--
 One–two sentences to explain the contribution, e.g.
@@ -34,35 +30,26 @@ One–two sentences to explain the contribution, e.g.
 - [ ] Other (describe):
 
 **Related issues:** <!-- e.g. "Closes #1234", "Relates to #5678" -->
-</details>
 
+### Description
 
-<details>
-<summary><strong>Click to expand/collapse all merge-request details</strong></summary>
-
-<details open>
-<summary><strong>Description</strong></summary>
-
-**Motivation**
+**Motivation:**
 
 <!--
 - Problem statement: What specific problem does the feature solve? Why this contribution?
 - Target: Which engineering field benefits most from this change?
 -->
 
-**Contribution**
+**Contribution:**
 
 <!--
 - Change: What is added/changed?
 - Limitations: What are the problems/disadvantages of the contribution? Any existing alternatives?
 -->
-</details>
 
+### Verification & Tests
 
-<details open>
-<summary><strong>Verification & Tests</strong></summary>
-
-**Environment**
+**Environment:**
 
 - HEAD base commit : <!-- e.g. `a1a3daca7e` -->
 - Operating system : <!-- e.g. openSUSE Leap 15.5, Ubuntu 24.04, RHEL 9 etc. -->
@@ -70,7 +57,7 @@ One–two sentences to explain the contribution, e.g.
 - MPI              : <!-- e.g. OpenMPI 4.1.6, MPICH 4.2.1, system vendor MPI etc. -->
 - Options          : <!-- e.g. `linux64GccDPInt32Opt`, custom wmake rules etc. -->
 
-**Minimal example case**
+**Minimal example case:**
 
 <!--
 Provide a minimal, reproducible test case (attachment or URL)
@@ -82,7 +69,7 @@ actions in the script.
 Exclude large or irrelevant data (e.g., post-processing, hidden files).
 -->
 
-**Backward compatibility**
+**Backward compatibility:**
 
 Select all that apply if the backward compatibility is intact:
 
@@ -100,11 +87,8 @@ Description of the new and/or improved changes to the public interface.
 Any breaking changes, deprecation, removal, renaming?
 -->
 
-**Results**
+**Results:**
 
 <!-- Illustration/description of the functional and performance tests and their results -->
-
-</details>
-</details>
 
 <!----------------------------------------------------------------------------->

@@ -1,5 +1,4 @@
-<details open>
-<summary><strong>Checks</strong></summary>
+### Checks
 
 - **Please check and remove this text:**
   - This is not a usage/support/consultancy question.
@@ -7,11 +6,8 @@
   - Removed any irrelevant template sections.
   - Used [GitLab Flavored Markdown](https://docs.gitlab.com/user/markdown/).
   - Used the `Preview` button to check formatting.
-</details>
 
-
-<details open>
-<summary><strong>Summary</strong></summary>
+### Summary
 
 <!--
 One–two sentences to explain the issue, e.g.
@@ -31,12 +27,8 @@ One–two sentences to explain the issue, e.g.
 - [ ] Documentation issue
 - [ ] Tutorial issue
 - [ ] Other (describe):
-</details>
 
-<details>
-<summary><strong>Click to expand/collapse all issue details</strong></summary>
-<details open>
-<summary><strong>Description</strong></summary>
+### Description
 
 <!--
 
@@ -54,11 +46,8 @@ Please answer whichever apply:
 -->
 
 **Regression:** <!-- Did this work in a previous version? (e.g., v2406 OK, v2512 fails) -->
-</details>
 
-
-<details open>
-<summary><strong>Minimal example case</strong></summary>
+**Minimal example case:**
 
 <!--
 Provide a minimal, reproducible test case (attachment or URL).
@@ -66,11 +55,7 @@ Provide a minimal, reproducible test case (attachment or URL).
 Exclude large or irrelevant data (e.g., post-processing, hidden files).
 -->
 
-</details>
-
-
-<details open>
-<summary><strong>Steps to reproduce</strong></summary>
+**Steps to reproduce:**
 
 <!--
 Provide precise, copy-pasteable steps or a ready-to-run script.
@@ -83,14 +68,7 @@ Example:
 4. `simpleFoam`
 -->
 
-1. <!-- First step -->
-2. <!-- Second step -->
-3. <!-- and so on ... -->
-</details>
-
-
-<details open>
-<summary><strong>Environment</strong></summary>
+### Environment
 
 <!-- Remove any row below if not applicable -->
 
@@ -103,17 +81,12 @@ Example:
 - Options          : <!-- e.g. `linux64GccDPInt32Opt`, custom wmake rules etc. -->
 - Hardware info    : <!-- e.g. CPU model, RAM etc. -->
 - Batch system     : <!-- e.g. SLURM etc. -->
-</details>
 
-
-<details open>
-<summary><strong>Possible solutions</strong></summary>
+### Possible solutions
 
 <!--
 - Code fixes or solution ideas or workaround ideas.
 - Existing patches or MRs from external sources.
 -->
-</details>
-</details>
 
 <!----------------------------------------------------------------------------->

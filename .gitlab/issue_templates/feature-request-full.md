@@ -1,5 +1,4 @@
-<details open>
-<summary><strong>Checks</strong></summary>
+### Checks
 
 - **Please check and remove this text:**
   - This is not a usage/support/consultancy question.
@@ -7,11 +6,8 @@
   - Removed any irrelevant template sections.
   - Used [GitLab Flavored Markdown](https://docs.gitlab.com/user/markdown/).
   - Used the `Preview` button to check formatting.
-</details>
 
-
-<details open>
-<summary><strong>Summary</strong></summary>
+### Summary
 
 <!--
 One–two sentences to explain the feature request, e.g.
@@ -29,17 +25,10 @@ One–two sentences to explain the feature request, e.g.
 - [ ] Compilation / installation
 - [ ] Documentation
 - [ ] Tutorial
-</details>
 
+### Description
 
-<details>
-<summary><strong>Click to expand/collapse all feature-request details</strong></summary>
-
-
-<details open>
-<summary><strong>Description</strong></summary>
-
-**Motivation**
+**Motivation:**
 
 <!--
 - Problem statement: What specific problem does the feature solve?
@@ -47,7 +36,7 @@ One–two sentences to explain the feature request, e.g.
 - Target: Which engineering field benefits most from this change?
 -->
 
-**Proposal**
+**Proposal:**
 
 <!--
 - Change: What should be added/changed?
@@ -56,25 +45,19 @@ One–two sentences to explain the feature request, e.g.
 - Limitations: What are the problems/disadvantages of the proposal?
 -->
 
-**Impact & Risks**
+**Impact & Risks:**
 
 <!--
 - Backward compatibility: Will this proposal change existing results or break current setups?
 - Success criteria: How can we verify the proposal works as intended? Target metric, benchmark case etc.
 -->
-</details>
 
-
-<details open>
-<summary><strong>Plan</strong></summary>
+### Plan
 
 <!--
 - Implementer: "I can implement", "I can co-implement", "I can test", "Need maintainer" etc.
 - References: Links to relevant papers, theory, or similar features in other software
 - Funding: Is funding available?
 -->
-
-</details>
-</details>
 
 <!----------------------------------------------------------------------------->

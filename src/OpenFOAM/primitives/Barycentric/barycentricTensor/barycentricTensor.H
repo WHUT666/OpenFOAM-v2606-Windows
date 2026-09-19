@@ -36,7 +36,7 @@ Description
 #define barycentricTensor_H
 
 #include "scalar.H"
-#include "BarycentricTensor.H"
+#include <BarycentricTensor_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

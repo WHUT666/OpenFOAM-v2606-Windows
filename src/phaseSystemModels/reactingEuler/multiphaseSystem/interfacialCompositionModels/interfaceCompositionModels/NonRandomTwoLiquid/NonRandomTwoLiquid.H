@@ -42,7 +42,7 @@ SourceFiles
 #ifndef NonRandomTwoLiquid_H
 #define NonRandomTwoLiquid_H
 
-#include "InterfaceCompositionModel.H"
+#include <InterfaceCompositionModel_tpl.H>
 #include "saturationModel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

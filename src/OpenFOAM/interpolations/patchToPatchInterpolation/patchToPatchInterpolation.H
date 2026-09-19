@@ -35,8 +35,8 @@ Description
 #ifndef patchToPatchInterpolation_H
 #define patchToPatchInterpolation_H
 
-#include "PatchToPatchInterpolation.H"
-#include "primitivePatch.H"
+#include <PatchToPatchInterpolation_tpl.H>
+#include <primitivePatch.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

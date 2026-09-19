@@ -92,7 +92,7 @@ Foam::cyclicACMIFvPatchField<Type>::cyclicACMIFvPatchField
         // this so it has actually been read - evaluate will crash otherwise
 
         const auto& fld =
-            static_cast<const GeometricField<Type, fvPatchField, volMesh>&>
+            static_cast<const GeometricField<Type, Foam::fvPatchField, volMesh>&>
             (
                 this->primitiveField()
             );
@@ -423,7 +423,7 @@ const Foam::cyclicACMIFvPatchField<Type>&
 Foam::cyclicACMIFvPatchField<Type>::neighbourPatchField() const
 {
     const auto& fld =
-        static_cast<const GeometricField<Type, fvPatchField, volMesh>&>
+        static_cast<const GeometricField<Type, Foam::fvPatchField, volMesh>&>
         (
             this->primitiveField()
         );
@@ -440,7 +440,7 @@ const Foam::fvPatchField<Type>&
 Foam::cyclicACMIFvPatchField<Type>::nonOverlapPatchField() const
 {
     const auto& fld =
-        static_cast<const GeometricField<Type, fvPatchField, volMesh>&>
+        static_cast<const GeometricField<Type, Foam::fvPatchField, volMesh>&>
         (
             this->primitiveField()
         );

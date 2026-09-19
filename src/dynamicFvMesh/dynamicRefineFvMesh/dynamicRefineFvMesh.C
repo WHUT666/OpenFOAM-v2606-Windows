@@ -167,9 +167,9 @@ void Foam::dynamicRefineFvMesh::readDict()
 {
     const dictionary refineDict
     (
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "dynamicMeshDict",
                 time().constant(),
@@ -1278,9 +1278,9 @@ bool Foam::dynamicRefineFvMesh::updateTopology()
     // to modify on-the-fly.
     dictionary refineDict
     (
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "dynamicMeshDict",
                 time().constant(),
@@ -1495,7 +1495,7 @@ bool Foam::dynamicRefineFvMesh::writeObject
     {
         volScalarField scalarCellLevel
         (
-            IOobject
+            Foam::IOobject
             (
                 "cellLevel",
                 time().timeName(),

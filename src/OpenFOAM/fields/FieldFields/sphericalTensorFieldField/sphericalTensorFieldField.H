@@ -39,7 +39,7 @@ SourceFiles
 #define sphericalTensorFieldField_H
 
 #include "FieldField.H"
-#include "sphericalTensor.H"
+#include <sphericalTensor.H>
 
 #define TEMPLATE template<template<class> class Field>
 #include "FieldFieldFunctionsM.H"

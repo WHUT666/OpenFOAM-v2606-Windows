@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "nutkWallFunctionFvPatchScalarField.H"
-#include "turbulenceModel.H"
+#include <turbulenceModel.H>
 #include "fvPatchFieldMapper.H"
 #include "volFields.H"
 #include "wallFvPatch.H"

@@ -60,7 +60,7 @@ Foam::fieldRegularisation::fieldRegularisation
         regularise_
       ? new volScalarField
         (
-            IOobject
+            Foam::IOobject
             (
                 "alphaTilda",
                 mesh_.time().timeName(),
@@ -85,7 +85,7 @@ Foam::fieldRegularisation::fieldRegularisation
     growFromWalls_(dict.getOrDefault<bool>("growFromWalls", false)),
     beta_
     (
-        IOobject
+        Foam::IOobject
         (
             "beta",
             mesh_.time().timeName(),

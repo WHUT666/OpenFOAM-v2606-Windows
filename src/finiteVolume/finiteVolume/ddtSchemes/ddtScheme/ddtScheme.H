@@ -225,7 +225,7 @@ public:
 
         typedef GeometricField
         <
-            typename flux<Type>::type,
+            typename Foam::flux<Type>::type,
             fvsPatchField,
             surfaceMesh
         > fluxFieldType;

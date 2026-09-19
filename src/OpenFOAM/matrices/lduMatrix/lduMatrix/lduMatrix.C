@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 #include "IOstreams.H"
 #include "Switch.H"
 #include "objectRegistry.H"

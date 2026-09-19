@@ -29,6 +29,8 @@ License
 #include "fam.H"
 #include "faScalarMatrix.H"
 #include "zeroGradientFaPatchFields.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * * Static Member Functions * * * * * * * * * * * * //

@@ -35,7 +35,7 @@ Description
 #define Foam_fileNameInstant_H
 
 #include "fileName.H"
-#include "instant.H"
+#include <instant.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -33,7 +33,7 @@ Note
 \*---------------------------------------------------------------------------*/
 
 #include "debug.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "IFstream.H"
 #include "etcFiles.H"
 #include "Ostream.H"

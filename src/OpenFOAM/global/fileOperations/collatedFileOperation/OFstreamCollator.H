@@ -54,7 +54,7 @@ SourceFiles
 #include "IOstream.H"
 #include "List.H"
 #include "CircularBuffer.H"  // As FIFO
-#include "dictionary.H"
+#include <dictionary.H>
 
 #include <mutex>
 #include <thread>

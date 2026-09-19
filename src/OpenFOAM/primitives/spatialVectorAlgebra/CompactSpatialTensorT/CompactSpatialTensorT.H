@@ -50,7 +50,7 @@ See also
 #ifndef Foam_CompactSpatialTensorT_H
 #define Foam_CompactSpatialTensorT_H
 
-#include "CompactSpatialTensor.H"
+#include <CompactSpatialTensor_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

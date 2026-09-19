@@ -150,9 +150,9 @@ Foam::BezierDesignVariables::BezierDesignVariables
     bezier_
     (
         mesh,
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "optimisationDict",
                 mesh_.time().globalPath()/"system",
@@ -165,7 +165,7 @@ Foam::BezierDesignVariables::BezierDesignVariables
     ),
     dx_
     (
-        IOobject
+        Foam::IOobject
         (
             "dx",
             mesh_.time().timeName(),

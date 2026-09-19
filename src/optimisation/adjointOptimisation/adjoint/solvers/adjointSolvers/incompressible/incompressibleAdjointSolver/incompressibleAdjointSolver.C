@@ -279,7 +279,7 @@ void Foam::incompressibleAdjointSolver::accumulateGradDxDbMultiplier
     (
         tmp<volTensorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "flowTerm",
                 mesh_.time().timeName(),
@@ -485,7 +485,7 @@ void Foam::incompressibleAdjointSolver::topOSensMultiplier
     {
         volScalarField IvSens
         (
-            IOobject
+            Foam::IOobject
             (
                 "IvSens" + solverName(),
                 mesh_.time().timeName(),

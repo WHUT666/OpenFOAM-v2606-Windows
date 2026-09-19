@@ -47,7 +47,7 @@ void Foam::domainDecomposition::distributeCells()
     {
         volScalarField weights
         (
-            IOobject
+            Foam::IOobject
             (
                 name,
                 time().timeName(),

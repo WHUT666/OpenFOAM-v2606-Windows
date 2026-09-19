@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "dictionary.H"
+#include <dictionary.H>
 #include "dimensionSet.H"
 #include "dimensionedScalar.H"
 #include "IOstreams.H"

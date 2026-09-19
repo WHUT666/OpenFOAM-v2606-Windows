@@ -38,8 +38,8 @@ SourceFiles
 #define ChemistryCombustion_H
 
 #include "autoPtr.H"
-#include "CombustionModel.H"
-#include "BasicChemistryModel.H"
+#include <CombustionModel_tpl.H>
+#include "BasicChemistryModel_tpl.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

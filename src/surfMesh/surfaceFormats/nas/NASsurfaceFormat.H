@@ -78,6 +78,10 @@ class NASsurfaceFormat
 {
     // Private Member Functions
 
+        //- Resolve ambiguous 'debug' from dual inheritance (MSVC C2385)
+        using NASCore::debug;
+
+
         //- Output CTRIA3 or CQUAD4
         inline static label writeShell
         (

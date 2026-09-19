@@ -28,7 +28,7 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
-#include "spatialVector.H"
+#include <spatialVector.H>
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

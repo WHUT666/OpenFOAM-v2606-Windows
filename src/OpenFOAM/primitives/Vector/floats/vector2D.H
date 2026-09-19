@@ -39,7 +39,7 @@ SourceFiles
 #define Foam_vector2D_H
 
 #include "scalar.H"
-#include "Vector2D.H"
+#include <Vector2D_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

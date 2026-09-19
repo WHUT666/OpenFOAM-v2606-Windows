@@ -107,7 +107,7 @@ Bezier::Bezier(const fvMesh& mesh, const dictionary& dict)
             iCP,
             new pointTensorField
             (
-                IOobject
+                Foam::IOobject
                 (
                     "dxidXj_"+name(iCP),
                     mesh_.time().timeName(),

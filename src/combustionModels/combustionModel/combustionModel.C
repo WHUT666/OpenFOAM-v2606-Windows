@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "combustionModel.H"
+#include <combustionModel.H>
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

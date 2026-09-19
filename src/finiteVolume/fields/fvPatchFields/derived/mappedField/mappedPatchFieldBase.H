@@ -240,13 +240,13 @@ public:
 
         //- Field to sample. Either on my or nbr mesh
         template<class T>
-        const GeometricField<T, fvPatchField, volMesh>& sampleField
+        const GeometricField<T, Foam::fvPatchField, volMesh>& sampleField
         (
             const word& fieldName
         ) const;
 
         //- Field to sample. Either on my or nbr mesh
-        const GeometricField<Type, fvPatchField, volMesh>& sampleField() const;
+        const GeometricField<Type, Foam::fvPatchField, volMesh>& sampleField() const;
 
         //- Map sampleField onto *this patch
         virtual tmp<Field<Type>> mappedField() const;

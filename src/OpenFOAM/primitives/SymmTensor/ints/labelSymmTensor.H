@@ -41,7 +41,7 @@ SourceFiles
 #ifndef Foam_labelSymmTensor_H
 #define Foam_labelSymmTensor_H
 
-#include "SymmTensor.H"
+#include <SymmTensor_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

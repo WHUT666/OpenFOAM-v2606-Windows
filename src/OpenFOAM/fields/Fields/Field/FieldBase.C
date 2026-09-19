@@ -27,7 +27,7 @@ License
 
 #include "Field.H"
 #include "debug.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "error.H"
 #include "registerSwitch.H"
 

@@ -48,22 +48,22 @@ namespace Foam
 {
 
 // Forward Declarations
-template<class T, int SizeMin> class DynamicField;
+template<class Type, int SizeMin> class DynamicField;
 
-template<class T, int SizeMin>
-inline Istream& operator>>(Istream&, DynamicField<T, SizeMin>&);
+template<class Type, int SizeMin>
+inline Istream& operator>>(Istream&, DynamicField<Type, SizeMin>&);
 
-template<class T, int SizeMin>
-inline Ostream& operator<<(Ostream&, const DynamicField<T, SizeMin>&);
+template<class Type, int SizeMin>
+inline Ostream& operator<<(Ostream&, const DynamicField<Type, SizeMin>&);
 
 /*---------------------------------------------------------------------------*\
                         Class DynamicField Declaration
 \*---------------------------------------------------------------------------*/
 
-template<class T, int SizeMin=64>
+template<class Type, int SizeMin=64>
 class DynamicField
 :
-    public Field<T>
+    public Field<Type>
 {
     static_assert(SizeMin > 0, "Invalid min size parameter");
 
@@ -103,62 +103,62 @@ public:
         inline explicit DynamicField(std::pair<label,label> sizing);
 
         //- Construct given size and initial value
-        inline DynamicField(const label len, const T& val);
+        inline DynamicField(const label len, const Type& val);
 
         //- Construct given size and initial value of zero
         inline DynamicField(const label len, Foam::zero);
 
         //- Copy construct
-        inline DynamicField(const DynamicField<T, SizeMin>& list);
+        inline DynamicField(const DynamicField<Type, SizeMin>& list);
 
         //- Copy construct with different sizing parameters
         template<int AnySizeMin>
-        inline DynamicField(const DynamicField<T, AnySizeMin>& list);
+        inline DynamicField(const DynamicField<Type, AnySizeMin>& list);
 
         //- Copy construct from UList. Size set to UList size.
         //  Also constructs from DynamicField with different sizing parameters.
-        inline explicit DynamicField(const UList<T>& list);
+        inline explicit DynamicField(const UList<Type>& list);
 
         //- Copy construct from IndirectList
         template<class Addr>
-        inline explicit DynamicField(const IndirectListBase<T, Addr>& list);
+        inline explicit DynamicField(const IndirectListBase<Type, Addr>& list);
 
         //- Move construct from List contents
-        inline explicit DynamicField(List<T>&& content) noexcept;
+        inline explicit DynamicField(List<Type>&& content) noexcept;
 
         //- Move construct from dynamic Field contents
-        inline DynamicField(DynamicField<T, SizeMin>&& content) noexcept;
+        inline DynamicField(DynamicField<Type, SizeMin>&& content) noexcept;
 
         //- Move construct with different sizing parameters
         template<int AnySizeMin>
-        inline DynamicField(DynamicField<T, AnySizeMin>&& content) noexcept;
+        inline DynamicField(DynamicField<Type, AnySizeMin>&& content) noexcept;
 
         //- Move construct from DynamicList
         template<int AnySizeMin>
-        inline DynamicField(DynamicList<T, AnySizeMin>&& content) noexcept;
+        inline DynamicField(DynamicList<Type, AnySizeMin>&& content) noexcept;
 
         //- Copy or move construct from DynamicField
         template<int AnySizeMin>
-        inline DynamicField(DynamicField<T, AnySizeMin>& content, bool reuse);
+        inline DynamicField(DynamicField<Type, AnySizeMin>& content, bool reuse);
 
         //- Copy or move construct from DynamicList
         template<int AnySizeMin>
-        inline DynamicField(DynamicList<T, AnySizeMin>& content, bool reuse);
+        inline DynamicField(DynamicList<Type, AnySizeMin>& content, bool reuse);
 
         //- Copy or move construct from List
-        inline DynamicField(List<T>& content, bool reuse);
+        inline DynamicField(List<Type>& content, bool reuse);
 
         //- Construct by 1 to 1 mapping from the given field
         inline DynamicField
         (
-            const UList<T>& mapF,
+            const UList<Type>& mapF,
             const labelUList& mapAddressing
         );
 
         //- Construct by interpolative mapping from the given field
         inline DynamicField
         (
-            const UList<T>& mapF,
+            const UList<Type>& mapF,
             const labelListList& mapAddressing,
             const scalarListList& weights
         );
@@ -166,7 +166,7 @@ public:
         //- Construct by mapping from the given field
         inline DynamicField
         (
-            const UList<T>& mapF,
+            const UList<Type>& mapF,
             const FieldMapper& map
         );
 
@@ -174,11 +174,11 @@ public:
         inline explicit DynamicField(Istream& is);
 
         //- Clone
-        inline tmp<DynamicField<T, SizeMin>> clone() const;
+        inline tmp<DynamicField<Type, SizeMin>> clone() const;
 
 
     //- Destructor, sync allocated size before list destruction
-    ~DynamicField() { List<T>::setAddressableSize(capacity_); }
+    ~DynamicField() { List<Type>::setAddressableSize(capacity_); }
 
 
     // Member Functions
@@ -239,14 +239,14 @@ public:
         inline void resize(const label len);
 
         //- Alter addressable size and fill \em new entries with constant value
-        inline void resize(const label len, const T& val);
+        inline void resize(const label len, const Type& val);
 
         //- Alter addressable size, retaining the first count contents.
         //  \note Only uses a limited number of internal checks.
         inline void resize_copy(label count, const label len);
 
         //- Alter addressable size and set val for \em all addressed entries
-        inline void resize_fill(const label len, const T& val);
+        inline void resize_fill(const label len, const Type& val);
 
         //- Alter addressable list size, allocating new space if required
         //- \em without necessarily recovering old content.
@@ -268,43 +268,43 @@ public:
     // Edit
 
         //- Swap with plain List content. Implies shrink_to_fit().
-        inline void swap(List<T>& other);
+        inline void swap(List<Type>& other);
 
         //- Swap content, independent of sizing parameter
         template<int AnySizeMin>
-        inline void swap(DynamicField<T, AnySizeMin>& other) noexcept;
+        inline void swap(DynamicField<Type, AnySizeMin>& other) noexcept;
 
         //- Swap content with DynamicList, independent of sizing parameter
         template<int AnySizeMin>
-        inline void swap(DynamicList<T, AnySizeMin>& other) noexcept;
+        inline void swap(DynamicList<Type, AnySizeMin>& other) noexcept;
 
         //- Transfer the parameter contents into this
-        inline void transfer(List<T>& list);
-
-        //- Transfer the parameter contents into this
-        template<int AnySizeMin>
-        inline void transfer(DynamicList<T, AnySizeMin>& list);
+        inline void transfer(List<Type>& list);
 
         //- Transfer the parameter contents into this
         template<int AnySizeMin>
-        inline void transfer(DynamicField<T, AnySizeMin>& list);
+        inline void transfer(DynamicList<Type, AnySizeMin>& list);
+
+        //- Transfer the parameter contents into this
+        template<int AnySizeMin>
+        inline void transfer(DynamicField<Type, AnySizeMin>& list);
 
         //- Construct an element at the end of the list,
         //- return reference to the new list element
         template<class... Args>
-        inline T& emplace_back(Args&&... args);
+        inline Type& emplace_back(Args&&... args);
 
         //- Copy append an element to the end of the list
-        inline void push_back(const T& val);
+        inline void push_back(const Type& val);
 
         //- Move append an element
-        inline void push_back(T&& val);
+        inline void push_back(Type&& val);
 
         //- Copy append another list to the end of this list
-        inline void push_back(const UList<T>& list);
+        inline void push_back(const UList<Type>& list);
 
         //- Move append another list to the end of this list
-        inline void push_back(List<T>&& list);
+        inline void push_back(List<Type>&& list);
 
         //- Reduce size by 1 or more elements. Can be called on an empty list.
         inline void pop_back(label n = 1);
@@ -320,56 +320,56 @@ public:
     // Assignment
 
         //- Assign addressed entries to the given value
-        inline void operator=(const T& val);
+        inline void operator=(const Type& val);
 
         //- Assign addressed entries to zero
         inline void operator=(Foam::zero);
 
         //- Copy assignment
-        inline void operator=(const UList<T>& list);
+        inline void operator=(const UList<Type>& list);
 
         //- Copy assignment
-        inline void operator=(const DynamicField<T, SizeMin>& list);
+        inline void operator=(const DynamicField<Type, SizeMin>& list);
 
         //- Copy assign from IndirectList
         template<class Addr>
-        inline void operator=(const IndirectListBase<T, Addr>& rhs);
+        inline void operator=(const IndirectListBase<Type, Addr>& rhs);
 
         //- Move assignment
-        inline void operator=(List<T>&& list);
-
-        //- Move assignment
-        template<int AnySizeMin>
-        inline void operator=(DynamicList<T, AnySizeMin>&& list);
-
-        //- Move assignment
-        inline void operator=(DynamicField<T, SizeMin>&& list);
+        inline void operator=(List<Type>&& list);
 
         //- Move assignment
         template<int AnySizeMin>
-        inline void operator=(DynamicField<T, AnySizeMin>&& list);
+        inline void operator=(DynamicList<Type, AnySizeMin>&& list);
+
+        //- Move assignment
+        inline void operator=(DynamicField<Type, SizeMin>&& list);
+
+        //- Move assignment
+        template<int AnySizeMin>
+        inline void operator=(DynamicField<Type, AnySizeMin>&& list);
 
 
     // Member Operators
 
         //- Return non-const access to an element, resizing list if needed
-        inline T& operator()(const label i);
+        inline Type& operator()(const label i);
 
 
     // IOstream Operators
 
         //- Use the readList() method to read contents from Istream.
-        friend Istream& operator>> <T, SizeMin>
+        friend Istream& operator>> <Type, SizeMin>
         (
             Istream& is,
-            DynamicField<T, SizeMin>& rhs
+            DynamicField<Type, SizeMin>& rhs
         );
 
         //- Write to Ostream
-        friend Ostream& operator<< <T, SizeMin>
+        friend Ostream& operator<< <Type, SizeMin>
         (
             Ostream& os,
-            const DynamicField<T, SizeMin>& rhs
+            const DynamicField<Type, SizeMin>& rhs
         );
 
 
@@ -379,11 +379,11 @@ public:
         void setSize(const label n) { this->resize(n); }
 
         //- Alias for resize()
-        void setSize(const label n, const T& val) { this->resize(n, val); }
+        void setSize(const label n, const Type& val) { this->resize(n, val); }
 
         //- Calls shrink_to_fit() and returns a reference to the DynamicField.
         //FOAM_DEPRECATED_FOR(2025-04, "shrink_to_fit()")
-        DynamicField<T, SizeMin>& shrink()
+        DynamicField<Type, SizeMin>& shrink()
         {
             this->shrink_to_fit();
             return *this;
@@ -391,15 +391,15 @@ public:
 
         //- Append an element at the end of the list
         //FOAM_DEPRECATED_FOR(2022-10, "push_back()")
-        void append(const T& val) { this->push_back(val); }
+        void append(const Type& val) { this->push_back(val); }
 
         //- Move append an element
         //FOAM_DEPRECATED_FOR(2022-10, "push_back()")
-        void append(T&& val) { this->push_back(std::move(val)); }
+        void append(Type&& val) { this->push_back(std::move(val)); }
 
         //- Append a List at the end of this list
         //FOAM_DEPRECATED_FOR(2022-10, "push_back()")
-        void append(const UList<T>& list) { this->push_back(list); }
+        void append(const UList<Type>& list) { this->push_back(list); }
 };
 
 

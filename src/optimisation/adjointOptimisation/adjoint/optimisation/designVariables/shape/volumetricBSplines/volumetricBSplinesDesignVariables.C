@@ -300,7 +300,7 @@ void Foam::volumetricBSplinesDesignVariables::setDisplacement
 
         pointVectorField dx
         (
-            IOobject
+            Foam::IOobject
             (
                 "dx",
                 mesh_.time().timeName(),
@@ -339,7 +339,7 @@ Foam::volumetricBSplinesDesignVariables::volumetricBSplinesDesignVariables
     shapeDesignVariables(mesh, dict),
     localIOdictionary
     (
-        IOobject
+        Foam::IOobject
         (
             "volumetricBSplinesDesignVariables",
             mesh.time().timeName(),
@@ -580,7 +580,7 @@ Foam::tmp<Foam::volVectorField> Foam::volumetricBSplinesDesignVariables::dCdb
     auto tdxdbDir =
         tmp<volVectorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "dxdbDir",
                 mesh_.time().timeName(),

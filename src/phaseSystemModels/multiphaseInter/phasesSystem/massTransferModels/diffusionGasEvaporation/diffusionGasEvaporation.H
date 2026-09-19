@@ -104,7 +104,7 @@ SourceFiles
 #ifndef Foam_meltingEvaporationModels_diffusionGasEvaporation_H
 #define Foam_meltingEvaporationModels_diffusionGasEvaporation_H
 
-#include "InterfaceCompositionModel.H"
+#include <InterfaceCompositionModel_tpl.H>
 #include "saturationModel.H"
 
 // * * * * * * * * * * * * * * * * *  * * * * * * * * * * * * * * * * * * * *//

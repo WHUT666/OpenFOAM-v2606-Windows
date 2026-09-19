@@ -64,7 +64,7 @@ SourceFiles
 #include "slicedVolFieldsFwd.H"
 #include "slicedSurfaceFieldsFwd.H"
 #include "className.H"
-#include "SolverPerformance.H"
+#include "SolverPerformance_tpl.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

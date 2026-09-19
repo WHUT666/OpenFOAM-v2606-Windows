@@ -55,15 +55,15 @@ void Foam::fvMesh::clearGeomNotOldVol()
     meshObject::clearUpto
     <
         fvMesh,
-        GeometricMeshObject,
-        MoveableMeshObject
+        Foam::GeometricMeshObject,
+        Foam::MoveableMeshObject
     >(*this);
 
     meshObject::clearUpto
     <
         lduMesh,
-        GeometricMeshObject,
-        MoveableMeshObject
+        Foam::GeometricMeshObject,
+        Foam::MoveableMeshObject
     >(*this);
 
     VPtr_.reset(nullptr);
@@ -135,8 +135,8 @@ void Foam::fvMesh::clearAddressing(const bool isMeshUpdate)
         meshObject::clearUpto
         <
             fvMesh,
-            TopologicalMeshObject,
-            UpdateableMeshObject
+            Foam::TopologicalMeshObject,
+            Foam::UpdateableMeshObject
         >
         (
             *this
@@ -144,8 +144,8 @@ void Foam::fvMesh::clearAddressing(const bool isMeshUpdate)
         meshObject::clearUpto
         <
             lduMesh,
-            TopologicalMeshObject,
-            UpdateableMeshObject
+            Foam::TopologicalMeshObject,
+            Foam::UpdateableMeshObject
         >
         (
             *this
@@ -153,8 +153,8 @@ void Foam::fvMesh::clearAddressing(const bool isMeshUpdate)
     }
     else
     {
-        meshObject::clear<fvMesh, TopologicalMeshObject>(*this);
-        meshObject::clear<lduMesh, TopologicalMeshObject>(*this);
+        meshObject::clear<fvMesh, Foam::TopologicalMeshObject>(*this);
+        meshObject::clear<lduMesh, Foam::TopologicalMeshObject>(*this);
     }
 
     lduPtr_.reset(nullptr);
@@ -180,7 +180,7 @@ void Foam::fvMesh::storeOldVol(const scalarField& V)
         {
             V0Ptr_ = std::make_unique<DimensionedField<scalar, volMesh>>
             (
-                IOobject
+                Foam::IOobject
                 (
                     "V0",
                     this->time().timeName(),
@@ -344,7 +344,7 @@ bool Foam::fvMesh::init(const bool doInit)
         {
             V0Ptr_ = std::make_unique<DimensionedField<scalar, volMesh>>
             (
-                IOobject
+                Foam::IOobject
                 (
                     "V0",
                     this->time().timeName(),
@@ -910,7 +910,7 @@ void Foam::fvMesh::movePoints(const pointField& p)
         // Create mesh motion flux
         phiPtr_ = std::make_unique<surfaceScalarField>
         (
-            IOobject
+            Foam::IOobject
             (
                 "meshPhi",
                 this->time().timeName(),
@@ -1017,7 +1017,7 @@ void Foam::fvMesh::updateMesh(const mapPolyMesh& mpm)
         // Create mesh motion flux
         phiPtr_ = std::make_unique<surfaceScalarField>
         (
-            IOobject
+            Foam::IOobject
             (
                 "meshPhi",
                 this->time().timeName(),

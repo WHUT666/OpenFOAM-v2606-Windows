@@ -53,14 +53,14 @@ namespace Foam
 
 class leastSquaresVectors
 :
-    public MeshObject<fvMesh, MoveableMeshObject, leastSquaresVectors>
+    public MeshObject<fvMesh, Foam::MoveableMeshObject, leastSquaresVectors>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             fvMesh,
-            MoveableMeshObject,
+            Foam::MoveableMeshObject,
             leastSquaresVectors
         > MeshObject_type;
 

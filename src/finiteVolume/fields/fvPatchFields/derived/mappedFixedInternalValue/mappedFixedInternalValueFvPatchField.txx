@@ -86,7 +86,7 @@ mappedFixedInternalValueFvPatchField
 template<class Type>
 void Foam::mappedFixedInternalValueFvPatchField<Type>::updateCoeffs()
 {
-    typedef GeometricField<Type, fvPatchField, volMesh> FieldType;
+    typedef GeometricField<Type, Foam::fvPatchField, volMesh> FieldType;
 
     if (this->updated())
     {

@@ -40,7 +40,7 @@ Description
 #include "basicThermoCloud.H"
 #include "coalCloud.H"
 #include "psiReactionThermo.H"
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 #include "fvOptions.H"
 #include "radiationModel.H"
 #include "SLGThermo.H"

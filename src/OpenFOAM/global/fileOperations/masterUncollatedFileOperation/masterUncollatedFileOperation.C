@@ -31,7 +31,7 @@ License
 #include "addToRunTimeSelectionTable.H"
 #include "Pstream.H"
 #include "Time.H"
-#include "instant.H"
+#include <instant.H>
 #include "IFstream.H"
 #include "SpanStream.H"
 #include "masterOFstream.H"

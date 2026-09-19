@@ -54,7 +54,7 @@ class upwindCFCCellToFaceStencilObject
     public MeshObject
     <
         fvMesh,
-        TopologicalMeshObject,
+        Foam::TopologicalMeshObject,
         upwindCFCCellToFaceStencilObject
     >,
     public extendedUpwindCellToFaceStencil
@@ -64,7 +64,7 @@ class upwindCFCCellToFaceStencilObject
         typedef MeshObject
         <
             fvMesh,
-            TopologicalMeshObject,
+            Foam::TopologicalMeshObject,
             upwindCFCCellToFaceStencilObject
         > MeshObject_type;
 

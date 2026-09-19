@@ -66,7 +66,7 @@ void Foam::Helmholtz::solveEqn
     // Smoothed field
     volScalarField bTilda
     (
-        IOobject
+        Foam::IOobject
         (
             "bTilda",
             mesh.time().timeName(),
@@ -99,7 +99,7 @@ void Foam::Helmholtz::solveEqn
     // Source field
     DimensionedField<scalar, volMesh> sourceField
     (
-        IOobject
+        Foam::IOobject
         (
             "source",
             mesh.time().timeName(),

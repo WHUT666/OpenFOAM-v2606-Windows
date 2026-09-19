@@ -278,9 +278,9 @@ void Foam::outletMappedUniformInletFvPatchField<Type>::updateCoeffs()
     {
         const scalar t = this->db().time().timeOutputValue();
 
-        const GeometricField<Type, fvPatchField, volMesh>& f
+        const GeometricField<Type, Foam::fvPatchField, volMesh>& f
         (
-            dynamic_cast<const GeometricField<Type, fvPatchField, volMesh>&>
+            dynamic_cast<const GeometricField<Type, Foam::fvPatchField, volMesh>&>
             (
                 this->internalField()
             )

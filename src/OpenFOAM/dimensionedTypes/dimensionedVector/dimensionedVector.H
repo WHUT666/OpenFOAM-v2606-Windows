@@ -38,7 +38,7 @@ SourceFiles
 #define Foam_dimensionedVector_H
 
 #include "dimensionedScalar.H"
-#include "vector.H"
+#include <vector.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

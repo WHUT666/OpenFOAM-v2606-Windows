@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "axisAngleRotation.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "quaternion.H"
 #include "unitConversion.H"
 #include "addToRunTimeSelectionTable.H"

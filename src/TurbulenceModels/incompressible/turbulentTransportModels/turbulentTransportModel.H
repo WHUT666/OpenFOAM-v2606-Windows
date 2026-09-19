@@ -45,7 +45,7 @@ SourceFiles
 #ifndef Foam_turbulentTransportModel_H
 #define Foam_turbulentTransportModel_H
 
-#include "IncompressibleTurbulenceModel.H"
+#include <IncompressibleTurbulenceModel_tpl.H>
 #include "laminarModel.H"
 #include "RASModel.H"
 #include "LESModel.H"

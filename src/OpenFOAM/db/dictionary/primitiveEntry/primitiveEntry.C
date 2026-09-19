@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "primitiveEntry.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "OSspecific.H"
 #include "stringOps.H"
 

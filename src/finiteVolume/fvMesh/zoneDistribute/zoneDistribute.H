@@ -80,14 +80,14 @@ namespace Foam
 
 class zoneDistribute
 :
-    public MeshObject<fvMesh, TopologicalMeshObject, zoneDistribute>
+    public MeshObject<fvMesh, Foam::TopologicalMeshObject, zoneDistribute>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             fvMesh,
-            TopologicalMeshObject,
+            Foam::TopologicalMeshObject,
             zoneDistribute
         > MeshObject_type;
 

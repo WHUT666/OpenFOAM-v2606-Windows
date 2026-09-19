@@ -454,7 +454,7 @@ const Foam::cyclicAMIFvPatchField<Type>&
 Foam::cyclicAMIFvPatchField<Type>::neighbourPatchField() const
 {
     const auto& fld =
-        static_cast<const GeometricField<Type, fvPatchField, volMesh>&>
+        static_cast<const GeometricField<Type, Foam::fvPatchField, volMesh>&>
         (
             this->primitiveField()
         );

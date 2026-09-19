@@ -35,10 +35,10 @@ Description
 #define coalCloud_H
 
 #include "Cloud.H"
-#include "KinematicCloud.H"
-#include "ThermoCloud.H"
-#include "ReactingCloud.H"
-#include "ReactingMultiphaseCloud.H"
+#include "KinematicCloud_tpl.H"
+#include "ThermoCloud_tpl.H"
+#include "ReactingCloud_tpl.H"
+#include "ReactingMultiphaseCloud_tpl.H"
 #include "coalParcel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

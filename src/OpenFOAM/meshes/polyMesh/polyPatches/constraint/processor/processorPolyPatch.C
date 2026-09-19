@@ -28,7 +28,7 @@ License
 
 #include "processorPolyPatch.H"
 #include "addToRunTimeSelectionTable.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "SubField.H"
 #include "matchPoints.H"
 #include "OFstream.H"

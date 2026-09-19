@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "smoothSolver.H"
+#include <smoothSolver.H>
 #include "profiling.H"
 #include "PrecisionAdaptor.H"
 

@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "IOobject.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "objectRegistry.H"
 #include "foamVersion.H"
 

@@ -64,11 +64,28 @@ class zero_one {};
 
 // The base implementation is a pass-through to the base class.
 // Accordingly it inherits all static methods (eg, typeName etc).
+// Non-class types (eg, enums) cannot act as a base: use an empty
+// fallback so trait probing (pTraits_has_zero etc) fails gracefully.
+template<class Base, class = void>
+struct pTraits_base {};
+
 template<class Base>
-class pTraits
+struct pTraits_base<Base, typename std::enable_if<std::is_class<Base>::value>::type>
 :
     public Base
 {
+    pTraits_base() = default;
+    explicit pTraits_base(const Base& obj) : Base(obj) {}
+    explicit pTraits_base(Istream& is) : Base(is) {}
+};
+
+template<class Base>
+class pTraits
+:
+    public pTraits_base<Base>
+{
+    typedef pTraits_base<Base> pTraitsBaseType;
+
 public:
 
     // Constructors
@@ -76,13 +93,13 @@ public:
         //- Copy construct from base class
         explicit pTraits(const Base& obj)
         :
-            Base(obj)
+            pTraitsBaseType(obj)
         {}
 
         //- Construct from Istream
         explicit pTraits(Istream& is)
         :
-            Base(is)
+            pTraitsBaseType(is)
         {}
 };
 

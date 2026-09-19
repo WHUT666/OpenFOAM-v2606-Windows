@@ -91,7 +91,7 @@ SourceFiles
 #ifndef Foam_patchProbes_H
 #define Foam_patchProbes_H
 
-#include "Probes.H"
+#include <Probes_tpl.H>
 #include "patchFieldProbe.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

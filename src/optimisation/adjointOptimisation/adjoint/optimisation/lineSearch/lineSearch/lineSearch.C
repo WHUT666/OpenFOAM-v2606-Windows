@@ -59,7 +59,7 @@ Foam::lineSearch::lineSearch
     dict_(dict),
     lineSearchDict_
     (
-        IOobject
+        Foam::IOobject
         (
             "lineSearch",
             time.timeName(),

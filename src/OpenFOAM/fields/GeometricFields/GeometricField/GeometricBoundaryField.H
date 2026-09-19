@@ -41,8 +41,8 @@ SourceFiles
 #include "dimensionedTypes.H"
 #include "DimensionedField.H"
 #include "FieldField.H"
-#include "lduInterfaceFieldPtrsList.H"
-#include "LduInterfaceFieldPtrsList.H"
+#include <lduInterfaceFieldPtrsList.H>
+#include <LduInterfaceFieldPtrsList_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -297,6 +297,37 @@ public:
         bool operator!=(const Type&) = delete;
         bool operator!=(Foam::zero) = delete;
 };
+
+
+// Forward declarations of patch-field stream operators.
+// GeometricBoundaryField::writeEntries() streams each patch field via
+// 'os << pfld'.  MSVC (unlike GCC's key-function vtable emission)
+// instantiates writeEntries in every TU that emits a GeometricField
+// vtable, including TUs where the concrete patch-field header is absent.
+// A visible declaration binds the call; the definition is instantiated
+// in the libraries that own the patch-field types.
+
+template<class Type> class fvPatchField;
+template<class Type> class fvsPatchField;
+template<class Type> class faPatchField;
+template<class Type> class faePatchField;
+template<class Type> class pointPatchField;
+class volMesh;
+class surfaceMesh;
+class areaMesh;
+class edgeMesh;
+class pointMesh;
+
+template<class Type>
+Ostream& operator<<(Ostream&, const fvPatchField<Type>&);
+template<class Type>
+Ostream& operator<<(Ostream&, const fvsPatchField<Type>&);
+template<class Type>
+Ostream& operator<<(Ostream&, const faPatchField<Type>&);
+template<class Type>
+Ostream& operator<<(Ostream&, const faePatchField<Type>&);
+template<class Type>
+Ostream& operator<<(Ostream&, const pointPatchField<Type>&);
 
 
 template<class Type, template<class> class PatchField, class GeoMesh>

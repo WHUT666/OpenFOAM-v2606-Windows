@@ -121,7 +121,7 @@ SourceFiles
 #ifndef meltingEvaporationModels_interfaceOxideRate_H
 #define meltingEvaporationModels_interfaceOxideRate_H
 
-#include "InterfaceCompositionModel.H"
+#include <InterfaceCompositionModel_tpl.H>
 
 // * * * * * * * * * * * * * * * * *  * * * * * * * * * * * * * * * * * * * *//
 

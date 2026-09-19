@@ -71,7 +71,7 @@ SourceFiles
 #ifndef Foam_tensor2D_H
 #define Foam_tensor2D_H
 
-#include "Tensor2D.H"
+#include <Tensor2D_tpl.H>
 #include "complex.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -134,7 +134,7 @@ Tensor2D<complex> eigenVectors(const tensor2D& T);
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-#include "sphericalTensor2D.H"
+#include <sphericalTensor2D.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

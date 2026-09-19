@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "contactAngleForce.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "addToRunTimeSelectionTable.H"
 #include "unitConversion.H"
 

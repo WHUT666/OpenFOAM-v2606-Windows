@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

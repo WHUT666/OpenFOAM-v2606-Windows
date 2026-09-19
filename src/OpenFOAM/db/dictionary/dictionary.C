@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "dictionary.H"
+#include <dictionary.H>
 #include "error.H"
 #include "JobInfo.H"
 #include "primitiveEntry.H"

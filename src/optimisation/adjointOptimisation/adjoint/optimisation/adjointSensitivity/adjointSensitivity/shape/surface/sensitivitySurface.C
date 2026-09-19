@@ -101,7 +101,7 @@ void sensitivitySurface::smoothSensitivities()
             if (io.typeHeaderOk<IOdictionary>(false))
             {
                 Info<< "Using system/faMeshDefinition" << nl;
-                faMeshDefinition = IOdictionary(io);
+                faMeshDefinition = Foam::IOdictionary(io);
             }
             else if (debug)
             {
@@ -125,7 +125,7 @@ void sensitivitySurface::smoothSensitivities()
             if (io.typeHeaderOk<IOdictionary>(false))
             {
                 Info<< "Using system/finite-area/faMeshDefinition" << nl;
-                faMeshDefinition = IOdictionary(io);
+                faMeshDefinition = Foam::IOdictionary(io);
             }
             else if (debug)
             {

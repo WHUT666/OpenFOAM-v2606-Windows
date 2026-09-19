@@ -35,7 +35,7 @@ Description
 #ifndef Foam_transform_H
 #define Foam_transform_H
 
-#include "tensor.H"
+#include <tensor.H>
 #include "mathematicalConstants.H"
 #include <type_traits>
 

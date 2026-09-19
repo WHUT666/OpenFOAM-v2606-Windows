@@ -115,7 +115,7 @@ objectivePowerDissipation::objectivePowerDissipation
     (
         new volScalarField
         (
-            IOobject
+            Foam::IOobject
             (
                 "divDxDbMult" + objectiveName_,
                 mesh_.time().timeName(),

@@ -39,7 +39,7 @@ SourceFiles
 #define blockEdges_polyLineEdge_H
 
 #include "blockEdge.H"
-#include "polyLine.H"
+#include "polyLine_tpl.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

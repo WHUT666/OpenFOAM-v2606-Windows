@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "zoneIdentifier.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

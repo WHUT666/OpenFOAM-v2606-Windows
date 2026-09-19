@@ -25,7 +25,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "kinematicCloud.H"
+#include <kinematicCloud.H>
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

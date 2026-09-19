@@ -117,7 +117,7 @@ Foam::scalar Foam::turbulence::IntegralScaleBox<Type>::gaussHash
     constexpr auto splitmix64_multiplier1 = std::uint64_t{0xBF58476D1CE4E5B9};
     constexpr auto splitmix64_multiplier2 = std::uint64_t{0x94D049BB133111EB};
 
-    constexpr auto mix = [](uint64_t x) constexpr noexcept -> uint64_t
+    const auto mix = [&](uint64_t x) noexcept -> uint64_t
     {
         // splitmix64 finaliser. Unsigned overflow is intentional and defined.
         x += splitmix64_golden_ratio;
@@ -126,7 +126,7 @@ Foam::scalar Foam::turbulence::IntegralScaleBox<Type>::gaussHash
         return x ^ (x >> 31);
     };
 
-    constexpr auto toUint64 = [](const label x) constexpr noexcept -> uint64_t
+    const auto toUint64 = [&](const label x) noexcept -> uint64_t
     {
         // Preserve the full label width.
         // If label is signed, conversion to uint64_t is well-defined
@@ -135,7 +135,7 @@ Foam::scalar Foam::turbulence::IntegralScaleBox<Type>::gaussHash
     };
 
     const auto hashCombine =
-        [&mix](uint64_t h, const uint64_t v) noexcept -> uint64_t
+        [&](uint64_t h, const uint64_t v) noexcept -> uint64_t
     {
         // Similar spirit to boost::hash_combine, but using splitmix64
         // to avalanche each field and avoid simple additive structure.
@@ -164,7 +164,7 @@ Foam::scalar Foam::turbulence::IntegralScaleBox<Type>::gaussHash
     const uint64_t h1 = mix(key ^ decorrelation_mask_a);
     const uint64_t h2 = mix(key ^ decorrelation_mask_b);
 
-    const auto uniformOpen01 = [](const uint64_t h) -> double
+    const auto uniformOpen01 = [&](const uint64_t h) -> double
     {
         // Use the top 53 bits, suitable for double precision.
         //

@@ -1287,6 +1287,17 @@ void* Foam::dlOpen(const fileName& libName, const bool check)
         }
     }
 
+    #ifdef FOAM_STATIC_BUILD
+    if (!handle)
+    {
+        // Fully static executables already contain the library code.
+        // Use the process image itself so dlSymFind() resolves symbols
+        // and dlLibraryTable treats the library as loaded.
+        handle = ::GetModuleHandle(nullptr);
+        libsLoaded[handle] = libso.lessExt();
+    }
+    #endif
+
     if (handle)
     {
         libsLoaded[handle] = libso.lessExt();
@@ -1357,6 +1368,15 @@ bool Foam::dlClose(void* const handle)
             << "dlClose(void*)"
             << " : dlclose of handle " << handle << std::endl;
     }
+
+    #ifdef FOAM_STATIC_BUILD
+    // Pseudo-handle for statically-linked code (process image itself)
+    if (static_cast<HMODULE>(handle) == ::GetModuleHandle(nullptr))
+    {
+        libsLoaded.erase(handle);
+        return true;
+    }
+    #endif
 
     const bool ok = ::FreeLibrary(static_cast<HMODULE>(handle));
 

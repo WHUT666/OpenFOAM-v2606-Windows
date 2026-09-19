@@ -40,7 +40,7 @@ SourceFiles
 #ifndef StandardChemistryModel_H
 #define StandardChemistryModel_H
 
-#include "BasicChemistryModel.H"
+#include <BasicChemistryModel_tpl.H>
 #include "Reaction.H"
 #include "ODESystem.H"
 #include "volFields.H"

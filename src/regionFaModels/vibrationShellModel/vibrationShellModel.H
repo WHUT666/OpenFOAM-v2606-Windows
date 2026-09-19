@@ -83,6 +83,8 @@ SourceFiles
 #include "regionFaModel.H"
 #include "faOptions.H"
 #include "solidProperties.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

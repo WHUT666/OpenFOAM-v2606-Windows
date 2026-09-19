@@ -319,9 +319,9 @@ void Foam::optimisationManager::initialize()
 
 Foam::optimisationManager::optimisationManager(fvMesh& mesh)
 :
-    IOdictionary
+    Foam::IOdictionary
     (
-        IOobject
+        Foam::IOobject
         (
             "optimisationDict",
             mesh.time().system(),
@@ -360,7 +360,7 @@ Foam::autoPtr<Foam::optimisationManager> Foam::optimisationManager::New
 {
     const IOdictionary dict
     (
-        IOobject
+        Foam::IOobject
         (
             "optimisationDict",
             mesh.time().system(),

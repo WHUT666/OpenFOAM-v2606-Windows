@@ -60,14 +60,14 @@ class pointMesh;
 
 class volPointInterpolation
 :
-    public MeshObject<fvMesh, UpdateableMeshObject, volPointInterpolation>
+    public MeshObject<fvMesh, Foam::UpdateableMeshObject, volPointInterpolation>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             fvMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             volPointInterpolation
         > MeshObject_type;
 

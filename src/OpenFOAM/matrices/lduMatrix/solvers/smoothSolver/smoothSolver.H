@@ -46,7 +46,7 @@ SourceFiles
 #ifndef Foam_smoothSolver_H
 #define Foam_smoothSolver_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

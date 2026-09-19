@@ -105,7 +105,7 @@ template<class Type>
 const Foam::GeometricField<Type, Foam::fvPatchField, Foam::volMesh>&
 Foam::PatchFunction1Types::Sampled<Type>::sampleField() const
 {
-    typedef GeometricField<Type, fvPatchField, volMesh> fieldType;
+    typedef GeometricField<Type, Foam::fvPatchField, volMesh> fieldType;
 
     if (this->sameRegion())
     {
@@ -124,7 +124,7 @@ Foam::PatchFunction1Types::Sampled<Type>::sampleField() const
 template<class Type>
 bool Foam::PatchFunction1Types::Sampled<Type>::haveSampleField() const
 {
-    typedef GeometricField<Type, fvPatchField, volMesh> fieldType;
+    typedef GeometricField<Type, Foam::fvPatchField, volMesh> fieldType;
 
     if (this->sameRegion())
     {
@@ -147,7 +147,7 @@ Foam::PatchFunction1Types::Sampled<Type>::value
     const scalar x
 ) const
 {
-    typedef GeometricField<Type, fvPatchField, volMesh> fieldType;
+    typedef GeometricField<Type, Foam::fvPatchField, volMesh> fieldType;
 
     // Since we're inside initEvaluate/evaluate there might be processor
     // comms underway. Change the tag we use.

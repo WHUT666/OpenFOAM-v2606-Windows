@@ -54,7 +54,7 @@ class meshSearchFACE_CENTRE_TRISMeshObject
     public MeshObject
     <
         polyMesh,
-        GeometricMeshObject,
+        Foam::GeometricMeshObject,
         meshSearchFACE_CENTRE_TRISMeshObject
     >,
     public meshSearch
@@ -64,7 +64,7 @@ class meshSearchFACE_CENTRE_TRISMeshObject
         typedef MeshObject
         <
             polyMesh,
-            GeometricMeshObject,
+            Foam::GeometricMeshObject,
             meshSearchFACE_CENTRE_TRISMeshObject
         > MeshObject_type;
 

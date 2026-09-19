@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "faceZone.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 

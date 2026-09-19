@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "mapDistributeBase.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * Local Functions * * * * * * * * * * * * * * //
 

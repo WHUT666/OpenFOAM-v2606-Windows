@@ -54,7 +54,7 @@ namespace Foam
 
 class cellPointConnectivity
 :
-    public MoveableMeshObject<polyMesh>
+    public Foam::MoveableMeshObject<polyMesh>
 {
     // Private Data
 

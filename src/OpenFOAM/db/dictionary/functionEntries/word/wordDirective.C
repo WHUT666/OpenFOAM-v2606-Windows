@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "wordDirective.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "stringOps.H"
 #include "addToMemberFunctionSelectionTable.H"
 

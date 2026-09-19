@@ -58,7 +58,7 @@ Foam::fv::topOSource::getSource()
     (
         tmp<DimensionedField<scalar, volMesh>>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "source",
                 mesh_.time().timeName(),

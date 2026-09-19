@@ -211,7 +211,7 @@ void Foam::interfaceTrackingFvMesh::makeUs() const
 
     UsPtr_ = std::make_unique<areaVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "Us",
             aMesh().time().timeName(),
@@ -269,7 +269,7 @@ void Foam::interfaceTrackingFvMesh::makeFsNetPhi() const
 
     fsNetPhiPtr_ = std::make_unique<areaScalarField>
     (
-        IOobject
+        Foam::IOobject
         (
             "fsNetPhi",
             aMesh().time().timeName(),
@@ -445,7 +445,7 @@ void Foam::interfaceTrackingFvMesh::makePhis()
 
     phisPtr_ = std::make_unique<edgeScalarField>
     (
-        IOobject
+        Foam::IOobject
         (
             "phis",
             aMesh().time().timeName(),
@@ -472,7 +472,7 @@ void Foam::interfaceTrackingFvMesh::makeSurfactConc() const
 
     surfactConcPtr_ = std::make_unique<areaScalarField>
     (
-        IOobject
+        Foam::IOobject
         (
             "Cs",
             mesh().time().timeName
@@ -503,7 +503,7 @@ void Foam::interfaceTrackingFvMesh::makeBulkSurfactConc() const
 
     bulkSurfactConcPtr_ = std::make_unique<volScalarField>
     (
-        IOobject
+        Foam::IOobject
         (
             "C",
             mesh().time().timeName
@@ -542,7 +542,7 @@ void Foam::interfaceTrackingFvMesh::makeSurfaceTension() const
 
     surfaceTensionPtr_ = std::make_unique<areaScalarField>
     (
-        IOobject
+        Foam::IOobject
         (
             "surfaceTension",
             aMesh().time().timeName(),
@@ -860,7 +860,7 @@ void Foam::interfaceTrackingFvMesh::updateSurfactantConcentration()
 
             areaScalarField Cb
             (
-                IOobject
+                Foam::IOobject
                 (
                     "Cb",
                     aMesh().time().timeName(),
@@ -1980,7 +1980,7 @@ Foam::interfaceTrackingFvMesh::surfaceTensionGrad()
 {
     auto tgrad = tmp<areaVectorField>::New
     (
-        IOobject
+        Foam::IOobject
         (
             "surfaceTensionGrad",
             aMesh().time().timeName(),

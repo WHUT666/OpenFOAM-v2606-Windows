@@ -60,7 +60,7 @@ class boundaryRadiationProperties
     public MeshObject
     <
         fvMesh,
-        GeometricMeshObject,
+        Foam::GeometricMeshObject,
         boundaryRadiationProperties
     >
 {
@@ -69,7 +69,7 @@ class boundaryRadiationProperties
         typedef MeshObject
         <
             fvMesh,
-            GeometricMeshObject,
+            Foam::GeometricMeshObject,
             boundaryRadiationProperties
         > MeshObject_type;
 

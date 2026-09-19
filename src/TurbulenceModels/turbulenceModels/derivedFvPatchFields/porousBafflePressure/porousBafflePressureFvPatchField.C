@@ -28,7 +28,7 @@ License
 
 #include "porousBafflePressureFvPatchField.H"
 #include "surfaceFields.H"
-#include "turbulenceModel.H"
+#include <turbulenceModel.H>
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //

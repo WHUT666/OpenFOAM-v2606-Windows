@@ -57,6 +57,8 @@ struct vtkPTraits
 };
 
 
+#ifndef _MSC_VER
+// (declaration-only explicit specializations - MSVC treats these as definitions)
 template<>
 const char* const vtkPTraits<uint8_t>::typeName;  // UInt8
 
@@ -83,6 +85,7 @@ const char* const vtkPTraits<Foam::endian>::typeName; // (Big|Little)Endian
 
 template<>
 const char* const vtkPTraits<std::string>::typeName; // String
+#endif
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

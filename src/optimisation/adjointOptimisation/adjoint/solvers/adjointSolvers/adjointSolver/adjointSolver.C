@@ -58,9 +58,9 @@ Foam::dictionary Foam::adjointSolver::designVarsDict() const
 {
     // Re-read optimisationDict here to cover multi-region cases
     return
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "optimisationDict",
                 mesh_.time().globalPath()/"system",

@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "IOobject.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "foamVersion.H"
 #include "fileOperation.H"
 #include "Pstream.H"

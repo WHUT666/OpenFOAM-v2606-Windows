@@ -51,7 +51,7 @@ objectiveManager::objectiveManager
 :
     regIOobject
     (
-        IOobject
+        Foam::IOobject
         (
             "objectiveManager" + adjointSolverName,
             mesh.time().system(),

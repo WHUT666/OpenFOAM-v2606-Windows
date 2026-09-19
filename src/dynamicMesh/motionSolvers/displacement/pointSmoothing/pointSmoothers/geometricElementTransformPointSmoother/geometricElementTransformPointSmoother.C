@@ -139,7 +139,7 @@ void Foam::pointSmoothers::geometricElementTransformPointSmoother::calculate
 {
     // Lookup or generate the cell-point connectivity/
     const cellPointConnectivity& connectivity =
-        MeshObject<polyMesh, MoveableMeshObject, cellPointConnectivity>::New
+        MeshObject<polyMesh, Foam::MoveableMeshObject, cellPointConnectivity>::New
         (
             mesh()
         );
@@ -457,7 +457,7 @@ Foam::pointSmoothers::geometricElementTransformPointSmoother::cellQuality
 )
 {
     const cellPointConnectivity& connectivity =
-        MeshObject<polyMesh, MoveableMeshObject, cellPointConnectivity>::New
+        MeshObject<polyMesh, Foam::MoveableMeshObject, cellPointConnectivity>::New
         (
             mesh
         );

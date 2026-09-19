@@ -38,7 +38,7 @@ SourceFiles
 #define Foam_dimensionedSphericalTensor_H
 
 #include "dimensionedType.H"
-#include "sphericalTensor.H"
+#include <sphericalTensor.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

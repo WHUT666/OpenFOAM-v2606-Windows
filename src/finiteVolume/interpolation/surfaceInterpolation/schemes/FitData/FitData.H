@@ -57,14 +57,14 @@ namespace Foam
 template<class FitDataType, class ExtendedStencil, class Polynomial>
 class FitData
 :
-    public MeshObject<fvMesh, MoveableMeshObject, FitDataType>
+    public MeshObject<fvMesh, Foam::MoveableMeshObject, FitDataType>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             fvMesh,
-            MoveableMeshObject,
+            Foam::MoveableMeshObject,
             FitDataType
         > MeshObject_type;
 

@@ -47,8 +47,8 @@ Foam::AnisothermalPhaseModel<BasePhaseModel>::filterPressureWork
     {
         return
         (
-            max(alpha - pressureWorkAlphaLimit, scalar(0))
-           /max(alpha - pressureWorkAlphaLimit, pressureWorkAlphaLimit)
+            Foam::max(alpha - pressureWorkAlphaLimit, scalar(0))
+           /Foam::max(alpha - pressureWorkAlphaLimit, pressureWorkAlphaLimit)
         )*pressureWork;
     }
 

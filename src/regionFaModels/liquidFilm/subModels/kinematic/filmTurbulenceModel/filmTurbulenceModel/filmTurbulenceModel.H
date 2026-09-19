@@ -103,6 +103,8 @@ SourceFiles
 
 #include "areaFieldsFwd.H"
 #include "liquidFilmBase.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

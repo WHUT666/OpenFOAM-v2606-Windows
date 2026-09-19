@@ -45,7 +45,7 @@ SourceFiles
 #define Foam_pointConstraint_H
 
 #include "label.H"
-#include "vector.H"
+#include <vector.H>
 #include "Tuple2.H"
 #include "transform.H"
 #include "contiguous.H"

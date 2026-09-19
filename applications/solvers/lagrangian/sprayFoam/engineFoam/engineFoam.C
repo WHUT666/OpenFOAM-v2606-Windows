@@ -39,7 +39,7 @@ Description
 #include "turbulentFluidThermoModel.H"
 #include "basicSprayCloud.H"
 #include "psiReactionThermo.H"
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 #include "radiationModel.H"
 #include "SLGThermo.H"
 #include "pimpleControl.H"

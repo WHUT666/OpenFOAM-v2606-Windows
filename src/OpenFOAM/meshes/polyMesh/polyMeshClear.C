@@ -53,8 +53,8 @@ void Foam::polyMesh::clearGeom()
     DebugInFunction << "Clearing geometric data" << endl;
 
     // Clear all geometric mesh objects
-    meshObject::clear<pointMesh, GeometricMeshObject>(*this);
-    meshObject::clear<polyMesh, GeometricMeshObject>(*this);
+    meshObject::clear<pointMesh, Foam::GeometricMeshObject>(*this);
+    meshObject::clear<polyMesh, Foam::GeometricMeshObject>(*this);
 
     primitiveMesh::clearGeom();
 
@@ -94,8 +94,8 @@ void Foam::polyMesh::updateGeomPoints
     meshObject::clearUpto
     <
         pointMesh,
-        TopologicalMeshObject,
-        MoveableMeshObject
+        Foam::TopologicalMeshObject,
+        Foam::MoveableMeshObject
     >
     (
         *this
@@ -103,8 +103,8 @@ void Foam::polyMesh::updateGeomPoints
     meshObject::clearUpto
     <
         polyMesh,
-        TopologicalMeshObject,
-        MoveableMeshObject
+        Foam::TopologicalMeshObject,
+        Foam::MoveableMeshObject
     >
     (
         *this
@@ -159,8 +159,8 @@ void Foam::polyMesh::clearAddressing(const bool isMeshUpdate)
         meshObject::clearUpto
         <
             pointMesh,
-            TopologicalMeshObject,
-            UpdateableMeshObject
+            Foam::TopologicalMeshObject,
+            Foam::UpdateableMeshObject
         >
         (
             *this
@@ -168,8 +168,8 @@ void Foam::polyMesh::clearAddressing(const bool isMeshUpdate)
         meshObject::clearUpto
         <
             polyMesh,
-            TopologicalMeshObject,
-            UpdateableMeshObject
+            Foam::TopologicalMeshObject,
+            Foam::UpdateableMeshObject
         >
         (
             *this
@@ -177,8 +177,8 @@ void Foam::polyMesh::clearAddressing(const bool isMeshUpdate)
     }
     else
     {
-        meshObject::clear<pointMesh, TopologicalMeshObject>(*this);
-        meshObject::clear<polyMesh, TopologicalMeshObject>(*this);
+        meshObject::clear<pointMesh, Foam::TopologicalMeshObject>(*this);
+        meshObject::clear<polyMesh, Foam::TopologicalMeshObject>(*this);
     }
 
     primitiveMesh::clearAddressing();

@@ -27,7 +27,7 @@ License
 
 #include "IOstreamOption.H"
 #include "debug.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "Enum.H"
 #include "Switch.H"
 

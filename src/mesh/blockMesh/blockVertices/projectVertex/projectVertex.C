@@ -74,9 +74,9 @@ Foam::blockVertices::projectVertex::projectVertex
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
-Foam::blockVertices::projectVertex::operator point() const
+Foam::blockVertices::projectVertex::operator Foam::point() const
 {
-    pointField start(1, pointVertex::operator point());
+    pointField start(1, pointVertex::operator Foam::point());
 
     pointField boundaryNear(start);
     List<pointConstraint> boundaryConstraint;

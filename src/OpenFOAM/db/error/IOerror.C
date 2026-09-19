@@ -32,7 +32,7 @@ Note
 
 #include "error.H"
 #include "fileName.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "JobInfo.H"
 #include "Pstream.H"
 #include "StringStream.H"
@@ -204,7 +204,7 @@ void Foam::IOerror::SafeFatalIOError
 
 Foam::IOerror::operator Foam::dictionary() const
 {
-    dictionary errDict(error::operator dictionary());
+    dictionary errDict(error::operator Foam::dictionary());
 
     errDict.add("type", word("Foam::IOerror"), true);  // overwrite
     errDict.add("ioFileName", ioFileName());

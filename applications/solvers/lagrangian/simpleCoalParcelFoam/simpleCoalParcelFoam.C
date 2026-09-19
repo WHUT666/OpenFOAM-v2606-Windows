@@ -39,7 +39,7 @@ Description
 #include "turbulentFluidThermoModel.H"
 #include "coalCloud.H"
 #include "rhoReactionThermo.H"
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 #include "radiationModel.H"
 #include "IOporosityModelList.H"
 #include "fvOptions.H"

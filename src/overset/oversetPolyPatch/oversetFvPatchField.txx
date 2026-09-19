@@ -284,14 +284,14 @@ void Foam::oversetFvPatchField<Type>::storeFringeCoefficients
                 if ((ownCalc||neiCalc)  && (zonei == zoneId_))
                 {
                     fringeLowerCoeffs_[fringesFaces] =
-                        component
+                        Foam::component
                         (
                             matrix.internalCoeffs()[patchi][facei],
                             0
                         );
 
                     fringeUpperCoeffs_[fringesFaces] =
-                        component
+                        Foam::component
                         (
                             matrix.boundaryCoeffs()[patchi][facei],
                             0
@@ -935,7 +935,7 @@ void Foam::oversetFvPatchField<Type>::manipulateMatrix
 
             // Make sure that diagonal is non-zero. Note: should add
             // boundaryCoeff ...
-            const FieldField<Field, Type>& internalCoeffs =
+            const FieldField<Foam::Field, Type>& internalCoeffs =
                 matrix.internalCoeffs();
 
             for (direction cmpt=0; cmpt<pTraits<Type>::nComponents; ++cmpt)

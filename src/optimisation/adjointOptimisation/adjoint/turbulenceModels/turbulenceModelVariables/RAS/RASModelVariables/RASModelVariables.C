@@ -90,7 +90,7 @@ void RASModelVariables::allocateMeanFields()
             (
                 new volScalarField
                 (
-                    IOobject
+                    Foam::IOobject
                     (
                         TMVar1Inst().name()+"Mean",
                         mesh_.time().timeName(),
@@ -109,7 +109,7 @@ void RASModelVariables::allocateMeanFields()
             (
                 new volScalarField
                 (
-                    IOobject
+                    Foam::IOobject
                     (
                         TMVar2Inst().name()+"Mean",
                         mesh_.time().timeName(),
@@ -128,7 +128,7 @@ void RASModelVariables::allocateMeanFields()
             (
                 new volScalarField
                 (
-                    IOobject
+                    Foam::IOobject
                     (
                         nutRefInst().name()+"Mean",
                         mesh_.time().timeName(),
@@ -250,7 +250,7 @@ autoPtr<RASModelVariables> RASModelVariables::New
 {
     const IOdictionary modelDict
     (
-        IOobject
+        Foam::IOobject
         (
             turbulenceModel::propertiesName,
             mesh.time().constant(),

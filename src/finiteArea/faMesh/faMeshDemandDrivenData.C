@@ -678,7 +678,7 @@ void Foam::faMesh::calcLe() const
 
     LePtr_ = std::make_unique<edgeVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "Le",
             mesh().pointsInstance(),
@@ -776,7 +776,7 @@ void Foam::faMesh::calcMagLe() const
 
     magLePtr_ = std::make_unique<edgeScalarField>
     (
-        IOobject
+        Foam::IOobject
         (
             "magLe",
             mesh().pointsInstance(),
@@ -850,7 +850,7 @@ void Foam::faMesh::calcFaceCentres() const
 
     faceCentresPtr_ = std::make_unique<areaVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "centres",
             mesh().pointsInstance(),
@@ -930,7 +930,7 @@ void Foam::faMesh::calcEdgeCentres() const
 
     edgeCentresPtr_ = std::make_unique<edgeVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "edgeCentres",
             mesh().pointsInstance(),
@@ -993,7 +993,7 @@ void Foam::faMesh::calcS() const
 
     SPtr_ = std::make_unique<DimensionedField<scalar, areaMesh>>
     (
-        IOobject
+        Foam::IOobject
         (
             "S",
             time().timeName(),
@@ -1065,7 +1065,7 @@ void Foam::faMesh::calcFaceAreaNormals() const
 
     faceAreaNormalsPtr_ = std::make_unique<areaVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "faceAreaNormals",
             mesh().pointsInstance(),
@@ -1144,7 +1144,7 @@ void Foam::faMesh::calcEdgeAreaNormals() const
 
     edgeAreaNormalsPtr_ = std::make_unique<edgeVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "edgeAreaNormals",
             mesh().pointsInstance(),
@@ -1273,7 +1273,7 @@ void Foam::faMesh::calcFaceCurvatures() const
 
     faceCurvaturesPtr_ = std::make_unique<areaScalarField>
     (
-        IOobject
+        Foam::IOobject
         (
             "faceCurvatures",
             mesh().pointsInstance(),
@@ -2310,7 +2310,7 @@ Foam::tmp<Foam::edgeScalarField> Foam::faMesh::edgeLengthCorrection() const
 
     auto tcorrection = tmp<edgeScalarField>::New
     (
-        IOobject
+        Foam::IOobject
         (
             "edgeLengthCorrection",
             mesh().pointsInstance(),
@@ -2380,7 +2380,7 @@ Foam::tmp<Foam::edgeVectorField> Foam::faMesh::unitLe() const
 {
     auto tunitVectors = tmp<edgeVectorField>::New
     (
-        IOobject
+        Foam::IOobject
         (
             "unit(Le)",
             mesh().pointsInstance(),

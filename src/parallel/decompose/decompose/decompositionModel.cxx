@@ -51,11 +51,11 @@ Foam::decompositionModel::decompositionModel
 :
     MeshObject_type(mesh),
 
-    IOdictionary
+    Foam::IOdictionary
     (
         IOobject::selectIO
         (
-            IOobject
+            Foam::IOobject
             (
                 decompositionModel::canonicalName,
                 mesh.time().system(),

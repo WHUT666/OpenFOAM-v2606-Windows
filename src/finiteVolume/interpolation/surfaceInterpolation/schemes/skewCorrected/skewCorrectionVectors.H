@@ -55,14 +55,14 @@ class fvMesh;
 
 class skewCorrectionVectors
 :
-    public MeshObject<fvMesh, MoveableMeshObject, skewCorrectionVectors>
+    public MeshObject<fvMesh, Foam::MoveableMeshObject, skewCorrectionVectors>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             fvMesh,
-            MoveableMeshObject,
+            Foam::MoveableMeshObject,
             skewCorrectionVectors
         > MeshObject_type;
 

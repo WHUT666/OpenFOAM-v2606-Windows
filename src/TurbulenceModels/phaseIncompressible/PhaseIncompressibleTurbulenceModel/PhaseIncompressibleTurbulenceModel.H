@@ -39,7 +39,7 @@ SourceFiles
 #ifndef PhaseIncompressibleTurbulenceModel_H
 #define PhaseIncompressibleTurbulenceModel_H
 
-#include "TurbulenceModel.H"
+#include "TurbulenceModel_tpl.H"
 #include "incompressibleRhoTurbulenceModel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

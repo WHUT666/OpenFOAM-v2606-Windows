@@ -39,7 +39,7 @@ SourceFiles
 
 #include "multiphaseInterSystem.H"
 #include "HashPtrTable.H"
-#include "interfaceCompositionModel.H"
+#include <interfaceCompositionModel.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

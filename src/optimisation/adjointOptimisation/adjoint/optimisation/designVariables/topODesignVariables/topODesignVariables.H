@@ -196,7 +196,7 @@ public:
         (
             volScalarField& field,
             const topOInterpolationFunction& interpolationFunc,
-            const FieldField<Field, scalar>& fluidValues,
+            const FieldField<Foam::Field, scalar>& fluidValues,
             const scalarField& solidValues,
             const label fieldi,
             const word& interpolationFieldName = "beta"
@@ -208,7 +208,7 @@ public:
         (
             scalarField& sens,
             const topOInterpolationFunction& interpolationFunc,
-            const FieldField<Field, scalar>& fluidValues,
+            const FieldField<Foam::Field, scalar>& fluidValues,
             const scalarField& solidValues,
             const label fieldi,
             const word& designVariablesName,

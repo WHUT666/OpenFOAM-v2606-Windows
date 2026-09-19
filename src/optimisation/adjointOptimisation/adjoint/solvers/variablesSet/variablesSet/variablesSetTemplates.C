@@ -50,7 +50,7 @@ GeometricField<Type, PatchField, GeoMesh>* variablesSet::allocateNamedField
     // Read-in boundary conditions from given IOobject
     localIOdictionary dict
     (
-        IOobject
+        Foam::IOobject
         (
             io.name(),
             io.instance(),

@@ -1059,7 +1059,7 @@ void adjointkOmegaSST::updatePrimalRelatedFields()
         */
         volScalarField G
         (
-            IOobject
+            Foam::IOobject
             (
                 IOobject::scopedName(type(), "G"),
                 mesh_.time().timeName(),
@@ -1346,7 +1346,7 @@ adjointkOmegaSST::adjointkOmegaSST
     //Primal Gradient Fields
     gradU_
     (
-        IOobject
+        Foam::IOobject
         (
             "rasModel::gradU",
             runTime_.timeName(),
@@ -1359,7 +1359,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     gradOmega_
     (
-        IOobject
+        Foam::IOobject
         (
             "rasModel::gradOmega",
             runTime_.timeName(),
@@ -1372,7 +1372,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     gradK_
     (
-        IOobject
+        Foam::IOobject
         (
             "rasModel::gradK",
             runTime_.timeName(),
@@ -1386,7 +1386,7 @@ adjointkOmegaSST::adjointkOmegaSST
 
     S2_
     (
-        IOobject
+        Foam::IOobject
         (
             "S2",
             runTime_.timeName(),
@@ -1399,7 +1399,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     S_
     (
-        IOobject
+        Foam::IOobject
         (
             "kOmegaSST_S",
             runTime_.timeName(),
@@ -1412,7 +1412,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     GbyNu0_
     (
-        IOobject
+        Foam::IOobject
         (
             "adjointRASModel::GbyNu0",
             runTime_.timeName(),
@@ -1425,7 +1425,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     CDkOmega_
     (
-        IOobject
+        Foam::IOobject
         (
             "CDkOmega_",
             runTime_.timeName(),
@@ -1438,7 +1438,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     CDkOmegaPlus_
     (
-        IOobject
+        Foam::IOobject
         (
             "CDkOmegaPlus",
             runTime_.timeName(),
@@ -1451,7 +1451,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     F1_
     (
-        IOobject
+        Foam::IOobject
         (
             "F1",
             runTime_.timeName(),
@@ -1464,7 +1464,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     F2_
     (
-        IOobject
+        Foam::IOobject
         (
             "F2",
             runTime_.timeName(),
@@ -1478,7 +1478,7 @@ adjointkOmegaSST::adjointkOmegaSST
     // Model Field coefficients
     alphaK_
     (
-        IOobject
+        Foam::IOobject
         (
             "alphaK",
             runTime_.timeName(),
@@ -1491,7 +1491,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     alphaOmega_
     (
-        IOobject
+        Foam::IOobject
         (
             "alphaOmega",
             runTime_.timeName(),
@@ -1504,7 +1504,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     beta_
     (
-        IOobject
+        Foam::IOobject
         (
             "beta",
             runTime_.timeName(),
@@ -1517,7 +1517,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     gamma_
     (
-        IOobject
+        Foam::IOobject
         (
             "gamma",
             runTime_.timeName(),
@@ -1531,7 +1531,7 @@ adjointkOmegaSST::adjointkOmegaSST
 
     case_1_F1_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_1_F1",
             runTime_.timeName(),
@@ -1544,7 +1544,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_2_F1_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_2_F1",
             runTime_.timeName(),
@@ -1557,7 +1557,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_3_F1_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_3_F1",
             runTime_.timeName(),
@@ -1570,7 +1570,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_4_F1_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_4_F1",
             runTime_.timeName(),
@@ -1583,7 +1583,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_1_Pk_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_1_Pk",
             runTime_.timeName(),
@@ -1596,7 +1596,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_2_Pk_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_2_Pk",
             runTime_.timeName(),
@@ -1609,7 +1609,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_3_Pk_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_3_Pk",
             runTime_.timeName(),
@@ -1623,7 +1623,7 @@ adjointkOmegaSST::adjointkOmegaSST
 
     case_1_nut_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_1_nut",
             runTime_.timeName(),
@@ -1636,7 +1636,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_2_nut_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_2_nut",
             runTime_.timeName(),
@@ -1649,7 +1649,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_3_nut_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_3_nut",
             runTime_.timeName(),
@@ -1662,7 +1662,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_1_GPrime_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_1_GPrime",
             runTime_.timeName(),
@@ -1675,7 +1675,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     case_2_GPrime_
     (
-        IOobject
+        Foam::IOobject
         (
             "case_2_GPrime",
             runTime_.timeName(),
@@ -1694,7 +1694,7 @@ adjointkOmegaSST::adjointkOmegaSST
     // Turbulence model multipliers
     dnut_domega_
     (
-        IOobject
+        Foam::IOobject
         (
             "dnut_domega",
             runTime_.timeName(),
@@ -1707,7 +1707,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     dnut_dk_
     (
-        IOobject
+        Foam::IOobject
         (
             "dnut_dk",
             runTime_.timeName(),
@@ -1720,7 +1720,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     DOmegaEff_
     (
-        IOobject
+        Foam::IOobject
         (
             "DomegaEff",
             runTime_.timeName(),
@@ -1733,7 +1733,7 @@ adjointkOmegaSST::adjointkOmegaSST
     ),
     DkEff_
     (
-        IOobject
+        Foam::IOobject
         (
             "DkEff",
             runTime_.timeName(),
@@ -1794,7 +1794,7 @@ tmp<volSymmTensorField> adjointkOmegaSST::devReff
 {
     return tmp<volSymmTensorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "devRhoReff",
                 runTime_.timeName(),
@@ -1902,7 +1902,7 @@ tmp<volVectorField> adjointkOmegaSST::adjointMeanFlowSource()
     (
         tmp<volVectorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "adjointMeanFlowSource" + type(),
                 mesh_.time().timeName(),
@@ -2241,7 +2241,7 @@ tmp<volScalarField> adjointkOmegaSST::distanceSensitivities()
 {
     return tmp<volScalarField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "adjointEikonalSource" + type(),
                 runTime_.timeName(),
@@ -2285,7 +2285,7 @@ tmp<volTensorField> adjointkOmegaSST::FISensitivityTerm()
     (
         tmp<volTensorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 type() + "FISensTerm",
                 mesh_.time().timeName(),

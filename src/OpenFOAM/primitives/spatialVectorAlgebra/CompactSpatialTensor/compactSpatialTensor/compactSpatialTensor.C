@@ -25,7 +25,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "compactSpatialTensor.H"
+#include <compactSpatialTensor.H>
 #include "CompactSpatialTensorT.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

@@ -202,7 +202,7 @@ void Foam::ShapeSensitivitiesBase::allocateMultipliers()
     (
         new volTensorField
         (
-            IOobject
+            Foam::IOobject
             (
                 "gradDxDbMult",
                 mesh_.time().timeName(),

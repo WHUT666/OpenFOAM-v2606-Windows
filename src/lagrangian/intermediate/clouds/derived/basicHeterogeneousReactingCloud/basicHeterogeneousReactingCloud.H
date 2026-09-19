@@ -35,10 +35,10 @@ Description
 #define basicHeterogeneousReactingCloud_H
 
 #include "Cloud.H"
-#include "KinematicCloud.H"
-#include "ThermoCloud.H"
-#include "ReactingCloud.H"
-#include "ReactingHeterogeneousCloud.H"
+#include <KinematicCloud_tpl.H>
+#include <ThermoCloud_tpl.H>
+#include <ReactingCloud_tpl.H>
+#include <ReactingHeterogeneousCloud_tpl.H>
 #include "basicHeterogeneousReactingParcel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

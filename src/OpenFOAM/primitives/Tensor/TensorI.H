@@ -28,7 +28,7 @@ License
 
 #include <type_traits>
 
-#include "SymmTensor.H"
+#include <SymmTensor_tpl.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

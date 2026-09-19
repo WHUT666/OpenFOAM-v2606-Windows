@@ -27,7 +27,7 @@ License
 
 #include "boundedDdtScheme.H"
 #include "fvcDiv.H"
-#include "fvcDdt.H"
+#include <fvcDdt.H>
 #include "fvMatrices.H"
 #include "fvmSup.H"
 

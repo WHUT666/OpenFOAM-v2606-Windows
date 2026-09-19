@@ -149,7 +149,7 @@ $(lubrication)/TomiyamaWallLubrication/TomiyamaWallLubrication.C
 
 composition = interfacialCompositionModels/interfaceCompositionModels
 $(composition)/interfaceCompositionModel/interfaceCompositionModel.C
-$(composition)/InterfaceCompositionModel/InterfaceCompositionModels.C
+$(composition)/InterfaceCompositionModel_tpl/InterfaceCompositionModels.C
 
 massTransfer = interfacialCompositionModels/massTransferModels
 $(massTransfer)/massTransferModel/massTransferModel.C

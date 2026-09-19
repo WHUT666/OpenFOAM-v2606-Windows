@@ -271,7 +271,7 @@ void Foam::LiquidEvaporationBoil<CloudType>::calculate
                     {
                         scalar GrDash = Gr;
 
-                        G = B/(1.0 + Gr)*log(1.0 + A*(1.0 + Gr));
+                        G = B/(1.0 + Gr)*Foam::log(1.0 + A*(1.0 + Gr));
                         Gr = Gf/G;
 
                         if (mag(Gr - GrDash)/GrDash < 1e-3)
@@ -296,7 +296,7 @@ void Foam::LiquidEvaporationBoil<CloudType>::calculate
                 if (Xr > 0)
                 {
                     // mass transfer [kg]
-                    dMassPC[lid] += pi*d*Sh*Dab*rhos*log(1.0 + Xr)*dt;
+                    dMassPC[lid] += pi*d*Sh*Dab*rhos*Foam::log(1.0 + Xr)*dt;
                 }
             }
         }

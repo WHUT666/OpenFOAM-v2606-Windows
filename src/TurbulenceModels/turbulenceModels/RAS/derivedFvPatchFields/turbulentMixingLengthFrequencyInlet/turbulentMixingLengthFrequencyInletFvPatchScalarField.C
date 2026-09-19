@@ -31,7 +31,7 @@ License
 #include "fvPatchFieldMapper.H"
 #include "surfaceFields.H"
 #include "volFields.H"
-#include "turbulenceModel.H"
+#include <turbulenceModel.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

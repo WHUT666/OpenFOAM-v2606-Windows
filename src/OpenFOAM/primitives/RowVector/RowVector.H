@@ -39,7 +39,7 @@ SourceFiles
 #define RowVector_H
 
 #include "MatrixSpace.H"
-#include "Vector.H"
+#include <Vector_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

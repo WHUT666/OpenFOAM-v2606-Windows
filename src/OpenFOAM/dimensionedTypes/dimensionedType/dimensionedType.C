@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "dimensionedType.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
 

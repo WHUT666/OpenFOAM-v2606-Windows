@@ -30,7 +30,7 @@ License
 #include "Istream.H"
 #include "Ostream.H"
 #include "INew.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * * //
 

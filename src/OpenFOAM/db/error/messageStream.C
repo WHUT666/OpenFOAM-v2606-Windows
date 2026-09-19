@@ -31,7 +31,7 @@ Note
 \*---------------------------------------------------------------------------*/
 
 #include "error.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "foamVersion.H"
 #include "UPstream.H"
 

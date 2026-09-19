@@ -89,7 +89,7 @@ Foam::domainDecomposition::domainDecomposition
         pointsInstance() != facesInstance()
       ? new pointIOField
         (
-            IOobject
+            Foam::IOobject
             (
                 "points",
                 facesInstance(),
@@ -210,7 +210,7 @@ bool Foam::domainDecomposition::writeDecomposition(const bool decomposeSets)
     // Load refinement data (if any)
     hexRef8Data baseMeshData
     (
-        IOobject
+        Foam::IOobject
         (
             "dummy",
             facesInstance(),
@@ -342,7 +342,7 @@ bool Foam::domainDecomposition::writeDecomposition(const bool decomposeSets)
 
             procMeshPtr = autoPtr<polyMesh>::New
             (
-                IOobject
+                Foam::IOobject
                 (
                     this->polyMesh::name(), // region of undecomposed mesh
                     facesInstance(),
@@ -359,7 +359,7 @@ bool Foam::domainDecomposition::writeDecomposition(const bool decomposeSets)
         {
             procMeshPtr = autoPtr<polyMesh>::New
             (
-                IOobject
+                Foam::IOobject
                 (
                     this->polyMesh::name(), // region of undecomposed mesh
                     facesInstance(),
@@ -853,7 +853,7 @@ bool Foam::domainDecomposition::writeDecomposition(const bool decomposeSets)
         {
             pointIOField pointsInstancePoints
             (
-                IOobject
+                Foam::IOobject
                 (
                     "points",
                     pointsInstance(),
@@ -917,7 +917,7 @@ bool Foam::domainDecomposition::writeDecomposition(const bool decomposeSets)
         // Optional hexRef8 data
         hexRef8Data
         (
-            IOobject
+            Foam::IOobject
             (
                 "dummy",
                 facesInstance(),

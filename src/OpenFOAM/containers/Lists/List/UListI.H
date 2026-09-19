@@ -94,7 +94,16 @@ inline void Foam::UList<T>::fill_uniform(Foam::zero)
 
         for (auto first = this->v_; (first != last); (void)++first)
         {
-            *first = Foam::zero{};
+            if constexpr (std::is_assignable_v<T&, Foam::zero>)
+            {
+                *first = Foam::zero{};
+            }
+            else
+            {
+                // Non-assignable from Foam::zero (eg weightedPosition):
+                // fall back to the canonical pTraits<T>::zero value
+                *first = Foam::pTraits<T>::zero;
+            }
         }
     }
 }

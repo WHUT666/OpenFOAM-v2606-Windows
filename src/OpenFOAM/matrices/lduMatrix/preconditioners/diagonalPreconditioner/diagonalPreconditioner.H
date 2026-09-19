@@ -44,7 +44,7 @@ SourceFiles
 #ifndef diagonalPreconditioner_H
 #define diagonalPreconditioner_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

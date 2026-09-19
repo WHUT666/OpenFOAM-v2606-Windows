@@ -37,7 +37,7 @@ Description
 #include "scalar.H"
 
 #include "IOstreams.H"
-#include "Dictionary.H"
+#include "Dictionary_tpl.H"
 #include "PtrDictionary.H"
 
 using namespace Foam;

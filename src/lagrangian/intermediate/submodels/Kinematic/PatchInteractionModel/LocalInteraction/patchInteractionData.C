@@ -169,4 +169,39 @@ Foam::Istream& Foam::operator>>
 }
 
 
+Foam::Ostream& Foam::operator<<
+(
+    Ostream& os,
+    const patchInteractionData& pid
+)
+{
+    os << pid.patchName_;
+    os.beginBlock();
+    os.writeEntry("type", pid.interactionTypeName_);
+    os.writeEntry("e", pid.e_);
+    os.writeEntry("mu", pid.mu_);
+
+    if (pid.isBaiGosman())
+    {
+        os.writeEntry("dry", pid.dry_);
+        os.writeEntry("Tmelt", pid.Tmelt_);
+        os.writeEntry("Wec", pid.Wec_);
+        os.writeEntry("parcelsPerSplash", pid.parcelsPerSplash_);
+        os.writeEntry("deltaWet", pid.deltaWet_);
+        os.writeEntry("splashParcelType", pid.splashParcelType_);
+        os.writeEntry("dMinSplash", pid.dMinSplash_);
+        os.writeEntry("dMaxSplash", pid.dMaxSplash_);
+        os.writeEntry("Adry", pid.Adry_);
+        os.writeEntry("Awet", pid.Awet_);
+        os.writeEntry("Cf", pid.Cf_);
+        os.writeEntry("Tref", pid.Tref_);
+    }
+
+    os.endBlock();
+
+    os.check(FUNCTION_NAME);
+    return os;
+}
+
+
 // ************************************************************************* //

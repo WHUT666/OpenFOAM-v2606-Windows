@@ -44,7 +44,7 @@ Description
 #include "SLGThermo.H"
 #include "solidChemistryModel.H"
 #include "psiReactionThermo.H"
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 #include "pimpleControl.H"
 #include "fvOptions.H"
 

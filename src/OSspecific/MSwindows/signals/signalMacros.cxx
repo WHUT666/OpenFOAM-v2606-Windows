@@ -36,6 +36,11 @@ SourceFiles
 
 // * * * * * * * * * * * * * * * Local Functions * * * * * * * * * * * * * * //
 
+#if defined(_MSC_VER)
+// The MinGW typedef name; MSVC calls it _crt_signal_t
+typedef _crt_signal_t __p_sig_fn_t;
+#endif
+
 namespace Foam
 {
 

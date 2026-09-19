@@ -25,7 +25,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "turbulenceModel.H"
+#include <turbulenceModel.H>
 #include "volFields.H"
 #include "surfaceFields.H"
 #include "wallFvPatch.H"

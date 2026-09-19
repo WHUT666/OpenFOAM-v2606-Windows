@@ -42,7 +42,7 @@ SourceFiles
 #ifndef FDICSmoother_H
 #define FDICSmoother_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

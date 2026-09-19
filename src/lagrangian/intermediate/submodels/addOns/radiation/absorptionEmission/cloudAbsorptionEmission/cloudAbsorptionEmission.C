@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "cloudAbsorptionEmission.H"
-#include "thermoCloud.H"
+#include <thermoCloud.H>
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

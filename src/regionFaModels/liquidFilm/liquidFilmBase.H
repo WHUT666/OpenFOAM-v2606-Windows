@@ -79,6 +79,8 @@ SourceFiles
 #include "uniformDimensionedFields.H"
 #include "regionFaModel.H"
 #include "faOptions.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

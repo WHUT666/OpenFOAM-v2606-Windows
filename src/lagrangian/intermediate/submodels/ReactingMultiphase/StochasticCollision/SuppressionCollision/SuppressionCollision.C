@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "SuppressionCollision.H"
-#include "kinematicCloud.H"
+#include <kinematicCloud.H>
 
 // * * * * * * * * * * * * * Protected Member Functions  * * * * * * * * * * //
 

@@ -28,7 +28,7 @@ License
 #ifndef Foam_tensorList_H
 #define Foam_tensorList_H
 
-#include "tensor.H"
+#include <tensor.H>
 #include "List.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

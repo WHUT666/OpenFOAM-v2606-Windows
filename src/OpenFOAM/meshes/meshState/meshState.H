@@ -45,7 +45,7 @@ SourceFiles
 #define Foam_meshState_H
 
 #include "IOdictionary.H"
-#include "solverPerformance.H"
+#include <solverPerformance.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -40,7 +40,7 @@ SourceFiles
 #ifndef Foam_diagonalSolver_H
 #define Foam_diagonalSolver_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

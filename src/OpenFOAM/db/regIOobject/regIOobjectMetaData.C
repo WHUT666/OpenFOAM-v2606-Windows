@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "regIOobject.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 

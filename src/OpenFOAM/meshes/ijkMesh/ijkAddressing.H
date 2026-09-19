@@ -38,7 +38,7 @@ SourceFiles
 #define Foam_ijkAddressing_H
 
 #include "labelVector.H"
-#include "vector.H"
+#include <vector.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

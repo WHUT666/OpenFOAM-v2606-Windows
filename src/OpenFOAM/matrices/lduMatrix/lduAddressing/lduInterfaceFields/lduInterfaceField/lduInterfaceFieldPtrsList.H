@@ -34,7 +34,7 @@ Description
 #ifndef lduInterfaceFieldPtrsList_H
 #define lduInterfaceFieldPtrsList_H
 
-#include "lduInterfaceField.H"
+#include <lduInterfaceField.H>
 #include "UPtrList.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

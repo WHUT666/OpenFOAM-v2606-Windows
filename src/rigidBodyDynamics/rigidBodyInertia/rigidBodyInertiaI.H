@@ -124,7 +124,7 @@ inline Foam::symmTensor Foam::RBD::rigidBodyInertia::Io() const
 
 // * * * * * * * * * * * * * * * Member Operators  * * * * * * * * * * * * * //
 
-inline Foam::RBD::rigidBodyInertia::operator spatialTensor() const
+inline Foam::RBD::rigidBodyInertia::operator Foam::spatialTensor() const
 {
     tensor mcStar(m_*(*c_));
 

@@ -43,7 +43,7 @@ SourceFiles
 #define Foam_stringOps_H
 
 #include "scalar.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "HashTable.H"
 #include "SubStrings.H"
 #include "stringOpsSort.H"

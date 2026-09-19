@@ -49,6 +49,7 @@ namespace Foam
 // Forward Declaration
 class patchInteractionData;
 Istream& operator>>(Istream& is, patchInteractionData& pid);
+Ostream& operator<<(Ostream& os, const patchInteractionData& pid);
 
 /*---------------------------------------------------------------------------*\
                     Class patchInteractionData Declaration
@@ -200,6 +201,9 @@ public:
 
         //- Istream operator
         friend Istream& operator>>(Istream& is, patchInteractionData& pid);
+
+        //- Ostream operator
+        friend Ostream& operator<<(Ostream& os, const patchInteractionData& pid);
 };
 
 

@@ -40,7 +40,7 @@ SourceFiles
 #ifndef subModelBase_H
 #define subModelBase_H
 
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

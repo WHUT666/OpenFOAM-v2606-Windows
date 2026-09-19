@@ -37,7 +37,7 @@ Description
 #include "fvCFD.H"
 #include "turbulentFluidThermoModel.H"
 #include "psiReactionThermo.H"
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 #include "multivariateScheme.H"
 #include "pimpleControl.H"
 #include "pressureControl.H"

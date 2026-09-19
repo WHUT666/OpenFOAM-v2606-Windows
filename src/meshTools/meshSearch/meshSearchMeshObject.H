@@ -51,7 +51,7 @@ namespace Foam
 
 class meshSearchMeshObject
 :
-    public MeshObject<polyMesh, GeometricMeshObject, meshSearchMeshObject>,
+    public MeshObject<polyMesh, Foam::GeometricMeshObject, meshSearchMeshObject>,
     public meshSearch
 {
     // Private Typedefs
@@ -59,7 +59,7 @@ class meshSearchMeshObject
         typedef MeshObject
         <
             polyMesh,
-            GeometricMeshObject,
+            Foam::GeometricMeshObject,
             meshSearchMeshObject
         > MeshObject_type;
 

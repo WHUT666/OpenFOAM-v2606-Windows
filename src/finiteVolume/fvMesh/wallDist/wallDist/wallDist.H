@@ -75,14 +75,14 @@ namespace Foam
 
 class wallDist
 :
-    public MeshObject<fvMesh, UpdateableMeshObject, wallDist>
+    public MeshObject<fvMesh, Foam::UpdateableMeshObject, wallDist>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             fvMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             wallDist
         > MeshObject_type;
 

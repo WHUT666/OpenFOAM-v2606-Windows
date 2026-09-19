@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "mapDistributePolyMesh.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

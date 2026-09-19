@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "volumeType.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

@@ -66,6 +66,8 @@ struct ensightPTraits
 
 // Specializations
 
+#ifndef _MSC_VER
+// (declaration-only explicit specializations - MSVC treats these as definitions)
 template<> const char* const ensightPTraits<label>::typeName;
 template<> const direction ensightPTraits<label>::componentOrder[];
 
@@ -86,6 +88,7 @@ template<> const direction ensightPTraits<symmTensor>::componentOrder[];
 
 template<> const char* const ensightPTraits<tensor>::typeName;
 template<> const direction ensightPTraits<tensor>::componentOrder[];
+#endif
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

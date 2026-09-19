@@ -36,7 +36,7 @@ Description
 #include "fvCFD.H"
 #include "turbulentFluidThermoModel.H"
 #include "rhoReactionThermo.H"
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 #include "radiationModel.H"
 #include "IOporosityModelList.H"
 #include "fvOptions.H"

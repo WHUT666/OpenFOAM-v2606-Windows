@@ -78,7 +78,7 @@ SourceFiles
 #define saturationModels_function1_H
 
 #include "saturationModel.H"
-#include "Function1.H"
+#include <Function1.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

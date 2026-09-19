@@ -55,7 +55,7 @@ adjointTurbulenceModel::adjointTurbulenceModel
 :
     regIOobject
     (
-        IOobject
+        Foam::IOobject
         (
             adjointTurbulenceModelName,
             primalVars.U().time().constant(),
@@ -83,9 +83,9 @@ autoPtr<adjointTurbulenceModel> adjointTurbulenceModel::New
 {
     const word modelType
     (
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "turbulenceProperties",
                 primalVars.U().time().constant(),

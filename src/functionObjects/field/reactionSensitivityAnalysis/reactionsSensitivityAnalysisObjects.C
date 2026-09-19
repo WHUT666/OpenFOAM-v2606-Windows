@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "reactionsSensitivityAnalysis.H"
-#include "BasicChemistryModel.H"
+#include "BasicChemistryModel_tpl.H"
 #include "psiReactionThermo.H"
 #include "rhoReactionThermo.H"
 #include "addToRunTimeSelectionTable.H"

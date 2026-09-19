@@ -28,7 +28,7 @@ License
 #ifndef Foam_symmTensorList_H
 #define Foam_symmTensorList_H
 
-#include "symmTensor.H"
+#include <symmTensor.H>
 #include "List.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

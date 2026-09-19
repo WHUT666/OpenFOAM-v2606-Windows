@@ -38,7 +38,7 @@ Description
 
 #include "fvCFD.H"
 #include "psiReactionThermo.H"
-#include "BasicChemistryModel.H"
+#include "BasicChemistryModel_tpl.H"
 #include "reactingMixture.H"
 #include "chemistrySolver.H"
 #include "OFstream.H"

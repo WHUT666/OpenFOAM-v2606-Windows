@@ -117,7 +117,7 @@ inline Foam::spatialTransform::dual Foam::spatialTransform::operator*() const
 }
 
 
-inline Foam::spatialTransform::operator spatialTensor() const
+inline Foam::spatialTransform::operator Foam::spatialTensor() const
 {
     return spatialTensor
     (
@@ -178,7 +178,7 @@ inline Foam::vector Foam::spatialTransform::transformPoint
 }
 
 
-inline Foam::spatialTransform::transpose::operator spatialTensor() const
+inline Foam::spatialTransform::transpose::operator Foam::spatialTensor() const
 {
     return spatialTensor
     (
@@ -203,7 +203,7 @@ inline Foam::spatialVector Foam::spatialTransform::transpose::operator&
 }
 
 
-inline Foam::spatialTransform::dual::operator spatialTensor() const
+inline Foam::spatialTransform::dual::operator Foam::spatialTensor() const
 {
     return spatialTensor
     (

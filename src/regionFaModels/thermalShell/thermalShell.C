@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "thermalShell.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "fam.H"
 #include "faMatrices.H"
 #include "fvPatchFields.H"

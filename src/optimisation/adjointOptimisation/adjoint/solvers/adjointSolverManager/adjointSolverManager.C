@@ -51,7 +51,7 @@ Foam::adjointSolverManager::adjointSolverManager
 :
     regIOobject
     (
-        IOobject
+        Foam::IOobject
         (
             "adjointSolverManager" + dict.dictName(),
             mesh.time().system(),

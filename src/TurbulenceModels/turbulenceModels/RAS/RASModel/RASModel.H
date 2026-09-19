@@ -38,7 +38,7 @@ SourceFiles
 #ifndef Foam_RASModel_H
 #define Foam_RASModel_H
 
-#include "TurbulenceModel.H"
+#include <TurbulenceModel_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

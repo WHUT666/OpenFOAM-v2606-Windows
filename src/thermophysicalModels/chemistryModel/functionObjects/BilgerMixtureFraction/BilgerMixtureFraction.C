@@ -31,10 +31,10 @@ License
 #include "reactingMixture.H"
 #include "thermoPhysicsTypes.H"
 #include "scalarRange.H"
-#include "basicChemistryModel.H"
+#include <basicChemistryModel.H>
 #include "psiReactionThermo.H"
 #include "rhoReactionThermo.H"
-#include "BasicChemistryModel.H"
+#include <BasicChemistryModel_tpl.H>
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

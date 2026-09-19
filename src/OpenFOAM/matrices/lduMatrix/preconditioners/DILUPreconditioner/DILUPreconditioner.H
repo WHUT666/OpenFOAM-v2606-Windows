@@ -43,7 +43,7 @@ SourceFiles
 #ifndef DILUPreconditioner_H
 #define DILUPreconditioner_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

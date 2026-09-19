@@ -37,7 +37,7 @@ SourceFiles
 #ifndef Foam_function1Base_H
 #define Foam_function1Base_H
 
-#include "dictionary.H"
+#include <dictionary.H>
 #include "objectRegistry.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

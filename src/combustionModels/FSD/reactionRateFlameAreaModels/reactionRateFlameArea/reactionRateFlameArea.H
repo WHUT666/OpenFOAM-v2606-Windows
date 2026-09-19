@@ -42,7 +42,7 @@ SourceFiles
 #include "dictionary.H"
 #include "autoPtr.H"
 #include "volFields.H"
-#include "combustionModel.H"
+#include <combustionModel.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

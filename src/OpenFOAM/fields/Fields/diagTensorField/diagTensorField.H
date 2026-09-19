@@ -38,7 +38,7 @@ SourceFiles
 #define diagTensorField_H
 
 #include "tensorField.H"
-#include "diagTensor.H"
+#include <diagTensor.H>
 
 #define TEMPLATE
 #include "FieldFunctionsM.H"

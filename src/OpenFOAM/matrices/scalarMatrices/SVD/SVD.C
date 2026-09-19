@@ -31,8 +31,8 @@ License
 #include "scalarMatrices.H"
 #include "ListOps.H"
 
-#include "tensor.H"
-#include "diagTensor.H"
+#include <tensor.H>
+#include <diagTensor.H>
 
 // * * * * * * * * * * * * * * * Local Functions * * * * * * * * * * * * * * //
 

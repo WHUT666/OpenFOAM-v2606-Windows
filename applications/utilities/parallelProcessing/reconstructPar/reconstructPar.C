@@ -332,7 +332,7 @@ int main(int argc, char *argv[])
 
         fvMesh mesh
         (
-            IOobject
+            Foam::IOobject
             (
                 regionName,
                 runTime.timeName(),
@@ -825,7 +825,7 @@ int main(int argc, char *argv[])
                         procI,
                         new hexRef8Data
                         (
-                            IOobject
+                            Foam::IOobject
                             (
                                 "dummy",
                                 procMesh.time().timeName(),
@@ -867,7 +867,7 @@ int main(int argc, char *argv[])
 
                 hexRef8Data
                 (
-                    IOobject
+                    Foam::IOobject
                     (
                         "dummy",
                         mesh.time().timeName(),
@@ -898,7 +898,7 @@ int main(int argc, char *argv[])
                         procI,
                         new hexRef8Data
                         (
-                            IOobject
+                            Foam::IOobject
                             (
                                 "dummy",
                                 procMesh.time().timeName(),
@@ -940,7 +940,7 @@ int main(int argc, char *argv[])
 
                 hexRef8Data
                 (
-                    IOobject
+                    Foam::IOobject
                     (
                         "dummy",
                         mesh.time().timeName(),

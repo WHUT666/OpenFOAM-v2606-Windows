@@ -30,7 +30,7 @@ License
 #include "OSspecific.H"
 #include "Switch.H"
 #include "clock.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "IOobject.H"
 #include "JobInfo.H"
 #include "labelList.H"

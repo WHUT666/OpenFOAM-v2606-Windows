@@ -45,7 +45,7 @@ Description
 #include "turbulentFluidThermoModel.H"
 #include "pimpleControl.H"
 #include "pressureControl.H"
-#include "CorrectPhi.H"
+#include <CorrectPhi.H>
 #include "fvOptions.H"
 #include "localEulerDdtScheme.H"
 #include "fvcSmooth.H"

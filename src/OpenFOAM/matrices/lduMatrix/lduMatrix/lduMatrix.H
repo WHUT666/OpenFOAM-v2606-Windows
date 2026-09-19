@@ -56,8 +56,8 @@ SourceFiles
 #include "lduMesh.H"
 #include "primitiveFieldsFwd.H"
 #include "FieldField.H"
-#include "lduInterfaceFieldPtrsList.H"
-#include "solverPerformance.H"
+#include <lduInterfaceFieldPtrsList.H>
+#include <solverPerformance.H>
 #include "typeInfo.H"
 #include "autoPtr.H"
 #include "runTimeSelectionTables.H"

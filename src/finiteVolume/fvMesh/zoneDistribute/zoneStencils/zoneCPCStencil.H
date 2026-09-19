@@ -61,7 +61,7 @@ class zoneCPCStencil
     public MeshObject
     <
         fvMesh,
-        TopologicalMeshObject,
+        Foam::TopologicalMeshObject,
         zoneCPCStencil
     >,
     public zoneCellStencils
@@ -71,7 +71,7 @@ class zoneCPCStencil
         typedef MeshObject
         <
             fvMesh,
-            TopologicalMeshObject,
+            Foam::TopologicalMeshObject,
             zoneCPCStencil
         > MeshObject_type;
 

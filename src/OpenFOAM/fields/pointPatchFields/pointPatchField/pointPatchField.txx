@@ -28,7 +28,7 @@ License
 
 #include "pointPatchField.H"
 #include "pointMesh.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

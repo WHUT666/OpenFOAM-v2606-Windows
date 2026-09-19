@@ -32,7 +32,7 @@ Note
 #include "UPstream.H"
 #include "debug.H"
 #include "registerSwitch.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "SHA1.H"
 #include "OSspecific.H"  // for hostName()
 #include "IOstreams.H"

@@ -28,7 +28,7 @@ License
 
 #include "GeometricField.H"
 #include "Time.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "localIOdictionary.H"
 #include "meshState.H"
 

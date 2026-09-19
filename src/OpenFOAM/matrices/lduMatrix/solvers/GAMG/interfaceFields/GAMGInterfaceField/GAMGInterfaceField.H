@@ -39,7 +39,7 @@ SourceFiles
 #ifndef GAMGInterfaceField_H
 #define GAMGInterfaceField_H
 
-#include "lduInterfaceField.H"
+#include <lduInterfaceField.H>
 #include "GAMGInterface.H"
 #include "autoPtr.H"
 

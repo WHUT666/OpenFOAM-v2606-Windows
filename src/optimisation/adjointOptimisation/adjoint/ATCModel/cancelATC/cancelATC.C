@@ -73,7 +73,7 @@ tmp<volTensorField> cancelATC::getFISensitivityTerm() const
     return
         tmp<volTensorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "ATCFISensitivityTerm" + type(),
                 mesh_.time().timeName(),

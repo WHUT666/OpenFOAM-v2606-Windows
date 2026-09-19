@@ -30,7 +30,7 @@ License
 #include "rhoThermo.H"
 #include "rhoReactionThermo.H"
 
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 
 #include "phaseModel.H"
 #include "ThermoPhaseModel.H"

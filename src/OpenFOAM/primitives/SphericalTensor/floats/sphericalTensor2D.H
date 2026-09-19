@@ -41,8 +41,8 @@ SourceFiles
 #ifndef Foam_sphericalTensor2D_H
 #define Foam_sphericalTensor2D_H
 
-#include "SphericalTensor2D.H"
-#include "tensor.H"
+#include <SphericalTensor2D_tpl.H>
+#include <tensor.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

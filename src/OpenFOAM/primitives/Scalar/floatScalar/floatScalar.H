@@ -124,8 +124,8 @@ inline Scalar func(const Scalar s)                              \
     {                                                           \
         return Scalar(::func(n, double(s)));                    \
     }
-#elif defined(__MINGW32__)
-    // Mingw: with '_' prefix, no float version (use a cast)
+#elif defined(__MINGW32__) || defined(_MSC_VER)
+    // Mingw/MSVC: with '_' prefix, no float version (use a cast)
     #define besselFunc(func)                                    \
     inline Scalar func(const Scalar s)                          \
     {                                                           \

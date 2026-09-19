@@ -28,7 +28,7 @@ License
 #ifndef Foam_sphericalTensorList_H
 #define Foam_sphericalTensorList_H
 
-#include "sphericalTensor.H"
+#include <sphericalTensor.H>
 #include "List.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "DSMCParcel.H"
+#include <DSMCParcel_tpl.H>
 #include "IOstreams.H"
 #include "IOField.H"
 #include "Cloud.H"

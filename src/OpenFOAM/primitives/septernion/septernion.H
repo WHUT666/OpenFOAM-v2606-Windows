@@ -44,7 +44,7 @@ SourceFiles
 #ifndef septernion_H
 #define septernion_H
 
-#include "vector.H"
+#include <vector.H>
 #include "quaternion.H"
 #include "spatialTransform.H"
 #include "word.H"

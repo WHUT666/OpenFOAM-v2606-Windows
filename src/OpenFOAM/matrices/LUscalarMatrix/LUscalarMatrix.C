@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "LUscalarMatrix.H"
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 #include "procLduMatrix.H"
 #include "procLduInterface.H"
 #include "cyclicLduInterface.H"

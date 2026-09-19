@@ -29,7 +29,7 @@ License
 #include "OFstreamCollator.H"
 #include "OFstream.H"
 #include "decomposedBlockData.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "masterUncollatedFileOperation.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

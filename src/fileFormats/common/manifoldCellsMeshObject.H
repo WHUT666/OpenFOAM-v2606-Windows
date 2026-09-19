@@ -53,14 +53,14 @@ namespace Foam
 
 class manifoldCellsMeshObject
 :
-    public MeshObject<polyMesh, UpdateableMeshObject, manifoldCellsMeshObject>
+    public MeshObject<polyMesh, Foam::UpdateableMeshObject, manifoldCellsMeshObject>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             polyMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             manifoldCellsMeshObject
         > MeshObject_type;
 

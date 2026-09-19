@@ -86,6 +86,8 @@ SourceFiles
 #include "volFieldsFwd.H"
 #include "regionFaModel.H"
 #include "faOptions.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

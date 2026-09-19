@@ -32,7 +32,7 @@ Note
 
 #include "error.H"
 #include "fileName.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "JobInfo.H"
 #include "UPstream.H"
 #include "prefixOSstream.H"

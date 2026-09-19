@@ -59,14 +59,14 @@ namespace Foam
 
 class volBSplinesBase
 :
-    public MeshObject<fvMesh, UpdateableMeshObject, volBSplinesBase>
+    public MeshObject<fvMesh, Foam::UpdateableMeshObject, volBSplinesBase>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             fvMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             volBSplinesBase
         > MeshObject_type;
 

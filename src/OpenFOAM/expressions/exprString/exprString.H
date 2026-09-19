@@ -44,7 +44,7 @@ SeeAlso
 #define Foam_expressions_exprString_H
 
 #include "word.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

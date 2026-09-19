@@ -65,7 +65,7 @@ SourceFiles
 #ifndef Foam_namedDictionary_H
 #define Foam_namedDictionary_H
 
-#include "dictionary.H"
+#include <dictionary.H>
 #include "Tuple2.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

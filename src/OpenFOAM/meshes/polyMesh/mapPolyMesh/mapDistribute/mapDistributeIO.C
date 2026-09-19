@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "mapDistribute.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

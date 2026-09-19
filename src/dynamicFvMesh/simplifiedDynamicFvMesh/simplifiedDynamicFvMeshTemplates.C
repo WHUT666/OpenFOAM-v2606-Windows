@@ -39,7 +39,7 @@ SimplifiedDynamicFvMesh
     columnFvMeshInfo(runTime, regionName),
     DynamicMeshType
     (
-        IOobject
+        Foam::IOobject
         (
             regionName,
             runTime.constant(),

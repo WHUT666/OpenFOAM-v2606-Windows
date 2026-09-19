@@ -39,7 +39,7 @@ SourceFiles
 #define Foam_symmTensorFieldField_H
 
 #include "FieldField.H"
-#include "symmTensor.H"
+#include <symmTensor.H>
 
 #define TEMPLATE template<template<class> class Field>
 #include "FieldFieldFunctionsM.H"

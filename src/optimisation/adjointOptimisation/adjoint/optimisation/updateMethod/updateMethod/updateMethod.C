@@ -218,7 +218,7 @@ Foam::updateMethod::updateMethod
 :
     localIOdictionary
     (
-        IOobject
+        Foam::IOobject
         (
             "updateMethodDict",
             mesh.time().timeName(),

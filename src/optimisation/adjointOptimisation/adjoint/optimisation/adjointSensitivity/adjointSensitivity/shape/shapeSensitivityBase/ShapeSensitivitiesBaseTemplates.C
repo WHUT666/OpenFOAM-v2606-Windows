@@ -48,7 +48,7 @@ void ShapeSensitivitiesBase::constructAndWriteSensitivityField
 {
     GeometricField<Type, fvPatchField, volMesh> volSensField
     (
-        IOobject
+        Foam::IOobject
         (
             name,
             mesh_.time().timeName(),
@@ -78,7 +78,7 @@ void ShapeSensitivitiesBase::constructAndWriteSensitivtyPointField
 {
     GeometricField<Type, pointPatchField, pointMesh> pointSensField
     (
-        IOobject
+        Foam::IOobject
         (
             name,
             mesh_.time().timeName(),
@@ -122,7 +122,7 @@ ShapeSensitivitiesBase::constructVolSensitivtyField
         (
             new GeometricField<Type, fvPatchField, volMesh>
             (
-                IOobject
+                Foam::IOobject
                 (
                     name,
                     mesh_.time().timeName(),

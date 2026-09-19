@@ -55,10 +55,10 @@ Description
 #include "label.H"
 #include "scalar.H"
 //TBD: #include "complex.H"
-#include "vector.H"
-#include "sphericalTensor.H"
-#include "symmTensor.H"
-#include "tensor.H"
+#include <vector.H>
+#include <sphericalTensor.H>
+#include <symmTensor.H>
+#include <tensor.H>
 #include "word.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

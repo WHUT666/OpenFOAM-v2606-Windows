@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "decomposedBlockData.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "foamVersion.H"
 #include "objectRegistry.H"
 #include "SpanStream.H"

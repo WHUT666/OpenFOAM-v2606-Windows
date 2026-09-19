@@ -254,7 +254,7 @@ void copyUniform
         readPath = readHandler().dirPath
         (
             false,          // local directory
-            IOobject("uniform", readTimeName, readDb),
+            Foam::IOobject("uniform", readTimeName, readDb),
             false           // do not search in time
         );
 
@@ -505,7 +505,7 @@ void writeDecomposition
     IOList<label>::writeContents
     (
         // NB: mesh read from facesInstance
-        IOobject("cellDecomposition", mesh.facesInstance(), mesh),
+        Foam::IOobject("cellDecomposition", mesh.facesInstance(), mesh),
         decomp
     );
 
@@ -515,7 +515,7 @@ void writeDecomposition
 
     volScalarField procCells
     (
-        IOobject
+        Foam::IOobject
         (
             name,
             mesh.time().timeName(),
@@ -600,7 +600,7 @@ label determineDecomposition
     {
         volScalarField weights
         (
-            IOobject
+            Foam::IOobject
             (
                 name,
                 tm.timeName(),
@@ -1043,7 +1043,7 @@ autoPtr<mapDistributePolyMesh> redistributeAndWrite
     // Register mapDistributePolyMesh for automatic writing...
     IOmapDistributePolyMeshRef distMapRef
     (
-        IOobject
+        Foam::IOobject
         (
             "procAddressing",
             mesh.facesInstance(),
@@ -1932,7 +1932,7 @@ int main(int argc, char *argv[])
                     {
                         faceCompactIOList io
                         (
-                            IOobject
+                            Foam::IOobject
                             (
                                 "faces",
                                 volMeshInstance,
@@ -1955,7 +1955,7 @@ int main(int argc, char *argv[])
 
                         labelIOList io
                         (
-                            IOobject
+                            Foam::IOobject
                             (
                                 "faceLabels",
                                 areaInstance,
@@ -2029,7 +2029,7 @@ int main(int argc, char *argv[])
 
                     autoPtr<fvMesh> volMeshPtr = fvMeshTools::loadOrCreateMesh
                     (
-                        IOobject
+                        Foam::IOobject
                         (
                             regionName,
                             volMeshInstance,
@@ -2125,7 +2125,7 @@ int main(int argc, char *argv[])
 
                             baseMeshPtr = fvMeshTools::newMesh
                             (
-                                IOobject
+                                Foam::IOobject
                                 (
                                     regionName,
                                     baseRunTime.timeName(),
@@ -2138,7 +2138,7 @@ int main(int argc, char *argv[])
 
                             volMeshPtr = fvMeshTools::loadOrCreateMesh
                             (
-                                IOobject
+                                Foam::IOobject
                                 (
                                     regionName,
                                     baseMeshPtr().facesInstance(),
@@ -2162,7 +2162,7 @@ int main(int argc, char *argv[])
                             (
                                 areaName,
                                 // IOobject for the polyMesh
-                                IOobject
+                                Foam::IOobject
                                 (
                                     regionName,
                                     areaInstance,
@@ -2259,7 +2259,7 @@ int main(int argc, char *argv[])
             fileName pointsInstance;
             masterMeshInstance
             (
-                IOobject
+                Foam::IOobject
                 (
                     regionName,
                     baseRunTime.timeName(),
@@ -2272,7 +2272,7 @@ int main(int argc, char *argv[])
 
             autoPtr<fvMesh> baseMeshPtr = fvMeshTools::loadOrCreateMesh
             (
-                IOobject
+                Foam::IOobject
                 (
                     regionName,
                     facesInstance,              //baseRunTime.timeName(),
@@ -2295,7 +2295,7 @@ int main(int argc, char *argv[])
             InfoOrPout<< "Reading local, decomposed (volume) mesh" << endl;
             autoPtr<fvMesh> volMeshPtr = fvMeshTools::loadOrCreateMesh
             (
-                IOobject
+                Foam::IOobject
                 (
                     regionName,
                     baseMeshPtr().facesInstance(),
@@ -2339,7 +2339,7 @@ int main(int argc, char *argv[])
                     faMeshTools::loadOrCreateMesh
                     (
                         areaName,
-                        IOobject
+                        Foam::IOobject
                         (
                             regionName,
                             baseMeshPtr().facesInstance(),
@@ -2358,7 +2358,7 @@ int main(int argc, char *argv[])
                     faMeshTools::loadOrCreateMesh
                     (
                         areaName,
-                        IOobject
+                        Foam::IOobject
                         (
                             regionName,
                             areaBaseMesh.facesInstance(),
@@ -2490,7 +2490,7 @@ int main(int argc, char *argv[])
                         baseMeshPtr.reset(nullptr);
                         baseMeshPtr = fvMeshTools::loadOrCreateMesh
                         (
-                            IOobject
+                            Foam::IOobject
                             (
                                 regionName,
                                 baseRunTime.timeName(),
@@ -2877,7 +2877,7 @@ int main(int argc, char *argv[])
                 (
                     fileHandler().objectPath
                     (
-                        IOobject
+                        Foam::IOobject
                         (
                             "faces",
                             volMeshMasterInstance/volMeshSubDir,
@@ -2924,7 +2924,7 @@ int main(int argc, char *argv[])
                 (
                     fileHandler().objectPath
                     (
-                        IOobject
+                        Foam::IOobject
                         (
                             "faceLabels",
                             areaInstance,
@@ -2972,7 +2972,7 @@ int main(int argc, char *argv[])
 
             autoPtr<fvMesh> volMeshPtr = fvMeshTools::loadOrCreateMesh
             (
-                IOobject
+                Foam::IOobject
                 (
                     regionName,
                     volMeshMasterInstance,
@@ -3009,7 +3009,7 @@ int main(int argc, char *argv[])
                         (
                             areaName,
                             // IOobject for the polyMesh
-                            IOobject
+                            Foam::IOobject
                             (
                                 regionName,
                                 areaInstance,
@@ -3242,7 +3242,7 @@ int main(int argc, char *argv[])
 
                     IOmapDistributePolyMesh::writeContents
                     (
-                        IOobject
+                        Foam::IOobject
                         (
                             "procAddressing",
                             areaProcMesh.facesInstance(),

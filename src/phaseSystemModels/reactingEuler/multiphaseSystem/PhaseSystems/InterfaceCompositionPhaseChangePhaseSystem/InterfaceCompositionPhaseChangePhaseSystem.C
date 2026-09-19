@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "InterfaceCompositionPhaseChangePhaseSystem.H"
-#include "interfaceCompositionModel.H"
+#include <interfaceCompositionModel.H>
 #include "massTransferModel.H"
 
 // * * * * * * * * * * * * Private Member Functions * * * * * * * * * * * * //

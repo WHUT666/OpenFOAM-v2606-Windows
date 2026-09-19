@@ -74,7 +74,7 @@ SourceFiles
 #ifndef meltingEvaporationModels_interfaceHeatResistance_H
 #define meltingEvaporationModels_interfaceHeatResistance_H
 
-#include "InterfaceCompositionModel.H"
+#include <InterfaceCompositionModel_tpl.H>
 
 // * * * * * * * * * * * * * * * * *  * * * * * * * * * * * * * * * * * * * *//
 

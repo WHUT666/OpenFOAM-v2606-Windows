@@ -38,7 +38,7 @@ SourceFiles
 #ifndef laminarModel_H
 #define laminarModel_H
 
-#include "TurbulenceModel.H"
+#include <TurbulenceModel_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

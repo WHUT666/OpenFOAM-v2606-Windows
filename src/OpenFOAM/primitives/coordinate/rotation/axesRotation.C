@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "axesRotation.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

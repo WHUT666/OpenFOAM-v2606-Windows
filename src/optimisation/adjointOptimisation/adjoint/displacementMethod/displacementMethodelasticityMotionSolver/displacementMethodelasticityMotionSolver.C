@@ -80,7 +80,7 @@ displacementMethodelasticityMotionSolver
     (
         IOdictionary::readContents
         (
-            IOobject
+            Foam::IOobject
             (
                 "dynamicMeshDict",
                 mesh.time().constant(),

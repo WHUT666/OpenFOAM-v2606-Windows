@@ -38,7 +38,7 @@ SourceFiles
 #ifndef Foam_threadedCollatedOFstream_H
 #define Foam_threadedCollatedOFstream_H
 
-#include "dictionary.H"
+#include <dictionary.H>
 #include "SpanStream.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

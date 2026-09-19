@@ -40,8 +40,8 @@ SourceFiles
 #define Foam_quaternion_H
 
 #include "scalar.H"
-#include "vector.H"
-#include "tensor.H"
+#include <vector.H>
+#include <tensor.H>
 #include "word.H"
 #include "Enum.H"
 #include "stdFoam.H"  // For deprecation macros

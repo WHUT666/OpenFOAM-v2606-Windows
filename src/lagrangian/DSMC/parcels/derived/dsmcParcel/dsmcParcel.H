@@ -38,7 +38,7 @@ SourceFiles
 #define dsmcParcel_H
 
 #include "particle.H"
-#include "DSMCParcel.H"
+#include <DSMCParcel_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -45,7 +45,7 @@ Foam::linearUpwindNormal<Type>::correction
     (
         new GeometricField<Type, fvsPatchField, surfaceMesh>
         (
-            IOobject
+            Foam::IOobject
             (
                 "linearUpwind::correction(" + vf.name() + ')',
                 mesh.time().timeName(),

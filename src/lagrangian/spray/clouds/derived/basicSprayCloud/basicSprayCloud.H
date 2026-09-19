@@ -35,10 +35,10 @@ Description
 #define basicSprayCloud_H
 
 #include "Cloud.H"
-#include "KinematicCloud.H"
-#include "ThermoCloud.H"
-#include "ReactingCloud.H"
-#include "SprayCloud.H"
+#include "KinematicCloud_tpl.H"
+#include "ThermoCloud_tpl.H"
+#include "ReactingCloud_tpl.H"
+#include <SprayCloud_tpl.H>
 #include "basicSprayParcel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

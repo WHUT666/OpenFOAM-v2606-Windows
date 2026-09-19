@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "patchIdentifier.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

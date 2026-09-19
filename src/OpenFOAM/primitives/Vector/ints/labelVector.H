@@ -39,7 +39,7 @@ SourceFiles
 #define Foam_labelVector_H
 
 #include "label.H"
-#include "Vector.H"
+#include <Vector_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

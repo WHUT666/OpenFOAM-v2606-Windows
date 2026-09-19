@@ -54,7 +54,7 @@ class centredFECCellToFaceStencilObject
     public MeshObject
     <
         fvMesh,
-        TopologicalMeshObject,
+        Foam::TopologicalMeshObject,
         centredFECCellToFaceStencilObject
     >,
     public extendedCentredCellToFaceStencil
@@ -64,7 +64,7 @@ class centredFECCellToFaceStencilObject
         typedef MeshObject
         <
             fvMesh,
-            TopologicalMeshObject,
+            Foam::TopologicalMeshObject,
             centredFECCellToFaceStencilObject
         > MeshObject_type;
 

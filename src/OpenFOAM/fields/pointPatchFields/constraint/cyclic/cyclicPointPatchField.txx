@@ -120,7 +120,7 @@ void Foam::cyclicPointPatchField<Type>::swapAddSeparated
 
         // Get neighbouring pointPatchField
         const auto& fld =
-            refCast<const GeometricField<Type, pointPatchField, pointMesh>>
+            refCast<const GeometricField<Type, Foam::pointPatchField, Foam::pointMesh>>
             (
                 this->internalField()
             );

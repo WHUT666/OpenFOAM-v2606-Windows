@@ -65,14 +65,14 @@ class polyMesh;
 
 class pointConstraints
 :
-    public MeshObject<pointMesh, UpdateableMeshObject, pointConstraints>
+    public MeshObject<pointMesh, Foam::UpdateableMeshObject, pointConstraints>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             pointMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             pointConstraints
         > MeshObject_type;
 

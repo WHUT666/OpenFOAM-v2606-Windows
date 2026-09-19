@@ -62,9 +62,9 @@ SourceFiles
 #define Foam_coordinateRotation_H
 
 #include "autoPtr.H"
-#include "vector.H"
-#include "tensor.H"
-#include "dictionary.H"
+#include <vector.H>
+#include <tensor.H>
+#include <dictionary.H>
 #include "IOobjectOption.H"
 #include "runTimeSelectionTables.H"
 

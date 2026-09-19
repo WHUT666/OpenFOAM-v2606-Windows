@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "fourthGrad.H"
-#include "leastSquaresGrad.H"
+#include <leastSquaresGrad.H>
 #include "gaussGrad.H"
 #include "fvMesh.H"
 #include "volMesh.H"

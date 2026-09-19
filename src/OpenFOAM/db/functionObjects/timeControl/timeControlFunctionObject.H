@@ -60,7 +60,7 @@ SourceFiles
 #define functionObjects_timeControl_H
 
 #include "timeFunctionObject.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "timeControl.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

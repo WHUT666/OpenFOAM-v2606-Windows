@@ -55,7 +55,7 @@ Foam::extrudePatchMesh::extrudePatchMesh
 :
     fvMesh
     (
-        IOobject
+        Foam::IOobject
         (
             regionName,
             mesh.facesInstance(),

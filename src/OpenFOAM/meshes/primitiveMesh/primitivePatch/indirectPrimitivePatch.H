@@ -43,7 +43,7 @@ Description
 #ifndef Foam_indirectPrimitivePatch_H
 #define Foam_indirectPrimitivePatch_H
 
-#include "primitivePatch.H"
+#include <primitivePatch.H>
 #include "IndirectList.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

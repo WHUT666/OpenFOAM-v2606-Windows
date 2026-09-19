@@ -30,10 +30,10 @@ License
 
 // * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
 
-template<class T>
-bool Foam::CompactIOField<T>::readIOcontents(bool readOnProc)
+template<class Type>
+bool Foam::CompactIOField<Type>::readIOcontents(bool readOnProc)
 {
-    typedef IOField<T> plain_type;
+    typedef IOField<Type> plain_type;
 
     if (isReadRequired() || (isReadOptional() && headerOk()))
     {
@@ -71,10 +71,10 @@ bool Foam::CompactIOField<T>::readIOcontents(bool readOnProc)
 }
 
 
-template<class T>
-Foam::label Foam::CompactIOField<T>::readIOsize(bool readOnProc)
+template<class Type>
+Foam::label Foam::CompactIOField<Type>::readIOsize(bool readOnProc)
 {
-    typedef IOField<T> plain_type;
+    typedef IOField<Type> plain_type;
 
     label count(-1);
 
@@ -117,7 +117,7 @@ Foam::label Foam::CompactIOField<T>::readIOsize(bool readOnProc)
                 else if (isHeaderClass<plain_type>())
                 {
                     // Non-compact form: need to read everything
-                    Field<T> list(is);
+                    Field<Type> list(is);
                     count = list.size();
                 }
                 else
@@ -138,13 +138,13 @@ Foam::label Foam::CompactIOField<T>::readIOsize(bool readOnProc)
 }
 
 
-template<class T>
-bool Foam::CompactIOField<T>::overflows() const
+template<class Type>
+bool Foam::CompactIOField<Type>::overflows() const
 {
     // Can safely assume that int64 will not overflow
     if constexpr (sizeof(label) < sizeof(int64_t))
     {
-        const UList<T>& lists = *this;
+        const UList<Type>& lists = *this;
 
         label total = 0;
         for (const auto& sublist : lists)
@@ -163,8 +163,8 @@ bool Foam::CompactIOField<T>::overflows() const
 
 // * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * * //
 
-template<class T>
-Foam::CompactIOField<T>::CompactIOField(const IOobject& io)
+template<class Type>
+Foam::CompactIOField<Type>::CompactIOField(const IOobject& io)
 :
     regIOobject(io)
 {
@@ -172,8 +172,8 @@ Foam::CompactIOField<T>::CompactIOField(const IOobject& io)
 }
 
 
-template<class T>
-Foam::CompactIOField<T>::CompactIOField
+template<class Type>
+Foam::CompactIOField<Type>::CompactIOField
 (
     const IOobject& io,
     const bool readOnProc
@@ -185,8 +185,8 @@ Foam::CompactIOField<T>::CompactIOField
 }
 
 
-template<class T>
-Foam::CompactIOField<T>::CompactIOField
+template<class Type>
+Foam::CompactIOField<Type>::CompactIOField
 (
     const IOobject& io,
     Foam::zero
@@ -198,8 +198,8 @@ Foam::CompactIOField<T>::CompactIOField
 }
 
 
-template<class T>
-Foam::CompactIOField<T>::CompactIOField
+template<class Type>
+Foam::CompactIOField<Type>::CompactIOField
 (
     const IOobject& io,
     const label len
@@ -209,37 +209,37 @@ Foam::CompactIOField<T>::CompactIOField
 {
     if (!readIOcontents())
     {
-        Field<T>::resize(len);
+        Field<Type>::resize(len);
     }
 }
 
 
-template<class T>
-Foam::CompactIOField<T>::CompactIOField
+template<class Type>
+Foam::CompactIOField<Type>::CompactIOField
 (
     const IOobject& io,
-    const UList<T>& content
+    const UList<Type>& content
 )
 :
     regIOobject(io)
 {
     if (!readIOcontents())
     {
-        Field<T>::operator=(content);
+        Field<Type>::operator=(content);
     }
 }
 
 
-template<class T>
-Foam::CompactIOField<T>::CompactIOField
+template<class Type>
+Foam::CompactIOField<Type>::CompactIOField
 (
     const IOobject& io,
-    Field<T>&& content
+    Field<Type>&& content
 )
 :
     regIOobject(io)
 {
-    Field<T>::transfer(content);
+    Field<Type>::transfer(content);
 
     readIOcontents();
 }
@@ -247,8 +247,8 @@ Foam::CompactIOField<T>::CompactIOField
 
 // * * * * * * * * * * * * * Static Member Functions * * * * * * * * * * * * //
 
-template<class T>
-Foam::label Foam::CompactIOField<T>::readContentsSize(const IOobject& io)
+template<class Type>
+Foam::label Foam::CompactIOField<Type>::readContentsSize(const IOobject& io)
 {
     IOobject rio(io, IOobjectOption::NO_REGISTER);
     if (rio.readOpt() == IOobjectOption::READ_MODIFIED)
@@ -260,15 +260,15 @@ Foam::label Foam::CompactIOField<T>::readContentsSize(const IOobject& io)
     // Construct NO_READ, changing after construction
     const auto rOpt = rio.readOpt(IOobjectOption::NO_READ);
 
-    CompactIOField<T> reader(rio);
+    CompactIOField<Type> reader(rio);
     reader.readOpt(rOpt);
 
     return reader.readIOsize();
 }
 
 
-template<class T>
-Foam::Field<T> Foam::CompactIOField<T>::readContents(const IOobject& io)
+template<class Type>
+Foam::Field<Type> Foam::CompactIOField<Type>::readContents(const IOobject& io)
 {
     IOobject rio(io, IOobjectOption::NO_REGISTER);
     if (rio.readOpt() == IOobjectOption::READ_MODIFIED)
@@ -277,16 +277,16 @@ Foam::Field<T> Foam::CompactIOField<T>::readContents(const IOobject& io)
     }
     rio.resetHeader();
 
-    CompactIOField<T> reader(rio);
+    CompactIOField<Type> reader(rio);
 
-    return Field<T>(std::move(static_cast<Field<T>&>(reader)));
+    return Field<Type>(std::move(static_cast<Field<Type>&>(reader)));
 }
 
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
-template<class T>
-bool Foam::CompactIOField<T>::writeObject
+template<class Type>
+bool Foam::CompactIOField<Type>::writeObject
 (
     IOstreamOption streamOpt,
     const bool writeOnProc
@@ -312,7 +312,7 @@ bool Foam::CompactIOField<T>::writeObject
         // Change type to be non-compact format type
         const word oldTypeName(typeName);
 
-        const_cast<word&>(typeName) = IOField<T>::typeName;
+        const_cast<word&>(typeName) = IOField<Type>::typeName;
 
         bool good = regIOobject::writeObject(streamOpt, writeOnProc);
 
@@ -326,8 +326,8 @@ bool Foam::CompactIOField<T>::writeObject
 }
 
 
-template<class T>
-bool Foam::CompactIOField<T>::writeData(Ostream& os) const
+template<class Type>
+bool Foam::CompactIOField<Type>::writeData(Ostream& os) const
 {
     return (os << *this).good();
 }
@@ -335,13 +335,13 @@ bool Foam::CompactIOField<T>::writeData(Ostream& os) const
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-template<class T>
-Foam::Istream& Foam::CompactIOField<T>::readCompact(Istream& is)
+template<class Type>
+Foam::Istream& Foam::CompactIOField<Type>::readCompact(Istream& is)
 {
-    Field<T>& lists = *this;
+    Field<Type>& lists = *this;
 
     // The base type for packed values
-    typedef typename T::value_type base_type;
+    typedef typename Type::value_type base_type;
 
     // Read compact: offsets + packed values
     const labelList offsets(is);
@@ -369,13 +369,13 @@ Foam::Istream& Foam::CompactIOField<T>::readCompact(Istream& is)
 }
 
 
-template<class T>
-Foam::Ostream& Foam::CompactIOField<T>::writeCompact(Ostream& os) const
+template<class Type>
+Foam::Ostream& Foam::CompactIOField<Type>::writeCompact(Ostream& os) const
 {
-    const Field<T>& lists = *this;
+    const Field<Type>& lists = *this;
 
     // The base type for packed values
-    typedef typename T::value_type base_type;
+    typedef typename Type::value_type base_type;
 
     // Convert to compact format
     label total = 0;
@@ -430,28 +430,28 @@ Foam::Ostream& Foam::CompactIOField<T>::writeCompact(Ostream& os) const
 
 // * * * * * * * * * * * * * * * Friend Operators  * * * * * * * * * * * * * //
 
-template<class T>
+template<class Type>
 Foam::Istream& Foam::operator>>
 (
     Foam::Istream& is,
-    Foam::CompactIOField<T>& lists
+    Foam::CompactIOField<Type>& lists
 )
 {
     return lists.readCompact(is);
 }
 
 
-template<class T>
+template<class Type>
 Foam::Ostream& Foam::operator<<
 (
     Foam::Ostream& os,
-    const Foam::CompactIOField<T>& lists
+    const Foam::CompactIOField<Type>& lists
 )
 {
     // Keep ASCII writing same
     if (os.format() != IOstreamOption::BINARY)
     {
-        os << static_cast<const Field<T>&>(lists);
+        os << static_cast<const Field<Type>&>(lists);
     }
     else
     {

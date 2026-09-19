@@ -53,7 +53,7 @@ void Foam::fvMesh::makeSf() const
 
     SfPtr_ = std::make_unique<slicedSurfaceVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "S",
             pointsInstance(),
@@ -90,7 +90,7 @@ void Foam::fvMesh::makeMagSf() const
     // the code from producing Nans.
     magSfPtr_ = std::make_unique<surfaceScalarField>
     (
-        IOobject
+        Foam::IOobject
         (
             "magSf",
             pointsInstance(),
@@ -122,7 +122,7 @@ void Foam::fvMesh::makeC() const
 
     CPtr_ = std::make_unique<slicedVolVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "C",
             pointsInstance(),
@@ -157,7 +157,7 @@ void Foam::fvMesh::makeCf() const
 
     CfPtr_ = std::make_unique<slicedSurfaceVectorField>
     (
-        IOobject
+        Foam::IOobject
         (
             "Cf",
             pointsInstance(),
@@ -185,7 +185,7 @@ const Foam::volScalarField::Internal& Foam::fvMesh::V() const
 
         VPtr_ = std::make_unique<SlicedDimensionedField<scalar, volMesh>>
         (
-            IOobject
+            Foam::IOobject
             (
                 "V",
                 time().timeName(),
@@ -238,7 +238,7 @@ const Foam::volScalarField::Internal& Foam::fvMesh::V00() const
 
         V00Ptr_ = std::make_unique<DimensionedField<scalar, volMesh>>
         (
-            IOobject
+            Foam::IOobject
             (
                 "V00",
                 time().timeName(),
@@ -330,7 +330,7 @@ Foam::tmp<Foam::surfaceVectorField> Foam::fvMesh::unitSf() const
 {
     auto tunitVectors = tmp<surfaceVectorField>::New
     (
-        IOobject
+        Foam::IOobject
         (
             "unit(Sf)",
             pointsInstance(),
@@ -378,7 +378,7 @@ Foam::tmp<Foam::surfaceVectorField> Foam::fvMesh::delta() const
 
     auto tdelta = tmp<surfaceVectorField>::New
     (
-        IOobject
+        Foam::IOobject
         (
             "delta",
             pointsInstance(),

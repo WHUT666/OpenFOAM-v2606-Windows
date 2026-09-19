@@ -67,6 +67,8 @@ SourceFiles
 
 #include "injectionModel.H"
 #include "filmSubModelBase.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

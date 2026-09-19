@@ -48,7 +48,7 @@ Foam::solver::solver
 :
     localIOdictionary
     (
-        IOobject
+        Foam::IOobject
         (
             solverName,
             mesh.time().timeName(),

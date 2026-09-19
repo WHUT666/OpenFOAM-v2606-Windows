@@ -44,10 +44,10 @@ SourceFiles
 #ifndef Foam_symmTensor_H
 #define Foam_symmTensor_H
 
-#include "SymmTensor.H"
-#include "vector.H"
-#include "sphericalTensor.H"
-#include "tensor.H"
+#include <SymmTensor_tpl.H>
+#include <vector.H>
+#include <sphericalTensor.H>
+#include <tensor.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

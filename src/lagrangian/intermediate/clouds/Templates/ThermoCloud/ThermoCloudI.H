@@ -239,7 +239,7 @@ template<class CloudType>
 inline Foam::tmp<Foam::fvScalarMatrix>
 Foam::ThermoCloud<CloudType>::Sh(volScalarField& hs) const
 {
-    DebugInfo
+    if (thermoCloud::debug) ::Foam::Info
         << "hsTrans min/max = " << min(hsTrans()).value() << ", "
         << max(hsTrans()).value() << nl
         << "hsCoeff min/max = " << min(hsCoeff()).value() << ", "

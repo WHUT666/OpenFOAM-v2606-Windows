@@ -612,7 +612,7 @@ Foam::faMesh::faMesh
     edgeInterpolation(*this),
     faceLabels_
     (
-        IOobject
+        Foam::IOobject
         (
             "faceLabels",
             time().findInstance(meshDir(), "faceLabels"),
@@ -624,7 +624,7 @@ Foam::faMesh::faMesh
     ),
     boundary_
     (
-        IOobject
+        Foam::IOobject
         (
             "faBoundary",
             // Allow boundary file that is newer than faceLabels
@@ -706,7 +706,7 @@ Foam::faMesh::faMesh
     edgeInterpolation(*this),
     faceLabels_
     (
-        IOobject
+        Foam::IOobject
         (
             "faceLabels",
             pMesh.facesInstance(),
@@ -719,7 +719,7 @@ Foam::faMesh::faMesh
     ),
     boundary_
     (
-        IOobject
+        Foam::IOobject
         (
             "faBoundary",
             faceLabels_.instance(),
@@ -766,7 +766,7 @@ Foam::faMesh::faMesh
     edgeInterpolation(*this),
     faceLabels_
     (
-        IOobject
+        Foam::IOobject
         (
             "faceLabels",
             pMesh.facesInstance(),
@@ -779,7 +779,7 @@ Foam::faMesh::faMesh
     ),
     boundary_
     (
-        IOobject
+        Foam::IOobject
         (
             "faBoundary",
             faceLabels_.instance(),
@@ -831,7 +831,7 @@ Foam::faMesh::faMesh
     edgeInterpolation(*this),
     faceLabels_
     (
-        IOobject
+        Foam::IOobject
         (
             "faceLabels",
             // Topological instance from polyMesh
@@ -845,7 +845,7 @@ Foam::faMesh::faMesh
     ),
     boundary_
     (
-        IOobject
+        Foam::IOobject
         (
             "faBoundary",
             faceLabels_.instance(),
@@ -1165,7 +1165,7 @@ Foam::faMesh::S00() const
     {
         S00Ptr_ = std::make_unique<DimensionedField<scalar, areaMesh>>
         (
-            IOobject
+            Foam::IOobject
             (
                 "S00",
                 time().timeName(),
@@ -1299,7 +1299,7 @@ bool Foam::faMesh::movePoints()
 
             S0Ptr_ = std::make_unique<DimensionedField<scalar, areaMesh>>
             (
-                IOobject
+                Foam::IOobject
                 (
                     "S0",
                     time().timeName(),

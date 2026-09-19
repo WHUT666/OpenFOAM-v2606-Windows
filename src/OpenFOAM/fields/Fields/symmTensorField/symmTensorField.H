@@ -40,9 +40,9 @@ SourceFiles
 
 #include "scalarField.H"
 #include "vectorField.H"
-#include "sphericalTensor.H"
-#include "symmTensor.H"
-#include "tensor.H"
+#include <sphericalTensor.H>
+#include <symmTensor.H>
+#include <tensor.H>
 
 #define TEMPLATE
 #include "FieldFunctionsM.H"

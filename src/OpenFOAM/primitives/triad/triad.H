@@ -43,8 +43,8 @@ SourceFiles
 #ifndef Foam_triad_H
 #define Foam_triad_H
 
-#include "vector.H"
-#include "tensor.H"
+#include <vector.H>
+#include <tensor.H>
 #include "contiguous.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

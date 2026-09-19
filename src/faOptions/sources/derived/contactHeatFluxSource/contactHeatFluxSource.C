@@ -29,6 +29,7 @@ License
 #include "faMatrices.H"
 #include "addToRunTimeSelectionTable.H"
 #include "volFields.H"
+#include "surfaceFields.H"
 #include "famSup.H"
 
 // * * * * * * * * * * * * * Static Member Functions * * * * * * * * * * * * //

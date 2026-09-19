@@ -152,7 +152,7 @@ void Foam::adjointNull::accumulateGradDxDbMultiplier
     (
         tmp<volTensorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "flowTerm",
                 mesh_.time().timeName(),

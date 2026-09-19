@@ -28,7 +28,7 @@ License
 
 #include "transformField.H"
 #include "FieldM.H"
-#include "diagTensor.H"
+#include <diagTensor.H>
 
 // * * * * * * * * * * * * * * * global functions  * * * * * * * * * * * * * //
 

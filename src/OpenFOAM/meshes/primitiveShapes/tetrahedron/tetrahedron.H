@@ -50,7 +50,7 @@ SourceFiles
 #include "UList.H"
 #include "triangle.H"
 #include "treeBoundBox.H"
-#include "barycentric.H"
+#include <barycentric.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

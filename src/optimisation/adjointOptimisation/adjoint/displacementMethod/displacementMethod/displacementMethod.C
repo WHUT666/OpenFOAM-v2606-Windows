@@ -65,7 +65,7 @@ Foam::autoPtr<Foam::displacementMethod> Foam::displacementMethod::New
     // type as the motion solver, construct it based on its name
     IOdictionary dynamicMeshDict
     (
-        IOobject
+        Foam::IOobject
         (
             "dynamicMeshDict",
             mesh.time().constant(),

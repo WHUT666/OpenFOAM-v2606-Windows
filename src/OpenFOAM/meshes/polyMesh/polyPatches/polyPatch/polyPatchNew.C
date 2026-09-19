@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "polyPatch.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 

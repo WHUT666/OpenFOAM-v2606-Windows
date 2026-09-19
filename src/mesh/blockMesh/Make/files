@@ -7,7 +7,7 @@ blockEdges/bezier/bezier.C
 blockEdges/blockEdge/blockEdge.C
 blockEdges/lineDivide/lineDivide.C
 blockEdges/lineEdge/lineEdge.C
-blockEdges/polyLineEdge/polyLine.C
+blockEdges/polyLineEdge/polyLine_tpl.C
 blockEdges/polyLineEdge/polyLineEdge.C
 blockEdges/arcEdge/arcEdge.C
 blockEdges/BSplineEdge/BSpline.C

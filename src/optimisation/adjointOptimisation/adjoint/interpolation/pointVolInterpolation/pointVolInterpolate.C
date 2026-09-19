@@ -102,7 +102,7 @@ Foam::pointVolInterpolation::interpolate
     (
         new GeometricField<Type, fvPatchField, volMesh>
         (
-            IOobject
+            Foam::IOobject
             (
                 "pointVolInterpolate(" + pf.name() + ')',
                 pf.instance(),

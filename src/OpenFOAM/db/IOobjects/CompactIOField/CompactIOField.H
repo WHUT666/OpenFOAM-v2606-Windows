@@ -28,7 +28,7 @@ Class
     Foam::CompactIOField
 
 Description
-    A Field of objects of type \<T\> with automated input and output using
+    A Field of objects of type \<Type\> with automated input and output using
     a compact storage. Behaves like IOField except when binary output in
     case it writes a CompactListList.
 
@@ -50,20 +50,20 @@ namespace Foam
 {
 
 // Forward Declarations
-template<class T> class CompactIOField;
+template<class Type> class CompactIOField;
 
-template<class T> Istream& operator>>(Istream&, CompactIOField<T>&);
-template<class T> Ostream& operator<<(Ostream&, const CompactIOField<T>&);
+template<class Type> Istream& operator>>(Istream&, CompactIOField<Type>&);
+template<class Type> Ostream& operator<<(Ostream&, const CompactIOField<Type>&);
 
 /*---------------------------------------------------------------------------*\
                         Class CompactIOField Declaration
 \*---------------------------------------------------------------------------*/
 
-template<class T>
+template<class Type>
 class CompactIOField
 :
     public regIOobject,
-    public Field<T>
+    public Field<Type>
 {
     // Private Member Functions
 
@@ -82,7 +82,7 @@ class CompactIOField
 public:
 
     //- The underlying content type
-    typedef Field<T> content_type;
+    typedef Field<Type> content_type;
 
     //- Runtime type information
     TypeName("FieldField");
@@ -106,10 +106,10 @@ public:
         CompactIOField(const IOobject& io, const label len);
 
         //- Construct from IOobject and a List/Field content
-        CompactIOField(const IOobject& io, const UList<T>& content);
+        CompactIOField(const IOobject& io, const UList<Type>& content);
 
         //- Construct by transferring the Field contents
-        CompactIOField(const IOobject& io, Field<T>&& content);
+        CompactIOField(const IOobject& io, Field<Type>&& content);
 
 
     // Factory Methods
@@ -119,7 +119,7 @@ public:
         static label readContentsSize(const IOobject& io);
 
         //- Read and return contents. The IOobject is never registered
-        static Field<T> readContents(const IOobject& io);
+        static Field<Type> readContents(const IOobject& io);
 
 
     //- Destructor
@@ -148,18 +148,18 @@ public:
     // Member Operators
 
         //- Copy or move assignment of entries
-        using Field<T>::operator=;
+        using Field<Type>::operator=;
 
         //- Copy assignment of entries
-        void operator=(const CompactIOField<T>& rhs)
+        void operator=(const CompactIOField<Type>& rhs)
         {
-            Field<T>::operator=(rhs);
+            Field<Type>::operator=(rhs);
         }
 
         //- Move assignment of entries
-        void operator=(CompactIOField<T>&& rhs)
+        void operator=(CompactIOField<Type>&& rhs)
         {
-            Field<T>::operator=(std::move(static_cast<Field<T>&>(rhs)));
+            Field<Type>::operator=(std::move(static_cast<Field<Type>&>(rhs)));
         }
 };
 

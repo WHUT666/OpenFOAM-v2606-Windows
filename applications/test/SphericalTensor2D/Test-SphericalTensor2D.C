@@ -39,9 +39,9 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "complex.H"
-#include "Tensor2D.H"
-#include "SymmTensor2D.H"
-#include "SphericalTensor2D.H"
+#include "Tensor2D_tpl.H"
+#include "SymmTensor2D_tpl.H"
+#include "SphericalTensor2D_tpl.H"
 
 using namespace Foam;
 

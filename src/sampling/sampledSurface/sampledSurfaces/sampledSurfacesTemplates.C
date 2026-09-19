@@ -75,7 +75,15 @@ void Foam::sampledSurfaces::storeRegistryField
 }
 
 
-template<class Type>
+template
+<
+    class Type,
+    typename std::enable_if
+    <
+        std::is_arithmetic<Type>::value || Foam::is_vectorspace<Type>::value,
+        int
+    >::type
+>
 void Foam::sampledSurfaces::performAction
 (
     const VolumeField<Type>& fld,
@@ -154,7 +162,15 @@ void Foam::sampledSurfaces::performAction
 }
 
 
-template<class Type>
+template
+<
+    class Type,
+    typename std::enable_if
+    <
+        std::is_arithmetic<Type>::value || Foam::is_vectorspace<Type>::value,
+        int
+    >::type
+>
 void Foam::sampledSurfaces::performAction
 (
     const SurfaceField<Type>& fld,

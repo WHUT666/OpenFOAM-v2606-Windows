@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "geometricSurfacePatch.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

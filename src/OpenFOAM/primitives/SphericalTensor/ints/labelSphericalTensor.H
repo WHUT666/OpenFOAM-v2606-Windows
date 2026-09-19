@@ -41,7 +41,7 @@ SourceFiles
 #ifndef Foam_labelSphericalTensor_H
 #define Foam_labelSphericalTensor_H
 
-#include "SphericalTensor.H"
+#include <SphericalTensor_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

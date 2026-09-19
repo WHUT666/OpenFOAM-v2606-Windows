@@ -38,7 +38,7 @@ SourceFiles
 #ifndef DPMIncompressibleTurbulenceModel_H
 #define DPMIncompressibleTurbulenceModel_H
 
-#include "TurbulenceModel.H"
+#include "TurbulenceModel_tpl.H"
 #include "incompressibleTurbulenceModel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

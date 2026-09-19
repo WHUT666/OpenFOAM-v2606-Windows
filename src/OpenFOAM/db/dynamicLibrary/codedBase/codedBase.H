@@ -47,7 +47,7 @@ SourceFiles
 #ifndef Foam_codedBase_H
 #define Foam_codedBase_H
 
-#include "dictionary.H"
+#include <dictionary.H>
 #include "dynamicCodeContext.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

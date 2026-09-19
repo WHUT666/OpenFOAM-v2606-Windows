@@ -40,12 +40,12 @@ SourceFiles
 
 #include "fileName.H"
 #include "wordList.H"
-#include "vector.H"
-#include "tensor.H"
+#include <vector.H>
+#include <tensor.H>
 #include "typeInfo.H"
 #include "runTimeSelectionTables.H"
 #include "autoPtr.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "Tuple2.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

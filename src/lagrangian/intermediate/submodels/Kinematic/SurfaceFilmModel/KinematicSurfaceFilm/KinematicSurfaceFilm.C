@@ -388,7 +388,7 @@ void Foam::KinematicSurfaceFilm<CloudType>::splashInteraction
     forAll(dNew, i)
     {
         const scalar y = rndGen_.sample01<scalar>();
-        dNew[i] = -dBarSplash*log(exp(-dMin/dBarSplash) - y*K);
+        dNew[i] = -dBarSplash*Foam::log(exp(-dMin/dBarSplash) - y*K);
         npNew[i] = mRatio*np*pow3(d)/pow3(dNew[i])/parcelsPerSplash_;
         ESigmaSec += npNew[i]*sigma*p.areaS(dNew[i]);
     }
@@ -414,14 +414,14 @@ void Foam::KinematicSurfaceFilm<CloudType>::splashInteraction
     }
 
     // Helper variables to calculate magUns0
-    const scalar logD = log(d);
-    const scalar coeff2 = log(dNew[0]) - logD + ROOTVSMALL;
+    const scalar logD = Foam::log(d);
+    const scalar coeff2 = Foam::log(dNew[0]) - logD + ROOTVSMALL;
     scalar coeff1 = 0.0;
 
     // Note: loop from i = 1 to (p-1)
     for (int i = 1; i < parcelsPerSplash_; ++i)
     {
-        coeff1 += sqr(log(dNew[i]) - logD);
+        coeff1 += sqr(Foam::log(dNew[i]) - logD);
     }
 
     // Magnitude of the normal velocity of the first splashed parcel
@@ -452,7 +452,7 @@ void Foam::KinematicSurfaceFilm<CloudType>::splashInteraction
 
         pPtr->d() = dNew[i];
 
-        pPtr->U() = dirVec*(mag(Cf_*Ut) + magUns0*(log(dNew[i]) - logD)/coeff2);
+        pPtr->U() = dirVec*(mag(Cf_*Ut) + magUns0*(Foam::log(dNew[i]) - logD)/coeff2);
 
         // Apply correction to velocity for 2-D cases
         meshTools::constrainDirection(mesh, mesh.solutionD(), pPtr->U());

@@ -41,7 +41,7 @@ SourceFiles
 #ifndef demandDrivenEntry_H
 #define demandDrivenEntry_H
 
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -85,7 +85,7 @@ Foam::scalar Foam::IsotropyModels::Stochastic<CloudType>::sampleGauss()
             m = x*x + y*y;
         } while (m >= 1.0 || m == 0.0);
 
-        f = sqrt(-2.0*log(m)/m);
+        f = sqrt(-2.0*Foam::log(m)/m);
         xCached = x*f;
         isCached = true;
 

@@ -113,9 +113,9 @@ SourceFiles
 #ifndef Foam_coordinateSystem_H
 #define Foam_coordinateSystem_H
 
-#include "vector.H"
+#include <vector.H>
 #include "point.H"
-#include "tensor.H"
+#include <tensor.H>
 #include "vectorField.H"
 #include "pointField.H"
 #include "tensorField.H"

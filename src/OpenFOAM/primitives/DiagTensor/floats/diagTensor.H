@@ -41,7 +41,7 @@ SourceFiles
 #ifndef Foam_diagTensor_H
 #define Foam_diagTensor_H
 
-#include "DiagTensor.H"
+#include <DiagTensor_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

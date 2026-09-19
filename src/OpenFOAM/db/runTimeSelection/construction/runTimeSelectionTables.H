@@ -201,9 +201,10 @@ Description
             return ptrWrapper<baseType>(new baseType##Type parList);           \
         }                                                                      \
                                                                                \
+        template<class baseType##Type##Default_ = baseType##Type>  \
         explicit add##argNames##ConstructorToTable                             \
         (                                                                      \
-            const ::Foam::word& k = baseType##Type::typeName                   \
+            const ::Foam::word& k = baseType##Type##Default_::typeName                   \
         )                                                                      \
         {                                                                      \
             argNames##ConstructorTablePtr_construct(true);                     \
@@ -240,9 +241,10 @@ Description
             return ptrWrapper<baseType>(new baseType##Type parList);           \
         }                                                                      \
                                                                                \
+        template<class baseType##Type##Default_ = baseType##Type>  \
         explicit addRemovable##argNames##ConstructorToTable                    \
         (                                                                      \
-            const ::Foam::word& k = baseType##Type::typeName                   \
+            const ::Foam::word& k = baseType##Type##Default_::typeName                   \
         )                                                                      \
         :                                                                      \
             name(k)                                                            \
@@ -299,9 +301,10 @@ Description
             return ptrWrapper<baseType>(baseType##Type::New parList.ptr());    \
         }                                                                      \
                                                                                \
+        template<class baseType##Type##Default_ = baseType##Type>  \
         explicit add##argNames##ConstructorToTable                             \
         (                                                                      \
-            const ::Foam::word& k = baseType##Type::typeName                   \
+            const ::Foam::word& k = baseType##Type##Default_::typeName                   \
         )                                                                      \
         {                                                                      \
             argNames##ConstructorTablePtr_construct(true);                     \
@@ -337,9 +340,10 @@ Description
             return ptrWrapper<baseType>(baseType##Type::New parList.ptr());    \
         }                                                                      \
                                                                                \
+        template<class baseType##Type##Default_ = baseType##Type>  \
         explicit addRemovable##argNames##ConstructorToTable                    \
         (                                                                      \
-            const ::Foam::word& k = baseType##Type::typeName                   \
+            const ::Foam::word& k = baseType##Type##Default_::typeName                   \
         )                                                                      \
         :                                                                      \
             name(k)                                                            \

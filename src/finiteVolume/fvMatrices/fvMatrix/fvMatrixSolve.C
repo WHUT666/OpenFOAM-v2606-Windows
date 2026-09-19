@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "LduMatrix.H"
+#include "LduMatrix_tpl.H"
 #include "diagTensorField.H"
 #include "profiling.H"
 #include "PrecisionAdaptor.H"

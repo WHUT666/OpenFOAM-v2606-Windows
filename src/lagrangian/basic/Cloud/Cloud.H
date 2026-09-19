@@ -39,7 +39,7 @@ SourceFiles
 #ifndef Foam_Cloud_H
 #define Foam_Cloud_H
 
-#include "cloud.H"
+#include <cloud.H>
 #include "IDLList.H"
 #include "IOField.H"
 #include "CompactIOField.H"

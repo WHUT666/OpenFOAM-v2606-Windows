@@ -56,7 +56,7 @@ Foam::blockVertices::pointVertex::pointVertex
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
-Foam::blockVertices::pointVertex::operator point() const
+Foam::blockVertices::pointVertex::operator Foam::point() const
 {
     return vertex_;
 }

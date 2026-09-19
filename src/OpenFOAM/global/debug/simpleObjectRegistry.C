@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "simpleObjectRegistry.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "ITstream.H"
 #include "SpanStream.H"
 #include "StringStream.H"

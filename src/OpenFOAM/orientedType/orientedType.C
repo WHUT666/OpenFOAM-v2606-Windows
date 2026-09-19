@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "orientedType.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "Istream.H"
 #include "Ostream.H"
 

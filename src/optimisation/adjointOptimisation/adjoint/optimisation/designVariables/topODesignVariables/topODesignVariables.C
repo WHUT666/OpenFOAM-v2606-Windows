@@ -355,7 +355,7 @@ void Foam::topODesignVariables::interpolate
 (
     volScalarField& field,
     const topOInterpolationFunction& interpolationFunc,
-    const FieldField<Field, scalar>& fluidValues,
+    const FieldField<Foam::Field, scalar>& fluidValues,
     const scalarField& solidValues,
     const label fieldi,
     const word& interpolationFieldName
@@ -376,7 +376,7 @@ void Foam::topODesignVariables::interpolationSensitivities
 (
     scalarField& sens,
     const topOInterpolationFunction& interpolationFunc,
-    const FieldField<Field, scalar>& fluidValues,
+    const FieldField<Foam::Field, scalar>& fluidValues,
     const scalarField& solidValues,
     const label fieldi,
     const word& designVariablesName,
@@ -493,7 +493,7 @@ Foam::tmp<Foam::scalarField> Foam::topODesignVariables::assembleSensitivities
     {
         volScalarField sens
         (
-            IOobject
+            Foam::IOobject
             (
                 "topOSens" + adjointSens.getAdjointSolver().solverName(),
                 mesh_.time().timeName(),
@@ -551,7 +551,7 @@ void Foam::topODesignVariables::writeDesignVars()
     {
         volScalarField alpha
         (
-            IOobject
+            Foam::IOobject
             (
                 "alpha",
                 mesh_.time().timeName(),

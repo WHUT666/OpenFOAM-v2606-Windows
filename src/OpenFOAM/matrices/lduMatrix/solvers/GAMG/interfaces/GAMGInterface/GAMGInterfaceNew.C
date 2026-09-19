@@ -28,7 +28,7 @@ License
 
 #include "GAMGInterface.H"
 #include "GAMGAgglomeration.H"
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 
 // * * * * * * * * * * * * * * * * Selectors * * * * * * * * * * * * * * * * //

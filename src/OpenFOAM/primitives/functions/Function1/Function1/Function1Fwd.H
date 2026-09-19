@@ -29,10 +29,10 @@ License
 #define Foam_Function1Fwd_H
 
 #include "Function1.H"
-#include "vector.H"
-#include "symmTensor.H"
-#include "sphericalTensor.H"
-#include "tensor.H"
+#include <vector.H>
+#include <symmTensor.H>
+#include <sphericalTensor.H>
+#include <tensor.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

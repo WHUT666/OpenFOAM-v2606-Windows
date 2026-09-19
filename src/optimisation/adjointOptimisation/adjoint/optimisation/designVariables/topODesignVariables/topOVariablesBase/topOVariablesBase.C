@@ -436,7 +436,7 @@ Foam::topOVariablesBase::topOVariablesBase
 :
     localIOdictionary
     (
-        IOobject
+        Foam::IOobject
         (
             "topOVars",
             mesh.time().timeName(),

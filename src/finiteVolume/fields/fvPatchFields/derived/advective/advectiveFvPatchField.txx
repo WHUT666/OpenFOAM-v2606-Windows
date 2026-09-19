@@ -169,9 +169,9 @@ void Foam::advectiveFvPatchField<Type>::updateCoeffs()
     );
     scalar deltaT = this->db().time().deltaTValue();
 
-    const GeometricField<Type, fvPatchField, volMesh>& field =
+    const GeometricField<Type, Foam::fvPatchField, volMesh>& field =
         this->db().objectRegistry::template
-        lookupObject<GeometricField<Type, fvPatchField, volMesh>>
+        lookupObject<GeometricField<Type, Foam::fvPatchField, volMesh>>
         (
             this->internalField().name()
         );

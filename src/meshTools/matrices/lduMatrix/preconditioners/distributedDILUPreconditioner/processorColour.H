@@ -55,7 +55,7 @@ class lduMatrix;
 
 class processorColour
 :
-    public MeshObject<lduMesh, MoveableMeshObject, processorColour>,
+    public MeshObject<lduMesh, Foam::MoveableMeshObject, processorColour>,
     public labelList
 {
     // Private Typedefs
@@ -63,7 +63,7 @@ class processorColour
         typedef MeshObject
         <
             lduMesh,
-            MoveableMeshObject,
+            Foam::MoveableMeshObject,
             processorColour
         > MeshObject_type;
 

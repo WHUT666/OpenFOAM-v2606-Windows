@@ -38,7 +38,7 @@ SourceFiles
 #define Foam_dimensionedSymmTensor_H
 
 #include "dimensionedVector.H"
-#include "symmTensor.H"
+#include <symmTensor.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

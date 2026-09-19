@@ -68,7 +68,7 @@ ATCModel::ATCModel
 :
     regIOobject
     (
-        IOobject
+        Foam::IOobject
         (
             "ATCModel" + adjointVars.solverName(),
             mesh.time().timeName(),
@@ -92,7 +92,7 @@ ATCModel::ATCModel
     zeroATCcells_(zeroATCcells::New(mesh, dict_)),
     ATClimiter_
     (
-        IOobject
+        Foam::IOobject
         (
             "ATClimiter" + adjointSolverName_,
             mesh_.time().timeName(),
@@ -107,7 +107,7 @@ ATCModel::ATCModel
     ),
     ATC_
     (
-        IOobject
+        Foam::IOobject
         (
             "ATCField" + adjointSolverName_,
             mesh_.time().timeName(),

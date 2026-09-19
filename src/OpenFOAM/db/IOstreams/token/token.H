@@ -333,7 +333,7 @@ public:
 
                 if constexpr (pTraits_has_zero<valueType>::value)
                 {
-                    T::operator=(pTraits<valueType>::zero);
+                    T::operator=(Foam::zero{});
                 }
                 else
                 {
@@ -1066,6 +1066,14 @@ Ostream& operator<<(Ostream& os, const InfoProxy<token>& ip);
 #define addNamedCompoundToRunTimeSelectionTable(Type, Tag, Name)               \
     token::compound::addemptyConstructorToTable<token::Compound<Type>>         \
         add##Tag##emptyConstructorToTable_(#Name);
+
+
+//- Generic definition of Compound<T>::typeName.
+//  GCC/Clang emit a tentative definition on odr-use (eg, via type());
+//  MSVC requires an explicit definition.
+//  Explicit specializations (defineCompoundTypeName etc.) take precedence.
+template<class T>
+const word token::Compound<T>::typeName;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

@@ -47,7 +47,7 @@ Description
 #ifndef Foam_primitivePatch_H
 #define Foam_primitivePatch_H
 
-#include "PrimitivePatch.H"
+#include <PrimitivePatch_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

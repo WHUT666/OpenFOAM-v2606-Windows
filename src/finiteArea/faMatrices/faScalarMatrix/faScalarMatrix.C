@@ -126,7 +126,9 @@ Foam::tmp<Foam::scalarField> Foam::faMatrix<Foam::scalar>::residual() const
     ConstPrecisionAdaptor<scalar, solveScalar> tres_s(tres);
     addBoundarySource(tres_s.ref());
 
-    return tres_s;
+    return tres_s.is_pointer()
+        ? tmp<scalarField>(tres_s.ptr())
+        : tmp<scalarField>(tres_s.cref());
 }
 
 

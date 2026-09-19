@@ -73,6 +73,8 @@ SourceFiles
 #include "injectionModelList.H"
 #include "faCFD.H"
 #include "forceList.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

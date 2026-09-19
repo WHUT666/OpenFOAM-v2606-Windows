@@ -41,7 +41,7 @@ SourceFiles
 #ifndef GaussSeidelSmoother_H
 #define GaussSeidelSmoother_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

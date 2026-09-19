@@ -50,7 +50,7 @@ SourceFiles
 
 #include "autoPtr.H"
 #include "globalIndex.H"
-#include "primitivePatch.H"
+#include <primitivePatch.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

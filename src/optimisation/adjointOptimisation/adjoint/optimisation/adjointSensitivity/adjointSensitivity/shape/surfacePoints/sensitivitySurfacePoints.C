@@ -231,7 +231,7 @@ void sensitivitySurfacePoints::constructGlobalPointNormalsAndAreas
     {
         pointScalarField MagSf
         (
-            IOobject
+            Foam::IOobject
             (
                 "pointMagSf",
                 mesh_.time().timeName(),
@@ -244,7 +244,7 @@ void sensitivitySurfacePoints::constructGlobalPointNormalsAndAreas
         );
         pointVectorField Nf
         (
-            IOobject
+            Foam::IOobject
             (
                 "pointNf",
                 mesh_.time().timeName(),
@@ -503,7 +503,7 @@ void sensitivitySurfacePoints::write(const word& baseName)
     {
         volVectorField nfOnPatch
         (
-            IOobject
+            Foam::IOobject
             (
                 "nfOnPatch",
                 mesh_.time().timeName(),
@@ -517,7 +517,7 @@ void sensitivitySurfacePoints::write(const word& baseName)
 
         volVectorField SfOnPatch
         (
-            IOobject
+            Foam::IOobject
             (
                 "SfOnPatch",
                 mesh_.time().timeName(),
@@ -531,7 +531,7 @@ void sensitivitySurfacePoints::write(const word& baseName)
 
         volVectorField CfOnPatch
         (
-            IOobject
+            Foam::IOobject
             (
                 "CfOnPatch",
                 mesh_.time().timeName(),

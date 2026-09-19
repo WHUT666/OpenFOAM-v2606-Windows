@@ -42,7 +42,7 @@ Description
 #include "fvCFD.H"
 #include "turbulentFluidThermoModel.H"
 #include "rhoReactionThermo.H"
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 #include "fixedGradientFvPatchFields.H"
 #include "regionProperties.H"
 #include "compressibleCourantNo.H"

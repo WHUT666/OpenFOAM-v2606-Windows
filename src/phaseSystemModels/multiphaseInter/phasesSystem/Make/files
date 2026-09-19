@@ -12,7 +12,7 @@ multiphaseSystem/multiphaseSystemNew.C
 multiphaseSystem/multiphaseSystems.C
 
 interfaceCompositionModel/interfaceCompositionModel.C
-InterfaceCompositionModel/InterfaceCompositionModels.C
+InterfaceCompositionModel_tpl/InterfaceCompositionModels.C
 
 porous = interfaceModels/porousModels
 $(porous)/porousModel/porousModel.C

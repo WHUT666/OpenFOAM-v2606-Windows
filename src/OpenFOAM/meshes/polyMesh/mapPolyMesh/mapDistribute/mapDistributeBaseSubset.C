@@ -73,9 +73,10 @@ static label calcElementMasks
     // Index after flipping
     const auto unflippedIndex =
     (
-        hasFlip
-      ? [](label idx) -> label { return mag(idx)-1; }
-      : [](label idx) -> label { return idx; }
+        [hasFlip](label idx) -> label
+        {
+            return hasFlip ? mag(idx)-1 : idx;
+        }
     );
 
 
@@ -681,17 +682,19 @@ void Foam::mapDistributeBase::compactData
     // Linear address (subMap) after any flipping
     const auto unflippedSendIndex =
     (
-        subHasFlip_
-      ? [](label idx) -> label { return mag(idx)-1; }
-      : [](label idx) -> label { return idx; }
+        [this](label idx) -> label
+        {
+            return subHasFlip_ ? mag(idx)-1 : idx;
+        }
     );
 
     // Linear address (constructMap) after any flipping
     const auto unflippedRecvIndex =
     (
-        constructHasFlip_
-      ? [](label idx) -> label { return mag(idx)-1; }
-      : [](label idx) -> label { return idx; }
+        [this](label idx) -> label
+        {
+            return constructHasFlip_ ? mag(idx)-1 : idx;
+        }
     );
 
 

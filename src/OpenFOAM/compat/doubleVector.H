@@ -3,7 +3,7 @@
 #ifndef FoamCompat_doubleVector_H
 #define FoamCompat_doubleVector_H
 
-#include "vector.H"
+#include <vector.H>
 
 #endif
 

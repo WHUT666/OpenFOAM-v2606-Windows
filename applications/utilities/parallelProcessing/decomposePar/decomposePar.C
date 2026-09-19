@@ -191,7 +191,7 @@ const labelIOList& procAddressing
     return procAddressingList.try_emplace
     (
         proci,
-        IOobject
+        Foam::IOobject
         (
             name,
             procMesh.facesInstance(),
@@ -227,7 +227,7 @@ const labelIOList& procAddressing
     return procAddressingList.try_emplace
     (
         proci,
-        IOobject
+        Foam::IOobject
         (
             name,
             procMesh.facesInstance(),
@@ -290,7 +290,7 @@ void decomposeUniform
         // e.g. processors4/0.01
         const fileName timePath = fileHandler().objectPath
         (
-            IOobject
+            Foam::IOobject
             (
                 "dummy",
                 runTime.timeName(),
@@ -566,7 +566,7 @@ int main(int argc, char *argv[])
 
             domainDecompositionDryRun decompTest
             (
-                IOobject
+                Foam::IOobject
                 (
                     regionName,
                     runTime.timeName(),
@@ -603,7 +603,7 @@ int main(int argc, char *argv[])
             (
                 IOobject::selectIO
                 (
-                    IOobject
+                    Foam::IOobject
                     (
                         decompositionModel::canonicalName,
                         runTime.time().system(),
@@ -714,7 +714,7 @@ int main(int argc, char *argv[])
         Info<< "Create mesh" << endl;
         domainDecomposition mesh
         (
-            IOobject
+            Foam::IOobject
             (
                 regionName,
                 runTime.timeName(),
@@ -868,7 +868,7 @@ int main(int argc, char *argv[])
                     (
                         fileHandler().objectPath
                         (
-                            IOobject
+                            Foam::IOobject
                             (
                                 word::null, // name
                                 "0",        // instance (time == 0)
@@ -1267,7 +1267,7 @@ int main(int argc, char *argv[])
                     const auto& procMesh = procMeshList.try_emplace
                     (
                         proci,
-                        IOobject
+                        Foam::IOobject
                         (
                             regionName,
                             processorDb.timeName(),
@@ -1352,7 +1352,7 @@ int main(int argc, char *argv[])
                                 proci,
                                 autoPtr<labelIOList>::New
                                 (
-                                    IOobject
+                                    Foam::IOobject
                                     (
                                         "boundaryProcAddressing",
                                         procMesh.facesInstance(),

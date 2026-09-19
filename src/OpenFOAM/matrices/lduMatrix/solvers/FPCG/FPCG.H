@@ -46,7 +46,7 @@ SourceFiles
 #ifndef Foam_FPCG_H
 #define Foam_FPCG_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

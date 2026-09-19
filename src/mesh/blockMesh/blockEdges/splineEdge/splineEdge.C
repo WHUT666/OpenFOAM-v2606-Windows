@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "splineEdge.H"
-#include "polyLine.H"
+#include "polyLine_tpl.H"
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

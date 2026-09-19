@@ -41,7 +41,7 @@ SourceFiles
 #ifndef Foam_vectorTensorTransform_H
 #define Foam_vectorTensorTransform_H
 
-#include "tensor.H"
+#include <tensor.H>
 #include "word.H"
 #include "contiguous.H"
 #include "pointField.H"

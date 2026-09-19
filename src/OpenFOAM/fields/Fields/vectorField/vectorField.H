@@ -39,7 +39,7 @@ SourceFiles
 #define Foam_vectorField_H
 
 #include "scalarField.H"
-#include "vector.H"
+#include <vector.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

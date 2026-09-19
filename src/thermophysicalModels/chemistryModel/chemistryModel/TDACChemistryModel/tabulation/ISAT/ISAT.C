@@ -62,7 +62,7 @@ Foam::chemistryTabulationMethods::ISAT<CompType, ThermoType>::ISAT
         (
             "maxDepthFactor",
             (chemisTree_.maxNLeafs() - 1)
-           /(log(scalar(chemisTree_.maxNLeafs()))/log(2.0))
+           /(Foam::log(scalar(chemisTree_.maxNLeafs()))/Foam::log(2.0))
         )
     ),
     minBalanceThreshold_
@@ -329,7 +329,7 @@ Foam::chemistryTabulationMethods::ISAT<CompType, ThermoType>::cleanAndBalance()
     (
         chemisTree_.size() > minBalanceThreshold_
      && chemisTree_.depth() >
-        maxDepthFactor_*log(scalar(chemisTree_.size()))/log(2.0)
+        maxDepthFactor_*Foam::log(scalar(chemisTree_.size()))/Foam::log(2.0)
     )
     {
         chemisTree_.balance();

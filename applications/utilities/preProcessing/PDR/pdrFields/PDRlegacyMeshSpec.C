@@ -123,7 +123,6 @@ Istream& operator>>(Istream& is, pdrMeshSpecLine& spec)
     return is;
 }
 
-#ifdef FULLDEBUG
 // Write mesh-spec entry
 Ostream& operator<<(Ostream& os, const pdrMeshSpecLine& spec)
 {
@@ -139,7 +138,6 @@ Ostream& operator<<(Ostream& os, const pdrMeshSpecLine& spec)
 
     return os;
 }
-#endif
 
 
 void read_spec(ISstream& is, const direction cmpt, List<scalar>& gridPoint)

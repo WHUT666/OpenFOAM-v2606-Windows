@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "filmTurbulenceModel.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "gravityMeshObject.H"
 #include "turbulentTransportModel.H"
 #include "turbulentFluidThermoModel.H"

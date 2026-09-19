@@ -40,7 +40,7 @@ SourceFiles
 #define Foam_vector_H
 
 #include "scalar.H"
-#include "Vector.H"
+#include <Vector_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

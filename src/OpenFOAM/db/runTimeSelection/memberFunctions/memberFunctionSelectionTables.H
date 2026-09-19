@@ -54,9 +54,12 @@ Note
     template<class baseType##Type>                                             \
     struct add##funcName##argNames##MemberFunctionToTable                      \
     {                                                                          \
+        /* MSVC eagerly instantiates default args of the class template      \
+           context - defer typeName lookup behind a ctor template param */    \
+        template<class baseType##Type##Default_ = baseType##Type>              \
         explicit add##funcName##argNames##MemberFunctionToTable                \
         (                                                                      \
-            const ::Foam::word& k = baseType##Type::typeName                   \
+            const ::Foam::word& k = baseType##Type##Default_::typeName         \
         )                                                                      \
         {                                                                      \
             funcName##argNames##MemberFunctionTablePtr_construct(true);        \
@@ -92,9 +95,10 @@ Note
     {                                                                          \
         const ::Foam::word name;  /* Retain name for later removal */          \
                                                                                \
+        template<class baseType##Type##Default_ = baseType##Type>              \
         explicit addRemovable##funcName##argNames##MemberFunctionToTable       \
         (                                                                      \
-            const ::Foam::word& k = baseType##Type::typeName                   \
+            const ::Foam::word& k = baseType##Type##Default_::typeName         \
         )                                                                      \
         :                                                                      \
             name(k)                                                            \

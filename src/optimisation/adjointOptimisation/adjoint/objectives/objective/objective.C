@@ -113,7 +113,7 @@ objective::objective
 :
     localIOdictionary
     (
-        IOobject
+        Foam::IOobject
         (
             adjointSolverName + "_" + dict.dictName(),
             mesh.time().timeName(),

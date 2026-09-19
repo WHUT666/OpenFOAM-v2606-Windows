@@ -28,7 +28,7 @@ License
 
 #include "kLowReWallFunctionFvPatchScalarField.H"
 #include "nutWallFunctionFvPatchScalarField.H"
-#include "turbulenceModel.H"
+#include <turbulenceModel.H>
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * Protected Member Functions  * * * * * * * * * * * //

@@ -39,7 +39,7 @@ SourceFiles
 #ifndef Raoult_H
 #define Raoult_H
 
-#include "InterfaceCompositionModel.H"
+#include <InterfaceCompositionModel_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

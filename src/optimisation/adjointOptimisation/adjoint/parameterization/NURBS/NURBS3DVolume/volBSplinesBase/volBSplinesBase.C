@@ -51,9 +51,9 @@ volBSplinesBase::volBSplinesBase
 {
     const dictionary NURBSdict
     (
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "dynamicMeshDict",
                 mesh.time().constant(),

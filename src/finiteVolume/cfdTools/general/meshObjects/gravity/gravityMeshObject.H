@@ -59,7 +59,7 @@ class gravity
     public MeshObject
     <
         Time,
-        TopologicalMeshObject,
+        Foam::TopologicalMeshObject,
         meshObjects::gravity
     >,
     public uniformDimensionedVectorField
@@ -69,7 +69,7 @@ class gravity
         typedef MeshObject
         <
             Time,
-            TopologicalMeshObject,
+            Foam::TopologicalMeshObject,
             meshObjects::gravity
         > MeshObject_type;
 

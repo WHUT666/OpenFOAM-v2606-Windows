@@ -93,7 +93,7 @@ Foam::PatchFunction1Types::LookupField<Type>::value(const scalar x) const
         // - as surfaceField in local scope
         // - as UniformDimensionedField recursively
 
-        const regIOobject* ptr = db.cfindIOobject(name_, false);
+        const regIOobject* ptr = db.cfindIOobject(lookupBase::name_, false);
 
         if (ptr)
         {
@@ -117,7 +117,7 @@ Foam::PatchFunction1Types::LookupField<Type>::value(const scalar x) const
         }
 
         // Done db level. Try recursion
-        ptr = db.parent().cfindIOobject(name_, true);
+        ptr = db.parent().cfindIOobject(lookupBase::name_, true);
 
         if (ptr)
         {
@@ -130,7 +130,7 @@ Foam::PatchFunction1Types::LookupField<Type>::value(const scalar x) const
 
         FatalErrorInFunction
             << nl
-            << "    failed lookup of " << name_
+            << "    failed lookup of " << lookupBase::name_
             << " (objectRegistry "
             << db.name()
             << ")\n    available objects of type " << VType::typeName
@@ -150,7 +150,7 @@ Foam::PatchFunction1Types::LookupField<Type>::value(const scalar x) const
         // Assume pointField
         typedef GeometricField<Type, pointPatchField, pointMesh> PType;
 
-        const regIOobject* ptr = db.cfindIOobject(name_, false);
+        const regIOobject* ptr = db.cfindIOobject(lookupBase::name_, false);
 
         if (ptr)
         {
@@ -162,7 +162,7 @@ Foam::PatchFunction1Types::LookupField<Type>::value(const scalar x) const
         }
 
         // Re-do as uniform field. Note: could repeat logic above
-        const auto& obj = db.lookupObject<UType>(name_, true);
+        const auto& obj = db.lookupObject<UType>(lookupBase::name_, true);
 
         return Field<Type>(this->size(), obj.value());
     }

@@ -126,7 +126,7 @@ bool Foam::dynamicMultiMotionSolverFvMesh::init(const bool doInit)
                 motionSolver::New
                 (
                     *this,
-                    IOdictionary(dynMeshDictIO, subDict)
+                    Foam::IOdictionary(dynMeshDictIO, subDict)
                 )
             );
 

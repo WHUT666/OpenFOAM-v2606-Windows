@@ -36,7 +36,7 @@ License
 #include "IOstreams.H"
 #include "OSspecific.H"
 #include "etcFiles.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "foamVersion.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

@@ -46,7 +46,7 @@ SourceFiles
 #define Foam_dictionaryEntry_H
 
 #include "entry.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "InfoProxy.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

@@ -1,5 +1,5 @@
 chemistryModel/basicChemistryModel/basicChemistryModel.C
-chemistryModel/BasicChemistryModel/BasicChemistryModels.C
+chemistryModel/BasicChemistryModel_tpl/BasicChemistryModels.C
 
 chemistryModel/TDACChemistryModel/reduction/makeChemistryReductionMethods.C
 chemistryModel/TDACChemistryModel/tabulation/makeChemistryTabulationMethods.C

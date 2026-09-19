@@ -57,7 +57,7 @@ Type Foam::Function1Types::Lookup<Type>::value(const scalar t) const
 {
     const objectRegistry& db = function1Base::obr();
     const auto& obj =
-        db.lookupObject<UniformDimensionedField<Type>>(name_, true);
+        db.lookupObject<UniformDimensionedField<Type>>(lookupBase::name_, true);
 
     return obj.value();
 }

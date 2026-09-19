@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "removeEntry.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "wordRes.H"
 #include "addToMemberFunctionSelectionTable.H"
 

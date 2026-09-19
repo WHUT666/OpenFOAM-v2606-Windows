@@ -335,7 +335,7 @@ void Foam::localInteractionModels::BaiGosman<CloudType>::splashInteraction
     forAll(dNew, i)
     {
         const scalar y = rndGen_.sample01<scalar>();
-        dNew[i] = -dBarSplash*log(exp(-dMin/dBarSplash) - y*K);
+        dNew[i] = -dBarSplash*Foam::log(exp(-dMin/dBarSplash) - y*K);
         npNew[i] = mRatioLimited*np*pow3(d)/pow3(dNew[i])/parcelsPerSplash;
         ESigmaSec += npNew[i]*sigma*p.areaS(dNew[i]);
     }
@@ -356,13 +356,13 @@ void Foam::localInteractionModels::BaiGosman<CloudType>::splashInteraction
         return;
     }
 
-    const scalar logD = log(d);
-    const scalar coeff2 = log(dNew[0]) - logD + ROOTVSMALL;
+    const scalar logD = Foam::log(d);
+    const scalar coeff2 = Foam::log(dNew[0]) - logD + ROOTVSMALL;
     scalar coeff1 = 0;
 
     for (int i = 1; i < parcelsPerSplash; ++i)
     {
-        coeff1 += sqr(log(dNew[i]) - logD);
+        coeff1 += sqr(Foam::log(dNew[i]) - logD);
     }
 
     const scalar magUns0 =
@@ -403,7 +403,7 @@ void Foam::localInteractionModels::BaiGosman<CloudType>::splashInteraction
             dirVec
            *(
                 mag(coeffs.Cf()*Ut)
-              + magUns0*(log(dNew[i]) - logD)/coeff2
+              + magUns0*(Foam::log(dNew[i]) - logD)/coeff2
             );
         pPtr->U() += Up;
 

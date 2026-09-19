@@ -201,7 +201,7 @@ void Foam::volPointInterpolationAdjoint::makeWeights()
     (
         new pointScalarField
         (
-            IOobject
+            Foam::IOobject
             (
                 "volPointSumWeights",
                 mesh().polyMesh::instance(),

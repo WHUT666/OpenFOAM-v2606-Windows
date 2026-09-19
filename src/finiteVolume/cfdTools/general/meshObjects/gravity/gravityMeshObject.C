@@ -45,7 +45,7 @@ Foam::meshObjects::gravity::gravity(const word& name, const Time& runTime)
     MeshObject_type(name, runTime),
     uniformDimensionedVectorField
     (
-        IOobject
+        Foam::IOobject
         (
             name,
             runTime.constant(),

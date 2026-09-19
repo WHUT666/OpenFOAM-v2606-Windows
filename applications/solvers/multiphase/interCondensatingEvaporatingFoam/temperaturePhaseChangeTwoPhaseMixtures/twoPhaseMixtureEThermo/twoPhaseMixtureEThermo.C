@@ -111,7 +111,7 @@ Foam::tmp<Foam::volScalarField> Foam::twoPhaseMixtureEThermo::hc() const
 
     return tmp<volScalarField>::New
     (
-        IOobject
+        Foam::IOobject
         (
             "hc",
             mesh.time().timeName(),

@@ -92,7 +92,7 @@ SourceFiles
 #ifndef meltingEvaporationModels_Lee_H
 #define meltingEvaporationModels_Lee_H
 
-#include "InterfaceCompositionModel.H"
+#include <InterfaceCompositionModel_tpl.H>
 
 // * * * * * * * * * * * * * * * * *  * * * * * * * * * * * * * * * * * * * *//
 

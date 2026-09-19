@@ -178,7 +178,7 @@ tmp<volVectorField> variablesSet::autoCreateMeshMovementField
 {
     return tmp<volVectorField>::New
     (
-        IOobject
+        Foam::IOobject
         (
             fieldName,
             mesh.time().timeName(),

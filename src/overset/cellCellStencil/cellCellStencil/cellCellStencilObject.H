@@ -45,7 +45,7 @@ namespace Foam
 
 // Typedefs
 class cellCellStencilObject;
-typedef MeshObject<fvMesh, MoveableMeshObject, cellCellStencilObject> Stencil;
+typedef MeshObject<fvMesh, Foam::MoveableMeshObject, cellCellStencilObject> Stencil;
 
 
 /*---------------------------------------------------------------------------*\

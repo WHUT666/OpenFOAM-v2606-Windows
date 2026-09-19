@@ -28,7 +28,7 @@ License
 
 #include "calcEntry.H"
 #include "codeStream.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "dynamicCode.H"
 #include "addToMemberFunctionSelectionTable.H"
 

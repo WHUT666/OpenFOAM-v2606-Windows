@@ -52,9 +52,9 @@ Foam::dynamicInkJetFvMesh::dynamicInkJetFvMesh
     dynamicFvMesh(io, doInit),
     dynamicMeshCoeffs_
     (
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "dynamicMeshDict",
                 io.time().constant(),
@@ -70,7 +70,7 @@ Foam::dynamicInkJetFvMesh::dynamicInkJetFvMesh
     refPlaneX_(dynamicMeshCoeffs_.get<scalar>("refPlaneX")),
     stationaryPoints_
     (
-        IOobject
+        Foam::IOobject
         (
             "points",
             io.time().constant(),

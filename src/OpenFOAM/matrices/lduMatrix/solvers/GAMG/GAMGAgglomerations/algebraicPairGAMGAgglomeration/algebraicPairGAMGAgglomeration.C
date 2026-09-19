@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "algebraicPairGAMGAgglomeration.H"
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 #include "addToRunTimeSelectionTable.H"
 //#include "cyclicAMILduInterface.H"
 //#include "cyclicACMILduInterface.H"

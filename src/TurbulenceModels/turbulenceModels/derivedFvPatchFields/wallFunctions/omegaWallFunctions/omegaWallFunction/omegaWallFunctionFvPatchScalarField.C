@@ -28,7 +28,7 @@ License
 
 #include "omegaWallFunctionFvPatchScalarField.H"
 #include "nutWallFunctionFvPatchScalarField.H"
-#include "turbulenceModel.H"
+#include <turbulenceModel.H>
 #include "fvMatrix.H"
 #include "addToRunTimeSelectionTable.H"
 

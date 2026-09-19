@@ -255,7 +255,7 @@ Foam::movingConeTopoFvMesh::movingConeTopoFvMesh
     (
         IOdictionary::readContents
         (
-            IOobject
+            Foam::IOobject
             (
                 "dynamicMeshDict",
                 time().constant(),

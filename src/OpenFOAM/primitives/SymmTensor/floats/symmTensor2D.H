@@ -53,8 +53,8 @@ SourceFiles
 #ifndef Foam_symmTensor2D_H
 #define Foam_symmTensor2D_H
 
-#include "SymmTensor2D.H"
-#include "vector2D.H"
+#include <SymmTensor2D_tpl.H>
+#include <vector2D.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

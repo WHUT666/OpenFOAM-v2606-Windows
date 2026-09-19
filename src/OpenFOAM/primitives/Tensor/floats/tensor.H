@@ -45,10 +45,10 @@ SourceFiles
 #ifndef Foam_tensor_H
 #define Foam_tensor_H
 
-#include "Tensor.H"
-#include "vector.H"
-#include "sphericalTensor.H"
-#include "symmTensor.H"
+#include <Tensor_tpl.H>
+#include <vector.H>
+#include <sphericalTensor.H>
+#include <symmTensor.H>
 #include "complex.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

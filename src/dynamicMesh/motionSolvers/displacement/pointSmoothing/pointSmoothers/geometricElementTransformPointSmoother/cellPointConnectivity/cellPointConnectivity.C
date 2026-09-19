@@ -266,7 +266,7 @@ void Foam::cellPointConnectivity::generateCellPointConnectivity(label cellI)
 
 Foam::cellPointConnectivity::cellPointConnectivity(const polyMesh& mesh)
 :
-    MoveableMeshObject<polyMesh>(typeName, mesh),
+    Foam::MoveableMeshObject<polyMesh>(typeName, mesh),
     mesh_(mesh),
     cellPointPoints_(mesh.nCells()),
     cellPointFaces_(mesh.nCells())

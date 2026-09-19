@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "entry.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "SpanStream.H"
 #include "JobInfo.H"
 

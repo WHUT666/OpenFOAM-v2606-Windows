@@ -61,7 +61,7 @@ Foam::pLaplacianMotionSolver::pLaplacianMotionSolver
         (coeffDict().getOrDefault<bool>("useFixedValuePointMotionUBCs", false)),
     pointMotionU_
     (
-        IOobject
+        Foam::IOobject
         (
             "pointMotionU",
             mesh.time().timeName(),
@@ -80,7 +80,7 @@ Foam::pLaplacianMotionSolver::pLaplacianMotionSolver
     ),
     cellMotionU_
     (
-        IOobject
+        Foam::IOobject
         (
             "cellMotionU",
             mesh.time().timeName(),

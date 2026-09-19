@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "Enum.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

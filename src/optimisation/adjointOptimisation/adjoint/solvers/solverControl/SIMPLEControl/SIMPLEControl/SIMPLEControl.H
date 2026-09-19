@@ -39,7 +39,7 @@ Description
 #define SIMPLEControl_H
 
 #include "solverControl.H"
-#include "simpleControl.H"
+#include <simpleControl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -92,7 +92,7 @@ SourceFiles
 #ifndef Foam_probes_H
 #define Foam_probes_H
 
-#include "Probes.H"
+#include <Probes_tpl.H>
 #include "internalFieldProbe.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

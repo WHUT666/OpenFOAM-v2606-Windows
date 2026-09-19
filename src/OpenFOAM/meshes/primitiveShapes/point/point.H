@@ -34,7 +34,7 @@ Description
 #ifndef Foam_point_H
 #define Foam_point_H
 
-#include "vector.H"
+#include <vector.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

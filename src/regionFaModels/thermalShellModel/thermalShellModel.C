@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "thermalShellModel.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

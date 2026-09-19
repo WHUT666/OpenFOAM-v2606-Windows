@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "zone.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "HashSet.H"
 #include "IOstream.H"
 

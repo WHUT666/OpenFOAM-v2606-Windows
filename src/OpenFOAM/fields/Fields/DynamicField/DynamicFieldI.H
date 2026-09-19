@@ -28,9 +28,9 @@ License
 
 // * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<class ListType>
-inline void Foam::DynamicField<T, SizeMin>::doAssignDynList
+inline void Foam::DynamicField<Type, SizeMin>::doAssignDynList
 (
     const ListType& list
 )
@@ -40,19 +40,19 @@ inline void Foam::DynamicField<T, SizeMin>::doAssignDynList
     if (capacity_ < len)
     {
         // Needs more space for the copy operation
-        List<T>::setAddressableSize(capacity_);
-        List<T>::resize_nocopy(len);
-        capacity_ = List<T>::size();
+        List<Type>::setAddressableSize(capacity_);
+        List<Type>::resize_nocopy(len);
+        capacity_ = List<Type>::size();
     }
 
     // Perform copy into addressable portion
-    List<T>::setAddressableSize(len);
-    List<T>::operator=(list);
+    List<Type>::setAddressableSize(len);
+    List<Type>::operator=(list);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::doCapacity_copy
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::doCapacity_copy
 (
     label count,
     const label newCapacity
@@ -64,30 +64,30 @@ inline void Foam::DynamicField<T, SizeMin>::doCapacity_copy
     }
 
     // Addressable length, possibly truncated by new capacity
-    const label currLen = std::min(List<T>::size(), newCapacity);
+    const label currLen = std::min(List<Type>::size(), newCapacity);
 
     // The count truncated by the new addressable range
     count = std::min(count, currLen);
 
     // Consistent allocated sizing
-    List<T>::setAddressableSize(capacity_);
+    List<Type>::setAddressableSize(capacity_);
 
     if (count > 0)
     {
-        List<T>::resize_copy(count, newCapacity);
+        List<Type>::resize_copy(count, newCapacity);
     }
     else
     {
-        List<T>::resize_nocopy(newCapacity);
+        List<Type>::resize_nocopy(newCapacity);
     }
 
-    capacity_ = List<T>::size();
-    List<T>::setAddressableSize(currLen);
+    capacity_ = List<Type>::size();
+    List<Type>::setAddressableSize(currLen);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::doReserve_copy
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::doReserve_copy
 (
     label count,
     const label len
@@ -96,13 +96,13 @@ inline void Foam::DynamicField<T, SizeMin>::doReserve_copy
     if (capacity_ < len)
     {
         // Preserve addressed size
-        const label currLen = List<T>::size();
+        const label currLen = List<Type>::size();
 
         // The count truncated by the new addressable range
         count = std::min(count, currLen);
 
         // Consistent allocated sizing
-        List<T>::setAddressableSize(capacity_);
+        List<Type>::setAddressableSize(capacity_);
 
         // Increase capacity (eg, doubling)
         capacity_ =
@@ -110,322 +110,322 @@ inline void Foam::DynamicField<T, SizeMin>::doReserve_copy
 
         if (count > 0)
         {
-            List<T>::resize_copy(count, capacity_);
+            List<Type>::resize_copy(count, capacity_);
         }
         else
         {
-            List<T>::resize_nocopy(capacity_);
+            List<Type>::resize_nocopy(capacity_);
         }
 
-        capacity_ = List<T>::size();
-        List<T>::setAddressableSize(currLen);
+        capacity_ = List<Type>::size();
+        List<Type>::setAddressableSize(currLen);
     }
 }
 
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
-template<class T, int SizeMin>
-inline constexpr Foam::DynamicField<T, SizeMin>::DynamicField() noexcept
+template<class Type, int SizeMin>
+inline constexpr Foam::DynamicField<Type, SizeMin>::DynamicField() noexcept
 :
-    Field<T>(),
+    Field<Type>(),
     capacity_(0)
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField(const label initialCapacity)
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField(const label initialCapacity)
 :
-    Field<T>(),
+    Field<Type>(),
     capacity_(0)
 {
     reserve_nocopy(initialCapacity);
 }
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
     std::pair<label,label> sizing
 )
 :
-    Field<T>(std::max(sizing.first, sizing.second)),
-    capacity_(Field<T>::size())
+    Field<Type>(std::max(sizing.first, sizing.second)),
+    capacity_(Field<Type>::size())
 {
-    List<T>::setAddressableSize(sizing.first);
+    List<Type>::setAddressableSize(sizing.first);
 }
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
     const label len,
-    const T& val
+    const Type& val
 )
 :
-    Field<T>(len, val),
-    capacity_(Field<T>::size())
+    Field<Type>(len, val),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
     const label len,
     Foam::zero
 )
 :
-    Field<T>(len, Foam::zero{}),
-    capacity_(Field<T>::size())
+    Field<Type>(len, Foam::zero{}),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    const DynamicField<T, SizeMin>& list
+    const DynamicField<Type, SizeMin>& list
 )
 :
-    Field<T>(list),
-    capacity_(Field<T>::size())
+    Field<Type>(list),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    const DynamicField<T, AnySizeMin>& list
+    const DynamicField<Type, AnySizeMin>& list
 )
 :
-    Field<T>(list),
-    capacity_(Field<T>::size())
+    Field<Type>(list),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    const UList<T>& list
+    const UList<Type>& list
 )
 :
-    Field<T>(list),
-    capacity_(Field<T>::size())
+    Field<Type>(list),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<class Addr>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    const IndirectListBase<T, Addr>& list
+    const IndirectListBase<Type, Addr>& list
 )
 :
-    Field<T>(list),
-    capacity_(Field<T>::size())
+    Field<Type>(list),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    List<T>&& content
+    List<Type>&& content
 ) noexcept
 :
-    Field<T>(std::move(content)),
-    capacity_(Field<T>::size())
+    Field<Type>(std::move(content)),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    DynamicList<T, AnySizeMin>&& content
+    DynamicList<Type, AnySizeMin>&& content
 ) noexcept
 :
-    Field<T>(std::move(static_cast<List<T>&>(content))),
+    Field<Type>(std::move(static_cast<List<Type>&>(content))),
     capacity_(content.capacity())
 {
     content.setCapacity_unsafe(0);  // All contents moved
 }
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    DynamicField<T, SizeMin>&& content
+    DynamicField<Type, SizeMin>&& content
 ) noexcept
 :
-    Field<T>(std::move(static_cast<List<T>&>(content))),
+    Field<Type>(std::move(static_cast<List<Type>&>(content))),
     capacity_(content.capacity())
 {
     content.setCapacity_unsafe(0);  // All contents moved
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    DynamicField<T, AnySizeMin>&& content
+    DynamicField<Type, AnySizeMin>&& content
 ) noexcept
 :
-    Field<T>(std::move(static_cast<List<T>&>(content))),
+    Field<Type>(std::move(static_cast<List<Type>&>(content))),
     capacity_(content.capacity())
 {
     content.setCapacity_unsafe(0);  // All contents moved
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    DynamicField<T, AnySizeMin>& content,
+    DynamicField<Type, AnySizeMin>& content,
     bool reuse
 )
 :
-    Field<T>(),
+    Field<Type>(),
     capacity_(0)
 {
     if (reuse)
     {
-        Field<T>::transfer(static_cast<List<T>&>(content));
+        Field<Type>::transfer(static_cast<List<Type>&>(content));
         capacity_ = content.capacity();
         content.setCapacity_unsafe(0);  // All contents moved
     }
     else
     {
-        Field<T>::operator=(content);
+        Field<Type>::operator=(content);
         capacity_ = content.size();
     }
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    DynamicList<T, AnySizeMin>& content,
+    DynamicList<Type, AnySizeMin>& content,
     bool reuse
 )
 :
-    Field<T>(),
+    Field<Type>(),
     capacity_(0)
 {
     if (reuse)
     {
-        Field<T>::transfer(static_cast<List<T>&>(content));
+        Field<Type>::transfer(static_cast<List<Type>&>(content));
         capacity_ = content.capacity();
         content.setCapacity_unsafe(0);  // All contents moved
     }
     else
     {
-        Field<T>::operator=(content);
+        Field<Type>::operator=(content);
         capacity_ = content.size();
     }
 }
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    List<T>& content,
+    List<Type>& content,
     bool reuse
 )
 :
-    Field<T>(),
+    Field<Type>(),
     capacity_(0)
 {
     if (reuse)
     {
-        Field<T>::transfer(content);
+        Field<Type>::transfer(content);
     }
     else
     {
-        Field<T>::operator=(content);
+        Field<Type>::operator=(content);
     }
-    capacity_ = Field<T>::size();
+    capacity_ = Field<Type>::size();
 }
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    const UList<T>& mapF,
+    const UList<Type>& mapF,
     const labelUList& mapAddressing
 )
 :
-    Field<T>(mapF, mapAddressing),
-    capacity_(Field<T>::size())
+    Field<Type>(mapF, mapAddressing),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    const UList<T>& mapF,
+    const UList<Type>& mapF,
     const labelListList& mapAddressing,
     const scalarListList& weights
 )
 :
-    Field<T>(mapF, mapAddressing, weights),
-    capacity_(Field<T>::size())
+    Field<Type>(mapF, mapAddressing, weights),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField
 (
-    const UList<T>& mapF,
+    const UList<Type>& mapF,
     const FieldMapper& map
 )
 :
-    Field<T>(mapF, map),
-    capacity_(Field<T>::size())
+    Field<Type>(mapF, map),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::DynamicField<T, SizeMin>::DynamicField(Istream& is)
+template<class Type, int SizeMin>
+inline Foam::DynamicField<Type, SizeMin>::DynamicField(Istream& is)
 :
-    Field<T>(is),
-    capacity_(Field<T>::size())
+    Field<Type>(is),
+    capacity_(Field<Type>::size())
 {}
 
 
-template<class T, int SizeMin>
-inline Foam::tmp<Foam::DynamicField<T, SizeMin>>
-Foam::DynamicField<T, SizeMin>::clone() const
+template<class Type, int SizeMin>
+inline Foam::tmp<Foam::DynamicField<Type, SizeMin>>
+Foam::DynamicField<Type, SizeMin>::clone() const
 {
-    return tmp<DynamicField<T, SizeMin>>::New(*this);
+    return tmp<DynamicField<Type, SizeMin>>::New(*this);
 }
 
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 inline std::streamsize
-Foam::DynamicField<T, SizeMin>::capacity_bytes() const noexcept
+Foam::DynamicField<Type, SizeMin>::capacity_bytes() const noexcept
 {
-    return std::streamsize(capacity_)*sizeof(T);
+    return std::streamsize(capacity_)*sizeof(Type);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::setCapacity
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::setCapacity
 (
     const label len
 )
 {
     // Preserve all content
-    doCapacity_copy(List<T>::size(), len);
+    doCapacity_copy(List<Type>::size(), len);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::setCapacity_nocopy
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::setCapacity_nocopy
 (
     const label len
 )
@@ -435,19 +435,19 @@ inline void Foam::DynamicField<T, SizeMin>::setCapacity_nocopy
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::reserve
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::reserve
 (
     const label len
 )
 {
     // Preserve all content
-    doReserve_copy(List<T>::size(), len);
+    doReserve_copy(List<Type>::size(), len);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::reserve_nocopy
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::reserve_nocopy
 (
     const label len
 )
@@ -457,8 +457,8 @@ inline void Foam::DynamicField<T, SizeMin>::reserve_nocopy
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::reserve_exact
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::reserve_exact
 (
     const label len
 )
@@ -466,38 +466,38 @@ inline void Foam::DynamicField<T, SizeMin>::reserve_exact
     if (capacity_ < len)
     {
         // Preserve addressed size
-        const label currLen = List<T>::size();
+        const label currLen = List<Type>::size();
 
         // Consistent allocated sizing
-        List<T>::setAddressableSize(capacity_);
+        List<Type>::setAddressableSize(capacity_);
 
         // Exact length
         capacity_ = len;
 
         // if (!nocopy)
         {
-            List<T>::resize_copy(currLen, capacity_);
+            List<Type>::resize_copy(currLen, capacity_);
         }
 
-        capacity_ = List<T>::size();
-        List<T>::setAddressableSize(currLen);
+        capacity_ = List<Type>::size();
+        List<Type>::setAddressableSize(currLen);
     }
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::resize
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::resize
 (
     const label len
 )
 {
     // Preserve all content
-    resize_copy(List<T>::size(), len);
+    resize_copy(List<Type>::size(), len);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::resize_copy
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::resize_copy
 (
     label count,
     const label len
@@ -505,24 +505,24 @@ inline void Foam::DynamicField<T, SizeMin>::resize_copy
 {
     // Preserve count elements
     doReserve_copy(count, len);
-    List<T>::setAddressableSize(len);
+    List<Type>::setAddressableSize(len);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::resize_fill
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::resize_fill
 (
     const label len,
-    const T& val
+    const Type& val
 )
 {
     resize_nocopy(len);
-    UList<T>::operator=(val);
+    UList<Type>::operator=(val);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::resize_nocopy
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::resize_nocopy
 (
     const label len
 )
@@ -532,20 +532,20 @@ inline void Foam::DynamicField<T, SizeMin>::resize_nocopy
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::resize
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::resize
 (
     const label len,
-    const T& val
+    const Type& val
 )
 {
-    const label oldLen = List<T>::size();
+    const label oldLen = List<Type>::size();
 
     // Preserve all content
     resize(len);
 
     // Fill newly exposed with constant value
-    if (oldLen < List<T>::size())
+    if (oldLen < List<Type>::size())
     {
         std::fill
         (
@@ -555,49 +555,49 @@ inline void Foam::DynamicField<T, SizeMin>::resize
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::clear() noexcept
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::clear() noexcept
 {
-    List<T>::setAddressableSize(0);
+    List<Type>::setAddressableSize(0);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::clearStorage()
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::clearStorage()
 {
     // Extra safety...?
-    if (!List<T>::cdata() && List<T>::empty()) capacity_ = 0;
+    if (!List<Type>::cdata() && List<Type>::empty()) capacity_ = 0;
 
     // Consistent allocated sizing
-    List<T>::setAddressableSize(capacity_);
-    List<T>::clear();
+    List<Type>::setAddressableSize(capacity_);
+    List<Type>::clear();
     capacity_ = 0;
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::shrink_to_fit()
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::shrink_to_fit()
 {
-    const label currLen = List<T>::size();
+    const label currLen = List<Type>::size();
     if (currLen < capacity_)
     {
-        List<T>::setAddressableSize(capacity_);
-        List<T>::resize(currLen);
-        capacity_ = List<T>::size();
+        List<Type>::setAddressableSize(capacity_);
+        List<Type>::resize(currLen);
+        capacity_ = List<Type>::size();
     }
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 inline void
-Foam::DynamicField<T, SizeMin>::swap(List<T>& other)
+Foam::DynamicField<Type, SizeMin>::swap(List<Type>& other)
 {
     if
     (
         FOAM_UNLIKELY
         (
-            static_cast<const List<T>*>(this)
-         == static_cast<const List<T>*>(&other)
+            static_cast<const List<Type>*>(this)
+         == static_cast<const List<Type>*>(&other)
         )
     )
     {
@@ -608,26 +608,26 @@ Foam::DynamicField<T, SizeMin>::swap(List<T>& other)
     this->shrink_to_fit();
 
     // Swap storage and addressable size
-    UList<T>::swap(other);
+    UList<Type>::swap(other);
 
     // Update capacity
-    capacity_ = List<T>::size();
+    capacity_ = List<Type>::size();
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline void Foam::DynamicField<T, SizeMin>::swap
+inline void Foam::DynamicField<Type, SizeMin>::swap
 (
-    DynamicField<T, AnySizeMin>& other
+    DynamicField<Type, AnySizeMin>& other
 ) noexcept
 {
     if
     (
         FOAM_UNLIKELY
         (
-            static_cast<const List<T>*>(this)
-         == static_cast<const List<T>*>(&other)
+            static_cast<const List<Type>*>(this)
+         == static_cast<const List<Type>*>(&other)
         )
     )
     {
@@ -635,26 +635,26 @@ inline void Foam::DynamicField<T, SizeMin>::swap
     }
 
     // Swap storage and addressable size
-    UList<T>::swap(other);
+    UList<Type>::swap(other);
 
     // Swap capacity
     std::swap(this->capacity_, other.capacity_);
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline void Foam::DynamicField<T, SizeMin>::swap
+inline void Foam::DynamicField<Type, SizeMin>::swap
 (
-    DynamicList<T, AnySizeMin>& other
+    DynamicList<Type, AnySizeMin>& other
 ) noexcept
 {
     if
     (
         FOAM_UNLIKELY
         (
-            static_cast<const List<T>*>(this)
-         == static_cast<const List<T>*>(&other)
+            static_cast<const List<Type>*>(this)
+         == static_cast<const List<Type>*>(&other)
         )
     )
     {
@@ -662,7 +662,7 @@ inline void Foam::DynamicField<T, SizeMin>::swap
     }
 
     // Swap storage and addressable size
-    UList<T>::swap(other);
+    UList<Type>::swap(other);
 
     // Swap capacity
     auto old = capacity_;
@@ -671,31 +671,31 @@ inline void Foam::DynamicField<T, SizeMin>::swap
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::transfer(List<T>& list)
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::transfer(List<Type>& list)
 {
     // No check for self-assignment (different types)
 
     // Consistent allocated sizing
-    List<T>::setAddressableSize(capacity_);
-    Field<T>::transfer(list);
-    capacity_ = Field<T>::size();
+    List<Type>::setAddressableSize(capacity_);
+    Field<Type>::transfer(list);
+    capacity_ = Field<Type>::size();
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline void Foam::DynamicField<T, SizeMin>::transfer
+inline void Foam::DynamicField<Type, SizeMin>::transfer
 (
-    DynamicList<T, AnySizeMin>& other
+    DynamicList<Type, AnySizeMin>& other
 )
 {
     if
     (
         FOAM_UNLIKELY
         (
-            static_cast<const UList<T>*>(this)
-         == static_cast<const UList<T>*>(&other)
+            static_cast<const UList<Type>*>(this)
+         == static_cast<const UList<Type>*>(&other)
         )
     )
     {
@@ -706,7 +706,7 @@ inline void Foam::DynamicField<T, SizeMin>::transfer
     this->clearStorage();
 
     // Swap storage and addressable size
-    UList<T>::swap(other);
+    UList<Type>::swap(other);
 
     // Update capacity
     capacity_ = other.capacity();
@@ -714,19 +714,19 @@ inline void Foam::DynamicField<T, SizeMin>::transfer
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline void Foam::DynamicField<T, SizeMin>::transfer
+inline void Foam::DynamicField<Type, SizeMin>::transfer
 (
-    DynamicField<T, AnySizeMin>& other
+    DynamicField<Type, AnySizeMin>& other
 )
 {
     if
     (
         FOAM_UNLIKELY
         (
-            static_cast<const UList<T>*>(this)
-         == static_cast<const UList<T>*>(&other)
+            static_cast<const UList<Type>*>(this)
+         == static_cast<const UList<Type>*>(&other)
         )
     )
     {
@@ -737,7 +737,7 @@ inline void Foam::DynamicField<T, SizeMin>::transfer
     this->clearStorage();
 
     // Swap storage and addressable size
-    UList<T>::swap(other);
+    UList<Type>::swap(other);
 
     // Update capacity
     capacity_ = other.capacity();
@@ -745,61 +745,61 @@ inline void Foam::DynamicField<T, SizeMin>::transfer
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<class... Args>
-inline T& Foam::DynamicField<T, SizeMin>::emplace_back(Args&&... args)
+inline Type& Foam::DynamicField<Type, SizeMin>::emplace_back(Args&&... args)
 {
     // This could/should be better with inplace construction
     // (as per std::vector), but currently lacking the methods for that
     // so resize and move assign
 
-    const label idx = List<T>::size();
+    const label idx = List<Type>::size();
     resize(idx + 1);
 
     // move assign element
-    this->operator[](idx) = T(std::forward<Args>(args)...);
+    this->operator[](idx) = Type(std::forward<Args>(args)...);
     return this->operator[](idx);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::push_back
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::push_back
 (
-    const T& val
+    const Type& val
 )
 {
-    const label idx = List<T>::size();
+    const label idx = List<Type>::size();
     resize(idx + 1);
 
     this->operator[](idx) = val;  // copy element
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::push_back
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::push_back
 (
-    T&& val
+    Type&& val
 )
 {
-    const label idx = List<T>::size();
+    const label idx = List<Type>::size();
     resize(idx + 1);
 
     this->operator[](idx) = std::move(val);  // move assign element
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::push_back
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::push_back
 (
-    const UList<T>& list
+    const UList<Type>& list
 )
 {
     if
     (
         FOAM_UNLIKELY
         (
-            static_cast<const UList<T>*>(this)
-         == static_cast<const UList<T>*>(&list)
+            static_cast<const UList<Type>*>(this)
+         == static_cast<const UList<Type>*>(&list)
         )
     )
     {
@@ -808,25 +808,25 @@ inline void Foam::DynamicField<T, SizeMin>::push_back
             << abort(FatalError);
     }
 
-    const label idx = List<T>::size();
+    const label idx = List<Type>::size();
     resize(idx + list.size());
 
     std::copy(list.begin(), list.end(), this->begin(idx));
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::push_back
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::push_back
 (
-    List<T>&& list
+    List<Type>&& list
 )
 {
     if
     (
         FOAM_UNLIKELY
         (
-            static_cast<const UList<T>*>(this)
-         == static_cast<const UList<T>*>(&list)
+            static_cast<const UList<Type>*>(this)
+         == static_cast<const UList<Type>*>(&list)
         )
     )
     {
@@ -835,7 +835,7 @@ inline void Foam::DynamicField<T, SizeMin>::push_back
             << abort(FatalError);
     }
 
-    const label idx = List<T>::size();
+    const label idx = List<Type>::size();
     resize(idx + list.size());
 
     // Move the elements
@@ -845,8 +845,8 @@ inline void Foam::DynamicField<T, SizeMin>::push_back
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::pop_back(label n)
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::pop_back(label n)
 {
     if (n >= this->size())
     {
@@ -861,13 +861,13 @@ inline void Foam::DynamicField<T, SizeMin>::pop_back(label n)
 
 // * * * * * * * * * * * * * * * Member Operators  * * * * * * * * * * * * * //
 
-template<class T, int SizeMin>
-inline T& Foam::DynamicField<T, SizeMin>::operator()
+template<class Type, int SizeMin>
+inline Type& Foam::DynamicField<Type, SizeMin>::operator()
 (
     const label i
 )
 {
-    if (i >= List<T>::size())
+    if (i >= List<Type>::size())
     {
         resize(i + 1);
     }
@@ -876,40 +876,40 @@ inline T& Foam::DynamicField<T, SizeMin>::operator()
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
-    const T& val
+    const Type& val
 )
 {
-    UList<T>::operator=(val);
+    UList<Type>::operator=(val);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
     Foam::zero
 )
 {
-    UList<T>::operator=(Foam::zero{});
+    UList<Type>::operator=(Foam::zero{});
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
-    const UList<T>& list
+    const UList<Type>& list
 )
 {
     doAssignDynList(list);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
-    const DynamicField<T, SizeMin>& list
+    const DynamicField<Type, SizeMin>& list
 )
 {
     if (this == &list)
@@ -921,60 +921,60 @@ inline void Foam::DynamicField<T, SizeMin>::operator=
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<class Addr>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
-    const IndirectListBase<T, Addr>& list
+    const IndirectListBase<Type, Addr>& list
 )
 {
     // NOTE: Self-assignment needs special handling
     /// if
     /// (
-    ///     static_cast<const UList<T>*>(this)
-    ///  == static_cast<const UList<T>*>(&list.values())
+    ///     static_cast<const UList<Type>*>(this)
+    ///  == static_cast<const UList<Type>*>(&list.values())
     /// )
 
     doAssignDynList(list);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
-    List<T>&& list
+    List<Type>&& list
 )
 {
     this->transfer(list);
 }
 
 
-template<class T, int SizeMin>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+template<class Type, int SizeMin>
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
-    DynamicField<T, SizeMin>&& list
+    DynamicField<Type, SizeMin>&& list
 )
 {
     this->transfer(list);
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
-    DynamicField<T, AnySizeMin>&& list
+    DynamicField<Type, AnySizeMin>&& list
 )
 {
     this->transfer(list);
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 template<int AnySizeMin>
-inline void Foam::DynamicField<T, SizeMin>::operator=
+inline void Foam::DynamicField<Type, SizeMin>::operator=
 (
-    DynamicList<T, AnySizeMin>&& list
+    DynamicList<Type, AnySizeMin>&& list
 )
 {
     this->transfer(list);
@@ -983,8 +983,8 @@ inline void Foam::DynamicField<T, SizeMin>::operator=
 
 // * * * * * * * * * * * * * * * IOstream Operators  * * * * * * * * * * * * //
 
-template<class T, int SizeMin>
-inline Foam::Istream& Foam::DynamicField<T, SizeMin>::readList
+template<class Type, int SizeMin>
+inline Foam::Istream& Foam::DynamicField<Type, SizeMin>::readList
 (
     Istream& is
 )
@@ -992,7 +992,7 @@ inline Foam::Istream& Foam::DynamicField<T, SizeMin>::readList
     // Use DynamicList::readList for reading DynamicField.
     // The logic should be the same and this avoids duplicate code
 
-    DynamicList<T, SizeMin> list;
+    DynamicList<Type, SizeMin> list;
     this->swap(list);
 
     list.readList(is);
@@ -1002,25 +1002,25 @@ inline Foam::Istream& Foam::DynamicField<T, SizeMin>::readList
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 inline Foam::Istream& Foam::operator>>
 (
     Istream& is,
-    DynamicField<T, SizeMin>& rhs
+    DynamicField<Type, SizeMin>& rhs
 )
 {
     return rhs.readList(is);
 }
 
 
-template<class T, int SizeMin>
+template<class Type, int SizeMin>
 inline Foam::Ostream& Foam::operator<<
 (
     Ostream& os,
-    const DynamicField<T, SizeMin>& rhs
+    const DynamicField<Type, SizeMin>& rhs
 )
 {
-    os << static_cast<const Field<T>&>(rhs);
+    os << static_cast<const Field<Type>&>(rhs);
     return os;
 }
 

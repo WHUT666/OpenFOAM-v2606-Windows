@@ -45,7 +45,7 @@ SourceFiles
 #ifndef FDICPreconditioner_H
 #define FDICPreconditioner_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

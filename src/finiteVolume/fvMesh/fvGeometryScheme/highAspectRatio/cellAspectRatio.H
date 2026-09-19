@@ -51,7 +51,7 @@ namespace Foam
 
 class cellAspectRatio
 :
-    public MeshObject<polyMesh, MoveableMeshObject, cellAspectRatio>,
+    public MeshObject<polyMesh, Foam::MoveableMeshObject, cellAspectRatio>,
     public scalarField
 {
     // Private Typedefs
@@ -59,7 +59,7 @@ class cellAspectRatio
         typedef MeshObject
         <
             polyMesh,
-            MoveableMeshObject,
+            Foam::MoveableMeshObject,
             cellAspectRatio
         > MeshObject_type;
 

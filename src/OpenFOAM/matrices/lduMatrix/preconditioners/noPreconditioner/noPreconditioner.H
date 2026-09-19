@@ -41,7 +41,7 @@ SourceFiles
 #ifndef noPreconditioner_H
 #define noPreconditioner_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

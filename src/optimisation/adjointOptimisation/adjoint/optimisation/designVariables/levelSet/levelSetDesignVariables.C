@@ -63,7 +63,7 @@ void levelSetDesignVariables::readField()
             mesh_.boundaryMesh().findPatchIDs<wallPolyPatch>();
         volScalarField y
         (
-            IOobject
+            Foam::IOobject
             (
                 "yLevelSet",
                 mesh_.time().timeName(),
@@ -217,7 +217,7 @@ void Foam::levelSetDesignVariables::updateSignedDistances()
 
     volScalarField y
     (
-        IOobject
+        Foam::IOobject
         (
             "yLevelSet",
             mesh_.time().timeName(),
@@ -283,7 +283,7 @@ levelSetDesignVariables::levelSetDesignVariables
         (regularisationPDE::New(mesh, dict.subDict("regularisation"), zones_)),
     aTilda_
     (
-        IOobject
+        Foam::IOobject
         (
             "aTilda",
             mesh_.time().timeName(),
@@ -297,7 +297,7 @@ levelSetDesignVariables::levelSetDesignVariables
     ),
     signedDistances_
     (
-        IOobject
+        Foam::IOobject
         (
             "signedDistances",
             mesh_.time().timeName(),
@@ -315,7 +315,7 @@ levelSetDesignVariables::levelSetDesignVariables
     ),
     beta_
     (
-        IOobject
+        Foam::IOobject
         (
             "beta",
             mesh_.time().timeName(),
@@ -467,7 +467,7 @@ tmp<scalarField> levelSetDesignVariables::assembleSensitivities
     {
         volScalarField sens
         (
-            IOobject
+            Foam::IOobject
             (
                 "sens" + adjointSens.getAdjointSolver().solverName(),
                 mesh_.time().timeName(),
@@ -492,7 +492,7 @@ void levelSetDesignVariables::writeDesignVars()
     {
         volScalarField alpha
         (
-            IOobject
+            Foam::IOobject
             (
                 "alpha",
                 mesh_.time().timeName(),

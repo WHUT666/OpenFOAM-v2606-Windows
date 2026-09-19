@@ -140,7 +140,7 @@ class polyMesh;
 
 class regionSplit
 :
-    public MeshObject<polyMesh, TopologicalMeshObject, regionSplit>,
+    public MeshObject<polyMesh, Foam::TopologicalMeshObject, regionSplit>,
     public labelList
 {
     // Private Typedefs
@@ -148,7 +148,7 @@ class regionSplit
         typedef MeshObject
         <
             polyMesh,
-            TopologicalMeshObject,
+            Foam::TopologicalMeshObject,
             regionSplit
         > MeshObject_type;
 

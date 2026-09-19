@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "cellZone.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 

@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "functionObject.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "dlLibraryTable.H"
 #include "Time.H"
 

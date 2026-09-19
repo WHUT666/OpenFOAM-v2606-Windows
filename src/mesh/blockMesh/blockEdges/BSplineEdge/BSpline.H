@@ -63,7 +63,7 @@ SourceFiles
 #ifndef BSpline_H
 #define BSpline_H
 
-#include "polyLine.H"
+#include "polyLine_tpl.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

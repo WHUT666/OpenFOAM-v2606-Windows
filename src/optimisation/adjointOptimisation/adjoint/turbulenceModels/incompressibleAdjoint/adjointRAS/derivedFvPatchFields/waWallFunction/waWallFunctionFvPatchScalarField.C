@@ -121,8 +121,8 @@ void waWallFunctionFvPatchScalarField::manipulateMatrix
     scalarField& Diag = matrix.diag();
     scalarField& lower = matrix.lower();
     scalarField& upper = matrix.upper();
-    FieldField<Field, scalar>& internalCoeffs = matrix.internalCoeffs();
-    FieldField<Field, scalar>& boundaryCoeffs = matrix.boundaryCoeffs();
+    FieldField<Foam::Field, scalar>& internalCoeffs = matrix.internalCoeffs();
+    FieldField<Foam::Field, scalar>& boundaryCoeffs = matrix.boundaryCoeffs();
     const fvMesh& mesh = patch().boundaryMesh().mesh();
     const labelUList& faceCells = patch().faceCells();
 

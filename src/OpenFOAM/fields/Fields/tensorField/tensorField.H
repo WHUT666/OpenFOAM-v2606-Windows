@@ -42,7 +42,7 @@ SourceFiles
 #include "vectorField.H"
 #include "sphericalTensorField.H"
 #include "symmTensorField.H"
-#include "tensor.H"
+#include <tensor.H>
 
 #define TEMPLATE
 #include "FieldFunctionsM.H"

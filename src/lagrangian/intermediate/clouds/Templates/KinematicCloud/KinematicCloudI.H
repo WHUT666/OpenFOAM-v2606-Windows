@@ -501,7 +501,7 @@ template<class CloudType>
 inline Foam::tmp<Foam::volScalarField::Internal>
 Foam::KinematicCloud<CloudType>::Srhok() const
 {
-    if (debug)
+    if (kinematicCloud::debug)
     {
         Pout<< "rhokTrans min/max = " << min(rhokTrans()).value() << ", "
             << max(rhokTrans()).value() << endl;
@@ -529,7 +529,7 @@ inline Foam::tmp<Foam::fvVectorMatrix>
 Foam::KinematicCloud<CloudType>::SU(volVectorField& U, bool incompressible)
 const
 {
-    if (debug)
+    if (kinematicCloud::debug)
     {
         Pout<< "UTrans min/max = " << min(UTrans()).value() << ", "
             << max(UTrans()).value() << nl

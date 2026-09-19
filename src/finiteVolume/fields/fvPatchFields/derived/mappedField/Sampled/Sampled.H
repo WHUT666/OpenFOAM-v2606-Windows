@@ -179,7 +179,7 @@ public:
     // Member Functions
 
         //- Field to sample. Either on my or nbr mesh
-        const GeometricField<Type, fvPatchField, volMesh>& sampleField() const;
+        const GeometricField<Type, Foam::fvPatchField, volMesh>& sampleField() const;
 
         // Evaluation
 

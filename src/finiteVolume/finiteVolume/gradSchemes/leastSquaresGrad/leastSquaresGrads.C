@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "fvMesh.H"
-#include "leastSquaresGrad.H"
+#include <leastSquaresGrad.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

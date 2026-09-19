@@ -115,7 +115,7 @@ SourceFiles
 #ifndef meltingEvaporationModels_kineticGasEvaporation_H
 #define meltingEvaporationModels_kineticGasEvaporation_H
 
-#include "InterfaceCompositionModel.H"
+#include <InterfaceCompositionModel_tpl.H>
 
 // * * * * * * * * * * * * * * * * *  * * * * * * * * * * * * * * * * * * * *//
 

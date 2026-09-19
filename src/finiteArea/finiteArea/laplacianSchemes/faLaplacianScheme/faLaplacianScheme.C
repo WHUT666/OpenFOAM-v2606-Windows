@@ -27,6 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "fa.H"
+#include "faMatrix.H"   // complete type needed when MSVC instantiates virtuals returning tmp<faMatrix>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

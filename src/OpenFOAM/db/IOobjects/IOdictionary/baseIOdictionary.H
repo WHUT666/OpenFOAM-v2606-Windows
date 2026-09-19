@@ -42,7 +42,7 @@ SourceFiles
 #ifndef Foam_baseIOdictionary_H
 #define Foam_baseIOdictionary_H
 
-#include "dictionary.H"
+#include <dictionary.H>
 #include "regIOobject.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

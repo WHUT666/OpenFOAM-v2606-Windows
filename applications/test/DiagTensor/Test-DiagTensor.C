@@ -39,10 +39,10 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "complex.H"
-#include "Tensor.H"
-#include "SymmTensor.H"
-#include "SphericalTensor.H"
-#include "DiagTensor.H"
+#include "Tensor_tpl.H"
+#include "SymmTensor_tpl.H"
+#include "SphericalTensor_tpl.H"
+#include "DiagTensor_tpl.H"
 
 using namespace Foam;
 

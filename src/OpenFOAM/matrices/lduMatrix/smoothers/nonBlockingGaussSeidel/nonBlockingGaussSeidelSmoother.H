@@ -49,7 +49,7 @@ SourceFiles
 #ifndef nonBlockingGaussSeidelSmoother_H
 #define nonBlockingGaussSeidelSmoother_H
 
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

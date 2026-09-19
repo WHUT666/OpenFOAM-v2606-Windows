@@ -27,6 +27,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "OwenRyleyModel.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "processorFaPatch.H"
 #include "addToRunTimeSelectionTable.H"
 

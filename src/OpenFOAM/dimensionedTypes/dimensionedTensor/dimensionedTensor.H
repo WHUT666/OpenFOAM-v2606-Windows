@@ -40,7 +40,7 @@ SourceFiles
 
 #include "dimensionedVector.H"
 #include "dimensionedSymmTensor.H"
-#include "tensor.H"
+#include <tensor.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

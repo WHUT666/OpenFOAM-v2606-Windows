@@ -61,7 +61,7 @@ Foam::laplacianMotionSolver::laplacianMotionSolver
     fvMotionSolver(mesh),
     pointMotionU_
     (
-        IOobject
+        Foam::IOobject
         (
             "pointMotionU",
             mesh.time().timeName(),
@@ -75,7 +75,7 @@ Foam::laplacianMotionSolver::laplacianMotionSolver
     ),
     cellMotionU_
     (
-        IOobject
+        Foam::IOobject
         (
             "cellMotionU",
             mesh.time().timeName(),

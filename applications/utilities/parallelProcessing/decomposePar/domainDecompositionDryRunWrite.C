@@ -40,7 +40,7 @@ void Foam::domainDecompositionDryRun::writeVolField
     // Write decomposition as volScalarField for visualization
     volScalarField cellDist
     (
-        IOobject
+        Foam::IOobject
         (
             "cellDist",
             timeName,

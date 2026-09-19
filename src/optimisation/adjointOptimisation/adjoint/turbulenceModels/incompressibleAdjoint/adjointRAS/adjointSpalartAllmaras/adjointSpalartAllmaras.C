@@ -561,7 +561,7 @@ adjointSpalartAllmaras::adjointSpalartAllmaras
 
     symmAdjointProductionU_
     (
-        IOobject
+        Foam::IOobject
         (
             "symmAdjointProductionU",
             runTime_.timeName(),
@@ -575,7 +575,7 @@ adjointSpalartAllmaras::adjointSpalartAllmaras
 
     productionDestructionSource_
     (
-        IOobject
+        Foam::IOobject
         (
             "productionDestructionSource",
             runTime_.timeName(),
@@ -589,7 +589,7 @@ adjointSpalartAllmaras::adjointSpalartAllmaras
 
     Stilda_
     (
-        IOobject
+        Foam::IOobject
         (
             "Stilda",
             runTime_.timeName(),
@@ -603,7 +603,7 @@ adjointSpalartAllmaras::adjointSpalartAllmaras
 
     r_
     (
-        IOobject
+        Foam::IOobject
         (
             "r",
             runTime_.timeName(),
@@ -617,7 +617,7 @@ adjointSpalartAllmaras::adjointSpalartAllmaras
 
     fw_
     (
-        IOobject
+        Foam::IOobject
         (
             "fw",
             runTime_.timeName(),
@@ -631,7 +631,7 @@ adjointSpalartAllmaras::adjointSpalartAllmaras
 
     Cdnut_
     (
-        IOobject
+        Foam::IOobject
         (
             "Cdnut",
             runTime_.timeName(),
@@ -645,7 +645,7 @@ adjointSpalartAllmaras::adjointSpalartAllmaras
 
     momentumSourceMult_
     (
-        IOobject
+        Foam::IOobject
         (
             "momentumSourceMult",
             runTime_.timeName(),
@@ -984,7 +984,7 @@ tmp<volTensorField> adjointSpalartAllmaras::FISensitivityTerm()
     (
         tmp<volTensorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 type() + "flowTerm",
                 mesh_.time().timeName(),

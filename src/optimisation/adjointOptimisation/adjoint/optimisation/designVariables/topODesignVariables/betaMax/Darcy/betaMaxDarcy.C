@@ -54,9 +54,9 @@ Foam::betaMaxDarcy::betaMaxDarcy
     length_(computeLength(dict))
 {
     scalar nu =
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "transportProperties",
                 mesh.time().constant(),

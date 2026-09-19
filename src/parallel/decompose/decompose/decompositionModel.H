@@ -60,7 +60,7 @@ class decompositionModel
     public MeshObject
     <
         polyMesh,
-        UpdateableMeshObject,
+        Foam::UpdateableMeshObject,
         decompositionModel
     >,
     public IOdictionary
@@ -70,7 +70,7 @@ class decompositionModel
         typedef MeshObject
         <
             polyMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             decompositionModel
         > MeshObject_type;
 
@@ -121,7 +121,7 @@ public:
         decompositionMethod& decomposer() const;
 
 
-    // UpdateableMeshObject Functions
+    // Foam::UpdateableMeshObject Functions
 
         virtual bool movePoints()
         {

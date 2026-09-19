@@ -44,7 +44,7 @@ Description
 #include "incompressibleTwoPhaseInteractingMixture.H"
 #include "relativeVelocityModel.H"
 #include "turbulenceModel.H"
-#include "CompressibleTurbulenceModel.H"
+#include "CompressibleTurbulenceModel_tpl.H"
 #include "pimpleControl.H"
 #include "fvOptions.H"
 #include "gaussLaplacianScheme.H"

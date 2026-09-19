@@ -125,7 +125,7 @@ Foam::elasticityMotionSolver::elasticityMotionSolver
     ),
     pointMotionU_
     (
-        IOobject
+        Foam::IOobject
         (
             "pointMotionU",
             mesh.time().timeName(),
@@ -139,7 +139,7 @@ Foam::elasticityMotionSolver::elasticityMotionSolver
     ),
     cellMotionU_
     (
-        IOobject
+        Foam::IOobject
         (
             "cellMotionU",
             mesh.time().timeName(),
@@ -258,7 +258,7 @@ void Foam::elasticityMotionSolver::solve()
             Info<< "  Writing new mesh points  " << endl;
             pointIOField points
             (
-                IOobject
+                Foam::IOobject
                 (
                     "points",
                     mesh().pointsInstance(),

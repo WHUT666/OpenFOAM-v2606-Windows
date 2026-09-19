@@ -45,7 +45,7 @@ SourceFiles
 
 #include "zone.H"
 #include "faceZoneMeshFwd.H"
-#include "primitivePatch.H"
+#include <primitivePatch.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

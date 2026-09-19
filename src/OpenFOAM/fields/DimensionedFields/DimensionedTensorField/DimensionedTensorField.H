@@ -40,7 +40,7 @@ SourceFiles
 
 #include "DimensionedSphericalTensorField.H"
 #include "DimensionedSymmTensorField.H"
-#include "tensor.H"
+#include <tensor.H>
 
 #define TEMPLATE template<class GeoMesh>
 #include "DimensionedFieldFunctionsM.H"

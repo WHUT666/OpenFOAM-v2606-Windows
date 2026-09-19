@@ -44,7 +44,7 @@ Description
 #include "turbulentFluidThermoModel.H"
 #include "surfaceFilmModel.H"
 #include "rhoReactionThermo.H"
-#include "CombustionModel.H"
+#include "CombustionModel_tpl.H"
 #include "radiationModel.H"
 #include "SLGThermo.H"
 #include "fvOptions.H"

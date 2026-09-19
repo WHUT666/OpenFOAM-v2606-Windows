@@ -45,7 +45,7 @@ SourceFiles
 #ifndef Foam_turbulentFluidThermoModel_H
 #define Foam_turbulentFluidThermoModel_H
 
-#include "CompressibleTurbulenceModel.H"
+#include <CompressibleTurbulenceModel_tpl.H>
 #include "ThermalDiffusivity.H"
 #include "EddyDiffusivity.H"
 #include "laminarModel.H"

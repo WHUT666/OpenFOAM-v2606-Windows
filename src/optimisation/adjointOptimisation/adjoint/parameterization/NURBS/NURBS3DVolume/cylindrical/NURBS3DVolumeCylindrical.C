@@ -104,7 +104,7 @@ void Foam::NURBS3DVolumeCylindrical::updateLocalCoordinateSystem
 
     pointVectorField cylindricalCoors
     (
-        IOobject
+        Foam::IOobject
         (
            "cylindricalCoors" + name_,
            mesh_.time().timeName(),

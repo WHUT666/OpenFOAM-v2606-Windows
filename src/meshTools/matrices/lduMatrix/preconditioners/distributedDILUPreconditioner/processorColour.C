@@ -339,7 +339,7 @@ const Foam::processorColour& Foam::processorColour::New(const lduMesh& mesh)
     {
         ptr = new processorColour(mesh);
 
-        //regIOobject::store(static_cast<MoveableMeshObject<lduMesh>*>(ptr));
+        //regIOobject::store(static_cast<Foam::MoveableMeshObject<lduMesh>*>(ptr));
         regIOobject::store(ptr);
     }
 

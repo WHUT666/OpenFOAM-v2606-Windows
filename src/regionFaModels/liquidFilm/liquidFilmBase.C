@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "liquidFilmBase.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "gravityMeshObject.H"
 #include "movingWallVelocityFvPatchVectorField.H"
 #include "turbulentFluidThermoModel.H"

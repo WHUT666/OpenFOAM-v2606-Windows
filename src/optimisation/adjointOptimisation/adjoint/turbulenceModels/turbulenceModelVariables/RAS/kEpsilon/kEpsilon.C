@@ -56,7 +56,7 @@ void kEpsilon::allocateMeanFields()
         (
             new volScalarField::Internal
             (
-                IOobject
+                Foam::IOobject
                 (
                     "GMean",
                     mesh_.time().timeName(),

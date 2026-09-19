@@ -38,7 +38,7 @@ SourceFiles
 #define Foam_labelVector2D_H
 
 #include "label.H"
-#include "Vector2D.H"
+#include <Vector2D_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

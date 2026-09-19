@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "dimensionedMinMax.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * Global Functions  * * * * * * * * * * * * * //
 

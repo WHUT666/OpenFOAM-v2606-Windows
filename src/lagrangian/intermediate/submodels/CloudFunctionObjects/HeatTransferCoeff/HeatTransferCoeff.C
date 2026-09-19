@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "HeatTransferCoeff.H"
-#include "ThermoCloud.H"
+#include <ThermoCloud_tpl.H>
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

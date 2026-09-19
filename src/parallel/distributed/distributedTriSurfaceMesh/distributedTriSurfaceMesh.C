@@ -2572,9 +2572,9 @@ Foam::distributedTriSurfaceMesh::decomposer() const
                 {
                     decomposeParDict_.reset
                     (
-                        new IOdictionary
+                        new Foam::IOdictionary
                         (
-                            IOobject
+                            Foam::IOobject
                             (
                                 // == decompositionModel::canonicalName
                                 "decomposeParDict",
@@ -3415,7 +3415,7 @@ Foam::distributedTriSurfaceMesh::distributedTriSurfaceMesh
     triSurfaceMesh(io, s),
     dict_
     (
-        IOobject
+        Foam::IOobject
         (
             searchableSurface::name() + "Dict",
             searchableSurface::instance(),
@@ -3481,7 +3481,7 @@ Foam::distributedTriSurfaceMesh::distributedTriSurfaceMesh(const IOobject& io)
 :
     triSurfaceMesh
     (
-        IOobject
+        Foam::IOobject
         (
             io.name(),
             findLocalInstance(io),  // findInstance with parent searching
@@ -3495,7 +3495,7 @@ Foam::distributedTriSurfaceMesh::distributedTriSurfaceMesh(const IOobject& io)
     ),
     dict_
     (
-        IOobject
+        Foam::IOobject
         (
             searchableSurface::name() + "Dict",
             searchableSurface::instance(),
@@ -3616,7 +3616,7 @@ Foam::distributedTriSurfaceMesh::distributedTriSurfaceMesh
 :
     triSurfaceMesh
     (
-        IOobject
+        Foam::IOobject
         (
             io.name(),
             findLocalInstance(io),
@@ -3631,7 +3631,7 @@ Foam::distributedTriSurfaceMesh::distributedTriSurfaceMesh
     ),
     dict_
     (
-        IOobject
+        Foam::IOobject
         (
             searchableSurface::name() + "Dict",
             searchableSurface::instance(),

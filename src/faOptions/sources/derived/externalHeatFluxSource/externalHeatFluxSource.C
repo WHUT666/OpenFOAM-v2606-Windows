@@ -30,6 +30,8 @@ License
 #include "faScalarMatrix.H"
 #include "physicoChemicalConstants.H"
 #include "zeroGradientFaPatchFields.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "addToRunTimeSelectionTable.H"
 
 using Foam::constant::physicoChemical::sigma;

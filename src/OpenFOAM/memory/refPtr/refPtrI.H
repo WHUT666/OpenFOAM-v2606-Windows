@@ -564,7 +564,7 @@ inline void Foam::refPtr<T>::operator=(tmp<T>&& other)
 
 
 template<class T>
-inline Foam::refPtr<T>::operator tmp<T>()
+inline Foam::refPtr<T>::operator Foam::tmp<T>()
 {
     if (is_pointer())
     {

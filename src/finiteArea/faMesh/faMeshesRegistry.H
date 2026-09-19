@@ -104,7 +104,7 @@ class faMesh;
 
 class faMeshesRegistry
 :
-    public MeshObject<polyMesh, UpdateableMeshObject, faMeshesRegistry>
+    public MeshObject<polyMesh, Foam::UpdateableMeshObject, faMeshesRegistry>
 {
     // Data Types
 
@@ -112,7 +112,7 @@ class faMeshesRegistry
         typedef MeshObject
         <
             polyMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             faMeshesRegistry
         > MeshObject_type;
 

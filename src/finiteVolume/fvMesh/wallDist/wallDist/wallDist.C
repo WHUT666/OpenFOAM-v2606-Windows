@@ -159,7 +159,7 @@ Foam::wallDist::~wallDist()
 bool Foam::wallDist::try_movePoints(const fvMesh& mesh)
 {
     auto* ptr =
-        mesh.getObjectPtr<UpdateableMeshObject<fvMesh>>("wallDist");
+        mesh.getObjectPtr<Foam::UpdateableMeshObject<fvMesh>>("wallDist");
 
     if (ptr)
     {

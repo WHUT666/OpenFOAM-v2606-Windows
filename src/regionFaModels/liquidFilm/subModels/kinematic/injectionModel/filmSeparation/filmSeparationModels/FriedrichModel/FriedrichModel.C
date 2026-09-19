@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "FriedrichModel.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "processorFaPatch.H"
 #include "unitConversion.H"
 #include "addToRunTimeSelectionTable.H"

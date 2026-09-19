@@ -25,10 +25,10 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "vector.H"
-#include "tensor.H"
-#include "symmTensor.H"
-#include "sphericalTensor.H"
+#include <vector.H>
+#include <tensor.H>
+#include <symmTensor.H>
+#include <sphericalTensor.H>
 #include "expressionEntryVectors.H"
 #include "addToRunTimeSelectionTable.H"
 

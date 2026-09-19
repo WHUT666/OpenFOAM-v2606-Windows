@@ -485,7 +485,7 @@ template<class Type2>
 const Foam::GeometricField<Type2, Foam::fvPatchField, Foam::volMesh>&
 Foam::mappedPatchFieldBase<Type>::sampleField(const word& fieldName) const
 {
-    typedef GeometricField<Type2, fvPatchField, volMesh> fieldType;
+    typedef GeometricField<Type2, Foam::fvPatchField, volMesh> fieldType;
 
     if (mapper_.sameRegion())
     {
@@ -612,10 +612,10 @@ template<class Type>
 Foam::tmp<Foam::Field<Type>>
 Foam::mappedPatchFieldBase<Type>::mappedField
 (
-//    const GeometricField<T, fvPatchField, volMesh>& fld
+//    const GeometricField<T, Foam::fvPatchField, volMesh>& fld
 ) const
 {
-    typedef GeometricField<Type, fvPatchField, volMesh> fieldType;
+    typedef GeometricField<Type, Foam::fvPatchField, volMesh> fieldType;
 
     // Since we're inside initEvaluate/evaluate there might be processor
     // comms underway. Change the tag we use.
@@ -810,7 +810,7 @@ Foam::mappedPatchFieldBase<Type>::mappedField
 //Foam::tmp<Foam::Field<Type>>
 //Foam::mappedPatchFieldBase<Type>::mappedField() const
 //{
-//    const GeometricField<Type, fvPatchField, volMesh>& fld = sampleField();
+//    const GeometricField<Type, Foam::fvPatchField, volMesh>& fld = sampleField();
 //    return mappedField<Type>(fld);
 //}
 

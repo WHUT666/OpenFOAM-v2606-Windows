@@ -137,6 +137,8 @@ SourceFiles
 #include "volFieldsFwd.H"
 #include "surfaceFieldsFwd.H"
 #include "IOobjectList.H"
+#include "pTraits.H"
+#include <type_traits>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -248,12 +250,34 @@ class sampledSurfaces
             const word& fieldName
         );
 
-        //- Sample and store/write a specific volume field
-        template<class Type>
+        //- Sample and store/write a specific volume field.
+        //  \note MSVC eagerly instantiates the parameter type while probing
+        //  overloads: constrain to element types so that probing with
+        //  GeoField (a whole field) does not form an invalid nested
+        //  GeometricField<GeometricField<...>>.
+        template
+        <
+            class Type,
+            typename std::enable_if
+            <
+                std::is_arithmetic<Type>::value
+             || Foam::is_vectorspace<Type>::value,
+                int
+            >::type = 0
+        >
         void performAction(const VolumeField<Type>& fld, unsigned request);
 
         //- Sample and store/write a specific surface field
-        template<class Type>
+        template
+        <
+            class Type,
+            typename std::enable_if
+            <
+                std::is_arithmetic<Type>::value
+             || Foam::is_vectorspace<Type>::value,
+                int
+            >::type = 0
+        >
         void performAction(const SurfaceField<Type>& fld, unsigned request);
 
         //- Sample and write all applicable sampled fields

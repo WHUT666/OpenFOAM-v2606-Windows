@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "NamedEnum.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "stdFoam.H"
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //

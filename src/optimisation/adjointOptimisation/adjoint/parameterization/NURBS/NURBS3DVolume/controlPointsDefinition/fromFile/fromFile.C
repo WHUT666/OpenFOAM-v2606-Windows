@@ -55,7 +55,7 @@ void Foam::fromFile::computeControlPoints()
     const dictionary& dict = box_.dict();
     IOdictionary cpsDict
     (
-        IOobject
+        Foam::IOobject
         (
             dict.dictName() + "cpsBsplines" + mesh.time().timeName(),
             mesh.time().caseConstant(),

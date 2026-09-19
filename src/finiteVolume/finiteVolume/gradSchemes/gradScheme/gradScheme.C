@@ -29,6 +29,7 @@ License
 #include "fv.H"
 #include "objectRegistry.H"
 #include "solution.H"
+#include "volFields.H"   // complete GeometricField for MSVC eager instantiation
 
 // * * * * * * * * * * * * * * * * * Selectors * * * * * * * * * * * * * * * //
 

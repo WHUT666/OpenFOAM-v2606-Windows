@@ -26,7 +26,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "evalEntry.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "OTstream.H"
 #include "stringOps.H"
 #include "fieldExprDriver.H"

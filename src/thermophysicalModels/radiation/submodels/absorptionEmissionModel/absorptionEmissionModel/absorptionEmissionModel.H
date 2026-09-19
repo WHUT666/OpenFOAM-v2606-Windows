@@ -39,7 +39,7 @@ Description
 #include "autoPtr.H"
 #include "runTimeSelectionTables.H"
 #include "volFields.H"
-#include "Vector2D.H"
+#include "Vector2D_tpl.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

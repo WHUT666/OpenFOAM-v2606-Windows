@@ -58,7 +58,7 @@ class multiWorldConnections
     public MeshObject
     <
         Time,
-        TopologicalMeshObject,
+        Foam::TopologicalMeshObject,
         multiWorldConnections
     >
 {
@@ -67,7 +67,7 @@ class multiWorldConnections
         typedef MeshObject
         <
             Time,
-            TopologicalMeshObject,
+            Foam::TopologicalMeshObject,
             multiWorldConnections
         > MeshObject_type;
 

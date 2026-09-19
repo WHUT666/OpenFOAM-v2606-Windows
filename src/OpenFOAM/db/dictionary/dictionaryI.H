@@ -25,7 +25,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * Static Member Functions * * * * * * * * * * * * //
 

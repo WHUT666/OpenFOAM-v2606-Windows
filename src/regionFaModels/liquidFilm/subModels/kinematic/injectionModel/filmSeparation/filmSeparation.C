@@ -27,6 +27,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "filmSeparation.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "filmSeparationModel.H"
 #include "addToRunTimeSelectionTable.H"
 

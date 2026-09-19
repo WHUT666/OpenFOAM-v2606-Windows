@@ -34,7 +34,7 @@ Description
 #ifndef point2D_H
 #define point2D_H
 
-#include "vector2D.H"
+#include <vector2D.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -87,14 +87,14 @@ class GAMGProcAgglomeration;
 
 class GAMGAgglomeration
 :
-    public MeshObject<lduMesh, MoveableMeshObject, GAMGAgglomeration>
+    public MeshObject<lduMesh, Foam::MoveableMeshObject, GAMGAgglomeration>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             lduMesh,
-            MoveableMeshObject,
+            Foam::MoveableMeshObject,
             GAMGAgglomeration
         > MeshObject_type;
 

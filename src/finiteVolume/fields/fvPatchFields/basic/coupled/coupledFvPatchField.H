@@ -43,7 +43,7 @@ SourceFiles
 #ifndef Foam_coupledFvPatchField_H
 #define Foam_coupledFvPatchField_H
 
-#include "LduInterfaceField.H"
+#include "LduInterfaceField_tpl.H"
 #include "fvPatchField.H"
 #include "coupledFvPatch.H"
 

@@ -40,7 +40,7 @@ SourceFiles
 #define Foam_complexVector_H
 
 #include "complex.H"
-#include "vector.H"
+#include <vector.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

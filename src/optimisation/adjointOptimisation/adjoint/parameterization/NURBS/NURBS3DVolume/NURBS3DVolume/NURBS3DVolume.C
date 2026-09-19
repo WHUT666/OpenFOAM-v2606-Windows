@@ -122,7 +122,7 @@ void Foam::NURBS3DVolume::computeParametricCoordinates
     (
         new pointVectorField
         (
-            IOobject
+            Foam::IOobject
             (
                 "parametricCoordinates" + name_,
                 mesh_.time().timeName(),
@@ -697,7 +697,7 @@ Foam::NURBS3DVolume::NURBS3DVolume
 :
     localIOdictionary
     (
-        IOobject
+        Foam::IOobject
         (
             dict.dictName() + "cpsBsplines",
             mesh.time().timeName(),
@@ -1842,7 +1842,7 @@ Foam::tmp<Foam::pointTensorField> Foam::NURBS3DVolume::getDxDb(const label cpI)
     (
         new pointTensorField
         (
-            IOobject
+            Foam::IOobject
             (
                 "DxDb",
                 mesh_.time().timeName(),

@@ -71,7 +71,7 @@ Foam::blockVertices::namedVertex::namedVertex
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
-Foam::blockVertices::namedVertex::operator point() const
+Foam::blockVertices::namedVertex::operator Foam::point() const
 {
     return vertexPtr_().operator point();
 }

@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "instant.H"
+#include <instant.H>
 #include "Time.H"
 #include "Pair.H"
 #include "UList.H"

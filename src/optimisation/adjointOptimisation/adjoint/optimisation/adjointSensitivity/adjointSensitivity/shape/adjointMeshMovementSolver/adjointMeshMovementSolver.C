@@ -114,7 +114,7 @@ adjointMeshMovementSolver::adjointMeshMovementSolver
     ),
     source_
     (
-        IOobject
+        Foam::IOobject
         (
             "sourceadjointMeshMovement",
             mesh_.time().timeName(),

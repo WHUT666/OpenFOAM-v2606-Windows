@@ -41,7 +41,7 @@ void Foam::ATCModel::smoothFieldBasedOnCells
 {
     volScalarField limiter
     (
-        IOobject
+        Foam::IOobject
         (
             vf.name() + "Limiter",
             mesh_.time().timeName(),

@@ -34,7 +34,7 @@ License
 #include "fvmLaplacian.H"
 #include "fvcDdt.H"
 #include "fvcDiv.H"
-#include "fvcDDt.H"
+#include "fvcDDt_tpl.H"
 #include "fvMatrix.H"
 #include "fvcFlux.H"
 #include "CMULES.H"
@@ -172,8 +172,8 @@ calculateMassFractions()
         Y()[i] = X_[i]*thermo().composition().W(i)/W;
 
         Info<< Y()[i].name() << " mass fraction = "
-            << "  Min(Y) = " << min(Y()[i]).value()
-            << "  Max(Y) = " << max(Y()[i]).value()
+            << "  Min(Y) = " << Foam::min(Y()[i]).value()
+            << "  Max(Y) = " << Foam::max(Y()[i]).value()
             << endl;
     }
 }
@@ -222,7 +222,7 @@ void Foam::MultiComponentPhaseModel<BasePhaseModel, phaseThermo>::solveYi
 
     surfaceScalarField phic(mag((phi)/mesh.magSf()));
 
-    phic = min(cAlpha*phic, max(phic));
+    phic = Foam::min(cAlpha*phic, Foam::max(phic));
 
     surfaceScalarField phir(0.0*phi);
 

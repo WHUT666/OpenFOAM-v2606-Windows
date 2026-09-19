@@ -125,7 +125,7 @@ void incompressibleVars::setMeanFields()
         (
             new volScalarField
             (
-                IOobject
+                Foam::IOobject
                 (
                     pInst().name()+"Mean",
                     mesh_.time().timeName(),
@@ -141,7 +141,7 @@ void incompressibleVars::setMeanFields()
         (
             new volVectorField
             (
-                IOobject
+                Foam::IOobject
                 (
                     UInst().name()+"Mean",
                     mesh_.time().timeName(),
@@ -157,7 +157,7 @@ void incompressibleVars::setMeanFields()
         (
             new surfaceScalarField
             (
-                IOobject
+                Foam::IOobject
                 (
                     phiInst().name()+"Mean",
                     mesh_.time().timeName(),

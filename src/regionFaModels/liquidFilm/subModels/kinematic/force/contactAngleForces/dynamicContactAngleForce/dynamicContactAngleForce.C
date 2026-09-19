@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "dynamicContactAngleForce.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "Function1.H"
 #include "distributionModel.H"
 #include "addToRunTimeSelectionTable.H"

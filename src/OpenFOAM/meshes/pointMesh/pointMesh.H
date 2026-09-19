@@ -51,7 +51,7 @@ namespace Foam
 
 class pointMesh
 :
-    public MeshObject<polyMesh, UpdateableMeshObject, pointMesh>,
+    public MeshObject<polyMesh, Foam::UpdateableMeshObject, pointMesh>,
     public GeoMesh<polyMesh>
 {
     // Private Typedefs
@@ -59,7 +59,7 @@ class pointMesh
         typedef MeshObject
         <
             polyMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             pointMesh
         > MeshObject_type;
 

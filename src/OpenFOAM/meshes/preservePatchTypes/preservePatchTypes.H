@@ -39,7 +39,7 @@ SourceFiles
 
 #include "fileName.H"
 #include "wordList.H"
-#include "dictionary.H"
+#include <dictionary.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

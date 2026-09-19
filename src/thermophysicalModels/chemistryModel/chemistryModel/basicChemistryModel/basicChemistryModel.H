@@ -194,7 +194,7 @@ public:
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-#include "basicChemistryModelI.H"
+#include <basicChemistryModelI.H>
 
 #ifdef NoRepository
     #include "basicChemistryModelTemplates.C"

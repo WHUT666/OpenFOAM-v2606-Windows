@@ -60,7 +60,7 @@ ATCstandard::ATCstandard
     ATCModel(mesh, primalVars, adjointVars, dict),
     gradU_
     (
-        IOobject
+        Foam::IOobject
         (
             "gradUATC",
             mesh_.time().timeName(),

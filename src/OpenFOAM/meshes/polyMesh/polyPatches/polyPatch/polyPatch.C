@@ -33,7 +33,7 @@ License
 #include "primitiveMesh.H"
 #include "SubField.H"
 #include "entry.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "pointPatchField.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

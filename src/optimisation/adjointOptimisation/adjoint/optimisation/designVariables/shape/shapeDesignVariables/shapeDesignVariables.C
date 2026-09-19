@@ -277,7 +277,7 @@ void Foam::shapeDesignVariables::moveMesh()
             << mesh_.name() << endl;
         pointIOField points
         (
-            IOobject
+            Foam::IOobject
             (
                "points",
                 mesh_.pointsInstance(),

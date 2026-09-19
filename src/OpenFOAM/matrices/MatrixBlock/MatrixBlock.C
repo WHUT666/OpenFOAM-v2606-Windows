@@ -31,7 +31,7 @@ License
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
 template<class MatrixType>
-Foam::ConstMatrixBlock<MatrixType>::operator Field<cmptType>() const
+Foam::ConstMatrixBlock<MatrixType>::operator Foam::Field<typename MatrixType::cmptType>() const
 {
     if (nCols_ != 1)
     {
@@ -52,7 +52,7 @@ Foam::ConstMatrixBlock<MatrixType>::operator Field<cmptType>() const
 
 
 template<class MatrixType>
-Foam::MatrixBlock<MatrixType>::operator Field<cmptType>() const
+Foam::MatrixBlock<MatrixType>::operator Foam::Field<typename MatrixType::cmptType>() const
 {
     if (nCols_ != 1)
     {

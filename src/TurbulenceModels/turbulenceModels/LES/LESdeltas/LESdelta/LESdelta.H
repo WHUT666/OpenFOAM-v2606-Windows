@@ -38,7 +38,7 @@ SourceFiles
 #ifndef LESdelta_H
 #define LESdelta_H
 
-#include "turbulenceModel.H"
+#include <turbulenceModel.H>
 #include "volFields.H"
 #include "runTimeSelectionTables.H"
 

@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "PatchToPatchInterpolation.H"
+#include <PatchToPatchInterpolation_tpl.H>
 #include "objectHit.H"
 #include "pointHit.H"
 

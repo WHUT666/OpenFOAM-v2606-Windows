@@ -58,9 +58,9 @@ displacementMethodpLaplacianMotionSolver
     cellMotionU_(refCast<pLaplacianMotionSolver>(motionPtr_()).cellMotionU()),
     resetFields_
     (
-        IOdictionary
+        Foam::IOdictionary
         (
-            IOobject
+            Foam::IOobject
             (
                 "dynamicMeshDict",
                 mesh.time().constant(),

@@ -95,7 +95,15 @@ void Foam::sampledSets::writeCoordSet
 }
 
 
-template<class Type>
+template
+<
+    class Type,
+    typename std::enable_if
+    <
+        std::is_arithmetic<Type>::value || Foam::is_vectorspace<Type>::value,
+        int
+    >::type
+>
 void Foam::sampledSets::performAction
 (
     const VolumeField<Type>& fld,

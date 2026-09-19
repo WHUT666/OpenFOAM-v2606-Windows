@@ -216,7 +216,7 @@ Foam::label Foam::OppositeFaceCellWave<Type, TrackingData>::faceToCell()
     // Handled all changed faces by now
     this->changedFaces_.clear();
 
-    if (debug & 2)
+    if (OppositeFaceCellWaveBase::debug & 2)
     {
         Pout<< " Changed cells            : " << this->nChangedCells() << endl;
     }
@@ -287,7 +287,7 @@ Foam::label Foam::OppositeFaceCellWave<Type, TrackingData>::cellToFace()
         this->handleProcPatches();
     }
 
-    if (debug & 2)
+    if (OppositeFaceCellWaveBase::debug & 2)
     {
         Pout<< " Changed faces            : " << this->nChangedFaces()
             << endl;

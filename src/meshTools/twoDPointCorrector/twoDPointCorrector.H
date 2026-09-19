@@ -64,14 +64,14 @@ class polyMesh;
 
 class twoDPointCorrector
 :
-    public MeshObject<polyMesh, UpdateableMeshObject, twoDPointCorrector>
+    public MeshObject<polyMesh, Foam::UpdateableMeshObject, twoDPointCorrector>
 {
     // Private Typedefs
 
         typedef MeshObject
         <
             polyMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             twoDPointCorrector
         > MeshObject_type;
 

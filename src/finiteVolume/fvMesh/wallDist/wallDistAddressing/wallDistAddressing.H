@@ -111,7 +111,7 @@ class wallPointAddressing;
 
 class wallDistAddressing
 :
-    public MeshObject<fvMesh, UpdateableMeshObject, wallDistAddressing>,
+    public MeshObject<fvMesh, Foam::UpdateableMeshObject, wallDistAddressing>,
     public cellDistFuncs
 {
     // Private Typedefs
@@ -119,7 +119,7 @@ class wallDistAddressing
         typedef MeshObject
         <
             fvMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             wallDistAddressing
         > MeshObject_type;
 

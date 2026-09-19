@@ -25,7 +25,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "fvcDdt.H"
+#include <fvcDdt.H>
 #include "fvMesh.H"
 #include "ddtScheme.H"
 
@@ -167,7 +167,7 @@ ddt
 
 
 template<class Type>
-tmp<GeometricField<typename flux<Type>::type, fvsPatchField, surfaceMesh>>
+tmp<GeometricField<typename Foam::flux<Type>::type, fvsPatchField, surfaceMesh>>
 ddtCorr
 (
     const GeometricField<Type, fvPatchField, volMesh>& U,
@@ -183,13 +183,13 @@ ddtCorr
 
 
 template<class Type>
-tmp<GeometricField<typename flux<Type>::type, fvsPatchField, surfaceMesh>>
+tmp<GeometricField<typename Foam::flux<Type>::type, fvsPatchField, surfaceMesh>>
 ddtCorr
 (
     const GeometricField<Type, fvPatchField, volMesh>& U,
     const GeometricField
     <
-        typename flux<Type>::type,
+        typename Foam::flux<Type>::type,
         fvsPatchField,
         surfaceMesh
     >& phi
@@ -204,13 +204,13 @@ ddtCorr
 
 
 template<class Type>
-tmp<GeometricField<typename flux<Type>::type, fvsPatchField, surfaceMesh>>
+tmp<GeometricField<typename Foam::flux<Type>::type, fvsPatchField, surfaceMesh>>
 ddtCorr
 (
     const GeometricField<Type, fvPatchField, volMesh>& U,
     const GeometricField
     <
-        typename flux<Type>::type,
+        typename Foam::flux<Type>::type,
         fvsPatchField,
         surfaceMesh
     >& phi,
@@ -229,7 +229,7 @@ ddtCorr
 
 
 template<class Type>
-tmp<GeometricField<typename flux<Type>::type, fvsPatchField, surfaceMesh>>
+tmp<GeometricField<typename Foam::flux<Type>::type, fvsPatchField, surfaceMesh>>
 ddtCorr
 (
     const volScalarField& rho,
@@ -246,14 +246,14 @@ ddtCorr
 
 
 template<class Type>
-tmp<GeometricField<typename flux<Type>::type, fvsPatchField, surfaceMesh>>
+tmp<GeometricField<typename Foam::flux<Type>::type, fvsPatchField, surfaceMesh>>
 ddtCorr
 (
     const volScalarField& rho,
     const GeometricField<Type, fvPatchField, volMesh>& U,
     const GeometricField
     <
-        typename flux<Type>::type,
+        typename Foam::flux<Type>::type,
         fvsPatchField,
         surfaceMesh
     >& phi
@@ -268,14 +268,14 @@ ddtCorr
 
 
 template<class Type>
-tmp<GeometricField<typename flux<Type>::type, fvsPatchField, surfaceMesh>>
+tmp<GeometricField<typename Foam::flux<Type>::type, fvsPatchField, surfaceMesh>>
 ddtCorr
 (
     const volScalarField& rho,
     const GeometricField<Type, fvPatchField, volMesh>& U,
     const GeometricField
     <
-        typename flux<Type>::type,
+        typename Foam::flux<Type>::type,
         fvsPatchField,
         surfaceMesh
     >& phi,

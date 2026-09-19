@@ -32,7 +32,7 @@ License
 #include "IPstream.H"
 #include "OPstream.H"
 #include "SpanStream.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "objectRegistry.H"
 #include "masterUncollatedFileOperation.H"
 

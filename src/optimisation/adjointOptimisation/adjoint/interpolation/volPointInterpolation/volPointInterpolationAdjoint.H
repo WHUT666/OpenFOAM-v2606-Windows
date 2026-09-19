@@ -63,7 +63,7 @@ class volPointInterpolationAdjoint
     public MeshObject
     <
         fvMesh,
-        UpdateableMeshObject,
+        Foam::UpdateableMeshObject,
         volPointInterpolationAdjoint
     >
 {
@@ -72,7 +72,7 @@ class volPointInterpolationAdjoint
         typedef MeshObject
         <
             fvMesh,
-            UpdateableMeshObject,
+            Foam::UpdateableMeshObject,
             volPointInterpolationAdjoint
         > MeshObject_type;
 

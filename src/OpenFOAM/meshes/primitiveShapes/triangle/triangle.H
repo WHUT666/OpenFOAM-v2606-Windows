@@ -42,8 +42,8 @@ SourceFiles
 
 #include "triangleFwd.H"
 #include "intersection.H"
-#include "vector.H"
-#include "tensor.H"
+#include <vector.H>
+#include <tensor.H>
 #include "pointHit.H"
 #include "Random.H"
 #include "FixedList.H"
@@ -51,7 +51,7 @@ SourceFiles
 #include "line.H"
 #include "Pair.H"
 #include "Tuple2.H"
-#include "barycentric2D.H"
+#include <barycentric2D.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -389,7 +389,7 @@ void Foam::radiation::solarLoad::initialise(const dictionary& coeffs)
             bandi,
             new volScalarField
             (
-                IOobject
+                Foam::IOobject
                 (
                     "qprimaryRad_" + Foam::name(bandi) ,
                     mesh_.time().timeName(),
@@ -420,7 +420,7 @@ void Foam::radiation::solarLoad::calculateQdiff
 {
     scalarListIOList FmyProc
     (
-        IOobject
+        Foam::IOobject
         (
             "F",
             mesh_.facesInstance(),
@@ -438,7 +438,7 @@ void Foam::radiation::solarLoad::calculateQdiff
         (
             new singleCellFvMesh
             (
-                IOobject
+                Foam::IOobject
                 (
                     "coarse:" + mesh_.name(),
                     mesh_.polyMesh::instance(),
@@ -719,7 +719,7 @@ Foam::radiation::solarLoad::solarLoad(const volScalarField& T)
     dict_(coeffs_),
     qr_
     (
-        IOobject
+        Foam::IOobject
         (
             "qr",
             mesh_.time().timeName(),
@@ -734,7 +734,7 @@ Foam::radiation::solarLoad::solarLoad(const volScalarField& T)
     reflectedFaces_(),
     Ru_
     (
-        IOobject
+        Foam::IOobject
         (
             "Ru",
             mesh_.time().timeName(),
@@ -773,7 +773,7 @@ Foam::radiation::solarLoad::solarLoad
     dict_(dict),
     qr_
     (
-        IOobject
+        Foam::IOobject
         (
             "qr",
             mesh_.time().timeName(),
@@ -788,7 +788,7 @@ Foam::radiation::solarLoad::solarLoad
     reflectedFaces_(),
     Ru_
     (
-        IOobject
+        Foam::IOobject
         (
             "Ru",
             mesh_.time().timeName(),

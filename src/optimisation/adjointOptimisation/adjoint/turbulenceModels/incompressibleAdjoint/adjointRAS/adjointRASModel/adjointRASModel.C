@@ -90,7 +90,7 @@ void adjointRASModel::setMeanFields()
             (
                 new volScalarField
                 (
-                    IOobject
+                    Foam::IOobject
                     (
                         getAdjointTMVariable1Inst().name() + "Mean",
                         mesh_.time().timeName(),
@@ -109,7 +109,7 @@ void adjointRASModel::setMeanFields()
             (
                 new volScalarField
                 (
-                    IOobject
+                    Foam::IOobject
                     (
                         getAdjointTMVariable2Inst().name() + "Mean",
                         mesh_.time().timeName(),
@@ -143,9 +143,9 @@ adjointRASModel::adjointRASModel
         objManager,
         adjointTurbulenceModelName
     ),
-    IOdictionary
+    Foam::IOdictionary
     (
-        IOobject
+        Foam::IOobject
         (
             "adjointRASProperties",
             primalVars.U().time().constant(),
@@ -188,7 +188,7 @@ autoPtr<adjointRASModel> adjointRASModel::New
 {
     const IOdictionary dict
     (
-        IOobject
+        Foam::IOobject
         (
             "adjointRASProperties",
             primalVars.U().time().constant(),
@@ -246,7 +246,7 @@ bool adjointRASModel::read()
 {
     //if (regIOobject::read())
 
-    // Bit of trickery : we are both IOdictionary ('adjointRASProperties') and
+    // Bit of trickery : we are both Foam::IOdictionary ('adjointRASProperties') and
     // an regIOobject from the adjointTurbulenceModel level. Problem is to
     // distinguish between the two - we only want to reread the IOdictionary.
 
@@ -286,7 +286,7 @@ volScalarField& adjointRASModel::getAdjointTMVariable1Inst()
         (
             new volScalarField
             (
-                IOobject
+                Foam::IOobject
                 (
                     "adjointTMVariable1" + type(),
                     mesh_.time().timeName(),
@@ -313,7 +313,7 @@ volScalarField& adjointRASModel::getAdjointTMVariable2Inst()
         (
             new volScalarField
             (
-                IOobject
+                Foam::IOobject
                 (
                    "adjointTMVariable2" + type(),
                    mesh_.time().timeName(),
@@ -388,7 +388,7 @@ tmp<volScalarField> adjointRASModel::nutJacobianTMVar1() const
     return
         tmp<volScalarField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "nutJacobianTMVar1"+type(),
                 mesh_.time().timeName(),
@@ -414,7 +414,7 @@ tmp<volScalarField> adjointRASModel::nutJacobianTMVar2() const
     return
         tmp<volScalarField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "nutJacobianTMVar2"+type(),
                 mesh_.time().timeName(),

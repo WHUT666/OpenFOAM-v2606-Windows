@@ -26,9 +26,9 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "dictionary.H"
+#include <dictionary.H>
 #include "plane.H"
-#include "tensor.H"
+#include <tensor.H>
 
 // * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
 

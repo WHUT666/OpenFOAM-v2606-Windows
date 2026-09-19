@@ -88,7 +88,7 @@ tmp<surfaceScalarField> adjointEikonalSolver::computeYPhi()
 
     volVectorField ny
     (
-        IOobject
+        Foam::IOobject
         (
             "ny",
             mesh_.time().timeName(),
@@ -138,7 +138,7 @@ adjointEikonalSolver::adjointEikonalSolver
     wallPatchIDs_(mesh_.boundaryMesh().findPatchIDs<wallPolyPatch>()),
     da_
     (
-        IOobject
+        Foam::IOobject
         (
             word
             (
@@ -159,7 +159,7 @@ adjointEikonalSolver::adjointEikonalSolver
     ),
     source_
     (
-        IOobject
+        Foam::IOobject
         (
             "sourceEikonal",
             mesh_.time().timeName(),
@@ -208,7 +208,7 @@ void adjointEikonalSolver::solve()
 
     volScalarField scaleDims
     (
-        IOobject
+        Foam::IOobject
         (
             "scaleDims",
             mesh_.time().timeName(),
@@ -306,7 +306,7 @@ tmp<volTensorField> adjointEikonalSolver::getFISensitivityTerm() const
     (
         tmp<volVectorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "gradDDa",
                 mesh_.time().timeName(),
@@ -325,7 +325,7 @@ tmp<volTensorField> adjointEikonalSolver::getFISensitivityTerm() const
     (
         tmp<volTensorField>::New
         (
-            IOobject
+            Foam::IOobject
             (
                 "distanceSensFI",
                 mesh_.time().timeName(),

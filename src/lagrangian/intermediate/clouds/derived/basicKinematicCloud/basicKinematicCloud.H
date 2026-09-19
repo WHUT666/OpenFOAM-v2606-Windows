@@ -35,7 +35,7 @@ Description
 #define basicKinematicCloud_H
 
 #include "Cloud.H"
-#include "KinematicCloud.H"
+#include <KinematicCloud_tpl.H>
 #include "basicKinematicParcel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

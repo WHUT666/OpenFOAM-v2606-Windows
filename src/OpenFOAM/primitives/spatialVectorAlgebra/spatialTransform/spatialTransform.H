@@ -45,9 +45,9 @@ SourceFiles
 #ifndef spatialTransform_H
 #define spatialTransform_H
 
-#include "tensor.H"
-#include "spatialVector.H"
-#include "spatialTensor.H"
+#include <tensor.H>
+#include <spatialVector.H>
+#include <spatialTensor.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

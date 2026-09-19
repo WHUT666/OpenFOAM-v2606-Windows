@@ -35,7 +35,7 @@ Description
 #define phaseCompressibleTurbulenceModel_H
 
 #include "phaseCompressibleTurbulenceModelFwd.H"
-#include "PhaseCompressibleTurbulenceModel.H"
+#include <PhaseCompressibleTurbulenceModel.H>
 #include "ThermalDiffusivity.H"
 #include "phaseModel.H"
 

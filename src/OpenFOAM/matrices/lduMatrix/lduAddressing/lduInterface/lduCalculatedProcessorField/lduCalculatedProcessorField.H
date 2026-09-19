@@ -47,7 +47,7 @@ SourceFiles
 
 #include "lduPrimitiveProcessorInterface.H"
 #include "processorLduInterfaceField.H"
-#include "LduInterfaceField.H"
+#include <LduInterfaceField_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

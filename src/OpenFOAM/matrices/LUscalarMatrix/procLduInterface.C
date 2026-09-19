@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "procLduInterface.H"
-#include "lduInterfaceField.H"
+#include <lduInterfaceField.H>
 #include "cyclicLduInterface.H"
 #include "processorLduInterface.H"
 

@@ -254,7 +254,7 @@ void Foam::LiquidEvapFuchsKnudsen<CloudType>::calculate
     const scalar Sherwood = Sh(Re, Sc);
 
     // mass flux density [kg/m2/s]
-    const scalar Ni = (rhog*Sherwood*Dab*Cm/d)*log((1 - YeInf)/(1 - YeSurf));
+    const scalar Ni = (rhog*Sherwood*Dab*Cm/d)*Foam::log((1 - YeInf)/(1 - YeSurf));
 
     // mass transfer [kg]
     const scalar As = Foam::constant::mathematical::pi*d*d;

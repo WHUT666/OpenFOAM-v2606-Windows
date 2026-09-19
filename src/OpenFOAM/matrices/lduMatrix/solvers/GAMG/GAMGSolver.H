@@ -61,7 +61,7 @@ SourceFiles
 #define Foam_GAMGSolver_H
 
 #include "GAMGAgglomeration.H"
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 #include "primitiveFields.H"
 #include "LUscalarMatrix.H"
 

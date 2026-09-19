@@ -37,7 +37,7 @@ Description
 #define Foam_expressions_scanToken_H
 
 #include "scalar.H"
-#include "vector.H"
+#include <vector.H>
 #include "word.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

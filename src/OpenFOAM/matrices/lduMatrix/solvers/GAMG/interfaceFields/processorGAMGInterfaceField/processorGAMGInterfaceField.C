@@ -28,7 +28,7 @@ License
 
 #include "processorGAMGInterfaceField.H"
 #include "addToRunTimeSelectionTable.H"
-#include "lduMatrix.H"
+#include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

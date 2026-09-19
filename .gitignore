@@ -83,3 +83,14 @@ doc/Doxygen/DTAGS
 
 # Ignore the test directory
 /tutorialsTest
+
+# --- Windows/MSVC build tree ---
+/build/
+*.obj
+*.tlog
+*.rsp
+*.vcxproj.user
+
+# Python caches
+__pycache__/
+*.pyc

@@ -27,7 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "primitiveEntry.H"
-#include "dictionary.H"
+#include <dictionary.H>
 #include "SpanStream.H"
 #include "StringStream.H"  // Legacy include, perhaps expected elsewhere
 

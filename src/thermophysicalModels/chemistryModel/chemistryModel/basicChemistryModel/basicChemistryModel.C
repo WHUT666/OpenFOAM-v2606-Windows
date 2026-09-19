@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "basicChemistryModel.H"
+#include <basicChemistryModel.H>
 #include "fvMesh.H"
 #include "Time.H"
 

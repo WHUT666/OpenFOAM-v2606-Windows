@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "surfaceCourantNumber.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "faMesh.H"
 #include "fvMesh.H"
 #include "areaFields.H"

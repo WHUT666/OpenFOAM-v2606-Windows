@@ -27,6 +27,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "BrunDrippingInjection.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

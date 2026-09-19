@@ -38,7 +38,7 @@ SourceFiles
 #define ThermoCombustion_H
 
 #include "autoPtr.H"
-#include "CombustionModel.H"
+#include <CombustionModel_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

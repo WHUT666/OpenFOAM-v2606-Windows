@@ -91,7 +91,7 @@ void Foam::domainDecompositionDryRun::execute
     {
         volScalarField weights
         (
-            IOobject
+            Foam::IOobject
             (
                 name,
                 mesh_.time().timeName(),

@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "vibrationShellModel.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

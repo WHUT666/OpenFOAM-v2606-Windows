@@ -26,6 +26,8 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "regionFaIBM.H"
+#include "volFields.H"
+#include "surfaceFields.H"
 #include "Time.H"
 #include "scalarMatrices.H"
 #include "ListOps.H"

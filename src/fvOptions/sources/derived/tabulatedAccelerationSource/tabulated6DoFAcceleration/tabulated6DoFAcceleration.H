@@ -42,7 +42,7 @@ SourceFiles
 #define tabulated6DoFAcceleration_H
 
 #include "primitiveFields.H"
-#include "Vector2D.H"
+#include "Vector2D_tpl.H"
 #include "Time.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

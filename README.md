@@ -1,3 +1,90 @@
+# OpenFOAM-v2606 Windows/MSVC 原生移植
+
+> **English**: unofficial **native Windows port of OpenFOAM v2606** — built
+> with Visual Studio 2022 (MSVC) via CMake-generated solutions, real MS-MPI
+> parallelism and vendored third-party libraries. No WSL, no MinGW
+> cross-compilation, no Cygwin.
+
+## 项目目的
+
+让 OpenFOAM v2606 能够在 Windows 上**原生开发和运行**:
+
+- 使用 Visual Studio 2022 + CMake 生成 `.sln`/`.vcxproj` 直接编译调试
+- 不依赖 WSL / MinGW 交叉编译 / Cygwin
+- 真实 MS-MPI 并行(非 dummy MPI)
+- 第三方依赖全部提供 Windows 版本(METIS / SCOTCH / PT-SCOTCH / CGAL /
+  GMP / MPFR / Boost / FFTW / zlib / win_flex / lemon / m4)
+- 保证功能正常:求解器、网格工具、并行分解/重构、CGAL 网格生成均实际跑通
+
+## 当前进度
+
+### 已完成
+
+- ✅ **构建系统**:完整 CMake 移植(`cmake/wmake2cmake.py` 从 `Make/files`
+  + `Make/options` 自动生成目标),VS2022 x64 / C++17 / DP / label32,
+  `ALL_BUILD` 零编译错误零链接警告
+- ✅ **MPI**:vendored MS-MPI SDK(`thirdparty/msmpi`,含 mpiexec/smpd/
+  msmpi.dll),`mpiexec -n N <solver> -parallel` 端到端可用;修复了
+  MS-MPI 缺少 `MPI_Comm_create_group` 导致的子通信域集合调用错配
+- ✅ **并行分解**:`decomposePar`/`redistributePar` 的 `metis`、`scotch`、
+  `ptscotch` 后端均为真实实现(vendored conda-forge int32 库)
+- ✅ **CGAL**:vendored CGAL 6.x + GMP/MPFR;`foamyHexMesh`、`foamyQuadMesh`、
+  `cellSizeAndAlignmentGrid`、`viewFactorsGen`、`surfaceBooleanFeatures`
+  均可构建运行
+- ✅ **静态链接模型**:每个静态库通过 `INTERFACE_LINK_OPTIONS` 传播
+  `/WHOLEARCHIVE`,保留 runTimeSelection 自注册语义,无需 `/FORCE:MULTIPLE`,
+  无重复符号
+- ✅ **兼容性修复**:空 compound 类型名污染 token 表导致的并行反序列化
+  bug、`argv[0]` 反斜杠/`.exe` 后缀、conda-forge metis 的 pre-UCRT stdio
+  shim(`__iob_func`)、MSVC 名称限定与模板显式实例化等
+
+### 已验证工作流
+
+- `decomposePar → mpiexec -n 2 icoFoam -parallel → reconstructPar` 完整闭环
+- `redistributePar`(metis / scotch / ptscotch)及 `redistributePar -reconstruct`
+- 串行:`blockMesh`、`checkMesh`、`topoSet`、`setFields`、`snappyHexMesh`
+  (motorBike 3.8M cells)、`foamyHexMesh`(CGAL blob)、`laplacianFoam`、
+  `icoFoam`、`pisoFoam`、`simpleFoam`、`potentialFoam`、`interFoam`、
+  `rhoCentralFoam`、`foamToVTK`、`foamDictionary` 等
+
+### 已知限制
+
+- 应用按白名单启用(`-DFOAM_APP_<路径>=ON`),当前仅 ~33 个常用 app;
+  其余 ~560 个未编译验证,启用后可能仍需个别 MSVC 适配
+- 静态构建下运行时 `libs` 动态加载不可用,插件必须在应用链接闭包内
+- `kahip` / `mgridgen` 为 stub(无 Windows 包);`MGridGen` GAMG
+  agglomerator 不可用(默认 `faceAreaPair` 正常)
+- `foamyHexMeshSurfaceSimplify` 跳过(缺 `fastdualoctree_sgp` + OpenGL,
+  上游同样跳过)
+- POSIX shell 工具脚本(`foamJob`、`runParallel`、`foamLog` 等)在 cmd
+  下不可用
+- 仅验证过 2-rank MPI;Debug 配置与共享库构建(`FOAM_STATIC_LIBS=OFF`)
+  未验证
+
+## 快速开始(Windows)
+
+```bat
+git clone https://github.com/WHUT666/OpenFOAM-v2606-Windows.git
+cd OpenFOAM-v2606-Windows
+
+rem 配置 + 全量构建(自动定位 MSBuild,串行化防止 .obj 锁)
+etc\build-windows.bat
+
+rem 加载环境(PATH / WM_PROJECT_DIR)
+call etc\openfoam-env.bat
+
+blockMesh -help
+mpiexec -n 2 icoFoam -case <case> -parallel
+```
+
+启用额外应用:`cmake -B build -DFOAM_APP_<路径>=ON`,如
+`-DFOAM_APP_solvers_compressible_rhoPimpleFoam=ON`
+
+详细构建约定、坑位记录与调试须知见 [AGENTS.md](AGENTS.md)。
+
+---
+以下是上游 OpenFOAM 原始 README:
+
 <table align="center"><tr><td align="center" width="9999">
 
 <a href="https://www.openfoam.com/">

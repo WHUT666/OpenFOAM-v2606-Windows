@@ -208,7 +208,11 @@ Description
         )                                                                      \
         {                                                                      \
             argNames##ConstructorTablePtr_construct(true);                     \
-            if (!argNames##ConstructorTablePtr_->insert(k, New))               \
+            if                                                               \
+            (                                                                \
+                !argNames##ConstructorTablePtr_->insert(k, New)                \
+             && (*argNames##ConstructorTablePtr_)[k] != New                    \
+            )                                                                \
             {                                                                  \
                 std::cerr                                                      \
                     << "Duplicate entry " << k << " in runtime table "         \
@@ -308,7 +312,11 @@ Description
         )                                                                      \
         {                                                                      \
             argNames##ConstructorTablePtr_construct(true);                     \
-            if (!argNames##ConstructorTablePtr_->insert(k, New##baseType))     \
+            if                                                               \
+            (                                                                \
+                !argNames##ConstructorTablePtr_->insert(k, New##baseType)      \
+             && (*argNames##ConstructorTablePtr_)[k] != New##baseType          \
+            )                                                                \
             {                                                                  \
                 std::cerr                                                      \
                     << "Duplicate entry " << k << " in runtime table "         \

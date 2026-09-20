@@ -94,3 +94,10 @@ doc/Doxygen/DTAGS
 # Python caches
 __pycache__/
 *.pyc
+
+# Local runtime test cases and generated case output
+/run/
+
+# Third-party download/extraction caches (conda/nupkg archives,
+# unpacked package trees - not needed for build or runtime)
+thirdparty/*/_dl/

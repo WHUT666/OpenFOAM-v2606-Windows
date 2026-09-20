@@ -21,7 +21,7 @@ project(OpenFOAM LANGUAGES C CXX)
 #------------------------------------------------------------------------------
 # Options
 #------------------------------------------------------------------------------
-set(FOAM_MPI "dummy" CACHE STRING "MPI implementation: dummy|msmpi")
+set(FOAM_MPI "msmpi" CACHE STRING "MPI implementation: dummy|msmpi")
 set_property(CACHE FOAM_MPI PROPERTY STRINGS dummy msmpi)
 set(FOAM_LABEL_SIZE "32" CACHE STRING "Label size: 32|64")
 set_property(CACHE FOAM_LABEL_SIZE PROPERTY STRINGS 32 64)
@@ -246,15 +246,140 @@ if(EXISTS "${BOOST_DIR}/boost/config.hpp")
 endif()
 
 #------------------------------------------------------------------------------
+# Third-party: METIS (mesh decomposition) - optional
+#------------------------------------------------------------------------------
+set(METIS_INC_DIR "")
+set(METIS_LIB_DIR "")
+set(METIS_DIR "${FOAM_PROJECT_DIR}/thirdparty/metis")
+if(EXISTS "${METIS_DIR}/include/metis.h" AND EXISTS "${METIS_DIR}/lib/metis.lib")
+    set(METIS_INC_DIR "${METIS_DIR}/include")
+    set(METIS_LIB_DIR "${METIS_DIR}/lib")
+    if(NOT TARGET metis)
+        add_library(metis UNKNOWN IMPORTED GLOBAL)
+        set_target_properties(metis PROPERTIES
+            IMPORTED_LOCATION "${METIS_LIB_DIR}/metis.lib"
+            INTERFACE_INCLUDE_DIRECTORIES "${METIS_INC_DIR}"
+            # conda-forge metis carries pre-UCRT stdio refs (__iob_func etc)
+            INTERFACE_LINK_LIBRARIES "legacy_stdio_definitions.lib")
+    endif()
+    message(STATUS "Using vendored METIS: ${METIS_DIR}")
+endif()
+
+#------------------------------------------------------------------------------
+# Third-party: SCOTCH / PTSCOTCH (mesh decomposition) - optional
+#------------------------------------------------------------------------------
+set(SCOTCH_INC_DIR "")
+set(SCOTCH_LIB_DIR "")
+set(SCOTCH_DIR "${FOAM_PROJECT_DIR}/thirdparty/scotch")
+if(EXISTS "${SCOTCH_DIR}/include/scotch.h" AND EXISTS "${SCOTCH_DIR}/lib/scotch.lib")
+    set(SCOTCH_INC_DIR "${SCOTCH_DIR}/include")
+    set(SCOTCH_LIB_DIR "${SCOTCH_DIR}/lib")
+    if(NOT TARGET scotch)
+        add_library(scotch UNKNOWN IMPORTED GLOBAL)
+        set_target_properties(scotch PROPERTIES
+            IMPORTED_LOCATION "${SCOTCH_LIB_DIR}/scotch.lib"
+            INTERFACE_INCLUDE_DIRECTORIES "${SCOTCH_INC_DIR}"
+            # conda-forge splits error handling into separate archives
+            INTERFACE_LINK_LIBRARIES
+                "${SCOTCH_LIB_DIR}/scotcherr.lib;${SCOTCH_LIB_DIR}/scotcherrexit.lib")
+    endif()
+    message(STATUS "Using vendored SCOTCH: ${SCOTCH_DIR}")
+endif()
+
+set(PTSCOTCH_INC_DIR "")
+set(PTSCOTCH_LIB_DIR "")
+set(PTSCOTCH_DIR "${FOAM_PROJECT_DIR}/thirdparty/ptscotch")
+if(EXISTS "${PTSCOTCH_DIR}/include/ptscotch.h" AND EXISTS "${PTSCOTCH_DIR}/lib/ptscotch.lib")
+    set(PTSCOTCH_INC_DIR "${PTSCOTCH_DIR}/include")
+    set(PTSCOTCH_LIB_DIR "${PTSCOTCH_DIR}/lib")
+    if(NOT TARGET ptscotch)
+        add_library(ptscotch UNKNOWN IMPORTED GLOBAL)
+        set_target_properties(ptscotch PROPERTIES
+            IMPORTED_LOCATION "${PTSCOTCH_LIB_DIR}/ptscotch.lib"
+            INTERFACE_INCLUDE_DIRECTORIES "${PTSCOTCH_INC_DIR}")
+        # Error-handling archives; MPI binding is added after MPI detection
+        set_target_properties(ptscotch PROPERTIES INTERFACE_LINK_LIBRARIES
+            "${PTSCOTCH_LIB_DIR}/ptscotcherr.lib;${PTSCOTCH_LIB_DIR}/ptscotcherrexit.lib;scotch")
+    endif()
+    message(STATUS "Using vendored PTSCOTCH: ${PTSCOTCH_DIR}")
+endif()
+
+#------------------------------------------------------------------------------
+# Third-party: CGAL (+ GMP/MPFR) - optional, header-only
+#------------------------------------------------------------------------------
+set(GMP_INC_DIR "")
+set(GMP_LIB_DIR "")
+set(GMP_DIR "${FOAM_PROJECT_DIR}/thirdparty/gmp")
+if(EXISTS "${GMP_DIR}/include/gmp.h" AND EXISTS "${GMP_DIR}/lib/gmp.lib")
+    set(GMP_INC_DIR "${GMP_DIR}/include")
+    set(GMP_LIB_DIR "${GMP_DIR}/lib")
+    if(NOT TARGET gmp)
+        add_library(gmp SHARED IMPORTED GLOBAL)
+        set_target_properties(gmp PROPERTIES
+            IMPORTED_LOCATION "${GMP_DIR}/bin/gmp.dll"
+            IMPORTED_IMPLIB "${GMP_DIR}/lib/gmp.lib"
+            INTERFACE_INCLUDE_DIRECTORIES "${GMP_INC_DIR}")
+    endif()
+endif()
+
+set(MPFR_INC_DIR "")
+set(MPFR_LIB_DIR "")
+set(MPFR_DIR "${FOAM_PROJECT_DIR}/thirdparty/mpfr")
+if(EXISTS "${MPFR_DIR}/include/mpfr.h" AND EXISTS "${MPFR_DIR}/lib/mpfr.lib")
+    set(MPFR_INC_DIR "${MPFR_DIR}/include")
+    set(MPFR_LIB_DIR "${MPFR_DIR}/lib")
+    if(NOT TARGET mpfr)
+        add_library(mpfr SHARED IMPORTED GLOBAL)
+        set_target_properties(mpfr PROPERTIES
+            IMPORTED_LOCATION "${MPFR_DIR}/bin/libmpfr-6.dll"
+            IMPORTED_IMPLIB "${MPFR_DIR}/lib/mpfr.lib"
+            INTERFACE_INCLUDE_DIRECTORIES "${MPFR_INC_DIR}")
+    endif()
+endif()
+
+set(CGAL_INC_DIR "")
+set(CGAL_LIB_DIR "")
+set(CGAL_DIR "${FOAM_PROJECT_DIR}/thirdparty/cgal")
+if(EXISTS "${CGAL_DIR}/include/CGAL/version.h")
+    set(CGAL_INC_DIR "${CGAL_DIR}/include")
+    set(CGAL_LIB_DIR "${CGAL_DIR}/lib")
+    message(STATUS "Using vendored CGAL: ${CGAL_DIR}")
+endif()
+
+#------------------------------------------------------------------------------
 # Third-party: MPI (MS-MPI) - optional
 #------------------------------------------------------------------------------
 set(FOAM_HAVE_MPI FALSE)
 if(NOT FOAM_MPI STREQUAL "dummy")
-    find_package(MPI QUIET COMPONENTS CXX)
+    # Prefer vendored MS-MPI (thirdparty/msmpi: include/, lib/msmpi.lib)
+    set(_msmpi_dir "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/msmpi")
+    if(EXISTS "${_msmpi_dir}/include/mpi.h" AND EXISTS "${_msmpi_dir}/lib/msmpi.lib")
+        if(NOT TARGET MPI::MPI_CXX)
+            add_library(MPI::MPI_CXX UNKNOWN IMPORTED GLOBAL)
+            set_target_properties(MPI::MPI_CXX PROPERTIES
+                IMPORTED_LOCATION "${_msmpi_dir}/lib/msmpi.lib"
+                INTERFACE_INCLUDE_DIRECTORIES "${_msmpi_dir}/include")
+        endif()
+        set(MPI_CXX_FOUND TRUE)
+        message(STATUS "Using vendored MS-MPI: ${_msmpi_dir}")
+    else()
+        find_package(MPI QUIET COMPONENTS CXX)
+    endif()
     if(MPI_CXX_FOUND)
         set(FOAM_HAVE_MPI TRUE)
         set(FOAM_MPI_NAME "msmpi")
         set(FOAM_MPI_SUBDIR "msmpi")
+        # Deploy runtime binaries (mpiexec/smpd/msmpi.dll) next to the exes
+        if(EXISTS "${_msmpi_dir}/bin/msmpi.dll")
+            file(COPY "${_msmpi_dir}/bin/"
+                 DESTINATION "${FOAM_APPBIN_DIR}/Release"
+                 FILES_MATCHING PATTERN "*.dll" PATTERN "*.exe")
+        endif()
+        # ptscotch calls MPI_* - bind it now that MPI::MPI_CXX exists
+        if(TARGET ptscotch)
+            set_property(TARGET ptscotch APPEND PROPERTY
+                INTERFACE_LINK_LIBRARIES "MPI::MPI_CXX")
+        endif()
     else()
         message(WARNING "MPI requested but not found - falling back to dummy")
         set(FOAM_MPI "dummy")

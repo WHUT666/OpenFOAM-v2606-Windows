@@ -2,7 +2,7 @@
 
 ## Build
 
-Toolchain: VS2022 (MSVC 14.43), CMake ≥3.20, x64, C++17, DP/label32, dummy MPI.
+Toolchain: VS2022 (MSVC 14.43), CMake ≥3.20, x64, C++17, DP/label32, MS-MPI.
 
 ```bat
 cmake -S . -B build -G "Visual Studio 17 2022" -A x64
@@ -32,23 +32,23 @@ references.
   `#define` for names like read/write/close — they rewrite C++ member
   calls (`os.write()` → `os._write()`).
 - `build/lnInclude/` — copied headers replacing upstream symlinked
-  lnInclude. If you edit a `src/**` header, re-sync it (content differs
-  → copy the file over).
+  lnInclude. Re-run CMake configuration after editing `src/**` headers to
+  refresh the generated copies before building.
 - `build/bin/Release`, `build/lib/Release` — exe/lib output.
 
 ## Key conventions
 
-- Executables link all enabled libs with `/WHOLEARCHIVE` +
-  `/FORCE:MULTIPLE` to preserve runTimeSelection self-registration
-  (upstream shared-lib semantics). Duplicate-registration warnings at
-  startup are benign.
+- Each static library propagates `/WHOLEARCHIVE` through its CMake interface,
+  preserving runTimeSelection registration for an executable's transitive
+  dependency closure without `/FORCE:MULTIPLE` or unrelated duplicate symbols.
+  Add optional static plugins to the application's `Make/options` `EXE_LIBS`.
 - App target dir comes AFTER library includes so `<CorrectPhi.H>`
   resolves to the library header, not the case-colliding local
   `correctPhi.H` fragment (Windows FS is case-insensitive).
 - `FOAM_CONFIGURED_PROJECT_DIR` is baked into libOpenFOAM so
   `#includeEtc`/`etc/caseDicts` resolve without `WM_PROJECT_DIR`.
-- `FOAM_STATIC_BUILD` makes `dlOpen` fall back to the process image
-  (statically-linked "libs" entries succeed silently).
+- `FOAM_STATIC_BUILD` makes `dlOpen` fall back to the process image. Any
+  `libs` plugin must be present in the application's static dependency closure.
 - MSVC has no key-function vtable optimisation: any TU that sees a
   complete `GeometricField` must also see the complete patch-field
   type (include `volFields.H`/`surfaceFields.H`, not just `*Fwd.H`).
@@ -72,15 +72,47 @@ or set `PATH=E:\openfoam\build\bin\Release;E:\openfoam\thirdparty\fftw;%PATH%`.
 ## Verified runtime
 
 - `blockMesh`, `topoSet`, `setFields`, `checkMesh`, `transformPoints`,
-  `decomposePar`/`reconstructPar`, `foamToVTK`, `foamDictionary`,
-  `foamFormatConvert`, `patchSummary`, `postProcess`
+  `decomposePar`/`reconstructPar`, `redistributePar`, `foamToVTK`,
+  `foamDictionary`, `foamFormatConvert`, `patchSummary`, `postProcess`
 - `laplacianFoam` (flange, cyclicAMI+GAMG), `icoFoam` (cavity 0.5 s),
   `pisoFoam` (RAS cavity 0–10 s, k-ε+FOs), `simpleFoam` (pitzDaily,
   converged, streamlines), `potentialFoam`, `interFoam` (damBreak VOF),
-  `snappyHexMesh` (motorBike, 3.8 M cells)
+  `snappyHexMesh` (motorBike, 3.8 M cells), `foamyHexMesh` (CGAL blob)
 
 ## Caution
 
 - Run ONE MSBuild invocation at a time. Stale `MSBuild.exe` node-reuse
   processes lock `.obj`/`.tlog` files → `C1083 Permission denied`.
   Kill lingering MSBuild/cl before rebuilding.
+- Parallelism: `-m:2` is the safe default (32 GB RAM). `-m` alone spawns
+  too many concurrent cl.exe (project-level × /MP) → C1060 heap
+  exhaustion / pagefile errors.
+
+## MPI / decomposition / CGAL
+
+- `FOAM_MPI=msmpi` (default). Vendored SDK in `thirdparty/msmpi`
+  (headers, `msmpi.lib`, `msmpi.dll`, `mpiexec.exe`, `smpd.exe`).
+  `mpiexec -n N <solver> -parallel` verified end-to-end on
+  `icoFoam/cavity` (decomposePar → parallel solve → reconstructPar).
+- Decomposition: real `metis`, `scotch`, `ptscotch` backends built from
+  vendored conda-forge int32 libs (`thirdparty/{metis,scotch,ptscotch}`).
+  `kahip`/`mgridgen` remain stubs (no Windows packages). `metis.lib`
+  needs `cmake/compat/legacyStdioShim.c` (provides `__imp___iob_func`
+  for its VS2013-era CRT).
+- CGAL 6.x + GMP/MPFR vendored (`thirdparty/{cgal,gmp,mpfr}`). CGAL
+  apps enabled: `foamyHexMesh` (verified on `mesh/foamyHexMesh/blob`),
+  `foamyQuadMesh`, `cv2DMesh`, `cellSizeAndAlignmentGrid`,
+  `foamyHexMeshBackgroundMesh`, `viewFactorsGen`,
+  `surfaceBooleanFeatures`.
+  `foamyHexMeshSurfaceSimplify` is skipped — needs external
+  `fastdualoctree_sgp` + OpenGL (upstream skips it identically).
+- Runtime DLLs (`msmpi.dll`, `mpir.dll`, `libmpfr-6.dll`, fftw) are
+  staged next to the exes; `etc/openfoam-env.bat` sets all PATHs.
+
+## Remaining optional components
+
+- `kahip` and `mgridgen` use stubs because no compatible native Windows SDK
+  is vendored. METIS, SCOTCH, and PT-SCOTCH are real implementations.
+- `foamyHexMeshSurfaceSimplify` remains disabled because the external
+  `fastdualoctree_sgp` and OpenGL dependency is unavailable; upstream also
+  skips this application when that optional dependency is absent.

@@ -367,7 +367,8 @@ Foam::Istream& Foam::UIPstreamBase::read(token& t)
             {
                 if
                 (
-                    !token::compound::isCompound(val)
+                    val.empty()
+                 || !token::compound::isCompound(val)
                  || !readCompoundToken(t, val, *this)
                 )
                 {

@@ -90,7 +90,7 @@ private:
 
         labelList overlapProcessors
         (
-            const point& centre,
+            const Foam::point& centre,
             const scalar radiusSqr
         ) const;
 

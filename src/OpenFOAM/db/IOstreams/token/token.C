@@ -123,7 +123,8 @@ bool Foam::token::compound::isCompound(const word& compoundType)
 
     return
     (
-        emptyConstructorTablePtr_
+        !compoundType.empty()
+     && emptyConstructorTablePtr_
      && emptyConstructorTablePtr_->contains(compoundType)
     );
 }

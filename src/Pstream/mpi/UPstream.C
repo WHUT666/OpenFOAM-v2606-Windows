@@ -849,6 +849,27 @@ void Foam::UPstream::allocateCommunicatorComponents
 
         PstreamGlobals::pendingMPIFree_[index] = true;
 
+        #if defined(MSMPI_VER)
+        // ms-mpi does not have MPI_Comm_create_group and its
+        // MPI_Comm_create is collective over all parent ranks (the
+        // internal context-id broadcast desyncs when non-member ranks
+        // skip this call). Emulate with MPI_Comm_split instead: the
+        // lowest rank of each (disjoint) subgroup doubles as the colour
+        // and non-members pass MPI_UNDEFINED. NOTE: all ranks of the
+        // parent communicator must still reach this call.
+
+        returnCode = MPI_Comm_split
+        (
+            mpiParentComm,
+            (
+                procIDs_[index].empty()
+              ? MPI_UNDEFINED
+              : procIDs_[index].front()
+            ),
+            0,  // retain relative ordering
+           &mpiNewComm
+        );
+        #else
         // Starting from parent
         MPI_Group parent_group;
         MPI_Comm_group(mpiParentComm, &parent_group);
@@ -862,15 +883,6 @@ void Foam::UPstream::allocateCommunicatorComponents
            &active_group
         );
 
-        #if defined(MSMPI_VER)
-        // ms-mpi (10.0 and others?) does not have MPI_Comm_create_group
-        MPI_Comm_create
-        (
-            mpiParentComm,
-            active_group,
-           &mpiNewComm
-        );
-        #else
         // Create new communicator for this group
         MPI_Comm_create_group
         (
@@ -879,11 +891,11 @@ void Foam::UPstream::allocateCommunicatorComponents
             UPstream::msgType(),
            &mpiNewComm
         );
-        #endif
 
         // Groups not needed after this...
         MPI_Group_free(&parent_group);
         MPI_Group_free(&active_group);
+        #endif
 
         if (MPI_COMM_NULL == mpiNewComm)
         {

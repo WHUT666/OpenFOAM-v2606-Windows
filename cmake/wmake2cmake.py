@@ -772,8 +772,8 @@ def main():
         # so expand the well-known aggregates inline)
         'BOOST_INCLUDES': '-I@BOOST_INC_DIR@',
         'BOOST_LIBRARIES': '',
-        'CGAL_INCLUDES': '-I@CGAL_INC_DIR@',
-        'CGAL_LIBRARIES': '-L@CGAL_LIB_DIR@',
+        'CGAL_INCLUDES': '-DCGAL_HEADER_ONLY -I@CGAL_INC_DIR@ -I@BOOST_INC_DIR@ -I@GMP_INC_DIR@ -I@MPFR_INC_DIR@',
+        'CGAL_LIBRARIES': '-lmpfr -lgmp',
         'FFTW_INCLUDES': '-I@FFTW_INC_DIR@',
         'FFTW_LIBRARIES': '-L@FFTW_LIB_DIR@ -lfftw3',
         'PETSC_INCLUDES': '-I@PETSC_DIR@/include',

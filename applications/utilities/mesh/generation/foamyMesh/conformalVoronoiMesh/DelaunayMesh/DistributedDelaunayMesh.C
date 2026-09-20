@@ -145,7 +145,7 @@ bool Foam::DistributedDelaunayMesh<Triangulation>::isLocal
 template<class Triangulation>
 Foam::labelList Foam::DistributedDelaunayMesh<Triangulation>::overlapProcessors
 (
-    const point& centre,
+    const Foam::point& centre,
     const scalar radiusSqr
 ) const
 {

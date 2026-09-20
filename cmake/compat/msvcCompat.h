@@ -9,12 +9,21 @@
 
 #ifdef _MSC_VER
 
+#ifdef __cplusplus
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
 #include <ctime>
 #include <cerrno>
 #include <cstdint>
+#else
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include <errno.h>
+#include <stdint.h>
+#endif
 #include <io.h>
 #include <fcntl.h>
 #include <direct.h>
@@ -135,9 +144,9 @@ typedef int mode_t;
 #include <sys/types.h>
 
 #ifndef FOAM_NO_MSVC_FUNC_MAP
-inline int strcasecmp(const char* a, const char* b) { return _stricmp(a, b); }
-inline int strncasecmp(const char* a, const char* b, size_t n) { return _strnicmp(a, b, n); }
-inline char* strtok_r(char* s, const char* d, char** c) { return strtok_s(s, d, c); }
+static __inline int strcasecmp(const char* a, const char* b) { return _stricmp(a, b); }
+static __inline int strncasecmp(const char* a, const char* b, size_t n) { return _strnicmp(a, b, n); }
+static __inline char* strtok_r(char* s, const char* d, char** c) { return strtok_s(s, d, c); }
 #define alloca     _alloca
 #endif
 
@@ -147,8 +156,9 @@ inline char* strtok_r(char* s, const char* d, char** c) { return strtok_s(s, d, 
 #endif
 
 // ---------------------------------------------------------------------------
-// Missing functions as small inlines
+// Missing functions as small inlines (C++ only)
 // ---------------------------------------------------------------------------
+#ifdef __cplusplus
 namespace Foam { namespace msvcCompat {
 
 inline int setenv_(const char* name, const char* value, int /*overwrite*/)
@@ -173,6 +183,7 @@ inline char* strerror_r_(int errnum, char* buf, size_t buflen)
 }
 
 }} // namespace Foam::msvcCompat
+#endif // __cplusplus
 
 #ifndef setenv
 #define setenv    Foam::msvcCompat::setenv_

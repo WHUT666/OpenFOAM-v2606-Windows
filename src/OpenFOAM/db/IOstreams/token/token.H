@@ -1060,7 +1060,7 @@ Ostream& operator<<(Ostream& os, const InfoProxy<token>& ip);
 //- Add compound to selection tables, lookup using typeName
 #define addCompoundToRunTimeSelectionTable(Type, Tag)                          \
     token::compound::addemptyConstructorToTable<token::Compound<Type>>         \
-        add##Tag##emptyConstructorToTable_;
+        add##Tag##emptyConstructorToTable_(#Type);
 
 //- Add compound to selection tables, lookup as \a Name
 #define addNamedCompoundToRunTimeSelectionTable(Type, Tag, Name)               \
@@ -1073,7 +1073,7 @@ Ostream& operator<<(Ostream& os, const InfoProxy<token>& ip);
 //  MSVC requires an explicit definition.
 //  Explicit specializations (defineCompoundTypeName etc.) take precedence.
 template<class T>
-const word token::Compound<T>::typeName;
+const word token::Compound<T>::typeName(token::Compound<T>::typeName_());
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

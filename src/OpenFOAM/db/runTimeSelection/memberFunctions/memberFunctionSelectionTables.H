@@ -67,6 +67,8 @@ Note
             (                                                                  \
                 !funcName##argNames##MemberFunctionTablePtr_                   \
                    ->insert(k, baseType##Type::funcName)                       \
+             && (*funcName##argNames##MemberFunctionTablePtr_)[k]              \
+             != baseType##Type::funcName                                       \
             )                                                                  \
             {                                                                  \
                 std::cerr                                                      \

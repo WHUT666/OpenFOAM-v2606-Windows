@@ -1087,7 +1087,14 @@ Foam::argList::argList
     commandLine_ += args_[0];
 
     // Set executable name immediately - useful when emitting errors.
-    executable_ = fileName(args_[0]).name();
+    // Windows: argv[0] may use backslash separators - normalize before
+    // taking the basename, and strip the .exe suffix.
+    {
+        std::string arg0(args_[0]);
+        std::replace(arg0.begin(), arg0.end(), '\\', '/');
+        executable_ = fileName(arg0).name();
+        executable_.removeExt();
+    }
 
     // Check arguments and options, argv[0] was already handled
     int nArgs = 1;

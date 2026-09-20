@@ -306,82 +306,82 @@ Foam::fileOperation::New_impl
     const label myProci = UPstream::myProcNo(UPstream::worldComm);
     const label numProcs = UPstream::nProcs(UPstream::worldComm);
 
-    if (subProcs.contains(myProci))
+    // Retain the original IO ranks that coincide with the new subset.
+    // This may still need more attention...
+
+    const labelUList& origIOranks = origHandler.ioRanks();
+    DynamicList<label> subIORanks(origIOranks.size());
+
+    for (const label proci : subProcs)
     {
-        // Retaining the original IO ranks if possible
-
-        // Retain the original IO ranks that coincide with the new subset.
-        // This may still need more attention...
-
-        const labelUList& origIOranks = origHandler.ioRanks();
-        DynamicList<label> subIORanks(origIOranks.size());
-
-        for (const label proci : subProcs)
+        if (origIOranks.contains(proci))
         {
-            if (origIOranks.contains(proci))
-            {
-                subIORanks.push_back(proci);
-            }
+            subIORanks.push_back(proci);
+        }
+    }
+
+    // Default starting point
+    Tuple2<label, labelList> commAndIORanks
+    (
+        UPstream::worldComm,
+        subIORanks
+    );
+
+    // TBD: special handling for uncollated
+    // if (origHandler.comm() == UPstream::commSelf())
+    // {
+    //     commAndIORanks.first() = UPstream::commSelf();
+    // }
+
+    const bool hasIOranks = (commAndIORanks.second().size() > 1);
+
+    if
+    (
+        UPstream::parRun()
+     && (hasIOranks || (subProcs.size() != numProcs))
+    )
+    {
+        // Without any IO range, restrict to overall proc range
+        // since we don't necessarily trust the input...
+        labelRange siblingRange(numProcs);
+
+        if (hasIOranks)
+        {
+            // Multiple masters: ranks included in my IO range
+            siblingRange = fileOperation::subRanks(commAndIORanks.second());
         }
 
-        // Default starting point
-        Tuple2<label, labelList> commAndIORanks
+        // Restrict to siblings within the IO range or proc range
+        labelList siblings;
+        if (siblingRange.size())
+        {
+            auto& dynSiblings = subIORanks;
+            dynSiblings.clear();
+
+            for (const label proci : subProcs)
+            {
+                if (siblingRange.contains(proci))
+                {
+                    dynSiblings.push_back(proci);
+                }
+            }
+
+            siblings.transfer(dynSiblings);
+        }
+
+        // IMPORTANT: all ranks of the parent comm must reach this call
+        // (comm index allocation must stay consistent and the MPI backend
+        // is collective - MPI_Comm_create/MPI_Comm_split). Ranks not in
+        // 'siblings' end up with MPI_COMM_NULL.
+        commAndIORanks.first() = UPstream::newCommunicator
         (
             UPstream::worldComm,
-            subIORanks
+            siblings
         );
+    }
 
-        // TBD: special handling for uncollated
-        // if (origHandler.comm() == UPstream::commSelf())
-        // {
-        //     commAndIORanks.first() = UPstream::commSelf();
-        // }
-
-        const bool hasIOranks = (commAndIORanks.second().size() > 1);
-
-        if
-        (
-            UPstream::parRun()
-         && (hasIOranks || (subProcs.size() != numProcs))
-        )
-        {
-            // Without any IO range, restrict to overall proc range
-            // since we don't necessarily trust the input...
-            labelRange siblingRange(numProcs);
-
-            if (hasIOranks)
-            {
-                // Multiple masters: ranks included in my IO range
-                siblingRange = fileOperation::subRanks(commAndIORanks.second());
-            }
-
-            // Restrict to siblings within the IO range or proc range
-            labelList siblings;
-            if (siblingRange.size())
-            {
-                auto& dynSiblings = subIORanks;
-                dynSiblings.clear();
-
-                for (const label proci : subProcs)
-                {
-                    if (siblingRange.contains(proci))
-                    {
-                        dynSiblings.push_back(proci);
-                    }
-                }
-
-                siblings.transfer(dynSiblings);
-            }
-
-            // Warning: MS-MPI currently uses MPI_Comm_create() instead of
-            // MPI_Comm_create_group() so it will block there!
-
-            commAndIORanks.first() = UPstream::newCommunicator
-            (
-                UPstream::worldComm,
-                siblings
-            );
-        }
+    if (subProcs.contains(myProci))
+    {
 
 
         // Allocate new handler with same type and similar IO ranks

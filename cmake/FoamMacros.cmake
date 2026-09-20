@@ -26,7 +26,8 @@ function(foam_resolve_marker outvar token)
     foreach(mp PTSCOTCH_INC_DIR PTSCOTCH_LIB_DIR SCOTCH_INC_DIR SCOTCH_LIB_DIR
                KAHIP_INC_DIR KAHIP_LIB_DIR METIS_INC_DIR METIS_LIB_DIR
                ZOLTAN_INC_DIR ZOLTAN_LIB_DIR FFTW_INC_DIR FFTW_LIB_DIR
-               CGAL_INC_DIR CGAL_LIB_DIR BOOST_INC_DIR BOOST_LIB_DIR PETSC_DIR)
+               CGAL_INC_DIR CGAL_LIB_DIR BOOST_INC_DIR BOOST_LIB_DIR PETSC_DIR
+               GMP_INC_DIR GMP_LIB_DIR MPFR_INC_DIR MPFR_LIB_DIR)
         if(DEFINED ${mp} AND ${mp})
             string(REPLACE "@${mp}@" "${${mp}}" val "${val}")
         endif()
@@ -92,7 +93,7 @@ function(foam_map_lib outvar item)
         return()
     endif()
     # Third party optional libs - only resolve when a matching target exists
-    if(lib MATCHES "^(scotch|ptscotch|ptscotcherrexit|scotcherrexit|metis|kahip|zoltan|parmetis|fftw3|fftw3f|gsl|gslcblas|mgridGen|petsc|hdf5|adios2.*|boost_.*)$")
+    if(lib MATCHES "^(scotch|ptscotch|ptscotcherrexit|scotcherrexit|metis|kahip|zoltan|parmetis|fftw3|fftw3f|gsl|gslcblas|mgridGen|petsc|hdf5|adios2.*|boost_.*|gmp|mpfr)$")
         set(tgt "")
         if(TARGET ${lib})
             set(tgt "${lib}")
@@ -186,6 +187,17 @@ function(foam_apply_common name)
 endfunction()
 
 
+function(foam_enable_static_registration name)
+    get_target_property(target_type ${name} TYPE)
+    if(FOAM_STATIC_LIBS AND target_type STREQUAL "STATIC_LIBRARY")
+        set_property(TARGET ${name} APPEND PROPERTY
+            INTERFACE_LINK_OPTIONS
+            "-WHOLEARCHIVE:$<TARGET_FILE:${name}>"
+        )
+    endif()
+endfunction()
+
+
 #------------------------------------------------------------------------------
 # foam_gen_lemon(<outvar> <name>)
 #   Emit custom commands for FOAM_LEMON_SOURCES (*.lyy-m4 -> m4 -> lemon -> .cc)
@@ -227,11 +239,11 @@ function(foam_gen_lemon outvar name)
 
         if(f MATCHES "\\.ly$")
             set(lemon_args "")
-            set(outf "${gdir}/${fbase}.c")
         else()
             set(lemon_args "-ecc")
-            set(outf "${cc}")
         endif()
+        # Generated parser code includes OpenFOAM C++ headers - always C++
+        set(outf "${cc}")
         add_custom_command(
             OUTPUT "${outf}"
             COMMAND "${FOAM_LEMON_EXE}" "-T${FOAM_LEMPAR}" "-d${gdir}"
@@ -240,11 +252,7 @@ function(foam_gen_lemon outvar name)
             COMMENT "lemon ${fbase}.lyy -> ${outf}"
             VERBATIM
         )
-        if(f MATCHES "\\.ly$")
-            set_source_files_properties("${outf}" PROPERTIES LANGUAGE C)
-        else()
-            set_source_files_properties("${outf}" PROPERTIES LANGUAGE CXX)
-        endif()
+        set_source_files_properties("${outf}" PROPERTIES LANGUAGE CXX)
         list(APPEND gens "${outf}")
     endforeach()
     set(${outvar} "${gens}" PARENT_SCOPE)
@@ -305,11 +313,6 @@ function(foam_add_library dir)
 
     # MSVC treats ".C" as C - force C++ for all sources
     set_source_files_properties(${srcs} PROPERTIES LANGUAGE CXX)
-    foreach(f ${gensrcs})
-        if(f MATCHES "\.c$")
-            set_source_files_properties("${f}" PROPERTIES LANGUAGE C)
-        endif()
-    endforeach()
 
     if(A_OBJECT)
         add_library(${name} OBJECT ${srcs})
@@ -330,6 +333,7 @@ function(foam_add_library dir)
         )
     endif()
     foam_apply_common(${name})
+    foam_enable_static_registration(${name})
 
     # Include dirs: own lnInclude + global OpenFOAM/OSspecific + parsed.
     # Order matches wmake: EXE_INC dirs first, own lnInclude last, so that
@@ -370,10 +374,6 @@ function(foam_add_library dir)
     endif()
 
     set(${name}_LNINCLUDE "${FOAM_LNINCLUDE_DIR}" PARENT_SCOPE)
-    # Register in the global Foam lib list (for whole-archive app linking)
-    if(NOT A_OBJECT)
-        set_property(GLOBAL APPEND PROPERTY FOAM_ALL_LIB_TARGETS ${name})
-    endif()
     message(STATUS "  [lib] ${name} (${dir})")
 endfunction()
 
@@ -418,11 +418,6 @@ function(foam_add_executable dir)
     foam_gen_lemon(exegens "${name}")
     list(APPEND exesrcs ${exegens})
     set_source_files_properties(${exesrcs} PROPERTIES LANGUAGE CXX)
-    foreach(f ${exegens})
-        if(f MATCHES "\.c$")
-            set_source_files_properties("${f}" PROPERTIES LANGUAGE C)
-        endif()
-    endforeach()
     # Avoid collision with a same-named library target (eg blockMesh)
     set(exename "${name}")
     if(TARGET ${name})
@@ -432,10 +427,6 @@ function(foam_add_executable dir)
     set_target_properties(${name} PROPERTIES
         OUTPUT_NAME "${exename}"
         RUNTIME_OUTPUT_DIRECTORY "${FOAM_APPBIN_DIR}")
-    # wmake links shared libs where duplicate objects across libraries are
-    # legal; with static MSVC libs /FORCE:MULTIPLE gives the same
-    # first-definition-wins semantics.
-    target_link_options(${name} PRIVATE /FORCE:MULTIPLE)
     foam_apply_common(${name})
     if(FOAM_FLEX_SOURCES)
         # FlexLexer.h for generated lexers
@@ -461,19 +452,10 @@ function(foam_add_executable dir)
             list(APPEND linklibs "${t}")
         endif()
     endforeach()
+    # Static builds: each Foam library propagates its own /WHOLEARCHIVE via
+    # INTERFACE_LINK_OPTIONS, so linking the direct libs (plus OpenFOAM)
+    # whole-archives the full transitive dependency closure and keeps all
+    # self-registering objects (runTimeSelection) alive.
     target_link_libraries(${name} PRIVATE ${linklibs} OpenFOAM)
-    if(FOAM_STATIC_LIBS)
-        # Keep all self-registering objects (runTimeSelection) alive:
-        # whole-archive every Foam static lib (transitive closure is not
-        # cheaply computable at configure time; all-libs is safest).
-        get_property(_allfoam GLOBAL PROPERTY FOAM_ALL_LIB_TARGETS)
-        foreach(l ${_allfoam})
-            target_link_options(${name} PRIVATE
-                "-WHOLEARCHIVE:$<TARGET_FILE:${l}>")
-        endforeach()
-        # -WHOLEARCHIVE pulls objects but not transitive deps; link the
-        # targets too so PUBLIC deps (fftw3, zlib, ...) reach the linker.
-        target_link_libraries(${name} PRIVATE ${_allfoam})
-    endif()
     message(STATUS "  [app] ${name} (${dir})")
 endfunction()

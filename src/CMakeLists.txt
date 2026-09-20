@@ -50,7 +50,8 @@ endfunction()
 #------------------------------------------------------------------------------
 foam_parse_dir("${FOAM_SRC_DIR}/OSspecific/MSwindows")
 set_source_files_properties(${FOAM_SOURCES} PROPERTIES LANGUAGE CXX)
-add_library(OSspecific OBJECT ${FOAM_SOURCES})
+add_library(OSspecific OBJECT ${FOAM_SOURCES}
+    "${CMAKE_CURRENT_SOURCE_DIR}/../cmake/compat/legacyStdioShim.c")
 foam_apply_common(OSspecific)
 target_include_directories(OSspecific PRIVATE
     "${FOAM_TARGET_DIR}"
@@ -140,7 +141,6 @@ if(FOAM_STATIC_LIBS)
         FOAM_CONFIGURED_PROJECT_DIR="${CMAKE_SOURCE_DIR}")
     target_link_libraries(OpenFOAM PUBLIC Pstream ${_openfoam_syslibs})
     target_link_libraries(Pstream PUBLIC OpenFOAM)
-    set_property(GLOBAL APPEND PROPERTY FOAM_ALL_LIB_TARGETS OpenFOAM Pstream)
 
 else()
     # --- shared: two-pass bootstrap link (like wmake/mingw) ---
@@ -198,8 +198,10 @@ else()
     target_link_libraries(OpenFOAM PRIVATE
         Pstream ${_openfoam_syslibs})
     add_dependencies(OpenFOAM Pstream)
-    set_property(GLOBAL APPEND PROPERTY FOAM_ALL_LIB_TARGETS OpenFOAM Pstream)
 endif()
+
+foam_enable_static_registration(Pstream)
+foam_enable_static_registration(OpenFOAM)
 
 #------------------------------------------------------------------------------
 # 4. Frequently needed base libraries
@@ -219,10 +221,52 @@ foam_lib(parallel/decompose/faDecompose)
 foam_lib(parallel/reconstruct/reconstruct)
 foam_lib(parallel/reconstruct/faReconstruct)
 foam_lib(parallel/distributed)
-foam_lib(dummyThirdParty/scotchDecomp)
-foam_lib(dummyThirdParty/ptscotchDecomp)
-foam_lib(dummyThirdParty/metisDecomp)
-foam_lib(dummyThirdParty/kahipDecomp)
+# Decomposition backends: real implementation when the third-party SDK is
+# available, otherwise the dummy stub (same target name).
+set(_scotch_decomp_default OFF)
+if(SCOTCH_INC_DIR)
+    set(_scotch_decomp_default ON)
+endif()
+option(FOAM_ENABLE_parallel_decompose_scotchDecomp "Build scotchDecomp" ${_scotch_decomp_default})
+if(FOAM_ENABLE_parallel_decompose_scotchDecomp)
+    foam_lib(parallel/decompose/scotchDecomp)
+else()
+    foam_lib(dummyThirdParty/scotchDecomp)
+endif()
+
+set(_ptscotch_decomp_default OFF)
+if(PTSCOTCH_INC_DIR AND FOAM_HAVE_MPI)
+    set(_ptscotch_decomp_default ON)
+endif()
+option(FOAM_ENABLE_parallel_decompose_ptscotchDecomp "Build ptscotchDecomp" ${_ptscotch_decomp_default})
+if(FOAM_ENABLE_parallel_decompose_ptscotchDecomp)
+    foam_lib(parallel/decompose/ptscotchDecomp)
+else()
+    foam_lib(dummyThirdParty/ptscotchDecomp)
+endif()
+
+set(_metis_decomp_default OFF)
+if(METIS_INC_DIR)
+    set(_metis_decomp_default ON)
+endif()
+option(FOAM_ENABLE_parallel_decompose_metisDecomp "Build metisDecomp" ${_metis_decomp_default})
+if(FOAM_ENABLE_parallel_decompose_metisDecomp)
+    foam_lib(parallel/decompose/metisDecomp)
+else()
+    foam_lib(dummyThirdParty/metisDecomp)
+endif()
+
+set(_kahip_decomp_default OFF)
+if(KAHIP_INC_DIR)
+    set(_kahip_decomp_default ON)
+endif()
+option(FOAM_ENABLE_parallel_decompose_kahipDecomp "Build kahipDecomp" ${_kahip_decomp_default})
+if(FOAM_ENABLE_parallel_decompose_kahipDecomp)
+    foam_lib(parallel/decompose/kahipDecomp)
+else()
+    foam_lib(dummyThirdParty/kahipDecomp)
+endif()
+
 foam_lib(dummyThirdParty/MGridGen)
 foam_lib(fvOptions)
 foam_lib(lagrangian/basic)
@@ -316,9 +360,6 @@ foam_lib(optimisation/adjointOptimisation/adjoint)
 foam_lib(dynamicFaMesh/interfaceTrackingFvMesh)
 foam_lib(finiteArea/faMeshDecomposition OPTIONAL)
 
-# MPI-dependent parallel libs
-foam_lib(parallel/decompose/ptscotchDecomp OPTIONAL)
-foam_lib(parallel/decompose/scotchDecomp OPTIONAL)
-foam_lib(parallel/decompose/metisDecomp OPTIONAL)
-foam_lib(parallel/decompose/kahipDecomp OPTIONAL)
+# Parallel decompose/reconstruct aggregate libs
+# (scotch/ptscotch/metis/kahip backends are dispatched above)
 foam_lib(parallel/decompose/decompose)

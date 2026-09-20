@@ -86,7 +86,7 @@ class primitiveMeshGeometry
 
 public:
 
-    ClassName("primitiveMeshGeometry");
+    ClassNameApi(meshTools_API, "primitiveMeshGeometry");
 
     // Constructors
 

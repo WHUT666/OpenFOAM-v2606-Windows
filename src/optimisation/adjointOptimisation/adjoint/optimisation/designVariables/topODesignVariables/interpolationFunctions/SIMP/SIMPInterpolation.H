@@ -83,7 +83,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("SIMP");
+    TypeNameApi(adjointOptimisation_API, "SIMP");
 
 
     // Constructors

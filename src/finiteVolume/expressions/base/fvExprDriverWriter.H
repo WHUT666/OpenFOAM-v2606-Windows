@@ -77,7 +77,7 @@ class fvExprDriverWriter
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("fvExprDriverWriter");
+    TypeNameNoDebugApi(finiteVolume_API, "fvExprDriverWriter");
 
 
     // Constructors

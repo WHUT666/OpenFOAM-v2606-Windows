@@ -139,7 +139,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("agglomerationInfo");
+    TypeNameApi(utilityFunctionObjects_API, "agglomerationInfo");
 
 
     // Constructors

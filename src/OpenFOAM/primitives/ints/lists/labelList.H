@@ -50,7 +50,7 @@ namespace Foam
 
     //- A zero-sized list of labels
     //  \deprecated(2019-02) use labelList::null() instead
-    extern const labelList emptyLabelList;
+    extern OpenFOAM_API const labelList emptyLabelList;
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

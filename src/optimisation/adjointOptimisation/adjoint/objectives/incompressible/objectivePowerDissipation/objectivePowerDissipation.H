@@ -75,7 +75,7 @@ class objectivePowerDissipation
 public:
 
     //- Runtime type information
-    TypeName("powerDissipation");
+    TypeNameApi(adjointOptimisation_API, "powerDissipation");
 
 
     // Constructors

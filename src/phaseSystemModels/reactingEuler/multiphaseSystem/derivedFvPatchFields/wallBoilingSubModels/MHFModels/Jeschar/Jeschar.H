@@ -105,7 +105,7 @@ class Jeschar
 public:
 
     //- Runtime type information
-    TypeName("Jeschar");
+    TypeNameApi(reactingMultiphaseSystem_API, "Jeschar");
 
 
     // Constructors

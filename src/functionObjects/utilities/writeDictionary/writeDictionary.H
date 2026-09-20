@@ -122,7 +122,7 @@ class writeDictionary
 public:
 
     //- Runtime type information
-    TypeName("writeDictionary");
+    TypeNameApi(utilityFunctionObjects_API, "writeDictionary");
 
 
     // Constructors

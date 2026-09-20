@@ -84,6 +84,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CodedFunction1_defines_typeName in .C files that
+//  define the template statics of CodedFunction1 (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CodedFunction1_defines_typeName)
+#  define Foam_CodedFunction1_typeName_API
+#else
+#  define Foam_CodedFunction1_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_CodedFunction1_H
 #define Foam_Function1Types_CodedFunction1_H
 
@@ -219,6 +229,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CodedFunction1<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CodedFunction1<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CodedFunction1<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CodedFunction1<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CodedFunction1<Foam::tensor>);
 
 #endif
 

@@ -74,11 +74,11 @@ class phaseModel
 public:
 
     //- Runtime type information
-    ClassName("phaseModel");
+    ClassNameApi(incompressibleMultiphaseSystems_API, "phaseModel");
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( incompressibleMultiphaseSystems_API,
         autoPtr,
         phaseModel,
         multiphaseInterSystem,

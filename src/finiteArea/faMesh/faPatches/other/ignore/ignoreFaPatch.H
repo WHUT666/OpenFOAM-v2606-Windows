@@ -56,7 +56,7 @@ class ignoreFaPatch
 public:
 
     //- Runtime type information
-    TypeName("ignore");
+    TypeNameApi(finiteArea_API, "ignore");
 
 
     // Constructors

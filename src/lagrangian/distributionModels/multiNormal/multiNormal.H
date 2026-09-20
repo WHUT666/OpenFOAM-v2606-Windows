@@ -213,7 +213,7 @@ class multiNormal
 public:
 
     //- Runtime type information
-    TypeName("multiNormal");
+    TypeNameApi(distributionModels_API, "multiNormal");
 
 
     // Constructors

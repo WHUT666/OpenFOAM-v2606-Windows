@@ -103,7 +103,7 @@ class SLADelta
 public:
 
     //- Runtime type information
-    TypeName("SLADelta");
+    TypeNameApi(turbulenceModels_API, "SLADelta");
 
 
     // Constructors

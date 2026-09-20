@@ -63,7 +63,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("removeCell");
+        TypeNameApi(meshTools_API, "removeCell");
 
 
     // Constructors

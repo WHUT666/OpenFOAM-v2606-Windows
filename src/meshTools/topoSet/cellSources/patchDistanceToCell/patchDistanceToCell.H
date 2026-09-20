@@ -130,7 +130,7 @@ class patchDistanceToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Matcher for patches
         wordRes selectedPatches_;
@@ -150,7 +150,7 @@ class patchDistanceToCell
 public:
 
     //- Runtime type information
-    TypeName("patchDistanceToCell");
+    TypeNameApi(meshTools_API, "patchDistanceToCell");
 
     // Constructors
 

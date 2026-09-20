@@ -271,7 +271,7 @@ class meshCutter
 public:
 
     //- Runtime type information
-    ClassName("meshCutter");
+    ClassNameApi(dynamicMesh_API, "meshCutter");
 
 
     // Constructors

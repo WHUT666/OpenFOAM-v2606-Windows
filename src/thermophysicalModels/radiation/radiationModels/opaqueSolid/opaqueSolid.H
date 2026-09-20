@@ -71,7 +71,7 @@ class opaqueSolid
 public:
 
     //- Runtime type information
-    TypeName("opaqueSolid");
+    TypeNameApi(radiationModels_API, "opaqueSolid");
 
 
     // Constructors

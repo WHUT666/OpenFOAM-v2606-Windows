@@ -172,7 +172,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("coded");
+    TypeNameApi(utilityFunctionObjects_API, "coded");
 
 
     // Constructors

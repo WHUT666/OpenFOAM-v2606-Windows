@@ -63,7 +63,7 @@ class writeFreeSurface
 public:
 
     //- Runtime type information
-    TypeName("writeFreeSurface");
+    TypeNameApi(interfaceTrackingFvMesh_API, "writeFreeSurface");
 
 
     // Constructors

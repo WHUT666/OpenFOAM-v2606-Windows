@@ -239,7 +239,7 @@ class shortestPathSet
 public:
 
     //- Runtime type information
-    TypeName("shortestPath");
+    TypeNameApi(sampling_API, "shortestPath");
 
 
     // Constructors

@@ -320,7 +320,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("nullSpace");
+    TypeNameApi(adjointOptimisation_API, "nullSpace");
 
 
     // Constructors

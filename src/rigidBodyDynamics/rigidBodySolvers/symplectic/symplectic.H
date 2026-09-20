@@ -84,7 +84,7 @@ class symplectic
 public:
 
     //- Runtime type information
-    TypeName("symplectic");
+    TypeNameApi(rigidBodyDynamics_API, "symplectic");
 
 
     // Constructors

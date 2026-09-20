@@ -105,7 +105,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("topOSource");
+    TypeNameApi(adjointOptimisation_API, "topOSource");
 
 
     // Constructors

@@ -107,7 +107,7 @@ class noiseFFT
 public:
 
     //- Reference pressure
-    static scalar p0;
+    static randomProcesses_API scalar p0;
 
     //- Construct from pressure field
     noiseFFT(const scalar deltaT, const label windowSize = -1);

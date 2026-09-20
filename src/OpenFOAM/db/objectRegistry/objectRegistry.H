@@ -176,7 +176,7 @@ class objectRegistry
 public:
 
     //- Declare type name for this IOobject
-    TypeName("objectRegistry");
+    TypeNameApi(OpenFOAM_API, "objectRegistry");
 
 
     // Constructors

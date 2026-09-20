@@ -79,7 +79,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("shapeESI");
+    TypeNameApi(adjointOptimisation_API, "shapeESI");
 
 
     // Constructors

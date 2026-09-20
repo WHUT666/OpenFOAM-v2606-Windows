@@ -112,7 +112,7 @@ class Bromley
 public:
 
     //- Runtime type information
-    TypeName("Bromley");
+    TypeNameApi(reactingMultiphaseSystem_API, "Bromley");
 
     // Constructors
 

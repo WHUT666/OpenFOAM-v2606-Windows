@@ -51,6 +51,15 @@ namespace Foam
 
 // Forward Declarations
 
+// Windows DLL: importing TUs see dllimport; a TU that emits an explicit
+// specialization definition (defineTemplateTypeNameAndDebug etc.) must
+// #define Foam_GeometricField_defines_typeName BEFORE including this header.
+#if defined(Foam_GeometricField_defines_typeName)
+#  define Foam_GeometricField_typeName_API
+#else
+#  define Foam_GeometricField_typeName_API OpenFOAM_API
+#endif
+
 template<class Type, template<class> class PatchField, class GeoMesh>
 class GeometricField;
 
@@ -151,7 +160,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("GeometricField");
+    TypeNameApi(Foam_GeometricField_typeName_API, "GeometricField");
 
 
     // Static Member Functions

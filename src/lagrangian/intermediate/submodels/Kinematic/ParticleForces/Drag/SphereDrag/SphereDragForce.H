@@ -117,6 +117,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SphereDragForce_defines_typeName in .C files that
+//  define the template statics of SphereDragForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SphereDragForce_defines_typeName)
+#  define Foam_SphereDragForce_typeName_API
+#else
+#  define Foam_SphereDragForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef SphereDragForce_H
 #define SphereDragForce_H
 
@@ -144,7 +154,7 @@ class SphereDragForce
 public:
 
     //- Runtime type information
-    TypeName("sphereDrag");
+    TypeNameApi(Foam_SphereDragForce_typeName_API, "sphereDrag");
 
 
     // Constructors

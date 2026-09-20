@@ -107,12 +107,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("blockEdge");
+    TypeNameApi(blockMesh_API, "blockEdge");
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( blockMesh_API,
             autoPtr,
             blockEdge,
             Istream,

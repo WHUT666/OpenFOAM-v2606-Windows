@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Tensor2D_defines_typeName in .C files that
+//  define the template statics of Tensor2D (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Tensor2D_defines_typeName)
+#  define Foam_Tensor2D_typeName_API
+#else
+#  define Foam_Tensor2D_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Tensor2D_H
 #define Foam_Tensor2D_H
 
@@ -74,7 +84,7 @@ public:
 
     // Static Data Members
 
-        static const Tensor2D I;
+        static Foam_Tensor2D_typeName_API const Tensor2D I;
 
 
     //- Component labeling enumeration

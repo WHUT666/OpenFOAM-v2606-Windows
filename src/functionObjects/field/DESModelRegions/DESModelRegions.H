@@ -125,7 +125,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("DESModelRegions");
+    TypeNameApi(fieldFunctionObjects_API, "DESModelRegions");
 
 
     // Constructors

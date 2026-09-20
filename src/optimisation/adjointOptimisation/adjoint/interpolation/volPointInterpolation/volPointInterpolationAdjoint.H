@@ -148,7 +148,7 @@ protected:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("volPointInterpolationAdjoint");
+    ClassNameApi(adjointOptimisation_API, "volPointInterpolationAdjoint");
 
 
     // Constructors

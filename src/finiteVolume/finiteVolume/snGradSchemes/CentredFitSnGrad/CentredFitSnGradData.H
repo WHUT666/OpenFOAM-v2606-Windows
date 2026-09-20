@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CentredFitSnGradData_defines_typeName in .C files that
+//  define the template statics of CentredFitSnGradData (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CentredFitSnGradData_defines_typeName)
+#  define Foam_CentredFitSnGradData_typeName_API
+#else
+#  define Foam_CentredFitSnGradData_typeName_API finiteVolume_API
+#endif
+
 #ifndef CentredFitSnGradData_H
 #define CentredFitSnGradData_H
 
@@ -70,7 +80,7 @@ class CentredFitSnGradData
 
 public:
 
-    TypeName("CentredFitSnGradData");
+    TypeNameApi(Foam_CentredFitSnGradData_typeName_API, "CentredFitSnGradData");
 
 
     // Constructors

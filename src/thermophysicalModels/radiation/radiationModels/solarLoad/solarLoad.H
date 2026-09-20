@@ -215,7 +215,7 @@ class solarLoad
 public:
 
     //- Runtime type information
-    TypeName("solarLoad");
+    TypeNameApi(radiationModels_API, "solarLoad");
 
 
     // Constructors

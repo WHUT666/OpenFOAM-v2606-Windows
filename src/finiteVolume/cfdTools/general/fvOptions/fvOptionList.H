@@ -112,7 +112,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("optionList");
+    TypeNameApi(finiteVolume_API, "optionList");
 
 
     // Constructors

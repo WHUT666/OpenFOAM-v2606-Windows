@@ -122,7 +122,7 @@ class pressurePermeableAlphaInletOutletVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("permeableAlphaPressureInletOutletVelocity");
+    TypeNameApi(finiteVolume_API, "permeableAlphaPressureInletOutletVelocity");
 
 
     // Constructors

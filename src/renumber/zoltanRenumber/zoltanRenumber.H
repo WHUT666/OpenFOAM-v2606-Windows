@@ -68,7 +68,7 @@ class zoltanRenumber
 public:
 
     //- Runtime type information
-    TypeName("zoltan");
+    TypeNameApi(zoltanRenumber_API, "zoltan");
 
 
     // Constructors

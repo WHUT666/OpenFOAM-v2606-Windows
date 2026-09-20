@@ -55,7 +55,7 @@ class wallPolyPatch
 public:
 
     //- Runtime type information
-    TypeName("wall");
+    TypeNameApi(OpenFOAM_API, "wall");
 
 
     // Constructors

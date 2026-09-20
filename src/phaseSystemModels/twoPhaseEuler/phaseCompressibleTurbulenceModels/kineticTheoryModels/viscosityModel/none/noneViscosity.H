@@ -57,7 +57,7 @@ class noneViscosity
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(phaseCompressibleTurbulenceModels_API, "none");
 
 
     // Constructors

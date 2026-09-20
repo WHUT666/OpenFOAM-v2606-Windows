@@ -86,7 +86,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("BirdCarreau");
+    TypeNameApi(incompressibleTransportModels_API, "BirdCarreau");
 
 
     // Constructors

@@ -94,7 +94,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Arrhenius");
+    TypeNameApi(surfaceFilmModels_API, "Arrhenius");
 
 
     // Constructors

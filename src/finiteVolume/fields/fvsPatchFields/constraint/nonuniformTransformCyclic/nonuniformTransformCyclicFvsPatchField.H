@@ -31,6 +31,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_nonuniformTransformCyclicFvsPatchField_defines_typeName in .C files that
+//  define the template statics of nonuniformTransformCyclicFvsPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_nonuniformTransformCyclicFvsPatchField_defines_typeName)
+#  define Foam_nonuniformTransformCyclicFvsPatchField_typeName_API
+#else
+#  define Foam_nonuniformTransformCyclicFvsPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_nonuniformTransformCyclicFvsPatchField_H
 #define Foam_nonuniformTransformCyclicFvsPatchField_H
 
@@ -57,7 +67,7 @@ class nonuniformTransformCyclicFvsPatchField
 public:
 
     //- Runtime type information
-    TypeName(nonuniformTransformCyclicFvPatch::typeName_());
+    TypeNameApi(Foam_nonuniformTransformCyclicFvsPatchField_typeName_API, nonuniformTransformCyclicFvPatch::typeName_());
 
 
     // Constructors

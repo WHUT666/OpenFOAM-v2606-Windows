@@ -227,7 +227,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("dynamicRefineFvMesh");
+    TypeNameApi(dynamicFvMesh_API, "dynamicRefineFvMesh");
 
 
     // Constructors

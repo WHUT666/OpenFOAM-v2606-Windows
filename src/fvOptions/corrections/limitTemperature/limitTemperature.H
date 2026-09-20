@@ -132,7 +132,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("limitTemperature");
+    TypeNameApi(fvOptions_API, "limitTemperature");
 
 
     // Constructors

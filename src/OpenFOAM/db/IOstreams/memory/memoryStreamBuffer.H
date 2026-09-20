@@ -52,7 +52,7 @@ namespace Foam
 \*---------------------------------------------------------------------------*/
 
 //- A streambuf for memory similar to std::spanbuf (C++23)
-class memorybuf
+class OpenFOAM_API memorybuf
 :
     public std::streambuf
 {

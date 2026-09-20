@@ -91,13 +91,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("controlPointsDefinition");
+    TypeNameApi(adjointOptimisation_API, "controlPointsDefinition");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             controlPointsDefinition,
             dictionary,

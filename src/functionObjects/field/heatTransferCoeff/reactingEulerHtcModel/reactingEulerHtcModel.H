@@ -133,7 +133,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("reactingEulerHtcModel");
+    TypeNameApi(fieldFunctionObjects_API, "reactingEulerHtcModel");
 
 
     // Constructors

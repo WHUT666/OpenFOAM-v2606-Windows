@@ -108,7 +108,7 @@ class fixedCoeff
 public:
 
     //- Runtime type information
-    TypeName("fixedCoeff");
+    TypeNameApi(finiteVolume_API, "fixedCoeff");
 
     //- Constructor
     fixedCoeff

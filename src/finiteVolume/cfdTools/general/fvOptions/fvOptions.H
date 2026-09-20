@@ -82,7 +82,7 @@ class options
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("fvOptions");
+    ClassNameApi(finiteVolume_API, "fvOptions");
 
 
     // Constructors

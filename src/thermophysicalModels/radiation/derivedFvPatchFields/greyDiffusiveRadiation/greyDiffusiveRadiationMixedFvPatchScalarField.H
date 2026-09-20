@@ -118,7 +118,7 @@ class greyDiffusiveRadiationMixedFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("greyDiffusiveRadiation");
+    TypeNameApi(radiationModels_API, "greyDiffusiveRadiation");
 
 
     // Constructors

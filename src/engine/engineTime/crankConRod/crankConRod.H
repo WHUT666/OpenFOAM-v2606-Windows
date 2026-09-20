@@ -96,7 +96,7 @@ class crankConRod
 public:
 
     //- Runtime type information
-    TypeName("crankConRod");
+    TypeNameApi(engine_API, "crankConRod");
 
 
     // Constructors

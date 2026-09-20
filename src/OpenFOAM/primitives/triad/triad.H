@@ -94,8 +94,8 @@ public:
 
     // Static Data Members
 
-        static const triad I;
-        static const triad unset;
+        static OpenFOAM_API const triad I;
+        static OpenFOAM_API const triad unset;
 
 
     // Member Functions

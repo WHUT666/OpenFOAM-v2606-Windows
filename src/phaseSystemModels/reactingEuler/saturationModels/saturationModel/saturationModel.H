@@ -67,12 +67,12 @@ class saturationModel
 public:
 
     //- Runtime type information
-    TypeName("saturationModel");
+    TypeNameApi(saturationModel_API, "saturationModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( saturationModel_API,
         autoPtr,
         saturationModel,
         dictionary,

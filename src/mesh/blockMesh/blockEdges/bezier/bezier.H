@@ -81,7 +81,7 @@ class bezier
 public:
 
     // Static data members
-    TypeName("bezier");
+    TypeNameApi(blockMesh_API, "bezier");
 
 
     // Constructors

@@ -88,6 +88,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_RecycleInteraction_defines_typeName in .C files that
+//  define the template statics of RecycleInteraction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_RecycleInteraction_defines_typeName)
+#  define Foam_RecycleInteraction_typeName_API
+#else
+#  define Foam_RecycleInteraction_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef RecycleInteraction_H
 #define RecycleInteraction_H
 
@@ -165,7 +175,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("recycleInteraction");
+    TypeNameApi(Foam_RecycleInteraction_typeName_API, "recycleInteraction");
 
 
     // Constructors

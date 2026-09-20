@@ -196,7 +196,7 @@ public:
 
         //- Default relative path ("caseDicts/postProcessing") to the
         //- directory structure containing functionObject dictionary files.
-        static fileName functionObjectDictPath;
+        static OpenFOAM_API fileName functionObjectDictPath;
 
 
     // Constructors

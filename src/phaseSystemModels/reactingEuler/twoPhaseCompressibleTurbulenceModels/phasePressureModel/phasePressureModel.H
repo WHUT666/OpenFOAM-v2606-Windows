@@ -111,7 +111,7 @@ class phasePressureModel
 public:
 
     //- Runtime type information
-    TypeName("phasePressure");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "phasePressure");
 
 
     // Constructors

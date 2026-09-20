@@ -130,7 +130,7 @@ namespace Detail
 struct PackedListCore
 {
     //- Define template name
-    ClassNameNoDebug("PackedList");
+    ClassNameNoDebugApi(OpenFOAM_API, "PackedList");
 };
 
 } // End namespace Detail

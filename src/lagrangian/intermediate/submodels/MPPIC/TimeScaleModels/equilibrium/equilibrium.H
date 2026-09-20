@@ -69,7 +69,7 @@ class equilibrium
 public:
 
     //- Runtime type information
-    TypeName("equilibrium");
+    TypeNameApi(lagrangianIntermediate_API, "equilibrium");
 
 
     //- Constructors

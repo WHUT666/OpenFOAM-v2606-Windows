@@ -65,11 +65,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("viscosityModel");
+    TypeNameApi(phaseCompressibleTurbulenceModels_API, "viscosityModel");
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( phaseCompressibleTurbulenceModels_API,
         autoPtr,
         viscosityModel,
         dictionary,

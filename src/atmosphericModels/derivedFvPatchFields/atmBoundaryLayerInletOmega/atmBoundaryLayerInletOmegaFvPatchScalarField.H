@@ -117,7 +117,7 @@ class atmBoundaryLayerInletOmegaFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("atmBoundaryLayerInletOmega");
+    TypeNameApi(atmosphericModels_API, "atmBoundaryLayerInletOmega");
 
 
     // Constructors

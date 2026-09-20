@@ -55,7 +55,7 @@ class processorLduInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("processorLduInterfaceField");
+    TypeNameApi(OpenFOAM_API, "processorLduInterfaceField");
 
 
     // Constructors

@@ -89,7 +89,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Bezier");
+    TypeNameApi(adjointOptimisation_API, "Bezier");
 
 
     // Constructors

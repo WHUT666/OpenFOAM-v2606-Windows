@@ -45,50 +45,50 @@ namespace constant
 namespace universal
 {
     //- Speed of light in a vacuum
-    extern const dimensionedScalar c;
+    extern OpenFOAM_API const dimensionedScalar c;
 
     //- Newtonian constant of gravitation
-    extern const dimensionedScalar G;
+    extern OpenFOAM_API const dimensionedScalar G;
 
     //- Planck constant
-    extern const dimensionedScalar h;
+    extern OpenFOAM_API const dimensionedScalar h;
 }
 
 namespace electromagnetic
 {
     //- Elementary charge
-    extern const dimensionedScalar e;
+    extern OpenFOAM_API const dimensionedScalar e;
 }
 
 namespace atomic
 {
     //- Electron mass
-    extern const dimensionedScalar me;
+    extern OpenFOAM_API const dimensionedScalar me;
 
     //- Proton mass
-    extern const dimensionedScalar mp;
+    extern OpenFOAM_API const dimensionedScalar mp;
 }
 
 namespace physicoChemical
 {
     //- Atomic mass unit
-    extern const dimensionedScalar mu;
+    extern OpenFOAM_API const dimensionedScalar mu;
 
     //- Avagadro number
-    extern const dimensionedScalar NA;
+    extern OpenFOAM_API const dimensionedScalar NA;
 
     //- Boltzmann constant
-    extern const dimensionedScalar k;
+    extern OpenFOAM_API const dimensionedScalar k;
 }
 
 //- Standard values
 namespace standard
 {
     //- Standard pressure
-    extern const dimensionedScalar Pstd;
+    extern OpenFOAM_API const dimensionedScalar Pstd;
 
     //- Standard temperature
-    extern const dimensionedScalar Tstd;
+    extern OpenFOAM_API const dimensionedScalar Tstd;
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ParamagneticForce_defines_typeName in .C files that
+//  define the template statics of ParamagneticForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ParamagneticForce_defines_typeName)
+#  define Foam_ParamagneticForce_typeName_API
+#else
+#  define Foam_ParamagneticForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Foam_ParamagneticForce_H
 #define Foam_ParamagneticForce_H
 
@@ -73,7 +83,7 @@ class ParamagneticForce
 public:
 
     //- Runtime type information
-    TypeName("paramagnetic");
+    TypeNameApi(Foam_ParamagneticForce_typeName_API, "paramagnetic");
 
 
     // Constructors

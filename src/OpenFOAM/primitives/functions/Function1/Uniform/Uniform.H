@@ -40,6 +40,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Uniform_defines_typeName in .C files that
+//  define the template statics of Uniform (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Uniform_defines_typeName)
+#  define Foam_Uniform_typeName_API
+#else
+#  define Foam_Uniform_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_Uniform_H
 #define Foam_Function1Types_Uniform_H
 
@@ -103,6 +113,13 @@ public:
 } // End namespace Foam
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Uniform<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Uniform<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Uniform<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Uniform<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Uniform<Foam::tensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Uniform<Foam::scalarField>);
 
 #endif
 

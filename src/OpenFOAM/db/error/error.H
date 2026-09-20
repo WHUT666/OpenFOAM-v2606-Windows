@@ -67,7 +67,7 @@ namespace Foam
 {
 
 // Forward Declarations
-class prefixOSstream;
+class OpenFOAM_API prefixOSstream;
 class OStringStream;
 template<class T> class List;
 template<class EnumType> class Enum;
@@ -76,7 +76,7 @@ template<class EnumType> class Enum;
                             Class error Declaration
 \*---------------------------------------------------------------------------*/
 
-class error
+class OpenFOAM_API error
 :
     public std::exception,
     public messageStream
@@ -321,7 +321,7 @@ public:
 \*---------------------------------------------------------------------------*/
 
 //- Report an I/O error
-class IOerror
+class OpenFOAM_API IOerror
 :
     public error
 {
@@ -491,11 +491,11 @@ Ostream& operator<<(Ostream& os, const IOerror& err);
 
 //- Error stream (stdout output on all processes),
 //- with additional 'FOAM FATAL ERROR' header text and stack trace.
-extern error   FatalError;
+extern OpenFOAM_API error   FatalError;
 
 //- Error stream (stdout output on all processes),
 //- with additional 'FOAM FATAL IO ERROR' header text and stack trace.
-extern IOerror FatalIOError;
+extern OpenFOAM_API IOerror FatalIOError;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

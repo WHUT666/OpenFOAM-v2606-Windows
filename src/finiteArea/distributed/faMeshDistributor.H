@@ -115,7 +115,7 @@ class faMeshDistributor
 public:
 
     //- Output verbosity when writing
-    static int verbose_;
+    static finiteArea_API int verbose_;
 
 
     // Generated Methods

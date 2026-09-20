@@ -67,7 +67,7 @@ class sphericalMassTransfer
 public:
 
     //- Runtime type information
-    TypeName("spherical");
+    TypeNameApi(reactingMultiphaseSystem_API, "spherical");
 
 
     // Constructors

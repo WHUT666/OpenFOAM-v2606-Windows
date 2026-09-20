@@ -126,7 +126,7 @@ class fileRegEx
 public:
 
     //- Runtime type information
-    TypeName("fileRegEx");
+    TypeNameApi(utilityFunctionObjects_API, "fileRegEx");
 
 
     //- Constructor

@@ -141,7 +141,7 @@ class abort
 public:
 
     //- Runtime type information
-    TypeName("abort");
+    TypeNameApi(utilityFunctionObjects_API, "abort");
 
 
     // Constructors

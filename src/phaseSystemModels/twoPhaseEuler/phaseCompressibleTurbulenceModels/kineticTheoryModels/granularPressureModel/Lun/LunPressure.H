@@ -59,7 +59,7 @@ class Lun
 public:
 
     //- Runtime type information
-    TypeName("Lun");
+    TypeNameApi(phaseCompressibleTurbulenceModels_API, "Lun");
 
 
     // Constructors

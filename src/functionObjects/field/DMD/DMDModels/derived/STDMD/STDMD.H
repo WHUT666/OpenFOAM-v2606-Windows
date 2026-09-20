@@ -221,7 +221,7 @@ class STDMD
         };
 
         //- Names for modeSorterType
-        static const Enum<modeSorterType> modeSorterTypeNames;
+        static fieldFunctionObjects_API const Enum<modeSorterType> modeSorterTypeNames;
 
 
     // Private Data
@@ -442,7 +442,7 @@ class STDMD
 public:
 
     //- Runtime type information
-    TypeName("STDMD");
+    TypeNameApi(fieldFunctionObjects_API, "STDMD");
 
 
     // Constructors

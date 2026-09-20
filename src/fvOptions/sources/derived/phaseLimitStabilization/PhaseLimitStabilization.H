@@ -89,6 +89,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PhaseLimitStabilization_defines_typeName in .C files that
+//  define the template statics of PhaseLimitStabilization (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PhaseLimitStabilization_defines_typeName)
+#  define Foam_PhaseLimitStabilization_typeName_API
+#else
+#  define Foam_PhaseLimitStabilization_typeName_API fvOptions_API
+#endif
+
 #ifndef PhaseLimitStabilization_H
 #define PhaseLimitStabilization_H
 
@@ -125,7 +135,7 @@ class PhaseLimitStabilization
 public:
 
     //- Runtime type information
-    TypeName("PhaseLimitStabilization");
+    TypeNameApi(Foam_PhaseLimitStabilization_typeName_API, "PhaseLimitStabilization");
 
 
     // Constructors

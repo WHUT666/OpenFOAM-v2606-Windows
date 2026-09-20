@@ -43,6 +43,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_incompressibleInterPhaseTransportModel_defines_typeName in .C files that
+//  define the template statics of incompressibleInterPhaseTransportModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_incompressibleInterPhaseTransportModel_defines_typeName)
+#  define Foam_incompressibleInterPhaseTransportModel_typeName_API
+#else
+#  define Foam_incompressibleInterPhaseTransportModel_typeName_API incompressibleInterPhaseTransportModels_API
+#endif
+
 #ifndef incompressibleInterPhaseTransportModel_H
 #define incompressibleInterPhaseTransportModel_H
 
@@ -103,7 +113,7 @@ class incompressibleInterPhaseTransportModel
 
 public:
 
-     TypeName("incompressibleInterPhaseTransportModel");
+     TypeNameApi(Foam_incompressibleInterPhaseTransportModel_typeName_API, "incompressibleInterPhaseTransportModel");
 
     // Constructors
 

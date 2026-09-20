@@ -74,7 +74,7 @@ class polynomial
 public:
 
     //- Runtime type information
-    TypeName("polynomial");
+    TypeNameApi(saturationModel_API, "polynomial");
 
     // Constructors
 

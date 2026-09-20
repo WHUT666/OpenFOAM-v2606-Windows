@@ -160,7 +160,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("oversetFvMeshBase");
+    TypeNameApi(overset_API, "oversetFvMeshBase");
 
 
     // Constructors

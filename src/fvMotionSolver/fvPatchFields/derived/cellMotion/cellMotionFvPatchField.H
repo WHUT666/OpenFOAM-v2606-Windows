@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cellMotionFvPatchField_defines_typeName in .C files that
+//  define the template statics of cellMotionFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cellMotionFvPatchField_defines_typeName)
+#  define Foam_cellMotionFvPatchField_typeName_API
+#else
+#  define Foam_cellMotionFvPatchField_typeName_API fvMotionSolvers_API
+#endif
+
 #ifndef Foam_cellMotionFvPatchField_H
 #define Foam_cellMotionFvPatchField_H
 
@@ -59,7 +69,7 @@ class cellMotionFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("cellMotion");
+    TypeNameApi(Foam_cellMotionFvPatchField_typeName_API, "cellMotion");
 
 
     // Constructors

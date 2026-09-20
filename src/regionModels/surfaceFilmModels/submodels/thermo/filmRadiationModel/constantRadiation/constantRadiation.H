@@ -92,7 +92,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("constantRadiation");
+    TypeNameApi(surfaceFilmModels_API, "constantRadiation");
 
 
     // Constructors

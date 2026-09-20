@@ -79,7 +79,7 @@ class ensightReadFile
 public:
 
     //- Debug switch
-    static int debug;
+    static fileFormats_API int debug;
 
 
     // Generated Methods

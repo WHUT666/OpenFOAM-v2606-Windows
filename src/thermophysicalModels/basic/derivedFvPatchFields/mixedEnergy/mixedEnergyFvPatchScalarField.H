@@ -65,7 +65,7 @@ class mixedEnergyFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("mixedEnergy");
+    TypeNameApi(fluidThermophysicalModels_API, "mixedEnergy");
 
 
     // Constructors

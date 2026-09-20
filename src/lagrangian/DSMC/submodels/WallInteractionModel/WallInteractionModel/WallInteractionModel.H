@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_WallInteractionModel_defines_typeName in .C files that
+//  define the template statics of WallInteractionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_WallInteractionModel_defines_typeName)
+#  define Foam_WallInteractionModel_typeName_API
+#else
+#  define Foam_WallInteractionModel_typeName_API DSMC_API
+#endif
+
 #ifndef WallInteractionModel_H
 #define WallInteractionModel_H
 
@@ -69,11 +79,11 @@ class WallInteractionModel
 public:
 
     //- Runtime type information
-    TypeName("WallInteractionModel");
+    TypeNameApi(Foam_WallInteractionModel_typeName_API, "WallInteractionModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_WallInteractionModel_typeName_API,
         autoPtr,
         WallInteractionModel,
         dictionary,

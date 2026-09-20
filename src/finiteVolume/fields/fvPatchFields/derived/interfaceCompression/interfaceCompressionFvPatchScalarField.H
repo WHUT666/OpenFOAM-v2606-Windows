@@ -70,7 +70,7 @@ class interfaceCompressionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("interfaceCompression");
+    TypeNameApi(finiteVolume_API, "interfaceCompression");
 
 
     // Constructors

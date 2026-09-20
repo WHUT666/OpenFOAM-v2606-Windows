@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_OneConstant_defines_typeName in .C files that
+//  define the template statics of OneConstant (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_OneConstant_defines_typeName)
+#  define Foam_OneConstant_typeName_API
+#else
+#  define Foam_OneConstant_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_OneConstant_H
 #define Foam_Function1Types_OneConstant_H
 
@@ -148,6 +158,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::OneConstant<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::OneConstant<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::OneConstant<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::OneConstant<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::OneConstant<Foam::tensor>);
 
 #endif
 

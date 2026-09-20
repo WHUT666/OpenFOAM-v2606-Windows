@@ -48,6 +48,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LimitedScheme_defines_typeName in .C files that
+//  define the template statics of LimitedScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LimitedScheme_defines_typeName)
+#  define Foam_LimitedScheme_typeName_API
+#else
+#  define Foam_LimitedScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef LimitedScheme_H
 #define LimitedScheme_H
 
@@ -90,7 +100,7 @@ class LimitedScheme
 public:
 
     //- Runtime type information
-    TypeName("LimitedScheme");
+    TypeNameApi(Foam_LimitedScheme_typeName_API, "LimitedScheme");
 
     typedef Limiter LimiterType;
 

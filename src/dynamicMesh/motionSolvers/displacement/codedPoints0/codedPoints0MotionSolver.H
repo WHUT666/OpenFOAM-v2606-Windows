@@ -140,7 +140,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("coded");
+    TypeNameApi(dynamicMesh_API, "coded");
 
 
     // Constructors

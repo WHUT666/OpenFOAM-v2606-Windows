@@ -89,7 +89,7 @@ class sampledMeshedSurfaceNormal
 public:
 
     //- Runtime type information
-    TypeName("sampledMeshedSurfaceNormal");
+    TypeNameApi(sampling_API, "sampledMeshedSurfaceNormal");
 
 
     // Constructors

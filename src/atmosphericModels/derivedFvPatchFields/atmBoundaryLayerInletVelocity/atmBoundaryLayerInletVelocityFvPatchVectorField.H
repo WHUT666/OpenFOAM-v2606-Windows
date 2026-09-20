@@ -124,7 +124,7 @@ class atmBoundaryLayerInletVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("atmBoundaryLayerInletVelocity");
+    TypeNameApi(atmosphericModels_API, "atmBoundaryLayerInletVelocity");
 
 
     // Constructors

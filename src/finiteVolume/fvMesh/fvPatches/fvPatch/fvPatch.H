@@ -122,13 +122,13 @@ public:
     friend class surfaceInterpolation;
 
     //- Runtime type information
-    TypeName(polyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, polyPatch::typeName_());
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( finiteVolume_API,
             autoPtr,
             fvPatch,
             polyPatch,

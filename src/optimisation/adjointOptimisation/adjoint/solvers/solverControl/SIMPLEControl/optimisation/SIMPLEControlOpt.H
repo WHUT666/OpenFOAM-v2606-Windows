@@ -98,7 +98,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("steadyOptimisation");
+        TypeNameApi(adjointOptimisation_API, "steadyOptimisation");
 
 
     // Constructors

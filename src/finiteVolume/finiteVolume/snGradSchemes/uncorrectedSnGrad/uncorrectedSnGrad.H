@@ -52,6 +52,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_uncorrectedSnGrad_defines_typeName in .C files that
+//  define the template statics of uncorrectedSnGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_uncorrectedSnGrad_defines_typeName)
+#  define Foam_uncorrectedSnGrad_typeName_API
+#else
+#  define Foam_uncorrectedSnGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef uncorrectedSnGrad_H
 #define uncorrectedSnGrad_H
 
@@ -85,7 +95,7 @@ class uncorrectedSnGrad
 public:
 
     //- Runtime type information
-    TypeName("uncorrected");
+    TypeNameApi(Foam_uncorrectedSnGrad_typeName_API, "uncorrected");
 
 
     // Constructors

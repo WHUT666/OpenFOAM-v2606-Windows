@@ -72,13 +72,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("radiationModel");
+    TypeNameApi(surfaceFilmModels_API, "radiationModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( surfaceFilmModels_API,
              autoPtr,
              filmRadiationModel,
              dictionary,

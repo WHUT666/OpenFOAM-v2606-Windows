@@ -134,7 +134,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("multiphaseInterHtcModel");
+    TypeNameApi(fieldFunctionObjects_API, "multiphaseInterHtcModel");
 
 
     // Constructors

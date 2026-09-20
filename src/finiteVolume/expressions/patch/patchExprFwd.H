@@ -49,7 +49,7 @@ class scanner;
 class parseDriver;
 
 //- Static debugging option
-extern int debug;
+extern finiteVolume_API int debug;
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

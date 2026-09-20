@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PairModel_defines_typeName in .C files that
+//  define the template statics of PairModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PairModel_defines_typeName)
+#  define Foam_PairModel_typeName_API
+#else
+#  define Foam_PairModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PairModel_H
 #define PairModel_H
 
@@ -85,11 +95,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("pairModel");
+    TypeNameApi(Foam_PairModel_typeName_API, "pairModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_PairModel_typeName_API,
         autoPtr,
         PairModel,
         dictionary,

@@ -72,5 +72,15 @@ template<>
 const char* const
 Foam::vtkPTraits<std::string>::typeName = "String";
 
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<uint8_t>);
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<int32_t>);
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<uint32_t>);
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<int64_t>);
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<uint64_t>);
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<float>);
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<double>);
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<Foam::endian>);
+fileFormats_TEMPLATE_EXPORT(Foam::vtkPTraits<std::string>);
+
 
 // ************************************************************************* //

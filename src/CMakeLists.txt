@@ -50,15 +50,22 @@ endfunction()
 #------------------------------------------------------------------------------
 foam_parse_dir("${FOAM_SRC_DIR}/OSspecific/MSwindows")
 set_source_files_properties(${FOAM_SOURCES} PROPERTIES LANGUAGE CXX)
-add_library(OSspecific OBJECT ${FOAM_SOURCES}
-    "${CMAKE_CURRENT_SOURCE_DIR}/../cmake/compat/legacyStdioShim.c")
+add_library(OSspecific OBJECT ${FOAM_SOURCES})
 foam_apply_common(OSspecific)
 target_include_directories(OSspecific PRIVATE
     "${FOAM_TARGET_DIR}"
     "${FOAM_LNINCLUDE_DIR}"
 )
-target_compile_definitions(OSspecific PRIVATE FOAM_USE_WINDOWS_PSAPI
-    FOAM_STATIC_BUILD)
+target_compile_definitions(OSspecific PRIVATE FOAM_USE_WINDOWS_PSAPI)
+if(FOAM_STATIC_LIBS)
+    # Static fallback inside dlOpen(): resolve plugins from the process image
+    target_compile_definitions(OSspecific PRIVATE FOAM_STATIC_BUILD)
+else()
+    # Objects link into libOpenFOAM.dll - its data decls must dllexport,
+    # not dllimport (CMake only auto-defines OpenFOAM_EXPORTS on the
+    # OpenFOAM target itself, not on this OBJECT library)
+    target_compile_definitions(OSspecific PRIVATE OpenFOAM_EXPORTS)
+endif()
 
 #------------------------------------------------------------------------------
 # 2. Pstream - dummy or MPI.
@@ -143,61 +150,33 @@ if(FOAM_STATIC_LIBS)
     target_link_libraries(Pstream PUBLIC OpenFOAM)
 
 else()
-    # --- shared: two-pass bootstrap link (like wmake/mingw) ---
-    add_library(Pstream_objs OBJECT ${PSTREAM_SOURCES})
-    foam_apply_common(Pstream_objs)
-    target_include_directories(Pstream_objs PRIVATE
-        "${PSTREAM_DIR_ABS}" "${PSTREAM_LNINCLUDE}" ${PSTREAM_INCS})
-    target_link_libraries(Pstream_objs PRIVATE ${_pstream_syslibs})
-
-    add_library(OpenFOAM_bootstrap SHARED
-        ${OPENFOAM_SOURCES} ${FOAM_CONFIG_SRC}
-        $<TARGET_OBJECTS:OSspecific>
-        $<TARGET_OBJECTS:Pstream_objs>
-    )
-    set_target_properties(OpenFOAM_bootstrap PROPERTIES
-        PREFIX "lib"
-        OUTPUT_NAME "OpenFOAM_bootstrap"
-        WINDOWS_EXPORT_ALL_SYMBOLS ON
-        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bootstrap"
-        ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bootstrap"
-    )
-    foam_apply_common(OpenFOAM_bootstrap)
-    target_include_directories(OpenFOAM_bootstrap PRIVATE
-        "${OPENFOAM_DIR}" "${OPENFOAM_LNINCLUDE}" ${OPENFOAM_INCS})
-    target_compile_definitions(OpenFOAM_bootstrap PRIVATE ${OPENFOAM_DEFINES})
-    target_link_libraries(OpenFOAM_bootstrap PRIVATE
-        ${_openfoam_syslibs} ${_pstream_syslibs})
-
-    add_library(Pstream SHARED ${PSTREAM_SOURCES})
-    set_target_properties(Pstream PROPERTIES
-        PREFIX "lib"
-        WINDOWS_EXPORT_ALL_SYMBOLS ON
-        RUNTIME_OUTPUT_DIRECTORY "${FOAM_LIBBIN_DIR}/${FOAM_MPI_SUBDIR}"
-        ARCHIVE_OUTPUT_DIRECTORY "${FOAM_IMPBIN_DIR}/${FOAM_MPI_SUBDIR}"
-    )
-    foam_apply_common(Pstream)
-    target_include_directories(Pstream PRIVATE
-        "${PSTREAM_DIR_ABS}" "${PSTREAM_LNINCLUDE}" ${PSTREAM_INCS})
-    target_link_libraries(Pstream PRIVATE
-        OpenFOAM_bootstrap ${_pstream_syslibs})
-
+    # --- shared: fold the MPI Pstream implementation into libOpenFOAM.dll ---
+    # libPstream is never dlopen'd by name (only Make/files reference it) and
+    # msmpi is the only backend, so merging eliminates the OpenFOAM<->Pstream
+    # link cycle without a throwaway bootstrap DLL (whose WINDOWS_EXPORT_ALL
+    # .exp generation hit LNK1106 anyway on ~25k symbols).
     add_library(OpenFOAM SHARED
         ${OPENFOAM_SOURCES} ${FOAM_CONFIG_SRC} ${OPENFOAM_GENSRCS}
+        ${PSTREAM_SOURCES}
         $<TARGET_OBJECTS:OSspecific>)
     set_target_properties(OpenFOAM PROPERTIES
         PREFIX "lib"
-        WINDOWS_EXPORT_ALL_SYMBOLS ON
         RUNTIME_OUTPUT_DIRECTORY "${FOAM_LIBBIN_DIR}"
         ARCHIVE_OUTPUT_DIRECTORY "${FOAM_IMPBIN_DIR}"
     )
+    foam_export_all(OpenFOAM)
     foam_apply_common(OpenFOAM)
     target_include_directories(OpenFOAM PRIVATE
-        "${OPENFOAM_DIR}" "${OPENFOAM_LNINCLUDE}" ${OPENFOAM_INCS})
-    target_compile_definitions(OpenFOAM PRIVATE ${OPENFOAM_DEFINES})
+        "${OPENFOAM_DIR}" "${OPENFOAM_LNINCLUDE}" ${OPENFOAM_INCS}
+        "${PSTREAM_DIR_ABS}" "${PSTREAM_LNINCLUDE}" ${PSTREAM_INCS})
+    target_compile_definitions(OpenFOAM PRIVATE ${OPENFOAM_DEFINES}
+        FOAM_CONFIGURED_PROJECT_DIR="${CMAKE_SOURCE_DIR}")
     target_link_libraries(OpenFOAM PRIVATE
-        Pstream ${_openfoam_syslibs})
-    add_dependencies(OpenFOAM Pstream)
+        ${_openfoam_syslibs} ${_pstream_syslibs})
+
+    # Name-compat shim so link lists mentioning Pstream still resolve
+    add_library(Pstream INTERFACE)
+    target_link_libraries(Pstream INTERFACE OpenFOAM)
 endif()
 
 foam_enable_static_registration(Pstream)
@@ -326,7 +305,12 @@ if(FOAM_ENABLE_fvAgglomerationMethods_MGridGenGamgAgglomeration)
     foam_lib(fvAgglomerationMethods/MGridGenGamgAgglomeration)
     # Static build: controlDict 'libs' cannot load it at runtime - fold it
     # into finiteVolume so every solver registers 'agglomerator MGridGen'.
-    target_link_libraries(finiteVolume PUBLIC MGridGenGAMGAgglomeration)
+    # Shared build: it is a loadable plugin (libs "libMGridGenGAMGAgglomeration")
+    # and must NOT be folded in - that would create a finiteVolume<->MGridGen
+    # link cycle which CMake forbids for shared libraries.
+    if(FOAM_STATIC_LIBS)
+        target_link_libraries(finiteVolume PUBLIC MGridGenGAMGAgglomeration)
+    endif()
 endif()
 foam_lib(waveModels)
 foam_lib(engine)

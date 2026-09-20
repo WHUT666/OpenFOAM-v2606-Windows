@@ -62,7 +62,7 @@ class adjointFarFieldNuaTildaFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("adjointFarFieldNuaTilda");
+    TypeNameApi(adjointOptimisation_API, "adjointFarFieldNuaTilda");
 
 
     // Constructors

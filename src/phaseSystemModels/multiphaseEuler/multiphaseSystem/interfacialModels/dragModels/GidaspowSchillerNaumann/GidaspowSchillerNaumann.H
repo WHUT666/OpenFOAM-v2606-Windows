@@ -71,7 +71,7 @@ class GidaspowSchillerNaumann
 public:
 
     //- Runtime type information
-    TypeName("GidaspowSchillerNaumann");
+    TypeNameApi(multiphaseSystem_API, "GidaspowSchillerNaumann");
 
 
     // Constructors

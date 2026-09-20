@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_edgeLimitedGrad_defines_typeName in .C files that
+//  define the template statics of edgeLimitedGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_edgeLimitedGrad_defines_typeName)
+#  define Foam_edgeLimitedGrad_typeName_API
+#else
+#  define Foam_edgeLimitedGrad_typeName_API finiteArea_API
+#endif
+
 #ifndef edgeLimitedFaGrad_H
 #define edgeLimitedFaGrad_H
 
@@ -87,7 +97,7 @@ class edgeLimitedGrad
 public:
 
     //- RunTime type information
-    TypeName("edgeLimited");
+    TypeNameApi(Foam_edgeLimitedGrad_typeName_API, "edgeLimited");
 
 
     // Generated Methods

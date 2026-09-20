@@ -66,11 +66,11 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("correctionLimitingMethod");
+    TypeNameApi(lagrangianIntermediate_API, "correctionLimitingMethod");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( lagrangianIntermediate_API,
         autoPtr,
         CorrectionLimitingMethod,
         dictionary,

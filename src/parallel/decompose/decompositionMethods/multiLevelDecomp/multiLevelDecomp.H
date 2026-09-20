@@ -111,7 +111,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("multiLevel");
+    TypeNameApi(decompositionMethods_API, "multiLevel");
 
 
     // Constructors

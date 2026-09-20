@@ -72,7 +72,7 @@ class turbulentBreakUp
 public:
 
     //- Runtime type information
-    TypeName("turbulentBreakUp");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "turbulentBreakUp");
 
     // Constructors
 

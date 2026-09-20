@@ -87,7 +87,7 @@ class sampledIsoSurfaceTopo
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("sampledIsoSurfaceTopo");
+    TypeNameNoDebugApi(sampling_API, "sampledIsoSurfaceTopo");
 
 
     // Constructors

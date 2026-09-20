@@ -132,7 +132,7 @@ class wallDist
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("wallDist");
+    ClassNameApi(finiteVolume_API, "wallDist");
 
 
     // Constructors

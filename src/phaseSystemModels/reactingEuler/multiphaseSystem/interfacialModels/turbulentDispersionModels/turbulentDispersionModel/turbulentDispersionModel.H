@@ -67,13 +67,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("turbulentDispersionModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "turbulentDispersionModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             turbulentDispersionModel,
             dictionary,
@@ -87,10 +87,10 @@ public:
     // Static Data Members
 
         //- Diffusivity dimensions
-        static const dimensionSet dimD;
+        static reactingMultiphaseSystem_API const dimensionSet dimD;
 
         //- Force dimensions
-        static const dimensionSet dimF;
+        static reactingMultiphaseSystem_API const dimensionSet dimF;
 
 
     // Constructors

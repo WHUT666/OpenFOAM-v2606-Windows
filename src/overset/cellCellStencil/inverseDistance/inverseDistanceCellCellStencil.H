@@ -278,7 +278,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("inverseDistance");
+    TypeNameApi(overset_API, "inverseDistance");
 
 
     // Constructors

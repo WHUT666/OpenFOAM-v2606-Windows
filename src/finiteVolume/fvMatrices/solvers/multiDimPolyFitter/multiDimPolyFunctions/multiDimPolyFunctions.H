@@ -75,13 +75,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("multiDimPolyFunctions");
+    TypeNameApi(finiteVolume_API, "multiDimPolyFunctions");
 
     // Declare run-time constructor selection table
 
     // For the dictionary constructor
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( finiteVolume_API,
         autoPtr,
         multiDimPolyFunctions,
         word,

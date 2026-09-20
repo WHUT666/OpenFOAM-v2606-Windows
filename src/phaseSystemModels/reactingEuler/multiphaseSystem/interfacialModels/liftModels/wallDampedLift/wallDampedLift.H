@@ -69,7 +69,7 @@ class wallDamped
 public:
 
     //- Runtime type information
-    TypeName("wallDamped");
+    TypeNameApi(reactingMultiphaseSystem_API, "wallDamped");
 
 
     // Constructors

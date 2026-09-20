@@ -123,7 +123,7 @@ class zoneToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Matcher for zones
         wordRes zoneMatcher_;
@@ -148,7 +148,7 @@ class zoneToCell
 public:
 
     //- Runtime type information
-    TypeName("zoneToCell");
+    TypeNameApi(meshTools_API, "zoneToCell");
 
 
     // Constructors

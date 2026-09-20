@@ -51,7 +51,8 @@ Description
 // Common infrastructure
 
 // Not used directly: declare run-time selection (variables and methods)
-#define declareRunTimeSelectionTableBase(returnType,prefix,argList)            \
+//  The api argument is a declspec specifier for Windows DLL builds (or empty)
+#define declareRunTimeSelectionTableBase(api,returnType,prefix,argList)        \
                                                                                \
     /* Function pointer type: construct from argList */                        \
     typedef returnType (*prefix##Ptr)argList;                                  \
@@ -73,16 +74,24 @@ Description
     > prefix##CompatTableType;                                                 \
                                                                                \
     /* Table singleton (storage) */                                            \
-    static prefix##TableType* prefix##TablePtr_;                               \
+    static api prefix##TableType* prefix##TablePtr_;                           \
                                                                                \
     /* Lookup aliases singleton (storage) */                                   \
-    static std::unique_ptr<prefix##CompatTableType> prefix##CompatTablePtr_;   \
+    static api std::unique_ptr<prefix##CompatTableType> prefix##CompatTablePtr_; \
                                                                                \
     /* Aliases singleton (access) */                                           \
     static prefix##CompatTableType& prefix##CompatTable();                     \
                                                                                \
     /* Table construct/destruct helper */                                      \
     static void prefix##TablePtr_construct(bool load);                         \
+                                                                               \
+    /* Table insert (with duplicate check), set and erase helpers. */          \
+    /* These encapsulate all access to the table singleton so that         */  \
+    /* consumers only ever reference member functions, never the data      */  \
+    /* member directly (required for reliable dllimport on Windows).       */  \
+    static void prefix##TableInsert(const ::Foam::word& k, prefix##Ptr f);     \
+    static void prefix##TableSet(const ::Foam::word& k, prefix##Ptr f);        \
+    static void prefix##TableErase(const ::Foam::word& k);                     \
                                                                                \
     /* Lookup function pointer from singleton, nullptr if not found */         \
     static prefix##Ptr prefix##Table(const ::Foam::word& k)
@@ -125,6 +134,43 @@ Description
         {                                                                      \
             delete prefix##TablePtr_;                                          \
             prefix##TablePtr_ = nullptr;                                       \
+        }                                                                      \
+    }                                                                          \
+                                                                               \
+    /* Insert entry, with duplicate check */                                   \
+    Tspecialize void prefix##TableInsert(const ::Foam::word& k, prefix##Ptr f) \
+    {                                                                          \
+        if (prefix##TablePtr_)                                                 \
+        {                                                                      \
+            if                                                               \
+            (                                                                \
+                !prefix##TablePtr_->insert(k, f)                             \
+             && (*prefix##TablePtr_)[k] != f                                 \
+            )                                                                \
+            {                                                                \
+                std::cerr                                                    \
+                    << "Duplicate entry " << k                               \
+                    << " in runtime table " << #baseType << std::endl;       \
+                ::Foam::error::safePrintStack(std::cerr);                    \
+            }                                                                \
+        }                                                                      \
+    }                                                                          \
+                                                                               \
+    /* Set (insert or overwrite) entry */                                      \
+    Tspecialize void prefix##TableSet(const ::Foam::word& k, prefix##Ptr f)    \
+    {                                                                          \
+        if (prefix##TablePtr_)                                                 \
+        {                                                                      \
+            prefix##TablePtr_->set(k, f);                                      \
+        }                                                                      \
+    }                                                                          \
+                                                                               \
+    /* Erase entry */                                                          \
+    Tspecialize void prefix##TableErase(const ::Foam::word& k)                 \
+    {                                                                          \
+        if (prefix##TablePtr_)                                                 \
+        {                                                                      \
+            prefix##TablePtr_->erase(k);                                       \
         }                                                                      \
     }                                                                          \
                                                                                \
@@ -173,8 +219,16 @@ Description
 #define declareRunTimeSelectionTable\
 (ptrWrapper,baseType,argNames,argList,parList)                                 \
                                                                                \
+    declareRunTimeSelectionTableApi(                                           \
+        /*no-api*/, ptrWrapper,baseType,argNames,argList,parList)
+
+//- Same as declareRunTimeSelectionTable, but the table singletons carry an
+//  explicit import/export specifier (Windows DLL builds).
+#define declareRunTimeSelectionTableApi\
+(api,ptrWrapper,baseType,argNames,argList,parList)                             \
+                                                                               \
     declareRunTimeSelectionTableBase(                                          \
-        ptrWrapper<baseType>, argNames##Constructor, argList);                 \
+        api, ptrWrapper<baseType>, argNames##Constructor, argList);            \
                                                                                \
     /* Helper to add compatibility/alias for runtime selection table */        \
     template<class baseType##Type>                                             \
@@ -208,17 +262,7 @@ Description
         )                                                                      \
         {                                                                      \
             argNames##ConstructorTablePtr_construct(true);                     \
-            if                                                               \
-            (                                                                \
-                !argNames##ConstructorTablePtr_->insert(k, New)                \
-             && (*argNames##ConstructorTablePtr_)[k] != New                    \
-            )                                                                \
-            {                                                                  \
-                std::cerr                                                      \
-                    << "Duplicate entry " << k << " in runtime table "         \
-                    << #baseType << std::endl;                                 \
-                ::Foam::error::safePrintStack(std::cerr);                      \
-            }                                                                  \
+            argNames##ConstructorTableInsert(k, New);                          \
         }                                                                      \
                                                                                \
         ~add##argNames##ConstructorToTable()                                   \
@@ -254,15 +298,12 @@ Description
             name(k)                                                            \
         {                                                                      \
             argNames##ConstructorTablePtr_construct(true);                     \
-            argNames##ConstructorTablePtr_->set(k, New);                       \
+            argNames##ConstructorTableSet(k, New);                             \
         }                                                                      \
                                                                                \
         ~addRemovable##argNames##ConstructorToTable()                          \
         {                                                                      \
-            if (argNames##ConstructorTablePtr_)                                \
-            {                                                                  \
-                argNames##ConstructorTablePtr_->erase(name);                   \
-            }                                                                  \
+            argNames##ConstructorTableErase(name);                             \
         }                                                                      \
                                                                                \
         addRemovable##argNames##ConstructorToTable                             \
@@ -277,8 +318,16 @@ Description
 #define declareRunTimeNewSelectionTable\
 (ptrWrapper,baseType,argNames,argList,parList)                                 \
                                                                                \
+    declareRunTimeNewSelectionTableApi(                                        \
+        /*no-api*/, ptrWrapper,baseType,argNames,argList,parList)
+
+//- Same as declareRunTimeNewSelectionTable, but the table singletons carry an
+//  explicit import/export specifier (Windows DLL builds).
+#define declareRunTimeNewSelectionTableApi\
+(api,ptrWrapper,baseType,argNames,argList,parList)                             \
+                                                                               \
     declareRunTimeSelectionTableBase(                                          \
-        ptrWrapper<baseType>,argNames##Constructor,argList);                   \
+        api, ptrWrapper<baseType>,argNames##Constructor,argList);              \
                                                                                \
     /* Helper to add compatibility/alias for runtime selection table */        \
     template<class baseType##Type>                                             \
@@ -312,17 +361,7 @@ Description
         )                                                                      \
         {                                                                      \
             argNames##ConstructorTablePtr_construct(true);                     \
-            if                                                               \
-            (                                                                \
-                !argNames##ConstructorTablePtr_->insert(k, New##baseType)      \
-             && (*argNames##ConstructorTablePtr_)[k] != New##baseType          \
-            )                                                                \
-            {                                                                  \
-                std::cerr                                                      \
-                    << "Duplicate entry " << k << " in runtime table "         \
-                    << #baseType << std::endl;                                 \
-                ::Foam::error::safePrintStack(std::cerr);                      \
-            }                                                                  \
+            argNames##ConstructorTableInsert(k, New##baseType);                \
         }                                                                      \
                                                                                \
         ~add##argNames##ConstructorToTable()                                   \
@@ -357,15 +396,12 @@ Description
             name(k)                                                            \
         {                                                                      \
             argNames##ConstructorTablePtr_construct(true);                     \
-            argNames##ConstructorTablePtr_->set(k, New##baseType);             \
+            argNames##ConstructorTableSet(k, New##baseType);                   \
         }                                                                      \
                                                                                \
         ~addRemovable##argNames##ConstructorToTable()                          \
         {                                                                      \
-            if (argNames##ConstructorTablePtr_)                                \
-            {                                                                  \
-                argNames##ConstructorTablePtr_->erase(name);                   \
-            }                                                                  \
+            argNames##ConstructorTableErase(name);                             \
         }                                                                      \
                                                                                \
         addRemovable##argNames##ConstructorToTable                             \

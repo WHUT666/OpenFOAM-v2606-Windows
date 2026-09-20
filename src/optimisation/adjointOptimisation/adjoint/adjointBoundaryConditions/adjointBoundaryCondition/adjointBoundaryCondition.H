@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_adjointBoundaryCondition_defines_typeName in .C files that
+//  define the template statics of adjointBoundaryCondition (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_adjointBoundaryCondition_defines_typeName)
+#  define Foam_adjointBoundaryCondition_typeName_API
+#else
+#  define Foam_adjointBoundaryCondition_typeName_API adjointOptimisation_API
+#endif
+
 #ifndef adjointBoundaryCondition_H
 #define adjointBoundaryCondition_H
 
@@ -98,7 +108,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("adjointBoundaryCondition");
+        TypeNameApi(Foam_adjointBoundaryCondition_typeName_API, "adjointBoundaryCondition");
 
 
     // Constructors

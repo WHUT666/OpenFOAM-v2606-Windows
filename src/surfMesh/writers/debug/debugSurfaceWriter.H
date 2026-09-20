@@ -120,7 +120,7 @@ class debugWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("debug");
+    TypeNameNoDebugApi(surfMesh_API, "debug");
 
 
     // Constructors

@@ -73,7 +73,7 @@ class exprResultStack
 public:
 
         //- Runtime type information
-        TypeName("exprResultStack");
+        TypeNameApi(OpenFOAM_API, "exprResultStack");
 
 
     // Constructors

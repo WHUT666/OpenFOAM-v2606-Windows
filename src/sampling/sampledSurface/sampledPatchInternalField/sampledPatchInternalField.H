@@ -113,7 +113,7 @@ class sampledPatchInternalField
 public:
 
     //- Runtime type information
-    TypeName("sampledPatchInternalField");
+    TypeNameApi(sampling_API, "sampledPatchInternalField");
 
 
     // Constructors

@@ -73,7 +73,7 @@ public:
     // Static data
 
     //- Names for the classification enumeration
-    static const Enum<volumeType::type> names;
+    static OpenFOAM_API const Enum<volumeType::type> names;
 
 
 private:

@@ -93,7 +93,7 @@ class singleProcessorFaceSets
 public:
 
     //- Runtime type information
-    TypeName("singleProcessorFaceSets");
+    TypeNameApi(decompositionMethods_API, "singleProcessorFaceSets");
 
 
     // Constructors

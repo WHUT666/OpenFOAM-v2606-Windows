@@ -68,10 +68,10 @@ namespace bounds
 
 
     //- Strings corresponding to the normalBounding
-    extern const Foam::Enum<normalBounding> normalBoundingNames;
+    extern OpenFOAM_API const Foam::Enum<normalBounding> normalBoundingNames;
 
     //- Strings corresponding to the repeatableBounding
-    extern const Foam::Enum<repeatableBounding> repeatableBoundingNames;
+    extern OpenFOAM_API const Foam::Enum<repeatableBounding> repeatableBoundingNames;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

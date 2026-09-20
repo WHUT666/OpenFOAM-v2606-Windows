@@ -76,13 +76,13 @@ class rigidBody
 public:
 
     //- Runtime type information
-    TypeName("rigidBody");
+    TypeNameApi(rigidBodyDynamics_API, "rigidBody");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( rigidBodyDynamics_API,
             autoPtr,
             rigidBody,
             dictionary,

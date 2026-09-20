@@ -64,7 +64,7 @@ class staticEngineMesh
 public:
 
     //- Runtime type information
-    TypeName("static");
+    TypeNameApi(engine_API, "static");
 
 
     // Constructors

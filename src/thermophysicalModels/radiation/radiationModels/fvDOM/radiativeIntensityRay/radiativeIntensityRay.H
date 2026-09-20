@@ -59,7 +59,7 @@ class radiativeIntensityRay
 {
 public:
 
-    static const word intensityPrefix;
+    static radiationModels_API const word intensityPrefix;
 
 
 private:
@@ -112,7 +112,7 @@ private:
         PtrList<volScalarField> ILambda_;
 
         //- Global ray id - incremented in constructor
-        static label rayId;
+        static radiationModels_API label rayId;
 
         //- My ray Id
         label myRayId_;

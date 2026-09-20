@@ -1,3 +1,4 @@
+#define Foam_SolverPerformance_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

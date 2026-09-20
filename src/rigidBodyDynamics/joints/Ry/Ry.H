@@ -71,7 +71,7 @@ class Ry
 public:
 
     //- Runtime type information
-    TypeName("Ry");
+    TypeNameApi(rigidBodyDynamics_API, "Ry");
 
 
     // Constructors

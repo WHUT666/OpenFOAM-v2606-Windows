@@ -87,7 +87,7 @@ class sampledIsoSurfaceCell
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("sampledIsoSurfaceCell");
+    TypeNameNoDebugApi(sampling_API, "sampledIsoSurfaceCell");
 
 
     // Constructors

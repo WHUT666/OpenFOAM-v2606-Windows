@@ -103,7 +103,7 @@ class patchCellsSource
 public:
 
     //- Runtime type information
-    TypeName("patchCellsSource");
+    TypeNameApi(fvOptions_API, "patchCellsSource");
 
 
     // Constructors

@@ -63,7 +63,7 @@ class ArdenBuck
 public:
 
     //- Runtime type information
-    TypeName("ArdenBuck");
+    TypeNameApi(saturationModel_API, "ArdenBuck");
 
     // Constructors
 

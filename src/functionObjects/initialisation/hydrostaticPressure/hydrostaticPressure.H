@@ -160,7 +160,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("hydrostaticPressure");
+    TypeNameApi(initialisationFunctionObjects_API, "hydrostaticPressure");
 
 
     // Constructors

@@ -37,6 +37,12 @@ SourceFiles
 #ifndef Foam_DiagonalSolver_H
 #define Foam_DiagonalSolver_H
 
+#if defined(Foam_LduSolver_defines_typeName)
+#  define Foam_LduSolver_typeName_API
+#else
+#  define Foam_LduSolver_typeName_API OpenFOAM_API
+#endif
+
 #include <LduMatrix_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -65,7 +71,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("diagonal");
+    TypeNameApi(Foam_LduSolver_typeName_API, "diagonal");
 
 
     // Constructors

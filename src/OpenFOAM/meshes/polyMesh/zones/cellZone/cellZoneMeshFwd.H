@@ -39,7 +39,7 @@ Description
 namespace Foam
 {
     class cellZone;
-    class polyMesh;
+    class OpenFOAM_API polyMesh;
 
     template<class ZoneType, class MeshType> class ZoneMesh;
     typedef ZoneMesh<cellZone, polyMesh> cellZoneMesh;

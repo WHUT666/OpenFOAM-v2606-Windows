@@ -114,6 +114,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PlessisMasliyahDragForce_defines_typeName in .C files that
+//  define the template statics of PlessisMasliyahDragForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PlessisMasliyahDragForce_defines_typeName)
+#  define Foam_PlessisMasliyahDragForce_typeName_API
+#else
+#  define Foam_PlessisMasliyahDragForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PlessisMasliyahDragForce_H
 #define PlessisMasliyahDragForce_H
 
@@ -143,7 +153,7 @@ class PlessisMasliyahDragForce
 public:
 
     //- Runtime type information
-    TypeName("PlessisMasliyahDrag");
+    TypeNameApi(Foam_PlessisMasliyahDragForce_typeName_API, "PlessisMasliyahDrag");
 
 
     // Constructors

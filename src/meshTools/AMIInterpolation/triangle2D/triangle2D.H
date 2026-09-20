@@ -60,18 +60,18 @@ class triangle2D
         scalar area_;
 
         //- Helper for intersections
-        static FixedList<vector2D, 7> work_;
+        static meshTools_API FixedList<vector2D, 7> work_;
 
 
 public:
 
-    static int debug;
+    static meshTools_API int debug;
 
     //- Relative tolerance
-    static scalar relTol;
+    static meshTools_API scalar relTol;
 
     //- Absolute tolerance
-    static scalar absTol;
+    static meshTools_API scalar absTol;
 
     //- Construct from 3 2-D points
     triangle2D

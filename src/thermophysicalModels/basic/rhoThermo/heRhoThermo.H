@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_heRhoThermo_defines_typeName in .C files that
+//  define the template statics of heRhoThermo (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_heRhoThermo_defines_typeName)
+#  define Foam_heRhoThermo_typeName_API
+#else
+#  define Foam_heRhoThermo_typeName_API fluidThermophysicalModels_API
+#endif
+
 #ifndef heRhoThermo_H
 #define heRhoThermo_H
 
@@ -77,7 +87,7 @@ class heRhoThermo
 public:
 
     //- Runtime type information
-    TypeName("heRhoThermo");
+    TypeNameApi(Foam_heRhoThermo_typeName_API, "heRhoThermo");
 
 
     // Constructors

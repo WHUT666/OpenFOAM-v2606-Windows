@@ -123,7 +123,7 @@ class rotatedBoxToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Definition of the parallelopiped (i.e. rotated/skewed box)
         const point origin_;
@@ -140,7 +140,7 @@ class rotatedBoxToCell
 public:
 
     //- Runtime type information
-    TypeName("rotatedBoxToCell");
+    TypeNameApi(meshTools_API, "rotatedBoxToCell");
 
 
     // Constructors

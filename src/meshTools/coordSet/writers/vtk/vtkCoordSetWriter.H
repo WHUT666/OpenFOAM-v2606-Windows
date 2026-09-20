@@ -107,7 +107,7 @@ class vtkWriter
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("vtk");
+    TypeNameNoDebugApi(meshTools_API, "vtk");
 
     // Constructors
 

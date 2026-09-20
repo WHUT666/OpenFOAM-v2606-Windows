@@ -117,7 +117,7 @@ class patchCorrectedInterpolation
 public:
 
     //- Runtime type information
-    TypeName("patchCorrected");
+    TypeNameApi(fvMotionSolvers_API, "patchCorrected");
 
 
     // Constructors

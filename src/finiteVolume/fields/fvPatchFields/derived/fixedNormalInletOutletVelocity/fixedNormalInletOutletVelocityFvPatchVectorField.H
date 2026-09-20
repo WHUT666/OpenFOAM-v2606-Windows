@@ -126,7 +126,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fixedNormalInletOutletVelocity");
+    TypeNameApi(finiteVolume_API, "fixedNormalInletOutletVelocity");
 
 
     // Constructors

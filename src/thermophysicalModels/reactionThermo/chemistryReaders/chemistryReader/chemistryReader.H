@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_chemistryReader_defines_typeName in .C files that
+//  define the template statics of chemistryReader (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_chemistryReader_defines_typeName)
+#  define Foam_chemistryReader_typeName_API
+#else
+#  define Foam_chemistryReader_typeName_API reactionThermophysicalModels_API
+#endif
+
 #ifndef chemistryReader_H
 #define chemistryReader_H
 
@@ -64,7 +74,7 @@ class chemistryReader
 public:
 
     //- Runtime type information
-    TypeName("chemistryReader");
+    TypeNameApi(Foam_chemistryReader_typeName_API, "chemistryReader");
 
     //- The type of thermo package the reader was instantiated for
     typedef ThermoType thermoType;
@@ -79,8 +89,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_chemistryReader_typeName_API,
             autoPtr,
             chemistryReader,
             dictionary,

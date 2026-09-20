@@ -140,7 +140,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("multiphaseEuler::alphaContactAngle");
+    TypeNameApi(multiphaseSystem_API, "multiphaseEuler::alphaContactAngle");
 
 
     // Constructors

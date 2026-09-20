@@ -233,7 +233,7 @@ class advectionDiffusion
 public:
 
     //- Runtime type information
-    TypeName("advectionDiffusion");
+    TypeNameApi(finiteVolume_API, "advectionDiffusion");
 
 
     // Constructors

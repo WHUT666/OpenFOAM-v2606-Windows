@@ -78,7 +78,7 @@ class laplaceFilter
 public:
 
     //- Runtime type information
-    TypeName("laplace");
+    TypeNameApi(turbulenceModels_API, "laplace");
 
 
     // Constructors

@@ -72,7 +72,7 @@ class faceTriangulation
     // Static Data
 
         //- Relative tolerance on edge.
-        static const scalar edgeRelTol;
+        static meshTools_API const scalar edgeRelTol;
 
 
     // Static Member Functions

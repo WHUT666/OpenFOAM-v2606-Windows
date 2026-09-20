@@ -71,13 +71,13 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("primalSolver");
+        TypeNameApi(adjointOptimisation_API, "primalSolver");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeNewSelectionTable
-        (
+        declareRunTimeNewSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             primalSolver,
             primalSolver,

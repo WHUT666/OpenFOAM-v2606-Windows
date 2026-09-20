@@ -96,7 +96,7 @@ class proxyWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("proxy");
+    TypeNameNoDebugApi(surfMesh_API, "proxy");
 
 
     // Constructors

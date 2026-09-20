@@ -84,7 +84,7 @@ public:
     friend class liquidProperties;
 
     //- Runtime type information
-    TypeName("aC11H10");
+    TypeNameApi(thermophysicalProperties_API, "aC11H10");
 
 
     // Constructors

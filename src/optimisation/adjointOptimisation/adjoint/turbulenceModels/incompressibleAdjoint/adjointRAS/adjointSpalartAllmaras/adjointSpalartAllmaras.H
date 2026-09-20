@@ -298,7 +298,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("adjointSpalartAllmaras");
+    TypeNameApi(adjointOptimisation_API, "adjointSpalartAllmaras");
 
 
     // Constructors

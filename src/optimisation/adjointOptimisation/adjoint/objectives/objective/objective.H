@@ -207,13 +207,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("objective");
+    TypeNameApi(adjointOptimisation_API, "objective");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeNewSelectionTable
-        (
+        declareRunTimeNewSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             objective,
             objective,

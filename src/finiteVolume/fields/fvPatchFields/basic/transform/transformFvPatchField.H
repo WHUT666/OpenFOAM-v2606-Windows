@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_transformFvPatchField_defines_typeName in .C files that
+//  define the template statics of transformFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_transformFvPatchField_defines_typeName)
+#  define Foam_transformFvPatchField_typeName_API
+#else
+#  define Foam_transformFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_transformFvPatchField_H
 #define Foam_transformFvPatchField_H
 
@@ -63,7 +73,7 @@ class transformFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("transform");
+    TypeNameApi(Foam_transformFvPatchField_typeName_API, "transform");
 
 
     // Constructors

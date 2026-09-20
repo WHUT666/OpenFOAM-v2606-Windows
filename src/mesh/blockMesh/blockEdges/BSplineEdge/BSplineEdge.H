@@ -69,7 +69,7 @@ class BSplineEdge
 public:
 
     //- Runtime type information
-    TypeName("BSpline");
+    TypeNameApi(blockMesh_API, "BSpline");
 
 
     // Constructors

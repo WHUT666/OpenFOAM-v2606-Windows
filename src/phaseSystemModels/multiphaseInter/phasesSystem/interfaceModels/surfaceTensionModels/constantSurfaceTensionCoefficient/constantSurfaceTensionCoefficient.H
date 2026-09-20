@@ -66,7 +66,7 @@ class constantSurfaceTensionCoefficient
 public:
 
     //- Runtime type information
-    TypeName("constant");
+    TypeNameApi(incompressibleMultiphaseSystems_API, "constant");
 
 
     // Constructors

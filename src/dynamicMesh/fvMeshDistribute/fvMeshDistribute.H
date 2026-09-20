@@ -360,7 +360,7 @@ public:
     void operator=(const fvMeshDistribute&) = delete;
 
     // Declare name of the class and its debug switch
-    ClassName("fvMeshDistribute");
+    ClassNameApi(dynamicMesh_API, "fvMeshDistribute");
 
 
     // Constructors

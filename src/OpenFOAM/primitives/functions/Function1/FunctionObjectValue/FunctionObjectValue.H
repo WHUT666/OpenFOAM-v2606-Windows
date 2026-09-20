@@ -49,6 +49,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FunctionObjectValue_defines_typeName in .C files that
+//  define the template statics of FunctionObjectValue (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FunctionObjectValue_defines_typeName)
+#  define Foam_FunctionObjectValue_typeName_API
+#else
+#  define Foam_FunctionObjectValue_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_FunctionObjectValue_H
 #define Foam_Function1Types_FunctionObjectValue_H
 
@@ -157,6 +167,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::FunctionObjectValue<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::FunctionObjectValue<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::FunctionObjectValue<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::FunctionObjectValue<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::FunctionObjectValue<Foam::tensor>);
 
 #endif
 

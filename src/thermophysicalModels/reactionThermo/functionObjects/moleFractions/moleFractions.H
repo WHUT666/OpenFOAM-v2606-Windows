@@ -95,6 +95,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_moleFractions_defines_typeName in .C files that
+//  define the template statics of moleFractions (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_moleFractions_defines_typeName)
+#  define Foam_moleFractions_typeName_API
+#else
+#  define Foam_moleFractions_typeName_API reactionThermophysicalModels_API
+#endif
+
 #ifndef moleFractions_H
 #define moleFractions_H
 
@@ -133,7 +143,7 @@ class moleFractions
 public:
 
     //- Runtime type information
-    TypeName("moleFractions");
+    TypeNameApi(Foam_moleFractions_typeName_API, "moleFractions");
 
 
     // Constructors

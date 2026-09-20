@@ -46,6 +46,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ManualInjection_defines_typeName in .C files that
+//  define the template statics of ManualInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ManualInjection_defines_typeName)
+#  define Foam_ManualInjection_typeName_API
+#else
+#  define Foam_ManualInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ManualInjection_H
 #define ManualInjection_H
 
@@ -101,7 +111,7 @@ class ManualInjection
 public:
 
     //- Runtime type information
-    TypeName("manualInjection");
+    TypeNameApi(Foam_ManualInjection_typeName_API, "manualInjection");
 
 
     // Constructors

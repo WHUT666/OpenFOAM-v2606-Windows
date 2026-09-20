@@ -100,7 +100,7 @@ class setToCellZone
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of cellSet to use
         word setName_;
@@ -109,7 +109,7 @@ class setToCellZone
 public:
 
     //- Runtime type information
-    TypeName("setToCellZone");
+    TypeNameApi(meshTools_API, "setToCellZone");
 
 
     // Constructors

@@ -61,7 +61,7 @@ class adjointOutletWaFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("adjointOutletWa");
+    TypeNameApi(adjointOptimisation_API, "adjointOutletWa");
 
 
     // Constructors

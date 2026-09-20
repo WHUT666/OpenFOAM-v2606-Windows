@@ -132,7 +132,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("randomise");
+    TypeNameApi(fieldFunctionObjects_API, "randomise");
 
 
     // Constructors

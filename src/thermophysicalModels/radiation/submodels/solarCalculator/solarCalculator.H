@@ -248,7 +248,7 @@ public:
         };
 
         //- Names for sunDirModel
-        static const Enum<sunDirModel> sunDirectionModelTypeNames_;
+        static radiationModels_API const Enum<sunDirModel> sunDirectionModelTypeNames_;
 
         //- Options for the Sun load models
         enum sunLModel
@@ -260,7 +260,7 @@ public:
         };
 
         //- Names for sunLModel
-        static const Enum<sunLModel> sunLModelTypeNames_;
+        static radiationModels_API const Enum<sunLModel> sunLModelTypeNames_;
 
 
 private:
@@ -369,7 +369,7 @@ private:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("solarCalculator");
+    ClassNameApi(radiationModels_API, "solarCalculator");
 
 
     // Constructors

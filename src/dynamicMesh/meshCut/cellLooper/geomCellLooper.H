@@ -71,11 +71,11 @@ class geomCellLooper
     // Static
 
         //- Tolerance for point equal test. Fraction of edge length.
-        static const scalar pointEqualTol_;
+        static dynamicMesh_API const scalar pointEqualTol_;
 
         //- Tolerance for cut through edges to get snapped to edge end point.
         //  Fraction of length of minimum connected edge length.
-        static scalar snapTol_;
+        static dynamicMesh_API scalar snapTol_;
 
 
     // Private Member Functions
@@ -124,7 +124,7 @@ class geomCellLooper
 public:
 
     //- Runtime type information
-    TypeName("geomCellLooper");
+    TypeNameApi(dynamicMesh_API, "geomCellLooper");
 
 
     // Static Functions

@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_TomiyamaLiftForce_defines_typeName in .C files that
+//  define the template statics of TomiyamaLiftForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_TomiyamaLiftForce_defines_typeName)
+#  define Foam_TomiyamaLiftForce_typeName_API
+#else
+#  define Foam_TomiyamaLiftForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef TomiyamaLiftForce_H
 #define TomiyamaLiftForce_H
 
@@ -80,7 +90,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("TomiyamaLift");
+    TypeNameApi(Foam_TomiyamaLiftForce_typeName_API, "TomiyamaLift");
 
 
     // Constructors

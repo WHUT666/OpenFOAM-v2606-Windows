@@ -62,7 +62,7 @@ class wedgePointPatch
 public:
 
     //- Runtime type information
-    TypeName(wedgePolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, wedgePolyPatch::typeName_());
 
 
     // Constructors

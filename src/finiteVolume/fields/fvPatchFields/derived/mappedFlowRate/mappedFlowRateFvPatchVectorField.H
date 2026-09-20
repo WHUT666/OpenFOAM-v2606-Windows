@@ -99,7 +99,7 @@ class mappedFlowRateFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("mappedFlowRate");
+   TypeNameApi(finiteVolume_API, "mappedFlowRate");
 
 
    // Constructors

@@ -47,6 +47,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_symmetryFvsPatchField_defines_typeName in .C files that
+//  define the template statics of symmetryFvsPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_symmetryFvsPatchField_defines_typeName)
+#  define Foam_symmetryFvsPatchField_typeName_API
+#else
+#  define Foam_symmetryFvsPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_symmetryFvsPatchField_H
 #define Foam_symmetryFvsPatchField_H
 
@@ -73,7 +83,7 @@ class symmetryFvsPatchField
 public:
 
     //- Runtime type information
-    TypeName(symmetryFvPatch::typeName_());
+    TypeNameApi(Foam_symmetryFvsPatchField_typeName_API, symmetryFvPatch::typeName_());
 
 
     // Constructors

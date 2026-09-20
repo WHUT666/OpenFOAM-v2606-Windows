@@ -129,7 +129,7 @@ protected:
 
 public:
 
-    ClassName("patchExpr::driver");
+    ClassNameApi(finiteVolume_API, "patchExpr::driver");
 
     // Generated Methods
 

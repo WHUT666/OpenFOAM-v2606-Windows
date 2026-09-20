@@ -144,7 +144,7 @@ public:
     // Static Data
 
         //- Output verbosity when writing
-        static int verbose_;
+        static faReconstruct_API int verbose_;
 
 
     // Generated Methods

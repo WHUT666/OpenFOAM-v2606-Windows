@@ -67,7 +67,7 @@ class Gibilaro
 public:
 
     //- Runtime type information
-    TypeName("Gibilaro");
+    TypeNameApi(reactingMultiphaseSystem_API, "Gibilaro");
 
 
     // Constructors

@@ -174,7 +174,7 @@ class contactHeatFluxSource
 public:
 
     //- Runtime type information
-    TypeName("contactHeatFluxSource");
+    TypeNameApi(faOptions_API, "contactHeatFluxSource");
 
 
     // Constructors

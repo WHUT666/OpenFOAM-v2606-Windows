@@ -78,7 +78,7 @@ protected:
     // Static Data
 
         //- Relative tolerance.
-        static scalar tolerance_;
+        static OpenFOAM_API scalar tolerance_;
 
 
 public:

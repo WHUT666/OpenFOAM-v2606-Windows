@@ -60,7 +60,7 @@ class orientation
 public:
 
     //- Runtime type information
-    TypeName("orientation");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "orientation");
 
 
     // Constructors

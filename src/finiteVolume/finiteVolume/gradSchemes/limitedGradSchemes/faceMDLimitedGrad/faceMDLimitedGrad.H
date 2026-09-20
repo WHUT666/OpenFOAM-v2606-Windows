@@ -43,6 +43,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_faceMDLimitedGrad_defines_typeName in .C files that
+//  define the template statics of faceMDLimitedGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_faceMDLimitedGrad_defines_typeName)
+#  define Foam_faceMDLimitedGrad_typeName_API
+#else
+#  define Foam_faceMDLimitedGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef faceMDLimitedGrad_H
 #define faceMDLimitedGrad_H
 
@@ -97,7 +107,7 @@ class faceMDLimitedGrad
 public:
 
     //- RunTime type information
-    TypeName("faceMDLimited");
+    TypeNameApi(Foam_faceMDLimitedGrad_typeName_API, "faceMDLimited");
 
 
     // Constructors

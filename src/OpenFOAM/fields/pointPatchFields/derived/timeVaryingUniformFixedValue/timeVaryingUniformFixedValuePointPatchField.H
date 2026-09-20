@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_timeVaryingUniformFixedValuePointPatchField_defines_typeName in .C files that
+//  define the template statics of timeVaryingUniformFixedValuePointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_timeVaryingUniformFixedValuePointPatchField_defines_typeName)
+#  define Foam_timeVaryingUniformFixedValuePointPatchField_typeName_API
+#else
+#  define Foam_timeVaryingUniformFixedValuePointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_timeVaryingUniformFixedValuePointPatchField_H
 #define Foam_timeVaryingUniformFixedValuePointPatchField_H
 
@@ -68,7 +78,7 @@ class timeVaryingUniformFixedValuePointPatchField
 public:
 
     //- Runtime type information
-    TypeName("timeVaryingUniformFixedValue");
+    TypeNameApi(Foam_timeVaryingUniformFixedValuePointPatchField_typeName_API, "timeVaryingUniformFixedValue");
 
 
     // Constructors

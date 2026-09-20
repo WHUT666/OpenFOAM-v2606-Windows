@@ -71,7 +71,7 @@ class tabulated6DoFMotion
         };
 
         //- Names for interpolationType
-        static const Enum<interpolationType> interpolationTypeNames;
+        static meshTools_API const Enum<interpolationType> interpolationTypeNames;
 
 
     // Private Data
@@ -107,7 +107,7 @@ class tabulated6DoFMotion
 public:
 
     //- Runtime type information
-    TypeName("tabulated6DoFMotion");
+    TypeNameApi(meshTools_API, "tabulated6DoFMotion");
 
 
     // Constructors

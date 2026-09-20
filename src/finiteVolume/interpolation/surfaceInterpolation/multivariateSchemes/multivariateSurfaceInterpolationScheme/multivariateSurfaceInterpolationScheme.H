@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_multivariateSurfaceInterpolationScheme_defines_typeName in .C files that
+//  define the template statics of multivariateSurfaceInterpolationScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_multivariateSurfaceInterpolationScheme_defines_typeName)
+#  define Foam_multivariateSurfaceInterpolationScheme_typeName_API
+#else
+#  define Foam_multivariateSurfaceInterpolationScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef multivariateSurfaceInterpolationScheme_H
 #define multivariateSurfaceInterpolationScheme_H
 
@@ -105,8 +115,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_multivariateSurfaceInterpolationScheme_typeName_API,
             tmp,
             multivariateSurfaceInterpolationScheme,
             Istream,

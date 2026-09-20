@@ -109,7 +109,7 @@ class LemmertChawla
 public:
 
     //- Runtime type information
-    TypeName("LemmertChawla");
+    TypeNameApi(reactingMultiphaseSystem_API, "LemmertChawla");
 
 
     // Constructors

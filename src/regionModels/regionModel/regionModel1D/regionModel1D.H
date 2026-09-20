@@ -119,7 +119,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("regionModel1D");
+    TypeNameApi(regionModels_API, "regionModel1D");
 
 
     // Constructors

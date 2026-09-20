@@ -61,6 +61,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_uniformFixedValuePointPatchField_defines_typeName in .C files that
+//  define the template statics of uniformFixedValuePointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_uniformFixedValuePointPatchField_defines_typeName)
+#  define Foam_uniformFixedValuePointPatchField_typeName_API
+#else
+#  define Foam_uniformFixedValuePointPatchField_typeName_API meshTools_API
+#endif
+
 #ifndef Foam_uniformFixedValuePointPatchField_H
 #define Foam_uniformFixedValuePointPatchField_H
 
@@ -102,7 +112,7 @@ class uniformFixedValuePointPatchField
 public:
 
     //- Runtime type information
-    TypeName("uniformFixedValue");
+    TypeNameApi(Foam_uniformFixedValuePointPatchField_typeName_API, "uniformFixedValue");
 
 
     // Constructors

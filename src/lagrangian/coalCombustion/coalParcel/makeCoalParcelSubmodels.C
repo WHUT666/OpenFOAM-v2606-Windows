@@ -1,3 +1,9 @@
+#define Foam_COxidationKineticDiffusionLimitedRate_defines_typeName
+#define Foam_NoSurfaceReaction_defines_typeName
+#define Foam_COxidationDiffusionLimitedRate_defines_typeName
+#define Foam_COxidationHurtMitchell_defines_typeName
+#define Foam_COxidationIntrinsicRate_defines_typeName
+#define Foam_COxidationMurphyShaddix_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

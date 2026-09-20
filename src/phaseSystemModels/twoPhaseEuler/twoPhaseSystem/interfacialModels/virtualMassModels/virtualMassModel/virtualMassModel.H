@@ -68,13 +68,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("virtualMassModel");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "virtualMassModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( compressibleTwoPhaseSystem_API,
             autoPtr,
             virtualMassModel,
             dictionary,
@@ -90,7 +90,7 @@ public:
     // Static Data Members
 
         //- Coefficient dimensions
-        static const dimensionSet dimK;
+        static compressibleTwoPhaseSystem_API const dimensionSet dimK;
 
 
     // Constructors

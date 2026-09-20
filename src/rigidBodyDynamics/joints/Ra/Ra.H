@@ -71,7 +71,7 @@ class Ra
 public:
 
     //- Runtime type information
-    TypeName("Ra");
+    TypeNameApi(rigidBodyDynamics_API, "Ra");
 
 
     // Constructors

@@ -78,7 +78,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("primaryRadiation");
+    TypeNameApi(surfaceFilmModels_API, "primaryRadiation");
 
 
     // Constructors

@@ -267,7 +267,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("extractEulerianParticles");
+    TypeNameApi(fieldFunctionObjects_API, "extractEulerianParticles");
 
 
     // Constructors

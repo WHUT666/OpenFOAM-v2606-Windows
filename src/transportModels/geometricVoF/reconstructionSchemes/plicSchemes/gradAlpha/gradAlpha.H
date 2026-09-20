@@ -101,7 +101,7 @@ class gradAlpha
 public:
 
     //- Runtime type information
-    TypeName("gradAlpha");
+    TypeNameApi(geometricVoF_API, "gradAlpha");
 
     //- Construct from components
     gradAlpha

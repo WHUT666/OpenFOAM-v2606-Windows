@@ -124,7 +124,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceDistance");
+    TypeNameApi(fieldFunctionObjects_API, "surfaceDistance");
 
 
     // Constructors

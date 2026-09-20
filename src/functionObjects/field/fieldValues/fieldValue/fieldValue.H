@@ -126,12 +126,12 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("fieldValue");
+    TypeNameApi(fieldFunctionObjects_API, "fieldValue");
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fieldFunctionObjects_API,
             autoPtr,
             fieldValue,
             runTime,

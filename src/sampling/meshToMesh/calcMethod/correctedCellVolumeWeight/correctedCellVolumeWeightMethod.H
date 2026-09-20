@@ -87,7 +87,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("correctedCellVolumeWeight");
+    TypeNameApi(sampling_API, "correctedCellVolumeWeight");
 
     //- Construct from source and target meshes
     correctedCellVolumeWeightMethod(const polyMesh& src, const polyMesh& tgt);

@@ -108,7 +108,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Grimshaw");
+    TypeNameApi(waveModels_API, "Grimshaw");
 
     //- Constructor
     Grimshaw

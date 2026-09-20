@@ -70,7 +70,7 @@ class layeredEngineMesh
 public:
 
     //- Runtime type information
-    TypeName("layered");
+    TypeNameApi(engine_API, "layered");
 
 
     // Constructors

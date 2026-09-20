@@ -46,6 +46,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_faPatchField_defines_typeName in .C files that
+//  define the template statics of faPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_faPatchField_defines_typeName)
+#  define Foam_faPatchField_typeName_API
+#else
+#  define Foam_faPatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_faPatchField_H
 #define Foam_faPatchField_H
 
@@ -107,10 +117,10 @@ protected:
 public:
 
     //- Debug switch to disallow the use of generic faPatchField
-    static int disallowGenericPatchField;
+    static finiteArea_API int disallowGenericPatchField;
 
     //- Runtime type information
-    TypeName("faPatchField");
+    TypeNameApi(finiteArea_API, "faPatchField");
 
 
     // Constructors
@@ -316,8 +326,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_faPatchField_typeName_API,
             tmp,
             faPatchField,
             patch,
@@ -328,8 +338,8 @@ public:
             (p, iF)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_faPatchField_typeName_API,
             tmp,
             faPatchField,
             patchMapper,
@@ -342,8 +352,8 @@ public:
             (dynamic_cast<const faPatchFieldType&>(ptf), p, iF, m)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_faPatchField_typeName_API,
             tmp,
             faPatchField,
             dictionary,

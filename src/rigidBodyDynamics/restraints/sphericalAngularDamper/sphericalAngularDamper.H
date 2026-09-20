@@ -69,7 +69,7 @@ class sphericalAngularDamper
 public:
 
     //- Runtime type information
-    TypeName("sphericalAngularDamper");
+    TypeNameApi(rigidBodyDynamics_API, "sphericalAngularDamper");
 
 
     // Constructors

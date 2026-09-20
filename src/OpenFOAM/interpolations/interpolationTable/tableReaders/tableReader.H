@@ -38,6 +38,12 @@ SourceFiles
 #ifndef tableReader_H
 #define tableReader_H
 
+#if defined(Foam_tableReader_defines_typeName)
+#  define Foam_tableReader_typeName_API
+#else
+#  define Foam_tableReader_typeName_API OpenFOAM_API
+#endif
+
 #include "fileName.H"
 #include "wordList.H"
 #include <vector.H>
@@ -63,13 +69,12 @@ class tableReader
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("tableReader");
+    TypeNameApi(Foam_tableReader_typeName_API, "tableReader");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(Foam_tableReader_typeName_API, 
             autoPtr,
             tableReader,
             dictionary,

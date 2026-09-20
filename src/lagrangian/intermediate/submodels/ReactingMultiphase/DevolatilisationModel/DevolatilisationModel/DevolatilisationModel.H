@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DevolatilisationModel_defines_typeName in .C files that
+//  define the template statics of DevolatilisationModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DevolatilisationModel_defines_typeName)
+#  define Foam_DevolatilisationModel_typeName_API
+#else
+#  define Foam_DevolatilisationModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef DevolatilisationModel_H
 #define DevolatilisationModel_H
 
@@ -71,11 +81,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("devolatilisationModel");
+    TypeNameApi(Foam_DevolatilisationModel_typeName_API, "devolatilisationModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_DevolatilisationModel_typeName_API,
         autoPtr,
         DevolatilisationModel,
         dictionary,

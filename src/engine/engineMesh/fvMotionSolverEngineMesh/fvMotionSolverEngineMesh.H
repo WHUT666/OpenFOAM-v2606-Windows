@@ -75,7 +75,7 @@ class fvMotionSolverEngineMesh
 public:
 
     //- Runtime type information
-    TypeName("fvMotionSolver");
+    TypeNameApi(engine_API, "fvMotionSolver");
 
 
     // Constructors

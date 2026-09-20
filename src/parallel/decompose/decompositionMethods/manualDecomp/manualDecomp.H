@@ -73,7 +73,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("manual");
+    TypeNameApi(decompositionMethods_API, "manual");
 
 
     // Constructors

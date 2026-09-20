@@ -67,13 +67,13 @@ protected:
         // Flags to indicate what to do with a box
 
             //- Drop/discard
-            static const label DROP;
+            static meshTools_API const label DROP;
 
             //- Refine
-            static const label REFINE;
+            static meshTools_API const label REFINE;
 
             //- Fixed - do not touch
-            static const label FIXED;
+            static meshTools_API const label FIXED;
 
 
     //- Reference to the source points
@@ -93,7 +93,7 @@ protected:
     // Caching controls
 
         //- Number of iterations before element indices are cached
-        static const label nStartUpIter;
+        static meshTools_API const label nStartUpIter;
 
         //- Addressing per proc of new to old bound boxes
         List<labelList> newToOld_;
@@ -174,7 +174,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("box");
+    TypeNameApi(meshTools_API, "box");
 
     // Constructors
 

@@ -113,7 +113,7 @@ public:
     // Static Data Members
 
         //- A range that always matches
-        static const scalarRange always;
+        static OpenFOAM_API const scalarRange always;
 
 
     // Constructors

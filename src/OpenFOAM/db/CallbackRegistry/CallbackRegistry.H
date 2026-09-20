@@ -58,7 +58,7 @@ class Callback;
                        Class CallbackRegistry Declaration
 \*---------------------------------------------------------------------------*/
 
-TemplateName(CallbackRegistry);
+TemplateNameApi(OpenFOAM_API, CallbackRegistry);
 
 
 /*---------------------------------------------------------------------------*\

@@ -126,7 +126,7 @@ class histogram
 public:
 
     //- Runtime type information
-    TypeName("histogram");
+    TypeNameApi(fieldFunctionObjects_API, "histogram");
 
 
     // Constructors

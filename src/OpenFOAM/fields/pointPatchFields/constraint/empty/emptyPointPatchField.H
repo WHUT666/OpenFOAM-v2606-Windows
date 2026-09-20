@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_emptyPointPatchField_defines_typeName in .C files that
+//  define the template statics of emptyPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_emptyPointPatchField_defines_typeName)
+#  define Foam_emptyPointPatchField_typeName_API
+#else
+#  define Foam_emptyPointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_emptyPointPatchField_H
 #define Foam_emptyPointPatchField_H
 
@@ -60,7 +70,7 @@ class emptyPointPatchField
 public:
 
     //- Runtime type information
-    TypeName(emptyPointPatch::typeName_());  // fieldTypes::emptyTypeName_()
+    TypeNameApi(Foam_emptyPointPatchField_typeName_API, emptyPointPatch::typeName_());  // fieldTypes::emptyTypeName_()
 
 
     // Constructors

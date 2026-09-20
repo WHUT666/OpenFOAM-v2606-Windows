@@ -69,7 +69,7 @@ class IshiiZuber
 public:
 
     //- Runtime type information
-    TypeName("IshiiZuber");
+    TypeNameApi(reactingMultiphaseSystem_API, "IshiiZuber");
 
 
     // Constructors

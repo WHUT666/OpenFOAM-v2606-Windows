@@ -35,7 +35,8 @@ Foam::UILList<LListBase, T>::UILList(const UILList<LListBase, T>& lst)
 {
     for (auto iter = lst.cbegin(); iter != lst.cend(); ++iter)
     {
-        this->push_back(&(*iter));
+        // Intrusive list: copies share the original links (no mutation)
+        this->push_back(const_cast<T*>(&(*iter)));
     }
 }
 
@@ -49,7 +50,8 @@ void Foam::UILList<LListBase, T>::operator=(const UILList<LListBase, T>& lst)
 
     for (auto iter = lst.cbegin(); iter != lst.cend(); ++iter)
     {
-        this->push_back(&(*iter));
+        // Intrusive list: copies share the original links (no mutation)
+        this->push_back(const_cast<T*>(&(*iter)));
     }
 }
 

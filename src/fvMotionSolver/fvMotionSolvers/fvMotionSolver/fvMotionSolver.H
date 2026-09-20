@@ -73,7 +73,7 @@ protected:
 public:
 
     //- Runtime type information
-    ClassName("displacementMotionSolver");
+    ClassNameApi(fvMotionSolvers_API, "displacementMotionSolver");
 
     // Constructors
 

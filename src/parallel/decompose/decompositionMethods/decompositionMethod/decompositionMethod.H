@@ -152,13 +152,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("decompositionMethod");
+    TypeNameApi(decompositionMethods_API, "decompositionMethod");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( decompositionMethods_API,
             autoPtr,
             decompositionMethod,
             dictionary,

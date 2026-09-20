@@ -48,6 +48,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_zeroGradientFvPatchField_defines_typeName in .C files that
+//  define the template statics of zeroGradientFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_zeroGradientFvPatchField_defines_typeName)
+#  define Foam_zeroGradientFvPatchField_typeName_API
+#else
+#  define Foam_zeroGradientFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_zeroGradientFvPatchField_H
 #define Foam_zeroGradientFvPatchField_H
 
@@ -73,7 +83,7 @@ class zeroGradientFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("zeroGradient");  // fieldTypes::zeroGradientTypeName_()
+    TypeNameApi(Foam_zeroGradientFvPatchField_typeName_API, "zeroGradient");  // fieldTypes::zeroGradientTypeName_()
 
 
     // Constructors

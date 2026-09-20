@@ -53,6 +53,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Stochastic_defines_typeName in .C files that
+//  define the template statics of Stochastic (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Stochastic_defines_typeName)
+#  define Foam_Stochastic_typeName_API
+#else
+#  define Foam_Stochastic_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Stochastic_H
 #define Stochastic_H
 
@@ -85,7 +95,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("stochastic");
+    TypeNameApi(Foam_Stochastic_typeName_API, "stochastic");
 
     // Constructors
 

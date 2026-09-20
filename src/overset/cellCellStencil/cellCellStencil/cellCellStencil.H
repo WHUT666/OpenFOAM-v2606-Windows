@@ -91,7 +91,7 @@ protected:
     // Protected data
 
         //- Mode type names
-        static const Enum<cellType> cellTypeNames_;
+        static overset_API const Enum<cellType> cellTypeNames_;
 
         //- Reference to the mesh
         const fvMesh& mesh_;
@@ -136,13 +136,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("cellCellStencil");
+    TypeNameApi(overset_API, "cellCellStencil");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( overset_API,
             autoPtr,
             cellCellStencil,
             mesh,

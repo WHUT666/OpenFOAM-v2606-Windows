@@ -111,12 +111,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("pointSmoother");
+    TypeNameApi(dynamicMesh_API, "pointSmoother");
 
 
     // Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( dynamicMesh_API,
         autoPtr,
         pointSmoother,
         dictionary,

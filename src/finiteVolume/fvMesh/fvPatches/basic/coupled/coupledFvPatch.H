@@ -75,7 +75,7 @@ public:
 
 
     //- Runtime type information
-    TypeNameNoDebug(coupledPolyPatch::typeName_());
+    TypeNameNoDebugApi(finiteVolume_API, coupledPolyPatch::typeName_());
 
 
     // Constructors

@@ -69,7 +69,7 @@ class point
 public:
 
     //- Runtime type information
-    TypeName("point");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "point");
 
 
     // Constructors

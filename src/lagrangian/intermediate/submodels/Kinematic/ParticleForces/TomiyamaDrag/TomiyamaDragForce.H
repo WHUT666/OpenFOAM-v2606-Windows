@@ -134,6 +134,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_TomiyamaDragForce_defines_typeName in .C files that
+//  define the template statics of TomiyamaDragForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_TomiyamaDragForce_defines_typeName)
+#  define Foam_TomiyamaDragForce_typeName_API
+#else
+#  define Foam_TomiyamaDragForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef TomiyamaDragForce_H
 #define TomiyamaDragForce_H
 
@@ -166,7 +176,7 @@ public:
         };
 
         //- Names for the contaminationType options
-        static const Enum<contaminationType> contaminationTypeNames;
+        static Foam_TomiyamaDragForce_typeName_API const Enum<contaminationType> contaminationTypeNames;
 
 
 private:
@@ -189,7 +199,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("TomiyamaDrag");
+    TypeNameApi(Foam_TomiyamaDragForce_typeName_API, "TomiyamaDrag");
 
 
     // Constructors

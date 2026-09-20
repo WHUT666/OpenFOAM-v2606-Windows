@@ -83,13 +83,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceReader");
+    TypeNameApi(surfMesh_API, "surfaceReader");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( surfMesh_API,
             autoPtr,
             surfaceReader,
             fileName,

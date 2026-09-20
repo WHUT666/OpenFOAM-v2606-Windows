@@ -60,7 +60,7 @@ class RanzMarshall
 public:
 
     //- Runtime type information
-    TypeName("RanzMarshall");
+    TypeNameApi(multiphaseSystem_API, "RanzMarshall");
 
 
     // Constructors

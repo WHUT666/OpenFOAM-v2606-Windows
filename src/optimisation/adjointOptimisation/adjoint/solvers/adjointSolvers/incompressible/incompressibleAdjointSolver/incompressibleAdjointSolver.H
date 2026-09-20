@@ -98,13 +98,13 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("incompressible");
+        TypeNameApi(adjointOptimisation_API, "incompressible");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             incompressibleAdjointSolver,
             dictionary,

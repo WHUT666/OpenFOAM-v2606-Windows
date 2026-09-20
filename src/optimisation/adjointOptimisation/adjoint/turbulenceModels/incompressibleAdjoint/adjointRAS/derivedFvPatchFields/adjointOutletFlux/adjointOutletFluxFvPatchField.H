@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_adjointOutletFluxFvPatchField_defines_typeName in .C files that
+//  define the template statics of adjointOutletFluxFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_adjointOutletFluxFvPatchField_defines_typeName)
+#  define Foam_adjointOutletFluxFvPatchField_typeName_API
+#else
+#  define Foam_adjointOutletFluxFvPatchField_typeName_API adjointOptimisation_API
+#endif
+
 #ifndef adjointOutletFluxFvPatchField_H
 #define adjointOutletFluxFvPatchField_H
 
@@ -61,7 +71,7 @@ class adjointOutletFluxFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("adjointOutletFlux");
+    TypeNameApi(Foam_adjointOutletFluxFvPatchField_typeName_API, "adjointOutletFlux");
 
 
     // Constructors

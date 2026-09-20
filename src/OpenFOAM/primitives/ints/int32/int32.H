@@ -174,14 +174,14 @@ public:
 
     // Static Data Members
 
-        static const char* const typeName;
-        static const char* const componentNames[];
-        static const int32_t zero;
-        static const int32_t one;
-        static const int32_t min;
-        static const int32_t max;
-        static const int32_t rootMax;
-        static const int32_t rootMin;
+        static OpenFOAM_API const char* const typeName;
+        static OpenFOAM_API const char* const componentNames[];
+        static OpenFOAM_API const int32_t zero;
+        static OpenFOAM_API const int32_t one;
+        static OpenFOAM_API const int32_t min;
+        static OpenFOAM_API const int32_t max;
+        static OpenFOAM_API const int32_t rootMax;
+        static OpenFOAM_API const int32_t rootMin;
 
 
     // Constructors

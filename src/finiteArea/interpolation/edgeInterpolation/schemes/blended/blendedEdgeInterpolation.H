@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_blendedEdgeInterpolation_defines_typeName in .C files that
+//  define the template statics of blendedEdgeInterpolation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_blendedEdgeInterpolation_defines_typeName)
+#  define Foam_blendedEdgeInterpolation_typeName_API
+#else
+#  define Foam_blendedEdgeInterpolation_typeName_API finiteArea_API
+#endif
+
 #ifndef blendedEdgeInterpolation_H
 #define blendedEdgeInterpolation_H
 
@@ -65,7 +75,7 @@ class blendedEdgeInterpolation
 public:
 
     //- Runtime type information
-    TypeName("blended");
+    TypeNameApi(Foam_blendedEdgeInterpolation_typeName_API, "blended");
 
 
     // Generated Methods

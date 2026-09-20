@@ -167,7 +167,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("liquidFilmModel");
+    TypeNameApi(regionFaModels_API, "liquidFilmModel");
 
 
     // Constructors

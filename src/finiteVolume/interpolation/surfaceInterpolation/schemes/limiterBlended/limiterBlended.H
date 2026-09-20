@@ -43,6 +43,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_limiterBlended_defines_typeName in .C files that
+//  define the template statics of limiterBlended (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_limiterBlended_defines_typeName)
+#  define Foam_limiterBlended_typeName_API
+#else
+#  define Foam_limiterBlended_typeName_API finiteVolume_API
+#endif
+
 #ifndef limiterBlended_H
 #define limiterBlended_H
 
@@ -84,7 +94,7 @@ class limiterBlended
 public:
 
     //- Runtime type information
-    TypeName("limiterBlended");
+    TypeNameApi(Foam_limiterBlended_typeName_API, "limiterBlended");
 
 
     // Constructors

@@ -228,19 +228,19 @@ protected:
 
             //- Cell closedness warning threshold
             //  set as the fraction of un-closed area to closed area
-            static scalar closedThreshold_;
+            static OpenFOAM_API scalar closedThreshold_;
 
             //- Aspect ratio warning threshold
-            static scalar aspectThreshold_;
+            static OpenFOAM_API scalar aspectThreshold_;
 
             //- Non-orthogonality warning threshold in deg
-            static scalar nonOrthThreshold_;
+            static OpenFOAM_API scalar nonOrthThreshold_;
 
             //- Skewness warning threshold
-            static scalar skewThreshold_;
+            static OpenFOAM_API scalar skewThreshold_;
 
             //- Threshold where faces are considered coplanar
-            static scalar planarCosAngle_;
+            static OpenFOAM_API scalar planarCosAngle_;
 
 
         // Geometrical calculations
@@ -385,7 +385,7 @@ public:
 
         // Static data
 
-            ClassName("primitiveMesh");
+            ClassNameApi(OpenFOAM_API, "primitiveMesh");
 
             //- Estimated number of cells per edge
             static const unsigned cellsPerEdge_ = 4;

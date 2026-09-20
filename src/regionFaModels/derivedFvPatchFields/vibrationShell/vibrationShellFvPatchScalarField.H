@@ -107,7 +107,7 @@ class vibrationShellFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("vibrationShell");
+    TypeNameApi(regionFaModels_API, "vibrationShell");
 
 
     // Constructors

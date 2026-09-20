@@ -105,7 +105,7 @@ public:
 
 
     //- The selection names for predefined KaHIP configurations
-    static const Enum<configs> configNames;
+    static kahipDecomp_API const Enum<configs> configNames;
 
 
     // Generated Methods
@@ -118,7 +118,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("kahip");
+    TypeNameApi(kahipDecomp_API, "kahip");
 
 
     // Constructors

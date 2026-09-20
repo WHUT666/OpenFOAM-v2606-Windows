@@ -104,7 +104,7 @@ class labelToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Cell labels read from dictionary
         labelList labels_;
@@ -113,7 +113,7 @@ class labelToFace
 public:
 
     //- Runtime type information
-    TypeName("labelToFace");
+    TypeNameApi(meshTools_API, "labelToFace");
 
 
     // Constructors

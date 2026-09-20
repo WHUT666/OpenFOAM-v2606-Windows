@@ -64,7 +64,7 @@ class mappedVariableThicknessWallPolyPatch
 public:
 
     //- Runtime type information
-    TypeName("mappedWallVariableThickness");
+    TypeNameApi(meshTools_API, "mappedWallVariableThickness");
 
 
     // Constructors

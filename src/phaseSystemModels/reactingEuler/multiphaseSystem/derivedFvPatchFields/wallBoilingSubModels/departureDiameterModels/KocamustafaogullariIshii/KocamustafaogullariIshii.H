@@ -102,7 +102,7 @@ class KocamustafaogullariIshii
 public:
 
     //- Runtime type information
-    TypeName("KocamustafaogullariIshii");
+    TypeNameApi(reactingMultiphaseSystem_API, "KocamustafaogullariIshii");
 
     // Constructors
 

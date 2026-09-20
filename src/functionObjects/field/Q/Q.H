@@ -111,7 +111,7 @@ class Q
 public:
 
     //- Runtime type information
-    TypeName("Q");
+    TypeNameApi(fieldFunctionObjects_API, "Q");
 
 
     // Constructors

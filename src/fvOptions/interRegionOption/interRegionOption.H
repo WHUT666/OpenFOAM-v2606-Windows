@@ -112,7 +112,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("interRegionOption");
+    TypeNameApi(fvOptions_API, "interRegionOption");
 
 
     // Constructors

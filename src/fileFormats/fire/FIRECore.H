@@ -103,7 +103,7 @@ protected:
 
     // Protected Data
 
-        static const Enum<fileExt3d>  file3dExtensions;
+        static fileFormats_API const Enum<fileExt3d> file3dExtensions;
 
 
     // Protected Member Functions

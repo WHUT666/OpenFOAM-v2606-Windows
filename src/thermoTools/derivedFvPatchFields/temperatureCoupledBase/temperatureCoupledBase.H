@@ -119,7 +119,7 @@ protected:
 
     // Protected Data
 
-        static const Enum<KMethodType> KMethodTypeNames_;
+        static thermoTools_API const Enum<KMethodType> KMethodTypeNames_;
 
         //- Underlying patch
         const fvPatch& patch_;

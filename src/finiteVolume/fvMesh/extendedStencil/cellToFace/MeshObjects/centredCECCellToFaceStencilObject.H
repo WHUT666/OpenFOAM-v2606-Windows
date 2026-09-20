@@ -70,7 +70,7 @@ class centredCECCellToFaceStencilObject
 
 public:
 
-    TypeName("centredCECCellToFaceStencil");
+    TypeNameApi(finiteVolume_API, "centredCECCellToFaceStencil");
 
 
     // Constructors

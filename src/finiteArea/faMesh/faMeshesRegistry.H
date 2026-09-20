@@ -127,7 +127,7 @@ class faMeshesRegistry
 public:
 
     //- Runtime type information.
-    TypeName("faMeshesRegistry");
+    TypeNameApi(finiteArea_API, "faMeshesRegistry");
 
     // Generated Methods
 

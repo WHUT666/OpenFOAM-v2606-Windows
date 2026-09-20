@@ -67,7 +67,7 @@ class waWallFunctionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("waWallFunction");
+    TypeNameApi(adjointOptimisation_API, "waWallFunction");
 
 
     // Constructors

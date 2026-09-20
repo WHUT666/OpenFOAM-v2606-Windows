@@ -33,6 +33,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_StochasticDispersionRAS_defines_typeName in .C files that
+//  define the template statics of StochasticDispersionRAS (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_StochasticDispersionRAS_defines_typeName)
+#  define Foam_StochasticDispersionRAS_typeName_API
+#else
+#  define Foam_StochasticDispersionRAS_typeName_API lagrangianTurbulence_API
+#endif
+
 #ifndef StochasticDispersionRAS_H
 #define StochasticDispersionRAS_H
 
@@ -55,7 +65,7 @@ class StochasticDispersionRAS
 public:
 
     //- Runtime type information
-    TypeName("stochasticDispersionRAS");
+    TypeNameApi(Foam_StochasticDispersionRAS_typeName_API, "stochasticDispersionRAS");
 
 
     // Constructors

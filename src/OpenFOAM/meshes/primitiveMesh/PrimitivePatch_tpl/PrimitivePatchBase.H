@@ -48,7 +48,7 @@ namespace Foam
                      Class PrimitivePatchBase Declaration
 \*---------------------------------------------------------------------------*/
 
-class PrimitivePatchBase
+class OpenFOAM_API PrimitivePatchBase
 {
 public:
 

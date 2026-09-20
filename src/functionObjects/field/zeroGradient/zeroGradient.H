@@ -146,7 +146,7 @@ class zeroGradient
 public:
 
     //- Runtime type information
-    TypeName("zeroGradient");
+    TypeNameApi(fieldFunctionObjects_API, "zeroGradient");
 
 
     // Constructors

@@ -40,6 +40,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ISAT_defines_typeName in .C files that
+//  define the template statics of ISAT (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ISAT_defines_typeName)
+#  define Foam_ISAT_typeName_API
+#else
+#  define Foam_ISAT_typeName_API chemistryModel_API
+#endif
+
 #ifndef ISAT_H
 #define ISAT_H
 
@@ -181,7 +191,7 @@ class ISAT
 public:
 
     //- Runtime type information
-    TypeName("ISAT");
+    TypeNameApi(Foam_ISAT_typeName_API, "ISAT");
 
 
     // Constructors

@@ -74,13 +74,13 @@ class GAMGInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("GAMGInterfaceField");
+    TypeNameApi(OpenFOAM_API, "GAMGInterfaceField");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGInterfaceField,
             lduInterfaceField,
@@ -91,8 +91,8 @@ public:
             (GAMGCp, fineInterface)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGInterfaceField,
             lduInterface,
@@ -104,8 +104,8 @@ public:
             (GAMGCp, doTransform, rank)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGInterfaceField,
             Istream,

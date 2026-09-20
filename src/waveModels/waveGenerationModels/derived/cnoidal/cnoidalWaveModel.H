@@ -151,7 +151,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cnoidal");
+    TypeNameApi(waveModels_API, "cnoidal");
 
     //- Constructor
     cnoidal

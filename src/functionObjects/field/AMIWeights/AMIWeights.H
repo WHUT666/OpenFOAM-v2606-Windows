@@ -133,7 +133,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("AMIWeights");
+    TypeNameApi(fieldFunctionObjects_API, "AMIWeights");
 
 
     // Constructors

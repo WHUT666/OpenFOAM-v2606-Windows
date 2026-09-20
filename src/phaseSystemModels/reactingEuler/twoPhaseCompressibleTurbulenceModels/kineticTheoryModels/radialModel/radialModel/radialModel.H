@@ -63,11 +63,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("radialModel");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "radialModel");
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( twoPhaseReactingTurbulenceModels_API,
         autoPtr,
         radialModel,
         dictionary,

@@ -141,7 +141,7 @@ class reference
 public:
 
     //- Runtime type information
-    TypeName("reference");
+    TypeNameApi(fieldFunctionObjects_API, "reference");
 
 
     // Constructors

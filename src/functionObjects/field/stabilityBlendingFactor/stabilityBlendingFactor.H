@@ -450,7 +450,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("stabilityBlendingFactor");
+    TypeNameApi(fieldFunctionObjects_API, "stabilityBlendingFactor");
 
 
     // Constructors

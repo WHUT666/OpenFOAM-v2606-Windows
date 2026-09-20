@@ -73,7 +73,7 @@ class splineEdge
 public:
 
     //- Runtime type information
-    TypeName("spline");
+    TypeNameApi(blockMesh_API, "spline");
 
 
     // Constructors

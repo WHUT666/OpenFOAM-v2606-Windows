@@ -143,7 +143,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("irregularMultiDirectional");
+    TypeNameApi(waveModels_API, "irregularMultiDirectional");
 
     //- Constructor
     irregularMultiDirectional

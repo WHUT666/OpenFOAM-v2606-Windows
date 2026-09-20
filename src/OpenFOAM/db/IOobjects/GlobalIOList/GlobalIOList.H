@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_GlobalIOList_defines_typeName in .C files that
+//  define the template statics of GlobalIOList (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_GlobalIOList_defines_typeName)
+#  define Foam_GlobalIOList_typeName_API
+#else
+#  define Foam_GlobalIOList_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_GlobalIOList_H
 #define Foam_GlobalIOList_H
 
@@ -61,7 +71,7 @@ public:
     typedef List<Type> content_type;
 
     //- Runtime type information
-    TypeName("List");
+    TypeNameApi(Foam_GlobalIOList_typeName_API, "List");
 
 
     // Constructors

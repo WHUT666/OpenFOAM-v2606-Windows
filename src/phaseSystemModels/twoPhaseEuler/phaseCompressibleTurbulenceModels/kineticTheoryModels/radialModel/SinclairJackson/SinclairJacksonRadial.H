@@ -59,7 +59,7 @@ class SinclairJackson
 public:
 
     //- Runtime type information
-    TypeName("SinclairJackson");
+    TypeNameApi(phaseCompressibleTurbulenceModels_API, "SinclairJackson");
 
 
     // Constructors

@@ -71,7 +71,7 @@ class exponentialDiffusivity
 public:
 
     //- Runtime type information
-    TypeName("exponential");
+    TypeNameApi(fvMotionSolvers_API, "exponential");
 
 
     // Constructors

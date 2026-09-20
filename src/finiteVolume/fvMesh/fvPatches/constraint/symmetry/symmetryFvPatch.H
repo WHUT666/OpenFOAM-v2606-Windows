@@ -57,7 +57,7 @@ class symmetryFvPatch
 public:
 
     //- Runtime type information
-    TypeName(symmetryPolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, symmetryPolyPatch::typeName_());
 
 
     // Constructors

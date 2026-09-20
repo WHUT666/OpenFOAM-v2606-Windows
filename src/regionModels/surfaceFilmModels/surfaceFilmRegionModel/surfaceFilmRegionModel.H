@@ -84,7 +84,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceFilmRegionModel");
+    TypeNameApi(surfaceFilmModels_API, "surfaceFilmRegionModel");
 
 
     // Constructors

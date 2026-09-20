@@ -59,7 +59,7 @@ class bitSet;
                            Class Pstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class Pstream
+class OpenFOAM_API Pstream
 :
     public UPstream
 {

@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DispersionModel_defines_typeName in .C files that
+//  define the template statics of DispersionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DispersionModel_defines_typeName)
+#  define Foam_DispersionModel_typeName_API
+#else
+#  define Foam_DispersionModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef DispersionModel_H
 #define DispersionModel_H
 
@@ -59,13 +69,13 @@ class DispersionModel
 public:
 
     //- Runtime type information
-    TypeName("dispersionModel");
+    TypeNameApi(Foam_DispersionModel_typeName_API, "dispersionModel");
 
 
     // Declare runtime constructor selection table
 
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_DispersionModel_typeName_API,
         autoPtr,
         DispersionModel,
         dictionary,

@@ -136,7 +136,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("atmNutUWallFunction");
+    TypeNameApi(atmosphericModels_API, "atmNutUWallFunction");
 
 
     // Constructors

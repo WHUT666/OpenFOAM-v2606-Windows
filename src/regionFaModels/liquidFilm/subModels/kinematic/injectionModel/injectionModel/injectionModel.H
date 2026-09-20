@@ -87,13 +87,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("injectionModel");
+    TypeNameApi(regionFaModels_API, "injectionModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( regionFaModels_API,
              autoPtr,
              injectionModel,
              dictionary,

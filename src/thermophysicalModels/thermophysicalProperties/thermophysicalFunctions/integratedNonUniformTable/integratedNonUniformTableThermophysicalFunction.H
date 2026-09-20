@@ -87,7 +87,7 @@ class integratedNonUniformTable
 public:
 
     //- Runtime type information
-    TypeName("integratedNonUniformTable");
+    TypeNameApi(thermophysicalProperties_API, "integratedNonUniformTable");
 
 
     // Constructors

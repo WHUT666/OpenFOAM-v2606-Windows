@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_downwind_defines_typeName in .C files that
+//  define the template statics of downwind (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_downwind_defines_typeName)
+#  define Foam_downwind_typeName_API
+#else
+#  define Foam_downwind_typeName_API finiteVolume_API
+#endif
+
 #ifndef downwind_H
 #define downwind_H
 
@@ -72,7 +82,7 @@ class downwind
 public:
 
     //- Runtime type information
-    TypeName("downwind");
+    TypeNameApi(Foam_downwind_typeName_API, "downwind");
 
 
     // Constructors

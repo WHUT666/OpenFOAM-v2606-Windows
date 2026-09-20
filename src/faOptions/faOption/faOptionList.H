@@ -108,7 +108,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("optionList");
+    TypeNameApi(faOptions_API, "optionList");
 
 
     // Constructors

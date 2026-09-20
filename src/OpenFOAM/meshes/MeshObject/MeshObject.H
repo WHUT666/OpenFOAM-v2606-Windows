@@ -90,7 +90,7 @@ class mapPolyMesh;
 \*---------------------------------------------------------------------------*/
 
 //- The meshObject is a concrete regIOobject to register MeshObject items
-class meshObject
+class OpenFOAM_API meshObject
 :
     public regIOobject
 {

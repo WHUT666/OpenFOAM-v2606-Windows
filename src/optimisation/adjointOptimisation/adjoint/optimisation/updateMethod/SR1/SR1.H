@@ -87,7 +87,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("SR1");
+    TypeNameApi(adjointOptimisation_API, "SR1");
 
 
     // Constructors

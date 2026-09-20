@@ -66,7 +66,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("exprResultStoredStack");
+    TypeNameNoDebugApi(OpenFOAM_API, "exprResultStoredStack");
 
 
     // Constructors

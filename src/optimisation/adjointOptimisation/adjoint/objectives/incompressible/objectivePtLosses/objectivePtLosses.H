@@ -75,7 +75,7 @@ class objectivePtLosses
 public:
 
     //- Runtime type information
-    TypeName("PtLosses");
+    TypeNameApi(adjointOptimisation_API, "PtLosses");
 
 
     // Constructors

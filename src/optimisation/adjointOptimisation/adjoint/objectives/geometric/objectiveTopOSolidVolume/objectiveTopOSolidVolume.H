@@ -69,7 +69,7 @@ class objectiveTopOSolidVolume
 public:
 
     //- Runtime type information
-    TypeName("topOSolidVolume");
+    TypeNameApi(adjointOptimisation_API, "topOSolidVolume");
 
 
     // Constructors

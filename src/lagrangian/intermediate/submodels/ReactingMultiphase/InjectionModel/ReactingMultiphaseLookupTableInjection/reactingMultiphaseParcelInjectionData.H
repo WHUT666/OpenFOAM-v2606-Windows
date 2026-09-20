@@ -87,7 +87,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("reactingMultiphaseParcelInjectionData");
+    TypeNameApi(lagrangianIntermediate_API, "reactingMultiphaseParcelInjectionData");
 
     // Constructors
 

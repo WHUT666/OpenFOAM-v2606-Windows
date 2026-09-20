@@ -145,7 +145,7 @@ class referenceTemperature
 public:
 
     //- Runtime type information
-    TypeName("referenceTemperature");
+    TypeNameApi(fvOptions_API, "referenceTemperature");
 
 
     // Constructors

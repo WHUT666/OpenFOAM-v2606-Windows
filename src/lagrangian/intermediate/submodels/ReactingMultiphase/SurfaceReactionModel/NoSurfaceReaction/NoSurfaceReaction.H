@@ -35,6 +35,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoSurfaceReaction_defines_typeName in .C files that
+//  define the template statics of NoSurfaceReaction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoSurfaceReaction_defines_typeName)
+#  define Foam_NoSurfaceReaction_typeName_API
+#else
+#  define Foam_NoSurfaceReaction_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoSurfaceReaction_H
 #define NoSurfaceReaction_H
 
@@ -56,7 +66,7 @@ class NoSurfaceReaction
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoSurfaceReaction_typeName_API, "none");
 
 
     // Constructors

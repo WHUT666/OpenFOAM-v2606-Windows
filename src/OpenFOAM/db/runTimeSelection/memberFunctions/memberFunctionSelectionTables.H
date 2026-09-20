@@ -46,9 +46,16 @@ Note
 //- Declare a run-time member-function selection (variables and adder classes)
 #define declareMemberFunctionSelectionTable\
 (returnType,baseType,funcName,argNames,argList,parListUnused)                  \
+    declareMemberFunctionSelectionTableApi                                     \
+    (/*no-api*/,returnType,baseType,funcName,argNames,argList,parListUnused)
+
+
+//- Declare a run-time member-function selection with import/export api
+#define declareMemberFunctionSelectionTableApi\
+(api,returnType,baseType,funcName,argNames,argList,parListUnused)              \
                                                                                \
     declareRunTimeSelectionTableBase(                                          \
-        returnType, funcName##argNames##MemberFunction, argList);              \
+        api, returnType, funcName##argNames##MemberFunction, argList);         \
                                                                                \
     /* Helper to add funcName to table */                                      \
     template<class baseType##Type>                                             \
@@ -63,19 +70,8 @@ Note
         )                                                                      \
         {                                                                      \
             funcName##argNames##MemberFunctionTablePtr_construct(true);        \
-            if                                                                 \
-            (                                                                  \
-                !funcName##argNames##MemberFunctionTablePtr_                   \
-                   ->insert(k, baseType##Type::funcName)                       \
-             && (*funcName##argNames##MemberFunctionTablePtr_)[k]              \
-             != baseType##Type::funcName                                       \
-            )                                                                  \
-            {                                                                  \
-                std::cerr                                                      \
-                    << "Duplicate entry " << k << " in member table "          \
-                    << #baseType << std::endl;                                 \
-                ::Foam::error::safePrintStack(std::cerr);                      \
-            }                                                                  \
+            funcName##argNames##MemberFunctionTableInsert                      \
+                (k, baseType##Type::funcName);                                 \
         }                                                                      \
                                                                                \
         ~add##funcName##argNames##MemberFunctionToTable()                      \
@@ -106,16 +102,13 @@ Note
             name(k)                                                            \
         {                                                                      \
             funcName##argNames##MemberFunctionTablePtr_construct(true);        \
-            funcName##argNames##MemberFunctionTablePtr_                        \
-               ->set(k, baseType##Type::funcName);                             \
+            funcName##argNames##MemberFunctionTableSet                         \
+                (k, baseType##Type::funcName);                                 \
         }                                                                      \
                                                                                \
         ~addRemovable##funcName##argNames##MemberFunctionToTable()             \
         {                                                                      \
-            if (funcName##argNames##MemberFunctionTablePtr_)                   \
-            {                                                                  \
-                funcName##argNames##MemberFunctionTablePtr_->erase(name);      \
-            }                                                                  \
+            funcName##argNames##MemberFunctionTableErase(name);                \
         }                                                                      \
                                                                                \
         addRemovable##funcName##argNames##MemberFunctionToTable                \

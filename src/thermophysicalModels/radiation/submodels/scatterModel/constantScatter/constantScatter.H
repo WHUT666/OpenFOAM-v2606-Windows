@@ -77,7 +77,7 @@ class constantScatter
 public:
 
     //- Runtime type information
-    TypeName("constantScatter");
+    TypeNameApi(radiationModels_API, "constantScatter");
 
 
     // Constructors

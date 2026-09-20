@@ -69,7 +69,7 @@ class solidBodyMotionDisplacementPointPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("solidBodyMotionDisplacement");
+    TypeNameApi(dynamicMesh_API, "solidBodyMotionDisplacement");
 
 
     // Constructors

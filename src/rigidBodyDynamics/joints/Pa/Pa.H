@@ -71,7 +71,7 @@ class Pa
 public:
 
     //- Runtime type information
-    TypeName("Pa");
+    TypeNameApi(rigidBodyDynamics_API, "Pa");
 
 
     // Constructors

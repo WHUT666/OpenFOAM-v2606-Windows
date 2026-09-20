@@ -70,7 +70,7 @@ class identity
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("none");
+    TypeNameNoDebugApi(OpenFOAM_API, "none");
 
 
     // Generated Methods

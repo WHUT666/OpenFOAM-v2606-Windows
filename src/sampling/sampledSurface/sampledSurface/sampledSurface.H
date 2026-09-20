@@ -164,11 +164,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sampledSurface");
+    TypeNameApi(sampling_API, "sampledSurface");
 
     //- Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( sampling_API,
         autoPtr,
         sampledSurface,
         word,

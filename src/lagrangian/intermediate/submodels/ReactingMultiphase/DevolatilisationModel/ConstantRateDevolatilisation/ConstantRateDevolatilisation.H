@@ -35,6 +35,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ConstantRateDevolatilisation_defines_typeName in .C files that
+//  define the template statics of ConstantRateDevolatilisation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ConstantRateDevolatilisation_defines_typeName)
+#  define Foam_ConstantRateDevolatilisation_typeName_API
+#else
+#  define Foam_ConstantRateDevolatilisation_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ConstantRateDevolatilisation_H
 #define ConstantRateDevolatilisation_H
 
@@ -75,7 +85,7 @@ class ConstantRateDevolatilisation
 public:
 
     //- Runtime type information
-    TypeName("constantRateDevolatilisation");
+    TypeNameApi(Foam_ConstantRateDevolatilisation_typeName_API, "constantRateDevolatilisation");
 
 
     // Constructors

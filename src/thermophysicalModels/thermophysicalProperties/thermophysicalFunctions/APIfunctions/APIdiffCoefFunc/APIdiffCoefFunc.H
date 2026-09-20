@@ -67,7 +67,7 @@ class APIdiffCoefFunc
 public:
 
     //- Runtime type information
-    TypeName("APIdiffCoefFunc");
+    TypeNameApi(thermophysicalProperties_API, "APIdiffCoefFunc");
 
 
     // Constructors

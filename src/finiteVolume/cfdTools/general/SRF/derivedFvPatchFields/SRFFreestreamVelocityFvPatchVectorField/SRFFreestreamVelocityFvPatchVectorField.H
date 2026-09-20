@@ -110,7 +110,7 @@ class SRFFreestreamVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("SRFFreestreamVelocity");
+    TypeNameApi(finiteVolume_API, "SRFFreestreamVelocity");
 
 
     // Constructors

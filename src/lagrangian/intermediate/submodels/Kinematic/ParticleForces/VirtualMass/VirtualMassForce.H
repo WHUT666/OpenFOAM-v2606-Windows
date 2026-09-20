@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_VirtualMassForce_defines_typeName in .C files that
+//  define the template statics of VirtualMassForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_VirtualMassForce_defines_typeName)
+#  define Foam_VirtualMassForce_typeName_API
+#else
+#  define Foam_VirtualMassForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef VirtualMassForce_H
 #define VirtualMassForce_H
 
@@ -65,7 +75,7 @@ class VirtualMassForce
 public:
 
     //- Runtime type information
-    TypeName("virtualMass");
+    TypeNameApi(Foam_VirtualMassForce_typeName_API, "virtualMass");
 
 
     // Constructors

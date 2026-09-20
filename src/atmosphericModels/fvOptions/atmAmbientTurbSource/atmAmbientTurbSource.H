@@ -190,7 +190,7 @@ class atmAmbientTurbSource
 public:
 
     //- Runtime type information
-    TypeName("atmAmbientTurbSource");
+    TypeNameApi(atmosphericModels_API, "atmAmbientTurbSource");
 
 
     // Constructors

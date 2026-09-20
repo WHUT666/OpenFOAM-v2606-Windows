@@ -88,7 +88,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("BorrvallPetersson");
+    TypeNameApi(adjointOptimisation_API, "BorrvallPetersson");
 
 
     // Constructors

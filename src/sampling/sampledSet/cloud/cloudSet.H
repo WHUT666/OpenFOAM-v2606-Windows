@@ -90,7 +90,7 @@ class cloudSet
 public:
 
     //- Runtime type information
-    TypeName("cloud");
+    TypeNameApi(sampling_API, "cloud");
 
 
     // Constructors

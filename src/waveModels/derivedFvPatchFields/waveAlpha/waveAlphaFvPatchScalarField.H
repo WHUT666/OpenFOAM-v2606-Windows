@@ -83,7 +83,7 @@ class waveAlphaFvPatchScalarField
 public:
 
    //- Runtime type information
-   TypeName("waveAlpha");
+   TypeNameApi(waveModels_API, "waveAlpha");
 
 
    // Constructors

@@ -121,7 +121,7 @@ class filmFlux
 public:
 
     //- Runtime type information
-    TypeName("filmFlux");
+    TypeNameApi(surfaceFilmModels_API, "filmFlux");
 
 
     // Constructors

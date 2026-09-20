@@ -61,7 +61,7 @@ class uniformBinary
 public:
 
     //- Runtime type information
-    TypeName("uniformBinary");
+    TypeNameApi(reactingMultiphaseSystem_API, "uniformBinary");
 
 
     // Constructor

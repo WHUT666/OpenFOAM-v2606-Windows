@@ -85,13 +85,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("resolutionIndexModel");
+    TypeNameApi(fieldFunctionObjects_API, "resolutionIndexModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fieldFunctionObjects_API,
             autoPtr,
             resolutionIndexModel,
             dictionary,

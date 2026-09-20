@@ -125,13 +125,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("profileModel");
+    TypeNameApi(fvOptions_API, "profileModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fvOptions_API,
             autoPtr,
             profileModel,
             dictionary,

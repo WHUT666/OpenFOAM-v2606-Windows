@@ -154,7 +154,7 @@ class ddt2
 public:
 
     //- Runtime type information
-    TypeName("ddt2");
+    TypeNameApi(fieldFunctionObjects_API, "ddt2");
 
 
     // Constructors

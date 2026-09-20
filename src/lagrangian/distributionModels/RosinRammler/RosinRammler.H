@@ -167,7 +167,7 @@ class RosinRammler
 public:
 
     //- Runtime type information
-    TypeName("RosinRammler");
+    TypeNameApi(distributionModels_API, "RosinRammler");
 
 
     // Constructors

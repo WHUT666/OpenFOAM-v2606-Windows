@@ -104,7 +104,7 @@ class fixedPressureCompressibleDensityFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("fixedPressureCompressibleDensity");
+    TypeNameApi(finiteVolume_API, "fixedPressureCompressibleDensity");
 
 
     // Constructors

@@ -40,6 +40,12 @@ SourceFiles
 #ifndef Foam_SmoothSolver_H
 #define Foam_SmoothSolver_H
 
+#if defined(Foam_LduSolver_defines_typeName)
+#  define Foam_LduSolver_typeName_API
+#else
+#  define Foam_LduSolver_typeName_API OpenFOAM_API
+#endif
+
 #include <lduMatrix.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -70,7 +76,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("SmoothSolver");
+    TypeNameApi(Foam_LduSolver_typeName_API, "SmoothSolver");
 
 
     // Constructors

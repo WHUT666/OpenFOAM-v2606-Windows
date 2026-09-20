@@ -157,7 +157,7 @@ class KirchhoffShell
 public:
 
     //- Runtime type information
-    TypeName("KirchhoffShell");
+    TypeNameApi(regionFaModels_API, "KirchhoffShell");
 
 
     // Constructors

@@ -100,7 +100,7 @@ public:
             CASTELLATEDBUFFERLAYER2 // experimental. wip.
         };
 
-        static const Enum<MeshType> MeshTypeNames;
+        static snappyHexMesh_API const Enum<MeshType> MeshTypeNames;
 
 
         //- Enumeration for what to debug. Used as a bit-pattern.
@@ -113,7 +113,7 @@ public:
             LAYERINFO = (1 << 4)
         };
 
-        static const Enum<debugType> debugTypeNames;
+        static snappyHexMesh_API const Enum<debugType> debugTypeNames;
 
         ////- Enumeration for what to output. Used as a bit-pattern.
         //enum outputType
@@ -133,7 +133,7 @@ public:
             WRITELAYERFIELDS = (1 << 4)
         };
 
-        static const Enum<writeType> writeTypeNames;
+        static snappyHexMesh_API const Enum<writeType> writeTypeNames;
 
         //- Enumeration for how userdata is to be mapped upon refinement.
         enum mapType
@@ -159,7 +159,7 @@ private:
     // Static Data Members
 
         //- Control of writing level
-        static writeType writeLevel_;
+        static snappyHexMesh_API writeType writeLevel_;
 
         ////- Control of output/log level
         //static outputType outputLevel_;
@@ -999,7 +999,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("meshRefinement");
+    ClassNameApi(snappyHexMesh_API, "meshRefinement");
 
 
     // Constructors

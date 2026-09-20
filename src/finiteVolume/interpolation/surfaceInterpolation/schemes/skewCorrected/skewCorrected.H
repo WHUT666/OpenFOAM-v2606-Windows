@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_skewCorrected_defines_typeName in .C files that
+//  define the template statics of skewCorrected (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_skewCorrected_defines_typeName)
+#  define Foam_skewCorrected_typeName_API
+#else
+#  define Foam_skewCorrected_typeName_API finiteVolume_API
+#endif
+
 #ifndef skewCorrected_H
 #define skewCorrected_H
 
@@ -77,7 +87,7 @@ class skewCorrected
 public:
 
     //- Runtime type information
-    TypeName("skewCorrected");
+    TypeNameApi(Foam_skewCorrected_typeName_API, "skewCorrected");
 
 
     // Constructors

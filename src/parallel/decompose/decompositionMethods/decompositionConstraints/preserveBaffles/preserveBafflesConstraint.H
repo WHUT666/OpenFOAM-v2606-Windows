@@ -64,7 +64,7 @@ class preserveBaffles
 public:
 
     //- Runtime type information
-    TypeName("preserveBaffles");
+    TypeNameApi(decompositionMethods_API, "preserveBaffles");
 
 
     // Constructors

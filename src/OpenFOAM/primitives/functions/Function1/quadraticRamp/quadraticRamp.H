@@ -62,7 +62,7 @@ class quadraticRamp
 public:
 
     //- Runtime type information
-    TypeName("quadraticRamp");
+    TypeNameApi(OpenFOAM_API, "quadraticRamp");
 
 
     // Constructors

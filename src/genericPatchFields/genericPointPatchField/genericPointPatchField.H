@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_genericPointPatchField_defines_typeName in .C files that
+//  define the template statics of genericPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_genericPointPatchField_defines_typeName)
+#  define Foam_genericPointPatchField_typeName_API
+#else
+#  define Foam_genericPointPatchField_typeName_API genericPatchFields_API
+#endif
+
 #ifndef Foam_genericPointPatchField_H
 #define Foam_genericPointPatchField_H
 
@@ -63,7 +73,7 @@ class genericPointPatchField
 public:
 
     //- Runtime type information
-    TypeName("generic");
+    TypeNameApi(Foam_genericPointPatchField_typeName_API, "generic");
 
 
     // Constructors

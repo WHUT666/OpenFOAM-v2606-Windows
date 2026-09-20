@@ -74,7 +74,7 @@ class Moraga
 public:
 
     //- Runtime type information
-    TypeName("Moraga");
+    TypeNameApi(reactingMultiphaseSystem_API, "Moraga");
 
 
     // Constructors

@@ -216,7 +216,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("isoSurfaceTopo");
+    TypeNameApi(sampling_API, "isoSurfaceTopo");
 
 
     // Constructors

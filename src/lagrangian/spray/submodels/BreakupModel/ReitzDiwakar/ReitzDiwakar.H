@@ -52,6 +52,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ReitzDiwakar_defines_typeName in .C files that
+//  define the template statics of ReitzDiwakar (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ReitzDiwakar_defines_typeName)
+#  define Foam_ReitzDiwakar_typeName_API
+#else
+#  define Foam_ReitzDiwakar_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef ReitzDiwakar_H
 #define ReitzDiwakar_H
 
@@ -84,7 +94,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("ReitzDiwakar");
+    TypeNameApi(Foam_ReitzDiwakar_typeName_API, "ReitzDiwakar");
 
 
     // Constructors

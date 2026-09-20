@@ -224,7 +224,7 @@ class vtkCloud
 public:
 
     //- Runtime type information
-    TypeName("vtkCloud");
+    TypeNameApi(lagrangianFunctionObjects_API, "vtkCloud");
 
 
     // Constructors

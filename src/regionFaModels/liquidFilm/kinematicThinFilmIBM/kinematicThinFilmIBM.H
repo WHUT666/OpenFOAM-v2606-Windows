@@ -89,7 +89,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("kinematicThinFilmIBM");
+    TypeNameApi(regionFaModels_API, "kinematicThinFilmIBM");
 
 
     // Constructors

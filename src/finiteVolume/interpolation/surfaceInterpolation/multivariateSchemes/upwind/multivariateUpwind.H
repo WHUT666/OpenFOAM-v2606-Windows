@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_multivariateUpwind_defines_typeName in .C files that
+//  define the template statics of multivariateUpwind (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_multivariateUpwind_defines_typeName)
+#  define Foam_multivariateUpwind_typeName_API
+#else
+#  define Foam_multivariateUpwind_typeName_API finiteVolume_API
+#endif
+
 #ifndef multivariateUpwind_H
 #define multivariateUpwind_H
 
@@ -71,7 +81,7 @@ class multivariateUpwind
 public:
 
     //- Runtime type information
-    TypeName("upwind");
+    TypeNameApi(Foam_multivariateUpwind_typeName_API, "upwind");
 
 
     // Constructors

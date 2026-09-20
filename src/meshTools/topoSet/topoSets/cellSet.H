@@ -49,7 +49,7 @@ namespace Foam
                            Class cellSet Declaration
 \*---------------------------------------------------------------------------*/
 
-class cellSet
+class meshTools_API cellSet
 :
     public topoSet
 {

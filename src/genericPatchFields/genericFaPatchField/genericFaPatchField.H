@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_genericFaPatchField_defines_typeName in .C files that
+//  define the template statics of genericFaPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_genericFaPatchField_defines_typeName)
+#  define Foam_genericFaPatchField_typeName_API
+#else
+#  define Foam_genericFaPatchField_typeName_API genericPatchFields_API
+#endif
+
 #ifndef Foam_genericFaPatchField_H
 #define Foam_genericFaPatchField_H
 
@@ -67,7 +77,7 @@ class genericFaPatchField
 public:
 
     //- Runtime type information
-    TypeName("generic");
+    TypeNameApi(Foam_genericFaPatchField_typeName_API, "generic");
 
 
     // Constructors

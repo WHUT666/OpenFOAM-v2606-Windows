@@ -35,6 +35,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoPhaseChange_defines_typeName in .C files that
+//  define the template statics of NoPhaseChange (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoPhaseChange_defines_typeName)
+#  define Foam_NoPhaseChange_typeName_API
+#else
+#  define Foam_NoPhaseChange_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoPhaseChange_H
 #define NoPhaseChange_H
 
@@ -56,7 +66,7 @@ class NoPhaseChange
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoPhaseChange_typeName_API, "none");
 
 
     // Constructors

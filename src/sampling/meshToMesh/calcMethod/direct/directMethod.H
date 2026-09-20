@@ -115,7 +115,7 @@ private:
 public:
 
     //- Run-time type information
-    TypeName("direct");
+    TypeNameApi(sampling_API, "direct");
 
     //- Construct from source and target meshes
     directMethod(const polyMesh& src, const polyMesh& tgt);

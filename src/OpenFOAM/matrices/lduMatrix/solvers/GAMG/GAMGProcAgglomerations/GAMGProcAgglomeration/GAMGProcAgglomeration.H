@@ -94,14 +94,14 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("GAMGProcAgglomeration");
+    TypeNameApi(OpenFOAM_API, "GAMGProcAgglomeration");
 
 
     // Declare run-time constructor selection tables
 
         //- Runtime selection table for pure geometric agglomerators
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGProcAgglomeration,
             GAMGAgglomeration,

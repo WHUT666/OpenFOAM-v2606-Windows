@@ -69,13 +69,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("heatTransferModel");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "heatTransferModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( compressibleTwoPhaseSystem_API,
             autoPtr,
             heatTransferModel,
             dictionary,
@@ -90,7 +90,7 @@ public:
     // Static Data Members
 
         //- Coefficient dimensions
-        static const dimensionSet dimK;
+        static compressibleTwoPhaseSystem_API const dimensionSet dimK;
 
 
     // Constructors

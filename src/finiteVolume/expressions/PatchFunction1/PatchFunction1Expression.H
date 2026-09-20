@@ -63,6 +63,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PatchExprField_defines_typeName in .C files that
+//  define the template statics of PatchExprField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PatchExprField_defines_typeName)
+#  define Foam_PatchExprField_typeName_API
+#else
+#  define Foam_PatchExprField_typeName_API finiteVolume_API
+#endif
+
 #ifndef PatchFunction1Types_expression_H
 #define PatchFunction1Types_expression_H
 
@@ -209,6 +219,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::PatchExprField<Foam::scalar>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::PatchExprField<Foam::vector>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::PatchExprField<Foam::sphericalTensor>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::PatchExprField<Foam::symmTensor>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::PatchExprField<Foam::tensor>);
 
 #endif
 

@@ -116,7 +116,7 @@ class Kutadeladze
 public:
 
     //- Runtime type information
-    TypeName("Kutadeladze");
+    TypeNameApi(reactingMultiphaseSystem_API, "Kutadeladze");
 
 
     // Constructors

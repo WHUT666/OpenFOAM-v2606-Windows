@@ -96,7 +96,7 @@ class DeltaOmegaTildeDelta
 public:
 
     //- Runtime type information
-    TypeName("DeltaOmegaTilde");
+    TypeNameApi(turbulenceModels_API, "DeltaOmegaTilde");
 
 
     // Constructors

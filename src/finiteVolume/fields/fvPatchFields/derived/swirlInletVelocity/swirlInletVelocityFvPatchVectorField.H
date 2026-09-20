@@ -113,7 +113,7 @@ class swirlInletVelocityFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("swirlInletVelocity");
+   TypeNameApi(finiteVolume_API, "swirlInletVelocity");
 
 
    // Constructors

@@ -74,7 +74,7 @@ class linearMotion
 public:
 
     //- Runtime type information
-    TypeName("linearMotion");
+    TypeNameApi(meshTools_API, "linearMotion");
 
 
     // Constructors

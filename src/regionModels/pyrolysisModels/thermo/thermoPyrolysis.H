@@ -106,7 +106,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("thermo");
+    TypeNameApi(pyrolysisModels_API, "thermo");
 
 
     // Constructors

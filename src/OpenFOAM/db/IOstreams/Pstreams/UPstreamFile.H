@@ -53,7 +53,7 @@ namespace Foam
                        Class UPstream::File Declaration
 \*---------------------------------------------------------------------------*/
 
-class UPstream::File
+class OpenFOAM_API UPstream::File
 {
     // Forward Declaration
     class Impl;

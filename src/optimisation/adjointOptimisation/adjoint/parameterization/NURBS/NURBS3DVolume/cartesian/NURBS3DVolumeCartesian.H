@@ -84,7 +84,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("cartesian");
+    TypeNameApi(adjointOptimisation_API, "cartesian");
 
 
     // Constructors

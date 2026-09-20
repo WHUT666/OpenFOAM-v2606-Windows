@@ -42,6 +42,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ThermoParcel_defines_typeName in .C files that
+//  define the template statics of ThermoParcel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ThermoParcel_defines_typeName)
+#  define Foam_ThermoParcel_typeName_API
+#else
+#  define Foam_ThermoParcel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ThermoParcel_H
 #define ThermoParcel_H
 
@@ -281,7 +291,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("ThermoParcel");
+        TypeNameApi(Foam_ThermoParcel_typeName_API, "ThermoParcel");
 
         //- String representation of properties
         AddToPropertyList

@@ -120,7 +120,7 @@ public:
     // Static Data Members
 
         //- Size in bytes of the fields
-        static const std::size_t sizeofFields_;
+        static snappyHexMesh_API const std::size_t sizeofFields_;
 
 
     // Constructors

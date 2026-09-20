@@ -113,7 +113,7 @@ class cylindricalInletVelocityFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("cylindricalInletVelocity");
+   TypeNameApi(finiteVolume_API, "cylindricalInletVelocity");
 
 
    // Constructors

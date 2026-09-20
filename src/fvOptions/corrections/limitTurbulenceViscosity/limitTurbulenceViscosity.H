@@ -123,7 +123,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("limitTurbulenceViscosity");
+    TypeNameApi(fvOptions_API, "limitTurbulenceViscosity");
 
 
     // Constructors

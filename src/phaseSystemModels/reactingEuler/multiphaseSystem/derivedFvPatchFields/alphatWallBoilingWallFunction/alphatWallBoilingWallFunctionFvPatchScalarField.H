@@ -345,7 +345,7 @@ private:
         word otherPhaseName_;
 
         //- Names of heat source types
-        static const Enum<phaseType> phaseTypeNames_;
+        static reactingMultiphaseSystem_API const Enum<phaseType> phaseTypeNames_;
 
         //- Heat source type
         phaseType phaseType_;
@@ -429,7 +429,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("compressible::alphatWallBoilingWallFunction");
+    TypeNameApi(reactingMultiphaseSystem_API, "compressible::alphatWallBoilingWallFunction");
 
 
     // Constructors

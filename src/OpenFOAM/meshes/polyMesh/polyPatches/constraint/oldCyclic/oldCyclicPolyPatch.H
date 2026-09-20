@@ -173,7 +173,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("oldCyclic");
+    TypeNameApi(OpenFOAM_API, "oldCyclic");
 
 
     // Constructors

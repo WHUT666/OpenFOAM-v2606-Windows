@@ -66,12 +66,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("swarmCorrection");
+    TypeNameApi(reactingMultiphaseSystem_API, "swarmCorrection");
 
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         swarmCorrection,
         dictionary,

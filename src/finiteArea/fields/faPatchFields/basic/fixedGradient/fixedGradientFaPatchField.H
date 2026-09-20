@@ -67,6 +67,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fixedGradientFaPatchField_defines_typeName in .C files that
+//  define the template statics of fixedGradientFaPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fixedGradientFaPatchField_defines_typeName)
+#  define Foam_fixedGradientFaPatchField_typeName_API
+#else
+#  define Foam_fixedGradientFaPatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_fixedGradientFaPatchField_H
 #define Foam_fixedGradientFaPatchField_H
 
@@ -109,7 +119,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fixedGradient");
+    TypeNameApi(Foam_fixedGradientFaPatchField_typeName_API, "fixedGradient");
 
 
     // Constructors

@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_processorCyclicFvsPatchField_defines_typeName in .C files that
+//  define the template statics of processorCyclicFvsPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_processorCyclicFvsPatchField_defines_typeName)
+#  define Foam_processorCyclicFvsPatchField_typeName_API
+#else
+#  define Foam_processorCyclicFvsPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_processorCyclicFvsPatchField_H
 #define Foam_processorCyclicFvsPatchField_H
 
@@ -69,7 +79,7 @@ class processorCyclicFvsPatchField
 public:
 
     //- Runtime type information
-    TypeName(processorCyclicFvPatch::typeName_());
+    TypeNameApi(Foam_processorCyclicFvsPatchField_typeName_API, processorCyclicFvPatch::typeName_());
 
 
     // Constructors

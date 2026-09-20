@@ -171,7 +171,7 @@ class PrinceBlanch
 public:
 
     //- Runtime type information
-    TypeName("PrinceBlanch");
+    TypeNameApi(reactingMultiphaseSystem_API, "PrinceBlanch");
 
     // Constructor
 

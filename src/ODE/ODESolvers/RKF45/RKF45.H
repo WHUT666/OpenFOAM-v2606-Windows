@@ -101,7 +101,7 @@ class RKF45
 public:
 
     //- Runtime type information
-    TypeName("RKF45");
+    TypeNameApi(ODE_API, "RKF45");
 
 
     // Constructors

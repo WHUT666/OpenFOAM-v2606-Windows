@@ -67,15 +67,15 @@ namespace Foam
 {
 
 // Forward Declarations
-class IOstream;
-class OSstream;
+class OpenFOAM_API IOstream;
+class OpenFOAM_API OSstream;
 class dictionary;
 
 /*---------------------------------------------------------------------------*\
                            Class messageStream Declaration
 \*---------------------------------------------------------------------------*/
 
-class messageStream
+class OpenFOAM_API messageStream
 {
 public:
 
@@ -308,21 +308,21 @@ public:
 //
 //  The values are normally 0 or a positive value.
 //  \note This flag is initialized to 1 by default.
-extern int infoDetailLevel;
+extern OpenFOAM_API int infoDetailLevel;
 
 //- Information stream (stdout output on master, null elsewhere)
-extern messageStream Info;
+extern OpenFOAM_API messageStream Info;
 
 //- Information stream (stderr output on master, null elsewhere)
-extern messageStream InfoErr;
+extern OpenFOAM_API messageStream InfoErr;
 
 //- Warning stream (stdout output on master, null elsewhere),
 //- with additional 'FOAM Warning' header text.
-extern messageStream Warning;
+extern OpenFOAM_API messageStream Warning;
 
 //- Error stream (stdout output on all processes),
 //- with additional 'FOAM Serious Error' header text.
-extern messageStream SeriousError;
+extern OpenFOAM_API messageStream SeriousError;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

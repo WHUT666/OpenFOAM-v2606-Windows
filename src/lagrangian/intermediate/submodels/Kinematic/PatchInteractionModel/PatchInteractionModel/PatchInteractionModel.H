@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PatchInteractionModel_defines_typeName in .C files that
+//  define the template statics of PatchInteractionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PatchInteractionModel_defines_typeName)
+#  define Foam_PatchInteractionModel_typeName_API
+#else
+#  define Foam_PatchInteractionModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PatchInteractionModel_H
 #define PatchInteractionModel_H
 
@@ -80,7 +90,7 @@ public:
             itOther
         };
 
-        static wordList interactionTypeNames_;
+        static Foam_PatchInteractionModel_typeName_API wordList interactionTypeNames_;
 
 
 protected:
@@ -112,11 +122,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("patchInteractionModel");
+    TypeNameApi(Foam_PatchInteractionModel_typeName_API, "patchInteractionModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_PatchInteractionModel_typeName_API,
         autoPtr,
         PatchInteractionModel,
         dictionary,

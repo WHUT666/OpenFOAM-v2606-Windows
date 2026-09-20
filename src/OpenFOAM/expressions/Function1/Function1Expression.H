@@ -65,6 +65,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Function1Expression_defines_typeName in .C files that
+//  define the template statics of Function1Expression (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Function1Expression_defines_typeName)
+#  define Foam_Function1Expression_typeName_API
+#else
+#  define Foam_Function1Expression_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_expression_H
 #define Foam_Function1Types_expression_H
 
@@ -102,7 +112,7 @@ class Function1Expression
 public:
 
     //- Runtime type information
-    TypeName("expression");
+    TypeNameApi(Foam_Function1Expression_typeName_API, "expression");
 
 
     // Generated Methods

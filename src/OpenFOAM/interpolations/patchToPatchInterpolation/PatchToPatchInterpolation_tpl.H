@@ -66,16 +66,16 @@ protected:
 
         //- Relative merge tolerance for projected points missing the target
         //  Expressed as the fraction of min involved edge size
-        static scalar projectionTol_;
+        static OpenFOAM_API scalar projectionTol_;
 
         //- Direct hit tolerance
-        static const scalar directHitTol;
+        static OpenFOAM_API const scalar directHitTol;
 
 
 public:
 
     //- Runtime type information
-    ClassName("PatchToPatchInterpolation");
+    ClassNameApi(OpenFOAM_API, "PatchToPatchInterpolation");
 
 
     // Constructors

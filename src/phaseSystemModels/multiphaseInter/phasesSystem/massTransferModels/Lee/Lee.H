@@ -89,6 +89,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Lee_defines_typeName in .C files that
+//  define the template statics of Lee (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Lee_defines_typeName)
+#  define Foam_Lee_typeName_API
+#else
+#  define Foam_Lee_typeName_API incompressibleMultiphaseSystems_API
+#endif
+
 #ifndef meltingEvaporationModels_Lee_H
 #define meltingEvaporationModels_Lee_H
 
@@ -125,7 +135,7 @@ class Lee
 public:
 
     //- Runtime type information
-    TypeName("Lee");
+    TypeNameApi(Foam_Lee_typeName_API, "Lee");
 
 
     // Constructors

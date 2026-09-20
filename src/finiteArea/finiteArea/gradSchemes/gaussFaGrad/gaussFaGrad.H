@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_gaussGrad_defines_typeName in .C files that
+//  define the template statics of gaussGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_gaussGrad_defines_typeName)
+#  define Foam_gaussGrad_typeName_API
+#else
+#  define Foam_gaussGrad_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_gaussFaGrad_H
 #define Foam_gaussFaGrad_H
 
@@ -72,7 +82,7 @@ class gaussGrad
 public:
 
     //- Runtime type information
-    TypeName("Gauss");
+    TypeNameApi(Foam_gaussGrad_typeName_API, "Gauss");
 
 
     // Generated Methods

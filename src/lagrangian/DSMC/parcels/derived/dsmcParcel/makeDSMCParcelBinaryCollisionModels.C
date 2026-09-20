@@ -1,3 +1,7 @@
+#define Foam_DispersionRASModel_defines_typeName
+#define Foam_LarsenBorgnakkeVariableHardSphere_defines_typeName
+#define Foam_NoBinaryCollision_defines_typeName
+#define Foam_VariableHardSphere_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

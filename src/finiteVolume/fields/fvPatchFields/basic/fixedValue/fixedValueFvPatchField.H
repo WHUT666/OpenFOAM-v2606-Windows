@@ -54,6 +54,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fixedValueFvPatchField_defines_typeName in .C files that
+//  define the template statics of fixedValueFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fixedValueFvPatchField_defines_typeName)
+#  define Foam_fixedValueFvPatchField_typeName_API
+#else
+#  define Foam_fixedValueFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_fixedValueFvPatchField_H
 #define Foam_fixedValueFvPatchField_H
 
@@ -79,7 +89,7 @@ class fixedValueFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("fixedValue");
+    TypeNameApi(Foam_fixedValueFvPatchField_typeName_API, "fixedValue");
 
 
     // Constructors

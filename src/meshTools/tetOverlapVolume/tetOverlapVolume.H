@@ -180,7 +180,7 @@ class tetOverlapVolume
 public:
 
     //- Runtime type information
-    ClassName("tetOverlapVolume");
+    ClassNameApi(meshTools_API, "tetOverlapVolume");
 
 
     // Constructors

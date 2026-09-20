@@ -54,7 +54,7 @@ namespace Foam
                           Class OTstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class OTstream
+class OpenFOAM_API OTstream
 :
     public Ostream,
     public DynamicList<token>

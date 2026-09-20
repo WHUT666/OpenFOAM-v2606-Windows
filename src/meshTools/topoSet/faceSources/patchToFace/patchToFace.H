@@ -123,7 +123,7 @@ class patchToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Matcher for patches
         wordRes selectedPatches_;
@@ -137,7 +137,7 @@ class patchToFace
 public:
 
     //- Runtime type information
-    TypeName("patchToFace");
+    TypeNameApi(meshTools_API, "patchToFace");
 
 
     // Constructors

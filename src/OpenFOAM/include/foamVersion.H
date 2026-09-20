@@ -101,20 +101,20 @@ namespace Foam
         //- OpenFOAM api number (integer) corresponding to the value of OPENFOAM
         //- at the time of compilation.
         //  The value is 0 if OPENFOAM was not defined.
-        extern const int api;
+        extern OpenFOAM_API const int api;
 
         //- OpenFOAM patch number as a std::string
-        extern const std::string patch;
+        extern OpenFOAM_API const std::string patch;
 
         //- OpenFOAM build information as a std::string
-        extern const std::string build;
+        extern OpenFOAM_API const std::string build;
 
         //- OpenFOAM build architecture information
         //- (machine endian, label/scalar sizes) as a std::string
-        extern const std::string buildArch;
+        extern OpenFOAM_API const std::string buildArch;
 
         //- OpenFOAM version (name or stringified number) as a std::string
-        extern const std::string version;
+        extern OpenFOAM_API const std::string version;
 
         //- Test if the patch string appears to be in use,
         //- which is when it is defined (non-zero).

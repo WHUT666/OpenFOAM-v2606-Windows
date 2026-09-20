@@ -101,7 +101,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("compressible::alphatPhaseChangeWallFunction");
+    TypeNameApi(reactingMultiphaseSystem_API, "compressible::alphatPhaseChangeWallFunction");
 
 
     // Constructors

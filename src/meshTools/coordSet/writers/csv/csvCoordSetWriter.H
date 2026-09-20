@@ -117,7 +117,7 @@ protected:
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("csv");
+    TypeNameNoDebugApi(meshTools_API, "csv");
 
 
     // Constructors

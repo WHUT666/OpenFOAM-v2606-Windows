@@ -45,6 +45,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_leastSquaresEdgeInterpolation_defines_typeName in .C files that
+//  define the template statics of leastSquaresEdgeInterpolation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_leastSquaresEdgeInterpolation_defines_typeName)
+#  define Foam_leastSquaresEdgeInterpolation_typeName_API
+#else
+#  define Foam_leastSquaresEdgeInterpolation_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_leastSquaresEdgeInterpolation_H
 #define Foam_leastSquaresEdgeInterpolation_H
 
@@ -70,7 +80,7 @@ class leastSquaresEdgeInterpolation
 public:
 
     //- Runtime type information
-    TypeName("leastSquares");
+    TypeNameApi(Foam_leastSquaresEdgeInterpolation_typeName_API, "leastSquares");
 
 
     // Generated Methods

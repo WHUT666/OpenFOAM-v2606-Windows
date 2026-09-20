@@ -75,8 +75,8 @@ protected:
 
     // Protected Static Data
 
-        static const scalar geomTol_;
-        static scalar propagationTol_;
+        static meshTools_API const scalar geomTol_;
+        static meshTools_API scalar propagationTol_;
 
 
     // Protected Data
@@ -109,11 +109,11 @@ protected:
 public:
 
     //- Default trackData value (for default template argument)
-    static int dummyTrackData_;
+    static meshTools_API int dummyTrackData_;
 
 
     //- Runtime type information
-    ClassName("FaceCellWave");
+    ClassNameApi(meshTools_API, "FaceCellWave");
 
 
     // Constructors

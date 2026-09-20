@@ -94,7 +94,7 @@ class LUscalarMatrix
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("LUscalarMatrix");
+    ClassNameApi(OpenFOAM_API, "LUscalarMatrix");
 
 
     // Constructors

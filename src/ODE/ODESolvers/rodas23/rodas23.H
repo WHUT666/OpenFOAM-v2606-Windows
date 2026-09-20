@@ -92,7 +92,7 @@ class rodas23
 public:
 
     //- Runtime type information
-    TypeName("rodas23");
+    TypeNameApi(ODE_API, "rodas23");
 
 
     // Constructors

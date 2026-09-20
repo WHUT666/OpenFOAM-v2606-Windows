@@ -107,9 +107,9 @@ class alphatJayatillekeWallFunctionFvPatchScalarField
 
         // Solution parameters
 
-            static scalar maxExp_;
-            static scalar tolerance_;
-            static label maxIters_;
+            static thermoTools_API scalar maxExp_;
+            static thermoTools_API scalar tolerance_;
+            static thermoTools_API label maxIters_;
 
 
     // Private Member Functions
@@ -137,7 +137,7 @@ class alphatJayatillekeWallFunctionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("compressible::alphatJayatillekeWallFunction");
+    TypeNameApi(thermoTools_API, "compressible::alphatJayatillekeWallFunction");
 
 
     // Constructors

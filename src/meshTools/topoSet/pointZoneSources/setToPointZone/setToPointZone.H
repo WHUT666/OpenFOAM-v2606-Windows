@@ -101,7 +101,7 @@ class setToPointZone
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of set to use
         word setName_;
@@ -110,7 +110,7 @@ class setToPointZone
 public:
 
     //- Runtime type information
-    TypeName("setToPointZone");
+    TypeNameApi(meshTools_API, "setToPointZone");
 
 
     // Constructors

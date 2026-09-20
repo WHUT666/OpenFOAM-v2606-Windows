@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_pTraits_defines_typeName in .C files that
+//  define the template statics of pTraits (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_pTraits_defines_typeName)
+#  define Foam_pTraits_typeName_API
+#else
+#  define Foam_pTraits_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_primitives_complex_H
 #define Foam_primitives_complex_H
 
@@ -274,15 +284,15 @@ public:
 
     // Static Data Members
 
-        static const char* const typeName;
-        static const char* const componentNames[];
+        static Foam_pTraits_typeName_API const char* const typeName;
+        static Foam_pTraits_typeName_API const char* const componentNames[];
 
-        static const complex zero;      //!< complex (0,0)
-        static const complex one;       //!< complex (1,0)
-        static const complex min;       //!< complex (-VGREAT,-VGREAT)
-        static const complex max;       //!< complex (VGREAT,VGREAT)
-        static const complex rootMin;   //!< complex (-ROOTVGREAT, -ROOTVGREAT)
-        static const complex rootMax;   //!< complex (ROOTVGREAT, ROOTVGREAT)
+        static Foam_pTraits_typeName_API const complex zero;
+        static Foam_pTraits_typeName_API const complex one;
+        static Foam_pTraits_typeName_API const complex min;
+        static Foam_pTraits_typeName_API const complex max;
+        static Foam_pTraits_typeName_API const complex rootMin;
+        static Foam_pTraits_typeName_API const complex rootMax;
 
 
     // Constructors

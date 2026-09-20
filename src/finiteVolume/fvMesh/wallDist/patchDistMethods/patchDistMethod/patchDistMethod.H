@@ -81,13 +81,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("patchDistMethod");
+    TypeNameApi(finiteVolume_API, "patchDistMethod");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( finiteVolume_API,
             autoPtr,
             patchDistMethod,
             dictionary,

@@ -186,13 +186,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("liquidFilmBase");
+    TypeNameApi(regionFaModels_API, "liquidFilmBase");
 
 
     // Declare runtime constructor selection tables
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( regionFaModels_API,
              autoPtr,
              liquidFilmBase,
              dictionary,

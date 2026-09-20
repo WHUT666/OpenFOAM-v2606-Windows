@@ -184,7 +184,7 @@ public:
         };
 
         //- List of selection mode type names
-        static const Enum<selectionModeType> selectionModeTypeNames_;
+        static fvOptions_API const Enum<selectionModeType> selectionModeTypeNames_;
 
 
 protected:
@@ -237,7 +237,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cellSetOption");
+    TypeNameApi(fvOptions_API, "cellSetOption");
 
 
     // Constructors

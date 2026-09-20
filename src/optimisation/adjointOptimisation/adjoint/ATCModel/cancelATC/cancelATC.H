@@ -71,7 +71,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("cancel");
+    TypeNameApi(adjointOptimisation_API, "cancel");
 
 
     // Constructors

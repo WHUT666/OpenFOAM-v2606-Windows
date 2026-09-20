@@ -158,13 +158,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("externalFileCoupler");
+    TypeNameApi(meshTools_API, "externalFileCoupler");
 
 
     // Static data members
 
         //- Name of the lock file
-        static word lockName;
+        static meshTools_API word lockName;
 
 
     // Constructors

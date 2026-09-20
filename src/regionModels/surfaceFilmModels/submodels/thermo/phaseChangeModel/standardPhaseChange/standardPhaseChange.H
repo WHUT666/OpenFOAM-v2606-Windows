@@ -99,7 +99,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("standardPhaseChange");
+    TypeNameApi(surfaceFilmModels_API, "standardPhaseChange");
 
 
     // Constructors

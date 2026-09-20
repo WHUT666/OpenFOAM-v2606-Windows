@@ -67,7 +67,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("pisoControl");
+        TypeNameApi(finiteVolume_API, "pisoControl");
 
 
     // Constructors

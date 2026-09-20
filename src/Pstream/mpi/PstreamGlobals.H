@@ -54,34 +54,34 @@ namespace PstreamGlobals
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
 // Track if MPI_Comm_free is needed for communicator index in MPICommunicators_
-extern DynamicList<bool> pendingMPIFree_;
+extern OpenFOAM_API DynamicList<bool> pendingMPIFree_;
 
 // Current communicators, which may be allocated or predefined
 // (eg, MPI_COMM_SELF, MPI_COMM_WORLD)
-extern DynamicList<MPI_Comm> MPICommunicators_;
+extern OpenFOAM_API DynamicList<MPI_Comm> MPICommunicators_;
 
 //- Outstanding non-blocking operations.
-extern DynamicList<MPI_Request> outstandingRequests_;
+extern OpenFOAM_API DynamicList<MPI_Request> outstandingRequests_;
 
 // The fundamental count for each UPstream::dataTypes entry
 typedef Foam::FixedList<int, 17> DataTypeCountLookupTable;
 
 //- Fundamental count for each valid UPstream::dataTypes entry
 //- Indexed by UPstream::dataTypes enum
-extern DataTypeCountLookupTable dataTypesCount_;
+extern OpenFOAM_API DataTypeCountLookupTable dataTypesCount_;
 
 // For UPstream::dataTypes lookup, includes space for last 'invalid' entry
 typedef Foam::FixedList<MPI_Datatype, 17> DataTypeLookupTable;
 
 //- MPI data types corresponding to fundamental and OpenFOAM types.
 //- Indexed by UPstream::dataTypes enum
-extern DataTypeLookupTable MPIdataTypes_;
+extern OpenFOAM_API DataTypeLookupTable MPIdataTypes_;
 
 // For UPstream::opCodes lookup, includes space for last 'invalid' entry
 typedef Foam::FixedList<MPI_Op, 13> OpCodesLookupTable;
 
 //- MPI operation types, indexed by UPstream::opCodes enum
-extern OpCodesLookupTable MPIopCodes_;
+extern OpenFOAM_API OpCodesLookupTable MPIopCodes_;
 
 
 

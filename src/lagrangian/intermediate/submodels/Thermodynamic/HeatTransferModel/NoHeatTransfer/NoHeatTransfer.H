@@ -54,6 +54,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoHeatTransfer_defines_typeName in .C files that
+//  define the template statics of NoHeatTransfer (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoHeatTransfer_defines_typeName)
+#  define Foam_NoHeatTransfer_typeName_API
+#else
+#  define Foam_NoHeatTransfer_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoHeatTransfer_H
 #define NoHeatTransfer_H
 
@@ -76,7 +86,7 @@ class NoHeatTransfer
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoHeatTransfer_typeName_API, "none");
 
 
     // Generated Methods

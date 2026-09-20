@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CentredFitData_defines_typeName in .C files that
+//  define the template statics of CentredFitData (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CentredFitData_defines_typeName)
+#  define Foam_CentredFitData_typeName_API
+#else
+#  define Foam_CentredFitData_typeName_API finiteVolume_API
+#endif
+
 #ifndef CentredFitData_H
 #define CentredFitData_H
 
@@ -77,7 +87,7 @@ class CentredFitData
 
 public:
 
-    TypeName("CentredFitData");
+    TypeNameApi(Foam_CentredFitData_typeName_API, "CentredFitData");
 
 
     // Constructors

@@ -111,7 +111,7 @@ class filmSeparation
 public:
 
     //- Runtime type information
-    TypeName("filmSeparation");
+    TypeNameApi(regionFaModels_API, "filmSeparation");
 
 
     // Constructors

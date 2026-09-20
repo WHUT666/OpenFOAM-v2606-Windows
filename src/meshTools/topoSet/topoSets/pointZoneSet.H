@@ -63,7 +63,7 @@ class pointZoneSet
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("pointZoneSet");
+    TypeNameNoDebugApi(meshTools_API, "pointZoneSet");
 
 
     // Constructors

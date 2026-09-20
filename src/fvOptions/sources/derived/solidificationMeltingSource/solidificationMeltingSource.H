@@ -167,7 +167,7 @@ public:
         };
 
         //- Names for thermoMode
-        static const Enum<thermoMode> thermoModeTypeNames_;
+        static fvOptions_API const Enum<thermoMode> thermoModeTypeNames_;
 
 
 private:
@@ -236,7 +236,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("solidificationMeltingSource");
+    TypeNameApi(fvOptions_API, "solidificationMeltingSource");
 
 
     // Constructors

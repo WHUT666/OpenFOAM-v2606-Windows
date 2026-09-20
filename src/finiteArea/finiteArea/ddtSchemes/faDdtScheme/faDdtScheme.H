@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_faDdtScheme_defines_typeName in .C files that
+//  define the template statics of faDdtScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_faDdtScheme_defines_typeName)
+#  define Foam_faDdtScheme_typeName_API
+#else
+#  define Foam_faDdtScheme_typeName_API finiteArea_API
+#endif
+
 #ifndef faDdtScheme_H
 #define faDdtScheme_H
 
@@ -83,8 +93,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_faDdtScheme_typeName_API,
             tmp,
             faDdtScheme,
             Istream,

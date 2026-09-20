@@ -66,12 +66,12 @@ class psiReactionThermo
 public:
 
     //- Runtime type information
-    TypeName("psiReactionThermo");
+    TypeNameApi(reactionThermophysicalModels_API, "psiReactionThermo");
 
 
     //- Declare run-time constructor selection tables
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactionThermophysicalModels_API,
         autoPtr,
         psiReactionThermo,
         fvMesh,
@@ -81,8 +81,8 @@ public:
 
 
     //- Declare run-time constructor selection table for dictionary based
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactionThermophysicalModels_API,
         autoPtr,
         psiReactionThermo,
         fvMeshDictPhase,

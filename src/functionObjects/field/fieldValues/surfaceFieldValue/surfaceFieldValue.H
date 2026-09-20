@@ -230,7 +230,7 @@ public:
         };
 
         //- Region type names
-        static const Enum<regionTypes> regionTypeNames_;
+        static fieldFunctionObjects_API const Enum<regionTypes> regionTypeNames_;
 
         //- Operation type enumeration
         enum operationType
@@ -306,7 +306,7 @@ public:
         };
 
         //- Operation type names
-        static const Enum<operationType> operationTypeNames_;
+        static fieldFunctionObjects_API const Enum<operationType> operationTypeNames_;
 
 
         //- Post-operation type enumeration
@@ -318,7 +318,7 @@ public:
         };
 
         //- Operation type names
-        static const Enum<postOperationType> postOperationTypeNames_;
+        static fieldFunctionObjects_API const Enum<postOperationType> postOperationTypeNames_;
 
 
 private:
@@ -555,7 +555,7 @@ protected:
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("surfaceFieldValue");
+    TypeNameApi(fieldFunctionObjects_API, "surfaceFieldValue");
 
 
     // Constructors

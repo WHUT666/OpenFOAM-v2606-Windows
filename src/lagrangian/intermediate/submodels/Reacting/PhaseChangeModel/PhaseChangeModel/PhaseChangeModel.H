@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PhaseChangeModel_defines_typeName in .C files that
+//  define the template statics of PhaseChangeModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PhaseChangeModel_defines_typeName)
+#  define Foam_PhaseChangeModel_typeName_API
+#else
+#  define Foam_PhaseChangeModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PhaseChangeModel_H
 #define PhaseChangeModel_H
 
@@ -73,7 +83,7 @@ public:
         };
 
         //- Name representations of enthalpy transfer types
-        static const wordList enthalpyTransferTypeNames;
+        static Foam_PhaseChangeModel_typeName_API const wordList enthalpyTransferTypeNames;
 
 
 protected:
@@ -102,11 +112,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("phaseChangeModel");
+    TypeNameApi(Foam_PhaseChangeModel_typeName_API, "phaseChangeModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_PhaseChangeModel_typeName_API,
         autoPtr,
         PhaseChangeModel,
         dictionary,

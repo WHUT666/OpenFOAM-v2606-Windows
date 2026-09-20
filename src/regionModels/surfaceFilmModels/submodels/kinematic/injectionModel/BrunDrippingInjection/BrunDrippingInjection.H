@@ -112,7 +112,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("BrunDrippingInjection");
+    TypeNameApi(surfaceFilmModels_API, "BrunDrippingInjection");
 
 
     // Constructors

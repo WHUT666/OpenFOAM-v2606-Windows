@@ -99,7 +99,7 @@ class faceZoneToFaceZone
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of set to use
         word setName_;
@@ -108,7 +108,7 @@ class faceZoneToFaceZone
 public:
 
     //- Runtime type information
-    TypeName("faceZoneToFaceZone");
+    TypeNameApi(meshTools_API, "faceZoneToFaceZone");
 
 
     // Constructors

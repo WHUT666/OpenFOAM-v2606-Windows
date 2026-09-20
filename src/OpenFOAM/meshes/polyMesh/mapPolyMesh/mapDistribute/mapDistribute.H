@@ -347,7 +347,7 @@ public:
 
 
     // Declare name of the class and its debug switch
-    ClassName("mapDistribute");
+    ClassNameApi(OpenFOAM_API, "mapDistribute");
 
 
     // Constructors

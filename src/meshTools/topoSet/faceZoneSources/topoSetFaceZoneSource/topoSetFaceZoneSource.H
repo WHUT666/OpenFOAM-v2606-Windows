@@ -64,8 +64,8 @@ public:
     // Declare run-time constructor selection table
 
         // For the dictionary constructor
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             topoSetFaceZoneSource,
             word,
@@ -77,8 +77,8 @@ public:
         );
 
         // For the Istream constructor
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             topoSetFaceZoneSource,
             istream,

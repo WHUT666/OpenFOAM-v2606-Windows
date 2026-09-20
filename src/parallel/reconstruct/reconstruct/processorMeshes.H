@@ -98,7 +98,7 @@ class processorMeshes
 public:
 
     //- Runtime type information
-    ClassName("processorMeshes");
+    ClassNameApi(reconstruct_API, "processorMeshes");
 
 
     // Constructors

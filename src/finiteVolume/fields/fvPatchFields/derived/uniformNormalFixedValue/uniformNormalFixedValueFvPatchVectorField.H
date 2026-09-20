@@ -99,7 +99,7 @@ class uniformNormalFixedValueFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("uniformNormalFixedValue");
+    TypeNameApi(finiteVolume_API, "uniformNormalFixedValue");
 
 
     // Constructors

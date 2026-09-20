@@ -64,7 +64,7 @@ namespace parsing
 
 
     //- Strings corresponding to the errorType
-    extern const Foam::Enum<errorType> errorNames;
+    extern OpenFOAM_API const Foam::Enum<errorType> errorNames;
 
     //- Sanity check after strtof, strtod, etc.
     //  Should set errno = 0 prior to the conversion.

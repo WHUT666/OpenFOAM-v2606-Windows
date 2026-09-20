@@ -113,7 +113,7 @@ class LaakkonenAlopaeusAittamaa
 public:
 
     //- Runtime type information
-    TypeName("LaakkonenAlopaeusAittamaa");
+    TypeNameApi(reactingMultiphaseSystem_API, "LaakkonenAlopaeusAittamaa");
 
     // Constructor
 

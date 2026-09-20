@@ -86,7 +86,7 @@ protected:
         };
 
         //- Names for the output state (for messages, not for file output).
-        static const Enum<outputState> stateNames;
+        static fileFormats_API const Enum<outputState> stateNames;
 
 
         //- The output state

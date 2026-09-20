@@ -133,12 +133,12 @@ protected:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("fvMeshSubset");
+    ClassNameApi(finiteVolume_API, "fvMeshSubset");
 
     // Static Data Members
 
         //- Name for exposed internal faces (default: oldInternalFaces)
-        static word exposedPatchName;
+        static finiteVolume_API word exposedPatchName;
 
 
     // Generated Methods

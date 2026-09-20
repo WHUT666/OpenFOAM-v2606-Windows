@@ -91,7 +91,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("temperatureDependentContactAngle");
+    TypeNameApi(surfaceFilmModels_API, "temperatureDependentContactAngle");
 
 
     // Constructors

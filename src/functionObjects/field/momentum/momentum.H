@@ -223,7 +223,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("momentum");
+    TypeNameApi(fieldFunctionObjects_API, "momentum");
 
 
     // Constructors

@@ -144,7 +144,7 @@ class externalCoupledTemperatureMixedFvPatchScalarField
         };
 
         //- Names for outputTemperatureType
-        static const Enum<outputTemperatureType> outputTemperatureNames;
+        static fieldFunctionObjects_API const Enum<outputTemperatureType> outputTemperatureNames;
 
         //- Reference temperature type for HTC calculation
         enum refTemperatureType
@@ -154,7 +154,7 @@ class externalCoupledTemperatureMixedFvPatchScalarField
         };
 
         //- Names for refTemperatureType
-        static const Enum<refTemperatureType> refTemperatureNames;
+        static fieldFunctionObjects_API const Enum<refTemperatureType> refTemperatureNames;
 
 
     // Private Data
@@ -172,7 +172,7 @@ class externalCoupledTemperatureMixedFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("externalCoupledTemperature");
+    TypeNameApi(fieldFunctionObjects_API, "externalCoupledTemperature");
 
 
     // Constructors

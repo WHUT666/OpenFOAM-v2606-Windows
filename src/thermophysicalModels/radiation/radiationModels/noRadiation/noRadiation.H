@@ -70,7 +70,7 @@ class noRadiation
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(radiationModels_API, "none");
 
 
     // Constructors

@@ -253,7 +253,7 @@ class effectivenessTable
 public:
 
     //- Runtime type information
-    TypeName("effectivenessTable");
+    TypeNameApi(fvOptions_API, "effectivenessTable");
 
 
     // Constructors

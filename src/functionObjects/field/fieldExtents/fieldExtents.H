@@ -148,7 +148,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fieldExtents");
+    TypeNameApi(fieldFunctionObjects_API, "fieldExtents");
 
 
     // Constructors

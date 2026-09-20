@@ -110,7 +110,7 @@ class CoulaloglouTavlaridesCoalescence
 public:
 
     //- Runtime type information
-    TypeName("CoulaloglouTavlarides");
+    TypeNameApi(reactingMultiphaseSystem_API, "CoulaloglouTavlarides");
 
     // Constructor
 

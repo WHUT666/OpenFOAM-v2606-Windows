@@ -1,3 +1,6 @@
+#define Foam_DispersionRASModel_defines_typeName
+#define Foam_GradientDispersionRAS_defines_typeName
+#define Foam_StochasticDispersionRAS_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

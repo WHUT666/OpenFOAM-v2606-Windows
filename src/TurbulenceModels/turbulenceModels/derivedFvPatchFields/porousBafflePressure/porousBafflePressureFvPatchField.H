@@ -148,7 +148,7 @@ class porousBafflePressureFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("porousBafflePressure");
+    TypeNameApi(turbulenceModels_API, "porousBafflePressure");
 
 
     // Constructors

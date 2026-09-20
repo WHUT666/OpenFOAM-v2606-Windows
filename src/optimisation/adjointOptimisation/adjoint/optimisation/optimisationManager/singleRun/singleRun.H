@@ -75,7 +75,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("singleRun");
+    TypeNameApi(adjointOptimisation_API, "singleRun");
 
 
     // Constructors

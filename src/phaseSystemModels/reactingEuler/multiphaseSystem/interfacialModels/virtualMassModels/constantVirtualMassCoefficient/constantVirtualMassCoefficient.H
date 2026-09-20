@@ -66,7 +66,7 @@ class constantVirtualMassCoefficient
 public:
 
     //- Runtime type information
-    TypeName("constantCoefficient");
+    TypeNameApi(reactingMultiphaseSystem_API, "constantCoefficient");
 
 
     // Constructors

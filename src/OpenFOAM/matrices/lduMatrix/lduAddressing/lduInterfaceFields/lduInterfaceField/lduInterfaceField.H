@@ -72,7 +72,7 @@ class lduInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("lduInterfaceField");
+    TypeNameApi(OpenFOAM_API, "lduInterfaceField");
 
 
     // Generated Methods

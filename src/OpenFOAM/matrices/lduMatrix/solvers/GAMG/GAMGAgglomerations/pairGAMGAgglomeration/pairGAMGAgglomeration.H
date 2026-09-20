@@ -63,7 +63,7 @@ class pairGAMGAgglomeration
         bool renumber_;
 
         //- Direction of cell loop for the current level
-        static bool forward_;
+        static OpenFOAM_API bool forward_;
 
 
 protected:
@@ -91,7 +91,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("pair");
+    TypeNameApi(OpenFOAM_API, "pair");
 
 
     // Constructors

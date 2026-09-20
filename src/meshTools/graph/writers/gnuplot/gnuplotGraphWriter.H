@@ -58,7 +58,7 @@ class gnuplotWriter
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("gnuplot");
+    TypeNameNoDebugApi(meshTools_API, "gnuplot");
 
     //- Default construct
     gnuplotWriter() = default;

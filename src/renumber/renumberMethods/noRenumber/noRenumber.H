@@ -55,7 +55,7 @@ class noRenumber
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("none");
+    TypeNameNoDebugApi(renumberMethods_API, "none");
 
 
     // Constructors

@@ -62,7 +62,7 @@ class lduMesh
 public:
 
     //- Runtime type information
-    TypeName("lduMesh");
+    TypeNameApi(OpenFOAM_API, "lduMesh");
 
 
     //- Destructor

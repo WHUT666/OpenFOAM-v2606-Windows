@@ -74,7 +74,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("adjointLaminar");
+    TypeNameApi(adjointOptimisation_API, "adjointLaminar");
 
 
     // Constructors

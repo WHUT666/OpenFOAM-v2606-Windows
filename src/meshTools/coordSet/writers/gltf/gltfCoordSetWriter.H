@@ -162,7 +162,7 @@ public:
 
 
     //- Strings corresponding to the field options
-    static const Enum<fieldOption> fieldOptionNames_;
+    static meshTools_API const Enum<fieldOption> fieldOptionNames_;
 
 
 private:
@@ -251,7 +251,7 @@ private:
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("gltf");
+    TypeNameNoDebugApi(meshTools_API, "gltf");
 
 
     // Constructors

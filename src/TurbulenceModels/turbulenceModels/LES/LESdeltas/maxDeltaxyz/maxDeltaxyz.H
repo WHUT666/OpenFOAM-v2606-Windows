@@ -76,7 +76,7 @@ class maxDeltaxyz
 public:
 
     //- Runtime type information
-    TypeName("maxDeltaxyz");
+    TypeNameApi(turbulenceModels_API, "maxDeltaxyz");
 
 
     // Constructors

@@ -67,7 +67,7 @@ class genericPolyPatch
 public:
 
     //- Runtime type information
-    TypeName("genericPatch");
+    TypeNameApi(OpenFOAM_API, "genericPatch");
 
 
     // Constructors

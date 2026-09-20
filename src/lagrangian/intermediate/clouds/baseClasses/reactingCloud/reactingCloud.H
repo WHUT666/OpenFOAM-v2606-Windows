@@ -53,7 +53,7 @@ class reactingCloud
 public:
 
     //- Runtime type information
-    TypeName("reactingCloud");
+    TypeNameApi(lagrangianIntermediate_API, "reactingCloud");
 
 
     // Constructors

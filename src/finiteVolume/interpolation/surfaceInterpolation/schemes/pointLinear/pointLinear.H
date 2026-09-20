@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_pointLinear_defines_typeName in .C files that
+//  define the template statics of pointLinear (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_pointLinear_defines_typeName)
+#  define Foam_pointLinear_typeName_API
+#else
+#  define Foam_pointLinear_typeName_API finiteVolume_API
+#endif
+
 #ifndef pointLinear_H
 #define pointLinear_H
 
@@ -71,7 +81,7 @@ class pointLinear
 public:
 
     //- Runtime type information
-    TypeName("pointLinear");
+    TypeNameApi(Foam_pointLinear_typeName_API, "pointLinear");
 
 
     // Constructors

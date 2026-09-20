@@ -91,7 +91,7 @@ class sixDoFRigidBodyState
         };
 
         //- Angle type names
-        static const Enum<angleTypes> angleTypeNames_;
+        static sixDoFRigidBodyState_API const Enum<angleTypes> angleTypeNames_;
 
         //- Angle format
         angleTypes angleFormat_;
@@ -117,7 +117,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sixDoFRigidBodyState");
+    TypeNameApi(sixDoFRigidBodyState_API, "sixDoFRigidBodyState");
 
 
     // Constructors

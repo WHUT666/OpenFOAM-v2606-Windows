@@ -69,8 +69,8 @@ class eddy
 {
     // Private Data
 
-        static label Gamma2Values[8];
-        static UList<label> Gamma2;
+        static finiteVolume_API label Gamma2Values[8];
+        static finiteVolume_API UList<label> Gamma2;
 
         //- Patch face index that spawned the eddy
         label patchFaceI_;
@@ -143,7 +143,7 @@ public:
     // Public Data
 
         //- Flag to activate debug statements
-        static int debug;
+        static finiteVolume_API int debug;
 
 
     // Public Member Functions

@@ -97,7 +97,7 @@ class axisAngle
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("axisAngle");
+    TypeNameNoDebugApi(OpenFOAM_API, "axisAngle");
 
 
     // Constructors

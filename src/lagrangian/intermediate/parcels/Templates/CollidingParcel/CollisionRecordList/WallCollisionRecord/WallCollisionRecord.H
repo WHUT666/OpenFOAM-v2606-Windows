@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_WallCollisionRecord_defines_typeName in .C files that
+//  define the template statics of WallCollisionRecord (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_WallCollisionRecord_defines_typeName)
+#  define Foam_WallCollisionRecord_typeName_API
+#else
+#  define Foam_WallCollisionRecord_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef WallCollisionRecord_H
 #define WallCollisionRecord_H
 
@@ -97,7 +107,7 @@ public:
     // Static data members
 
         //- Tolerance for detecting seriously erroneous wall matches
-        static const scalar errorCosAngle;
+        static Foam_WallCollisionRecord_typeName_API const scalar errorCosAngle;
 
 
     // Constructors

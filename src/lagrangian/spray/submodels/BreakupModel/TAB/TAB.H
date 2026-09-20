@@ -48,6 +48,16 @@ See also
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_TAB_defines_typeName in .C files that
+//  define the template statics of TAB (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_TAB_defines_typeName)
+#  define Foam_TAB_typeName_API
+#else
+#  define Foam_TAB_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef TAB_H
 #define TAB_H
 
@@ -96,7 +106,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("TAB");
+    TypeNameApi(Foam_TAB_typeName_API, "TAB");
 
 
     // Constructors

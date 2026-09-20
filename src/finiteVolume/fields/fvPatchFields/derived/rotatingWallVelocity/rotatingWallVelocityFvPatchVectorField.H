@@ -99,7 +99,7 @@ class rotatingWallVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("rotatingWallVelocity");
+    TypeNameApi(finiteVolume_API, "rotatingWallVelocity");
 
 
     // Constructors

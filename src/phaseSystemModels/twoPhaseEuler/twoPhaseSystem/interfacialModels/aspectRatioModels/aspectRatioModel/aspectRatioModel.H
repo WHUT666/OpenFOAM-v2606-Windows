@@ -66,12 +66,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("aspectRatioModel");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "aspectRatioModel");
 
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( compressibleTwoPhaseSystem_API,
         autoPtr,
         aspectRatioModel,
         dictionary,

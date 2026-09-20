@@ -73,7 +73,7 @@ class linearDirection
 public:
 
     //- Runtime type information
-    TypeName("linearDirection");
+    TypeNameApi(extrudeModel_API, "linearDirection");
 
     // Constructors
 

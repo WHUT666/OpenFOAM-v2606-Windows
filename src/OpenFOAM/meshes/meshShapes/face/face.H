@@ -128,7 +128,7 @@ public:
 
     // Static Data Members
 
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
 
     // Constructors

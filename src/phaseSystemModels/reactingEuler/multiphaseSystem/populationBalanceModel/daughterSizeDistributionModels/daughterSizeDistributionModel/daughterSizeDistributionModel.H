@@ -69,13 +69,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("daughterSizeDistributionModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "daughterSizeDistributionModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             daughterSizeDistributionModel,
             dictionary,

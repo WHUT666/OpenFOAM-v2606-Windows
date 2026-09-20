@@ -129,7 +129,7 @@ class buoyancyEnergy
 public:
 
     //- Runtime type information
-    TypeName("buoyancyEnergy");
+    TypeNameApi(fvOptions_API, "buoyancyEnergy");
 
 
     // Constructors

@@ -66,7 +66,7 @@ class cloudScatter
 public:
 
     //- Runtime type information
-    TypeName("cloudScatter");
+    TypeNameApi(lagrangianIntermediate_API, "cloudScatter");
 
 
     // Constructors

@@ -118,7 +118,7 @@ class div
 public:
 
     //- Runtime type information
-    TypeName("div");
+    TypeNameApi(fieldFunctionObjects_API, "div");
 
 
     // Constructors

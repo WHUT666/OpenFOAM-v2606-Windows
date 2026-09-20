@@ -77,7 +77,7 @@ class constant
 public:
 
     //- Runtime type information
-    TypeName("constant");
+    TypeNameApi(interfaceProperties_API, "constant");
 
 
     // Constructors

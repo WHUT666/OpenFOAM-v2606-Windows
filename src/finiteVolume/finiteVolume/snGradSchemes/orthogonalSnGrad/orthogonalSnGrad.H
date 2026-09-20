@@ -52,6 +52,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_orthogonalSnGrad_defines_typeName in .C files that
+//  define the template statics of orthogonalSnGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_orthogonalSnGrad_defines_typeName)
+#  define Foam_orthogonalSnGrad_typeName_API
+#else
+#  define Foam_orthogonalSnGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef orthogonalSnGrad_H
 #define orthogonalSnGrad_H
 
@@ -85,7 +95,7 @@ class orthogonalSnGrad
 public:
 
     //- Runtime type information
-    TypeName("orthogonal");
+    TypeNameApi(Foam_orthogonalSnGrad_typeName_API, "orthogonal");
 
 
     // Constructors

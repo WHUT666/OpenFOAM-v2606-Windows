@@ -123,7 +123,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("multiphaseMangrovesTurbulenceModel");
+    TypeNameApi(waveModels_API, "multiphaseMangrovesTurbulenceModel");
 
 
     // Constructors

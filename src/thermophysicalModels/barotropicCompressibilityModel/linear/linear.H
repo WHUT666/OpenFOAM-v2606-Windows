@@ -64,7 +64,7 @@ class linear
 public:
 
     //- Runtime type information
-    TypeName("linear");
+    TypeNameApi(barotropicCompressibilityModel_API, "linear");
 
 
     // Constructors

@@ -219,7 +219,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sampledIsoSurface");
+    TypeNameApi(sampling_API, "sampledIsoSurface");
 
 
     // Constructors

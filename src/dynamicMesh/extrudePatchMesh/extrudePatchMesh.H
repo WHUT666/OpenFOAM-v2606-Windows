@@ -132,7 +132,7 @@ class extrudePatchMesh
 public:
 
     //- Runtime type information
-    TypeName("extrudePatchMesh");
+    TypeNameApi(dynamicMesh_API, "extrudePatchMesh");
 
 
     // Constructors

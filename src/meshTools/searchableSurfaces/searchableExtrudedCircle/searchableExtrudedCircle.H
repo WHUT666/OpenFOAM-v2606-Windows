@@ -101,7 +101,7 @@ class searchableExtrudedCircle
 public:
 
     //- Runtime type information
-    TypeName("searchableExtrudedCircle");
+    TypeNameApi(meshTools_API, "searchableExtrudedCircle");
 
 
     // Constructors

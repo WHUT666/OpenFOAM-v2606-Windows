@@ -71,7 +71,7 @@ class line
 public:
 
     //- Runtime type information
-    TypeName("line");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "line");
 
 
     // Constructors

@@ -58,7 +58,7 @@ class genericPointPatch
 public:
 
     //- Runtime type information
-    TypeName(genericPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, genericPolyPatch::typeName_());
 
 
     // Constructors

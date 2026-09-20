@@ -105,7 +105,7 @@ class searchableSurfaceToFaceZone
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Surface
         autoPtr<searchableSurface> surfacePtr_;
@@ -114,7 +114,7 @@ class searchableSurfaceToFaceZone
 public:
 
     //- Runtime type information
-    TypeName("searchableSurfaceToFaceZone");
+    TypeNameApi(meshTools_API, "searchableSurfaceToFaceZone");
 
 
     // Constructors

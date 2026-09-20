@@ -94,7 +94,7 @@ class XiReactionRate
 public:
 
     //- Runtime type information
-    TypeName("XiReactionRate");
+    TypeNameApi(fieldFunctionObjects_API, "XiReactionRate");
 
 
     // Constructors

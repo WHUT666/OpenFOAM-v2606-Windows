@@ -76,6 +76,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MappedFile_defines_typeName in .C files that
+//  define the template statics of MappedFile (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MappedFile_defines_typeName)
+#  define Foam_MappedFile_typeName_API
+#else
+#  define Foam_MappedFile_typeName_API meshTools_API
+#endif
+
 #ifndef Foam_PatchFunction1Types_MappedFile_H
 #define Foam_PatchFunction1Types_MappedFile_H
 
@@ -309,6 +319,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::MappedFile<Foam::scalar>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::MappedFile<Foam::vector>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::MappedFile<Foam::sphericalTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::MappedFile<Foam::symmTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::MappedFile<Foam::tensor>);
 
 #endif
 

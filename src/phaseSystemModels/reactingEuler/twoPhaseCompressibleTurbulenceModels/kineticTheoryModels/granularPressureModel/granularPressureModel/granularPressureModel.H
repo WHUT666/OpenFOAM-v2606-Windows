@@ -63,11 +63,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("granularPressureModel");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "granularPressureModel");
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( twoPhaseReactingTurbulenceModels_API,
         autoPtr,
         granularPressureModel,
         dictionary,

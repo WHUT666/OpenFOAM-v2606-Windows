@@ -89,7 +89,7 @@ namespace fieldTypes
 {
 
 //- Standard (finite-area) edge field types (scalar, vector, tensor, etc)
-extern const wordList edge;
+extern finiteArea_API const wordList edge;
 
 //- Test if the class name appears to be a (finite-area) edge field
 bool is_edge(const word& clsName);

@@ -66,7 +66,7 @@ class Schaeffer
 public:
 
         //- Runtime type information
-        TypeName("Schaeffer");
+        TypeNameApi(twoPhaseReactingTurbulenceModels_API, "Schaeffer");
 
 
     // Constructors

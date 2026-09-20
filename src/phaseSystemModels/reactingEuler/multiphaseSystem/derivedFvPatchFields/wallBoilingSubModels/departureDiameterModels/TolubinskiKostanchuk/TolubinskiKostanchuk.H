@@ -114,7 +114,7 @@ class TolubinskiKostanchuk
 public:
 
     //- Runtime type information
-    TypeName("TolubinskiKostanchuk");
+    TypeNameApi(reactingMultiphaseSystem_API, "TolubinskiKostanchuk");
 
 
     // Constructors

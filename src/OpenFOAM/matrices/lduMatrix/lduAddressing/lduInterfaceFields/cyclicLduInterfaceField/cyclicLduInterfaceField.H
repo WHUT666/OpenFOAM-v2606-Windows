@@ -56,7 +56,7 @@ class cyclicLduInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("cyclicLduInterfaceField");
+    TypeNameApi(OpenFOAM_API, "cyclicLduInterfaceField");
 
 
     // Constructors

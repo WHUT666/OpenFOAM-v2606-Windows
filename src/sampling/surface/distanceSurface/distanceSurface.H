@@ -163,7 +163,7 @@ class distanceSurface
         };
 
         //- Names for the topology filter
-        static const Enum<topologyFilterType> topoFilterNames_;
+        static sampling_API const Enum<topologyFilterType> topoFilterNames_;
 
 
     // Private Data
@@ -291,7 +291,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("distanceSurface");
+    TypeNameApi(sampling_API, "distanceSurface");
 
 
     // Constructors

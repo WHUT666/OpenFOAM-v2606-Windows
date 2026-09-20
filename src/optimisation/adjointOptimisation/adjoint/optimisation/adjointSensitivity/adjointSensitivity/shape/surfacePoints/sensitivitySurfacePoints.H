@@ -115,7 +115,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("surfacePoints");
+    TypeNameApi(adjointOptimisation_API, "surfacePoints");
 
 
     // Constructors

@@ -58,12 +58,12 @@ class partitioningModel
 public:
 
     //- Runtime type information
-    TypeName("partitioningModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "partitioningModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         partitioningModel,
         dictionary,

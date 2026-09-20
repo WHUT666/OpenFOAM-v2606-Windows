@@ -140,13 +140,13 @@ class attachDetach
     // Static data members
 
         //- Relative vertex position tolerance
-        static const scalar positionDifference_;
+        static dynamicMesh_API const scalar positionDifference_;
 
 
 public:
 
     //- Runtime type information
-    TypeName("attachDetach");
+    TypeNameApi(dynamicMesh_API, "attachDetach");
 
 
     // Constructors

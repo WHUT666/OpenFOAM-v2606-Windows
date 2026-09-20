@@ -221,17 +221,17 @@ protected:
 public:
 
         //- An empty result
-        static const exprResult null;
+        static OpenFOAM_API const exprResult null;
 
         //- Friendship with globals
         friend class exprResultGlobals;
 
 
         //- Runtime type information
-        TypeName("exprResult");
+        TypeNameApi(OpenFOAM_API, "exprResult");
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             exprResult,
             dictionary,
@@ -240,8 +240,8 @@ public:
             ),
             (dict)
         );
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             exprResult,
             empty,

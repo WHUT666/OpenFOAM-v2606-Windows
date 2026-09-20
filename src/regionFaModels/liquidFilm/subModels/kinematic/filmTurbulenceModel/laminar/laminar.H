@@ -68,7 +68,7 @@ class laminar
 public:
 
     //- Runtime type information
-    TypeName("laminar");
+    TypeNameApi(regionFaModels_API, "laminar");
 
 
     // Constructors

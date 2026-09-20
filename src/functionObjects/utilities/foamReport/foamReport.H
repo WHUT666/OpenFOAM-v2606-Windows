@@ -228,7 +228,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("foamReport");
+    TypeNameApi(utilityFunctionObjects_API, "foamReport");
 
 
     // Constructors

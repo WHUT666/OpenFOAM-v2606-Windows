@@ -77,7 +77,7 @@ class movingWallVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("movingWallVelocity");
+    TypeNameApi(finiteVolume_API, "movingWallVelocity");
 
 
     // Constructors

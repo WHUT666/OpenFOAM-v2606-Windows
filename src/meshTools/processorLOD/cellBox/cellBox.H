@@ -83,7 +83,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("box");
+    TypeNameApi(meshTools_API, "box");
 
     // Constructors
 

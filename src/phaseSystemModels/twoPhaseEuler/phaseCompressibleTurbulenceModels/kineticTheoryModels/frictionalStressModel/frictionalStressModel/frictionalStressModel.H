@@ -65,11 +65,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("frictionalStressModel");
+    TypeNameApi(phaseCompressibleTurbulenceModels_API, "frictionalStressModel");
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( phaseCompressibleTurbulenceModels_API,
         autoPtr,
         frictionalStressModel,
         dictionary,

@@ -116,10 +116,10 @@ public:
         // File and field name extensions
 
             //- Mean average
-            static const word EXT_MEAN;
+            static fieldFunctionObjects_API const word EXT_MEAN;
 
             //- Prime-squared average
-            static const word EXT_PRIME2MEAN;
+            static fieldFunctionObjects_API const word EXT_PRIME2MEAN;
 
 
         //- Enumeration defining the averaging base type
@@ -161,7 +161,7 @@ private:
         word prime2MeanFieldName_;
 
         //- Averaging base type names
-        static const Enum<baseType> baseTypeNames_;
+        static fieldFunctionObjects_API const Enum<baseType> baseTypeNames_;
 
         //- Averaging base type
         baseType base_;
@@ -182,7 +182,7 @@ private:
         windowType windowType_;
 
         //- Averaging window type names
-        static const Enum<windowType> windowTypeNames_;
+        static fieldFunctionObjects_API const Enum<windowType> windowTypeNames_;
 
         //- List of window times (windowType = EXACT)
         FIFOStack<scalar> windowTimes_;

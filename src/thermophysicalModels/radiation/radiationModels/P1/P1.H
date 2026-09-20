@@ -94,7 +94,7 @@ class P1
 public:
 
     //- Runtime type information
-    TypeName("P1");
+    TypeNameApi(radiationModels_API, "P1");
 
 
     // Constructors

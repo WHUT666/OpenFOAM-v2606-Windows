@@ -353,7 +353,7 @@ class hexRef8
 public:
 
     //- Runtime type information
-    ClassName("hexRef8");
+    ClassNameApi(dynamicMesh_API, "hexRef8");
 
 
     // Constructors

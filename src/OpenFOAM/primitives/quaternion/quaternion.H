@@ -116,7 +116,7 @@ public:
 
         //- The names for Euler-angle and Tait-Bryan angles,
         //- including "rollPitchYaw" and "yawPitchRoll" aliases
-        static const Enum<eulerOrder> eulerOrderNames;
+        static OpenFOAM_API const Enum<eulerOrder> eulerOrderNames;
 
 
     // Member Constants
@@ -129,8 +129,8 @@ public:
 
         static constexpr const char* const typeName = "quaternion";
 
-        static const quaternion zero;
-        static const quaternion I;
+        static OpenFOAM_API const quaternion zero;
+        static OpenFOAM_API const quaternion I;
 
 
     // Generated Methods

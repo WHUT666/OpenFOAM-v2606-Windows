@@ -52,19 +52,19 @@ namespace atomic
     constexpr const char* const group = "atomic";
 
     //- Fine-structure constant: default SI units: []
-    extern const dimensionedScalar alpha;
+    extern OpenFOAM_API const dimensionedScalar alpha;
 
     //- Rydberg constant: default SI units: [1/m]
-    extern const dimensionedScalar Rinf;
+    extern OpenFOAM_API const dimensionedScalar Rinf;
 
     //- Bohr radius: default SI units: [m]
-    extern const dimensionedScalar a0;
+    extern OpenFOAM_API const dimensionedScalar a0;
 
     //- Classical electron radius: default SI units: [m]
-    extern const dimensionedScalar re;
+    extern OpenFOAM_API const dimensionedScalar re;
 
     //- Hartree energy: default SI units: [J]
-    extern const dimensionedScalar Eh;
+    extern OpenFOAM_API const dimensionedScalar Eh;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

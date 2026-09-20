@@ -42,7 +42,7 @@ namespace Foam
 {
     namespace fv
     {
-        NamespaceName("fv");
+        NamespaceNameApi(finiteVolume_API, "fv");
     }
 }
 

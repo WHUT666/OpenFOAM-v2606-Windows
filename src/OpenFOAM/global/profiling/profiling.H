@@ -94,7 +94,7 @@ public:
     // Static Data Members
 
         //- Flag if profiling is allowed
-        static int allowed;
+        static OpenFOAM_API int allowed;
 
 private:
 
@@ -106,7 +106,7 @@ private:
     // Private Static Data Members
 
         //- Only one global object is possible
-        static std::unique_ptr<profiling> singleton_;
+        static OpenFOAM_API std::unique_ptr<profiling> singleton_;
 
 
     // Private Data Members

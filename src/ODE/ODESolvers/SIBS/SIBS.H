@@ -69,9 +69,9 @@ class SIBS
     // Private data
 
         static const label kMaxX_ = 7, iMaxX_ = kMaxX_ + 1;
-        static const label nSeq_[iMaxX_];
+        static ODE_API const label nSeq_[iMaxX_];
 
-        static const scalar safe1, safe2, redMax, redMin, scaleMX;
+        static ODE_API const scalar safe1, safe2, redMax, redMin, scaleMX;
 
         mutable scalarField a_;
         mutable scalarSquareMatrix alpha_;
@@ -119,7 +119,7 @@ class SIBS
 public:
 
     //- Runtime type information
-    TypeName("SIBS");
+    TypeNameApi(ODE_API, "SIBS");
 
 
     // Constructors

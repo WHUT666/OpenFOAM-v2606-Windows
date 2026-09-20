@@ -63,7 +63,7 @@ class polyBoundaryMeshEntries
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("polyBoundaryMesh");
+    TypeNameNoDebugApi(OpenFOAM_API, "polyBoundaryMesh");
 
 
     // Constructors

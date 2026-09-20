@@ -249,7 +249,7 @@ class BilgerMixtureFraction
 public:
 
     //- Runtime type information
-    TypeName("BilgerMixtureFraction");
+    TypeNameApi(chemistryModel_API, "BilgerMixtureFraction");
 
 
     // Constructors

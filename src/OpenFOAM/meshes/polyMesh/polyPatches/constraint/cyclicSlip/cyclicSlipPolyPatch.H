@@ -58,7 +58,7 @@ class cyclicSlipPolyPatch
 public:
 
     //- Runtime type information
-    TypeName("cyclicSlip");
+    TypeNameApi(OpenFOAM_API, "cyclicSlip");
 
 
     // Constructors

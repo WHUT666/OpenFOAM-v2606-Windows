@@ -124,13 +124,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("faceZone");
+    TypeNameApi(OpenFOAM_API, "faceZone");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             faceZone,
             dictionary,

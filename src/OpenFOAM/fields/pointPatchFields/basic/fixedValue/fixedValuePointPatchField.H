@@ -62,8 +62,7 @@ class fixedValuePointPatchField
 public:
 
     //- Runtime type information
-    TypeName("fixedValue");
-
+    TypeNameApi(OpenFOAM_API, "fixedValue");
 
     // Constructors
 
@@ -151,7 +150,6 @@ public:
             return pointPatchField<Type>::Clone(*this, iF);
         }
 
-
     // Member Functions
 
         //- True: this patch field fixes a value.
@@ -159,7 +157,6 @@ public:
 
         //- False: this patch field is not altered by assignment.
         virtual bool assignable() const { return false; }
-
 
     // Member Operators
 
@@ -169,7 +166,6 @@ public:
         virtual void operator=(const Field<Type>&) {}
         virtual void operator=(const Type&) {}
 };
-
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

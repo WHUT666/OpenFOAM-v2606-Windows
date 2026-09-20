@@ -207,7 +207,7 @@ protected:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("wallDistAddressing");
+    ClassNameApi(finiteVolume_API, "wallDistAddressing");
 
 
     // Constructors

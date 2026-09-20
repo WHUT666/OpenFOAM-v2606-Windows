@@ -90,7 +90,7 @@ namespace Foam
 {
 
 // Forward declaration of classes
-class polyMesh;
+class OpenFOAM_API polyMesh;
 class polyBoundaryMesh;
 class cyclicPolyPatch;
 class polyPatch;
@@ -274,7 +274,7 @@ class globalPoints
 public:
 
         //- Declare name of the class and its debug switch
-        ClassName("globalPoints");
+        ClassNameApi(OpenFOAM_API, "globalPoints");
 
 
     // Constructors

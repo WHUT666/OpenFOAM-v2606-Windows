@@ -80,7 +80,7 @@ class LegendreMagnaudet
 public:
 
     //- Runtime type information
-    TypeName("LegendreMagnaudet");
+    TypeNameApi(reactingMultiphaseSystem_API, "LegendreMagnaudet");
 
 
     // Constructors

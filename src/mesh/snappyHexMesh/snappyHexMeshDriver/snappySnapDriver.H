@@ -759,7 +759,7 @@ class snappySnapDriver
 public:
 
     //- Runtime type information
-    ClassName("snappySnapDriver");
+    ClassNameApi(snappyHexMesh_API, "snappySnapDriver");
 
 
     // Constructors

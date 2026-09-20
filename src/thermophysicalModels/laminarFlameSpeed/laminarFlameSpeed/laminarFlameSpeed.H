@@ -86,13 +86,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("laminarFlameSpeed");
+    TypeNameApi(laminarFlameSpeedModels_API, "laminarFlameSpeed");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( laminarFlameSpeedModels_API,
             autoPtr,
             laminarFlameSpeed,
             dictionary,

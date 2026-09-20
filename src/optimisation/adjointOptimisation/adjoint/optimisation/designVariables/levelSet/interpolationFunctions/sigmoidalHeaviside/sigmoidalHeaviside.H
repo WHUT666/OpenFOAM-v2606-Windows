@@ -81,7 +81,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("sigmoidalHeaviside");
+    TypeNameApi(adjointOptimisation_API, "sigmoidalHeaviside");
 
 
     // Constructors

@@ -81,7 +81,7 @@ class BirdCarreau
 public:
 
     //- Runtime type information
-    TypeName("BirdCarreau");
+    TypeNameApi(turbulenceModels_API, "BirdCarreau");
 
 
     // Constructors

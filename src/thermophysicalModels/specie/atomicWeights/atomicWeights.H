@@ -68,7 +68,7 @@ public:
         static const int nElements = 104;
 
         //- Static table of the weights of all known elements
-        static const atomicWeight atomicWeights[nElements];
+        static specie_API const atomicWeight atomicWeights[nElements];
 
 
     // Constructors
@@ -81,7 +81,7 @@ public:
 // * * * * * * * * * * * * * * * * Global data  * * * * * * * * * * * * * * //
 
 // Atomic weights table for every element in the periodic table
-extern atomicWeightTable atomicWeights;
+extern specie_API atomicWeightTable atomicWeights;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

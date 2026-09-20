@@ -257,10 +257,10 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("multiphaseInterSystem");
+    TypeNameApi(incompressibleMultiphaseSystems_API, "multiphaseInterSystem");
 
     //- Default name of the phase properties dictionary
-    static const word phasePropertiesName;
+    static incompressibleMultiphaseSystems_API const word phasePropertiesName;
 
 
     // Constructors

@@ -85,7 +85,7 @@ public:
     // Static Data
 
         //- Output verbosity when writing
-        static int verbose_;
+        static reconstruct_API int verbose_;
 
 
     // Constructors

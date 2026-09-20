@@ -210,7 +210,7 @@ class fvDOM
 public:
 
     //- Runtime type information
-    TypeName("fvDOM");
+    TypeNameApi(radiationModels_API, "fvDOM");
 
 
     // Constructors

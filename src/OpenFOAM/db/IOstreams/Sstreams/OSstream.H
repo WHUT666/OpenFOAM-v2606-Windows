@@ -52,7 +52,7 @@ namespace Foam
                           Class OSstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class OSstream
+class OpenFOAM_API OSstream
 :
     public Ostream
 {

@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PairCollision_defines_typeName in .C files that
+//  define the template statics of PairCollision (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PairCollision_defines_typeName)
+#  define Foam_PairCollision_typeName_API
+#else
+#  define Foam_PairCollision_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PairCollision_H
 #define PairCollision_H
 
@@ -69,14 +79,14 @@ class PairCollision
     // Static data
 
         //- Tolerance to determine flat wall interactions
-        static scalar cosPhiMinFlatWall;
+        static Foam_PairCollision_typeName_API scalar cosPhiMinFlatWall;
 
         //- Distance to multiply the distance to a wall with within
         //  which a duplicate flat wall interaction is defined.  If
         //  cosPhiFlatWall = 1 - e, this = sqrt(2e - e^2) < sqrt(3e)
         //  for all e < 1, giving a safe tolerance (i.e. no double
         //  interactions next to each other.)
-        static scalar flatWallDuplicateExclusion;
+        static Foam_PairCollision_typeName_API scalar flatWallDuplicateExclusion;
 
 
     // Private data
@@ -147,7 +157,7 @@ class PairCollision
 public:
 
     //- Runtime type information
-    TypeName("pairCollision");
+    TypeNameApi(Foam_PairCollision_typeName_API, "pairCollision");
 
 
     // Constructors

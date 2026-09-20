@@ -80,7 +80,7 @@ class rawTopoChangerFvMesh
 public:
 
     //- Runtime type information
-    TypeName("rawTopoChangerFvMesh");
+    TypeNameApi(topoChangerFvMesh_API, "rawTopoChangerFvMesh");
 
 
     // Constructors

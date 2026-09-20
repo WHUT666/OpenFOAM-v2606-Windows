@@ -118,7 +118,7 @@ protected:
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("gnuplot");
+    TypeNameNoDebugApi(meshTools_API, "gnuplot");
 
 
     // Constructors

@@ -41,6 +41,12 @@ SourceFiles
 #ifndef DiagonalPreconditioner_H
 #define DiagonalPreconditioner_H
 
+#if defined(Foam_LduPreconditioner_defines_typeName)
+#  define Foam_LduPreconditioner_typeName_API
+#else
+#  define Foam_LduPreconditioner_typeName_API OpenFOAM_API
+#endif
+
 #include <LduMatrix_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -75,7 +81,7 @@ class DiagonalPreconditioner
 public:
 
     //- Runtime type information
-    TypeName("diagonal");
+    TypeNameApi(Foam_LduPreconditioner_typeName_API, "diagonal");
 
 
     // Constructors

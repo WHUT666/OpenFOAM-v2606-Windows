@@ -33,6 +33,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_EFA_defines_typeName in .C files that
+//  define the template statics of EFA (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_EFA_defines_typeName)
+#  define Foam_EFA_typeName_API
+#else
+#  define Foam_EFA_typeName_API chemistryModel_API
+#endif
+
 #ifndef EFA_H
 #define EFA_H
 
@@ -60,7 +70,7 @@ class EFA
 public:
 
     //- Runtime type information
-    TypeName("EFA");
+    TypeNameApi(Foam_EFA_typeName_API, "EFA");
 
 
     // Constructors

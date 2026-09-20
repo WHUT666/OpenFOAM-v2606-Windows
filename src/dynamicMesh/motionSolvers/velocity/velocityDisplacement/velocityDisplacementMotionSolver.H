@@ -80,7 +80,7 @@ class velocityDisplacementMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("velocityDisplacement");
+    TypeNameApi(dynamicMesh_API, "velocityDisplacement");
 
 
     // Constructors

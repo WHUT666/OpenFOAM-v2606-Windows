@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_IntegralScaleBox_defines_typeName in .C files that
+//  define the template statics of IntegralScaleBox (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_IntegralScaleBox_defines_typeName)
+#  define Foam_IntegralScaleBox_typeName_API
+#else
+#  define Foam_IntegralScaleBox_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_IntegralScaleBox_H
 #define Foam_IntegralScaleBox_H
 
@@ -79,7 +89,7 @@ class IntegralScaleBox
         };
 
         //- Names for kernelType
-        static const Enum<kernelType> kernelTypeNames;
+        static Foam_IntegralScaleBox_typeName_API const Enum<kernelType> kernelTypeNames;
 
 
     // Private Data
@@ -250,7 +260,7 @@ public:
     // Public Data
 
         //- Flag to activate debug statements
-        static int debug;
+        static Foam_IntegralScaleBox_typeName_API int debug;
 
 
     // Member Functions

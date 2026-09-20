@@ -61,6 +61,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_sigma_defines_typeName in .C files that
+//  define the template statics of sigma (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_sigma_defines_typeName)
+#  define Foam_sigma_typeName_API
+#else
+#  define Foam_sigma_typeName_API turbulenceModels_API
+#endif
+
 #ifndef Foam_LESModels_sigma_H
 #define Foam_LESModels_sigma_H
 
@@ -115,7 +125,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("sigma");
+    TypeNameApi(Foam_sigma_typeName_API, "sigma");
 
 
     // Constructors

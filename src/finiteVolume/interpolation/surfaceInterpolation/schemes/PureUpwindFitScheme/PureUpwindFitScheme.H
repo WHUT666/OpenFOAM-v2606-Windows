@@ -35,6 +35,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PureUpwindFitScheme_defines_typeName in .C files that
+//  define the template statics of PureUpwindFitScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PureUpwindFitScheme_defines_typeName)
+#  define Foam_PureUpwindFitScheme_typeName_API
+#else
+#  define Foam_PureUpwindFitScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef PureUpwindFitScheme_H
 #define PureUpwindFitScheme_H
 
@@ -79,7 +89,7 @@ class PureUpwindFitScheme
 public:
 
     //- Runtime type information
-    TypeName("PureUpwindFitScheme");
+    TypeNameApi(Foam_PureUpwindFitScheme_typeName_API, "PureUpwindFitScheme");
 
 
     // Constructors

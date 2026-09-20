@@ -108,7 +108,7 @@ class cylinderToPoint
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- First point on cylinder axis
         point point1_;
@@ -143,7 +143,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cylinderToPoint");
+    TypeNameApi(meshTools_API, "cylinderToPoint");
 
 
     // Constructors

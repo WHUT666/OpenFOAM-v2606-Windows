@@ -75,11 +75,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("particleStressModel");
+    TypeNameApi(lagrangianIntermediate_API, "particleStressModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( lagrangianIntermediate_API,
         autoPtr,
         ParticleStressModel,
         dictionary,

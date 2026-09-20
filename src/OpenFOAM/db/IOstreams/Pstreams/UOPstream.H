@@ -58,7 +58,7 @@ namespace Foam
                         Class UOPstreamBase Declaration
 \*---------------------------------------------------------------------------*/
 
-class UOPstreamBase
+class OpenFOAM_API UOPstreamBase
 :
     public UPstream,
     public Ostream
@@ -375,7 +375,7 @@ public:
 
 //- Output inter-processor communications stream
 //- using MPI send/recv etc. - operating on external buffer.
-class UOPstream
+class OpenFOAM_API UOPstream
 :
     public UOPstreamBase
 {
@@ -527,7 +527,7 @@ public:
 //- using MPI broadcast - operating on external buffer.
 //
 // \note does not use commsType, tag etc.
-class UOPBstream
+class OpenFOAM_API UOPBstream
 :
     public UOPstreamBase
 {

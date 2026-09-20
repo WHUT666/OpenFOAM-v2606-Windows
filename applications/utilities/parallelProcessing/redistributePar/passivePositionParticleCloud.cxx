@@ -25,6 +25,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_Cloud_defines_typeName
 #include "passivePositionParticleCloud.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

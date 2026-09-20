@@ -70,7 +70,7 @@ class sigmaRadial
 public:
 
     //- Runtime type information
-    TypeName("sigmaRadial");
+    TypeNameApi(extrudeModel_API, "sigmaRadial");
 
     // Constructors
 

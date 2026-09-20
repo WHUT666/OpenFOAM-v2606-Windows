@@ -62,7 +62,7 @@ class linearRamp
 public:
 
     // Runtime type information
-    TypeName("linearRamp");
+    TypeNameApi(OpenFOAM_API, "linearRamp");
 
 
     // Constructors

@@ -96,7 +96,7 @@ class outletPhaseMeanVelocityFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("outletPhaseMeanVelocity");
+   TypeNameApi(finiteVolume_API, "outletPhaseMeanVelocity");
 
 
    // Constructors

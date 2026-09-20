@@ -58,7 +58,7 @@ class badQualityToFace
     // Private data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static dynamicMesh_API addToUsageTable usage_;
 
         //- Mesh quality dictionary
         const dictionary dict_;
@@ -72,7 +72,7 @@ class badQualityToFace
 public:
 
     //- Runtime type information
-    TypeName("badQualityToFace");
+    TypeNameApi(dynamicMesh_API, "badQualityToFace");
 
     // Constructors
 

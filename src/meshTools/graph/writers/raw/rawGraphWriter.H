@@ -58,7 +58,7 @@ class rawWriter
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("raw");
+    TypeNameNoDebugApi(meshTools_API, "raw");
 
     //- Default construct
     rawWriter() = default;

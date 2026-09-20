@@ -73,7 +73,7 @@ class cellAspectRatio
 public:
 
     // Declare name of the class and its debug switch
-    TypeName("cellAspectRatio");
+    TypeNameApi(finiteVolume_API, "cellAspectRatio");
 
 
     // Constructors

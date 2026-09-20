@@ -115,7 +115,7 @@ public:
     // Static data members
 
         //- Specify a default mesh name
-        static string defaultMeshName;
+        static conversion_API string defaultMeshName;
 
 
     // Constructors

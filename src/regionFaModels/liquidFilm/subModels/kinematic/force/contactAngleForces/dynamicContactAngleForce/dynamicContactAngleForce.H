@@ -137,7 +137,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("dynamicContactAngle");
+    TypeNameApi(regionFaModels_API, "dynamicContactAngle");
 
 
     // Constructors

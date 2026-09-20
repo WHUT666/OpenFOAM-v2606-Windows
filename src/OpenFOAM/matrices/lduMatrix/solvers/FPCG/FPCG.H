@@ -88,7 +88,7 @@ class FPCG
 public:
 
     //- Runtime type information
-    TypeName("FPCG");
+    TypeNameApi(OpenFOAM_API, "FPCG");
 
 
     // Constructors

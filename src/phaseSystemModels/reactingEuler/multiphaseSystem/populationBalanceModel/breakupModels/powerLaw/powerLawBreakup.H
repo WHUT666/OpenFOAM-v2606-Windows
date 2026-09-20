@@ -66,7 +66,7 @@ class powerLaw
 public:
 
     //- Runtime type information
-    TypeName("powerLaw");
+    TypeNameApi(reactingMultiphaseSystem_API, "powerLaw");
 
     // Constructor
 

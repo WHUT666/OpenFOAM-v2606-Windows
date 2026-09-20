@@ -106,7 +106,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("parProfiling");
+    TypeNameApi(utilityFunctionObjects_API, "parProfiling");
 
 
     // Constructors

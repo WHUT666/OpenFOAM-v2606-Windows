@@ -54,13 +54,13 @@ class blockVertex
 public:
 
     //- Runtime type information
-    TypeName("blockVertex");
+    TypeNameApi(blockMesh_API, "blockVertex");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( blockMesh_API,
             autoPtr,
             blockVertex,
             Istream,

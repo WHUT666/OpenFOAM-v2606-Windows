@@ -75,7 +75,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("uniform");
+    TypeNameApi(fvMotionSolvers_API, "uniform");
 
 
     // Constructors

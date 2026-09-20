@@ -81,11 +81,11 @@ public:
 
     // Static Data
 
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
-        static const vectorTensorTransform zero;
+        static OpenFOAM_API const vectorTensorTransform zero;
 
-        static const vectorTensorTransform I;
+        static OpenFOAM_API const vectorTensorTransform I;
 
 
     // Generated Methods

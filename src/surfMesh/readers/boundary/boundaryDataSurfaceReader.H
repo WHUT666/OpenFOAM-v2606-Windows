@@ -122,7 +122,7 @@ class boundaryDataSurfaceReader
 public:
 
     //- Runtime type information
-    TypeName("boundaryData");
+    TypeNameApi(surfMesh_API, "boundaryData");
 
 
     // Constructors

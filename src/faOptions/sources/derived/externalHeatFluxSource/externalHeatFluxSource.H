@@ -156,7 +156,7 @@ public:
         };
 
         //- Names for operationMode
-        static const Enum<operationMode> operationModeNames;
+        static faOptions_API const Enum<operationMode> operationModeNames;
 
 
 private:
@@ -188,7 +188,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("externalHeatFluxSource");
+    TypeNameApi(faOptions_API, "externalHeatFluxSource");
 
 
     // Constructors

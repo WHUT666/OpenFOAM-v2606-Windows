@@ -118,6 +118,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_interfaceOxideRate_defines_typeName in .C files that
+//  define the template statics of interfaceOxideRate (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_interfaceOxideRate_defines_typeName)
+#  define Foam_interfaceOxideRate_typeName_API
+#else
+#  define Foam_interfaceOxideRate_typeName_API incompressibleMultiphaseSystems_API
+#endif
+
 #ifndef meltingEvaporationModels_interfaceOxideRate_H
 #define meltingEvaporationModels_interfaceOxideRate_H
 
@@ -167,7 +177,7 @@ class interfaceOxideRate
 public:
 
     //- Runtime type information
-    TypeName("interfaceOxideRate");
+    TypeNameApi(Foam_interfaceOxideRate_typeName_API, "interfaceOxideRate");
 
 
     // Constructors

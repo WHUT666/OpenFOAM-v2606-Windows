@@ -48,13 +48,13 @@ namespace Foam
 //- Trivial output stream for calculating byte counts.
 //  Since all output values are discarded, it can be used as a /dev/null
 //  output buffer as well.
-class ocountstream
+class OpenFOAM_API ocountstream
 :
     virtual public std::ios,
     public std::ostream
 {
     //- A streambuf class for determining byte counts
-    class countbuf : public std::streambuf
+    class OpenFOAM_API countbuf : public std::streambuf
     {
         //- The number of bytes counted
         std::streamsize size_;
@@ -180,7 +180,7 @@ public:
 \*---------------------------------------------------------------------------*/
 
 //- An output stream for calculating byte counts
-class OCountStream
+class OpenFOAM_API OCountStream
 :
     public Foam::Detail::StreamAllocator<Foam::ocountstream>,
     public Foam::OSstream

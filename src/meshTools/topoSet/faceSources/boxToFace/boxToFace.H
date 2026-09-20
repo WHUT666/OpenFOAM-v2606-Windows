@@ -135,7 +135,7 @@ class boxToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Bounding box.
         treeBoundBoxList bbs_;
@@ -149,7 +149,7 @@ class boxToFace
 public:
 
     //- Runtime type information
-    TypeName("boxToFace");
+    TypeNameApi(meshTools_API, "boxToFace");
 
 
     // Constructors

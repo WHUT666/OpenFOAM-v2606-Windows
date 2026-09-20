@@ -55,7 +55,7 @@ class assemblyFaceAreaPairGAMGAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("assembledFaceAreaPair");
+    TypeNameApi(finiteVolume_API, "assembledFaceAreaPair");
 
 
     //- Destructor

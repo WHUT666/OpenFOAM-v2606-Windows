@@ -59,7 +59,7 @@ class LunSavage
 public:
 
     //- Runtime type information
-    TypeName("LunSavage");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "LunSavage");
 
 
     // Constructors

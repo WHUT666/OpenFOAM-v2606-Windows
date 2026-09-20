@@ -100,7 +100,7 @@ class radiation
 public:
 
     //- Runtime type information
-    TypeName("radiation");
+    TypeNameApi(radiationModels_API, "radiation");
 
 
     // Constructors

@@ -135,13 +135,13 @@ class meshToMesh0
     // Private Static Data Members
 
         //- Direct hit tolerance
-        static const scalar directHitTol;
+        static sampling_API const scalar directHitTol;
 
 
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("meshToMesh0");
+    ClassNameApi(sampling_API, "meshToMesh0");
 
 
     //- Enumeration specifying required accuracy

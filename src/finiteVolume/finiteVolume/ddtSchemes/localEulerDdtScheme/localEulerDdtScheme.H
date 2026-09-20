@@ -48,6 +48,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_localEulerDdtScheme_defines_typeName in .C files that
+//  define the template statics of localEulerDdtScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_localEulerDdtScheme_defines_typeName)
+#  define Foam_localEulerDdtScheme_typeName_API
+#else
+#  define Foam_localEulerDdtScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef localEulerDdtScheme_H
 #define localEulerDdtScheme_H
 
@@ -72,13 +82,13 @@ class localEulerDdt
 public:
 
     //- Name of the reciprocal local time-step field
-    static word rDeltaTName;
+    static finiteVolume_API word rDeltaTName;
 
     //- Name of the reciprocal local face time-step field
-    static word rDeltaTfName;
+    static finiteVolume_API word rDeltaTfName;
 
     //- Name of the reciprocal local sub-cycling time-step field
-    static word rSubDeltaTName;
+    static finiteVolume_API word rSubDeltaTName;
 
 
     // Constructors
@@ -138,7 +148,7 @@ class localEulerDdtScheme
 public:
 
     //- Runtime type information
-    TypeName("localEuler");
+    TypeNameApi(Foam_localEulerDdtScheme_typeName_API, "localEuler");
 
 
     // Constructors

@@ -211,7 +211,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("hexMeshSmoother");
+    TypeNameApi(dynamicMesh_API, "hexMeshSmoother");
 
 
     // Constructors

@@ -150,7 +150,7 @@ public:
         };
 
         //- Selection mode type names
-        static const Enum<selectionModeTypes> selectionModeTypeNames_;
+        static phaseFunctionObjects_API const Enum<selectionModeTypes> selectionModeTypeNames_;
 
 
         //- Function type enumeration
@@ -163,7 +163,7 @@ public:
         };
 
         //- Function type names
-        static const Enum<functionTypes> functionTypeNames_;
+        static phaseFunctionObjects_API const Enum<functionTypes> functionTypeNames_;
 
 
         //- Abszissa type enumeration
@@ -174,7 +174,7 @@ public:
         };
 
         //- Abszissa type names
-        static const Enum<abszissaTypes> abszissaTypeNames_;
+        static phaseFunctionObjects_API const Enum<abszissaTypes> abszissaTypeNames_;
 
 
 protected:
@@ -251,7 +251,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sizeDistribution");
+    TypeNameApi(phaseFunctionObjects_API, "sizeDistribution");
 
 
     // Constructors

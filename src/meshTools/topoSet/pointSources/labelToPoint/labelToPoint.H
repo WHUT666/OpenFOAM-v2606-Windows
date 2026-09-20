@@ -104,7 +104,7 @@ class labelToPoint
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Point labels read from dictionary
         labelList labels_;
@@ -113,7 +113,7 @@ class labelToPoint
 public:
 
     //- Runtime type information
-    TypeName("labelToPoint");
+    TypeNameApi(meshTools_API, "labelToPoint");
 
 
     // Constructors

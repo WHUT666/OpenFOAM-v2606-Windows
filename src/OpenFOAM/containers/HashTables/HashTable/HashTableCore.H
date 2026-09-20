@@ -63,7 +63,7 @@ struct HashTableCore
     static label canonicalSize(const label size) noexcept;
 
     //- Declare type-name (with debug switch)
-    ClassName("HashTable");
+    ClassNameApi(OpenFOAM_API, "HashTable");
 
     //- Default construct
     constexpr HashTableCore() noexcept = default;

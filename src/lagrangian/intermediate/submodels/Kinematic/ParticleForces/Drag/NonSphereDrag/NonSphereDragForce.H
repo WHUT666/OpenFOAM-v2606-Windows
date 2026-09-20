@@ -142,6 +142,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NonSphereDragForce_defines_typeName in .C files that
+//  define the template statics of NonSphereDragForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NonSphereDragForce_defines_typeName)
+#  define Foam_NonSphereDragForce_typeName_API
+#else
+#  define Foam_NonSphereDragForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NonSphereDragForce_H
 #define NonSphereDragForce_H
 
@@ -189,7 +199,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nonSphereDrag");
+    TypeNameApi(Foam_NonSphereDragForce_typeName_API, "nonSphereDrag");
 
 
     // Constructors

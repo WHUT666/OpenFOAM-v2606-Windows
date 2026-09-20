@@ -27,6 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "UList.H"
+#include <functional>
 #include <random>
 
 // * * * * * * * * * * * * Protected Member Functions  * * * * * * * * * * * //
@@ -255,11 +256,19 @@ bool Foam::UList<T>::operator<(const UList<T>& list) const
     // Can dispatch with
     // - std::execution::par_unseq
     // - std::execution::unseq
-    return std::lexicographical_compare
-    (
-        this->cbegin(), this->cend(),
-        list.cbegin(), list.cend()
-    );
+    if constexpr (std::is_invocable_v<std::less<>, const T&, const T&>)
+    {
+        return std::lexicographical_compare
+        (
+            this->cbegin(), this->cend(),
+            list.cbegin(), list.cend()
+        );
+    }
+    else
+    {
+        // No ordering semantic for T (eg token)
+        return false;
+    }
 }
 
 

@@ -142,7 +142,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("processor");
+    TypeNameApi(finiteArea_API, "processor");
 
 
     // Constructors

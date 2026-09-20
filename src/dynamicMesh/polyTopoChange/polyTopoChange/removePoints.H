@@ -100,7 +100,7 @@ class removePoints
 public:
 
     //- Runtime type information
-    ClassName("removePoints");
+    ClassNameApi(dynamicMesh_API, "removePoints");
 
 
     // Constructors

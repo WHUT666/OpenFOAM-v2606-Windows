@@ -70,7 +70,7 @@ public:
     // Static Data Members
 
         //- The typeName ("edge")
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
 
     // Generated Methods

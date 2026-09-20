@@ -146,7 +146,7 @@ class icoUncoupledKinematicCloud
 public:
 
     //- Runtime type information
-    TypeName("icoUncoupledKinematicCloud");
+    TypeNameApi(lagrangianFunctionObjects_API, "icoUncoupledKinematicCloud");
 
 
     // Constructors

@@ -31,6 +31,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_vtkPTraits_defines_typeName in .C files that
+//  define the template statics of vtkPTraits (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_vtkPTraits_defines_typeName)
+#  define Foam_vtkPTraits_typeName_API
+#else
+#  define Foam_vtkPTraits_typeName_API fileFormats_API
+#endif
+
 #ifndef Foam_vtk_vtkPTraits_H
 #define Foam_vtk_vtkPTraits_H
 
@@ -55,6 +65,17 @@ struct vtkPTraits
     // Static Data Members
     static const char* const typeName;
 };
+
+
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<uint8_t>);
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<int32_t>);
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<uint32_t>);
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<int64_t>);
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<uint64_t>);
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<float>);
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<double>);
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<Foam::endian>);
+fileFormats_TEMPLATE_IMPORT(vtkPTraits<std::string>);
 
 
 #ifndef _MSC_VER

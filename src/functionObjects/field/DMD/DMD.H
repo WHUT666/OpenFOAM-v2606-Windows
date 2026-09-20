@@ -228,7 +228,7 @@ class DMD
 public:
 
     //- Runtime type information
-    TypeName("DMD");
+    TypeNameApi(fieldFunctionObjects_API, "DMD");
 
 
     // Constructors

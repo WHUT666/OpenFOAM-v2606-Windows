@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SurfaceReactionModel_defines_typeName in .C files that
+//  define the template statics of SurfaceReactionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SurfaceReactionModel_defines_typeName)
+#  define Foam_SurfaceReactionModel_typeName_API
+#else
+#  define Foam_SurfaceReactionModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef SurfaceReactionModel_H
 #define SurfaceReactionModel_H
 
@@ -73,12 +83,12 @@ protected:
 public:
 
     //-Runtime type information
-    TypeName("surfaceReactionModel");
+    TypeNameApi(Foam_SurfaceReactionModel_typeName_API, "surfaceReactionModel");
 
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_SurfaceReactionModel_typeName_API,
         autoPtr,
         SurfaceReactionModel,
         dictionary,

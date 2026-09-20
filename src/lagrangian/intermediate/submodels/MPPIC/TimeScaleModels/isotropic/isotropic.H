@@ -69,7 +69,7 @@ class isotropic
 public:
 
     //- Runtime type information
-    TypeName("isotropic");
+    TypeNameApi(lagrangianIntermediate_API, "isotropic");
 
 
     //- Constructors

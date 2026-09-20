@@ -52,6 +52,15 @@ namespace Foam
 {
 
 // Forward Declarations
+// Windows DLL: importing TUs see dllimport; a TU that emits an explicit
+// specialization definition (defineTemplateTypeNameAndDebug etc.) must
+// #define Foam_DimensionedField_defines_typeName BEFORE including this header.
+#if defined(Foam_DimensionedField_defines_typeName)
+#  define Foam_DimensionedField_typeName_API
+#else
+#  define Foam_DimensionedField_typeName_API OpenFOAM_API
+#endif
+
 template<class Type, class GeoMesh> class DimensionedField;
 
 template<class Type, class GeoMesh>
@@ -139,7 +148,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("DimensionedField");
+    TypeNameApi(Foam_DimensionedField_typeName_API, "DimensionedField");
 
 
     // Static Member Functions

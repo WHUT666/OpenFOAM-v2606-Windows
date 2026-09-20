@@ -91,10 +91,10 @@ public:
     // Static Data Members
 
         //- Size in bytes of the fields
-        static const std::size_t sizeofFields;
+        static lagrangian_API const std::size_t sizeofFields;
 
         //- Runtime type information
-        TypeName("injectedParticle");
+        TypeNameApi(lagrangian_API, "injectedParticle");
 
         //- String representation of properties
         AddToPropertyList

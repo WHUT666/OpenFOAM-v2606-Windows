@@ -165,7 +165,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("pairPatch");
+    TypeNameApi(pairPatchAgglomeration_API, "pairPatch");
 
 
     // Constructors

@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ReactingHeterogeneousParcel_defines_typeName in .C files that
+//  define the template statics of ReactingHeterogeneousParcel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ReactingHeterogeneousParcel_defines_typeName)
+#  define Foam_ReactingHeterogeneousParcel_typeName_API
+#else
+#  define Foam_ReactingHeterogeneousParcel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ReactingHeterogeneousParcel_H
 #define ReactingHeterogeneousParcel_H
 
@@ -71,7 +81,7 @@ class ReactingHeterogeneousParcel
 public:
 
     //- Size in bytes of the fields
-    static const std::size_t sizeofFields;
+    static Foam_ReactingHeterogeneousParcel_typeName_API const std::size_t sizeofFields;
 
     //- Class to hold reacting particle constant properties
     class constantProperties
@@ -208,7 +218,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("ReactingHeterogeneousParcel");
+        TypeNameApi(Foam_ReactingHeterogeneousParcel_typeName_API, "ReactingHeterogeneousParcel");
 
         //- String representation of properties
         AddToPropertyList

@@ -53,6 +53,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CSV_defines_typeName in .C files that
+//  define the template statics of CSV (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CSV_defines_typeName)
+#  define Foam_CSV_typeName_API
+#else
+#  define Foam_CSV_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_CSV_H
 #define Foam_Function1Types_CSV_H
 
@@ -176,6 +186,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CSV<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CSV<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CSV<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CSV<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::CSV<Foam::tensor>);
 
 #endif
 

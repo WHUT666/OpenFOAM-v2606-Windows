@@ -106,19 +106,19 @@ public:
 
 
         //- The name for default (unassigned) boundaries
-        static const char* const defaultBoundaryName;
+        static fileFormats_API const char* const defaultBoundaryName;
 
         //- The name we have chosen for default (unassigned) solid boundaries.
         //  Slightly distinguished from the regular default name.
-        static const char* const defaultSolidBoundaryName;
+        static fileFormats_API const char* const defaultSolidBoundaryName;
 
 
 private:
 
     // Private Data
 
-        static const Enum<fileHeader> fileHeaders_;
-        static const Enum<fileExt>    fileExtensions_;
+        static fileFormats_API const Enum<fileHeader> fileHeaders_;
+        static fileFormats_API const Enum<fileExt> fileExtensions_;
 
 
 protected:
@@ -127,11 +127,11 @@ protected:
 
         //- Face addressing from PROSTAR faces to OpenFOAM faces.
         //  For hex, prism, tet, pyr primitive shapes.
-        static const Map<FixedList<int, 6>> starToFoamFaceAddr;
+        static fileFormats_API const Map<FixedList<int, 6>> starToFoamFaceAddr;
 
         //- Face addressing from OpenFOAM faces to PROSTAR faces.
         //  For hex, prism, tet, pyr primitive shapes.
-        static const Map<FixedList<int, 6>> foamToStarFaceAddr;
+        static fileFormats_API const Map<FixedList<int, 6>> foamToStarFaceAddr;
 
 
     // Constructors

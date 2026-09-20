@@ -70,7 +70,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("thermocapillary");
+    TypeNameApi(surfaceFilmModels_API, "thermocapillary");
 
 
     // Constructors

@@ -65,7 +65,7 @@ class hyperbolic
 public:
 
     //- Runtime type information
-    TypeName("hyperbolic");
+    TypeNameApi(reactingMultiphaseSystem_API, "hyperbolic");
 
 
     // Constructors

@@ -140,7 +140,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("continuityError");
+    TypeNameApi(fieldFunctionObjects_API, "continuityError");
 
 
     // Constructors

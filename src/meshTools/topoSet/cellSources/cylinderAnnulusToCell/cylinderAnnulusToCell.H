@@ -68,12 +68,12 @@ class cylinderAnnulusToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
 public:
 
     //- Runtime type information
-    TypeName("cylinderAnnulusToCell");
+    TypeNameApi(meshTools_API, "cylinderAnnulusToCell");
 
 
     // Constructors

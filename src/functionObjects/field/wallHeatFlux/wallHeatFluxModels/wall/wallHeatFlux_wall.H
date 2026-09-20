@@ -120,7 +120,7 @@ class wall
 public:
 
     //- Runtime type information
-    TypeName("wall");
+    TypeNameApi(fieldFunctionObjects_API, "wall");
 
 
     // Constructors

@@ -99,7 +99,7 @@ class unequalBinWidth
 public:
 
     //- Runtime type information
-    TypeName("unequalBinWidth");
+    TypeNameApi(fieldFunctionObjects_API, "unequalBinWidth");
 
 
     // Constructors

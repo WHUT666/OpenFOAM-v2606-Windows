@@ -77,7 +77,7 @@ public:
         static constexpr int nTypes = 5;
 
         //- The ensight 'Cell' element type names
-        static const char* elemNames[nTypes];
+        static fileFormats_API const char* elemNames[nTypes];
 
 
     // Static Functions
@@ -150,7 +150,7 @@ private:
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("ensightCells");
+    TypeNameApi(fileFormats_API, "ensightCells");
 
 
     // Constructors

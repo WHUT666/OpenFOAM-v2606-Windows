@@ -88,12 +88,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("boundaryRadiationPropertiesPatch");
+    TypeNameApi(radiationModels_API, "boundaryRadiationPropertiesPatch");
 
       // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( radiationModels_API,
             autoPtr,
             boundaryRadiationPropertiesPatch,
             dictionary,

@@ -103,7 +103,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("edgeMesh");
+    TypeNameApi(meshTools_API, "edgeMesh");
 
 
     // Static Member Functions
@@ -150,8 +150,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             edgeMesh,
             fileExtension,
@@ -181,8 +181,9 @@ public:
 
     // Member Function Selectors
 
-        declareMemberFunctionSelectionTable
+        declareMemberFunctionSelectionTableApi
         (
+            meshTools_API,
             void,
             edgeMesh,
             write,

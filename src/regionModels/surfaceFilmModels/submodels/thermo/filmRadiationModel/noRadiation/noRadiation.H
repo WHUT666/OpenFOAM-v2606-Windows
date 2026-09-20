@@ -71,7 +71,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(surfaceFilmModels_API, "none");
 
 
     // Constructors

@@ -42,6 +42,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_lduCalculatedProcessorField_defines_typeName in .C files that
+//  define the template statics of lduCalculatedProcessorField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_lduCalculatedProcessorField_defines_typeName)
+#  define Foam_lduCalculatedProcessorField_typeName_API
+#else
+#  define Foam_lduCalculatedProcessorField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_lduCalculatedProcessorField_H
 #define Foam_lduCalculatedProcessorField_H
 
@@ -110,7 +120,7 @@ protected:
 public:
 
     //- Runtime type information
-    ClassName("lduCalculatedProcessorField");
+    ClassNameApi(Foam_lduCalculatedProcessorField_typeName_API, "lduCalculatedProcessorField");
 
 
     // Constructors

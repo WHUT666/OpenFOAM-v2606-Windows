@@ -65,7 +65,7 @@ class compressibleTransportModel
 public:
 
     //- Runtime type information
-    TypeName("compressibleTransportModel");
+    TypeNameApi(compressibleTransportModels_API, "compressibleTransportModel");
 
 
     // Constructors

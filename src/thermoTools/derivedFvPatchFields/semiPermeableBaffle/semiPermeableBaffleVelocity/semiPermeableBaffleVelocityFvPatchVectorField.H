@@ -93,7 +93,7 @@ class semiPermeableBaffleVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("semiPermeableBaffleVelocity");
+    TypeNameApi(thermoTools_API, "semiPermeableBaffleVelocity");
 
 
     // Constructors

@@ -88,7 +88,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("isotropic");
+    TypeNameApi(adjointOptimisation_API, "isotropic");
 
 
     // Constructors

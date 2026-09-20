@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_weighted_defines_typeName in .C files that
+//  define the template statics of weighted (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_weighted_defines_typeName)
+#  define Foam_weighted_typeName_API
+#else
+#  define Foam_weighted_typeName_API finiteVolume_API
+#endif
+
 #ifndef weighted_H
 #define weighted_H
 
@@ -71,7 +81,7 @@ class weighted
 public:
 
     //- Runtime type information
-    TypeName("weighted");
+    TypeNameApi(Foam_weighted_typeName_API, "weighted");
 
 
     // Constructors

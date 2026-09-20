@@ -229,7 +229,7 @@ private:
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeNameNoDebug("nastran");
+    TypeNameNoDebugApi(surfMesh_API, "nastran");
 
 
     // Constructors

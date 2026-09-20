@@ -66,7 +66,7 @@ class HrenyaSinclair
 public:
 
     //- Runtime type information
-    TypeName("HrenyaSinclair");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "HrenyaSinclair");
 
 
     // Constructors

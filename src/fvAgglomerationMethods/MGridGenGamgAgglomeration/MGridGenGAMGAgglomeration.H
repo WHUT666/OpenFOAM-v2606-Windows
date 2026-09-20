@@ -133,7 +133,7 @@ class MGridGenGAMGAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("MGridGen");
+    TypeNameApi(MGridGenGAMGAgglomeration_API, "MGridGen");
 
 
     // Constructors

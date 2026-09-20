@@ -65,7 +65,7 @@ class linear
 public:
 
     //- Runtime type information
-    TypeName("linear");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "linear");
 
 
     // Constructors

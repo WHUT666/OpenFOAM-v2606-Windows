@@ -110,7 +110,7 @@ class LehrMilliesMewes
 public:
 
     //- Runtime type information
-    TypeName("LehrMilliesMewes");
+    TypeNameApi(reactingMultiphaseSystem_API, "LehrMilliesMewes");
 
     // Constructor
 

@@ -226,7 +226,7 @@ namespace Foam
 
 // Forward Declarations
 class Time;
-class polyMesh;
+class OpenFOAM_API polyMesh;
 class mapPolyMesh;
 
 /*---------------------------------------------------------------------------*\
@@ -268,22 +268,22 @@ public:
     // Static Data Members
 
         //- Flag to execute debug content
-        static int debug;
+        static OpenFOAM_API int debug;
 
         //- Global post-processing mode switch
-        static bool postProcess;
+        static OpenFOAM_API bool postProcess;
 
         //- Global default for useNamePrefix
-        static bool defaultUseNamePrefix;
+        static OpenFOAM_API bool defaultUseNamePrefix;
 
         //- Directory prefix
-        static word outputPrefix;
+        static OpenFOAM_API word outputPrefix;
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             functionObject,
             dictionary,

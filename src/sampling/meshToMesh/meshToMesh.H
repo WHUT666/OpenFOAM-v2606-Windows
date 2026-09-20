@@ -77,7 +77,7 @@ public:
             imCorrectedCellVolumeWeight
         };
 
-        static const Enum<interpolationMethod> interpolationMethodNames_;
+        static sampling_API const Enum<interpolationMethod> interpolationMethodNames_;
 
         //- Enumeration specifying processor parallel map construction method
         enum class procMapMethod
@@ -86,7 +86,7 @@ public:
             pmLOD
         };
 
-        static const Enum<procMapMethod> procMapMethodNames_;
+        static sampling_API const Enum<procMapMethod> procMapMethodNames_;
 
 private:
 
@@ -307,7 +307,7 @@ private:
 public:
 
     //- Run-time type information
-    TypeName("meshToMesh");
+    TypeNameApi(sampling_API, "meshToMesh");
 
 
     //- Construct from source and target meshes

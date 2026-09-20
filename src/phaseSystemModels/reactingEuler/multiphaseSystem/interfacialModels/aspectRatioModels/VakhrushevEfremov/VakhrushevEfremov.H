@@ -65,7 +65,7 @@ class VakhrushevEfremov
 public:
 
     //- Runtime type information
-    TypeName("VakhrushevEfremov");
+    TypeNameApi(reactingMultiphaseSystem_API, "VakhrushevEfremov");
 
 
     // Constructors

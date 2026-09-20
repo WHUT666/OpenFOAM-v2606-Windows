@@ -69,7 +69,7 @@ class phaseFraction
 public:
 
     //- Runtime type information
-    TypeName("phaseFraction");
+    TypeNameApi(reactingMultiphaseSystem_API, "phaseFraction");
 
 
     // Constructors

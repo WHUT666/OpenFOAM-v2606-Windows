@@ -220,7 +220,7 @@ class ensightCloudWriteObject
 public:
 
     //- Runtime type information
-    TypeName("ensightCloud");
+    TypeNameApi(lagrangianFunctionObjects_API, "ensightCloud");
 
 
     // Constructors

@@ -99,7 +99,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("solver");
+        TypeNameApi(adjointOptimisation_API, "solver");
 
 
     // Constructors

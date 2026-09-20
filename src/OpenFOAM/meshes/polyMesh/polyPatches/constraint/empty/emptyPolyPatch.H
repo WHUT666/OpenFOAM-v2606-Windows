@@ -55,7 +55,7 @@ class emptyPolyPatch
 public:
 
     //- Runtime type information
-    TypeName("empty");
+    TypeNameApi(OpenFOAM_API, "empty");
 
 
     // Constructors

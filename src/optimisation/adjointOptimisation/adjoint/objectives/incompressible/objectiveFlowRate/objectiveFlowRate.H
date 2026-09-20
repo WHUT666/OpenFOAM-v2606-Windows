@@ -69,7 +69,7 @@ class objectiveFlowRate
 public:
 
     //- Runtime type information
-    TypeName("flowRate");
+    TypeNameApi(adjointOptimisation_API, "flowRate");
 
 
     // Constructors

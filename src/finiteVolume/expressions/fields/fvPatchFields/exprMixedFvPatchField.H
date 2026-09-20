@@ -54,6 +54,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_exprMixedFvPatchField_defines_typeName in .C files that
+//  define the template statics of exprMixedFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_exprMixedFvPatchField_defines_typeName)
+#  define Foam_exprMixedFvPatchField_typeName_API
+#else
+#  define Foam_exprMixedFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef FoamDeprecated_exprMixedFvPatchField_H
 #define FoamDeprecated_exprMixedFvPatchField_H
 
@@ -100,7 +110,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("exprMixed");
+    TypeNameApi(Foam_exprMixedFvPatchField_typeName_API, "exprMixed");
 
 
     // Constructors

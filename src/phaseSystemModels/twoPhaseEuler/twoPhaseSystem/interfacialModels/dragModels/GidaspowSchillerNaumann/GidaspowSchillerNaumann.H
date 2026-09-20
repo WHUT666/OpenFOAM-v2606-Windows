@@ -80,7 +80,7 @@ class GidaspowSchillerNaumann
 public:
 
     //- Runtime type information
-    TypeName("GidaspowSchillerNaumann");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "GidaspowSchillerNaumann");
 
 
     // Constructors

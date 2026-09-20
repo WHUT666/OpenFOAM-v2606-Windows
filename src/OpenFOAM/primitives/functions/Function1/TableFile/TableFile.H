@@ -59,6 +59,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_TableFile_defines_typeName in .C files that
+//  define the template statics of TableFile (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_TableFile_defines_typeName)
+#  define Foam_TableFile_typeName_API
+#else
+#  define Foam_TableFile_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_TableFile_H
 #define Foam_Function1Types_TableFile_H
 
@@ -141,6 +151,13 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::TableFile<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::TableFile<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::TableFile<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::TableFile<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::TableFile<Foam::tensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::TableFile<Foam::scalarField>);
 
 #endif
 

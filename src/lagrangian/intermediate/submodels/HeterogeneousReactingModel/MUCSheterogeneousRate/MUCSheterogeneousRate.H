@@ -38,6 +38,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MUCSheterogeneousRate_defines_typeName in .C files that
+//  define the template statics of MUCSheterogeneousRate (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MUCSheterogeneousRate_defines_typeName)
+#  define Foam_MUCSheterogeneousRate_typeName_API
+#else
+#  define Foam_MUCSheterogeneousRate_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef MUCSheterogeneousRate_H
 #define MUCSheterogeneousRate_H
 
@@ -121,7 +131,7 @@ class MUCSheterogeneousRate
 public:
 
     //- Runtime type information
-    TypeName("MUCSheterogeneousRate");
+    TypeNameApi(Foam_MUCSheterogeneousRate_typeName_API, "MUCSheterogeneousRate");
 
 
     // Constructors

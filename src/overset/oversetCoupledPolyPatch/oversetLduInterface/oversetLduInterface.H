@@ -53,7 +53,7 @@ class oversetLduInterface
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("oversetLduInterface");
+    TypeNameNoDebugApi(overset_API, "oversetLduInterface");
 
 
     // Constructors

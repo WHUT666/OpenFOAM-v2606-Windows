@@ -274,7 +274,7 @@ private:
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("smooth");
+    TypeNameApi(turbulenceModels_API, "smooth");
 
 
     // Constructors

@@ -66,6 +66,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fixedMeanOutletInletFvPatchField_defines_typeName in .C files that
+//  define the template statics of fixedMeanOutletInletFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fixedMeanOutletInletFvPatchField_defines_typeName)
+#  define Foam_fixedMeanOutletInletFvPatchField_typeName_API
+#else
+#  define Foam_fixedMeanOutletInletFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_fixedMeanOutletInletFvPatchField_H
 #define Foam_fixedMeanOutletInletFvPatchField_H
 
@@ -98,7 +108,7 @@ class fixedMeanOutletInletFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("fixedMeanOutletInlet");
+    TypeNameApi(Foam_fixedMeanOutletInletFvPatchField_typeName_API, "fixedMeanOutletInlet");
 
 
     // Constructors

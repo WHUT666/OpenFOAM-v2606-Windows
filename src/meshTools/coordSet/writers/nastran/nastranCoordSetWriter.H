@@ -120,7 +120,7 @@ private:
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("nastran");
+    TypeNameNoDebugApi(meshTools_API, "nastran");
 
 
     // Constructors

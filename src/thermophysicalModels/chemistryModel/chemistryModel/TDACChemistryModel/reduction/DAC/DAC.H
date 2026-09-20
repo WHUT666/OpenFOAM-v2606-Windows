@@ -89,6 +89,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DAC_defines_typeName in .C files that
+//  define the template statics of DAC (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DAC_defines_typeName)
+#  define Foam_DAC_typeName_API
+#else
+#  define Foam_DAC_typeName_API chemistryModel_API
+#endif
+
 #ifndef DAC_H
 #define DAC_H
 
@@ -129,7 +139,7 @@ class DAC
 public:
 
     //- Runtime type information
-    TypeName("DAC");
+    TypeNameApi(Foam_DAC_typeName_API, "DAC");
 
 
     // Constructors

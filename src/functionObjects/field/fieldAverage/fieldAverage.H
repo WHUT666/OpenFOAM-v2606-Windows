@@ -292,7 +292,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fieldAverage");
+    TypeNameApi(fieldFunctionObjects_API, "fieldAverage");
 
 
     // Constructors

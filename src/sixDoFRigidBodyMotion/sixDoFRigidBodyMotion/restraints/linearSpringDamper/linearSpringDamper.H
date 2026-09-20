@@ -122,7 +122,7 @@ class linearSpringDamper
 public:
 
     //- Runtime type information
-    TypeName("linearSpringDamper");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "linearSpringDamper");
 
 
     // Constructors

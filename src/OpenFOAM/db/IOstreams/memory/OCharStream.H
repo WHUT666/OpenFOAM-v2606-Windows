@@ -65,7 +65,7 @@ typedef OCharStream OListStream;
 //- Similar to std::ostringstream, but with the ability to swap
 //- character content.
 //- Has some similarity to std::ospanstream (C++23)
-class ocharstream
+class OpenFOAM_API ocharstream
 :
     virtual public std::ios,
     protected Foam::memorybuf::out_dynamic,
@@ -293,7 +293,7 @@ public:
 \*---------------------------------------------------------------------------*/
 
 //- An OSstream with internal List storage
-class OCharStream
+class OpenFOAM_API OCharStream
 :
     public Foam::Detail::StreamAllocator<Foam::ocharstream>,
     public Foam::OSstream

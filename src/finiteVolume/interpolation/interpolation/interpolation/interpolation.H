@@ -32,6 +32,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_interpolation_defines_typeName in .C files that
+//  define the template statics of interpolation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_interpolation_defines_typeName)
+#  define Foam_interpolation_typeName_API
+#else
+#  define Foam_interpolation_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_interpolation_H
 #define Foam_interpolation_H
 
@@ -80,8 +90,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_interpolation_typeName_API,
             autoPtr,
             interpolation,
             dictionary,

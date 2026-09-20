@@ -162,10 +162,10 @@ public:
         };
 
         //- Names for equilibriumModelType
-        static const Enum<equilibriumModelType> equilibriumModelTypeNames;
+        static reactionThermophysicalModels_API const Enum<equilibriumModelType> equilibriumModelTypeNames;
 
         //- Names for kineticModelType
-        static const Enum<kineticModelType> kinematicModelTypeNames;
+        static reactionThermophysicalModels_API const Enum<kineticModelType> kinematicModelTypeNames;
 
 
 private:
@@ -218,7 +218,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("speciesSorption");
+    TypeNameApi(reactionThermophysicalModels_API, "speciesSorption");
 
 
     // Constructors

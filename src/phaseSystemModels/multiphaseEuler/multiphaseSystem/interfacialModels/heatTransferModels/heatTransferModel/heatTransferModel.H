@@ -68,13 +68,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("heatTransferModel");
+    TypeNameApi(multiphaseSystem_API, "heatTransferModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( multiphaseSystem_API,
             autoPtr,
             heatTransferModel,
             dictionary,

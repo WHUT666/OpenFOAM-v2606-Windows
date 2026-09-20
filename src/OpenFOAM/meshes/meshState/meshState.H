@@ -91,13 +91,13 @@ public:
     // Static Data Members
 
         //- Name for "controls" sub-dictionary
-        static const word controlsDictName;
+        static OpenFOAM_API const word controlsDictName;
 
         //- Name for "solver" (solver performance) sub-dictionary
-        static const word solverPerformanceDictName;
+        static OpenFOAM_API const word solverPerformanceDictName;
 
         //- Name for "mesh" sub-dictionary
-        static const word meshDictName;
+        static OpenFOAM_API const word meshDictName;
 
 
     // Constructors

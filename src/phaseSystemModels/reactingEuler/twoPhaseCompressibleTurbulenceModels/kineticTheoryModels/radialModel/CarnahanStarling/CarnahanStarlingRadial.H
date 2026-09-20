@@ -59,7 +59,7 @@ class CarnahanStarling
 public:
 
     //- Runtime type information
-    TypeName("CarnahanStarling");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "CarnahanStarling");
 
 
     // Constructors

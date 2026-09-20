@@ -74,13 +74,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("LESdelta");
+    TypeNameApi(turbulenceModels_API, "LESdelta");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( turbulenceModels_API,
             autoPtr,
             LESdelta,
             dictionary,

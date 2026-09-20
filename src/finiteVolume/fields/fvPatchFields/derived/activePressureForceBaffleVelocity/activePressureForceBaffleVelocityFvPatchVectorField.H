@@ -168,7 +168,7 @@ class activePressureForceBaffleVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("activePressureForceBaffleVelocity");
+    TypeNameApi(finiteVolume_API, "activePressureForceBaffleVelocity");
 
 
     // Constructors

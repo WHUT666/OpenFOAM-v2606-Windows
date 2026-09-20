@@ -144,6 +144,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SemiImplicitSource_defines_typeName in .C files that
+//  define the template statics of SemiImplicitSource (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SemiImplicitSource_defines_typeName)
+#  define Foam_SemiImplicitSource_typeName_API
+#else
+#  define Foam_SemiImplicitSource_typeName_API fvOptions_API
+#endif
+
 #ifndef Foam_SemiImplicitSource_H
 #define Foam_SemiImplicitSource_H
 
@@ -181,7 +191,7 @@ public:
         };
 
         //- Names for volumeModeType
-        static const Enum<volumeModeType> volumeModeTypeNames_;
+        static Foam_SemiImplicitSource_typeName_API const Enum<volumeModeType> volumeModeTypeNames_;
 
 
 private:
@@ -228,7 +238,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("SemiImplicitSource");
+    TypeNameApi(Foam_SemiImplicitSource_typeName_API, "SemiImplicitSource");
 
 
     // Constructors

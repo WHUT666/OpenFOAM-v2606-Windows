@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Henry_defines_typeName in .C files that
+//  define the template statics of Henry (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Henry_defines_typeName)
+#  define Foam_Henry_typeName_API
+#else
+#  define Foam_Henry_typeName_API reactingMultiphaseSystem_API
+#endif
+
 #ifndef Henry_H
 #define Henry_H
 
@@ -75,7 +85,7 @@ class Henry
 public:
 
     //- Runtime type information
-    TypeName("Henry");
+    TypeNameApi(Foam_Henry_typeName_API, "Henry");
 
     // Constructors
 

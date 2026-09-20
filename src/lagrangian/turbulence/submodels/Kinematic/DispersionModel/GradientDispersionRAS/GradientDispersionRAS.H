@@ -33,6 +33,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_GradientDispersionRAS_defines_typeName in .C files that
+//  define the template statics of GradientDispersionRAS (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_GradientDispersionRAS_defines_typeName)
+#  define Foam_GradientDispersionRAS_typeName_API
+#else
+#  define Foam_GradientDispersionRAS_typeName_API lagrangianTurbulence_API
+#endif
+
 #ifndef GradientDispersionRAS_H
 #define GradientDispersionRAS_H
 
@@ -68,7 +78,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("gradientDispersionRAS");
+    TypeNameApi(Foam_GradientDispersionRAS_typeName_API, "gradientDispersionRAS");
 
 
     // Constructors

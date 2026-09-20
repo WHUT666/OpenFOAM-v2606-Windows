@@ -81,7 +81,7 @@ class strainRateFunction
 public:
 
     //- Runtime type information
-    TypeName("strainRateFunction");
+    TypeNameApi(turbulenceModels_API, "strainRateFunction");
 
 
     // Constructors

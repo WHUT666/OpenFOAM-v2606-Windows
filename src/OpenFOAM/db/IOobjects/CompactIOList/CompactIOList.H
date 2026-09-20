@@ -86,7 +86,7 @@ public:
     typedef List<T> content_type;
 
     //- Runtime type information
-    TypeName("CompactList");
+    TypeNameApi(OpenFOAM_API, "CompactList");
 
 
     // Constructors

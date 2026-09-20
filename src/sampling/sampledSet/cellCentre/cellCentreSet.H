@@ -76,7 +76,7 @@ class cellCentreSet
 public:
 
     //- Runtime type information
-    TypeName("cellCentre");
+    TypeNameApi(sampling_API, "cellCentre");
 
 
     // Constructors

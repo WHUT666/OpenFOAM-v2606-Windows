@@ -95,7 +95,7 @@ class polyline
 public:
 
     //- Runtime type information
-    TypeName("polyline");
+    TypeNameApi(extrudeModel_API, "polyline");
 
 
     // Constructors

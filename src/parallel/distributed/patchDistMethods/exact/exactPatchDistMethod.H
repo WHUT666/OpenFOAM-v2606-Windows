@@ -108,7 +108,7 @@ class exact
 public:
 
     //- Runtime type information
-    TypeName("exactDistance");
+    TypeNameApi(distributed_API, "exactDistance");
 
 
     // Constructors

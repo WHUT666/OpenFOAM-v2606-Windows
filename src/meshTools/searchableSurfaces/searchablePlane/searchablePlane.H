@@ -95,7 +95,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("searchablePlane");
+    TypeNameApi(meshTools_API, "searchablePlane");
 
 
     // Constructors

@@ -141,7 +141,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("processor");
+    TypeNameApi(OpenFOAM_API, "processor");
 
 
     // Constructors

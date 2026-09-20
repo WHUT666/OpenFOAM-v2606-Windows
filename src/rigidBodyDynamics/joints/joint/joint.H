@@ -155,13 +155,13 @@ public:
 public:
 
     //- Runtime type information
-    TypeName("joint");
+    TypeNameApi(rigidBodyDynamics_API, "joint");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( rigidBodyDynamics_API,
             autoPtr,
             joint,
             dictionary,

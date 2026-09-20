@@ -79,7 +79,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("velocityMotionSolver");
+    TypeNameApi(dynamicMesh_API, "velocityMotionSolver");
 
 
     // Constructors

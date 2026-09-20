@@ -101,7 +101,7 @@ public:
     friend class IATEsource;
 
     //- Runtime type information
-    TypeName("IATE");
+    TypeNameApi(reactingTwoPhaseSystem_API, "IATE");
 
 
     // Constructors

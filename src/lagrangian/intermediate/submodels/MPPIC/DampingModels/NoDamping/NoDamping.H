@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoDamping_defines_typeName in .C files that
+//  define the template statics of NoDamping (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoDamping_defines_typeName)
+#  define Foam_NoDamping_typeName_API
+#else
+#  define Foam_NoDamping_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoDamping_H
 #define NoDamping_H
 
@@ -61,7 +71,7 @@ class NoDamping
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoDamping_typeName_API, "none");
 
     // Constructors
 

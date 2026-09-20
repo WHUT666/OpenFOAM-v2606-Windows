@@ -92,7 +92,7 @@ class pointToPointPlanarInterpolation
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("pointToPointPlanarInterpolation");
+    ClassNameApi(meshTools_API, "pointToPointPlanarInterpolation");
 
 
     // Generated Methods

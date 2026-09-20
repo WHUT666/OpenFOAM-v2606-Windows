@@ -59,7 +59,7 @@ class featureEdgeMesh
 {
 public:
 
-    TypeName("featureEdgeMesh");
+    TypeNameApi(meshTools_API, "featureEdgeMesh");
 
 
     // Constructors

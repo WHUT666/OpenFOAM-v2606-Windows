@@ -157,7 +157,7 @@ class variableHeatTransfer
 public:
 
     //- Runtime type information
-    TypeName("variableHeatTransfer");
+    TypeNameApi(fvOptions_API, "variableHeatTransfer");
 
 
     // Constructors

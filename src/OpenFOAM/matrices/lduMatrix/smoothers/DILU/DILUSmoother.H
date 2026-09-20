@@ -65,7 +65,7 @@ class DILUSmoother
 public:
 
     //- Runtime type information
-    TypeName("DILU");
+    TypeNameApi(OpenFOAM_API, "DILU");
 
 
     // Constructors

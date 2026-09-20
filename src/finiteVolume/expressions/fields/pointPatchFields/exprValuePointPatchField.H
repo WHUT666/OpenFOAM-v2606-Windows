@@ -44,6 +44,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_exprValuePointPatchField_defines_typeName in .C files that
+//  define the template statics of exprValuePointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_exprValuePointPatchField_defines_typeName)
+#  define Foam_exprValuePointPatchField_typeName_API
+#else
+#  define Foam_exprValuePointPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_exprValuePointPatchField_H
 #define Foam_exprValuePointPatchField_H
 
@@ -84,7 +94,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("exprValue");
+    TypeNameApi(Foam_exprValuePointPatchField_typeName_API, "exprValue");
 
 
     // Constructors

@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PressureGradientForce_defines_typeName in .C files that
+//  define the template statics of PressureGradientForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PressureGradientForce_defines_typeName)
+#  define Foam_PressureGradientForce_typeName_API
+#else
+#  define Foam_PressureGradientForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PressureGradientForce_H
 #define PressureGradientForce_H
 
@@ -73,7 +83,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("pressureGradient");
+    TypeNameApi(Foam_PressureGradientForce_typeName_API, "pressureGradient");
 
 
     // Constructors

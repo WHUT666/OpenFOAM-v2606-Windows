@@ -151,7 +151,7 @@ class searchableCone
 public:
 
     //- Runtime type information
-    TypeName("searchableCone");
+    TypeNameApi(meshTools_API, "searchableCone");
 
 
     // Constructors

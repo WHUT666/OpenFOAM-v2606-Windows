@@ -56,7 +56,7 @@ class pointBitSet
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("pointBitSet");
+    TypeNameNoDebugApi(meshTools_API, "pointBitSet");
 
 
     // Constructors

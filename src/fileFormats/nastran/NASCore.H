@@ -61,7 +61,7 @@ public:
     // Public Data
 
         //- Named/registered debug switch: 'nastran.debug'
-        static int debug;
+        static fileFormats_API int debug;
 
 
         //- File field formats
@@ -73,7 +73,7 @@ public:
         };
 
         //- Selection names for the NASTRAN file field formats
-        static const Enum<fieldFormat> fieldFormatNames;
+        static fileFormats_API const Enum<fieldFormat> fieldFormatNames;
 
         //- Output load format
         enum loadFormat
@@ -83,7 +83,7 @@ public:
         };
 
         //- Selection names for the NASTRAN load formats
-        static const Enum<loadFormat> loadFormatNames;
+        static fileFormats_API const Enum<loadFormat> loadFormatNames;
 
 
     // Constructors

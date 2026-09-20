@@ -109,7 +109,7 @@ class Lambda2
 public:
 
     //- Runtime type information
-    TypeName("Lambda2");
+    TypeNameApi(fieldFunctionObjects_API, "Lambda2");
 
 
     // Constructors

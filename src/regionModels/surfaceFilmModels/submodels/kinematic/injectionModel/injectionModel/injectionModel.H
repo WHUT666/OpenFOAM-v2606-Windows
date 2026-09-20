@@ -89,13 +89,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("injectionModel");
+    TypeNameApi(surfaceFilmModels_API, "injectionModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( surfaceFilmModels_API,
              autoPtr,
              injectionModel,
              dictionary,

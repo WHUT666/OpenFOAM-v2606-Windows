@@ -113,7 +113,7 @@ class sixDoFRigidBodyMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("sixDoFRigidBodyMotion");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "sixDoFRigidBodyMotion");
 
 
     // Constructors

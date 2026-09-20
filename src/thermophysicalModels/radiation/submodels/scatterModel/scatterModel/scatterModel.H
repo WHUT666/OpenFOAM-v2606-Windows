@@ -63,12 +63,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("scatterModel");
+    TypeNameApi(radiationModels_API, "scatterModel");
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( radiationModels_API,
             autoPtr,
             scatterModel,
             dictionary,

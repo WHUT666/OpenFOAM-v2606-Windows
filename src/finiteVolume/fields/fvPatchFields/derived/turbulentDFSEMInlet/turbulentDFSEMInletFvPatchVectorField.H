@@ -167,7 +167,7 @@ class turbulentDFSEMInletFvPatchVectorField
     // Private Data
 
         //- Maximum number of attempts when seeding eddies
-        static label seedIterMax_;
+        static finiteVolume_API label seedIterMax_;
 
         //- Mean velocity field
         autoPtr<PatchFunction1<vector>> U_;
@@ -292,7 +292,7 @@ class turbulentDFSEMInletFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("turbulentDFSEMInlet");
+   TypeNameApi(finiteVolume_API, "turbulentDFSEMInlet");
 
 
    // Constructors

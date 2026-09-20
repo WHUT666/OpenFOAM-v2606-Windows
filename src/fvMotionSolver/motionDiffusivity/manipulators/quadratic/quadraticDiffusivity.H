@@ -70,7 +70,7 @@ class quadraticDiffusivity
 public:
 
     //- Runtime type information
-    TypeName("quadratic");
+    TypeNameApi(fvMotionSolvers_API, "quadratic");
 
 
     // Constructors

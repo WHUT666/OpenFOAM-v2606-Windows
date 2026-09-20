@@ -115,7 +115,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("multiRegion");
+    TypeNameApi(utilityFunctionObjects_API, "multiRegion");
 
 
     // Constructors

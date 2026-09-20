@@ -86,6 +86,7 @@ doc/Doxygen/DTAGS
 
 # --- Windows/MSVC build tree ---
 /build/
+/build-shared/
 *.obj
 *.tlog
 *.rsp
@@ -97,6 +98,7 @@ __pycache__/
 
 # Local runtime test cases and generated case output
 /run/
+/run-wintest/
 
 # Third-party download/extraction caches (conda/nupkg archives,
 # unpacked package trees - not needed for build or runtime)

@@ -80,7 +80,7 @@ class faGlobalMeshData
 public:
 
     //- Runtime type information
-    ClassName("faGlobalMeshData");
+    ClassNameApi(finiteArea_API, "faGlobalMeshData");
 
 
     // Generated Methods

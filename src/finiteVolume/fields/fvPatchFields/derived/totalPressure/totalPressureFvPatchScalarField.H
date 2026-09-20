@@ -166,7 +166,7 @@ class totalPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("totalPressure");
+    TypeNameApi(finiteVolume_API, "totalPressure");
 
 
     // Constructors

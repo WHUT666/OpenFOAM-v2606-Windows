@@ -71,7 +71,7 @@ class searchableSurfacesQueries
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("searchableSurfacesQueries");
+    ClassNameApi(meshTools_API, "searchableSurfacesQueries");
 
 
         // Multiple point queries.

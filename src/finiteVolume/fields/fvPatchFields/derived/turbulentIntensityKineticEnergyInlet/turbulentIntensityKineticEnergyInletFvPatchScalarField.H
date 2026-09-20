@@ -107,7 +107,7 @@ class turbulentIntensityKineticEnergyInletFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("turbulentIntensityKineticEnergyInlet");
+    TypeNameApi(finiteVolume_API, "turbulentIntensityKineticEnergyInlet");
 
 
     // Constructors

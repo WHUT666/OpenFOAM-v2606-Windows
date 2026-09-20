@@ -137,11 +137,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("porosityModel");
+    TypeNameApi(finiteVolume_API, "porosityModel");
 
     //- Selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( finiteVolume_API,
         autoPtr,
         porosityModel,
         mesh,

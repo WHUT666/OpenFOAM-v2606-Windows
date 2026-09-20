@@ -116,7 +116,7 @@ class cosine
 public:
 
     //- Runtime type information
-    TypeName("cosine");
+    TypeNameApi(reactingMultiphaseSystem_API, "cosine");
 
 
     // Constructors

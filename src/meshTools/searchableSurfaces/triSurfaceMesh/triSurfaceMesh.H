@@ -139,10 +139,10 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("triSurfaceMesh");
+    TypeNameApi(meshTools_API, "triSurfaceMesh");
 
     //- Return the mesh sub-directory name (usually "triSurface")
-    static word meshSubDir;
+    static meshTools_API word meshSubDir;
 
 
     // Constructors

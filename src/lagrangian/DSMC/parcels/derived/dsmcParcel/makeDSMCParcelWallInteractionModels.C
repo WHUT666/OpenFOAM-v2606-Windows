@@ -1,3 +1,8 @@
+#define Foam_DispersionRASModel_defines_typeName
+#define Foam_MaxwellianThermal_defines_typeName
+#define Foam_MixedDiffuseSpecular_defines_typeName
+#define Foam_SpecularReflection_defines_typeName
+#define Foam_WallInteractionModel_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

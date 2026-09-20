@@ -63,6 +63,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_pTraits_defines_typeName in .C files that
+//  define the template statics of pTraits (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_pTraits_defines_typeName)
+#  define Foam_pTraits_typeName_API
+#else
+#  define Foam_pTraits_typeName_API snappyHexMesh_API
+#endif
+
 #ifndef weightedPosition_H
 #define weightedPosition_H
 
@@ -87,7 +97,7 @@ class pTraits<weightedPosition>
 {
 public:
     typedef weightedPosition cmptType;
-    static const weightedPosition zero;
+    static Foam_pTraits_typeName_API const weightedPosition zero;
 };
 
 

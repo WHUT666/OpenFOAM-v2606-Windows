@@ -48,7 +48,7 @@ namespace Foam
 \*---------------------------------------------------------------------------*/
 
 //- Input from string buffer, using a ISstream. Always UNCOMPRESSED.
-class IStringStream
+class OpenFOAM_API IStringStream
 :
     public Foam::Detail::StreamAllocator<std::istringstream>,
     public Foam::ISstream
@@ -182,7 +182,7 @@ public:
 \*---------------------------------------------------------------------------*/
 
 //- Output to string buffer, using a OSstream. Always UNCOMPRESSED.
-class OStringStream
+class OpenFOAM_API OStringStream
 :
     public Foam::Detail::StreamAllocator<std::ostringstream>,
     public Foam::OSstream

@@ -74,7 +74,7 @@ class stateFunctionObject
     // Private Member Data
 
         //- Name of the results dictionary
-        static const word resultsName_;
+        static OpenFOAM_API const word resultsName_;
 
 
 protected:

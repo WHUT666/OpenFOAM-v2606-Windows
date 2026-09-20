@@ -137,18 +137,18 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("collated");
+    TypeNameApi(OpenFOAM_API, "collated");
 
 
     // Static Data
 
         //- The type of backend to be used
-        static int backend_;
+        static OpenFOAM_API int backend_;
 
         //- Max size of thread buffer size. This is the overall size of
         //  all files to be written. Starts blocking if not enough size.
         //  Read as float to enable easy specification of large sizes.
-        static float maxThreadFileBufferSize;
+        static OpenFOAM_API float maxThreadFileBufferSize;
 
 
     // Constructors

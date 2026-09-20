@@ -59,7 +59,7 @@ class noneCondition
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("none");
+    TypeNameNoDebugApi(utilityFunctionObjects_API, "none");
 
     //- Constructor
     noneCondition

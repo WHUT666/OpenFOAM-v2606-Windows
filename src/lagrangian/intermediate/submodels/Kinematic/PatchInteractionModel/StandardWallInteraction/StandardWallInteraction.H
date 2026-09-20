@@ -53,6 +53,16 @@ Note
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_StandardWallInteraction_defines_typeName in .C files that
+//  define the template statics of StandardWallInteraction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_StandardWallInteraction_defines_typeName)
+#  define Foam_StandardWallInteraction_typeName_API
+#else
+#  define Foam_StandardWallInteraction_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef StandardWallInteraction_H
 #define StandardWallInteraction_H
 
@@ -121,7 +131,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("standardWallInteraction");
+    TypeNameApi(Foam_StandardWallInteraction_typeName_API, "standardWallInteraction");
 
 
     // Constructors

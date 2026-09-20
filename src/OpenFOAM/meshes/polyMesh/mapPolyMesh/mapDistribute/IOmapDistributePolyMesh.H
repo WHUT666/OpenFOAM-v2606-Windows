@@ -65,7 +65,7 @@ class IOmapDistributePolyMesh
 public:
 
     //- Runtime type information
-    TypeName("mapDistributePolyMesh");
+    TypeNameApi(OpenFOAM_API, "mapDistributePolyMesh");
 
 
     // Constructors

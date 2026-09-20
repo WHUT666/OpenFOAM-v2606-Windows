@@ -112,6 +112,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kineticGasEvaporation_defines_typeName in .C files that
+//  define the template statics of kineticGasEvaporation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kineticGasEvaporation_defines_typeName)
+#  define Foam_kineticGasEvaporation_typeName_API
+#else
+#  define Foam_kineticGasEvaporation_typeName_API incompressibleMultiphaseSystems_API
+#endif
+
 #ifndef meltingEvaporationModels_kineticGasEvaporation_H
 #define meltingEvaporationModels_kineticGasEvaporation_H
 
@@ -170,7 +180,7 @@ class kineticGasEvaporation
 public:
 
     //- Runtime type information
-    TypeName("kineticGasEvaporation");
+    TypeNameApi(Foam_kineticGasEvaporation_typeName_API, "kineticGasEvaporation");
 
 
     // Constructors

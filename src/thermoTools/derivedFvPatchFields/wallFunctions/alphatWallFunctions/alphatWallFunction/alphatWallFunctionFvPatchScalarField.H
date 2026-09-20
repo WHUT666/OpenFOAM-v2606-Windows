@@ -112,7 +112,7 @@ class alphatWallFunctionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("compressible::alphatWallFunction");
+    TypeNameApi(thermoTools_API, "compressible::alphatWallFunction");
 
 
     // Constructors

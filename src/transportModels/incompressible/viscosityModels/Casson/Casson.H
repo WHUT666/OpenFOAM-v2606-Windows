@@ -111,7 +111,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Casson");
+    TypeNameApi(incompressibleTransportModels_API, "Casson");
 
 
     // Constructors

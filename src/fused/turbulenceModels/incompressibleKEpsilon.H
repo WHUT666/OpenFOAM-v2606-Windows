@@ -158,7 +158,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("incompressibleKEpsilon");
+    TypeNameApi(fusedTurbulenceModels_API, "incompressibleKEpsilon");
 
 
     // Constructors

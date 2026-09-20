@@ -76,6 +76,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MultiInteraction_defines_typeName in .C files that
+//  define the template statics of MultiInteraction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MultiInteraction_defines_typeName)
+#  define Foam_MultiInteraction_typeName_API
+#else
+#  define Foam_MultiInteraction_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef MultiInteraction_H
 #define MultiInteraction_H
 
@@ -110,7 +120,7 @@ class MultiInteraction
 public:
 
     //- Runtime type information
-    TypeName("multiInteraction");
+    TypeNameApi(Foam_MultiInteraction_typeName_API, "multiInteraction");
 
 
     // Constructors

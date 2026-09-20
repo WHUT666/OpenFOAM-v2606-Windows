@@ -114,7 +114,7 @@ class magSqr
 public:
 
     //- Runtime type information
-    TypeName("magSqr");
+    TypeNameApi(fieldFunctionObjects_API, "magSqr");
 
 
     // Constructors

@@ -122,7 +122,7 @@ class atmTurbulentHeatFluxTemperatureFvPatchScalarField
         };
 
         //- Names for heatSourceType
-        static const Enum<heatSourceType> heatSourceTypeNames;
+        static atmosphericModels_API const Enum<heatSourceType> heatSourceTypeNames;
 
 
     // Private Data
@@ -143,7 +143,7 @@ class atmTurbulentHeatFluxTemperatureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("atmTurbulentHeatFluxTemperature");
+    TypeNameApi(atmosphericModels_API, "atmTurbulentHeatFluxTemperature");
 
 
     // Constructors

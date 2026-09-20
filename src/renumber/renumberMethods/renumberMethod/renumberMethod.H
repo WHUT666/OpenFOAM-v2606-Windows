@@ -55,13 +55,13 @@ class renumberMethod
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("renumberMethod");
+    TypeNameNoDebugApi(renumberMethods_API, "renumberMethod");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( renumberMethods_API,
             autoPtr,
             renumberMethod,
             dictionary,

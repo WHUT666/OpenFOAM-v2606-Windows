@@ -110,7 +110,7 @@ class turbulentMixingLengthFrequencyInletFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("turbulentMixingLengthFrequencyInlet");
+    TypeNameApi(turbulenceModels_API, "turbulentMixingLengthFrequencyInlet");
 
 
     // Constructors

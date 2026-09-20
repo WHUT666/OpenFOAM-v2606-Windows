@@ -149,7 +149,7 @@ class bitSet;
                        Class PstreamBuffers Declaration
 \*---------------------------------------------------------------------------*/
 
-class PstreamBuffers
+class OpenFOAM_API PstreamBuffers
 {
     // Private Data Types
 

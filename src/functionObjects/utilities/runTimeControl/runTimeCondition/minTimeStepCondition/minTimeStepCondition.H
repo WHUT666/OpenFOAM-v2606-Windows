@@ -69,7 +69,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("minTimeStep");
+    TypeNameApi(utilityFunctionObjects_API, "minTimeStep");
 
     //- Constructor
     minTimeStepCondition

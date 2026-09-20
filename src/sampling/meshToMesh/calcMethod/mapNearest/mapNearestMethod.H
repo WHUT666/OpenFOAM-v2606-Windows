@@ -123,7 +123,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("mapNearest");
+    TypeNameApi(sampling_API, "mapNearest");
 
     //- Construct from source and target meshes
     mapNearestMethod(const polyMesh& src, const polyMesh& tgt);

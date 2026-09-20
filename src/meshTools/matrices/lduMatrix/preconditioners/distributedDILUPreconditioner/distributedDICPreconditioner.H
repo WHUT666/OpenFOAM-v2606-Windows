@@ -102,7 +102,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("distributedDIC");
+    TypeNameApi(meshTools_API, "distributedDIC");
 
 
     // Constructors

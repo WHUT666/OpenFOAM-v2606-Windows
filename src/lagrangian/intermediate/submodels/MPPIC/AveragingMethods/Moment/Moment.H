@@ -45,6 +45,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Moment_defines_typeName in .C files that
+//  define the template statics of Moment (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Moment_defines_typeName)
+#  define Foam_Moment_typeName_API
+#else
+#  define Foam_Moment_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Moment_H
 #define Moment_H
 
@@ -108,7 +118,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("moment");
+    TypeNameApi(Foam_Moment_typeName_API, "moment");
 
 
     //- Constructors

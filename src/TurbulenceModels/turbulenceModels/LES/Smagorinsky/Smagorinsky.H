@@ -72,6 +72,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Smagorinsky_defines_typeName in .C files that
+//  define the template statics of Smagorinsky (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Smagorinsky_defines_typeName)
+#  define Foam_Smagorinsky_typeName_API
+#else
+#  define Foam_Smagorinsky_typeName_API turbulenceModels_API
+#endif
+
 #ifndef Smagorinsky_H
 #define Smagorinsky_H
 
@@ -128,7 +138,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("Smagorinsky");
+    TypeNameApi(Foam_Smagorinsky_typeName_API, "Smagorinsky");
 
 
     // Constructors

@@ -60,7 +60,7 @@ class noCorrectionLimiting
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(lagrangianIntermediate_API, "none");
 
 
     // Constructors

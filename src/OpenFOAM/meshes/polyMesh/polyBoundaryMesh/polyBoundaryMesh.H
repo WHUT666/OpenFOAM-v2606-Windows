@@ -53,7 +53,7 @@ namespace Foam
 
 // Forward Declarations
 class entry;
-class polyMesh;
+class OpenFOAM_API polyMesh;
 class wordRe;
 class wordRes;
 
@@ -110,7 +110,7 @@ public:
     friend class polyMesh;
 
     //- Runtime type information
-    TypeName("polyBoundaryMesh");
+    TypeNameApi(OpenFOAM_API, "polyBoundaryMesh");
 
 
     // Generated Methods

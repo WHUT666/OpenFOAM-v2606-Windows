@@ -112,7 +112,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("nearestFaceAMI");
+    TypeNameApi(meshTools_API, "nearestFaceAMI");
 
 
     // Constructors

@@ -42,6 +42,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_KinematicSurfaceFilm_defines_typeName in .C files that
+//  define the template statics of KinematicSurfaceFilm (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_KinematicSurfaceFilm_defines_typeName)
+#  define Foam_KinematicSurfaceFilm_typeName_API
+#else
+#  define Foam_KinematicSurfaceFilm_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Foam_KinematicSurfaceFilm_H
 #define Foam_KinematicSurfaceFilm_H
 
@@ -90,7 +100,7 @@ public:
         };
 
         //- Names for interactionType
-        static const Enum<interactionType> interactionTypeNames;
+        static Foam_KinematicSurfaceFilm_typeName_API const Enum<interactionType> interactionTypeNames;
 
 
 protected:
@@ -225,7 +235,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("kinematicSurfaceFilm");
+    TypeNameApi(Foam_KinematicSurfaceFilm_typeName_API, "kinematicSurfaceFilm");
 
 
     // Constructors

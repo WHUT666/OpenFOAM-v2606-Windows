@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoAtomization_defines_typeName in .C files that
+//  define the template statics of NoAtomization (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoAtomization_defines_typeName)
+#  define Foam_NoAtomization_typeName_API
+#else
+#  define Foam_NoAtomization_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef NoAtomization_H
 #define NoAtomization_H
 
@@ -55,7 +65,7 @@ class NoAtomization
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoAtomization_typeName_API, "none");
 
 
     // Constructors

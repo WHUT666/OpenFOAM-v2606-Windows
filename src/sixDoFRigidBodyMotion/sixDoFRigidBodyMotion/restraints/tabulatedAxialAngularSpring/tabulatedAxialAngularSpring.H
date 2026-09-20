@@ -82,7 +82,7 @@ class tabulatedAxialAngularSpring
 public:
 
     //- Runtime type information
-    TypeName("tabulatedAxialAngularSpring");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "tabulatedAxialAngularSpring");
 
 
     // Constructors

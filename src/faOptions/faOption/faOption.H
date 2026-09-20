@@ -170,13 +170,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("option");
+    TypeNameApi(faOptions_API, "option");
 
 
      // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( faOptions_API,
             autoPtr,
             option,
             dictionary,

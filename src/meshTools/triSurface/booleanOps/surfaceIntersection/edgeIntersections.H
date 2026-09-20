@@ -135,14 +135,14 @@ class edgeIntersections
 
 public:
 
-    ClassName("edgeIntersections");
+    ClassNameApi(meshTools_API, "edgeIntersections");
 
 
     // Static data members
 
         //- Cosine between edge and face normal when considered parallel
         //  (note: should be private and make access- and set- function)
-        static scalar alignedCos_;
+        static meshTools_API scalar alignedCos_;
 
 
     // Static Functions

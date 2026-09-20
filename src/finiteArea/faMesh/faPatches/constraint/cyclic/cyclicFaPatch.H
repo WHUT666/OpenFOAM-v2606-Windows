@@ -70,7 +70,7 @@ protected:
 
         //- Relative tolerance (for geometric matching). Is factor of
         //  maximum edge length per face.
-        static const scalar matchTol_;
+        static finiteArea_API const scalar matchTol_;
 
 
     // Protected Member functions
@@ -91,7 +91,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cyclic");
+    TypeNameApi(finiteArea_API, "cyclic");
 
 
     // Constructors

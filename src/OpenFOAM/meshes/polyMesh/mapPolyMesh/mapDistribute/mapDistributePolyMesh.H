@@ -53,7 +53,7 @@ namespace Foam
 
 // Forward Declarations
 class mapPolyMesh;
-class polyMesh;
+class OpenFOAM_API polyMesh;
 class mapDistributePolyMesh;
 
 Istream& operator>>(Istream&, mapDistributePolyMesh&);

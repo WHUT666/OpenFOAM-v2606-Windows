@@ -167,7 +167,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sampledPatch");
+    TypeNameApi(sampling_API, "sampledPatch");
 
 
     // Constructors

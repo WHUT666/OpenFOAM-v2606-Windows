@@ -74,7 +74,7 @@ class preservePatches
 public:
 
     //- Runtime type information
-    TypeName("preservePatches");
+    TypeNameApi(decompositionMethods_API, "preservePatches");
 
 
     // Constructors

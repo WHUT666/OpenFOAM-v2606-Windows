@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_wedgeFaPatchField_defines_typeName in .C files that
+//  define the template statics of wedgeFaPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_wedgeFaPatchField_defines_typeName)
+#  define Foam_wedgeFaPatchField_typeName_API
+#else
+#  define Foam_wedgeFaPatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_wedgeFaPatchField_H
 #define Foam_wedgeFaPatchField_H
 
@@ -64,7 +74,7 @@ class wedgeFaPatchField
 public:
 
     //- Runtime type information
-    TypeName(wedgeFaPatch::typeName_());
+    TypeNameApi(Foam_wedgeFaPatchField_typeName_API, wedgeFaPatch::typeName_());
 
 
     // Constructors

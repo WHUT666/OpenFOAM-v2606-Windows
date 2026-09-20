@@ -82,7 +82,7 @@ class drivenLinearMotion
 public:
 
     //- Runtime type information
-    TypeName("drivenLinearMotion");
+    TypeNameApi(meshTools_API, "drivenLinearMotion");
 
 
     // Constructors

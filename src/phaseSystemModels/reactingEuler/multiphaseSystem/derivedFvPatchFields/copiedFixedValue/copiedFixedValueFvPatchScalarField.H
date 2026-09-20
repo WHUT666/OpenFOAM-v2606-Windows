@@ -93,7 +93,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("copiedFixedValue");
+    TypeNameApi(reactingMultiphaseSystem_API, "copiedFixedValue");
 
 
     // Constructors

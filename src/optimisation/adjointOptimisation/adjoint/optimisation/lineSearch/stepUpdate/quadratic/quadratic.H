@@ -80,7 +80,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("quadratic");
+    TypeNameApi(adjointOptimisation_API, "quadratic");
 
 
     // Constructors

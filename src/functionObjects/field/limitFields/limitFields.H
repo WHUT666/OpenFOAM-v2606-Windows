@@ -138,7 +138,7 @@ protected:
     // Protected Data
 
         //- Limit type names
-        static const Enum<limitType> limitTypeNames_;
+        static fieldFunctionObjects_API const Enum<limitType> limitTypeNames_;
 
         //- Fields to limit
         volFieldSelection fieldSet_;
@@ -168,7 +168,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("limitFields");
+    TypeNameApi(fieldFunctionObjects_API, "limitFields");
 
 
     // Constructors

@@ -140,7 +140,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("multiply");
+    TypeNameApi(fieldFunctionObjects_API, "multiply");
 
 
     // Constructors

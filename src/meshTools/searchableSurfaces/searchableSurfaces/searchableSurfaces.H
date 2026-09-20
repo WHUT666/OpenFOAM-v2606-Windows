@@ -112,7 +112,7 @@ class searchableSurfaces
 
 public:
 
-    ClassName("searchableSurfaces");
+    ClassNameApi(meshTools_API, "searchableSurfaces");
 
 
     // Constructors

@@ -74,7 +74,7 @@ class fixedEnergyFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("fixedEnergy");
+    TypeNameApi(fluidThermophysicalModels_API, "fixedEnergy");
 
 
     // Constructors

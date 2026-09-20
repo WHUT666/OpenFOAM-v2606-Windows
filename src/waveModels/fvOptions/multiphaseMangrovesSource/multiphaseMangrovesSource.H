@@ -110,7 +110,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("multiphaseMangrovesSource");
+    TypeNameApi(waveModels_API, "multiphaseMangrovesSource");
 
 
     // Constructors

@@ -88,7 +88,7 @@ public:
     class options;
 
     //- The zone-id for internal mesh or unzoned cells.
-    static const label internalZone;
+    static fileFormats_API const label internalZone;
 
 
 private:

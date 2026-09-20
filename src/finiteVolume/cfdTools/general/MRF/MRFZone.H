@@ -158,7 +158,7 @@ class MRFZone
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("MRFZone");
+    ClassNameApi(finiteVolume_API, "MRFZone");
 
 
     // Constructors

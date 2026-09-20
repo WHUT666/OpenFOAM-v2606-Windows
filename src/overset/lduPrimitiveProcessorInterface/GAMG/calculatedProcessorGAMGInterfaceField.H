@@ -98,7 +98,7 @@ class calculatedProcessorGAMGInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("calculatedProcessor");
+    TypeNameApi(overset_API, "calculatedProcessor");
 
 
     // Constructors

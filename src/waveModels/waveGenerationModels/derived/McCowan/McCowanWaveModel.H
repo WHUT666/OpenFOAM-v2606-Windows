@@ -124,7 +124,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("McCowan");
+    TypeNameApi(waveModels_API, "McCowan");
 
     //- Constructor
     McCowan

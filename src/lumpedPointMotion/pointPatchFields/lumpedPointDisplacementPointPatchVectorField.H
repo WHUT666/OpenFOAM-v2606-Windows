@@ -107,7 +107,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("lumpedPointDisplacement");
+    TypeNameApi(lumpedPointMotion_API, "lumpedPointDisplacement");
 
 
     // Constructors

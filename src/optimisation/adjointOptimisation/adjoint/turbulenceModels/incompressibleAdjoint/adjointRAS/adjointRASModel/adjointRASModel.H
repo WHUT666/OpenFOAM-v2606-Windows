@@ -155,13 +155,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("adjointRASModel");
+    TypeNameApi(adjointOptimisation_API, "adjointRASModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             adjointRASModel,
             dictionary,

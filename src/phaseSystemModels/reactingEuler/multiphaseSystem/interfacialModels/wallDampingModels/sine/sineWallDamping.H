@@ -73,7 +73,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sine");
+    TypeNameApi(reactingMultiphaseSystem_API, "sine");
 
 
     // Constructors

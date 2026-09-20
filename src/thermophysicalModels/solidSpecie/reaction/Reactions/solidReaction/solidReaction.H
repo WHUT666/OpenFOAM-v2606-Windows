@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_solidReaction_defines_typeName in .C files that
+//  define the template statics of solidReaction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_solidReaction_defines_typeName)
+#  define Foam_solidReaction_typeName_API
+#else
+#  define Foam_solidReaction_typeName_API solidSpecie_API
+#endif
+
 #ifndef Foam_solidReaction_H
 #define Foam_solidReaction_H
 
@@ -95,7 +105,7 @@ class solidReaction
 public:
 
     //- Runtime type information
-    TypeName("SolidReaction");
+    TypeNameApi(Foam_solidReaction_typeName_API, "SolidReaction");
 
 
     // Constructors

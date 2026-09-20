@@ -75,7 +75,7 @@ class linearAxialAngularSpring
 public:
 
     //- Runtime type information
-    TypeName("linearAxialAngularSpring");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "linearAxialAngularSpring");
 
 
     // Constructors

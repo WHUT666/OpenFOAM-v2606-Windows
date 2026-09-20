@@ -105,7 +105,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("faceAreaWeightAMI2D");
+    TypeNameApi(meshTools_API, "faceAreaWeightAMI2D");
 
 
     // Constructors

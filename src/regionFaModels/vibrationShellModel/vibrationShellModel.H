@@ -127,13 +127,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("vibrationShellModel");
+    TypeNameApi(regionFaModels_API, "vibrationShellModel");
 
 
     // Declare runtime constructor selection tables
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( regionFaModels_API,
              autoPtr,
              vibrationShellModel,
              dictionary,

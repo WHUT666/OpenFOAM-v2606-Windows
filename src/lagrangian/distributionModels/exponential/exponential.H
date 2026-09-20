@@ -144,7 +144,7 @@ class exponential
 public:
 
     //- Runtime type information
-    TypeName("exponential");
+    TypeNameApi(distributionModels_API, "exponential");
 
 
     // Constructors

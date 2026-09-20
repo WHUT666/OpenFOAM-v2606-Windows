@@ -174,6 +174,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_turbulentDigitalFilterInletFvPatchField_defines_typeName in .C files that
+//  define the template statics of turbulentDigitalFilterInletFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_turbulentDigitalFilterInletFvPatchField_defines_typeName)
+#  define Foam_turbulentDigitalFilterInletFvPatchField_typeName_API
+#else
+#  define Foam_turbulentDigitalFilterInletFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_turbulentDigitalFilterInletFvPatchField_H
 #define Foam_turbulentDigitalFilterInletFvPatchField_H
 
@@ -258,7 +268,7 @@ class turbulentDigitalFilterInletFvPatchField
 public:
 
    //- Runtime type information
-   TypeName("turbulentDigitalFilterInlet");
+   TypeNameApi(Foam_turbulentDigitalFilterInletFvPatchField_typeName_API, "turbulentDigitalFilterInlet");
 
 
     // Constructors

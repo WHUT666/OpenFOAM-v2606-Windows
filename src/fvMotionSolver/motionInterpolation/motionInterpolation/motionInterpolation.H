@@ -70,13 +70,13 @@ class motionInterpolation
 public:
 
     //- Runtime type information
-    TypeName("motionInterpolation");
+    TypeNameApi(fvMotionSolvers_API, "motionInterpolation");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fvMotionSolvers_API,
             autoPtr,
             motionInterpolation,
             Istream,

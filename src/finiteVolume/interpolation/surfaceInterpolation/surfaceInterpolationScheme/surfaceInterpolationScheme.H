@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_surfaceInterpolationScheme_defines_typeName in .C files that
+//  define the template statics of surfaceInterpolationScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_surfaceInterpolationScheme_defines_typeName)
+#  define Foam_surfaceInterpolationScheme_typeName_API
+#else
+#  define Foam_surfaceInterpolationScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef surfaceInterpolationScheme_H
 #define surfaceInterpolationScheme_H
 
@@ -77,13 +87,13 @@ class surfaceInterpolationScheme
 public:
 
     //- Runtime type information
-    TypeName("surfaceInterpolationScheme");
+    TypeNameApi(Foam_surfaceInterpolationScheme_typeName_API, "surfaceInterpolationScheme");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_surfaceInterpolationScheme_typeName_API,
             tmp,
             surfaceInterpolationScheme,
             Mesh,
@@ -94,8 +104,8 @@ public:
             (mesh, schemeData)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_surfaceInterpolationScheme_typeName_API,
             tmp,
             surfaceInterpolationScheme,
             MeshFlux,

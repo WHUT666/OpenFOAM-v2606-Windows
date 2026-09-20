@@ -242,7 +242,7 @@ protected:
         };
 
         //- Names for forceMethodType
-        static const Enum<forceMethodType> forceMethodTypeNames;
+        static fvOptions_API const Enum<forceMethodType> forceMethodTypeNames;
 
         //- Options for the incoming velocity monitoring method types
         enum monitorMethodType
@@ -252,7 +252,7 @@ protected:
         };
 
         //- Names for monitorMethodType
-        static const Enum<monitorMethodType> monitorMethodTypeNames;
+        static fvOptions_API const Enum<monitorMethodType> monitorMethodTypeNames;
 
 
     // Protected Data
@@ -333,7 +333,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("actuationDiskSource");
+    TypeNameApi(fvOptions_API, "actuationDiskSource");
 
 
     // Constructors

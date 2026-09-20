@@ -87,7 +87,7 @@ class manualGAMGProcAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("manual");
+    TypeNameApi(OpenFOAM_API, "manual");
 
 
     //- No copy construct

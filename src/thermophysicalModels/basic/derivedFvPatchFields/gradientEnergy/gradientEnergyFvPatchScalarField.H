@@ -89,7 +89,7 @@ class gradientEnergyFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("gradientEnergy");
+    TypeNameApi(fluidThermophysicalModels_API, "gradientEnergy");
 
 
     // Constructors

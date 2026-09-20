@@ -61,7 +61,7 @@ class interface
 public:
 
     //- Runtime type information
-    TypeName("interface");
+    TypeNameApi(multiphaseSystem_API, "interface");
 
 
     // Constructors

@@ -233,7 +233,7 @@ class atmBuoyancyTurbSource
 public:
 
     //- Runtime type information
-    TypeName("atmBuoyancyTurbSource");
+    TypeNameApi(atmosphericModels_API, "atmBuoyancyTurbSource");
 
 
     // Constructors

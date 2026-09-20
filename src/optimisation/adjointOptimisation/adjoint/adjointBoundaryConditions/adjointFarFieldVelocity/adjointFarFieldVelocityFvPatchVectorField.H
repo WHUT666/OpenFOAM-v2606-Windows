@@ -63,7 +63,7 @@ class adjointFarFieldVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("adjointFarFieldVelocity");
+    TypeNameApi(adjointOptimisation_API, "adjointFarFieldVelocity");
 
 
     // Constructors

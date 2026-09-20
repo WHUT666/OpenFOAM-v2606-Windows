@@ -271,7 +271,7 @@ class snappyRefineDriver
 public:
 
     //- Runtime type information
-    ClassName("snappyRefineDriver");
+    ClassNameApi(snappyHexMesh_API, "snappyRefineDriver");
 
 
     // Constructors

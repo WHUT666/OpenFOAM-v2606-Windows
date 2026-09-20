@@ -88,7 +88,7 @@ class parProfilingSolver
 public:
 
     //- Runtime type information
-    TypeName("parProfilingSolver");
+    TypeNameApi(utilityFunctionObjects_API, "parProfilingSolver");
 
 
     // Constructors

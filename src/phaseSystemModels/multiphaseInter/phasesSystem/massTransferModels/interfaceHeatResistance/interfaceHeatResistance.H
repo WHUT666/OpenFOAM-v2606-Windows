@@ -71,6 +71,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_interfaceHeatResistance_defines_typeName in .C files that
+//  define the template statics of interfaceHeatResistance (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_interfaceHeatResistance_defines_typeName)
+#  define Foam_interfaceHeatResistance_typeName_API
+#else
+#  define Foam_interfaceHeatResistance_typeName_API incompressibleMultiphaseSystems_API
+#endif
+
 #ifndef meltingEvaporationModels_interfaceHeatResistance_H
 #define meltingEvaporationModels_interfaceHeatResistance_H
 
@@ -131,7 +141,7 @@ class interfaceHeatResistance
 public:
 
     //- Runtime type information
-    TypeName("interfaceHeatResistance");
+    TypeNameApi(Foam_interfaceHeatResistance_typeName_API, "interfaceHeatResistance");
 
 
     // Constructors

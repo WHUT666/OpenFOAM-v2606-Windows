@@ -72,7 +72,7 @@ class binaryAbsorptionEmission
 public:
 
     //- Runtime type information
-    TypeName("binaryAbsorptionEmission");
+    TypeNameApi(radiationModels_API, "binaryAbsorptionEmission");
 
 
     // Constructors

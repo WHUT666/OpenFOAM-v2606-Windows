@@ -39,6 +39,12 @@ SourceFiles
 #ifndef PCICG_H
 #define PCICG_H
 
+#if defined(Foam_LduSolver_defines_typeName)
+#  define Foam_LduSolver_typeName_API
+#else
+#  define Foam_LduSolver_typeName_API OpenFOAM_API
+#endif
+
 #include <LduMatrix_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -67,7 +73,7 @@ class PCICG
 public:
 
     //- Runtime type information
-    TypeName("PCICG");
+    TypeNameApi(Foam_LduSolver_typeName_API, "PCICG");
 
 
     // Constructors

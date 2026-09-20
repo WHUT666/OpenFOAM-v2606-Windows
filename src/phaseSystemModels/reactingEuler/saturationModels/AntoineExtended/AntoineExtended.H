@@ -78,7 +78,7 @@ class AntoineExtended
 public:
 
     //- Runtime type information
-    TypeName("AntoineExtended");
+    TypeNameApi(saturationModel_API, "AntoineExtended");
 
     // Constructors
 

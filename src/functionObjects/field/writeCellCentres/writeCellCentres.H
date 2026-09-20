@@ -95,7 +95,7 @@ class writeCellCentres
 public:
 
     //- Runtime type information
-    TypeName("writeCellCentres");
+    TypeNameApi(fieldFunctionObjects_API, "writeCellCentres");
 
 
     // Constructors

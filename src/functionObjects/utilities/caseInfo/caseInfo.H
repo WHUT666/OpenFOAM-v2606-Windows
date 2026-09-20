@@ -186,10 +186,10 @@ private:
     // Private Data
 
         //- Write format names
-        static const Enum<writeFormat> writeFormatNames_;
+        static utilityFunctionObjects_API const Enum<writeFormat> writeFormatNames_;
 
         //- Lookup mode names
-        static const Enum<lookupMode> lookupModeNames_;
+        static utilityFunctionObjects_API const Enum<lookupMode> lookupModeNames_;
 
         //- Write/output format, e.g. dictionary, JSON
         writeFormat writeFormat_;
@@ -263,7 +263,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("caseInfo");
+    TypeNameApi(utilityFunctionObjects_API, "caseInfo");
 
 
     // Constructors

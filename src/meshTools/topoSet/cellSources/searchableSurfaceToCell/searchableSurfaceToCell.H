@@ -104,7 +104,7 @@ class searchableSurfaceToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- The searchableSurface
         autoPtr<searchableSurface> surf_;
@@ -118,7 +118,7 @@ class searchableSurfaceToCell
 public:
 
     //- Runtime type information
-    TypeName("searchableSurfaceToCell");
+    TypeNameApi(meshTools_API, "searchableSurfaceToCell");
 
 
     // Constructors

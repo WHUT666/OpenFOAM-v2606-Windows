@@ -61,7 +61,7 @@ class jointBody
 public:
 
     //- Runtime type information
-    TypeName("jointBody");
+    TypeNameApi(rigidBodyDynamics_API, "jointBody");
 
 
     // Constructors

@@ -113,7 +113,7 @@ class sampledCuttingSurface
 public:
 
     //- Runtime type information
-    TypeName("surfaceCut");
+    TypeNameApi(sampling_API, "surfaceCut");
 
 
     // Constructors

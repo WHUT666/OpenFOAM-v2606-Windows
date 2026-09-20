@@ -80,13 +80,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("zeroATCcells");
+    TypeNameApi(adjointOptimisation_API, "zeroATCcells");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             zeroATCcells,
             dictionary,

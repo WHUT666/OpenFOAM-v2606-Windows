@@ -263,7 +263,7 @@ class motionSmootherAlgo
 
 public:
 
-    ClassName("motionSmootherAlgo");
+    ClassNameApi(dynamicMesh_API, "motionSmootherAlgo");
 
     // Constructors
 

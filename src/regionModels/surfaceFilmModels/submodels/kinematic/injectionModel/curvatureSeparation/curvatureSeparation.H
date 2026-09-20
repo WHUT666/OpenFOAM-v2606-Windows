@@ -115,7 +115,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("curvatureSeparation");
+    TypeNameApi(surfaceFilmModels_API, "curvatureSeparation");
 
 
     // Constructors

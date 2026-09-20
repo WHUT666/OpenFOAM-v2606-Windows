@@ -38,6 +38,12 @@ SourceFiles
 #ifndef NoPreconditioner_H
 #define NoPreconditioner_H
 
+#if defined(Foam_LduPreconditioner_defines_typeName)
+#  define Foam_LduPreconditioner_typeName_API
+#else
+#  define Foam_LduPreconditioner_typeName_API OpenFOAM_API
+#endif
+
 #include <LduMatrix_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -66,7 +72,7 @@ class NoPreconditioner
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_LduPreconditioner_typeName_API, "none");
 
 
     // Constructors

@@ -95,7 +95,7 @@ class subTriSurfaceMesh
 public:
 
     //- Runtime type information
-    TypeName("subTriSurfaceMesh");
+    TypeNameApi(meshTools_API, "subTriSurfaceMesh");
 
 
     // Constructors

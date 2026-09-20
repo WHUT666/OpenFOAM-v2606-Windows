@@ -86,13 +86,13 @@ class dynamicFvMesh
 public:
 
     //- Runtime type information
-    TypeName("dynamicFvMesh");
+    TypeNameApi(dynamicFvMesh_API, "dynamicFvMesh");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( dynamicFvMesh_API,
             autoPtr,
             dynamicFvMesh,
             IOobject,
@@ -100,8 +100,8 @@ public:
             (io)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( dynamicFvMesh_API,
             autoPtr,
             dynamicFvMesh,
             doInit,

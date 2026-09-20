@@ -149,7 +149,7 @@ public:
 public:
 
     //- Runtime type information
-    TypeName("parallel");
+    TypeNameApi(finiteVolume_API, "parallel");
 
 
     // Constructors

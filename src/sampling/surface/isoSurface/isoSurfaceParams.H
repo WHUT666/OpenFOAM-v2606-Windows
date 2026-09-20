@@ -129,10 +129,10 @@ public:
     // Public Data
 
         //- Names for the iso-surface algorithms
-        static const Enum<algorithmType> algorithmNames;
+        static sampling_API const Enum<algorithmType> algorithmNames;
 
         //- Names for the filtering types
-        static const Enum<filterType> filterNames;
+        static sampling_API const Enum<filterType> filterNames;
 
 
     // Static Member Functions

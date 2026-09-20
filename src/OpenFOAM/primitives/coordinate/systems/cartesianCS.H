@@ -64,13 +64,13 @@ class cartesian
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("cartesian");
+    TypeNameNoDebugApi(OpenFOAM_API, "cartesian");
 
 
     // Static Members
 
         //- Global (identity) cartesian coordinate system
-        static const cartesian null;
+        static OpenFOAM_API const cartesian null;
 
 
     // Constructors

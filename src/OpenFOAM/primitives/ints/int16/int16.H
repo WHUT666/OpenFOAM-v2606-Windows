@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_pTraits_defines_typeName in .C files that
+//  define the template statics of pTraits (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_pTraits_defines_typeName)
+#  define Foam_pTraits_typeName_API
+#else
+#  define Foam_pTraits_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_primitives_int16_H
 #define Foam_primitives_int16_H
 
@@ -111,14 +121,14 @@ public:
 
     // Static Data Members
 
-        static const char* const typeName;
-        static const char* const componentNames[];
-        static const int16_t zero;
-        static const int16_t one;
-        static const int16_t min;
-        static const int16_t max;
-        static const int16_t rootMax;
-        static const int16_t rootMin;
+        static Foam_pTraits_typeName_API const char* const typeName;
+        static Foam_pTraits_typeName_API const char* const componentNames[];
+        static Foam_pTraits_typeName_API const int16_t zero;
+        static Foam_pTraits_typeName_API const int16_t one;
+        static Foam_pTraits_typeName_API const int16_t min;
+        static Foam_pTraits_typeName_API const int16_t max;
+        static Foam_pTraits_typeName_API const int16_t rootMax;
+        static Foam_pTraits_typeName_API const int16_t rootMin;
 
 
     // Constructors

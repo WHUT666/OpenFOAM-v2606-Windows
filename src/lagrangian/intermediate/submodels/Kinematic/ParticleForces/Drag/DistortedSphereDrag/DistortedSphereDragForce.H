@@ -116,6 +116,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DistortedSphereDragForce_defines_typeName in .C files that
+//  define the template statics of DistortedSphereDragForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DistortedSphereDragForce_defines_typeName)
+#  define Foam_DistortedSphereDragForce_typeName_API
+#else
+#  define Foam_DistortedSphereDragForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef DistortedSphereDragForce_H
 #define DistortedSphereDragForce_H
 
@@ -143,7 +153,7 @@ class DistortedSphereDragForce
 public:
 
     //- Runtime type information
-    TypeName("distortedSphereDrag");
+    TypeNameApi(Foam_DistortedSphereDragForce_typeName_API, "distortedSphereDrag");
 
 
     // Constructors

@@ -73,7 +73,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cosine");
+    TypeNameApi(reactingMultiphaseSystem_API, "cosine");
 
 
     // Constructors

@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NonInertialFrameForce_defines_typeName in .C files that
+//  define the template statics of NonInertialFrameForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NonInertialFrameForce_defines_typeName)
+#  define Foam_NonInertialFrameForce_typeName_API
+#else
+#  define Foam_NonInertialFrameForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Foam_NonInertialFrameForce_H
 #define Foam_NonInertialFrameForce_H
 
@@ -87,7 +97,7 @@ class NonInertialFrameForce
 public:
 
     //- Runtime type information
-    TypeName("nonInertialFrame");
+    TypeNameApi(Foam_NonInertialFrameForce_typeName_API, "nonInertialFrame");
 
 
     // Constructors

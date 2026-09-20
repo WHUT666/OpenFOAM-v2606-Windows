@@ -186,7 +186,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("StokesV");
+    TypeNameApi(waveModels_API, "StokesV");
 
     //- Constructor
     StokesV

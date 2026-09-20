@@ -104,13 +104,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("SRFModel");
+    TypeNameApi(finiteVolume_API, "SRFModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( finiteVolume_API,
              autoPtr,
              SRFModel,
              dictionary,

@@ -47,6 +47,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_KinematicParcel_defines_typeName in .C files that
+//  define the template statics of KinematicParcel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_KinematicParcel_defines_typeName)
+#  define Foam_KinematicParcel_typeName_API
+#else
+#  define Foam_KinematicParcel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef KinematicParcel_H
 #define KinematicParcel_H
 
@@ -359,7 +369,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("KinematicParcel");
+        TypeNameApi(Foam_KinematicParcel_typeName_API, "KinematicParcel");
 
         //- String representation of properties
         AddToPropertyList

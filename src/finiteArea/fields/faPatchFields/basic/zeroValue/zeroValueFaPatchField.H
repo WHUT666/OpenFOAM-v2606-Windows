@@ -42,6 +42,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_zeroValueFaPatchField_defines_typeName in .C files that
+//  define the template statics of zeroValueFaPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_zeroValueFaPatchField_defines_typeName)
+#  define Foam_zeroValueFaPatchField_typeName_API
+#else
+#  define Foam_zeroValueFaPatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_zeroValueFaPatchField_H
 #define Foam_zeroValueFaPatchField_H
 
@@ -67,7 +77,7 @@ class zeroValueFaPatchField
 public:
 
     //- Runtime type information
-    TypeName("zeroValue");
+    TypeNameApi(Foam_zeroValueFaPatchField_typeName_API, "zeroValue");
 
 
     // Constructors

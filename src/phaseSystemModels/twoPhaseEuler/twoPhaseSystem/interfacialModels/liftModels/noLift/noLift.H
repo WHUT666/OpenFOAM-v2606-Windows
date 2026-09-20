@@ -59,7 +59,7 @@ class noLift
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "none");
 
 
     // Constructors

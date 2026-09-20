@@ -66,13 +66,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("phaseTransferModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "phaseTransferModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             phaseTransferModel,
             dictionary,
@@ -87,7 +87,7 @@ public:
     // Static Data Members
 
         //- Mass transfer rate dimensions
-        static const dimensionSet dimDmdt;
+        static reactingMultiphaseSystem_API const dimensionSet dimDmdt;
 
 
     // Constructors

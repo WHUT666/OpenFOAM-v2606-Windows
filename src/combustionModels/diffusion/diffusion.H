@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_diffusion_defines_typeName in .C files that
+//  define the template statics of diffusion (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_diffusion_defines_typeName)
+#  define Foam_diffusion_typeName_API
+#else
+#  define Foam_diffusion_typeName_API combustionModels_API
+#endif
+
 #ifndef diffusion_H
 #define diffusion_H
 
@@ -81,7 +91,7 @@ class diffusion
 public:
 
     //- Runtime type information
-    TypeName("diffusion");
+    TypeNameApi(Foam_diffusion_typeName_API, "diffusion");
 
 
     // Constructors

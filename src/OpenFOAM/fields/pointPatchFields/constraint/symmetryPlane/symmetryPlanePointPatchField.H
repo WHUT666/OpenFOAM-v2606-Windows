@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_symmetryPlanePointPatchField_defines_typeName in .C files that
+//  define the template statics of symmetryPlanePointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_symmetryPlanePointPatchField_defines_typeName)
+#  define Foam_symmetryPlanePointPatchField_typeName_API
+#else
+#  define Foam_symmetryPlanePointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_symmetryPlanePointPatchField_H
 #define Foam_symmetryPlanePointPatchField_H
 
@@ -66,7 +76,7 @@ class symmetryPlanePointPatchField
 public:
 
     //- Runtime type information
-    TypeName(symmetryPlanePointPatch::typeName_());
+    TypeNameApi(Foam_symmetryPlanePointPatchField_typeName_API, symmetryPlanePointPatch::typeName_());
 
 
     // Constructors

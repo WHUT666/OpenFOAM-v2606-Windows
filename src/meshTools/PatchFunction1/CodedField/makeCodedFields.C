@@ -36,6 +36,13 @@ namespace Foam
     makePatchFunction1Type(CodedField, sphericalTensor);
     makePatchFunction1Type(CodedField, symmTensor);
     makePatchFunction1Type(CodedField, tensor);
+
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::CodedField<Foam::scalar>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::CodedField<Foam::vector>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::CodedField<Foam::sphericalTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::CodedField<Foam::symmTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::CodedField<Foam::tensor>);
+
 }
 
 

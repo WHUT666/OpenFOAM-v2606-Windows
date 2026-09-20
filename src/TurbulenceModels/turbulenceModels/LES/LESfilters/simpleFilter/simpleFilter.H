@@ -67,7 +67,7 @@ class simpleFilter
 public:
 
     //- Runtime type information
-    TypeName("simple");
+    TypeNameApi(turbulenceModels_API, "simple");
 
 
     // Constructors

@@ -80,7 +80,7 @@ class solidAbsorption
 public:
 
     //- Runtime type information
-    TypeName("solidAbsorption");
+    TypeNameApi(radiationModels_API, "solidAbsorption");
 
 
     // Constructors

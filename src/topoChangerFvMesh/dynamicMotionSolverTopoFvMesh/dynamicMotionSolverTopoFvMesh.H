@@ -79,7 +79,7 @@ class dynamicMotionSolverTopoFvMesh
 public:
 
     //- Runtime type information
-    TypeName("dynamicMotionSolverTopoFvMesh");
+    TypeNameApi(topoChangerFvMesh_API, "dynamicMotionSolverTopoFvMesh");
 
 
     // Constructors

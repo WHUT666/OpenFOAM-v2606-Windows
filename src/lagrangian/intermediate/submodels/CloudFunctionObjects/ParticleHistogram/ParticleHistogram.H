@@ -97,6 +97,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ParticleHistogram_defines_typeName in .C files that
+//  define the template statics of ParticleHistogram (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ParticleHistogram_defines_typeName)
+#  define Foam_ParticleHistogram_typeName_API
+#else
+#  define Foam_ParticleHistogram_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Foam_ParticleHistogram_H
 #define Foam_ParticleHistogram_H
 
@@ -162,7 +172,7 @@ class ParticleHistogram
 public:
 
     //- Runtime type information
-    TypeName("particleHistogram");
+    TypeNameApi(Foam_ParticleHistogram_typeName_API, "particleHistogram");
 
 
     // Constructors

@@ -86,7 +86,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fvMeshFunctionObject");
+    TypeNameApi(finiteVolume_API, "fvMeshFunctionObject");
 
 
     // Constructors

@@ -61,7 +61,7 @@ class mapDistributePolyMesh;
                            Class topoSet Declaration
 \*---------------------------------------------------------------------------*/
 
-class topoSet
+class meshTools_API topoSet
 :
     public regIOobject,
     public labelHashSet

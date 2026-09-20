@@ -31,6 +31,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_VariableHardSphere_defines_typeName in .C files that
+//  define the template statics of VariableHardSphere (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_VariableHardSphere_defines_typeName)
+#  define Foam_VariableHardSphere_typeName_API
+#else
+#  define Foam_VariableHardSphere_typeName_API DSMC_API
+#endif
+
 #ifndef VariableHardSphere_H
 #define VariableHardSphere_H
 
@@ -58,7 +68,7 @@ class VariableHardSphere
 public:
 
     //- Runtime type information
-    TypeName("VariableHardSphere");
+    TypeNameApi(Foam_VariableHardSphere_typeName_API, "VariableHardSphere");
 
 
     // Constructors

@@ -102,7 +102,7 @@ class tetIndices
 
         //- Current number of bad tet warnings.
         //- Warnings stop when this reaches the maximum number.
-        static int nWarnings_;
+        static OpenFOAM_API int nWarnings_;
 
 
 public:

@@ -99,7 +99,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("limitVelocity");
+    TypeNameApi(faOptions_API, "limitVelocity");
 
 
     // Constructors

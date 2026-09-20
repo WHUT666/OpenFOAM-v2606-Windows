@@ -244,7 +244,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("thermoSingleLayer");
+    TypeNameApi(surfaceFilmModels_API, "thermoSingleLayer");
 
 
     // Constructors

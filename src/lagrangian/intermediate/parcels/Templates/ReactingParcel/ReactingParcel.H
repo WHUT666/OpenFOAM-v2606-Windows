@@ -41,6 +41,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ReactingParcel_defines_typeName in .C files that
+//  define the template statics of ReactingParcel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ReactingParcel_defines_typeName)
+#  define Foam_ReactingParcel_typeName_API
+#else
+#  define Foam_ReactingParcel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ReactingParcel_H
 #define ReactingParcel_H
 
@@ -255,7 +265,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("ReactingParcel");
+        TypeNameApi(Foam_ReactingParcel_typeName_API, "ReactingParcel");
 
         //- String representation of properties
         AddToPropertyList

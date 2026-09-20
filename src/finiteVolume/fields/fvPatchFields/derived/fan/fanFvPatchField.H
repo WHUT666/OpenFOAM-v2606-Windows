@@ -117,6 +117,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fanFvPatchField_defines_typeName in .C files that
+//  define the template statics of fanFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fanFvPatchField_defines_typeName)
+#  define Foam_fanFvPatchField_typeName_API
+#else
+#  define Foam_fanFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_fanFvPatchField_H
 #define Foam_fanFvPatchField_H
 
@@ -155,7 +165,7 @@ public:
         };
 
         //- Names for the operating modes
-        static const Enum<operatingMode> operatingModeNames_;
+        static Foam_fanFvPatchField_typeName_API const Enum<operatingMode> operatingModeNames_;
 
 
 private:
@@ -187,7 +197,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("fan");
+    TypeNameApi(Foam_fanFvPatchField_typeName_API, "fan");
 
 
     // Constructors

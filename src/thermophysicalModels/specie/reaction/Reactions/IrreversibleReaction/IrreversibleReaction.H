@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_IrreversibleReaction_defines_typeName in .C files that
+//  define the template statics of IrreversibleReaction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_IrreversibleReaction_defines_typeName)
+#  define Foam_IrreversibleReaction_typeName_API
+#else
+#  define Foam_IrreversibleReaction_typeName_API specie_API
+#endif
+
 #ifndef IrreversibleReaction_H
 #define IrreversibleReaction_H
 
@@ -85,7 +95,7 @@ class IrreversibleReaction
 public:
 
     //- Runtime type information
-    TypeName("irreversible");
+    TypeNameApi(Foam_IrreversibleReaction_typeName_API, "irreversible");
 
 
     // Constructors

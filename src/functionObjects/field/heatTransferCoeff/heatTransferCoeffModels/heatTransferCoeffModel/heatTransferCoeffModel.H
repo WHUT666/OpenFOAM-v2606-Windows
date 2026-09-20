@@ -90,13 +90,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("heatTransferCoeffModel");
+    TypeNameApi(fieldFunctionObjects_API, "heatTransferCoeffModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fieldFunctionObjects_API,
             autoPtr,
             heatTransferCoeffModel,
             dictionary,

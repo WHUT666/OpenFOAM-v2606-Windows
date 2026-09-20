@@ -118,6 +118,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_chemPointISAT_defines_typeName in .C files that
+//  define the template statics of chemPointISAT (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_chemPointISAT_defines_typeName)
+#  define Foam_chemPointISAT_typeName_API
+#else
+#  define Foam_chemPointISAT_typeName_API chemistryModel_API
+#endif
+
 #ifndef chemPointISAT_H
 #define chemPointISAT_H
 
@@ -174,7 +184,7 @@ class chemPointISAT
         label nGrowth_;
 
         //- Tolerance for the Ellipsoid of accuracy
-        static scalar tolerance_;
+        static Foam_chemPointISAT_typeName_API scalar tolerance_;
 
         //- Number of active species stored in the chemPoint
         label nActiveSpecies_;

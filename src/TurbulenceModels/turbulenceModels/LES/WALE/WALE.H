@@ -59,6 +59,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_WALE_defines_typeName in .C files that
+//  define the template statics of WALE (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_WALE_defines_typeName)
+#  define Foam_WALE_typeName_API
+#else
+#  define Foam_WALE_typeName_API turbulenceModels_API
+#endif
+
 #ifndef WALE_H
 #define WALE_H
 
@@ -120,7 +130,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("WALE");
+    TypeNameApi(Foam_WALE_typeName_API, "WALE");
 
 
     // Constructors

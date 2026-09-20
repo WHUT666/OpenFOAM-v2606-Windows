@@ -89,7 +89,7 @@ class linearTsub
 public:
 
     //- Runtime type information
-    TypeName("linearTsub");
+    TypeNameApi(reactingMultiphaseSystem_API, "linearTsub");
 
 
     // Constructors

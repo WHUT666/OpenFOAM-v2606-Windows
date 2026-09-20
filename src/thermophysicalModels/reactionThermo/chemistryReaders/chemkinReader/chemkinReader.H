@@ -83,7 +83,7 @@ private:
 
     // Private data
 
-        static int yyBufSize;
+        static reactionThermophysicalModels_API int yyBufSize;
         label lineNo_;
 
         //- Table of reaction type keywords
@@ -122,7 +122,7 @@ private:
             unknownReactionType
         };
 
-        static const char* reactionTypeNames[4];
+        static reactionThermophysicalModels_API const char* reactionTypeNames[4];
 
         enum reactionRateType
         {
@@ -136,7 +136,7 @@ private:
             unknownReactionRateType
         };
 
-        static const char* reactionRateTypeNames[8];
+        static reactionThermophysicalModels_API const char* reactionRateTypeNames[8];
 
         enum fallOffFunctionType
         {
@@ -146,7 +146,7 @@ private:
             unknownFallOffFunctionType
         };
 
-        static const char* fallOffFunctionNames[4];
+        static reactionThermophysicalModels_API const char* fallOffFunctionNames[4];
 
 
         void initReactionKeywordTable();
@@ -293,7 +293,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("chemkinReader");
+    TypeNameApi(reactionThermophysicalModels_API, "chemkinReader");
 
 
     // Constructors

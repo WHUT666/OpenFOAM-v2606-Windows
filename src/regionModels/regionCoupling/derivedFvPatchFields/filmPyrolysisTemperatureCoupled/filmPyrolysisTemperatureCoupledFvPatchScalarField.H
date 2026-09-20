@@ -91,7 +91,7 @@ class filmPyrolysisTemperatureCoupledFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("filmPyrolysisTemperatureCoupled");
+    TypeNameApi(regionCoupling_API, "filmPyrolysisTemperatureCoupled");
 
 
     // Constructors

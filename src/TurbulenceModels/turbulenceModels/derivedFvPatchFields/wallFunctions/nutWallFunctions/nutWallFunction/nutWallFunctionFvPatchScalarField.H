@@ -123,7 +123,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nutWallFunction");
+    TypeNameApi(turbulenceModels_API, "nutWallFunction");
 
 
     // Constructors

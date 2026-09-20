@@ -75,7 +75,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("smoothSolver");
+    TypeNameApi(OpenFOAM_API, "smoothSolver");
 
 
     // Constructors

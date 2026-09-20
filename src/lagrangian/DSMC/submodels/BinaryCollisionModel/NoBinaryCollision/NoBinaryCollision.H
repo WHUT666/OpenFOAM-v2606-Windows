@@ -31,6 +31,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoBinaryCollision_defines_typeName in .C files that
+//  define the template statics of NoBinaryCollision (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoBinaryCollision_defines_typeName)
+#  define Foam_NoBinaryCollision_typeName_API
+#else
+#  define Foam_NoBinaryCollision_typeName_API DSMC_API
+#endif
+
 #ifndef NoBinaryCollision_H
 #define NoBinaryCollision_H
 
@@ -52,7 +62,7 @@ class NoBinaryCollision
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoBinaryCollision_typeName_API, "none");
 
 
     // Constructors

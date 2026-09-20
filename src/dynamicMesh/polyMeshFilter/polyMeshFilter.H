@@ -200,7 +200,7 @@ class polyMeshFilter
 public:
 
     //- Runtime type information
-    ClassName("polyMeshFilter");
+    ClassNameApi(dynamicMesh_API, "polyMeshFilter");
 
 
     // Constructors

@@ -87,7 +87,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("BFGS");
+    TypeNameApi(adjointOptimisation_API, "BFGS");
 
 
     // Constructors

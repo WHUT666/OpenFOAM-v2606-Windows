@@ -57,7 +57,7 @@ class emptyPointPatch
 public:
 
     //- Runtime type information
-    TypeName(emptyPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, emptyPolyPatch::typeName_());
 
 
     // Constructors

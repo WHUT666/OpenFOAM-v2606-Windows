@@ -163,7 +163,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("heatTransferCoeff");
+    TypeNameApi(fieldFunctionObjects_API, "heatTransferCoeff");
 
 
     // Constructors

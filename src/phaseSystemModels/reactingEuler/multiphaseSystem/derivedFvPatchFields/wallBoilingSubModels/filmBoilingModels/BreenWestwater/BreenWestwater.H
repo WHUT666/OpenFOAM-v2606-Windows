@@ -107,7 +107,7 @@ class BreenWestwater
 public:
 
     //- Runtime type information
-    TypeName("BreenWestwater");
+    TypeNameApi(reactingMultiphaseSystem_API, "BreenWestwater");
 
 
     // Constructors

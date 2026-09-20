@@ -107,7 +107,7 @@ class matchedFlowRateOutletVelocityFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("matchedFlowRateOutletVelocity");
+   TypeNameApi(finiteVolume_API, "matchedFlowRateOutletVelocity");
 
 
    // Constructors

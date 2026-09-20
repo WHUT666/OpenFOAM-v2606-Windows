@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fusedGaussDivScheme_defines_typeName in .C files that
+//  define the template statics of fusedGaussDivScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fusedGaussDivScheme_defines_typeName)
+#  define Foam_fusedGaussDivScheme_typeName_API
+#else
+#  define Foam_fusedGaussDivScheme_typeName_API fusedFiniteVolume_API
+#endif
+
 #ifndef fusedGaussDivScheme_H
 #define fusedGaussDivScheme_H
 
@@ -73,7 +83,7 @@ class fusedGaussDivScheme
 public:
 
     //- Runtime type information
-    TypeName("fusedGauss");
+    TypeNameApi(Foam_fusedGaussDivScheme_typeName_API, "fusedGauss");
 
 
     // Constructors

@@ -52,22 +52,22 @@ namespace physicoChemical
     constexpr const char* const group = "physicoChemical";
 
     //- Universal gas constant: default SI units: [J/mol/K]
-    extern const dimensionedScalar R;
+    extern OpenFOAM_API const dimensionedScalar R;
 
     //- Faraday constant: default SI units: [C/mol]
-    extern const dimensionedScalar F;
+    extern OpenFOAM_API const dimensionedScalar F;
 
     //- Stefan-Boltzmann constant: default SI units: [W/m2/K4]
-    extern const dimensionedScalar sigma;
+    extern OpenFOAM_API const dimensionedScalar sigma;
 
     //- Wien displacement law constant: default SI units: [m.K]
-    extern const dimensionedScalar b;
+    extern OpenFOAM_API const dimensionedScalar b;
 
     //- First radiation constant: default SI units: [W/m2]
-    extern const dimensionedScalar c1;
+    extern OpenFOAM_API const dimensionedScalar c1;
 
     //- Second radiation constant: default SI units: [m.K]
-    extern const dimensionedScalar c2;
+    extern OpenFOAM_API const dimensionedScalar c2;
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

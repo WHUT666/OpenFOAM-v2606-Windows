@@ -54,8 +54,7 @@ namespace GZSTREAM_NAMESPACE {
 //    class gzstreambuf
 // ----------------------------------------------------------------------------
 
-class gzstreambuf
-   : public std::streambuf
+class OpenFOAM_API gzstreambuf : public std::streambuf
 {
 private:
 
@@ -110,8 +109,7 @@ public:
 //    class gzstreambase
 // ----------------------------------------------------------------------------
 
-class gzstreambase
-   : virtual public std::ios
+class OpenFOAM_API gzstreambase : virtual public std::ios
 {
 protected:
 
@@ -150,8 +148,7 @@ public:
 //    class igzstream
 // ----------------------------------------------------------------------------
 
-class igzstream
-   : public std::istream
+class OpenFOAM_API igzstream : public std::istream
    , public gzstreambase
 {
 public:
@@ -193,8 +190,7 @@ public:
 //    class ogzstream
 // ----------------------------------------------------------------------------
 
-class ogzstream
-   : public gzstreambase
+class OpenFOAM_API ogzstream : public gzstreambase
    , public std::ostream
 {
 public:

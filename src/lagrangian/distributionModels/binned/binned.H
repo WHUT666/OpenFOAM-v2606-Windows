@@ -136,9 +136,9 @@ class binned
 public:
 
     //- Runtime type information
-    TypeName("binned");
+    TypeNameApi(distributionModels_API, "binned");
 
-    static const char* header;
+    static distributionModels_API const char* header;
 
 
     // Constructors

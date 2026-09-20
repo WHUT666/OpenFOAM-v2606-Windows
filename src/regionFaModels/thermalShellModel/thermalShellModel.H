@@ -127,13 +127,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("thermalShellModel");
+    TypeNameApi(regionFaModels_API, "thermalShellModel");
 
 
     // Declare runtime constructor selection tables
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( regionFaModels_API,
              autoPtr,
              thermalShellModel,
              dictionary,

@@ -75,7 +75,7 @@ class randomCoalescence
 public:
 
     //- Runtime type information
-    TypeName("randomCoalescence");
+    TypeNameApi(reactingTwoPhaseSystem_API, "randomCoalescence");
 
     // Constructors
 

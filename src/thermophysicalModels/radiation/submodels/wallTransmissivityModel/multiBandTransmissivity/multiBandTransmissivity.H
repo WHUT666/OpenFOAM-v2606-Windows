@@ -93,7 +93,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("multiBandTransmissivity");
+    TypeNameApi(radiationModels_API, "multiBandTransmissivity");
 
 
     // Constructors

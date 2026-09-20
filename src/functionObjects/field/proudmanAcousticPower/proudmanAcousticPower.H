@@ -176,7 +176,7 @@ class proudmanAcousticPower
 public:
 
     //- Runtime type information
-    TypeName("proudmanAcousticPower");
+    TypeNameApi(fieldFunctionObjects_API, "proudmanAcousticPower");
 
 
     // Constructors

@@ -147,10 +147,10 @@ public:
     // Static Data
 
         //- Names for the output format types
-        static const Enum<outputFormatType> formatNames;
+        static lumpedPointMotion_API const Enum<outputFormatType> formatNames;
 
         //- Names for the scaling types
-        static const Enum<scalingType> scalingNames;
+        static lumpedPointMotion_API const Enum<scalingType> scalingNames;
 
 
 private:
@@ -235,10 +235,10 @@ public:
     // Static Data Members
 
         //- Debug switch
-        static int debug;
+        static lumpedPointMotion_API int debug;
 
         //- The canonical name ("lumpedPointMovement") for the dictionary
-        static const word canonicalName;
+        static lumpedPointMotion_API const word canonicalName;
 
 
     // Constructors

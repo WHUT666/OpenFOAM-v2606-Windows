@@ -200,7 +200,7 @@ class medialAxisMeshMover
 public:
 
     //- Runtime type information
-    TypeName("displacementMedialAxis");
+    TypeNameApi(snappyHexMesh_API, "displacementMedialAxis");
 
 
     // Constructors

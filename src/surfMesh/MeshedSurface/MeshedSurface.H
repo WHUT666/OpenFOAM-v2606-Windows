@@ -52,6 +52,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MeshedSurface_defines_typeName in .C files that
+//  define the template statics of MeshedSurface (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MeshedSurface_defines_typeName)
+#  define Foam_MeshedSurface_typeName_API
+#else
+#  define Foam_MeshedSurface_typeName_API surfMesh_API
+#endif
+
 #ifndef Foam_MeshedSurface_H
 #define Foam_MeshedSurface_H
 
@@ -210,7 +220,7 @@ public:
 
 
     //- Declare type-name (with debug switch)
-    ClassName("MeshedSurface");
+    ClassNameApi(Foam_MeshedSurface_typeName_API, "MeshedSurface");
 
 
     // Static Functions
@@ -327,8 +337,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_MeshedSurface_typeName_API,
             autoPtr,
             MeshedSurface,
             fileExtension,
@@ -362,8 +372,9 @@ public:
 
     // Member Function Selectors
 
-        declareMemberFunctionSelectionTable
+        declareMemberFunctionSelectionTableApi
         (
+            surfMesh_API,
             void,
             UnsortedMeshedSurface,
             write,

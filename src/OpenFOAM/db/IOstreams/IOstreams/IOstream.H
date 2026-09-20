@@ -74,7 +74,7 @@ namespace Foam
 {
 
 // Forward Declarations
-class IOstream;
+class OpenFOAM_API IOstream;
 
 template<>
 Ostream& operator<<(Ostream&, const InfoProxy<IOstream>&);
@@ -84,7 +84,7 @@ Ostream& operator<<(Ostream&, const InfoProxy<IOstream>&);
                            Class IOstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class IOstream
+class OpenFOAM_API IOstream
 :
     public IOstreamOption
 {

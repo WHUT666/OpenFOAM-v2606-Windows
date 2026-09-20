@@ -233,7 +233,7 @@ class buoyancyTurbSource
 public:
 
     //- Runtime type information
-    TypeName("buoyancyTurbSource");
+    TypeNameApi(fvOptions_API, "buoyancyTurbSource");
 
 
     // Constructors

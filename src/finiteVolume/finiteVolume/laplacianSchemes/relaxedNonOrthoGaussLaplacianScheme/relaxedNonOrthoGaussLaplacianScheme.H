@@ -54,6 +54,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_relaxedNonOrthoGaussLaplacianScheme_defines_typeName in .C files that
+//  define the template statics of relaxedNonOrthoGaussLaplacianScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_relaxedNonOrthoGaussLaplacianScheme_defines_typeName)
+#  define Foam_relaxedNonOrthoGaussLaplacianScheme_typeName_API
+#else
+#  define Foam_relaxedNonOrthoGaussLaplacianScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef relaxedNonOrthoGaussLaplacianScheme_H
 #define relaxedNonOrthoGaussLaplacianScheme_H
 
@@ -99,7 +109,7 @@ class relaxedNonOrthoGaussLaplacianScheme
 public:
 
     //- Runtime type information
-    TypeName("relaxedNonOrthoGauss");
+    TypeNameApi(Foam_relaxedNonOrthoGaussLaplacianScheme_typeName_API, "relaxedNonOrthoGauss");
 
 
     // Constructors

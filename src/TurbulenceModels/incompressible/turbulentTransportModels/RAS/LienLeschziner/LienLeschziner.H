@@ -122,7 +122,7 @@ protected:
 
 public:
 
-    TypeName("LienLeschziner");
+    TypeNameApi(incompressibleTurbulenceModels_API, "LienLeschziner");
 
     // Constructors
 

@@ -57,7 +57,7 @@ class nullWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("none");
+    TypeNameNoDebugApi(surfMesh_API, "none");
 
 
     // Constructors

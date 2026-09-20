@@ -68,7 +68,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("linear");
+    TypeNameApi(adjointOptimisation_API, "linear");
 
 
     // Constructors

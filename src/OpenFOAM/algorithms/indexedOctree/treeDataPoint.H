@@ -128,7 +128,7 @@ public:
 
 
     // Declare name of the class
-    ClassNameNoDebug("treeDataPoint");
+    ClassNameNoDebugApi(OpenFOAM_API, "treeDataPoint");
 
 
     // Constructors (non-caching)

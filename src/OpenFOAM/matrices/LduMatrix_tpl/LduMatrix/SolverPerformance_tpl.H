@@ -39,6 +39,12 @@ SourceFiles
 #ifndef SolverPerformance_H
 #define SolverPerformance_H
 
+#if defined(Foam_SolverPerformance_defines_typeName)
+#  define Foam_SolverPerformance_typeName_API
+#else
+#  define Foam_SolverPerformance_typeName_API OpenFOAM_API
+#endif
+
 #include "word.H"
 #include "FixedList.H"
 
@@ -100,16 +106,16 @@ public:
     // Static Data
 
         // Declare name of the class and its debug switch
-        ClassName("SolverPerformance");
+        ClassNameApi(Foam_SolverPerformance_typeName_API, "SolverPerformance");
 
         //- Large Type for the use in solvers
-        static const scalar great_;
+        static Foam_SolverPerformance_typeName_API const scalar great_;
 
         //- Small Type for the use in solvers
-        static const scalar small_;
+        static Foam_SolverPerformance_typeName_API const scalar small_;
 
         //- Very small Type for the use in solvers
-        static const scalar vsmall_;
+        static Foam_SolverPerformance_typeName_API const scalar vsmall_;
 
 
     // Constructors

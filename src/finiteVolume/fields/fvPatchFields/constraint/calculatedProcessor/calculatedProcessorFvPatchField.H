@@ -44,6 +44,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_calculatedProcessorFvPatchField_defines_typeName in .C files that
+//  define the template statics of calculatedProcessorFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_calculatedProcessorFvPatchField_defines_typeName)
+#  define Foam_calculatedProcessorFvPatchField_typeName_API
+#else
+#  define Foam_calculatedProcessorFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_calculatedProcessorFvPatchField_H
 #define Foam_calculatedProcessorFvPatchField_H
 
@@ -116,7 +126,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("calculatedProcessor");
+    TypeNameApi(Foam_calculatedProcessorFvPatchField_typeName_API, "calculatedProcessor");
 
 
     // Constructors

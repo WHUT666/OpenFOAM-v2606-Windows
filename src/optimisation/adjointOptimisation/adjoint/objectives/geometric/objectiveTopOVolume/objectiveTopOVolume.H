@@ -70,7 +70,7 @@ class objectiveTopOVolume
 public:
 
     //- Runtime type information
-    TypeName("topOVolume");
+    TypeNameApi(adjointOptimisation_API, "topOVolume");
 
 
     // Constructors

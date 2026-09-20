@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_openFoamTableReader_defines_typeName in .C files that
+//  define the template statics of openFoamTableReader (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_openFoamTableReader_defines_typeName)
+#  define Foam_openFoamTableReader_typeName_API
+#else
+#  define Foam_openFoamTableReader_typeName_API OpenFOAM_API
+#endif
+
 #ifndef openFoamTableReader_H
 #define openFoamTableReader_H
 
@@ -57,7 +67,7 @@ class openFoamTableReader
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("openFoam");
+    TypeNameApi(Foam_openFoamTableReader_typeName_API, "openFoam");
 
 
     // Generated Methods

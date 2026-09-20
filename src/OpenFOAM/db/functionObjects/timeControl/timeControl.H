@@ -82,7 +82,7 @@ public:
 private:
 
         //- The selection names for timeControls enumerations
-        static const Enum<timeControls> controlNames_;
+        static OpenFOAM_API const Enum<timeControls> controlNames_;
 
 
     // Private Data

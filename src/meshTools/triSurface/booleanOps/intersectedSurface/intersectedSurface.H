@@ -87,10 +87,10 @@ class intersectedSurface
 {
 public:
 
-        static const label UNVISITED;
-        static const label STARTTOEND;
-        static const label ENDTOSTART;
-        static const label BOTH;
+        static meshTools_API const label UNVISITED;
+        static meshTools_API const label STARTTOEND;
+        static meshTools_API const label ENDTOSTART;
+        static meshTools_API const label BOTH;
 
 private:
 
@@ -243,7 +243,7 @@ private:
 
 public:
 
-    ClassName("intersectedSurface");
+    ClassNameApi(meshTools_API, "intersectedSurface");
 
 
     // Constructors

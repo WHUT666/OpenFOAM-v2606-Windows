@@ -57,7 +57,7 @@ class nonuniformTransformCyclicFvPatch
 public:
 
     //- Runtime type information
-    TypeName(nonuniformTransformCyclicPolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, nonuniformTransformCyclicPolyPatch::typeName_());
 
 
     // Constructors

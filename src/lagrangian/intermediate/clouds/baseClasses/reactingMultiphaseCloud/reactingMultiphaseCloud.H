@@ -53,7 +53,7 @@ class reactingMultiphaseCloud
 public:
 
     //- Runtime type information
-    TypeName("reactingMultiphaseCloud");
+    TypeNameApi(lagrangianIntermediate_API, "reactingMultiphaseCloud");
 
 
     // Constructors

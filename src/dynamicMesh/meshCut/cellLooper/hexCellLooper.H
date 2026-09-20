@@ -108,7 +108,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("hexCellLooper");
+    TypeNameApi(dynamicMesh_API, "hexCellLooper");
 
 
     // Constructors

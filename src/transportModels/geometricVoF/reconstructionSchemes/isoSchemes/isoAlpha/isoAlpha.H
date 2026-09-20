@@ -110,7 +110,7 @@ class isoAlpha
 public:
 
     //- Runtime type information
-    TypeName("isoAlpha");
+    TypeNameApi(geometricVoF_API, "isoAlpha");
 
     //- Construct from components
     isoAlpha

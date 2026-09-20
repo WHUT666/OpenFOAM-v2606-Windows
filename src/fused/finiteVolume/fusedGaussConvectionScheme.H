@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fusedGaussConvectionScheme_defines_typeName in .C files that
+//  define the template statics of fusedGaussConvectionScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fusedGaussConvectionScheme_defines_typeName)
+#  define Foam_fusedGaussConvectionScheme_typeName_API
+#else
+#  define Foam_fusedGaussConvectionScheme_typeName_API fusedFiniteVolume_API
+#endif
+
 #ifndef fusedGaussConvectionScheme_H
 #define fusedGaussConvectionScheme_H
 
@@ -78,7 +88,7 @@ class fusedGaussConvectionScheme
 public:
 
     //- Runtime type information
-    TypeName("fusedGauss");
+    TypeNameApi(Foam_fusedGaussConvectionScheme_typeName_API, "fusedGauss");
 
 
     // Constructors

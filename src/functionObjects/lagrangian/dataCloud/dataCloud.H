@@ -215,7 +215,7 @@ class dataCloud
 public:
 
     //- Runtime type information
-    TypeName("dataCloud");
+    TypeNameApi(lagrangianFunctionObjects_API, "dataCloud");
 
 
     // Constructors

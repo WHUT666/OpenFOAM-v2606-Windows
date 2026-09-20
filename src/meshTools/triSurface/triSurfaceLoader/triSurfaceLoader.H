@@ -74,7 +74,7 @@ public:
     };
 
     //- The loading enumeration names
-    static const Enum<loadingOption> loadingOptionNames;
+    static meshTools_API const Enum<loadingOption> loadingOptionNames;
 
 
 private:

@@ -135,7 +135,7 @@ class turbulentMixingLengthDissipationRateInletFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("turbulentMixingLengthDissipationRateInlet");
+    TypeNameApi(turbulenceModels_API, "turbulentMixingLengthDissipationRateInlet");
 
 
     // Constructors

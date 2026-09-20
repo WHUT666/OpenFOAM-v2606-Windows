@@ -63,7 +63,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("removeFace");
+        TypeNameApi(meshTools_API, "removeFace");
 
 
     // Constructors

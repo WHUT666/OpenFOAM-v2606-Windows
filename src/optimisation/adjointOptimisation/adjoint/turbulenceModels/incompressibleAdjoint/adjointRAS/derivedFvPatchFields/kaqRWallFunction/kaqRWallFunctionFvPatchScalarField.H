@@ -61,7 +61,7 @@ class kaqRWallFunctionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("kaqRWallFunction");
+    TypeNameApi(adjointOptimisation_API, "kaqRWallFunction");
 
 
     // Constructors

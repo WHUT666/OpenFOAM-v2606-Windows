@@ -65,6 +65,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FSD_defines_typeName in .C files that
+//  define the template statics of FSD (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FSD_defines_typeName)
+#  define Foam_FSD_typeName_API
+#else
+#  define Foam_FSD_typeName_API combustionModels_API
+#endif
+
 #ifndef FSD_H
 #define FSD_H
 
@@ -135,7 +145,7 @@ class FSD
 public:
 
     //- Runtime type information
-    TypeName("FSD");
+    TypeNameApi(Foam_FSD_typeName_API, "FSD");
 
 
     // Constructors

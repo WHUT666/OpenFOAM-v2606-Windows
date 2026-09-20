@@ -74,7 +74,7 @@ public:
         };
 
         //- Corresponding word representations for phase type enumerations
-        static const Enum<phaseType> phaseTypeNames;
+        static lagrangianIntermediate_API const Enum<phaseType> phaseTypeNames;
 
 
 private:

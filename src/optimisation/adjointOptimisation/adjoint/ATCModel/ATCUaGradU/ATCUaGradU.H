@@ -70,7 +70,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("UaGradU");
+    TypeNameApi(adjointOptimisation_API, "UaGradU");
 
 
     // Constructors

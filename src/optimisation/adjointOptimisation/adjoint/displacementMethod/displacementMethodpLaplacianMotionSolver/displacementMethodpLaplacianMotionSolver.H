@@ -85,7 +85,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("pLaplacianMotionSolver");
+    TypeNameApi(adjointOptimisation_API, "pLaplacianMotionSolver");
 
 
     // Constructors

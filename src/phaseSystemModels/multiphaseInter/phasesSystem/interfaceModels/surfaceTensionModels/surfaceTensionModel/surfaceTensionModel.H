@@ -70,12 +70,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceTensionModel");
+    TypeNameApi(incompressibleMultiphaseSystems_API, "surfaceTensionModel");
 
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( incompressibleMultiphaseSystems_API,
         autoPtr,
         surfaceTensionModel,
         dictionary,

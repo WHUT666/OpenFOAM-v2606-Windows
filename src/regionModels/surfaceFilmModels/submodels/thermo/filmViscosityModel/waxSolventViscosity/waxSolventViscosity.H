@@ -88,7 +88,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("waxSolvent");
+    TypeNameApi(surfaceFilmModels_API, "waxSolvent");
 
 
     // Constructors

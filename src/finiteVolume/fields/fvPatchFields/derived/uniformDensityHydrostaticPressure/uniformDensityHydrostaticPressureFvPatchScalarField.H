@@ -107,7 +107,7 @@ class uniformDensityHydrostaticPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("uniformDensityHydrostaticPressure");
+    TypeNameApi(finiteVolume_API, "uniformDensityHydrostaticPressure");
 
 
     // Constructors

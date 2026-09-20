@@ -61,7 +61,7 @@ class mixedUnburntEnthalpyFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("mixedUnburntEnthalpy");
+    TypeNameApi(reactionThermophysicalModels_API, "mixedUnburntEnthalpy");
 
 
     // Constructors

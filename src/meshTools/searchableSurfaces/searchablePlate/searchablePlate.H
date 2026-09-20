@@ -120,7 +120,7 @@ class searchablePlate
 public:
 
     //- Runtime type information
-    TypeName("searchablePlate");
+    TypeNameApi(meshTools_API, "searchablePlate");
 
 
     // Constructors

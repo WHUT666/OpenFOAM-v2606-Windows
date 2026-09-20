@@ -61,13 +61,13 @@ class baseIOdictionary
 {
     // Private Data
 
-        static bool writeDictionaries;
+        static OpenFOAM_API bool writeDictionaries;
 
 
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("dictionary");
+    TypeNameApi(OpenFOAM_API, "dictionary");
 
 
     // Generated Methods

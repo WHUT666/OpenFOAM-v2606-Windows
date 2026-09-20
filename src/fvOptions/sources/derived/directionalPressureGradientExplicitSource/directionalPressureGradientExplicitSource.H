@@ -159,7 +159,7 @@ private:
 
     // Private Data
 
-        static const Enum<pressureDropModel> pressureDropModelNames_;
+        static fvOptions_API const Enum<pressureDropModel> pressureDropModelNames_;
 
         //- Pressure drop model
         pressureDropModel model_;
@@ -228,7 +228,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("directionalPressureGradientExplicitSource");
+    TypeNameApi(fvOptions_API, "directionalPressureGradientExplicitSource");
 
 
     // Constructors

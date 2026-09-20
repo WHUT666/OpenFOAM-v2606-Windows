@@ -81,7 +81,7 @@ private:
 
 public:
 
-    TypeName("objectiveManager");
+    TypeNameApi(adjointOptimisation_API, "objectiveManager");
 
     // Constructors
 

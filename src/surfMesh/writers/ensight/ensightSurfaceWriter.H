@@ -132,7 +132,7 @@ class ensightWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("ensight");
+    TypeNameNoDebugApi(surfMesh_API, "ensight");
 
 
     // Constructors

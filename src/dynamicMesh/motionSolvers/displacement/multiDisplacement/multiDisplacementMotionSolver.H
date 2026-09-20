@@ -117,7 +117,7 @@ class multiDisplacementMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("multiDisplacement");
+    TypeNameApi(dynamicMesh_API, "multiDisplacement");
 
 
     // Constructors

@@ -95,7 +95,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("volumetricBSplinesMotionSolver");
+    TypeNameApi(adjointOptimisation_API, "volumetricBSplinesMotionSolver");
 
 
     // Constructors

@@ -74,7 +74,7 @@ class fixedFluxExtrapolatedPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("fixedFluxExtrapolatedPressure");
+    TypeNameApi(finiteVolume_API, "fixedFluxExtrapolatedPressure");
 
 
     // Constructors

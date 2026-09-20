@@ -69,7 +69,7 @@ class timeVaryingAlphaContactAngleFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("timeVaryingAlphaContactAngle");
+    TypeNameApi(twoPhaseProperties_API, "timeVaryingAlphaContactAngle");
 
 
     // Constructors

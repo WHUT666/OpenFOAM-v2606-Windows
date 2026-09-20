@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_steadyStateD2dt2Scheme_defines_typeName in .C files that
+//  define the template statics of steadyStateD2dt2Scheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_steadyStateD2dt2Scheme_defines_typeName)
+#  define Foam_steadyStateD2dt2Scheme_typeName_API
+#else
+#  define Foam_steadyStateD2dt2Scheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef steadyStateD2dt2Scheme_H
 #define steadyStateD2dt2Scheme_H
 
@@ -70,7 +80,7 @@ class steadyStateD2dt2Scheme
 public:
 
     //- Runtime type information
-    TypeName("steadyState");
+    TypeNameApi(Foam_steadyStateD2dt2Scheme_typeName_API, "steadyState");
 
 
     // Constructors

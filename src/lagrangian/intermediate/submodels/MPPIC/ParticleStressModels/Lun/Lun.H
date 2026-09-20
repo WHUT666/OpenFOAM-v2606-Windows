@@ -88,7 +88,7 @@ class Lun
 public:
 
     //- Runtime type information
-    TypeName("Lun");
+    TypeNameApi(lagrangianIntermediate_API, "Lun");
 
 
     //- Constructors

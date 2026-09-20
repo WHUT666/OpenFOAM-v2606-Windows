@@ -79,7 +79,7 @@ class anisotropicFilter
 public:
 
     //- Runtime type information
-    TypeName("anisotropic");
+    TypeNameApi(turbulenceModels_API, "anisotropic");
 
     // Constructors
 

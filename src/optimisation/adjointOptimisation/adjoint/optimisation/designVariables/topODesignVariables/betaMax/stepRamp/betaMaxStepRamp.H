@@ -78,7 +78,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("stepRamp");
+    TypeNameApi(adjointOptimisation_API, "stepRamp");
 
 
     // Constructors

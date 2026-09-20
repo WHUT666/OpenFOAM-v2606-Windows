@@ -126,12 +126,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("multiphaseSystem");
+    TypeNameApi(reactingMultiphaseSystem_API, "multiphaseSystem");
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             multiphaseSystem,
             dictionary,

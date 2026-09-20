@@ -71,7 +71,7 @@ class dynamicTreeDataPoint
 public:
 
     // Declare name of the class
-    ClassNameNoDebug("dynamicTreeDataPoint");
+    ClassNameNoDebugApi(OpenFOAM_API, "dynamicTreeDataPoint");
 
 
     // Constructors (non-caching)

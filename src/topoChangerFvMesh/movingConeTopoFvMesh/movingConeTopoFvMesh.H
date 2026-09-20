@@ -108,7 +108,7 @@ class movingConeTopoFvMesh
 public:
 
     //- Runtime type information
-    TypeName("movingConeTopoFvMesh");
+    TypeNameApi(topoChangerFvMesh_API, "movingConeTopoFvMesh");
 
 
     // Constructors

@@ -68,6 +68,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_RNGkEpsilon_defines_typeName in .C files that
+//  define the template statics of RNGkEpsilon (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_RNGkEpsilon_defines_typeName)
+#  define Foam_RNGkEpsilon_typeName_API
+#else
+#  define Foam_RNGkEpsilon_typeName_API turbulenceModels_API
+#endif
+
 #ifndef RNGkEpsilon_H
 #define RNGkEpsilon_H
 
@@ -136,7 +146,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("RNGkEpsilon");
+    TypeNameApi(Foam_RNGkEpsilon_typeName_API, "RNGkEpsilon");
 
 
     // Constructors

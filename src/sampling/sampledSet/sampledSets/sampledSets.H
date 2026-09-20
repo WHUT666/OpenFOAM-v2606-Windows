@@ -287,7 +287,7 @@ class sampledSets
 public:
 
     //- Runtime type information
-    TypeName("sets");
+    TypeNameApi(sampling_API, "sets");
 
 
     // Constructors

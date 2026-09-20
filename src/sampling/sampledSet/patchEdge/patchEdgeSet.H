@@ -162,7 +162,7 @@ class patchEdgeSet
 public:
 
     //- Runtime type information
-    TypeName("patchEdge");
+    TypeNameApi(sampling_API, "patchEdge");
 
 
     // Constructors

@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_gaussLaplacianScheme_defines_typeName in .C files that
+//  define the template statics of gaussLaplacianScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_gaussLaplacianScheme_defines_typeName)
+#  define Foam_gaussLaplacianScheme_typeName_API
+#else
+#  define Foam_gaussLaplacianScheme_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_gaussFaLaplacianScheme_H
 #define Foam_gaussFaLaplacianScheme_H
 
@@ -62,7 +72,7 @@ class gaussLaplacianScheme
 public:
 
     //- Runtime type information
-    TypeName("Gauss");
+    TypeNameApi(Foam_gaussLaplacianScheme_typeName_API, "Gauss");
 
 
     // Generated Methods

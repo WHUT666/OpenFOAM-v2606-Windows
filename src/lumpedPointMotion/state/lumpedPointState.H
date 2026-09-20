@@ -98,7 +98,7 @@ public:
     // Static Data
 
         //- Names for the input format types
-        static const Enum<inputFormatType> formatNames;
+        static lumpedPointMotion_API const Enum<inputFormatType> formatNames;
 
 
 private:
@@ -137,10 +137,10 @@ public:
     // Public Data
 
         //- Enable/disable visualization of unused points
-        static bool visUnused;
+        static lumpedPointMotion_API bool visUnused;
 
         //- The length for visualization triangles
-        static scalar visLength;
+        static lumpedPointMotion_API scalar visLength;
 
 
     // Constructors

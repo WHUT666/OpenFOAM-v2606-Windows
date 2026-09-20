@@ -110,7 +110,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("LamBremhorstKE");
+    TypeNameApi(incompressibleTurbulenceModels_API, "LamBremhorstKE");
 
 
     // Constructors

@@ -41,6 +41,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PairSpringSliderDashpot_defines_typeName in .C files that
+//  define the template statics of PairSpringSliderDashpot (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PairSpringSliderDashpot_defines_typeName)
+#  define Foam_PairSpringSliderDashpot_typeName_API
+#else
+#  define Foam_PairSpringSliderDashpot_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PairSpringSliderDashpot_H
 #define PairSpringSliderDashpot_H
 
@@ -127,7 +137,7 @@ class PairSpringSliderDashpot
 public:
 
     //- Runtime type information
-    TypeName("pairSpringSliderDashpot");
+    TypeNameApi(Foam_PairSpringSliderDashpot_typeName_API, "pairSpringSliderDashpot");
 
 
     // Constructors

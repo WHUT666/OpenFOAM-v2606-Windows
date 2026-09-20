@@ -81,13 +81,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("engineMesh");
+    TypeNameApi(engine_API, "engineMesh");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( engine_API,
             autoPtr,
             engineMesh,
             IOobject,

@@ -83,7 +83,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("HerschelBulkley");
+    TypeNameApi(incompressibleTransportModels_API, "HerschelBulkley");
 
 
     // Constructors

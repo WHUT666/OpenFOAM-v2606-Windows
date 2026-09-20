@@ -135,7 +135,7 @@ class faceToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Names of sets or zones to use
         wordList names_;
@@ -147,7 +147,7 @@ class faceToFace
 public:
 
     //- Runtime type information
-    TypeName("faceToFace");
+    TypeNameApi(meshTools_API, "faceToFace");
 
 
     // Constructors

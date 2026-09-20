@@ -81,7 +81,7 @@ class LopezDeBertodano
 public:
 
     //- Runtime type information
-    TypeName("LopezDeBertodano");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "LopezDeBertodano");
 
 
     // Constructors

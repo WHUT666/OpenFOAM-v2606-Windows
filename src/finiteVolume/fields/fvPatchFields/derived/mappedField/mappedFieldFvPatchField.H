@@ -73,6 +73,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_mappedFieldFvPatchField_defines_typeName in .C files that
+//  define the template statics of mappedFieldFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_mappedFieldFvPatchField_defines_typeName)
+#  define Foam_mappedFieldFvPatchField_typeName_API
+#else
+#  define Foam_mappedFieldFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_mappedFieldFvPatchField_H
 #define Foam_mappedFieldFvPatchField_H
 
@@ -103,7 +113,7 @@ class mappedFieldFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("mappedField");
+    TypeNameApi(Foam_mappedFieldFvPatchField_typeName_API, "mappedField");
 
 
     // Constructors

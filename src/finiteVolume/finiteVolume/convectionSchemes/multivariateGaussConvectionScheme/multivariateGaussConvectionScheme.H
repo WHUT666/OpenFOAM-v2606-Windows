@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_multivariateGaussConvectionScheme_defines_typeName in .C files that
+//  define the template statics of multivariateGaussConvectionScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_multivariateGaussConvectionScheme_defines_typeName)
+#  define Foam_multivariateGaussConvectionScheme_typeName_API
+#else
+#  define Foam_multivariateGaussConvectionScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef multivariateGaussConvectionScheme_H
 #define multivariateGaussConvectionScheme_H
 
@@ -69,7 +79,7 @@ class multivariateGaussConvectionScheme
 public:
 
     //- Runtime type information
-    TypeName("Gauss");
+    TypeNameApi(Foam_multivariateGaussConvectionScheme_typeName_API, "Gauss");
 
 
     // Constructors

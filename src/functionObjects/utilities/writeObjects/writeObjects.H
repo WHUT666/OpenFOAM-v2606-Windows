@@ -130,7 +130,7 @@ public:
         };
 
         //- Names for writeOption
-        static const Enum<writeOption> writeOptionNames_;
+        static utilityFunctionObjects_API const Enum<writeOption> writeOptionNames_;
 
 private:
 
@@ -158,7 +158,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("writeObjects");
+    TypeNameApi(utilityFunctionObjects_API, "writeObjects");
 
 
     // Constructors

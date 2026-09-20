@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ode_defines_typeName in .C files that
+//  define the template statics of ode (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ode_defines_typeName)
+#  define Foam_ode_typeName_API
+#else
+#  define Foam_ode_typeName_API chemistryModel_API
+#endif
+
 #ifndef ode_H
 #define ode_H
 
@@ -67,7 +77,7 @@ class ode
 public:
 
     //- Runtime type information
-    TypeName("ode");
+    TypeNameApi(Foam_ode_typeName_API, "ode");
 
 
     // Constructors

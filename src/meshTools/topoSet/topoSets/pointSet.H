@@ -49,7 +49,7 @@ namespace Foam
                          Class pointSet Declaration
 \*---------------------------------------------------------------------------*/
 
-class pointSet
+class meshTools_API pointSet
 :
     public topoSet
 {

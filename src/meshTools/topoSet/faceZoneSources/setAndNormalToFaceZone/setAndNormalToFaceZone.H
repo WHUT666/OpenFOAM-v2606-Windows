@@ -98,7 +98,7 @@ class setAndNormalToFaceZone
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of set to use
         word setName_;
@@ -110,7 +110,7 @@ class setAndNormalToFaceZone
 public:
 
     //- Runtime type information
-    TypeName("setAndNormalToFaceZone");
+    TypeNameApi(meshTools_API, "setAndNormalToFaceZone");
 
     // Constructors
 

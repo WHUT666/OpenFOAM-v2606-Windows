@@ -53,7 +53,7 @@ class thermoCloud
 public:
 
     //- Runtime type information
-    TypeName("thermoCloud");
+    TypeNameApi(lagrangianIntermediate_API, "thermoCloud");
 
 
     // Constructors

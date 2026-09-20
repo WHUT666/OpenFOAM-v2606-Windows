@@ -60,6 +60,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kOmega_defines_typeName in .C files that
+//  define the template statics of kOmega (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kOmega_defines_typeName)
+#  define Foam_kOmega_typeName_API
+#else
+#  define Foam_kOmega_typeName_API turbulenceModels_API
+#endif
+
 #ifndef kOmega_H
 #define kOmega_H
 
@@ -115,7 +125,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("kOmega");
+    TypeNameApi(Foam_kOmega_typeName_API, "kOmega");
 
 
     // Constructors

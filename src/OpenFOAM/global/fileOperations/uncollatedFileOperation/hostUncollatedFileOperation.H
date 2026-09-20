@@ -65,7 +65,7 @@ class hostUncollatedFileOperation
 public:
 
         //- Runtime type information
-        TypeName("hostUncollated");
+        TypeNameApi(OpenFOAM_API, "hostUncollated");
 
 
     // Constructors

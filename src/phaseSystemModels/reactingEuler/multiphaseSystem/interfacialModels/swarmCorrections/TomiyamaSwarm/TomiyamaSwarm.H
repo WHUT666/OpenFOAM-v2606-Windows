@@ -74,7 +74,7 @@ class TomiyamaSwarm
 public:
 
     //- Runtime type information
-    TypeName("Tomiyama");
+    TypeNameApi(reactingMultiphaseSystem_API, "Tomiyama");
 
 
     // Constructors

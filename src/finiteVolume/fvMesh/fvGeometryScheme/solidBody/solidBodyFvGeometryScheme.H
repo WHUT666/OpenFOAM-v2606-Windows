@@ -117,7 +117,7 @@ class solidBodyFvGeometryScheme
 public:
 
     //- Runtime type information
-    TypeName("solidBody");
+    TypeNameApi(finiteVolume_API, "solidBody");
 
 
     // Constructors

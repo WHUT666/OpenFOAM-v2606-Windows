@@ -81,7 +81,7 @@ class consumptionSpeed
 public:
 
     //- Runtime type information
-    TypeName("consumptionSpeed");
+    TypeNameApi(combustionModels_API, "consumptionSpeed");
 
 
     // Constructors

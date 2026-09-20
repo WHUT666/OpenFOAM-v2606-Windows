@@ -57,12 +57,12 @@ class nucleateFluxModel
 public:
 
     //- Runtime type information
-    TypeName("nucleateFluxModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "nucleateFluxModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         nucleateFluxModel,
         dictionary,

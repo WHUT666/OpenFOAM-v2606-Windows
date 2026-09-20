@@ -55,7 +55,7 @@ class fileOperationInitialise
 public:
 
         //- Runtime type information
-        TypeName("fileOperationInitialise");
+        TypeNameApi(OpenFOAM_API, "fileOperationInitialise");
 
 
     // Constructors
@@ -66,8 +66,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             fileOperationInitialise,
             word,

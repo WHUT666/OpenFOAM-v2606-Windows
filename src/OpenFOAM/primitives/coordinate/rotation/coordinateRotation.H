@@ -90,11 +90,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("coordinateRotation");
+    TypeNameNoDebugApi(OpenFOAM_API, "coordinateRotation");
 
     // Declare run-time constructor selection table from dictionary
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( OpenFOAM_API,
         autoPtr,
         coordinateRotation,
         dictionary,

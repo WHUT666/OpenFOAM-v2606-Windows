@@ -84,7 +84,7 @@ protected:
 
 public:
 
-    ClassName("fieldExpr::driver");
+    ClassNameApi(OpenFOAM_API, "fieldExpr::driver");
 
     // Generated Methods
 

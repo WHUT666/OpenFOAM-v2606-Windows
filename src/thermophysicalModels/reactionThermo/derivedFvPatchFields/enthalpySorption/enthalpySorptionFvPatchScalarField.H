@@ -141,7 +141,7 @@ class enthalpySorptionFvPatchScalarField
         };
 
         //- Names for enthalpyModelType
-        static const Enum<enthalpyModelType> enthalpyModelTypeNames;
+        static reactionThermophysicalModels_API const Enum<enthalpyModelType> enthalpyModelTypeNames;
 
 
     // Private Data
@@ -177,7 +177,7 @@ class enthalpySorptionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("enthalpySorption");
+    TypeNameApi(reactionThermophysicalModels_API, "enthalpySorption");
 
 
     // Constructors

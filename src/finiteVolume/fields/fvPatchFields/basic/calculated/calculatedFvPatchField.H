@@ -55,6 +55,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_calculatedFvPatchField_defines_typeName in .C files that
+//  define the template statics of calculatedFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_calculatedFvPatchField_defines_typeName)
+#  define Foam_calculatedFvPatchField_typeName_API
+#else
+#  define Foam_calculatedFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_calculatedFvPatchField_H
 #define Foam_calculatedFvPatchField_H
 
@@ -80,7 +90,7 @@ class calculatedFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("calculated");  // fieldTypes::calculatedTypeName_()
+    TypeNameApi(Foam_calculatedFvPatchField_typeName_API, "calculated");  // fieldTypes::calculatedTypeName_()
 
 
     // Constructors

@@ -202,7 +202,7 @@ public:
         };
 
         //- Names for mode types
-        static const Enum<mode> modeNames;
+        static fieldFunctionObjects_API const Enum<mode> modeNames;
 
         //- Enumeration for hydrostatic contributions
         enum hydrostaticMode : unsigned
@@ -213,7 +213,7 @@ public:
         };
 
         //- Names for hydrostaticMode
-        static const Enum<hydrostaticMode> hydrostaticModeNames;
+        static fieldFunctionObjects_API const Enum<hydrostaticMode> hydrostaticModeNames;
 
 
 private:
@@ -308,7 +308,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("pressure");
+    TypeNameApi(fieldFunctionObjects_API, "pressure");
 
 
     // Constructors

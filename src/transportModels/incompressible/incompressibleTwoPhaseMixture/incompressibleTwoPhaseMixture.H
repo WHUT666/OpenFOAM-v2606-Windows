@@ -83,7 +83,7 @@ protected:
 
 public:
 
-    TypeName("incompressibleTwoPhaseMixture");
+    TypeNameApi(incompressibleTransportModels_API, "incompressibleTwoPhaseMixture");
 
 
     // Constructors

@@ -67,7 +67,7 @@ public:
         tmMesh
     };
 
-    static const Enum<triangulationMode> triangulationModeNames_;
+    static meshTools_API const Enum<triangulationMode> triangulationModeNames_;
 
 
 private:
@@ -99,7 +99,7 @@ private:
     // Static data members
 
         //- Tolerance
-        static scalar tol;
+        static meshTools_API scalar tol;
 
 
     // Private Member Functions

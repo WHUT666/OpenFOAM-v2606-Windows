@@ -88,7 +88,7 @@ class freestreamVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("freestreamVelocity");
+    TypeNameApi(finiteVolume_API, "freestreamVelocity");
 
 
     // Constructors

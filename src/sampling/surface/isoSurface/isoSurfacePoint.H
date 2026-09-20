@@ -366,7 +366,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("isoSurfacePoint");
+    TypeNameApi(sampling_API, "isoSurfacePoint");
 
 
     // Constructors

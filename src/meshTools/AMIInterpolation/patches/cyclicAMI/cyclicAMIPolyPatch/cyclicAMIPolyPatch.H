@@ -228,7 +228,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cyclicAMI");
+    TypeNameApi(meshTools_API, "cyclicAMI");
 
 
     // Constructors
@@ -378,7 +378,7 @@ public:
         // Access
 
             //- Tolerance used e.g. for area calculations/limits
-            static const scalar tolerance_;
+            static meshTools_API const scalar tolerance_;
 
             //- Flag to indicate whether the AMI can be reset
             inline bool canResetAMI() const;

@@ -119,7 +119,7 @@ public:
     // Static Member Data
 
         //- The default grammar (extended | ECMAScript).
-        static int grammar;
+        static OpenFOAM_API int grammar;
 
 
     // Static Member Functions

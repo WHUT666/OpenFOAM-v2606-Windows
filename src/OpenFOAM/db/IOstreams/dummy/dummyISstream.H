@@ -55,7 +55,7 @@ namespace Foam
                         Class dummyISstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class dummyISstream
+class OpenFOAM_API dummyISstream
 :
     public ICharStream
 {

@@ -131,7 +131,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("syncObjects");
+    TypeNameApi(utilityFunctionObjects_API, "syncObjects");
 
 
     // Constructors

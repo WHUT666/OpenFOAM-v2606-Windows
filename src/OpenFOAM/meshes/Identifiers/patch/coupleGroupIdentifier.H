@@ -48,7 +48,7 @@ namespace Foam
 
 // Forward Declarations
 class dictionary;
-class polyMesh;
+class OpenFOAM_API polyMesh;
 class polyPatch;
 
 /*---------------------------------------------------------------------------*\

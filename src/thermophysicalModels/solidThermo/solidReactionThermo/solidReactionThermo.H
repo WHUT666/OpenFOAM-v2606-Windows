@@ -61,12 +61,12 @@ class solidReactionThermo
 public:
 
     //- Runtime type information
-    TypeName("solidReactionThermo");
+    TypeNameApi(solidThermo_API, "solidReactionThermo");
 
 
     //- Declare run-time constructor selection tables
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( solidThermo_API,
         autoPtr,
         solidReactionThermo,
         fvMesh,
@@ -75,8 +75,8 @@ public:
     );
 
      // Declare run-time constructor selection tables
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( solidThermo_API,
         autoPtr,
         solidReactionThermo,
         dictionary,

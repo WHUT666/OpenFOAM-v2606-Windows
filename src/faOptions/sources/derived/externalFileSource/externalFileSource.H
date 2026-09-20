@@ -118,7 +118,7 @@ class externalFileSource
 public:
 
     //- Runtime type information
-    TypeName("externalFileSource");
+    TypeNameApi(faOptions_API, "externalFileSource");
 
 
     // Constructors

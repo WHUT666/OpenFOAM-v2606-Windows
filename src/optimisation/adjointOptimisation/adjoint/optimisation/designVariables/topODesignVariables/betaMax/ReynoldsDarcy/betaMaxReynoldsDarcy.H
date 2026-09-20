@@ -91,7 +91,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("ReynoldsDarcy");
+    TypeNameApi(adjointOptimisation_API, "ReynoldsDarcy");
 
 
     // Constructors

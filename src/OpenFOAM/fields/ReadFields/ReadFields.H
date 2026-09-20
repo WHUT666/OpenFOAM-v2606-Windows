@@ -51,7 +51,7 @@ SourceFiles
 namespace Foam
 {
 
-class regIOobject;
+class OpenFOAM_API regIOobject;
 class IOobjectList;
 class objectRegistry;
 

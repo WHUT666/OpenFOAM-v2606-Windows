@@ -132,7 +132,7 @@ class decompositionGAMGAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("decomposition");
+    TypeNameApi(decompositionMethods_API, "decomposition");
 
 
     // Constructors

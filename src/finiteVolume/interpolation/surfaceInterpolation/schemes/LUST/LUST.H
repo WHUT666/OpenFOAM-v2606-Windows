@@ -43,6 +43,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LUST_defines_typeName in .C files that
+//  define the template statics of LUST (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LUST_defines_typeName)
+#  define Foam_LUST_typeName_API
+#else
+#  define Foam_LUST_typeName_API finiteVolume_API
+#endif
+
 #ifndef LUST_H
 #define LUST_H
 
@@ -74,7 +84,7 @@ class LUST
 public:
 
     //- Runtime type information
-    TypeName("LUST");
+    TypeNameApi(Foam_LUST_typeName_API, "LUST");
 
 
     // Constructors

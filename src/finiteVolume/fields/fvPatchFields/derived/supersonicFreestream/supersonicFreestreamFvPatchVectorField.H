@@ -120,7 +120,7 @@ class supersonicFreestreamFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("supersonicFreestream");
+    TypeNameApi(finiteVolume_API, "supersonicFreestream");
 
 
     // Constructors

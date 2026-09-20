@@ -146,12 +146,12 @@ public:
 
 
     //- Runtime type information
-    TypeName("patch");
+    TypeNameApi(finiteArea_API, "patch");
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( finiteArea_API,
             autoPtr,
             faPatch,
             dictionary,

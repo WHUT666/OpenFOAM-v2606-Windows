@@ -87,7 +87,7 @@ class externalForce
 public:
 
     //- Runtime type information
-    TypeName("externalForce");
+    TypeNameApi(rigidBodyDynamics_API, "externalForce");
 
 
     // Constructors

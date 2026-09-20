@@ -83,7 +83,7 @@ class dynamicInkJetFvMesh
 public:
 
     //- Runtime type information
-    TypeName("dynamicInkJetFvMesh");
+    TypeNameApi(dynamicFvMesh_API, "dynamicInkJetFvMesh");
 
 
     // Constructors

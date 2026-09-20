@@ -70,7 +70,7 @@ class objectiveFlowRatePartition
 public:
 
     //- Runtime type information
-    TypeName("flowRatePartition");
+    TypeNameApi(adjointOptimisation_API, "flowRatePartition");
 
 
     // Constructors

@@ -102,14 +102,14 @@ class polyLineSet
 public:
 
     //- Runtime type information
-    TypeName("polyLine");
+    TypeNameApi(sampling_API, "polyLine");
 
 
     // Static data
 
         //- Tolerance when comparing points relative to difference between
         //- start and end points
-        static const scalar tol;
+        static sampling_API const scalar tol;
 
 
     // Constructors

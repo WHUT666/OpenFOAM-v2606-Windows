@@ -63,7 +63,7 @@ public:
 
         //- Tolerance used when caching the AMI to identify e.g. if the
         //- current rotation angle has already been captured
-        static scalar cacheThetaTolerance_;
+        static meshTools_API scalar cacheThetaTolerance_;
 
 
 private:
@@ -146,7 +146,7 @@ public:
 
     // RunTime Type Information
 
-        TypeName("AMICache");
+        TypeNameApi(meshTools_API, "AMICache");
 
     // Constructors
 

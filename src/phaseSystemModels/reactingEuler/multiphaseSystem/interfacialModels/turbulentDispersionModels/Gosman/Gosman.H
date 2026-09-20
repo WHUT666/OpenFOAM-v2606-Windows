@@ -75,7 +75,7 @@ class Gosman
 public:
 
     //- Runtime type information
-    TypeName("Gosman");
+    TypeNameApi(reactingMultiphaseSystem_API, "Gosman");
 
 
     // Constructors

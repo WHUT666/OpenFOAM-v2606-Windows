@@ -68,10 +68,10 @@ class basicThermo
     // Private Data
 
         //- Components names/order
-        static const wordList componentHeader4;
+        static fluidThermophysicalModels_API const wordList componentHeader4;
 
         //- Components names/order
-        static const wordList componentHeader7;
+        static fluidThermophysicalModels_API const wordList componentHeader7;
 
 
     // Private Member Functions
@@ -160,12 +160,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("basicThermo");
+    TypeNameApi(fluidThermophysicalModels_API, "basicThermo");
 
 
     //- Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( fluidThermophysicalModels_API,
         autoPtr,
         basicThermo,
         fvMesh,
@@ -175,8 +175,8 @@ public:
 
 
     //- Declare run-time constructor selection table for dictionary based
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( fluidThermophysicalModels_API,
         autoPtr,
         basicThermo,
         fvMeshDictPhase,
@@ -255,7 +255,7 @@ public:
     // Member Functions
 
         //- The dictionary name ("thermophysicalProperties")
-        static const word dictName;
+        static fluidThermophysicalModels_API const word dictName;
 
         //- The phase property name as property.phase
         //- \sa IOobject::groupName

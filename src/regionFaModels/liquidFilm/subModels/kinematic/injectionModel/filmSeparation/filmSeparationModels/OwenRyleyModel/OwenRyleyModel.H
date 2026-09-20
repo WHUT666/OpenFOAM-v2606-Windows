@@ -174,7 +174,7 @@ class OwenRyleyModel
 public:
 
     //- Runtime type information
-    TypeName("OwenRyley");
+    TypeNameApi(regionFaModels_API, "OwenRyley");
 
 
     // Constructors

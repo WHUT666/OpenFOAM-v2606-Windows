@@ -96,7 +96,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(pyrolysisModels_API, "none");
 
 
     // Constructors

@@ -99,7 +99,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("pointBoundaryMesh");
+    TypeNameApi(OpenFOAM_API, "pointBoundaryMesh");
 
 
     // Constructors

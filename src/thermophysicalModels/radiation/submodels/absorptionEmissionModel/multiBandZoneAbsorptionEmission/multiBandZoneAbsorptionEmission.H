@@ -97,7 +97,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("multiBandZoneAbsorptionEmission");
+    TypeNameApi(radiationModels_API, "multiBandZoneAbsorptionEmission");
 
 
     // Constructors

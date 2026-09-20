@@ -69,7 +69,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("value");
+    TypeNameApi(adjointOptimisation_API, "value");
 
 
     // Constructors

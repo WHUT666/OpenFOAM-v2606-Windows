@@ -96,7 +96,7 @@ class sixDoFRigidBodyDisplacementPointPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("sixDoFRigidBodyDisplacement");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "sixDoFRigidBodyDisplacement");
 
 
     // Constructors

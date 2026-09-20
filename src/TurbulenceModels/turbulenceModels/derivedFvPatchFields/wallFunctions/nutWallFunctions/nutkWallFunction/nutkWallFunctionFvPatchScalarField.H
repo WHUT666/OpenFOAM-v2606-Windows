@@ -100,7 +100,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nutkWallFunction");
+    TypeNameApi(turbulenceModels_API, "nutkWallFunction");
 
 
     // Constructors

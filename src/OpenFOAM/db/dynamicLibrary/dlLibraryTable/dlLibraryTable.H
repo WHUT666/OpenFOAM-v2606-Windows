@@ -67,7 +67,7 @@ class dlLibraryTable
     // Static Data
 
         //- Global singleton of dynamic libraries
-        static std::unique_ptr<dlLibraryTable> global_;
+        static OpenFOAM_API std::unique_ptr<dlLibraryTable> global_;
 
 
     // Private Data
@@ -105,7 +105,7 @@ public:
         //- Use dlclose() when clearing the dlLibraryTable.
         //  This is presumably \em cleaner, but can also remove functions
         //  that are still needed (eg, to terminate the library itself)
-        static int dlcloseOnTerminate;
+        static OpenFOAM_API int dlcloseOnTerminate;
 
 
     // Public Data Types
@@ -116,7 +116,7 @@ public:
 
 
     //- Declare name of the class and its debug switch
-    ClassName("dlLibraryTable");
+    ClassNameApi(OpenFOAM_API, "dlLibraryTable");
 
 
     // Generated Methods

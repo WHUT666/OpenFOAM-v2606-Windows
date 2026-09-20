@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Stokes_defines_typeName in .C files that
+//  define the template statics of Stokes (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Stokes_defines_typeName)
+#  define Foam_Stokes_typeName_API
+#else
+#  define Foam_Stokes_typeName_API turbulenceModels_API
+#endif
+
 #ifndef Stokes_H
 #define Stokes_H
 
@@ -69,7 +79,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("Stokes");
+    TypeNameApi(Foam_Stokes_typeName_API, "Stokes");
 
 
     // Constructors

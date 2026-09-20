@@ -70,7 +70,7 @@ class noneGAMGProcAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("noneGAMGProcAgglomeration");
+    TypeNameApi(OpenFOAM_API, "noneGAMGProcAgglomeration");
 
 
     // Constructors

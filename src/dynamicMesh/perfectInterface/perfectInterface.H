@@ -73,7 +73,7 @@ class perfectInterface
 
         //- Tolerance used for distance comparison
         //  (fraction of minimum edge length)
-        static const scalar tol_;
+        static dynamicMesh_API const scalar tol_;
 
 
     // Private Member Functions
@@ -92,7 +92,7 @@ class perfectInterface
 public:
 
     //- Runtime type information
-    TypeName("perfectInterface");
+    TypeNameApi(dynamicMesh_API, "perfectInterface");
 
 
     // Constructors

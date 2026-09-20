@@ -81,6 +81,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_KinematicReynoldsNumber_defines_typeName in .C files that
+//  define the template statics of KinematicReynoldsNumber (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_KinematicReynoldsNumber_defines_typeName)
+#  define Foam_KinematicReynoldsNumber_typeName_API
+#else
+#  define Foam_KinematicReynoldsNumber_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef KinematicReynoldsNumber_H
 #define KinematicReynoldsNumber_H
 
@@ -111,7 +121,7 @@ class KinematicReynoldsNumber
 public:
 
     //- Runtime type information
-    TypeName("ReynoldsNumber");
+    TypeNameApi(Foam_KinematicReynoldsNumber_typeName_API, "ReynoldsNumber");
 
 
     // Generated Methods

@@ -81,7 +81,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("steadyOptimisation");
+    TypeNameApi(adjointOptimisation_API, "steadyOptimisation");
 
 
     // Constructors

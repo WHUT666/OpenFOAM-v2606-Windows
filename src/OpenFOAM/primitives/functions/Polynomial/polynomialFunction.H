@@ -112,7 +112,7 @@ class polynomialFunction
 public:
 
     //- Runtime type information
-    TypeName("polynomialFunction");
+    TypeNameApi(OpenFOAM_API, "polynomialFunction");
 
 
     // Generated Methods: copy construct, copy assignment

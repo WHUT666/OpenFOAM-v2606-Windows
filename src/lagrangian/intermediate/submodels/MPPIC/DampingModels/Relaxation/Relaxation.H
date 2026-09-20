@@ -49,6 +49,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Relaxation_defines_typeName in .C files that
+//  define the template statics of Relaxation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Relaxation_defines_typeName)
+#  define Foam_Relaxation_typeName_API
+#else
+#  define Foam_Relaxation_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Relaxation_H
 #define Relaxation_H
 
@@ -84,7 +94,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("relaxation");
+    TypeNameApi(Foam_Relaxation_typeName_API, "relaxation");
 
     // Constructors
 

@@ -68,7 +68,7 @@ class fieldSmoother
 public:
 
     // Run-time type information
-    TypeName("fieldSmoother");
+    TypeNameApi(snappyHexMesh_API, "fieldSmoother");
 
 
     // Constructors

@@ -33,6 +33,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_BlendedInterfacialModel_defines_typeName in .C files that
+//  define the template statics of BlendedInterfacialModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_BlendedInterfacialModel_defines_typeName)
+#  define Foam_BlendedInterfacialModel_typeName_API
+#else
+#  define Foam_BlendedInterfacialModel_typeName_API reactingMultiphaseSystem_API
+#endif
+
 #ifndef BlendedInterfacialModel_H
 #define BlendedInterfacialModel_H
 
@@ -128,7 +138,7 @@ class BlendedInterfacialModel
 public:
 
     //- Runtime type information
-    TypeName("BlendedInterfacialModel");
+    TypeNameApi(Foam_BlendedInterfacialModel_typeName_API, "BlendedInterfacialModel");
 
 
     // Constructors

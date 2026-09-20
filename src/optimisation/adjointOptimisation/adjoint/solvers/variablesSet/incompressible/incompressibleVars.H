@@ -118,7 +118,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("incompressibleVars");
+        TypeNameApi(adjointOptimisation_API, "incompressibleVars");
 
 
     // Constructors

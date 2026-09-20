@@ -177,12 +177,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("waveModel");
+    TypeNameApi(waveModels_API, "waveModel");
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( waveModels_API,
             autoPtr,
             waveModel,
             patch,
@@ -228,7 +228,7 @@ public:
     virtual ~waveModel() = default;
 
     //- Dictionary name
-    static const word dictName;
+    static waveModels_API const word dictName;
 
 
     // Public Member Functions

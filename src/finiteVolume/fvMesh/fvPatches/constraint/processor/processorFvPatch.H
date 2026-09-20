@@ -72,7 +72,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName(processorPolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, processorPolyPatch::typeName_());
 
 
     // Constructors

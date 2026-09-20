@@ -43,6 +43,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_faceLimitedGrad_defines_typeName in .C files that
+//  define the template statics of faceLimitedGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_faceLimitedGrad_defines_typeName)
+#  define Foam_faceLimitedGrad_typeName_API
+#else
+#  define Foam_faceLimitedGrad_typeName_API finiteArea_API
+#endif
+
 #ifndef faceLimitedFaGrad_H
 #define faceLimitedFaGrad_H
 
@@ -79,7 +89,7 @@ class faceLimitedGrad
 public:
 
     //- RunTime type information
-    TypeName("faceLimited");
+    TypeNameApi(Foam_faceLimitedGrad_typeName_API, "faceLimited");
 
 
     // Generated Methods

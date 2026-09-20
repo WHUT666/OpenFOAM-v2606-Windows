@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoDispersion_defines_typeName in .C files that
+//  define the template statics of NoDispersion (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoDispersion_defines_typeName)
+#  define Foam_NoDispersion_typeName_API
+#else
+#  define Foam_NoDispersion_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoDispersion_H
 #define NoDispersion_H
 
@@ -56,7 +66,7 @@ class NoDispersion
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoDispersion_typeName_API, "none");
 
 
     // Constructors

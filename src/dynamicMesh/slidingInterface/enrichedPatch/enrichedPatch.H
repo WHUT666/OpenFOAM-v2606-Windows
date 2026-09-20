@@ -176,16 +176,16 @@ class enrichedPatch
     // Static Data Members
 
         //- Estimated ratio of original-to-enriched face size
-        static const label enrichedFaceRatio_;
+        static dynamicMesh_API const label enrichedFaceRatio_;
 
         //- Size of face on which the check is forced
-        static const label maxFaceSizeDebug_;
+        static dynamicMesh_API const label maxFaceSizeDebug_;
 
 
 public:
 
     // Static data members
-    ClassName("enrichedPatch");
+    ClassNameApi(dynamicMesh_API, "enrichedPatch");
 
 
     // Constructors

@@ -89,7 +89,7 @@ class faceZoneSet
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("faceZoneSet");
+    TypeNameNoDebugApi(meshTools_API, "faceZoneSet");
 
 
     // Constructors

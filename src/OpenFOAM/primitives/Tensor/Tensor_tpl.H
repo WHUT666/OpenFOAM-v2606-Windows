@@ -79,7 +79,7 @@ public:
 
     // Static Data Members
 
-        static const Tensor I;
+        static OpenFOAM_API const Tensor I;
 
 
     //- Component labeling enumeration
@@ -344,6 +344,7 @@ public:
             return row(cmpt);
         }
 };
+
 
 
 // * * * * * * * * * * * * * * * * * Traits  * * * * * * * * * * * * * * * * //

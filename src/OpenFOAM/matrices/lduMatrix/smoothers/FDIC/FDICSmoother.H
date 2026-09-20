@@ -68,7 +68,7 @@ class FDICSmoother
 public:
 
     //- Runtime type information
-    TypeName("FDIC");
+    TypeNameApi(OpenFOAM_API, "FDIC");
 
 
     // Constructors

@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SinglePhaseMixture_defines_typeName in .C files that
+//  define the template statics of SinglePhaseMixture (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SinglePhaseMixture_defines_typeName)
+#  define Foam_SinglePhaseMixture_typeName_API
+#else
+#  define Foam_SinglePhaseMixture_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef SinglePhaseMixture_H
 #define SinglePhaseMixture_H
 
@@ -80,7 +90,7 @@ class SinglePhaseMixture
 public:
 
     //- Runtime type information
-    TypeName("singlePhaseMixture");
+    TypeNameApi(Foam_SinglePhaseMixture_typeName_API, "singlePhaseMixture");
 
 
     // Constructors

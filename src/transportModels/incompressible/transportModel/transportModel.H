@@ -65,7 +65,7 @@ class transportModel
 public:
 
     //- Runtime type information
-    TypeName("transportModel");
+    TypeNameApi(incompressibleTransportModels_API, "transportModel");
 
 
     // Constructors

@@ -78,7 +78,7 @@ template<class Type> class indexedOctree;
                           Class polyMesh Declaration
 \*---------------------------------------------------------------------------*/
 
-class polyMesh
+class OpenFOAM_API polyMesh
 :
     public objectRegistry,
     public primitiveMesh

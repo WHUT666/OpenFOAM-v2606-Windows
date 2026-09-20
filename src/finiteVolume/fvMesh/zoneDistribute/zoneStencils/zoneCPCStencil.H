@@ -122,7 +122,7 @@ class zoneCPCStencil
 public:
 
     //- Runtime information
-    TypeName("zoneCPCStencil");
+    TypeNameApi(finiteVolume_API, "zoneCPCStencil");
 
 
     // Constructors

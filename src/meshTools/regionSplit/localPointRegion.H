@@ -119,7 +119,7 @@ class localPointRegion
 public:
 
     //- Runtime type information
-    ClassName("localPointRegion");
+    ClassNameApi(meshTools_API, "localPointRegion");
 
 
     // Constructors

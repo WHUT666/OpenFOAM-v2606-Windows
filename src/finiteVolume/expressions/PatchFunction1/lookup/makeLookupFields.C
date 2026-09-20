@@ -35,6 +35,13 @@ namespace Foam
     makePatchFunction1Type(LookupField, sphericalTensor);
     makePatchFunction1Type(LookupField, symmTensor);
     makePatchFunction1Type(LookupField, tensor);
+
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::LookupField<Foam::scalar>);
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::LookupField<Foam::vector>);
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::LookupField<Foam::sphericalTensor>);
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::LookupField<Foam::symmTensor>);
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::LookupField<Foam::tensor>);
+
 }
 
 // ************************************************************************* //

@@ -71,7 +71,7 @@ class liquidMixtureProperties
     // Private data
 
         //- Maximum reduced temperature
-        static const scalar TrMax;
+        static thermophysicalProperties_API const scalar TrMax;
 
         //- The names of the liquids
         List<word> components_;

@@ -72,7 +72,7 @@ public:
         };
 
         //- String representation of coordFormat enum
-        static const Enum<coordFormat> coordFormatNames;
+        static meshTools_API const Enum<coordFormat> coordFormatNames;
 
 
 protected:

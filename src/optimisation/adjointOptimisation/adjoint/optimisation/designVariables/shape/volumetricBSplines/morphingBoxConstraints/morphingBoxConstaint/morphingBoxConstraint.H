@@ -113,13 +113,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("morphingBoxConstraint");
+    TypeNameApi(adjointOptimisation_API, "morphingBoxConstraint");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             morphingBoxConstraint,
             dictionary,

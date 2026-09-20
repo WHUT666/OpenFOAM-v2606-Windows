@@ -72,7 +72,7 @@ class holeToFace
     // Private data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Per 'zone' the set of points
         List<pointField> zonePoints_;
@@ -142,7 +142,7 @@ class holeToFace
 public:
 
     //- Runtime type information
-    TypeName("holeToFace");
+    TypeNameApi(meshTools_API, "holeToFace");
 
     // Constructors
 

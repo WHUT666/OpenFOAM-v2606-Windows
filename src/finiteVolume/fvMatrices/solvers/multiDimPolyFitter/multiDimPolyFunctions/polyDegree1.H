@@ -64,7 +64,7 @@ class polyDegree1
 public:
 
     //- Runtime type information
-    TypeName("polyDegree1");
+    TypeNameApi(finiteVolume_API, "polyDegree1");
 
 
     // Constructors

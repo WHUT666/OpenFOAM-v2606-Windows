@@ -82,7 +82,7 @@ class LegendreMagnaudet
 public:
 
     //- Runtime type information
-    TypeName("LegendreMagnaudet");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "LegendreMagnaudet");
 
 
     // Constructors

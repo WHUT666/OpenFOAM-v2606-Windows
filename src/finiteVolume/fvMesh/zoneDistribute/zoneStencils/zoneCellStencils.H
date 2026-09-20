@@ -127,7 +127,7 @@ protected:
 public:
 
         // Declare name of the class and its debug switch
-        TypeName("zoneCellStencils");
+        TypeNameApi(finiteVolume_API, "zoneCellStencils");
 
 
     // Constructors

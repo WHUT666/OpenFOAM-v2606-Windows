@@ -116,7 +116,7 @@ public:
         };
 
         //- Names for derivedType
-        static const Enum<derivedType> knownNames;
+        static fieldFunctionObjects_API const Enum<derivedType> knownNames;
 
 
 protected:
@@ -144,7 +144,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("derivedFields");
+    TypeNameApi(fieldFunctionObjects_API, "derivedFields");
 
 
     // Constructors

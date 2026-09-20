@@ -187,7 +187,7 @@ class swirlFanVelocityFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("swirlFanVelocity");
+    TypeNameApi(finiteVolume_API, "swirlFanVelocity");
 
 
     // Constructors

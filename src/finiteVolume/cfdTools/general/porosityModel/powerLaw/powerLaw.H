@@ -109,7 +109,7 @@ class powerLaw
 public:
 
     //- Runtime type information
-    TypeName("powerLaw");
+    TypeNameApi(finiteVolume_API, "powerLaw");
 
     //- Constructor
     powerLaw

@@ -50,6 +50,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_BlobsSheetAtomization_defines_typeName in .C files that
+//  define the template statics of BlobsSheetAtomization (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_BlobsSheetAtomization_defines_typeName)
+#  define Foam_BlobsSheetAtomization_typeName_API
+#else
+#  define Foam_BlobsSheetAtomization_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef BlobsSheetAtomization_H
 #define BlobsSheetAtomization_H
 
@@ -78,7 +88,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("blobsSheetAtomization");
+    TypeNameApi(Foam_BlobsSheetAtomization_typeName_API, "blobsSheetAtomization");
 
 
     // Constructors

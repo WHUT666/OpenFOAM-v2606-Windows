@@ -134,7 +134,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("LienCubicKE");
+    TypeNameApi(incompressibleTurbulenceModels_API, "LienCubicKE");
 
     // Constructors
 

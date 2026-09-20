@@ -79,7 +79,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(thermalBaffleModels_API, "none");
 
 
     // Constructors

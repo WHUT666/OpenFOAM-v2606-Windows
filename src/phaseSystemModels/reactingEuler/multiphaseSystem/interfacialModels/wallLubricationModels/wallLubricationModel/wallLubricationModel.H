@@ -75,13 +75,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("wallLubricationModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "wallLubricationModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             wallLubricationModel,
             dictionary,
@@ -96,7 +96,7 @@ public:
     // Static Data Members
 
         //- Coefficient dimensions
-        static const dimensionSet dimF;
+        static reactingMultiphaseSystem_API const dimensionSet dimF;
 
 
     // Constructors

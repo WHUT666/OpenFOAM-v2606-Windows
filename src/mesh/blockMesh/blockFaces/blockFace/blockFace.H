@@ -68,13 +68,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("blockFace");
+    TypeNameApi(blockMesh_API, "blockFace");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( blockMesh_API,
             autoPtr,
             blockFace,
             Istream,

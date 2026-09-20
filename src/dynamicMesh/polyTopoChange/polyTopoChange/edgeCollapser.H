@@ -248,7 +248,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("edgeCollapser");
+    ClassNameApi(dynamicMesh_API, "edgeCollapser");
 
 
     // Constructors

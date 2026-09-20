@@ -61,7 +61,7 @@ class plane
 public:
 
     //- Runtime type information
-    TypeName("plane");
+    TypeNameApi(extrudeModel_API, "plane");
 
     // Constructors
 

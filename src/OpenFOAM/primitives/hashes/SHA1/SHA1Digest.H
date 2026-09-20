@@ -81,7 +81,7 @@ public:
     // Static Data Members
 
         //- A null digest (ie, all zero)
-        static const SHA1Digest null;
+        static OpenFOAM_API const SHA1Digest null;
 
 
     // Constructors

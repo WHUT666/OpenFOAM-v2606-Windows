@@ -73,7 +73,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("pointCells");
+    TypeNameApi(adjointOptimisation_API, "pointCells");
 
     // Constructors
 

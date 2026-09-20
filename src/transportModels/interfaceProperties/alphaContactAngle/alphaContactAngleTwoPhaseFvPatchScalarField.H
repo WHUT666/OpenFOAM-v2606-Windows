@@ -96,7 +96,7 @@ public:
         lcAlpha
     };
 
-    static const Enum<limitControls> limitControlNames_;
+    static interfaceProperties_API const Enum<limitControls> limitControlNames_;
     limitControls limit_;
 
     // Constructors

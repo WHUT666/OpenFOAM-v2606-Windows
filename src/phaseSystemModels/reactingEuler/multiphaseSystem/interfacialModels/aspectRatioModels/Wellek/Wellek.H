@@ -71,7 +71,7 @@ class Wellek
 public:
 
     //- Runtime type information
-    TypeName("Wellek");
+    TypeNameApi(reactingMultiphaseSystem_API, "Wellek");
 
 
     // Constructors

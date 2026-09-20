@@ -49,6 +49,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_RemoveParcels_defines_typeName in .C files that
+//  define the template statics of RemoveParcels (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_RemoveParcels_defines_typeName)
+#  define Foam_RemoveParcels_typeName_API
+#else
+#  define Foam_RemoveParcels_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef RemoveParcels_H
 #define RemoveParcels_H
 
@@ -124,7 +134,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("removeParcels");
+    TypeNameApi(Foam_RemoveParcels_typeName_API, "removeParcels");
 
 
     // Constructors

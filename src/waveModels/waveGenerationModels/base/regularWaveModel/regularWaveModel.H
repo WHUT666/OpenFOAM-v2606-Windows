@@ -89,7 +89,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("regularWaveModel");
+    TypeNameApi(waveModels_API, "regularWaveModel");
 
 
     //- Constructor

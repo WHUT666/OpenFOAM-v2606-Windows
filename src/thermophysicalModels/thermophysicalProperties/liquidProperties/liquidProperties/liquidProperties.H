@@ -88,13 +88,13 @@ class liquidProperties
 
 public:
 
-    TypeName("liquid");
+    TypeNameApi(thermophysicalProperties_API, "liquid");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( thermophysicalProperties_API,
             autoPtr,
             liquidProperties,
             ,
@@ -102,8 +102,8 @@ public:
             ()
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( thermophysicalProperties_API,
             autoPtr,
             liquidProperties,
             dictionary,

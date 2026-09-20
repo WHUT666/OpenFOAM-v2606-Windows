@@ -128,7 +128,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("readFields");
+    TypeNameApi(fieldFunctionObjects_API, "readFields");
 
 
     // Constructors

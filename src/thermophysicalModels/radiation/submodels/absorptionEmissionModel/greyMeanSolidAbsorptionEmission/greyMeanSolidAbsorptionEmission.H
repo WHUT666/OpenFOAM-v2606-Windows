@@ -101,7 +101,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("greyMeanSolidAbsorptionEmission");
+    TypeNameApi(radiationModels_API, "greyMeanSolidAbsorptionEmission");
 
 
     // Constructors

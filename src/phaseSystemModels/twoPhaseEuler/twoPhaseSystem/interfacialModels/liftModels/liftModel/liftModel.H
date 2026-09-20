@@ -66,13 +66,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("liftModel");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "liftModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( compressibleTwoPhaseSystem_API,
             autoPtr,
             liftModel,
             dictionary,
@@ -87,7 +87,7 @@ public:
     // Static data members
 
         //- Force dimensions
-        static const dimensionSet dimF;
+        static compressibleTwoPhaseSystem_API const dimensionSet dimF;
 
 
     // Constructors

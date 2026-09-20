@@ -56,7 +56,7 @@ namespace Foam
 {
 
 // Forward Declarations
-class polyMesh;
+class OpenFOAM_API polyMesh;
 
 /*---------------------------------------------------------------------------*\
                    Class globalIndexAndTransform Declaration
@@ -162,7 +162,7 @@ private:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("globalIndexAndTransform");
+    ClassNameApi(OpenFOAM_API, "globalIndexAndTransform");
 
 
     // Constructors

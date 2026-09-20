@@ -55,7 +55,7 @@ class CaCO3
 public:
 
     //- Runtime type information
-    TypeName("CaCO3");
+    TypeNameApi(thermophysicalProperties_API, "CaCO3");
 
 
     // Constructors

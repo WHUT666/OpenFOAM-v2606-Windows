@@ -62,7 +62,7 @@ class SloanRenumber
 public:
 
     //- Runtime type information
-    TypeName("Sloan");
+    TypeNameApi(SloanRenumber_API, "Sloan");
 
 
     // Constructors

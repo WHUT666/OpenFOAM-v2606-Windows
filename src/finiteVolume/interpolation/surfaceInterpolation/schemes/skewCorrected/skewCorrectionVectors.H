@@ -81,7 +81,7 @@ class skewCorrectionVectors
 
 public:
 
-    TypeName("skewCorrectionVectors");
+    TypeNameApi(finiteVolume_API, "skewCorrectionVectors");
 
 
     // Constructors

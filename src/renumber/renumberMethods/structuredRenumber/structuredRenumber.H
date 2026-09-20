@@ -117,7 +117,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("structured");
+    TypeNameApi(renumberMethods_API, "structured");
 
 
     // Constructors

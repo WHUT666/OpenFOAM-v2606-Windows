@@ -42,6 +42,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cellLimitedGrad_defines_typeName in .C files that
+//  define the template statics of cellLimitedGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cellLimitedGrad_defines_typeName)
+#  define Foam_cellLimitedGrad_typeName_API
+#else
+#  define Foam_cellLimitedGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef cellLimitedGrad_H
 #define cellLimitedGrad_H
 
@@ -98,7 +108,7 @@ class cellLimitedGrad
 public:
 
     //- RunTime type information
-    TypeName("cellLimited");
+    TypeNameApi(Foam_cellLimitedGrad_typeName_API, "cellLimited");
 
 
     // Constructors

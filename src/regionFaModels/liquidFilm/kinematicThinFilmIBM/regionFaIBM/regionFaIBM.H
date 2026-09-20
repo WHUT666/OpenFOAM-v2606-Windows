@@ -126,7 +126,7 @@ protected:
         typedef treeDataPrimitivePatch<uindirectPrimitivePatch> treeType;
 
         //- Selection names for solveType
-        static const Enum<solveType> solveTypeNames;
+        static regionFaModels_API const Enum<solveType> solveTypeNames;
 
 
         //- Reference to the finite area mesh
@@ -212,7 +212,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("IBM");
+    TypeNameApi(regionFaModels_API, "IBM");
 
     // Constructors
 

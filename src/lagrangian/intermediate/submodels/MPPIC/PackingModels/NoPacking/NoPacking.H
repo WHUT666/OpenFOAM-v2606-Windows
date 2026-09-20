@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoPacking_defines_typeName in .C files that
+//  define the template statics of NoPacking (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoPacking_defines_typeName)
+#  define Foam_NoPacking_typeName_API
+#else
+#  define Foam_NoPacking_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoPacking_H
 #define NoPacking_H
 
@@ -61,7 +71,7 @@ class NoPacking
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoPacking_typeName_API, "none");
 
     // Constructors
 

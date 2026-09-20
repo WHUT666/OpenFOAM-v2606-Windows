@@ -132,13 +132,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("lineSearch");
+    TypeNameApi(adjointOptimisation_API, "lineSearch");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             lineSearch,
             dictionary,

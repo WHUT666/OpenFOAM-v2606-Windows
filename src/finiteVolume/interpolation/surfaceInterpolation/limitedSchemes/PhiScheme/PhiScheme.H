@@ -47,6 +47,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PhiScheme_defines_typeName in .C files that
+//  define the template statics of PhiScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PhiScheme_defines_typeName)
+#  define Foam_PhiScheme_typeName_API
+#else
+#  define Foam_PhiScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef PhiScheme_H
 #define PhiScheme_H
 
@@ -79,7 +89,7 @@ class PhiScheme
 public:
 
     //- Runtime type information
-    TypeName("PhiScheme");
+    TypeNameApi(Foam_PhiScheme_typeName_API, "PhiScheme");
 
 
     // Constructors

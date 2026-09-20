@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FreeStream_defines_typeName in .C files that
+//  define the template statics of FreeStream (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FreeStream_defines_typeName)
+#  define Foam_FreeStream_typeName_API
+#else
+#  define Foam_FreeStream_typeName_API DSMC_API
+#endif
+
 #ifndef FreeStream_H
 #define FreeStream_H
 
@@ -76,7 +86,7 @@ class FreeStream
 public:
 
     //- Runtime type information
-    TypeName("FreeStream");
+    TypeNameApi(Foam_FreeStream_typeName_API, "FreeStream");
 
 
     // Constructors

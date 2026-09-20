@@ -68,7 +68,7 @@ class noPreconditioner
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(OpenFOAM_API, "none");
 
 
     // Constructors

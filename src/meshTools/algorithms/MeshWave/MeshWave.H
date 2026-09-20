@@ -49,7 +49,7 @@ namespace Foam
                         Class MeshWaveName Declaration
 \*---------------------------------------------------------------------------*/
 
-TemplateName(MeshWave);
+TemplateNameApi(meshTools_API, MeshWave);
 
 
 /*---------------------------------------------------------------------------*\

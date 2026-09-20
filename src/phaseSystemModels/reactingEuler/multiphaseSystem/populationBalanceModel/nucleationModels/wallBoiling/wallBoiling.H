@@ -74,7 +74,7 @@ class wallBoiling
 public:
 
     //- Runtime type information
-    TypeName("wallBoiling");
+    TypeNameApi(reactingMultiphaseSystem_API, "wallBoiling");
 
     // Constructor
 

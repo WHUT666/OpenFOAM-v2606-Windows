@@ -80,7 +80,7 @@ protected:
 public:
 
     //- Run time type information
-    TypeName("basicMultiComponentMixture");
+    TypeNameApi(reactionThermophysicalModels_API, "basicMultiComponentMixture");
 
 
     //- The base class of the mixture

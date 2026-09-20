@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_chemistryTabulationMethod_defines_typeName in .C files that
+//  define the template statics of chemistryTabulationMethod (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_chemistryTabulationMethod_defines_typeName)
+#  define Foam_chemistryTabulationMethod_typeName_API
+#else
+#  define Foam_chemistryTabulationMethod_typeName_API chemistryModel_API
+#endif
+
 #ifndef chemistryTabulationMethod_H
 #define chemistryTabulationMethod_H
 
@@ -80,12 +90,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("chemistryTabulationMethod");
+    TypeNameApi(Foam_chemistryTabulationMethod_typeName_API, "chemistryTabulationMethod");
 
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_chemistryTabulationMethod_typeName_API,
         autoPtr,
         chemistryTabulationMethod,
         dictionary,

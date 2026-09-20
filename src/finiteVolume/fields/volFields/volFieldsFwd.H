@@ -96,10 +96,10 @@ namespace fieldTypes
 {
 
 //- Standard volume internal field types (scalar, vector, tensor, etc)
-extern const wordList internal;
+extern finiteVolume_API const wordList internal;
 
 //- Standard volume field types (scalar, vector, tensor, etc)
-extern const wordList volume;
+extern finiteVolume_API const wordList volume;
 
 //- Test if the class name appears to be a volume internal field
 bool is_internal(const word& clsName);

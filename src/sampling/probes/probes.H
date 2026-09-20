@@ -117,7 +117,7 @@ class probes
 public:
 
     //- Runtime type information
-    TypeName("probes");
+    TypeNameApi(sampling_API, "probes");
 
 
     // Constructors

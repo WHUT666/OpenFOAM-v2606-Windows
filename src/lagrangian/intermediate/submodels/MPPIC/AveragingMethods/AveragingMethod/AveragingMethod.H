@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_AveragingMethod_defines_typeName in .C files that
+//  define the template statics of AveragingMethod (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_AveragingMethod_defines_typeName)
+#  define Foam_AveragingMethod_typeName_API
+#else
+#  define Foam_AveragingMethod_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef AveragingMethod_H
 #define AveragingMethod_H
 
@@ -87,11 +97,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("averagingMethod");
+    TypeNameApi(Foam_AveragingMethod_typeName_API, "averagingMethod");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_AveragingMethod_typeName_API,
         autoPtr,
         AveragingMethod,
         dictionary,

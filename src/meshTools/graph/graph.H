@@ -195,11 +195,11 @@ public:
             public:
 
                 //- Runtime type information
-                TypeName("writer");
+                TypeNameApi(meshTools_API, "writer");
 
                 //- Declare run-time constructor selection table
-                declareRunTimeSelectionTable
-                (
+                declareRunTimeSelectionTableApi
+                ( meshTools_API,
                     autoPtr,
                     writer,
                     word,

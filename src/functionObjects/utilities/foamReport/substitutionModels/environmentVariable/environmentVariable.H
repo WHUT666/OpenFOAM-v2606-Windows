@@ -100,7 +100,7 @@ class environmentVariable
 public:
 
     //- Runtime type information
-    TypeName("environmentVariable");
+    TypeNameApi(utilityFunctionObjects_API, "environmentVariable");
 
 
     //- Constructor

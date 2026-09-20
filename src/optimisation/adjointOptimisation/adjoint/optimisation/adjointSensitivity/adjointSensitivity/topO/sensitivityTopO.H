@@ -92,7 +92,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("topO");
+    TypeNameApi(adjointOptimisation_API, "topO");
 
 
     // Constructors

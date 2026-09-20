@@ -125,10 +125,10 @@ protected:
 public:
 
     //- Enable or disable use of function entries and variable expansions.
-    static int disableFunctionEntries;
+    static OpenFOAM_API int disableFunctionEntries;
 
     //- The current global input-mode.
-    static inputMode globalInputMode;
+    static OpenFOAM_API inputMode globalInputMode;
 
 
     // Constructors

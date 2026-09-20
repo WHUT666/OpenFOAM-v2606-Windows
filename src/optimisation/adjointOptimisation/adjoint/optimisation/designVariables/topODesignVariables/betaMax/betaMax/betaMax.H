@@ -87,13 +87,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("betaMax");
+    TypeNameApi(adjointOptimisation_API, "betaMax");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             betaMax,
             dictionary,

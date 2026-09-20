@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ddtScheme_defines_typeName in .C files that
+//  define the template statics of ddtScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ddtScheme_defines_typeName)
+#  define Foam_ddtScheme_typeName_API
+#else
+#  define Foam_ddtScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef ddtScheme_H
 #define ddtScheme_H
 
@@ -73,7 +83,7 @@ public:
 
         //- Flag to use experimental ddtCorr from org version
         //- Default is off for backwards compatibility
-        static bool experimentalDdtCorr;
+        static finiteVolume_API bool experimentalDdtCorr;
 
         ddtSchemeBase()
         {}
@@ -116,8 +126,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_ddtScheme_typeName_API,
             tmp,
             ddtScheme,
             Istream,

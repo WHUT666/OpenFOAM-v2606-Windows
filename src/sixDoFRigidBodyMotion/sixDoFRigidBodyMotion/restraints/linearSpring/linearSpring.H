@@ -78,7 +78,7 @@ class linearSpring
 public:
 
     //- Runtime type information
-    TypeName("linearSpring");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "linearSpring");
 
 
     // Constructors

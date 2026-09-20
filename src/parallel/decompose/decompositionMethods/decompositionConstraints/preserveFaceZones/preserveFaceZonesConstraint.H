@@ -72,7 +72,7 @@ class preserveFaceZones
 public:
 
     //- Runtime type information
-    TypeName("preserveFaceZones");
+    TypeNameApi(decompositionMethods_API, "preserveFaceZones");
 
 
     // Constructors

@@ -94,10 +94,10 @@ public:
 
 
     // Declare name of the class and its debug switch
-    ClassName("pointMesh");
+    ClassNameApi(OpenFOAM_API, "pointMesh");
 
     //- Return the mesh sub-directory name (usually "pointMesh")
-    static word meshSubDir;
+    static OpenFOAM_API word meshSubDir;
 
 
     // Constructors

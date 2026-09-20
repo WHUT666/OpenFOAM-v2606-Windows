@@ -439,7 +439,7 @@ class polyTopoChange
 public:
 
     //- Runtime type information
-    ClassName("polyTopoChange");
+    ClassNameApi(meshTools_API, "polyTopoChange");
 
 
 

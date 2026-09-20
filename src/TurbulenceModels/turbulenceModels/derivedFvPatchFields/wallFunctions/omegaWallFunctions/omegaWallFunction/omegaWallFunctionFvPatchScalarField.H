@@ -98,7 +98,7 @@ protected:
     // Protected Data
 
         //- Tolerance used in weighted calculations
-        static scalar tolerance_;
+        static turbulenceModels_API scalar tolerance_;
 
         //- Initialised flag
         bool initialised_;
@@ -169,7 +169,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("omegaWallFunction");
+    TypeNameApi(turbulenceModels_API, "omegaWallFunction");
 
 
     // Constructors

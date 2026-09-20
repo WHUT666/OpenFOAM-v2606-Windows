@@ -92,7 +92,7 @@ class greyDiffusiveViewFactorFixedValueFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("greyDiffusiveRadiationViewFactor");
+    TypeNameApi(radiationModels_API, "greyDiffusiveRadiationViewFactor");
 
 
     // Constructors

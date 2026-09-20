@@ -45,6 +45,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fixedBlended_defines_typeName in .C files that
+//  define the template statics of fixedBlended (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fixedBlended_defines_typeName)
+#  define Foam_fixedBlended_typeName_API
+#else
+#  define Foam_fixedBlended_typeName_API finiteVolume_API
+#endif
+
 #ifndef fixedBlended_H
 #define fixedBlended_H
 
@@ -87,7 +97,7 @@ class fixedBlended
 public:
 
     //- Runtime type information
-    TypeName("fixedBlended");
+    TypeNameApi(Foam_fixedBlended_typeName_API, "fixedBlended");
 
 
     // Constructors

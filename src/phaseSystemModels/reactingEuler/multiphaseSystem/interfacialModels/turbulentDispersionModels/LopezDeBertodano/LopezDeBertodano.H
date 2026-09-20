@@ -80,7 +80,7 @@ class LopezDeBertodano
 public:
 
     //- Runtime type information
-    TypeName("LopezDeBertodano");
+    TypeNameApi(reactingMultiphaseSystem_API, "LopezDeBertodano");
 
 
     // Constructors

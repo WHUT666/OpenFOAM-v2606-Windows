@@ -98,7 +98,7 @@ class fixedShearStressFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("fixedShearStress");
+    TypeNameApi(turbulenceModels_API, "fixedShearStress");
 
 
     // Constructors

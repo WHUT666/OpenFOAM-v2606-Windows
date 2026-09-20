@@ -139,7 +139,7 @@ public:
 
 
     // Declare name of the class
-    ClassNameNoDebug("treeDataCell");
+    ClassNameNoDebugApi(OpenFOAM_API, "treeDataCell");
 
 
     // Constructors (cachable versions)

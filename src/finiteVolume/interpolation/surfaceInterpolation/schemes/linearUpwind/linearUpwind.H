@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_linearUpwind_defines_typeName in .C files that
+//  define the template statics of linearUpwind (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_linearUpwind_defines_typeName)
+#  define Foam_linearUpwind_typeName_API
+#else
+#  define Foam_linearUpwind_typeName_API finiteVolume_API
+#endif
+
 #ifndef linearUpwind_H
 #define linearUpwind_H
 
@@ -76,7 +86,7 @@ class linearUpwind
 public:
 
     //- Runtime type information
-    TypeName("linearUpwind");
+    TypeNameApi(Foam_linearUpwind_typeName_API, "linearUpwind");
 
 
     // Constructors

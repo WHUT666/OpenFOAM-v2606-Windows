@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_localBlended_defines_typeName in .C files that
+//  define the template statics of localBlended (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_localBlended_defines_typeName)
+#  define Foam_localBlended_typeName_API
+#else
+#  define Foam_localBlended_typeName_API finiteVolume_API
+#endif
+
 #ifndef localBlended_H
 #define localBlended_H
 
@@ -78,7 +88,7 @@ class localBlended
 public:
 
     //- Runtime type information
-    TypeName("localBlended");
+    TypeNameApi(Foam_localBlended_typeName_API, "localBlended");
 
 
     // Constructors

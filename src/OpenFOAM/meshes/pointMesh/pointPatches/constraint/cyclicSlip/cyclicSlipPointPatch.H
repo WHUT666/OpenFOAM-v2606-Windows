@@ -58,7 +58,7 @@ class cyclicSlipPointPatch
 public:
 
     //- Runtime type information
-    TypeName(cyclicSlipPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, cyclicSlipPolyPatch::typeName_());
 
 
     // Constructors

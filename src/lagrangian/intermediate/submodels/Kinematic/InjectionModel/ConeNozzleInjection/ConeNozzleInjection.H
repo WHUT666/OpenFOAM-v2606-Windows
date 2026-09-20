@@ -64,6 +64,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ConeNozzleInjection_defines_typeName in .C files that
+//  define the template statics of ConeNozzleInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ConeNozzleInjection_defines_typeName)
+#  define Foam_ConeNozzleInjection_typeName_API
+#else
+#  define Foam_ConeNozzleInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ConeNozzleInjection_H
 #define ConeNozzleInjection_H
 
@@ -101,7 +111,7 @@ public:
         imDiscSegments  //<! Disc with angular segments
     };
 
-    static const Enum<injectionMethod> injectionMethodNames;
+    static Foam_ConeNozzleInjection_typeName_API const Enum<injectionMethod> injectionMethodNames;
 
     //- Flow type enumeration
     enum class flowType
@@ -111,7 +121,7 @@ public:
         ftFlowRateAndDischarge
     };
 
-    static const Enum<flowType> flowTypeNames;
+    static Foam_ConeNozzleInjection_typeName_API const Enum<flowType> flowTypeNames;
 
 
 private:
@@ -221,7 +231,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("coneNozzleInjection");
+    TypeNameApi(Foam_ConeNozzleInjection_typeName_API, "coneNozzleInjection");
 
 
     // Constructors

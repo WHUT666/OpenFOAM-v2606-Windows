@@ -62,7 +62,7 @@ class cellZoneSet
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("cellZoneSet");
+    TypeNameNoDebugApi(meshTools_API, "cellZoneSet");
 
 
     // Constructors

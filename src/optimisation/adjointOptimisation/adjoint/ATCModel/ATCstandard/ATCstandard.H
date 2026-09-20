@@ -76,7 +76,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("standard");
+    TypeNameApi(adjointOptimisation_API, "standard");
 
 
     // Constructors

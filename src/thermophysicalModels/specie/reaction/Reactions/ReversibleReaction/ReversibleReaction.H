@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ReversibleReaction_defines_typeName in .C files that
+//  define the template statics of ReactionType (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ReversibleReaction_defines_typeName)
+#  define Foam_ReversibleReaction_typeName_API
+#else
+#  define Foam_ReversibleReaction_typeName_API specie_API
+#endif
+
 #ifndef ReversibleReaction_H
 #define ReversibleReaction_H
 
@@ -85,7 +95,7 @@ class ReversibleReaction
 public:
 
     //- Runtime type information
-    TypeName("reversible");
+    TypeNameApi(Foam_ReversibleReaction_typeName_API, "reversible");
 
 
     // Constructors

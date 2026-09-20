@@ -121,7 +121,7 @@ protected:
 public:
 
     //- Runtime type information
-    ClassName("columnFvMeshInfo");
+    ClassNameApi(finiteVolume_API, "columnFvMeshInfo");
 
     // Constructor
     columnFvMeshInfo
@@ -141,7 +141,7 @@ class columnFvMesh
 public:
 
     //- Runtime type information
-    TypeName("columnFvMesh");
+    TypeNameApi(finiteVolume_API, "columnFvMesh");
 
     //- Constructor
     columnFvMesh

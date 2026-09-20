@@ -111,7 +111,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fixedReferenceTemperature");
+    TypeNameApi(fieldFunctionObjects_API, "fixedReferenceTemperature");
 
 
     // Constructors

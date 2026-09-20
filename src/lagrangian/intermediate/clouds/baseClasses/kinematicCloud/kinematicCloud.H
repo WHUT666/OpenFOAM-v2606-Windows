@@ -55,7 +55,7 @@ class kinematicCloud
 public:
 
     //- Runtime type information
-    TypeName("kinematicCloud");
+    TypeNameApi(lagrangianIntermediate_API, "kinematicCloud");
 
 
     // Constructors

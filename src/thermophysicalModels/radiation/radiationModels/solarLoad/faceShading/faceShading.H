@@ -134,7 +134,7 @@ class faceShading
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("faceShading");
+    ClassNameApi(radiationModels_API, "faceShading");
 
 
     // Constructors

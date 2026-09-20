@@ -107,7 +107,7 @@ class enstrophy
 public:
 
     //- Runtime type information
-    TypeName("enstrophy");
+    TypeNameApi(fieldFunctionObjects_API, "enstrophy");
 
 
     // Constructors

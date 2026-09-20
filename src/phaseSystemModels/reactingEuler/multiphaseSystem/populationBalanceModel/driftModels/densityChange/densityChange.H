@@ -59,7 +59,7 @@ class densityChangeDrift
 public:
 
     //- Runtime type information
-    TypeName("densityChange");
+    TypeNameApi(reactingMultiphaseSystem_API, "densityChange");
 
     // Constructor
 

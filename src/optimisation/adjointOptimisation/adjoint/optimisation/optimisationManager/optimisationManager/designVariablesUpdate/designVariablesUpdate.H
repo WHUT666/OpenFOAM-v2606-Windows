@@ -153,7 +153,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("designVariablesUpdate");
+    TypeNameApi(adjointOptimisation_API, "designVariablesUpdate");
 
 
     // Constructors

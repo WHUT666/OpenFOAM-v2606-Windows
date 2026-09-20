@@ -60,12 +60,12 @@ class departureDiameterModel
 public:
 
     //- Runtime type information
-    TypeName("departureDiameterModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "departureDiameterModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         departureDiameterModel,
         dictionary,

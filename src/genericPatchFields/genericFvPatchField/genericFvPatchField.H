@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_genericFvPatchField_defines_typeName in .C files that
+//  define the template statics of genericFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_genericFvPatchField_defines_typeName)
+#  define Foam_genericFvPatchField_typeName_API
+#else
+#  define Foam_genericFvPatchField_typeName_API genericPatchFields_API
+#endif
+
 #ifndef Foam_genericFvPatchField_H
 #define Foam_genericFvPatchField_H
 
@@ -67,7 +77,7 @@ class genericFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("generic");
+    TypeNameApi(Foam_genericFvPatchField_typeName_API, "generic");
 
 
     // Constructors

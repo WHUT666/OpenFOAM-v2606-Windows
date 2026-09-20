@@ -305,7 +305,7 @@ class addPatchCellLayer
 public:
 
     //- Runtime type information
-    ClassName("addPatchCellLayer");
+    ClassNameApi(dynamicMesh_API, "addPatchCellLayer");
 
 
     // Constructors

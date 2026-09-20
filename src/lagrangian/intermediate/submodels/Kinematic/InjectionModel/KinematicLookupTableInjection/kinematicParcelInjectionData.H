@@ -93,7 +93,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("kinematicParcelInjectionData");
+    TypeNameApi(lagrangianIntermediate_API, "kinematicParcelInjectionData");
 
     // Constructors
 

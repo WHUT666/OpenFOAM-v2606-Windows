@@ -69,10 +69,10 @@ class tetCell
     // Static Data Members
 
         //- The model faces for TET
-        static const label modelFaces_[4][3];
+        static OpenFOAM_API const label modelFaces_[4][3];
 
         //- The model edges for TET
-        static const label modelEdges_[6][2];
+        static OpenFOAM_API const label modelEdges_[6][2];
 
 
 public:

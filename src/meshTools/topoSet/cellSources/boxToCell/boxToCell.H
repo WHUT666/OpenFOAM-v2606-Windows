@@ -135,7 +135,7 @@ class boxToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Bounding boxes
         treeBoundBoxList bbs_;
@@ -149,7 +149,7 @@ class boxToCell
 public:
 
     //- Runtime type information
-    TypeName("boxToCell");
+    TypeNameApi(meshTools_API, "boxToCell");
 
 
     // Constructors

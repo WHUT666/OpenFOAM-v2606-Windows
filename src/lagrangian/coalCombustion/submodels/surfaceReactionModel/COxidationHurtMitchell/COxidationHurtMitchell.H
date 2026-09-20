@@ -51,6 +51,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_COxidationHurtMitchell_defines_typeName in .C files that
+//  define the template statics of COxidationHurtMitchell (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_COxidationHurtMitchell_defines_typeName)
+#  define Foam_COxidationHurtMitchell_typeName_API
+#else
+#  define Foam_COxidationHurtMitchell_typeName_API coalCombustion_API
+#endif
+
 #ifndef COxidationHurtMitchell_H
 #define COxidationHurtMitchell_H
 
@@ -115,7 +125,7 @@ class COxidationHurtMitchell
 public:
 
     //- Runtime type information
-    TypeName("COxidationHurtMitchell");
+    TypeNameApi(Foam_COxidationHurtMitchell_typeName_API, "COxidationHurtMitchell");
 
 
     // Constructors

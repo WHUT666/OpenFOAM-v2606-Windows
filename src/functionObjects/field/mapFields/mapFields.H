@@ -190,7 +190,7 @@ class mapFields
 public:
 
     //- Runtime type information
-    TypeName("mapFields");
+    TypeNameApi(fieldFunctionObjects_API, "mapFields");
 
 
     // Constructors

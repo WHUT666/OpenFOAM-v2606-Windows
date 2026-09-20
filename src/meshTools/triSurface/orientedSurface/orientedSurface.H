@@ -129,7 +129,7 @@ private:
 
 public:
 
-    ClassName("orientedSurface");
+    ClassNameApi(meshTools_API, "orientedSurface");
 
 
     // Constructors

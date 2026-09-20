@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_nonuniformTransformCyclicPointPatchField_defines_typeName in .C files that
+//  define the template statics of nonuniformTransformCyclicPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_nonuniformTransformCyclicPointPatchField_defines_typeName)
+#  define Foam_nonuniformTransformCyclicPointPatchField_typeName_API
+#else
+#  define Foam_nonuniformTransformCyclicPointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_nonuniformTransformCyclicPointPatchField_H
 #define Foam_nonuniformTransformCyclicPointPatchField_H
 
@@ -60,7 +70,7 @@ class nonuniformTransformCyclicPointPatchField
 public:
 
     //- Runtime type information
-    TypeName(nonuniformTransformCyclicPointPatch::typeName_());
+    TypeNameApi(Foam_nonuniformTransformCyclicPointPatchField_typeName_API, nonuniformTransformCyclicPointPatch::typeName_());
 
 
     // Constructors

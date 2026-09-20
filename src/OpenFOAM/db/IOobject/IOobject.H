@@ -118,7 +118,7 @@ namespace Foam
 class Time;
 class dictionary;
 class objectRegistry;
-class IOobject;
+class OpenFOAM_API IOobject;
 
 template<>
 Ostream& operator<<(Ostream&, const InfoProxy<IOobject>&);
@@ -138,7 +138,7 @@ struct is_coherentIOobject : std::false_type {};
                            Class IOobject Declaration
 \*---------------------------------------------------------------------------*/
 
-class IOobject
+class OpenFOAM_API IOobject
 :
     public IOobjectOption
 {

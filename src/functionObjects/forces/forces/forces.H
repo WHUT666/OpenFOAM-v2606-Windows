@@ -366,7 +366,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("forces");
+    TypeNameApi(forces_API, "forces");
 
 
     // Constructors

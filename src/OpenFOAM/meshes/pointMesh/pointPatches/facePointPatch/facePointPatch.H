@@ -104,13 +104,13 @@ public:
 
 
     //- Runtime type information
-    TypeName(polyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, polyPatch::typeName_());
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             facePointPatch,
             polyPatch,

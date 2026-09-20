@@ -65,12 +65,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("engineTime");
+    TypeNameApi(engine_API, "engineTime");
 
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( engine_API,
         autoPtr,
         engineTime,
         dictionary,

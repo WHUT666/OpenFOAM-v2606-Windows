@@ -103,7 +103,7 @@ class removeRegisteredObject
 public:
 
     //- Runtime type information
-    TypeName("removeRegisteredObject");
+    TypeNameApi(utilityFunctionObjects_API, "removeRegisteredObject");
 
 
     // Constructors

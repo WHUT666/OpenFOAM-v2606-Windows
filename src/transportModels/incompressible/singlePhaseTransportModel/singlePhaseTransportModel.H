@@ -77,7 +77,7 @@ class singlePhaseTransportModel
 public:
 
     //- Runtime type information
-    TypeName("singlePhaseTransportModel");
+    TypeNameApi(incompressibleTransportModels_API, "singlePhaseTransportModel");
 
 
     // Constructors

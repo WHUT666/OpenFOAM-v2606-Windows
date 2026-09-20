@@ -85,7 +85,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("invBP");
+    TypeNameApi(adjointOptimisation_API, "invBP");
 
 
     // Constructors

@@ -87,7 +87,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("multiBandAbsorptionEmission");
+    TypeNameApi(radiationModels_API, "multiBandAbsorptionEmission");
 
 
     // Constructors

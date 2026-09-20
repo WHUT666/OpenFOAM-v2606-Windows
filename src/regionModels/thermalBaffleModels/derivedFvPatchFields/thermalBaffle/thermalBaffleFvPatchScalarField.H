@@ -274,7 +274,7 @@ class thermalBaffleFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("compressible::thermalBaffle");
+    TypeNameApi(thermalBaffleModels_API, "compressible::thermalBaffle");
 
 
     // Constructors

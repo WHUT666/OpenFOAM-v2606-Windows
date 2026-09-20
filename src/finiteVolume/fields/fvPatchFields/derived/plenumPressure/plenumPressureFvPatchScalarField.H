@@ -186,7 +186,7 @@ class plenumPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("plenumPressure");
+    TypeNameApi(finiteVolume_API, "plenumPressure");
 
 
     // Constructors

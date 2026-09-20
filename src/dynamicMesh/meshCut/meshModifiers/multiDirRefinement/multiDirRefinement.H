@@ -150,7 +150,7 @@ class multiDirRefinement
 public:
 
     //- Runtime type information
-    ClassName("multiDirRefinement");
+    ClassNameApi(dynamicMesh_API, "multiDirRefinement");
 
 
     // Constructors

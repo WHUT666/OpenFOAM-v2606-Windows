@@ -132,7 +132,7 @@ class rawWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("raw");
+    TypeNameNoDebugApi(surfMesh_API, "raw");
 
 
     // Constructors

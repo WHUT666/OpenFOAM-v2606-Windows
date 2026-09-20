@@ -102,7 +102,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("ptscotch");
+    TypeNameApi(ptscotchDecomp_API, "ptscotch");
 
 
     // Constructors

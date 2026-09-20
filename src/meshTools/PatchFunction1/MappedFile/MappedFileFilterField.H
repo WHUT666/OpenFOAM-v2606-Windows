@@ -91,7 +91,7 @@ private:
     // Private Data
 
         //- Names for RBF basis types
-        static const Enum<RBF_type> RBF_typeNames_;
+        static meshTools_API const Enum<RBF_type> RBF_typeNames_;
 
         //- Addressing
         List<labelList> addressing_;
@@ -129,7 +129,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("filterField");
+    ClassNameApi(meshTools_API, "filterField");
 
 
     // Constructors

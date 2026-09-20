@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_noChemistrySolver_defines_typeName in .C files that
+//  define the template statics of noChemistrySolver (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_noChemistrySolver_defines_typeName)
+#  define Foam_noChemistrySolver_typeName_API
+#else
+#  define Foam_noChemistrySolver_typeName_API chemistryModel_API
+#endif
+
 #ifndef noChemistrySolver_H
 #define noChemistrySolver_H
 
@@ -58,7 +68,7 @@ class noChemistrySolver
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_noChemistrySolver_typeName_API, "none");
 
 
     // Constructors

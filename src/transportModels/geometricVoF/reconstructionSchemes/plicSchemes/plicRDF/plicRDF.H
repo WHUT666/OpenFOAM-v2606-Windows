@@ -149,7 +149,7 @@ class plicRDF
 public:
 
     //- Runtime type information
-    TypeName("plicRDF");
+    TypeNameApi(geometricVoF_API, "plicRDF");
 
 
     //- Construct from components

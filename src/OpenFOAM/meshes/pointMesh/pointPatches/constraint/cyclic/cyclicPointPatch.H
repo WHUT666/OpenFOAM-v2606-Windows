@@ -93,7 +93,7 @@ class cyclicPointPatch
 public:
 
     //- Runtime type information
-    TypeName(cyclicPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, cyclicPolyPatch::typeName_());
 
 
     // Constructors

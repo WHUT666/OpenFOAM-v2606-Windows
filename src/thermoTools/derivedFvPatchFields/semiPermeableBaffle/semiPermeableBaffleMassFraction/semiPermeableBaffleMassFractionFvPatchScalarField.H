@@ -110,7 +110,7 @@ class semiPermeableBaffleMassFractionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("semiPermeableBaffleMassFraction");
+    TypeNameApi(thermoTools_API, "semiPermeableBaffleMassFraction");
 
 
     // Constructors

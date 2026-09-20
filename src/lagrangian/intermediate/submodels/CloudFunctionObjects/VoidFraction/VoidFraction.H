@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_VoidFraction_defines_typeName in .C files that
+//  define the template statics of VoidFraction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_VoidFraction_defines_typeName)
+#  define Foam_VoidFraction_typeName_API
+#else
+#  define Foam_VoidFraction_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef VoidFraction_H
 #define VoidFraction_H
 
@@ -81,7 +91,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("voidFraction");
+    TypeNameApi(Foam_VoidFraction_typeName_API, "voidFraction");
 
 
     // Constructors

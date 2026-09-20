@@ -208,7 +208,7 @@ class CelikEtaIndex
 public:
 
     //- Runtime type information
-    TypeName("CelikEtaIndex");
+    TypeNameApi(fieldFunctionObjects_API, "CelikEtaIndex");
 
 
     // Constructors

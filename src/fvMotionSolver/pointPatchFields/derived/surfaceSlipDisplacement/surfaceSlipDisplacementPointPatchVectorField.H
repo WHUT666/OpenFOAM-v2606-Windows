@@ -96,7 +96,7 @@ private:
     // Private Data
 
         //- Project mode names
-        static const Enum<projectMode> projectModeNames_;
+        static fvMotionSolvers_API const Enum<projectMode> projectModeNames_;
 
         //- Names of surfaces
         const dictionary surfacesDict_;
@@ -128,7 +128,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("surfaceSlipDisplacement");
+    TypeNameApi(fvMotionSolvers_API, "surfaceSlipDisplacement");
 
 
     // Constructors

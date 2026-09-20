@@ -50,7 +50,7 @@ namespace Foam
 {
 
 // Forward Declarations
-class polyMesh;
+class OpenFOAM_API polyMesh;
 template<class T> class CompactListList;
 
 } // End namespace Foam

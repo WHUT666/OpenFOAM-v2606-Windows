@@ -91,10 +91,10 @@ protected:
         //- Processor interface buffers and colouring
 
             //- Previous mesh
-            static const lduMesh* meshPtr_;
+            static meshTools_API const lduMesh* meshPtr_;
 
             //- Previous processor colours
-            static autoPtr<labelList> procColoursPtr_;
+            static meshTools_API autoPtr<labelList> procColoursPtr_;
 
             //- Buffers for sending and receiving data
             mutable FieldField<Field, solveScalar> sendBufs_;
@@ -238,7 +238,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("distributedDILU");
+    TypeNameApi(meshTools_API, "distributedDILU");
 
 
     // Constructors

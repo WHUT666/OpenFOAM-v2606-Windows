@@ -119,7 +119,7 @@ class starcdWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("starcd");
+    TypeNameNoDebugApi(surfMesh_API, "starcd");
 
 
     // Constructors

@@ -62,7 +62,7 @@ class halfCosineRamp
 public:
 
     //- Runtime type information
-    TypeName("halfCosineRamp");
+    TypeNameApi(OpenFOAM_API, "halfCosineRamp");
 
 
     // Constructors

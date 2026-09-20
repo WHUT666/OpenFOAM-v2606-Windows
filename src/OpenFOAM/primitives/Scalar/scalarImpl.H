@@ -109,15 +109,15 @@ public:
 
     // Static Data Members
 
-        static const char* const typeName;
-        static const char* const componentNames[];
-        static const Scalar zero;
-        static const Scalar one;
-        static const Scalar max;
-        static const Scalar min;
-        static const Scalar rootMax;
-        static const Scalar rootMin;
-        static const Scalar vsmall;
+        static OpenFOAM_API const char* const typeName;
+        static OpenFOAM_API const char* const componentNames[];
+        static OpenFOAM_API const Scalar zero;
+        static OpenFOAM_API const Scalar one;
+        static OpenFOAM_API const Scalar max;
+        static OpenFOAM_API const Scalar min;
+        static OpenFOAM_API const Scalar rootMax;
+        static OpenFOAM_API const Scalar rootMin;
+        static OpenFOAM_API const Scalar vsmall;
 
 
     // Constructors

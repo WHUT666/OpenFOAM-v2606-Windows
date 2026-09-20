@@ -84,16 +84,16 @@ private:
     // Private Static Data
 
         //- The timer to use
-        static std::unique_ptr<cpuTime> timer_;
+        static OpenFOAM_API std::unique_ptr<cpuTime> timer_;
 
         //- Is timer in a suspend state?
-        static bool suspend_;
+        static OpenFOAM_API bool suspend_;
 
         //- The accumulated values for various timing categories
-        static timingList times_;
+        static OpenFOAM_API timingList times_;
 
         //- The timing frequency for various timing categories
-        static countList counts_;
+        static OpenFOAM_API countList counts_;
 
 
 public:

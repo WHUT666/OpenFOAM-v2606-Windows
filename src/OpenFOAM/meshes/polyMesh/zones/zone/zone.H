@@ -75,7 +75,7 @@ class zone
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("zone");
+    TypeNameNoDebugApi(OpenFOAM_API, "zone");
 
 
     // Constructors

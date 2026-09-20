@@ -107,7 +107,7 @@ class inletOutletTotalTemperatureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("inletOutletTotalTemperature");
+    TypeNameApi(finiteVolume_API, "inletOutletTotalTemperature");
 
 
     // Constructors

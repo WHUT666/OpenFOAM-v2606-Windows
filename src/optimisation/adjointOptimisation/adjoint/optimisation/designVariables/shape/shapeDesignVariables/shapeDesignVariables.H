@@ -150,13 +150,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("shape");
+    TypeNameApi(adjointOptimisation_API, "shape");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             shapeDesignVariables,
             dictionary,

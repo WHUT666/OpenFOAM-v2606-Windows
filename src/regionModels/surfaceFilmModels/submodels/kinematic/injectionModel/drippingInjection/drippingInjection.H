@@ -99,7 +99,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("drippingInjection");
+    TypeNameApi(surfaceFilmModels_API, "drippingInjection");
 
 
     // Constructors

@@ -64,13 +64,13 @@ namespace Foam
 // Forward Declarations
 class argList;
 class profilingTrigger;
-class OSstream;
+class OpenFOAM_API OSstream;
 
 /*---------------------------------------------------------------------------*\
                              Class Time Declaration
 \*---------------------------------------------------------------------------*/
 
-class Time
+class OpenFOAM_API Time
 :
     public clock,
     public cpuTime,

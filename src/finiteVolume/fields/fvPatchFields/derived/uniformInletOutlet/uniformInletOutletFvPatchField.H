@@ -67,6 +67,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_uniformInletOutletFvPatchField_defines_typeName in .C files that
+//  define the template statics of uniformInletOutletFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_uniformInletOutletFvPatchField_defines_typeName)
+#  define Foam_uniformInletOutletFvPatchField_typeName_API
+#else
+#  define Foam_uniformInletOutletFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_uniformInletOutletFvPatchField_H
 #define Foam_uniformInletOutletFvPatchField_H
 
@@ -104,7 +114,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("uniformInletOutlet");
+    TypeNameApi(Foam_uniformInletOutletFvPatchField_typeName_API, "uniformInletOutlet");
 
 
     // Constructors

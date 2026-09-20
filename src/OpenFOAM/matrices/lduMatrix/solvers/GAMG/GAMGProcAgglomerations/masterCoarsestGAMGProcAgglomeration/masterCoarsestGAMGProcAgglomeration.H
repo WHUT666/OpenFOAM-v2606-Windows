@@ -116,7 +116,7 @@ class masterCoarsestGAMGProcAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("masterCoarsest");
+    TypeNameApi(OpenFOAM_API, "masterCoarsest");
 
 
     // Constructors

@@ -118,7 +118,7 @@ class flowType
 public:
 
     //- Runtime type information
-    TypeName("flowType");
+    TypeNameApi(fieldFunctionObjects_API, "flowType");
 
 
     // Constructors

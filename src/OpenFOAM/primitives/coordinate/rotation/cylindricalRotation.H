@@ -68,7 +68,7 @@ class cylindrical
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("cylindrical");
+    TypeNameNoDebugApi(OpenFOAM_API, "cylindrical");
 
 
     // Constructors

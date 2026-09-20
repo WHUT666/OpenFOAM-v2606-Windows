@@ -77,13 +77,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("interpolationWeights");
+    TypeNameApi(OpenFOAM_API, "interpolationWeights");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             interpolationWeights,
             word,

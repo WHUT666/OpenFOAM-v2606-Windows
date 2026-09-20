@@ -81,7 +81,7 @@ class linearSpring
 public:
 
     //- Runtime type information
-    TypeName("linearSpring");
+    TypeNameApi(rigidBodyDynamics_API, "linearSpring");
 
 
     // Constructors

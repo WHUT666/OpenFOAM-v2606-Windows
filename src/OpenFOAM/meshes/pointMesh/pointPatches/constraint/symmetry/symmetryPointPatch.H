@@ -60,7 +60,7 @@ class symmetryPointPatch
 public:
 
     //- Runtime type information
-    TypeName(symmetryPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, symmetryPolyPatch::typeName_());
 
 
     // Constructors

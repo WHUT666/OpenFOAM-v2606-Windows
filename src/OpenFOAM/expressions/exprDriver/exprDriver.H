@@ -265,7 +265,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("exprDriver");
+    TypeNameApi(OpenFOAM_API, "exprDriver");
 
 
     // Generated Methods

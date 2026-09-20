@@ -88,7 +88,7 @@ public:
         };
 
         //- Names for the types of matches
-        static const Enum<typeOfMatch> typeOfMatchNames;
+        static dynamicMesh_API const Enum<typeOfMatch> typeOfMatchNames;
 
 private:
 
@@ -282,34 +282,34 @@ private:
     // Static data members
 
         //- Point merge tolerance
-        static const scalar pointMergeTolDefault_;
+        static dynamicMesh_API const scalar pointMergeTolDefault_;
 
         //- Edge merge tolerance
-        static const scalar edgeMergeTolDefault_;
+        static dynamicMesh_API const scalar edgeMergeTolDefault_;
 
         //- Estimated number of faces an edge goes through
-        static const label nFacesPerSlaveEdgeDefault_;
+        static dynamicMesh_API const label nFacesPerSlaveEdgeDefault_;
 
         //- Edge-face interaction escape limit
-        static const label edgeFaceEscapeLimitDefault_;
+        static dynamicMesh_API const label edgeFaceEscapeLimitDefault_;
 
         //- Integral match point adjustment tolerance
-        static const scalar integralAdjTolDefault_;
+        static dynamicMesh_API const scalar integralAdjTolDefault_;
 
         //- Edge intersection master catch fraction
-        static const scalar edgeMasterCatchFractionDefault_;
+        static dynamicMesh_API const scalar edgeMasterCatchFractionDefault_;
 
         //- Edge intersection co-planar tolerance
-        static const scalar edgeCoPlanarTolDefault_;
+        static dynamicMesh_API const scalar edgeCoPlanarTolDefault_;
 
         //- Edge end cut-off tolerance
-        static const scalar edgeEndCutoffTolDefault_;
+        static dynamicMesh_API const scalar edgeEndCutoffTolDefault_;
 
 
 public:
 
     //- Runtime type information
-    TypeName("slidingInterface");
+    TypeNameApi(dynamicMesh_API, "slidingInterface");
 
 
     // Constructors

@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoPair_defines_typeName in .C files that
+//  define the template statics of NoPair (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoPair_defines_typeName)
+#  define Foam_NoPair_typeName_API
+#else
+#  define Foam_NoPair_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoPair_H
 #define NoPair_H
 
@@ -55,7 +65,7 @@ class NoPair
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoPair_typeName_API, "none");
 
 
     // Constructors

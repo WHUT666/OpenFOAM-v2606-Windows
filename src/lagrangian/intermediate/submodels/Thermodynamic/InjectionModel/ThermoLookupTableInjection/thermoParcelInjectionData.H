@@ -84,7 +84,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("thermoParcelInjectionData");
+    TypeNameApi(lagrangianIntermediate_API, "thermoParcelInjectionData");
 
     // Constructors
 

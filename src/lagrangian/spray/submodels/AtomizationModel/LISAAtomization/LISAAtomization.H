@@ -49,6 +49,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LISAAtomization_defines_typeName in .C files that
+//  define the template statics of LISAAtomization (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LISAAtomization_defines_typeName)
+#  define Foam_LISAAtomization_typeName_API
+#else
+#  define Foam_LISAAtomization_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef LISAAtomization_H
 #define LISAAtomization_H
 
@@ -96,7 +106,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("LISA");
+    TypeNameApi(Foam_LISAAtomization_typeName_API, "LISA");
 
 
     // Constructors

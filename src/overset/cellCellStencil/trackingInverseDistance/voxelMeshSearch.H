@@ -86,7 +86,7 @@ class voxelMeshSearch
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("voxelMeshSearch");
+    ClassNameApi(overset_API, "voxelMeshSearch");
 
 
     // Constructors

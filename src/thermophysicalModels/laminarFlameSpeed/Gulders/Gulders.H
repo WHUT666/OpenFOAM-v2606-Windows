@@ -104,7 +104,7 @@ class Gulders
 public:
 
     //- Runtime type information
-    TypeName("Gulders");
+    TypeNameApi(laminarFlameSpeedModels_API, "Gulders");
 
     // Constructors
 

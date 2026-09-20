@@ -86,7 +86,7 @@ class Burns
 public:
 
     //- Runtime type information
-    TypeName("Burns");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Burns");
 
 
     // Constructors

@@ -31,6 +31,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DispersionRASModel_defines_typeName in .C files that
+//  define the template statics of DispersionRASModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DispersionRASModel_defines_typeName)
+#  define Foam_DispersionRASModel_typeName_API
+#else
+#  define Foam_DispersionRASModel_typeName_API lagrangianTurbulence_API
+#endif
+
 #ifndef DispersionRASModel_H
 #define DispersionRASModel_H
 
@@ -82,7 +92,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("dispersionRASModel");
+    TypeNameApi(Foam_DispersionRASModel_typeName_API, "dispersionRASModel");
 
 
     // Constructors

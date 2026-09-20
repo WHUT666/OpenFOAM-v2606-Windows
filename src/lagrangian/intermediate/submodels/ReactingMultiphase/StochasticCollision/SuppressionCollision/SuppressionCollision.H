@@ -35,6 +35,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SuppressionCollision_defines_typeName in .C files that
+//  define the template statics of SuppressionCollision (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SuppressionCollision_defines_typeName)
+#  define Foam_SuppressionCollision_typeName_API
+#else
+#  define Foam_SuppressionCollision_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef SuppressionCollision_H
 #define SuppressionCollision_H
 
@@ -77,7 +87,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("suppressionCollision");
+    TypeNameApi(Foam_SuppressionCollision_typeName_API, "suppressionCollision");
 
 
     // Constructors

@@ -87,6 +87,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kEpsilon_defines_typeName in .C files that
+//  define the template statics of kEpsilon (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kEpsilon_defines_typeName)
+#  define Foam_kEpsilon_typeName_API
+#else
+#  define Foam_kEpsilon_typeName_API turbulenceModels_API
+#endif
+
 #ifndef kEpsilon_H
 #define kEpsilon_H
 
@@ -162,7 +172,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("kEpsilon");
+    TypeNameApi(Foam_kEpsilon_typeName_API, "kEpsilon");
 
 
     // Constructors

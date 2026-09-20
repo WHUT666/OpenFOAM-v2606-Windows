@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoDevolatilisation_defines_typeName in .C files that
+//  define the template statics of NoDevolatilisation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoDevolatilisation_defines_typeName)
+#  define Foam_NoDevolatilisation_typeName_API
+#else
+#  define Foam_NoDevolatilisation_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoDevolatilisation_H
 #define NoDevolatilisation_H
 
@@ -56,7 +66,7 @@ class NoDevolatilisation
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoDevolatilisation_typeName_API, "none");
 
 
     // Constructors

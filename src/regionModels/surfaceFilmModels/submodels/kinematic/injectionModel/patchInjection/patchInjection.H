@@ -80,7 +80,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("patchInjection");
+    TypeNameApi(surfaceFilmModels_API, "patchInjection");
 
 
     // Constructors

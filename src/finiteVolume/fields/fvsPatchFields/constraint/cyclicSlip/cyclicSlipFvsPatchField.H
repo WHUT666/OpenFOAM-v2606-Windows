@@ -31,6 +31,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cyclicSlipFvsPatchField_defines_typeName in .C files that
+//  define the template statics of cyclicSlipFvsPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cyclicSlipFvsPatchField_defines_typeName)
+#  define Foam_cyclicSlipFvsPatchField_typeName_API
+#else
+#  define Foam_cyclicSlipFvsPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_cyclicSlipFvsPatchField_H
 #define Foam_cyclicSlipFvsPatchField_H
 
@@ -57,7 +67,7 @@ class cyclicSlipFvsPatchField
 public:
 
     //- Runtime type information
-    TypeName(cyclicSlipFvPatch::typeName_());
+    TypeNameApi(Foam_cyclicSlipFvsPatchField_typeName_API, cyclicSlipFvPatch::typeName_());
 
 
     // Constructors

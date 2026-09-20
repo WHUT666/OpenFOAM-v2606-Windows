@@ -72,7 +72,7 @@ class cubeRootVolDelta
 public:
 
     //- Runtime type information
-    TypeName("cubeRootVol");
+    TypeNameApi(turbulenceModels_API, "cubeRootVol");
 
 
     // Constructors

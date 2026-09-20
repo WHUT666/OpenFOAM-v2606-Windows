@@ -110,7 +110,7 @@ private:
 public:
 
     //- Run-time type information
-    TypeName("cellVolumeWeight");
+    TypeNameApi(sampling_API, "cellVolumeWeight");
 
     //- Construct from source and target meshes
     cellVolumeWeightMethod(const polyMesh& src, const polyMesh& tgt);

@@ -77,7 +77,7 @@ class processorCyclicPointPatch
 public:
 
     //- Runtime type information
-    TypeName(processorCyclicPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, processorCyclicPolyPatch::typeName_());
 
 
     // Constructors

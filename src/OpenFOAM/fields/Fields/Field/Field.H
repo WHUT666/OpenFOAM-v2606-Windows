@@ -91,23 +91,23 @@ public:
     // Static Data Members
 
         //- Typename for Field
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
         //- Permit read construct from a larger size.
         //  Mostly required for things like column mesh, for example.
-        static bool allowConstructFromLargerSize;
+        static OpenFOAM_API bool allowConstructFromLargerSize;
 
         //- GeometricField with extra capacity for flattened boundary fields.
         //- Uses opt-switch "unifiedGeometricField"
-        static bool unifiedGeometricField;
+        static OpenFOAM_API bool unifiedGeometricField;
 
         //- Local boundary field consistency checks.
         //- Uses opt-switch "localBoundaryConsistency"
-        static int localBoundaryConsistency_;
+        static OpenFOAM_API int localBoundaryConsistency_;
 
         //- Tolerance for local boundary field consistency checks.
         //- Uses opt-switch "localBoundaryConsistency::tolerance"
-        static scalar localBoundaryTolerance_;
+        static OpenFOAM_API scalar localBoundaryTolerance_;
 
 
     // Static Member Functions

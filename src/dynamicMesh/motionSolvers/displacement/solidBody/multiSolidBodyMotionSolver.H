@@ -68,7 +68,7 @@ class multiSolidBodyMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("multiSolidBodyMotionSolver");
+    TypeNameApi(dynamicMesh_API, "multiSolidBodyMotionSolver");
 
 
     // Generated Methods

@@ -179,7 +179,7 @@ protected:
 public:
 
     //- Debug information
-    static int debug;
+    static sampling_API int debug;
 
 
     // Constructors

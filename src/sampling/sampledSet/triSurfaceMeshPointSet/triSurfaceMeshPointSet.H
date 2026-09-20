@@ -88,7 +88,7 @@ class triSurfaceMeshPointSet
 public:
 
     //- Runtime type information
-    TypeName("triSurfaceMeshPointSet");
+    TypeNameApi(sampling_API, "triSurfaceMeshPointSet");
 
 
     // Constructors

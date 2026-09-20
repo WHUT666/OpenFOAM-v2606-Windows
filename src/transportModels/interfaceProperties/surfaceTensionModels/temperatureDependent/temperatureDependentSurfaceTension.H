@@ -92,7 +92,7 @@ class temperatureDependent
 public:
 
     //- Runtime type information
-    TypeName("temperatureDependent");
+    TypeNameApi(interfaceProperties_API, "temperatureDependent");
 
 
     // Constructors

@@ -285,16 +285,16 @@ public:
     // Public Data
 
         //- The default merge dimension (1e-8)
-        static scalar defaultMergeDim;
+        static surfMesh_API scalar defaultMergeDim;
 
 
     //- Runtime type information
-    TypeName("surfaceWriter");
+    TypeNameApi(surfMesh_API, "surfaceWriter");
 
 
         // Declare run-time constructor selection table
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( surfMesh_API,
             autoPtr,
             surfaceWriter,
             word,
@@ -302,8 +302,8 @@ public:
             ()
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( surfMesh_API,
             autoPtr,
             surfaceWriter,
             wordDict,

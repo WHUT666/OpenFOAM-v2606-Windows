@@ -50,6 +50,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_extrapolatedCalculatedFaPatchField_defines_typeName in .C files that
+//  define the template statics of extrapolatedCalculatedFaPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_extrapolatedCalculatedFaPatchField_defines_typeName)
+#  define Foam_extrapolatedCalculatedFaPatchField_typeName_API
+#else
+#  define Foam_extrapolatedCalculatedFaPatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_extrapolatedCalculatedFaPatchField_H
 #define Foam_extrapolatedCalculatedFaPatchField_H
 
@@ -75,7 +85,7 @@ class extrapolatedCalculatedFaPatchField
 public:
 
     //- Runtime type information
-    TypeName("extrapolatedCalculated");
+    TypeNameApi(Foam_extrapolatedCalculatedFaPatchField_typeName_API, "extrapolatedCalculated");
     // fieldTypes::extrapolatedCalculatedTypeName_()
 
 

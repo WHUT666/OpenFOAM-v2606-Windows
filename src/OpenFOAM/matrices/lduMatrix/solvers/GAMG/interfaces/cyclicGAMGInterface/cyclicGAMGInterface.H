@@ -82,7 +82,7 @@ class cyclicGAMGInterface
 public:
 
     //- Runtime type information
-    TypeName("cyclic");
+    TypeNameApi(OpenFOAM_API, "cyclic");
 
 
     // Constructors

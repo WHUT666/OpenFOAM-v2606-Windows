@@ -87,7 +87,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("reverseRamp");
+    TypeNameApi(adjointOptimisation_API, "reverseRamp");
 
 
     // Constructors

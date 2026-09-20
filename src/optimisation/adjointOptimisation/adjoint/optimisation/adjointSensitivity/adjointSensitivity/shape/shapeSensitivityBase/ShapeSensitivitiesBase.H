@@ -190,7 +190,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("ShapeSensitivitiesBase");
+    TypeNameApi(adjointOptimisation_API, "ShapeSensitivitiesBase");
 
 
     // Constructors

@@ -57,7 +57,7 @@ namespace ccm
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 //- Declare namespace and debug information.
-NamespaceName("ccm");
+NamespaceNameApi(conversion_API, "ccm");
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

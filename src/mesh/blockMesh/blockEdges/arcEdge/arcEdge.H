@@ -127,7 +127,7 @@ class arcEdge
 public:
 
     //- Runtime type information
-    TypeName("arc");
+    TypeNameApi(blockMesh_API, "arc");
 
 
     // Constructors

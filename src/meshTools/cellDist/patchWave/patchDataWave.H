@@ -42,6 +42,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_patchDataWave_defines_typeName in .C files that
+//  define the template statics of patchDataWave (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_patchDataWave_defines_typeName)
+#  define Foam_patchDataWave_typeName_API
+#else
+#  define Foam_patchDataWave_typeName_API meshTools_API
+#endif
+
 #ifndef patchDataWave_H
 #define patchDataWave_H
 
@@ -127,7 +137,7 @@ private:
 
         //- Used as default trackdata value to satisfy default template
         //  argument.
-        static int dummyTrackData_;
+        static Foam_patchDataWave_typeName_API int dummyTrackData_;
 
 
 public:

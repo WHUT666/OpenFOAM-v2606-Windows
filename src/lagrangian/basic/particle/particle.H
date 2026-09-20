@@ -80,14 +80,14 @@ class particle
     // Private Data
 
         //- Size in bytes of the position data
-        static const std::size_t sizeofPosition;
+        static lagrangian_API const std::size_t sizeofPosition;
 
         //- Size in bytes of the fields
-        static const std::size_t sizeofFields;
+        static lagrangian_API const std::size_t sizeofFields;
 
         //- The value of nBehind_ at which tracking is abandoned. See the
         //  description of nBehind_.
-        static const label maxNBehind_;
+        static lagrangian_API const label maxNBehind_;
 
 
 public:
@@ -353,7 +353,7 @@ public:
     // Static Data Members
 
         //- Runtime type information
-        TypeName("particle");
+        TypeNameApi(lagrangian_API, "particle");
 
         //- String representation of properties
         DefinePropertyList
@@ -363,15 +363,15 @@ public:
         );
 
         //- Cumulative particle counter - used to provide unique ID
-        static label particleCount_;
+        static lagrangian_API label particleCount_;
 
         //- Write particle coordinates file (v1712 and later)
         //- Default is true
-        static bool writeLagrangianCoordinates;
+        static lagrangian_API bool writeLagrangianCoordinates;
 
         //- Write particle positions file (v1706 format and earlier)
         //- Default is true (disable in etc/controlDict)
-        static bool writeLagrangianPositions;
+        static lagrangian_API bool writeLagrangianPositions;
 
 
     // Constructors

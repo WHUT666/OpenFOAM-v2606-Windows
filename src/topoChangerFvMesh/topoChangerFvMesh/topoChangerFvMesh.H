@@ -74,7 +74,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("topoChangerFvMesh");
+    TypeNameApi(topoChangerFvMesh_API, "topoChangerFvMesh");
 
 
     // Constructors

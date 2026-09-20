@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_coupledFvsPatchField_defines_typeName in .C files that
+//  define the template statics of coupledFvsPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_coupledFvsPatchField_defines_typeName)
+#  define Foam_coupledFvsPatchField_typeName_API
+#else
+#  define Foam_coupledFvsPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_coupledFvsPatchField_H
 #define Foam_coupledFvsPatchField_H
 
@@ -63,7 +73,7 @@ class coupledFvsPatchField
 public:
 
     //- Runtime type information
-    TypeName(coupledFvPatch::typeName_());
+    TypeNameApi(Foam_coupledFvsPatchField_typeName_API, coupledFvPatch::typeName_());
 
 
     // Constructors

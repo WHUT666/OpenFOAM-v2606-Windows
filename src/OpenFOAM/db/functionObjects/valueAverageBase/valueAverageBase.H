@@ -77,7 +77,7 @@ public:
         };
 
         //- Names for windowType enumeration
-        static const Enum<windowType> windowTypeNames;
+        static OpenFOAM_API const Enum<windowType> windowTypeNames;
 
 private:
 

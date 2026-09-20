@@ -126,7 +126,7 @@ class faceReflecting
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("faceReflecting");
+    ClassNameApi(radiationModels_API, "faceReflecting");
 
 
     // Constructors

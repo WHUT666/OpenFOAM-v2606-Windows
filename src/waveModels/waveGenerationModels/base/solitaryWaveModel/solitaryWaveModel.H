@@ -77,7 +77,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("solitaryWaveModel");
+    TypeNameApi(waveModels_API, "solitaryWaveModel");
 
 
     //- Constructor

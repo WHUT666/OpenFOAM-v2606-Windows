@@ -133,7 +133,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("trackingInverseDistance");
+    TypeNameApi(overset_API, "trackingInverseDistance");
 
 
     // Constructors

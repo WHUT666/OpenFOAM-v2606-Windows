@@ -49,6 +49,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kOmegaSSTDDES_defines_typeName in .C files that
+//  define the template statics of kOmegaSSTDDES (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kOmegaSSTDDES_defines_typeName)
+#  define Foam_kOmegaSSTDDES_typeName_API
+#else
+#  define Foam_kOmegaSSTDDES_typeName_API turbulenceModels_API
+#endif
+
 #ifndef Foam_kOmegaSSTDDES_H
 #define Foam_kOmegaSSTDDES_H
 
@@ -130,7 +140,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("kOmegaSSTDDES");
+    TypeNameApi(Foam_kOmegaSSTDDES_typeName_API, "kOmegaSSTDDES");
 
 
     // Constructors

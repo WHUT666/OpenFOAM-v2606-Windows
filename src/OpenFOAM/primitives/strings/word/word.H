@@ -72,13 +72,13 @@ public:
     // Static Data Members
 
         //- The typeName
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
         //- Debugging
-        static int debug;
+        static OpenFOAM_API int debug;
 
         //- An empty word
-        static const word null;
+        static OpenFOAM_API const word null;
 
 
     // Constructors

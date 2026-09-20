@@ -59,7 +59,7 @@ class xmgraceWriter
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("xmgr");
+    TypeNameNoDebugApi(meshTools_API, "xmgr");
 
     //- Default construct
     xmgraceWriter() = default;

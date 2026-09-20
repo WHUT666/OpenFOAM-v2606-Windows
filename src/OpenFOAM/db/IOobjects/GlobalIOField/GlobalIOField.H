@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_GlobalIOField_defines_typeName in .C files that
+//  define the template statics of GlobalIOField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_GlobalIOField_defines_typeName)
+#  define Foam_GlobalIOField_typeName_API
+#else
+#  define Foam_GlobalIOField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_GlobalIOField_H
 #define Foam_GlobalIOField_H
 
@@ -61,7 +71,7 @@ public:
     typedef Field<Type> content_type;
 
     //- Runtime type information
-    TypeName("Field");
+    TypeNameApi(Foam_GlobalIOField_typeName_API, "Field");
 
 
     // Constructors

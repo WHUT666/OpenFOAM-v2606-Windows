@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_BreakupModel_defines_typeName in .C files that
+//  define the template statics of BreakupModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_BreakupModel_defines_typeName)
+#  define Foam_BreakupModel_typeName_API
+#else
+#  define Foam_BreakupModel_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef BreakupModel_H
 #define BreakupModel_H
 
@@ -78,11 +88,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("breakupModel");
+    TypeNameApi(Foam_BreakupModel_typeName_API, "breakupModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_BreakupModel_typeName_API,
         autoPtr,
         BreakupModel,
         dictionary,

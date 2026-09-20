@@ -81,7 +81,7 @@ class duplicatePoints
 public:
 
     //- Runtime type information
-    ClassName("duplicatePoints");
+    ClassNameApi(dynamicMesh_API, "duplicatePoints");
 
 
     // Constructors

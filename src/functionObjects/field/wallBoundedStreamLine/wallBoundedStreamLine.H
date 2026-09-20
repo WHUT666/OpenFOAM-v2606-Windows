@@ -183,7 +183,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("wallBoundedStreamLine");
+    TypeNameApi(fieldFunctionObjects_API, "wallBoundedStreamLine");
 
 
     // Constructors

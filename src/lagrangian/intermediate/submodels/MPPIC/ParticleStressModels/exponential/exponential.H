@@ -73,7 +73,7 @@ class exponential
 public:
 
     //- Runtime type information
-    TypeName("exponential");
+    TypeNameApi(lagrangianIntermediate_API, "exponential");
 
 
     //- Constructors

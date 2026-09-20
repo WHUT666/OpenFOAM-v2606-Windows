@@ -52,6 +52,16 @@ See also
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ETAB_defines_typeName in .C files that
+//  define the template statics of ETAB (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ETAB_defines_typeName)
+#  define Foam_ETAB_typeName_API
+#else
+#  define Foam_ETAB_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef ETAB_H
 #define ETAB_H
 
@@ -86,7 +96,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("ETAB");
+    TypeNameApi(Foam_ETAB_typeName_API, "ETAB");
 
 
     // Constructors

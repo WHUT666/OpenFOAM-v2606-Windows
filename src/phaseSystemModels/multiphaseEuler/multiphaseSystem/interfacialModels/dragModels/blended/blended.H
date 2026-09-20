@@ -68,7 +68,7 @@ class blended
 public:
 
     //- Runtime type information
-    TypeName("blended");
+    TypeNameApi(multiphaseSystem_API, "blended");
 
 
     // Constructors

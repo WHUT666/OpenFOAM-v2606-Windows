@@ -131,7 +131,7 @@ class oscillatingLinearMotion
 public:
 
     //- Runtime type information
-    TypeName("oscillatingLinearMotion");
+    TypeNameApi(meshTools_API, "oscillatingLinearMotion");
 
 
     // Constructors

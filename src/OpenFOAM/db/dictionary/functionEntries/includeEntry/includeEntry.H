@@ -108,7 +108,7 @@ public:
     // Static Data Members
 
         //- Report to stdout which file is included
-        static bool log;
+        static OpenFOAM_API bool log;
 
 
     // Member Functions

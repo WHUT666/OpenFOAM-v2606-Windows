@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_laplacianScheme_defines_typeName in .C files that
+//  define the template statics of laplacianScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_laplacianScheme_defines_typeName)
+#  define Foam_laplacianScheme_typeName_API
+#else
+#  define Foam_laplacianScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef laplacianScheme_H
 #define laplacianScheme_H
 
@@ -97,8 +107,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_laplacianScheme_typeName_API,
             tmp,
             laplacianScheme,
             Istream,

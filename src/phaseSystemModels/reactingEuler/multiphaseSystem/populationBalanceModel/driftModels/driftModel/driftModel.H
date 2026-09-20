@@ -63,13 +63,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("driftModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "driftModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             driftModel,
             dictionary,

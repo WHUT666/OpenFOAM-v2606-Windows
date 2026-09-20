@@ -142,7 +142,7 @@ class cellToFaceZone
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Names of sets or zones to use
         wordList names_;
@@ -168,7 +168,7 @@ class cellToFaceZone
 public:
 
     //- Runtime type information
-    TypeName("cellToFaceZone");
+    TypeNameApi(meshTools_API, "cellToFaceZone");
 
 
     // Constructors

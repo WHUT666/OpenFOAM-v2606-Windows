@@ -1,3 +1,6 @@
+#define Foam_Reaction_defines_typeName
+#define Foam_solidReaction_defines_typeName
+#define Foam_IrreversibleReaction_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

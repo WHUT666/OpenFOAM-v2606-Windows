@@ -41,6 +41,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_InflationInjection_defines_typeName in .C files that
+//  define the template statics of InflationInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_InflationInjection_defines_typeName)
+#  define Foam_InflationInjection_typeName_API
+#else
+#  define Foam_InflationInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef InflationInjection_H
 #define InflationInjection_H
 
@@ -120,7 +130,7 @@ class InflationInjection
 public:
 
     //- Runtime type information
-    TypeName("inflationInjection");
+    TypeNameApi(Foam_InflationInjection_typeName_API, "inflationInjection");
 
 
     // Constructors

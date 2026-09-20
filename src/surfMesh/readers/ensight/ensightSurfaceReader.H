@@ -211,7 +211,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("ensight");
+    TypeNameApi(surfMesh_API, "ensight");
 
 
     // Constructors

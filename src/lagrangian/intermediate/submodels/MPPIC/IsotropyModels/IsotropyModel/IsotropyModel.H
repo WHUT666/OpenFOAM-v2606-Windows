@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_IsotropyModel_defines_typeName in .C files that
+//  define the template statics of IsotropyModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_IsotropyModel_defines_typeName)
+#  define Foam_IsotropyModel_typeName_API
+#else
+#  define Foam_IsotropyModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef IsotropyModel_H
 #define IsotropyModel_H
 
@@ -74,11 +84,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("isotropyModel");
+    TypeNameApi(Foam_IsotropyModel_typeName_API, "isotropyModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_IsotropyModel_typeName_API,
         autoPtr,
         IsotropyModel,
         dictionary,

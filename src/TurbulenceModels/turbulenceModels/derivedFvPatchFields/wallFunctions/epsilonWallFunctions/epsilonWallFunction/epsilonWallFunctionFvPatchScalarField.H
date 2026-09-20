@@ -107,7 +107,7 @@ protected:
     // Protected Data
 
         //- Tolerance used in weighted calculations
-        static scalar tolerance_;
+        static turbulenceModels_API scalar tolerance_;
 
         //- Apply low-Re correction term (default = no)
         const bool lowReCorrection_;
@@ -178,7 +178,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("epsilonWallFunction");
+    TypeNameApi(turbulenceModels_API, "epsilonWallFunction");
 
 
     // Constructors

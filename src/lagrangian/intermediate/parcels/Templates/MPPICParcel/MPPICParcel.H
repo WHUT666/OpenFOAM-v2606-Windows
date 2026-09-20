@@ -41,6 +41,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MPPICParcel_defines_typeName in .C files that
+//  define the template statics of MPPICParcel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MPPICParcel_defines_typeName)
+#  define Foam_MPPICParcel_typeName_API
+#else
+#  define Foam_MPPICParcel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef MPPICParcel_H
 #define MPPICParcel_H
 
@@ -174,7 +184,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("MPPICParcel");
+        TypeNameApi(Foam_MPPICParcel_typeName_API, "MPPICParcel");
 
         //- String representation of properties
         AddToPropertyList

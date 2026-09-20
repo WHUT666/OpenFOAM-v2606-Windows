@@ -72,7 +72,7 @@ public:
     // Static Data
 
         //- Named enumerations for oriented flags
-        static const Enum<orientedOption> orientedOptionNames;
+        static OpenFOAM_API const Enum<orientedOption> orientedOptionNames;
 
 
 private:

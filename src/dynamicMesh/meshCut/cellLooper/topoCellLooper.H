@@ -156,12 +156,12 @@ class topoCellLooper
 public:
 
     //- Runtime type information
-    TypeName("topoCellLooper");
+    TypeNameApi(dynamicMesh_API, "topoCellLooper");
 
     // Static data members
 
         //- Cos of angle for feature recognition (of splitHexes)
-        static const scalar featureCos;
+        static dynamicMesh_API const scalar featureCos;
 
 
     // Constructors

@@ -59,6 +59,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_externalCoupledMixedFvPatchField_defines_typeName in .C files that
+//  define the template statics of externalCoupledMixedFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_externalCoupledMixedFvPatchField_defines_typeName)
+#  define Foam_externalCoupledMixedFvPatchField_typeName_API
+#else
+#  define Foam_externalCoupledMixedFvPatchField_typeName_API fieldFunctionObjects_API
+#endif
+
 #ifndef Foam_externalCoupledMixedFvPatchField_H
 #define Foam_externalCoupledMixedFvPatchField_H
 
@@ -84,7 +94,7 @@ class externalCoupledMixedFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("externalCoupled");
+    TypeNameApi(Foam_externalCoupledMixedFvPatchField_typeName_API, "externalCoupled");
 
 
     // Constructors

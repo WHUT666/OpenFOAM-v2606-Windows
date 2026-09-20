@@ -81,7 +81,7 @@ class IDDESDelta
 public:
 
     //- Runtime type information
-    TypeName("IDDESDelta");
+    TypeNameApi(turbulenceModels_API, "IDDESDelta");
 
 
     // Constructors

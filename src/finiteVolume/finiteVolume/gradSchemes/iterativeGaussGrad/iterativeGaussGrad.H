@@ -55,6 +55,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_iterativeGaussGrad_defines_typeName in .C files that
+//  define the template statics of iterativeGaussGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_iterativeGaussGrad_defines_typeName)
+#  define Foam_iterativeGaussGrad_typeName_API
+#else
+#  define Foam_iterativeGaussGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef iterativeGaussGrad_H
 #define iterativeGaussGrad_H
 
@@ -97,7 +107,7 @@ class iterativeGaussGrad
 public:
 
     //- Runtime type information
-    TypeName("iterativeGauss");
+    TypeNameApi(Foam_iterativeGaussGrad_typeName_API, "iterativeGauss");
 
 
     // Constructors

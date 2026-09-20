@@ -1,3 +1,4 @@
+#define Foam_LduSolver_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

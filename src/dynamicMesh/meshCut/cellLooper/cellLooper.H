@@ -116,14 +116,14 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cellLooper");
+    TypeNameApi(dynamicMesh_API, "cellLooper");
 
 
     // Declare run-time constructor selection table
 
         // For the direct constructor
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( dynamicMesh_API,
             autoPtr,
             cellLooper,
             word,

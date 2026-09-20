@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fourthLnGrad_defines_typeName in .C files that
+//  define the template statics of fourthLnGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fourthLnGrad_defines_typeName)
+#  define Foam_fourthLnGrad_typeName_API
+#else
+#  define Foam_fourthLnGrad_typeName_API finiteArea_API
+#endif
+
 #ifndef fourthLnGrad_H
 #define fourthLnGrad_H
 
@@ -61,7 +71,7 @@ class fourthLnGrad
 public:
 
     //- Runtime type information
-    TypeName("fourth");
+    TypeNameApi(Foam_fourthLnGrad_typeName_API, "fourth");
 
 
     // Generated Methods

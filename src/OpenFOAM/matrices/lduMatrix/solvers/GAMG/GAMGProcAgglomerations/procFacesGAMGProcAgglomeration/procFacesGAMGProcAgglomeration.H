@@ -144,7 +144,7 @@ class procFacesGAMGProcAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("procFaces");
+    TypeNameApi(OpenFOAM_API, "procFaces");
 
     //- No copy construct
     procFacesGAMGProcAgglomeration(const procFacesGAMGProcAgglomeration&)

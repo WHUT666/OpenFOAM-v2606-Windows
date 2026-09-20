@@ -53,7 +53,7 @@ namespace Foam
                            Class ISstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class ISstream
+class OpenFOAM_API ISstream
 :
     public Istream
 {

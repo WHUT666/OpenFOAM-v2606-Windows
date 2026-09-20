@@ -58,6 +58,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FunctionObjectTrigger_defines_typeName in .C files that
+//  define the template statics of FunctionObjectTrigger (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FunctionObjectTrigger_defines_typeName)
+#  define Foam_FunctionObjectTrigger_typeName_API
+#else
+#  define Foam_FunctionObjectTrigger_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_FunctionObjectTrigger_H
 #define Foam_Function1Types_FunctionObjectTrigger_H
 
@@ -171,6 +181,9 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::FunctionObjectTrigger<Foam::label>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::FunctionObjectTrigger<Foam::scalar>);
 
 #endif
 

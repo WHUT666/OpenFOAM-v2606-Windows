@@ -57,7 +57,7 @@ namespace Foam
                       Class UPstream::Window Declaration
 \*---------------------------------------------------------------------------*/
 
-class UPstream::Window
+class OpenFOAM_API UPstream::Window
 {
 public:
 

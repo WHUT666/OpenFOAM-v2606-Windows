@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_midPoint_defines_typeName in .C files that
+//  define the template statics of midPoint (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_midPoint_defines_typeName)
+#  define Foam_midPoint_typeName_API
+#else
+#  define Foam_midPoint_typeName_API finiteVolume_API
+#endif
+
 #ifndef midPoint_H
 #define midPoint_H
 
@@ -66,7 +76,7 @@ class midPoint
 public:
 
     //- Runtime type information
-    TypeName("midPoint");
+    TypeNameApi(Foam_midPoint_typeName_API, "midPoint");
 
 
     // Constructors

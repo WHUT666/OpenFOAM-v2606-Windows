@@ -95,7 +95,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("edgeSlipDisplacement");
+    TypeNameApi(fvMotionSolvers_API, "edgeSlipDisplacement");
 
 
     // Constructors

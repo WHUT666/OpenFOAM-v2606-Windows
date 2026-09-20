@@ -83,7 +83,7 @@ class leastSquaresVectors
 public:
 
     // Declare name of the class and its debug switch
-    TypeName("leastSquaresVectors");
+    TypeNameApi(finiteVolume_API, "leastSquaresVectors");
 
 
     // Constructors

@@ -223,7 +223,7 @@ protected:
         string note_;
 
         //- Dummy coordinate system for suppressed manipulation
-        static coordinateSystem dummy_;
+        static OpenFOAM_API coordinateSystem dummy_;
 
 
     // Protected Member Functions
@@ -319,7 +319,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("coordinateSystem");
+    TypeNameApi(OpenFOAM_API, "coordinateSystem");
 
         //- Helper for construction of coordinateSystem PtrList
         //  The Istream contains a word followed by a dictionary.
@@ -426,8 +426,8 @@ public:
 
 
     // Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( OpenFOAM_API,
         autoPtr,
         coordinateSystem,
         dictionary,
@@ -439,8 +439,8 @@ public:
     );
 
     // Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( OpenFOAM_API,
         autoPtr,
         coordinateSystem,
         registry,

@@ -46,6 +46,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LiquidEvaporationBoil_defines_typeName in .C files that
+//  define the template statics of LiquidEvaporationBoil (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LiquidEvaporationBoil_defines_typeName)
+#  define Foam_LiquidEvaporationBoil_typeName_API
+#else
+#  define Foam_LiquidEvaporationBoil_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef LiquidEvaporationBoil_H
 #define LiquidEvaporationBoil_H
 
@@ -94,7 +104,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("liquidEvaporationBoil");
+    TypeNameApi(Foam_LiquidEvaporationBoil_typeName_API, "liquidEvaporationBoil");
 
 
     // Constructors

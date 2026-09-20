@@ -184,7 +184,7 @@ protected:
         //  of bb of node.
         //  The tolerance is relative to the bounding box of the smallest
         //  node.
-        static scalar perturbTol_;
+        static OpenFOAM_API scalar perturbTol_;
 
 
     // Protected Member Functions
@@ -226,7 +226,7 @@ public:
 
 
     //- Runtime type information
-    ClassName("indexedOctree");
+    ClassNameApi(OpenFOAM_API, "indexedOctree");
 
 
     // Constructors

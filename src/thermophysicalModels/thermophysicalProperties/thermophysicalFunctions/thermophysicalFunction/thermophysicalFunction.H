@@ -57,13 +57,13 @@ class thermophysicalFunction
 public:
 
     //- Runtime type information
-    TypeName("thermophysicalFunction");
+    TypeNameApi(thermophysicalProperties_API, "thermophysicalFunction");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( thermophysicalProperties_API,
             autoPtr,
             thermophysicalFunction,
             Istream,
@@ -71,8 +71,8 @@ public:
             (is)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( thermophysicalProperties_API,
             autoPtr,
             thermophysicalFunction,
             dictionary,

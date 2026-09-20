@@ -134,7 +134,7 @@ class surfaceCourantNumber
 public:
 
     //- Runtime type information
-    TypeName("surfaceCourantNumber");
+    TypeNameApi(regionFaModels_API, "surfaceCourantNumber");
 
 
     // Constructors

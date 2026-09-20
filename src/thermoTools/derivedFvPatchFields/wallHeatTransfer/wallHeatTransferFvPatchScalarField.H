@@ -88,7 +88,7 @@ class wallHeatTransferFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("wallHeatTransfer");
+    TypeNameApi(thermoTools_API, "wallHeatTransfer");
 
 
     // Constructors

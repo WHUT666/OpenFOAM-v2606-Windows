@@ -136,13 +136,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sixDoFSolver");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "sixDoFSolver");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( sixDoFRigidBodyMotion_API,
             autoPtr,
             sixDoFSolver,
             dictionary,

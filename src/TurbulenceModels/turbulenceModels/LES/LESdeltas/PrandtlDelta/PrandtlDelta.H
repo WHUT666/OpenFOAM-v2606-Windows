@@ -101,7 +101,7 @@ class PrandtlDelta
 public:
 
     //- Runtime type information
-    TypeName("Prandtl");
+    TypeNameApi(turbulenceModels_API, "Prandtl");
 
 
     // Constructors

@@ -53,7 +53,7 @@ namespace Foam
                        Class masterOFstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class masterOFstream
+class OpenFOAM_API masterOFstream
 :
     public OCharStream
 {

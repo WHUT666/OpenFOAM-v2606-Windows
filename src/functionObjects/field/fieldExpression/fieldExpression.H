@@ -117,7 +117,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fieldExpression");
+    TypeNameApi(fieldFunctionObjects_API, "fieldExpression");
 
 
     // Constructors

@@ -113,7 +113,7 @@ class prescribedRotation
 public:
 
     //- Runtime type information
-    TypeName("prescribedRotation");
+    TypeNameApi(rigidBodyDynamics_API, "prescribedRotation");
 
 
     // Constructors

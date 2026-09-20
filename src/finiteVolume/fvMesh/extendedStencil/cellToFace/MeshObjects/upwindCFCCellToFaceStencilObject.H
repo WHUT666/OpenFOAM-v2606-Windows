@@ -71,7 +71,7 @@ class upwindCFCCellToFaceStencilObject
 
 public:
 
-    TypeName("upwindCFCCellToFaceStencil");
+    TypeNameApi(finiteVolume_API, "upwindCFCCellToFaceStencil");
 
 
     // Constructors

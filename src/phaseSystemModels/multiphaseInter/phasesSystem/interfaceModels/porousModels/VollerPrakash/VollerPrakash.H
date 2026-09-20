@@ -95,7 +95,7 @@ class VollerPrakash
 public:
 
     //- Runtime type information
-    TypeName("VollerPrakash");
+    TypeNameApi(incompressibleMultiphaseSystems_API, "VollerPrakash");
 
 
     // Constructors

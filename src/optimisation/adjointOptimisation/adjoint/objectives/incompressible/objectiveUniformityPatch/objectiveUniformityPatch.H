@@ -79,7 +79,7 @@ class objectiveUniformityPatch
 public:
 
     //- Runtime type information
-    TypeName("uniformityPatch");
+    TypeNameApi(adjointOptimisation_API, "uniformityPatch");
 
 
     // Constructors

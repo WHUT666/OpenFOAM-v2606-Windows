@@ -72,7 +72,7 @@ class wakeEntrainmentCoalescence
 public:
 
     //- Runtime type information
-    TypeName("wakeEntrainmentCoalescence");
+    TypeNameApi(reactingTwoPhaseSystem_API, "wakeEntrainmentCoalescence");
 
     // Constructors
 

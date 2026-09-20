@@ -103,7 +103,7 @@ class displacementComponentLaplacianFvMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("displacementComponentLaplacian");
+    TypeNameApi(fvMotionSolvers_API, "displacementComponentLaplacian");
 
 
     // Constructors

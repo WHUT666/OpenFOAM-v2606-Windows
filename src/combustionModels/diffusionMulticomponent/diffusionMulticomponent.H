@@ -70,6 +70,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_diffusionMulticomponent_defines_typeName in .C files that
+//  define the template statics of diffusionMulticomponent (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_diffusionMulticomponent_defines_typeName)
+#  define Foam_diffusionMulticomponent_typeName_API
+#else
+#  define Foam_diffusionMulticomponent_typeName_API combustionModels_API
+#endif
+
 #ifndef diffusionMulticomponent_H
 #define diffusionMulticomponent_H
 
@@ -163,7 +173,7 @@ class diffusionMulticomponent
 public:
 
     //- Runtime type information
-    TypeName("diffusionMulticomponent");
+    TypeNameApi(Foam_diffusionMulticomponent_typeName_API, "diffusionMulticomponent");
 
 
     // Constructors

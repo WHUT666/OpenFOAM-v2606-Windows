@@ -153,7 +153,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("meanVelocityForce");
+    TypeNameApi(fvOptions_API, "meanVelocityForce");
 
 
     // Constructors

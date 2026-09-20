@@ -69,6 +69,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_mappedFixedPushedInternalValueFvPatchField_defines_typeName in .C files that
+//  define the template statics of mappedFixedPushedInternalValueFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_mappedFixedPushedInternalValueFvPatchField_defines_typeName)
+#  define Foam_mappedFixedPushedInternalValueFvPatchField_typeName_API
+#else
+#  define Foam_mappedFixedPushedInternalValueFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_mappedFixedPushedInternalValueFvPatchField_H
 #define Foam_mappedFixedPushedInternalValueFvPatchField_H
 
@@ -94,7 +104,7 @@ class mappedFixedPushedInternalValueFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("mappedFixedPushedInternalValue");
+    TypeNameApi(Foam_mappedFixedPushedInternalValueFvPatchField_typeName_API, "mappedFixedPushedInternalValue");
 
 
     // Constructors

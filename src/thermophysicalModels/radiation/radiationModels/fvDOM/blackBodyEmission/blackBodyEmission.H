@@ -62,7 +62,7 @@ class blackBodyEmission
 public:
 
     //- Static table of black body emissive power
-    static const List<Tuple2<scalar, scalar>> emissivePowerTable;
+    static radiationModels_API const List<Tuple2<scalar, scalar>> emissivePowerTable;
 
 
 private:

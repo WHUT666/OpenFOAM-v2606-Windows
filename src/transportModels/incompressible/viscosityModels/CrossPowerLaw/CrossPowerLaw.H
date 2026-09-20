@@ -83,7 +83,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("CrossPowerLaw");
+    TypeNameApi(incompressibleTransportModels_API, "CrossPowerLaw");
 
 
     // Constructors

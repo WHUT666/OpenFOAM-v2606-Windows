@@ -104,7 +104,7 @@ class Spiegler
 public:
 
     //- Runtime type information
-    TypeName("Spiegler");
+    TypeNameApi(reactingMultiphaseSystem_API, "Spiegler");
 
 
     // Constructors

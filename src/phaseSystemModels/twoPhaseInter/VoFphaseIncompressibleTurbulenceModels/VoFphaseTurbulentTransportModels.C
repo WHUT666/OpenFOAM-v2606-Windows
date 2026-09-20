@@ -1,3 +1,32 @@
+#define Foam_TurbulenceModel_defines_typeName
+#define Foam_LESModel_defines_typeName
+#define Foam_RASModel_defines_typeName
+#define Foam_laminarModel_defines_typeName
+#define Foam_Stokes_defines_typeName
+#define Foam_Maxwell_defines_typeName
+#define Foam_SpalartAllmaras_defines_typeName
+#define Foam_kEpsilon_defines_typeName
+#define Foam_RNGkEpsilon_defines_typeName
+#define Foam_realizableKE_defines_typeName
+#define Foam_LaunderSharmaKE_defines_typeName
+#define Foam_kOmega_defines_typeName
+#define Foam_kOmegaSST_defines_typeName
+#define Foam_kOmegaSSTSAS_defines_typeName
+#define Foam_kOmegaSSTLM_defines_typeName
+#define Foam_LRR_defines_typeName
+#define Foam_SSG_defines_typeName
+#define Foam_Smagorinsky_defines_typeName
+#define Foam_WALE_defines_typeName
+#define Foam_kEqn_defines_typeName
+#define Foam_dynamicKEqn_defines_typeName
+#define Foam_dynamicLagrangian_defines_typeName
+#define Foam_SpalartAllmarasDES_defines_typeName
+#define Foam_SpalartAllmarasDDES_defines_typeName
+#define Foam_SpalartAllmarasIDDES_defines_typeName
+#define Foam_DeardorffDiffStress_defines_typeName
+#define Foam_kOmegaSSTDES_defines_typeName
+#define Foam_kOmegaSSTDDES_defines_typeName
+#define Foam_kOmegaSSTIDDES_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

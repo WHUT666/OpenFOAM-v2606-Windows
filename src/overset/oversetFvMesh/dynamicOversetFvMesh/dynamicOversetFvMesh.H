@@ -66,7 +66,7 @@ class dynamicOversetFvMesh
 public:
 
     //- Runtime type information
-    TypeName("dynamicOversetFvMesh");
+    TypeNameApi(overset_API, "dynamicOversetFvMesh");
 
 
     // Constructors

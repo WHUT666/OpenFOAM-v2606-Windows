@@ -157,7 +157,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("acousticDampingSource");
+    TypeNameApi(fvOptions_API, "acousticDampingSource");
 
 
     // Constructors

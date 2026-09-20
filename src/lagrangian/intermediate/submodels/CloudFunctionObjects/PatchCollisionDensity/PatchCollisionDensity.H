@@ -45,6 +45,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PatchCollisionDensity_defines_typeName in .C files that
+//  define the template statics of PatchCollisionDensity (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PatchCollisionDensity_defines_typeName)
+#  define Foam_PatchCollisionDensity_typeName_API
+#else
+#  define Foam_PatchCollisionDensity_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PatchCollisionDensity_H
 #define PatchCollisionDensity_H
 
@@ -93,7 +103,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("patchCollisionDensity");
+    TypeNameApi(Foam_PatchCollisionDensity_typeName_API, "patchCollisionDensity");
 
 
     // Constructors

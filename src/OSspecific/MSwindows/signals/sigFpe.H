@@ -80,17 +80,17 @@ class sigFpe
 
         //- Flag that floating point trapping should be used.
         //  Can override with FOAM_SIGFPE env variable
-        static bool switchFpe_;
+        static OpenFOAM_API bool switchFpe_;
 
         //- Flag that NaN initialisation should be used.
         //  Can override with FOAM_SETNAN env variable
-        static bool switchNan_;
+        static OpenFOAM_API bool switchNan_;
 
         //- Floating point trapping currently active?
-        static bool sigActive_;
+        static OpenFOAM_API bool sigActive_;
 
         //- Is NaN memory initialisation currently active?
-        static bool nanActive_;
+        static OpenFOAM_API bool nanActive_;
 
 
     // Private Member Functions

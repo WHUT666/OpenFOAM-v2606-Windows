@@ -121,7 +121,7 @@ class cloudSolution
 public:
 
     //- Debug switch
-    static int debug;
+    static lagrangianIntermediate_API int debug;
 
     // Constructors
 

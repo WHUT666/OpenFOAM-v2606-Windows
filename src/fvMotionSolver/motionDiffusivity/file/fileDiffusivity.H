@@ -75,7 +75,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("file");
+    TypeNameApi(fvMotionSolvers_API, "file");
 
 
     // Constructors

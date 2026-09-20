@@ -123,7 +123,7 @@ private:
     // Private data
 
         //- refineMode names
-        static const Enum<refineMode> refineModeNames_;
+        static snappyHexMesh_API const Enum<refineMode> refineModeNames_;
 
 
     // Private Member Functions

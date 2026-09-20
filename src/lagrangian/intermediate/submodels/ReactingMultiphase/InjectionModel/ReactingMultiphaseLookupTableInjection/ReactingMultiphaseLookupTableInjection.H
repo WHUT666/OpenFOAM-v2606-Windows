@@ -58,6 +58,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ReactingMultiphaseLookupTableInjection_defines_typeName in .C files that
+//  define the template statics of ReactingMultiphaseLookupTableInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ReactingMultiphaseLookupTableInjection_defines_typeName)
+#  define Foam_ReactingMultiphaseLookupTableInjection_typeName_API
+#else
+#  define Foam_ReactingMultiphaseLookupTableInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ReactingMultiphaseLookupTableInjection_H
 #define ReactingMultiphaseLookupTableInjection_H
 
@@ -108,7 +118,7 @@ class ReactingMultiphaseLookupTableInjection
 public:
 
     //- Runtime type information
-    TypeName("reactingMultiphaseLookupTableInjection");
+    TypeNameApi(Foam_ReactingMultiphaseLookupTableInjection_typeName_API, "reactingMultiphaseLookupTableInjection");
 
 
     // Constructors

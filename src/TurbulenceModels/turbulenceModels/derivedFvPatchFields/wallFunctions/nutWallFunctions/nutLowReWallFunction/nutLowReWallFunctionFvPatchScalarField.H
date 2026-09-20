@@ -95,7 +95,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nutLowReWallFunction");
+    TypeNameApi(turbulenceModels_API, "nutLowReWallFunction");
 
 
     // Constructors

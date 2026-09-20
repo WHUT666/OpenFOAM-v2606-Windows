@@ -172,7 +172,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("searchableSphere");
+    TypeNameApi(meshTools_API, "searchableSphere");
 
 
     // Constructors

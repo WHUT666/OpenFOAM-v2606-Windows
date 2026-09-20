@@ -105,7 +105,7 @@ class constantHeatTransfer
 public:
 
     //- Runtime type information
-    TypeName("constantHeatTransfer");
+    TypeNameApi(fvOptions_API, "constantHeatTransfer");
 
 
     // Constructors

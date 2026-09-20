@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_eddyDissipationDiffusionModel_defines_typeName in .C files that
+//  define the template statics of eddyDissipationDiffusionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_eddyDissipationDiffusionModel_defines_typeName)
+#  define Foam_eddyDissipationDiffusionModel_typeName_API
+#else
+#  define Foam_eddyDissipationDiffusionModel_typeName_API combustionModels_API
+#endif
+
 #ifndef eddyDissipationDiffusionModel_H
 #define eddyDissipationDiffusionModel_H
 
@@ -83,7 +93,7 @@ class eddyDissipationDiffusionModel
 public:
 
     //- Runtime type information
-    TypeName("EDM");
+    TypeNameApi(Foam_eddyDissipationDiffusionModel_typeName_API, "EDM");
 
 
     // Constructors

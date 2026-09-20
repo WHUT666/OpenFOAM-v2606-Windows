@@ -140,7 +140,7 @@ class sampledPlane
 public:
 
     //- Runtime type information
-    TypeName("sampledPlane");
+    TypeNameApi(sampling_API, "sampledPlane");
 
 
     // Constructors

@@ -129,7 +129,7 @@ class timeActivatedFileUpdate
 public:
 
     //- Runtime type information
-    TypeName("timeActivatedFileUpdate");
+    TypeNameApi(utilityFunctionObjects_API, "timeActivatedFileUpdate");
 
 
     // Constructors

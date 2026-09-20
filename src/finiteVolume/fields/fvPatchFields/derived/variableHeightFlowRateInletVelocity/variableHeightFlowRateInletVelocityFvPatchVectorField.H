@@ -104,7 +104,7 @@ class variableHeightFlowRateInletVelocityFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("variableHeightFlowRateInletVelocity");
+   TypeNameApi(finiteVolume_API, "variableHeightFlowRateInletVelocity");
 
 
    // Constructors

@@ -96,6 +96,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Cosine_defines_typeName in .C files that
+//  define the template statics of Cosine (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Cosine_defines_typeName)
+#  define Foam_Cosine_typeName_API
+#else
+#  define Foam_Cosine_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_Cosine_H
 #define Foam_Function1Types_Cosine_H
 
@@ -181,6 +191,12 @@ public:
 } // End namespace Foam
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Cosine<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Cosine<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Cosine<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Cosine<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Cosine<Foam::tensor>);
 
 #endif
 

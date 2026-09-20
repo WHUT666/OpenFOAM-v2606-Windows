@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MeshedSurfaceProxy_defines_typeName in .C files that
+//  define the template statics of MeshedSurfaceProxy (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MeshedSurfaceProxy_defines_typeName)
+#  define Foam_MeshedSurfaceProxy_typeName_API
+#else
+#  define Foam_MeshedSurfaceProxy_typeName_API surfMesh_API
+#endif
+
 #ifndef Foam_MeshedSurfaceProxy_H
 #define Foam_MeshedSurfaceProxy_H
 
@@ -91,7 +101,7 @@ public:
 
 
     //- Declare type-name (with debug switch)
-    ClassName("MeshedSurfaceProxy");
+    ClassNameApi(Foam_MeshedSurfaceProxy_typeName_API, "MeshedSurfaceProxy");
 
 
     // Static Functions
@@ -122,8 +132,9 @@ public:
 
     // Member Function Selectors
 
-        declareMemberFunctionSelectionTable
+        declareMemberFunctionSelectionTableApi
         (
+            surfMesh_API,
             void,
             MeshedSurfaceProxy,
             write,

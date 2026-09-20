@@ -146,7 +146,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("dictionaryValue");
+    TypeNameApi(utilityFunctionObjects_API, "dictionaryValue");
 
 
     //- Constructor

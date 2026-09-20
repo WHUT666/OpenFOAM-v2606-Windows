@@ -145,10 +145,10 @@ public:
 
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("surfMesh");
+    TypeNameApi(surfMesh_API, "surfMesh");
 
     //- Return the mesh sub-directory name (normally "surfMesh")
-    static word meshSubDir;
+    static surfMesh_API word meshSubDir;
 
 
     // Generated Methods

@@ -57,8 +57,8 @@ class legacyAsciiFormatter
 {
     // Private Data Members
 
-        static const char* legacyName_;
-        static const outputOptions opts_;
+        static fileFormats_API const char* legacyName_;
+        static fileFormats_API const outputOptions opts_;
 
 
     // Private Member Functions

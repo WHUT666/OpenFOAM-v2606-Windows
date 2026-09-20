@@ -81,7 +81,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Newtonian");
+    TypeNameApi(incompressibleTransportModels_API, "Newtonian");
 
 
     // Constructors

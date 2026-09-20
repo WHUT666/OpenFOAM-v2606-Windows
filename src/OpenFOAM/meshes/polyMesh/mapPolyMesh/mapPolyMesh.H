@@ -154,7 +154,7 @@ namespace Foam
 {
 
 // Forward Declarations
-class polyMesh;
+class OpenFOAM_API polyMesh;
 
 /*---------------------------------------------------------------------------*\
                          Class mapPolyMesh Declaration

@@ -107,14 +107,14 @@ class faceOnlySet
 public:
 
     //- Runtime type information
-    TypeName("face");
+    TypeNameApi(sampling_API, "face");
 
 
     // Static data
 
         //- Tolerance when comparing points relative to difference between
         //  start_ and end_
-        static const scalar tol;
+        static sampling_API const scalar tol;
 
 
     // Constructors

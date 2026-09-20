@@ -110,7 +110,7 @@ class arraySet
 public:
 
     //- Runtime type information
-    TypeName("array");
+    TypeNameApi(sampling_API, "array");
 
 
     // Constructors

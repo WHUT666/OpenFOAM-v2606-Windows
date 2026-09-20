@@ -105,13 +105,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("thermalBaffleModel");
+    TypeNameApi(thermalBaffleModels_API, "thermalBaffleModel");
 
 
     // Declare runtime constructor selection tables
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( thermalBaffleModels_API,
              autoPtr,
              thermalBaffleModel,
              mesh,
@@ -122,8 +122,8 @@ public:
              (modelType, mesh)
          );
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( thermalBaffleModels_API,
              autoPtr,
              thermalBaffleModel,
              dictionary,

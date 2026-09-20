@@ -103,7 +103,7 @@ protected:
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("ensightPart");
+    TypeNameNoDebugApi(fileFormats_API, "ensightPart");
 
 
     // Constructors

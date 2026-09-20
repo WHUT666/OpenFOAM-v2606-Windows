@@ -94,13 +94,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("boundaryAdjointContribution");
+    TypeNameApi(adjointOptimisation_API, "boundaryAdjointContribution");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             boundaryAdjointContribution,
             dictionary,

@@ -84,12 +84,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("extrudeModel");
+    TypeNameApi(extrudeModel_API, "extrudeModel");
 
     //- Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( extrudeModel_API,
             autoPtr,
             extrudeModel,
             dictionary,

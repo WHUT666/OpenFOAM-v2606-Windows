@@ -62,6 +62,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SpalartAllmarasDES_defines_typeName in .C files that
+//  define the template statics of SpalartAllmarasDES (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SpalartAllmarasDES_defines_typeName)
+#  define Foam_SpalartAllmarasDES_typeName_API
+#else
+#  define Foam_SpalartAllmarasDES_typeName_API turbulenceModels_API
+#endif
+
 #ifndef Foam_SpalartAllmarasDES_H
 #define Foam_SpalartAllmarasDES_H
 
@@ -153,7 +163,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("SpalartAllmarasDES");
+    TypeNameApi(Foam_SpalartAllmarasDES_typeName_API, "SpalartAllmarasDES");
 
 
     // Constructors

@@ -94,13 +94,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("pyrolysisModel");
+    TypeNameApi(pyrolysisModels_API, "pyrolysisModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( pyrolysisModels_API,
             autoPtr,
             pyrolysisModel,
             mesh,
@@ -112,8 +112,8 @@ public:
             (modelType, mesh, regionType)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( pyrolysisModels_API,
             autoPtr,
             pyrolysisModel,
             dictionary,

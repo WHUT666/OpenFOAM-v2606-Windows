@@ -97,6 +97,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FixedValueConstraint_defines_typeName in .C files that
+//  define the template statics of FixedValueConstraint (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FixedValueConstraint_defines_typeName)
+#  define Foam_FixedValueConstraint_typeName_API
+#else
+#  define Foam_FixedValueConstraint_typeName_API fvOptions_API
+#endif
+
 #ifndef FixedValueConstraint_H
 #define FixedValueConstraint_H
 
@@ -127,7 +137,7 @@ class FixedValueConstraint
 public:
 
     //- Runtime type information
-    TypeName("FixedValueConstraint");
+    TypeNameApi(Foam_FixedValueConstraint_typeName_API, "FixedValueConstraint");
 
 
     // Constructors

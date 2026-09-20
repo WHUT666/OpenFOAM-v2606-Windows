@@ -65,7 +65,7 @@ class refinementHistory
 public:
 
     //- Runtime type information
-    TypeName("refinementHistory");
+    TypeNameApi(decompositionMethods_API, "refinementHistory");
 
 
     // Constructors

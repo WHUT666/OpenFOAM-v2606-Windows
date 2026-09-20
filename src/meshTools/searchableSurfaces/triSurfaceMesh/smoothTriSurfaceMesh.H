@@ -89,7 +89,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("smoothTriSurfaceMesh");
+    TypeNameApi(meshTools_API, "smoothTriSurfaceMesh");
 
 
     // Constructors

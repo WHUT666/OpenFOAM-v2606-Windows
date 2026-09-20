@@ -117,7 +117,7 @@ public:
         dBD
     };
 
-    static const Enum<weightingType> weightingTypeNames_;
+    static randomProcesses_API const Enum<weightingType> weightingTypeNames_;
 
     //- FFTW planner information
     //  Note: storage uses double for use directly with FFTW
@@ -330,11 +330,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("noiseModel");
+    TypeNameApi(randomProcesses_API, "noiseModel");
 
     //- Run time selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( randomProcesses_API,
         autoPtr,
         noiseModel,
         dictionary,

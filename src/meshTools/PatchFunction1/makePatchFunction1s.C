@@ -54,6 +54,30 @@ namespace Foam
     makePatchFunction1s(symmTensor);
     makePatchFunction1s(tensor);
 
+    meshTools_TEMPLATE_EXPORT(PatchFunction1<Foam::label>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1<Foam::scalar>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1<Foam::vector>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1<Foam::sphericalTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1<Foam::symmTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1<Foam::tensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::ConstantField<Foam::label>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::ConstantField<Foam::scalar>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::ConstantField<Foam::vector>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::ConstantField<Foam::sphericalTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::ConstantField<Foam::symmTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::ConstantField<Foam::tensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::MappedFile<Foam::scalar>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::MappedFile<Foam::vector>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::MappedFile<Foam::sphericalTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::MappedFile<Foam::symmTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::MappedFile<Foam::tensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::UniformValueField<Foam::scalar>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::UniformValueField<Foam::vector>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::UniformValueField<Foam::sphericalTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::UniformValueField<Foam::symmTensor>);
+    meshTools_TEMPLATE_EXPORT(PatchFunction1Types::UniformValueField<Foam::tensor>);
+
+
 
     //- Option1 : add UniformFieldValue under the same name as Function1
     //            See makeFunction1s.C. Note that we do not need

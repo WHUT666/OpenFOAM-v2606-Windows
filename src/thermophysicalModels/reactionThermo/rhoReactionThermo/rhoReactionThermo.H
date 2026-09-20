@@ -65,12 +65,12 @@ class rhoReactionThermo
 public:
 
     //- Runtime type information
-    TypeName("rhoReactionThermo");
+    TypeNameApi(reactionThermophysicalModels_API, "rhoReactionThermo");
 
 
     //- Declare run-time constructor selection tables
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactionThermophysicalModels_API,
         autoPtr,
         rhoReactionThermo,
         fvMesh,
@@ -80,8 +80,8 @@ public:
 
 
     //- Declare run-time constructor selection table for dictionary based
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactionThermophysicalModels_API,
         autoPtr,
         rhoReactionThermo,
         fvMeshDictPhase,

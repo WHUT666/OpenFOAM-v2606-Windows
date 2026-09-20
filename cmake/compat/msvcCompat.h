@@ -280,4 +280,8 @@ inline char* strerror_r_(int errnum, char* buf, size_t buflen)
 
 #endif // _MSC_VER
 
+// Per-library dllexport/dllimport macros (<Target>_API) for shared builds.
+// Self-guarded: all macros expand to nothing unless FOAM_SHARED_LIBS.
+#include "foamApi.h"
+
 #endif // FOAM_MSVC_COMPAT_H

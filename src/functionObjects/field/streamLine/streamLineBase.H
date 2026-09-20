@@ -81,7 +81,7 @@ public:
         };
 
         //- Names for the trackDir
-        static const Enum<trackDirType> trackDirTypeNames;
+        static fieldFunctionObjects_API const Enum<trackDirType> trackDirTypeNames;
 
 
 protected:
@@ -213,7 +213,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("streamLineBase");
+    TypeNameApi(fieldFunctionObjects_API, "streamLineBase");
 
 
     // Constructors

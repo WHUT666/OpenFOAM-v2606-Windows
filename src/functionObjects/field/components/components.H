@@ -135,7 +135,7 @@ class components
 public:
 
     //- Runtime type information
-    TypeName("components");
+    TypeNameApi(fieldFunctionObjects_API, "components");
 
 
     // Constructors

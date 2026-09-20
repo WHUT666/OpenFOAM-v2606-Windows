@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DampingModel_defines_typeName in .C files that
+//  define the template statics of DampingModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DampingModel_defines_typeName)
+#  define Foam_DampingModel_typeName_API
+#else
+#  define Foam_DampingModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef DampingModel_H
 #define DampingModel_H
 
@@ -76,11 +86,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("dampingModel");
+    TypeNameApi(Foam_DampingModel_typeName_API, "dampingModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_DampingModel_typeName_API,
         autoPtr,
         DampingModel,
         dictionary,

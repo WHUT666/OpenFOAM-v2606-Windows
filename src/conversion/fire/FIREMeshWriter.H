@@ -88,13 +88,13 @@ public:
     // Static data members
 
         //- Write binary (default ascii)
-        static bool binary;
+        static conversion_API bool binary;
 
         //- Write with compression (default false)
-        static bool compress;
+        static conversion_API bool compress;
 
         //- Prefix patches with 'BND_' before writing (default true)
-        static bool prefixBoundary;
+        static conversion_API bool prefixBoundary;
 
 
     // Constructors

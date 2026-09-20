@@ -103,7 +103,7 @@ public:
     // Static Data
 
         // Declare name of the class and its debug switch
-        TypeName("lduPrimitiveMeshAssembly");
+        TypeNameApi(finiteVolume_API, "lduPrimitiveMeshAssembly");
 
 
     // Constructors

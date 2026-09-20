@@ -110,7 +110,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("topOZones");
+    TypeNameApi(adjointOptimisation_API, "topOZones");
 
 
     // Constructors

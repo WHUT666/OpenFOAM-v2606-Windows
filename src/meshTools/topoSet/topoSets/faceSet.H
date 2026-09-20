@@ -49,7 +49,7 @@ namespace Foam
                            Class faceSet Declaration
 \*---------------------------------------------------------------------------*/
 
-class faceSet
+class meshTools_API faceSet
 :
     public topoSet
 {

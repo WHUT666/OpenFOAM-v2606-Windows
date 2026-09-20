@@ -76,7 +76,7 @@ class linearNormal
 public:
 
     //- Runtime type information
-    TypeName("linearNormal");
+    TypeNameApi(extrudeModel_API, "linearNormal");
 
     // Constructors
 

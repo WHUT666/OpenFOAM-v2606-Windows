@@ -61,7 +61,7 @@ class sigSegv
     // Private Data
 
         //- Signal trapping enabled?
-        static bool sigActive_;
+        static OpenFOAM_API bool sigActive_;
 
 
     // Private Member Functions

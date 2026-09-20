@@ -56,7 +56,7 @@ class faceBoolSet
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("faceBoolSet");
+    TypeNameNoDebugApi(meshTools_API, "faceBoolSet");
 
 
     // Constructors

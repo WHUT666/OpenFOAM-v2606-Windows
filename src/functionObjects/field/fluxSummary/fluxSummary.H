@@ -137,7 +137,7 @@ public:
         };
 
         //- Face mode names
-        static const Enum<modeType> modeTypeNames_;
+        static fieldFunctionObjects_API const Enum<modeType> modeTypeNames_;
 
 
 protected:
@@ -271,7 +271,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fluxSummary");
+    TypeNameApi(fieldFunctionObjects_API, "fluxSummary");
 
 
     // Constructors

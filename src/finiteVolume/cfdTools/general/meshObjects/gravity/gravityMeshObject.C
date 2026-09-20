@@ -59,3 +59,21 @@ Foam::meshObjects::gravity::gravity(const word& name, const Time& runTime)
 
 
 // ************************************************************************* //
+const Foam::meshObjects::gravity& Foam::meshObjects::gravity::New
+(
+    const word& name,
+    const Time& runTime
+)
+{
+    return MeshObject_type::New(name, runTime);
+}
+
+
+const Foam::meshObjects::gravity& Foam::meshObjects::gravity::New
+(
+    const Time& runTime
+)
+{
+    return MeshObject_type::New(runTime);
+}
+

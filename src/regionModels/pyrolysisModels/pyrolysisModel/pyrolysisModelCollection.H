@@ -76,7 +76,7 @@ class pyrolysisModelCollection
 public:
 
     // Runtime type information
-    TypeName("pyrolysisModelCollection");
+    TypeNameApi(pyrolysisModels_API, "pyrolysisModelCollection");
 
 
     // Constructors

@@ -116,7 +116,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("prghTotalHydrostaticPressure");
+    TypeNameApi(finiteVolume_API, "prghTotalHydrostaticPressure");
 
 
     // Constructors

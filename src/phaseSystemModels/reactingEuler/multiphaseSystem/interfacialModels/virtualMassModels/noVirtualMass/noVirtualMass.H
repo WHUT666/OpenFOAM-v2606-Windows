@@ -59,7 +59,7 @@ class noVirtualMass
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(reactingMultiphaseSystem_API, "none");
 
 
     // Constructors

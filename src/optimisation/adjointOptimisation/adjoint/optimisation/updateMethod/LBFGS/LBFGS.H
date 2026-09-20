@@ -188,7 +188,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("LBFGS");
+    TypeNameApi(adjointOptimisation_API, "LBFGS");
 
 
     // Constructors

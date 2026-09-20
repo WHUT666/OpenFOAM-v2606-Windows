@@ -55,7 +55,7 @@ class C
 public:
 
     //- Runtime type information
-    TypeName("C");
+    TypeNameApi(thermophysicalProperties_API, "C");
 
 
     // Constructors

@@ -93,7 +93,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("sensitivity");
+    TypeNameApi(adjointOptimisation_API, "sensitivity");
 
     // Constructors
 

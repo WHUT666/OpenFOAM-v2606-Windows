@@ -92,7 +92,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("distributionContactAngle");
+    TypeNameApi(surfaceFilmModels_API, "distributionContactAngle");
 
 
     // Constructors

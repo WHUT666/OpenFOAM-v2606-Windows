@@ -123,7 +123,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("limitVelocity");
+    TypeNameApi(fvOptions_API, "limitVelocity");
 
 
     // Constructors

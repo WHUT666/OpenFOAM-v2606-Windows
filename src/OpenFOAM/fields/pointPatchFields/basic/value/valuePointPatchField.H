@@ -77,12 +77,10 @@ protected:
         //- Assign the patch field from the internal field
         void extrapolateInternal();
 
-
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("value");
-
+    TypeNameApi(OpenFOAM_API, "value");
 
     // Constructors
 
@@ -171,7 +169,6 @@ public:
             return pointPatchField<Type>::Clone(*this, iF);
         }
 
-
     // Member Functions
 
         // Attributes
@@ -182,7 +179,6 @@ public:
                 return true;
             }
 
-
         // Access
 
             //- Return the field size
@@ -190,7 +186,6 @@ public:
             {
                 return Field<Type>::size();
             }
-
 
         // Mapping functions
 
@@ -208,7 +203,6 @@ public:
                 const labelList&
             );
 
-
         // Evaluation functions
 
             //- Update the coefficients associated with the patch field
@@ -221,10 +215,8 @@ public:
                     Pstream::commsTypes::buffered
             );
 
-
         //- Write
         virtual void write(Ostream&) const;
-
 
     // Member Operators
 
@@ -249,7 +241,6 @@ public:
         bool operator!=(const Type&) const = delete;
 };
 
-
 // This function is added to override the hack in pointPatchField.H
 // which enables simple backward compatibility with versions using
 // referenceLevel in GeometricField
@@ -262,7 +253,6 @@ tmp<Field<Type>> operator+
 {
     return static_cast<const Field<Type>&>(vsppf) + t;
 }
-
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

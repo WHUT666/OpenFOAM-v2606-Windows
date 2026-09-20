@@ -78,7 +78,7 @@ class JohnsonJackson
 public:
 
     //- Runtime type information
-    TypeName("JohnsonJackson");
+    TypeNameApi(phaseCompressibleTurbulenceModels_API, "JohnsonJackson");
 
 
     // Constructors

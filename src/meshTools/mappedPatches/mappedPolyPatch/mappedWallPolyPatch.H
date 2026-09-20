@@ -87,7 +87,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("mappedWall");
+    TypeNameApi(meshTools_API, "mappedWall");
 
 
     // Constructors

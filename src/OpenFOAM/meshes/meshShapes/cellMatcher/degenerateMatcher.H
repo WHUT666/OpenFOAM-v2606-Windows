@@ -63,12 +63,12 @@ class degenerateMatcher
     // Static Data Members
 
         //- Matchers for all degenerate hex shapes
-        static hexMatcher hex;
-        static wedgeMatcher wedge;
-        static prismMatcher prism;
-        static tetWedgeMatcher tetWedge;
-        static pyrMatcher pyr;
-        static tetMatcher tet;
+        static OpenFOAM_API hexMatcher hex;
+        static OpenFOAM_API wedgeMatcher wedge;
+        static OpenFOAM_API prismMatcher prism;
+        static OpenFOAM_API tetWedgeMatcher tetWedge;
+        static OpenFOAM_API pyrMatcher pyr;
+        static OpenFOAM_API tetMatcher tet;
 
 
     // Static Functions

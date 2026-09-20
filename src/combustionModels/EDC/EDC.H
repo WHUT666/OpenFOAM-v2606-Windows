@@ -98,6 +98,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_EDC_defines_typeName in .C files that
+//  define the template statics of EDC (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_EDC_defines_typeName)
+#  define Foam_EDC_typeName_API
+#else
+#  define Foam_EDC_typeName_API combustionModels_API
+#endif
+
 #ifndef EDC_H
 #define EDC_H
 
@@ -120,8 +130,8 @@ enum class EDCversions
     v2016
 };
 
-extern const Enum<EDCversions> EDCversionNames;
-extern const EDCversions EDCdefaultVersion;
+extern combustionModels_API const Enum<EDCversions> EDCversionNames;
+extern combustionModels_API const EDCversions EDCdefaultVersion;
 
 const scalar EDCexp1[] = {3, 2, 2, 2};
 const scalar EDCexp2[] = {3, 3, 2, 2};
@@ -163,7 +173,7 @@ class EDC
 public:
 
     //- Runtime type information
-    TypeName("EDC");
+    TypeNameApi(Foam_EDC_typeName_API, "EDC");
 
 
     // Constructors

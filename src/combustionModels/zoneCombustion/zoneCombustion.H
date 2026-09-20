@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_zoneCombustion_defines_typeName in .C files that
+//  define the template statics of zoneCombustion (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_zoneCombustion_defines_typeName)
+#  define Foam_zoneCombustion_typeName_API
+#else
+#  define Foam_zoneCombustion_typeName_API combustionModels_API
+#endif
+
 #ifndef zoneCombustion_H
 #define zoneCombustion_H
 
@@ -85,7 +95,7 @@ class zoneCombustion
 public:
 
     //- Runtime type information
-    TypeName("zoneCombustion");
+    TypeNameApi(Foam_zoneCombustion_typeName_API, "zoneCombustion");
 
 
     // Constructors

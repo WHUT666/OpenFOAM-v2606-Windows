@@ -79,7 +79,7 @@ namespace fieldTypes
 
 //- Standard basic field types (label, scalar, vector, tensor, etc)
 //  These also correspond to cloud output fields.
-extern const wordList basic;
+extern OpenFOAM_API const wordList basic;
 
 //- Test if the class name appears to be a basic field
 bool is_basic(const word& clsName);
@@ -91,13 +91,13 @@ bool is_basic(const word& clsName);
 inline const char* emptyTypeName_() noexcept { return "empty"; }
 
 //- An \c empty patch field type
-extern const word emptyType;
+extern OpenFOAM_API const word emptyType;
 
 //- A \c calculated patch field type
 inline const char* calculatedTypeName_() noexcept { return "calculated"; }
 
 //- A \c calculated patch field type
-extern const word calculatedType;
+extern OpenFOAM_API const word calculatedType;
 
 //- A combined \c zero-gradient and \c calculated patch field type
 inline const char* extrapolatedCalculatedTypeName_() noexcept
@@ -106,25 +106,25 @@ inline const char* extrapolatedCalculatedTypeName_() noexcept
 }
 
 //- A combined \c zero-gradient and \c calculated patch field type
-extern const word extrapolatedCalculatedType;
+extern OpenFOAM_API const word extrapolatedCalculatedType;
 
 //- A \c processor patch field type
 inline const char* processorTypeName_() noexcept { return "processor"; }
 
 //- A \c processor patch field type
-extern const word processorType;
+extern OpenFOAM_API const word processorType;
 
 //- A \c zeroGradient patch field type
 inline const char* zeroGradientTypeName_() noexcept { return "zeroGradient"; }
 
 //- A \c zeroGradient patch field type
-extern const word zeroGradientType;
+extern OpenFOAM_API const word zeroGradientType;
 
 //- A \c zeroValue patch field type
 inline const char* zeroValueTypeName_() noexcept { return "zeroValue"; }
 
 //- A \c zeroValue patch field type
-extern const word zeroValueType;
+extern OpenFOAM_API const word zeroValueType;
 
 } // End namespace fieldTypes
 } // End namespace Foam

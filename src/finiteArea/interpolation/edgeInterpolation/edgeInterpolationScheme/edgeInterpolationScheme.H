@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_edgeInterpolationScheme_defines_typeName in .C files that
+//  define the template statics of edgeInterpolationScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_edgeInterpolationScheme_defines_typeName)
+#  define Foam_edgeInterpolationScheme_typeName_API
+#else
+#  define Foam_edgeInterpolationScheme_typeName_API finiteArea_API
+#endif
+
 #ifndef edgeInterpolationScheme_H
 #define edgeInterpolationScheme_H
 
@@ -67,8 +77,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_edgeInterpolationScheme_typeName_API,
             tmp,
             edgeInterpolationScheme,
             Mesh,
@@ -79,8 +89,8 @@ public:
             (mesh, schemeData)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_edgeInterpolationScheme_typeName_API,
             tmp,
             edgeInterpolationScheme,
             MeshFlux,

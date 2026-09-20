@@ -138,7 +138,7 @@ public:
     // Static data members
 
         //- Size in bytes of the fields
-        static const std::size_t sizeofFields;
+        static solidParticle_API const std::size_t sizeofFields;
 
 
     // Constructors

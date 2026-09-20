@@ -112,7 +112,7 @@ class meshStructure
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("meshStructure");
+    ClassNameApi(meshTools_API, "meshStructure");
 
     // Constructors
 

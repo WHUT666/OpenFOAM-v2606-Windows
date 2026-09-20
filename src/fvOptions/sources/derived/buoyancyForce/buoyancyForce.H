@@ -120,7 +120,7 @@ class buoyancyForce
 public:
 
     //- Runtime type information
-    TypeName("buoyancyForce");
+    TypeNameApi(fvOptions_API, "buoyancyForce");
 
 
     // Constructors

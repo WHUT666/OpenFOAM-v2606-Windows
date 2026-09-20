@@ -92,7 +92,7 @@ class ifEntry
 public:
 
     //- Runtime type information
-    ClassName("if");
+    ClassNameApi(OpenFOAM_API, "if");
 
     // Member Functions
 

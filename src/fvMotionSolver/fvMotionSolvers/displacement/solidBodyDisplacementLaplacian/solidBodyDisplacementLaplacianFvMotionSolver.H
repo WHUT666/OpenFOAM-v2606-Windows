@@ -107,7 +107,7 @@ class solidBodyDisplacementLaplacianFvMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("solidBodyDisplacementLaplacian");
+    TypeNameApi(fvMotionSolvers_API, "solidBodyDisplacementLaplacian");
 
 
     // Constructors

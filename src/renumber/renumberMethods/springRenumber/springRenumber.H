@@ -96,7 +96,7 @@ class springRenumber
 public:
 
     //- Runtime type information
-    TypeName("spring");
+    TypeNameApi(renumberMethods_API, "spring");
 
 
     // Constructors

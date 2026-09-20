@@ -60,6 +60,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_mixtureFractionSoot_defines_typeName in .C files that
+//  define the template statics of mixtureFractionSoot (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_mixtureFractionSoot_defines_typeName)
+#  define Foam_mixtureFractionSoot_typeName_API
+#else
+#  define Foam_mixtureFractionSoot_typeName_API radiationModels_API
+#endif
+
 #ifndef mixtureFractionSoot_H
 #define mixtureFractionSoot_H
 
@@ -129,7 +139,7 @@ class mixtureFractionSoot
 public:
 
     //- Runtime type information
-    TypeName("mixtureFractionSoot");
+    TypeNameApi(Foam_mixtureFractionSoot_typeName_API, "mixtureFractionSoot");
 
 
     // Constructors

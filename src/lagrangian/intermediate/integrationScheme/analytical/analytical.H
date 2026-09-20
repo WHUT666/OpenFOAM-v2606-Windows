@@ -58,7 +58,7 @@ class analytical
 public:
 
     //- Runtime type information
-    TypeName("analytical");
+    TypeNameApi(lagrangianIntermediate_API, "analytical");
 
 
     // Constructors

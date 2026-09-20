@@ -110,7 +110,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("coupled");
+    TypeNameNoDebugApi(finiteArea_API, "coupled");
 
 
     // Constructors

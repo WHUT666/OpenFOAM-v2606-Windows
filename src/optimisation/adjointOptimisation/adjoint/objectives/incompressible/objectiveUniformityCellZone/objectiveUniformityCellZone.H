@@ -76,7 +76,7 @@ class objectiveUniformityCellZone
 public:
 
     //- Runtime type information
-    TypeName("uniformityCellZone");
+    TypeNameApi(adjointOptimisation_API, "uniformityCellZone");
 
 
     // Constructors

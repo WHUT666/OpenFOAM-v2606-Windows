@@ -235,7 +235,7 @@ class turbulentTemperatureRadCoupledMixedFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("compressible::turbulentTemperatureRadCoupledMixed");
+    TypeNameApi(thermoTools_API, "compressible::turbulentTemperatureRadCoupledMixed");
 
 
     // Constructors

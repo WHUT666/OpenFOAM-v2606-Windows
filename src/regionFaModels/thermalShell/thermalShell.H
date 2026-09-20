@@ -169,7 +169,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("thermalShell");
+    TypeNameApi(regionFaModels_API, "thermalShell");
 
 
     // Constructors

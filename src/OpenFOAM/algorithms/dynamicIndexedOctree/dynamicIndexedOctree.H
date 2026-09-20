@@ -69,7 +69,7 @@ public:
     using node = indexedOctreeBase::node;
 
     //- Runtime type information
-    ClassName("dynamicIndexedOctree");
+    ClassNameApi(OpenFOAM_API, "dynamicIndexedOctree");
 
 
     // Constructors

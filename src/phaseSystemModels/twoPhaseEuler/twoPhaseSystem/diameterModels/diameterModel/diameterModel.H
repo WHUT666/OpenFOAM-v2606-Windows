@@ -64,13 +64,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("diameterModel");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "diameterModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( compressibleTwoPhaseSystem_API,
             autoPtr,
             diameterModel,
             dictionary,

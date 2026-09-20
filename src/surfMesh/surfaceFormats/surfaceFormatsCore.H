@@ -138,7 +138,7 @@ public:
 
         //- The file extension corresponding to 'native' surface format
         //  Normally "ofs" (mnemonic: OF = OpenFOAM, S = Surface)
-        static word nativeExt;
+        static surfMesh_API word nativeExt;
 
 
     // Static Member Functions

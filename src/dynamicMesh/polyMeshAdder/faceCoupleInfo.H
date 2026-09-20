@@ -159,7 +159,7 @@ class faceCoupleInfo
     // Private Data
 
         //- Angle matching tolerance.
-        static const scalar angleTol_;
+        static dynamicMesh_API const scalar angleTol_;
 
         //- Master patch
         std::unique_ptr<indirectPrimitivePatch> masterPatchPtr_;
@@ -384,7 +384,7 @@ class faceCoupleInfo
 public:
 
     //- Runtime type information
-    ClassName("faceCoupleInfo");
+    ClassNameApi(dynamicMesh_API, "faceCoupleInfo");
 
 
     // Constructors

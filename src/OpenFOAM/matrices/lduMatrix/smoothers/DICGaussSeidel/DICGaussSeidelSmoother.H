@@ -69,7 +69,7 @@ class DICGaussSeidelSmoother
 public:
 
     //- Runtime type information
-    TypeName("DICGaussSeidel");
+    TypeNameApi(OpenFOAM_API, "DICGaussSeidel");
 
 
     // Constructors

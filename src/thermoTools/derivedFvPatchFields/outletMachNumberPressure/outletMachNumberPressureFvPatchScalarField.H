@@ -183,7 +183,7 @@ class outletMachNumberPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("outletMachNumberPressure");
+    TypeNameApi(thermoTools_API, "outletMachNumberPressure");
 
 
     // Constructors

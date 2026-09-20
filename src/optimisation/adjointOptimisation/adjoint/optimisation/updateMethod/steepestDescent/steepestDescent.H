@@ -68,7 +68,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("steepestDescent");
+    TypeNameApi(adjointOptimisation_API, "steepestDescent");
 
 
     // Constructors

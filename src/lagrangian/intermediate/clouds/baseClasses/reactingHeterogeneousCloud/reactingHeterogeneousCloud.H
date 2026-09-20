@@ -53,7 +53,7 @@ class reactingHeterogeneousCloud
 public:
 
     //- Runtime type information
-    TypeName("reactingHeterogeneousCloud");
+    TypeNameApi(lagrangianIntermediate_API, "reactingHeterogeneousCloud");
 
 
     // Constructors

@@ -81,7 +81,7 @@ class maxDeltaxyzCubeRootLESDelta
 public:
 
     //- Runtime type information
-    TypeName("maxDeltaxyzCubeRoot");
+    TypeNameApi(turbulenceModels_API, "maxDeltaxyzCubeRoot");
 
 
     // Constructors

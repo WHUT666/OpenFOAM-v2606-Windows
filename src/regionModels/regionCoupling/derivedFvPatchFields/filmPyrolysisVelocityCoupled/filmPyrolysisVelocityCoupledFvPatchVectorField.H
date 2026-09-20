@@ -92,7 +92,7 @@ class filmPyrolysisVelocityCoupledFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("filmPyrolysisVelocityCoupled");
+    TypeNameApi(regionCoupling_API, "filmPyrolysisVelocityCoupled");
 
 
     // Constructors

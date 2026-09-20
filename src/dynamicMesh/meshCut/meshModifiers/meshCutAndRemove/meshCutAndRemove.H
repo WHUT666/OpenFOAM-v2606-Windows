@@ -188,7 +188,7 @@ class meshCutAndRemove
 public:
 
     //- Runtime type information
-    ClassName("meshCutAndRemove");
+    ClassNameApi(dynamicMesh_API, "meshCutAndRemove");
 
 
     // Constructors

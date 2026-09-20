@@ -89,7 +89,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("standardRadiation");
+    TypeNameApi(surfaceFilmModels_API, "standardRadiation");
 
 
     // Constructors

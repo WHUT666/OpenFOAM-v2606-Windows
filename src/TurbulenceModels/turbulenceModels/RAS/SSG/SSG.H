@@ -78,6 +78,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SSG_defines_typeName in .C files that
+//  define the template statics of SSG (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SSG_defines_typeName)
+#  define Foam_SSG_typeName_API
+#else
+#  define Foam_SSG_typeName_API turbulenceModels_API
+#endif
+
 #ifndef SSG_H
 #define SSG_H
 
@@ -150,7 +160,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("SSG");
+    TypeNameApi(Foam_SSG_typeName_API, "SSG");
 
 
     // Constructors

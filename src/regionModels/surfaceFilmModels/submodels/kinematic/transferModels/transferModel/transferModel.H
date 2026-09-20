@@ -89,13 +89,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("transferModel");
+    TypeNameApi(surfaceFilmModels_API, "transferModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( surfaceFilmModels_API,
              autoPtr,
              transferModel,
              dictionary,

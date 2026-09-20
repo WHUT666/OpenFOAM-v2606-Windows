@@ -117,7 +117,7 @@ class flux
 public:
 
     //- Runtime type information
-    TypeName("flux");
+    TypeNameApi(fieldFunctionObjects_API, "flux");
 
 
     // Constructors

@@ -90,7 +90,7 @@ class extendedEdgeMesh
 public:
 
     //- Runtime type information
-    TypeName("extendedEdgeMesh");
+    TypeNameApi(meshTools_API, "extendedEdgeMesh");
 
     enum pointStatus
     {
@@ -100,7 +100,7 @@ public:
         NONFEATURE  //!< Not a feature point
     };
 
-    static const Enum<pointStatus> pointStatusNames_;
+    static meshTools_API const Enum<pointStatus> pointStatusNames_;
 
     enum edgeStatus
     {
@@ -112,7 +112,7 @@ public:
         NONE        //!< Unclassified (consistency with surfaceFeatures)
     };
 
-    static const Enum<edgeStatus> edgeStatusNames_;
+    static meshTools_API const Enum<edgeStatus> edgeStatusNames_;
 
     //- Normals point to the outside
     enum sideVolumeType
@@ -123,10 +123,10 @@ public:
         NEITHER = 3   //!< not sure when this may be used
     };
 
-    static const Enum<sideVolumeType> sideVolumeTypeNames_;
+    static meshTools_API const Enum<sideVolumeType> sideVolumeTypeNames_;
 
     //- Angular closeness tolerance for treating normals as the same
-    static scalar cosNormalAngleTol_;
+    static meshTools_API scalar cosNormalAngleTol_;
 
 
 protected:
@@ -134,10 +134,10 @@ protected:
     // Static Data
 
         //- Index of the start of the convex feature points - static as 0
-        static label convexStart_;
+        static meshTools_API label convexStart_;
 
         //- Index of the start of the external feature edges - static as 0
-        static label externalStart_;
+        static meshTools_API label externalStart_;
 
 
     // Protected Data
@@ -339,8 +339,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             extendedEdgeMesh,
             fileExtension,

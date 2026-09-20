@@ -75,7 +75,7 @@ class dynamicAlphaContactAngleFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("dynamicAlphaContactAngle");
+    TypeNameApi(twoPhaseProperties_API, "dynamicAlphaContactAngle");
 
 
     // Constructors

@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_chemistryReductionMethod_defines_typeName in .C files that
+//  define the template statics of chemistryReductionMethod (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_chemistryReductionMethod_defines_typeName)
+#  define Foam_chemistryReductionMethod_typeName_API
+#else
+#  define Foam_chemistryReductionMethod_typeName_API chemistryModel_API
+#endif
+
 #ifndef chemistryReductionMethod_H
 #define chemistryReductionMethod_H
 
@@ -88,12 +98,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("chemistryReductionMethod");
+    TypeNameApi(Foam_chemistryReductionMethod_typeName_API, "chemistryReductionMethod");
 
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_chemistryReductionMethod_typeName_API,
         autoPtr,
         chemistryReductionMethod,
         dictionary,

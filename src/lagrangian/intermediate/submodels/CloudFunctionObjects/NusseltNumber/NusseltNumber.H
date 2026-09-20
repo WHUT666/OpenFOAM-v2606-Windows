@@ -64,6 +64,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NusseltNumber_defines_typeName in .C files that
+//  define the template statics of NusseltNumber (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NusseltNumber_defines_typeName)
+#  define Foam_NusseltNumber_typeName_API
+#else
+#  define Foam_NusseltNumber_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NusseltNumber_H
 #define NusseltNumber_H
 
@@ -94,7 +104,7 @@ class NusseltNumber
 public:
 
     //- Runtime type information
-    TypeName("NusseltNumber");
+    TypeNameApi(Foam_NusseltNumber_typeName_API, "NusseltNumber");
 
 
     // Generated Methods

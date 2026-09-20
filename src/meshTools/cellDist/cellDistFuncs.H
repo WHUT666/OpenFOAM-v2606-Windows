@@ -81,12 +81,12 @@ public:
 
     // Static Data Members
 
-    ClassName("cellDistFuncs");
+    ClassNameApi(meshTools_API, "cellDistFuncs");
 
 
         //- Use combined-wall-patches wall distance v.s. v2406 per-patch
         //- distance. Default is true
-        static bool useCombinedWallPatch;
+        static meshTools_API bool useCombinedWallPatch;
 
 
     // Constructors

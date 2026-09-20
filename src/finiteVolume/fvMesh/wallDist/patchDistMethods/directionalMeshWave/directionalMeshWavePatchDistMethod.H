@@ -102,7 +102,7 @@ class directionalMeshWave
 public:
 
     //- Runtime type information
-    TypeName("directionalMeshWave");
+    TypeNameApi(finiteVolume_API, "directionalMeshWave");
 
 
     // Constructors

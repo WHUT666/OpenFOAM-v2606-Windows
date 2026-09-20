@@ -94,7 +94,7 @@ class manifoldCellsMeshObject
 public:
 
     //- Declare name of the class, no debug
-    ClassNameNoDebug("manifoldCellsMeshObject");
+    ClassNameNoDebugApi(fileFormats_API, "manifoldCellsMeshObject");
 
 
     // Constructors

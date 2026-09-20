@@ -127,7 +127,7 @@ private:
     // Private Data
 
         //- Time scheme type names
-        static const Enum<ddtSchemeType> ddtSchemeTypeNames_;
+        static incompressibleMultiphaseSystems_API const Enum<ddtSchemeType> ddtSchemeTypeNames_;
 
         //- Adsorption rate constant
         scalar kabs_;
@@ -142,7 +142,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("timeVaryingMassSorption");
+    TypeNameApi(incompressibleMultiphaseSystems_API, "timeVaryingMassSorption");
 
 
     // Constructors

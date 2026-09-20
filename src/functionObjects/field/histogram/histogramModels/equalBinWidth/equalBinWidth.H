@@ -98,7 +98,7 @@ class equalBinWidth
 public:
 
     //- Runtime type information
-    TypeName("equalBinWidth");
+    TypeNameApi(fieldFunctionObjects_API, "equalBinWidth");
 
 
     // Constructors

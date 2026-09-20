@@ -71,7 +71,7 @@ class setUpdater
 public:
 
     //- Runtime type information
-    TypeName("setUpdater");
+    TypeNameApi(dynamicMesh_API, "setUpdater");
 
 
     // Constructors

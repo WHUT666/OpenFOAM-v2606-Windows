@@ -100,7 +100,7 @@ class nbrToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Number of internal faces on cell
         label minNbrs_;
@@ -114,7 +114,7 @@ class nbrToCell
 public:
 
     //- Runtime type information
-    TypeName("nbrToCell");
+    TypeNameApi(meshTools_API, "nbrToCell");
 
 
     // Constructors

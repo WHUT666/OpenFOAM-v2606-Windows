@@ -186,7 +186,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("LuoSvendsen");
+    TypeNameApi(reactingMultiphaseSystem_API, "LuoSvendsen");
 
     // Constructor
 

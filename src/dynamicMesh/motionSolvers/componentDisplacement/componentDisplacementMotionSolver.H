@@ -95,7 +95,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("componentDisplacementMotionSolver");
+    TypeNameApi(dynamicMesh_API, "componentDisplacementMotionSolver");
 
 
     // Constructors

@@ -72,7 +72,7 @@ protected:
 public:
 
     //- Runtime type information
-    ClassName("OppositeFaceCellWave");
+    ClassNameApi(renumberMethods_API, "OppositeFaceCellWave");
 
 
     // Constructors

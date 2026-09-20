@@ -59,7 +59,7 @@ class cyclicSector
 public:
 
     //- Runtime type information
-    TypeName("cyclicSector");
+    TypeNameApi(extrudeModel_API, "cyclicSector");
 
     // Constructors
 

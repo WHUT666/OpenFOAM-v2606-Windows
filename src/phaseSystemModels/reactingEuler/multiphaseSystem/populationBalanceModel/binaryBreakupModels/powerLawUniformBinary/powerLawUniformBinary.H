@@ -67,7 +67,7 @@ class powerLawUniformBinary
 public:
 
     //- Runtime type information
-    TypeName("powerLawUniformBinary");
+    TypeNameApi(reactingMultiphaseSystem_API, "powerLawUniformBinary");
 
     // Constructor
 

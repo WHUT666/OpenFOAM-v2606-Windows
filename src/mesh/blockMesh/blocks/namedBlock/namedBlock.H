@@ -59,7 +59,7 @@ class namedBlock
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("name");
+    TypeNameNoDebugApi(blockMesh_API, "name");
 
 
     // Constructors

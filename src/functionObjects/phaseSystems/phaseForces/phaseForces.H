@@ -120,7 +120,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("phaseForces");
+    TypeNameApi(phaseFunctionObjects_API, "phaseForces");
 
 
     // Constructors

@@ -93,7 +93,7 @@ class Lavieville
 public:
 
     //- Runtime type information
-    TypeName("Lavieville");
+    TypeNameApi(reactingMultiphaseSystem_API, "Lavieville");
 
 
     // Constructors

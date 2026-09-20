@@ -29,6 +29,7 @@ License
 #include "List.H"
 #include "FixedList.H"
 #include "UPtrList.H"
+#include "pTraits.H"
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
@@ -181,7 +182,10 @@ Foam::List<T>::List(Foam::one, Foam::zero)
 :
     UList<T>(ListPolicy::allocate<T>(1), 1)
 {
-    this->v_[0] = Foam::zero{};
+    if constexpr (pTraits_has_zero<T>::value)
+    {
+        this->v_[0] = Foam::zero{};
+    }
 }
 
 

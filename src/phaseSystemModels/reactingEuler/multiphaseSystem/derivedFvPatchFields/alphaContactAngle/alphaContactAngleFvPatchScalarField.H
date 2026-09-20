@@ -177,7 +177,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("reactingMultiphaseEuler::alphaContactAngle");
+    TypeNameApi(reactingMultiphaseSystem_API, "reactingMultiphaseEuler::alphaContactAngle");
 
 
     // Constructors

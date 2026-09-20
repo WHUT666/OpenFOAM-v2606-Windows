@@ -71,7 +71,7 @@ public:
         NONE
     };
 
-    static const Enum<areaSelectionAlgo> areaSelectionAlgoNames;
+    static snappyHexMesh_API const Enum<areaSelectionAlgo> areaSelectionAlgoNames;
 
     //- How to generate faceZone name
     enum faceZoneNaming
@@ -81,7 +81,7 @@ public:
         REGION
     };
 
-    static const Enum<faceZoneNaming> faceZoneNamingNames;
+    static snappyHexMesh_API const Enum<faceZoneNaming> faceZoneNamingNames;
 
     //- What to do with faceZone faces
     enum faceZoneType
@@ -91,7 +91,7 @@ public:
         BOUNDARY
     };
 
-    static const Enum<faceZoneType> faceZoneTypeNames;
+    static snappyHexMesh_API const Enum<faceZoneType> faceZoneTypeNames;
 
 
 private:

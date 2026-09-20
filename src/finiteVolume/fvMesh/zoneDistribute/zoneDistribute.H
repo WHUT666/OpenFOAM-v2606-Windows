@@ -148,7 +148,7 @@ class zoneDistribute
 public:
 
     //- Runtime information
-    TypeName("zoneDistribute");
+    TypeNameApi(finiteVolume_API, "zoneDistribute");
 
 
     // Constructors

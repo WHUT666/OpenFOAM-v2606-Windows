@@ -67,7 +67,7 @@ class Chung
 public:
 
     //- Runtime type information
-    TypeName("Chung");
+    TypeNameApi(barotropicCompressibilityModel_API, "Chung");
 
 
     // Constructors

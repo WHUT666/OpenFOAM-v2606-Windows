@@ -69,7 +69,7 @@ class polyLineEdge
 public:
 
     // Static data members
-    TypeName("polyLine");
+    TypeNameApi(blockMesh_API, "polyLine");
 
 
     // Constructors

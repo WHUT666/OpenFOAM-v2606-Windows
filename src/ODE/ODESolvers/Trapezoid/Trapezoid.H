@@ -66,7 +66,7 @@ class Trapezoid
 public:
 
     //- Runtime type information
-    TypeName("Trapezoid");
+    TypeNameApi(ODE_API, "Trapezoid");
 
 
     // Constructors

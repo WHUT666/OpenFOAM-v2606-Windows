@@ -72,13 +72,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("dragModel");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "dragModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( compressibleTwoPhaseSystem_API,
             autoPtr,
             dragModel,
             dictionary,
@@ -94,7 +94,7 @@ public:
     // Static data members
 
         //- Coefficient dimensions
-        static const dimensionSet dimK;
+        static compressibleTwoPhaseSystem_API const dimensionSet dimK;
 
 
     // Constructors

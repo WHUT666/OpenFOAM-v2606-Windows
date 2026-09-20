@@ -66,7 +66,7 @@ class Ergun
 public:
 
     //- Runtime type information
-    TypeName("Ergun");
+    TypeNameApi(reactingMultiphaseSystem_API, "Ergun");
 
 
     // Constructors

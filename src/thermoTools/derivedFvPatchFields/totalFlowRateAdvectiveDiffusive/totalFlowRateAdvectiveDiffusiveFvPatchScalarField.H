@@ -73,7 +73,7 @@ class totalFlowRateAdvectiveDiffusiveFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("totalFlowRateAdvectiveDiffusive");
+    TypeNameApi(thermoTools_API, "totalFlowRateAdvectiveDiffusive");
 
 
     // Constructors

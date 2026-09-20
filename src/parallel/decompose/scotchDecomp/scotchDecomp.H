@@ -296,7 +296,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("scotch");
+    TypeNameApi(scotchDecomp_API, "scotch");
 
 
     // Constructors

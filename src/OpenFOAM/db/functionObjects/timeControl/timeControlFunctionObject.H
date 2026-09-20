@@ -91,7 +91,7 @@ public:
             TIME_AND_TRIGGER
         };
 
-        static const Enum<controlMode> controlModeNames_;
+        static OpenFOAM_API const Enum<controlMode> controlModeNames_;
 
 
 private:
@@ -188,7 +188,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("timeControl");
+    TypeNameApi(OpenFOAM_API, "timeControl");
 
 
     // Constructors

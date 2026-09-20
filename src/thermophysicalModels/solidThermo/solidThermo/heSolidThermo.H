@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_heSolidThermo_defines_typeName in .C files that
+//  define the template statics of heSolidThermo (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_heSolidThermo_defines_typeName)
+#  define Foam_heSolidThermo_typeName_API
+#else
+#  define Foam_heSolidThermo_typeName_API solidThermo_API
+#endif
+
 #ifndef heSolidThermo_H
 #define heSolidThermo_H
 
@@ -79,7 +89,7 @@ class heSolidThermo
 public:
 
     //- Runtime type information
-    TypeName("heSolidThermo");
+    TypeNameApi(Foam_heSolidThermo_typeName_API, "heSolidThermo");
 
 
     // Constructors

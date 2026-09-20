@@ -139,7 +139,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("volumetricBSplines");
+    TypeNameApi(adjointOptimisation_API, "volumetricBSplines");
 
 
     // Constructors

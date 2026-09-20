@@ -93,7 +93,7 @@ protected:
 public:
 
     // Static Data
-    static int debug;
+    static geometricVoF_API int debug;
 
 
     // Constructors

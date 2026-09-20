@@ -71,12 +71,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceTensionModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "surfaceTensionModel");
 
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         surfaceTensionModel,
         dictionary,
@@ -92,7 +92,7 @@ public:
     // Static Data Members
 
         //- Coefficient dimensions
-        static const dimensionSet dimSigma;
+        static reactingMultiphaseSystem_API const dimensionSet dimSigma;
 
 
     // Constructors

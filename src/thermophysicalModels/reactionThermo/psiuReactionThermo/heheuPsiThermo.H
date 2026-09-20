@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_heheuPsiThermo_defines_typeName in .C files that
+//  define the template statics of heheuPsiThermo (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_heheuPsiThermo_defines_typeName)
+#  define Foam_heheuPsiThermo_typeName_API
+#else
+#  define Foam_heheuPsiThermo_typeName_API reactionThermophysicalModels_API
+#endif
+
 #ifndef heheuPsiThermo_H
 #define heheuPsiThermo_H
 
@@ -78,7 +88,7 @@ class heheuPsiThermo
 public:
 
     //- Runtime type information
-    TypeName("heheuPsiThermo");
+    TypeNameApi(Foam_heheuPsiThermo_typeName_API, "heheuPsiThermo");
 
 
     // Constructors

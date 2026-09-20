@@ -137,13 +137,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("optimisationManager");
+    TypeNameApi(adjointOptimisation_API, "optimisationManager");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             optimisationManager,
             dictionary,

@@ -120,7 +120,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("timeInfo");
+    TypeNameApi(utilityFunctionObjects_API, "timeInfo");
 
 
     // Constructors

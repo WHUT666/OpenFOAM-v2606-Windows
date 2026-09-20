@@ -124,7 +124,7 @@ class sampledInterface
 public:
 
     //- Runtime type information
-    TypeName("sampledInterface");
+    TypeNameApi(geometricVoF_API, "sampledInterface");
 
 
     // Constructors

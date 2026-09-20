@@ -119,7 +119,7 @@ class abaqusMeshSet
 public:
 
     //- Runtime type information
-    TypeName("abaqusMesh");
+    TypeNameApi(sampling_API, "abaqusMesh");
 
 
     // Constructors

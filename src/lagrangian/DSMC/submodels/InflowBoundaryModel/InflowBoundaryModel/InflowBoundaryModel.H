@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_InflowBoundaryModel_defines_typeName in .C files that
+//  define the template statics of InflowBoundaryModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_InflowBoundaryModel_defines_typeName)
+#  define Foam_InflowBoundaryModel_typeName_API
+#else
+#  define Foam_InflowBoundaryModel_typeName_API DSMC_API
+#endif
+
 #ifndef InflowBoundaryModel_H
 #define InflowBoundaryModel_H
 
@@ -70,11 +80,11 @@ class InflowBoundaryModel
 public:
 
     //- Runtime type information
-    TypeName("InflowBoundaryModel");
+    TypeNameApi(Foam_InflowBoundaryModel_typeName_API, "InflowBoundaryModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_InflowBoundaryModel_typeName_API,
         autoPtr,
         InflowBoundaryModel,
         dictionary,

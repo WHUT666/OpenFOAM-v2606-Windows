@@ -58,7 +58,7 @@ class mappedPointPatch
 public:
 
     //- Runtime type information
-    TypeName(mappedPolyPatch::typeName_());
+    TypeNameApi(meshTools_API, mappedPolyPatch::typeName_());
 
 
     // Constructors

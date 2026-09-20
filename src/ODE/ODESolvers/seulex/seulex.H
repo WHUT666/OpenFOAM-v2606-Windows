@@ -132,7 +132,7 @@ class seulex
 public:
 
     //- Runtime type information
-    TypeName("seulex");
+    TypeNameApi(ODE_API, "seulex");
 
 
     // Constructors

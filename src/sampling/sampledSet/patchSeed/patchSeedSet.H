@@ -123,7 +123,7 @@ class patchSeedSet
 public:
 
     //- Runtime type information
-    TypeName("patchSeed");
+    TypeNameApi(sampling_API, "patchSeed");
 
 
     // Constructors

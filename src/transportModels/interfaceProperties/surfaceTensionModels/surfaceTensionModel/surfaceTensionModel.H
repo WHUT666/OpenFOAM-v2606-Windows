@@ -96,13 +96,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceTensionModel");
+    TypeNameApi(interfaceProperties_API, "surfaceTensionModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( interfaceProperties_API,
             autoPtr,
             surfaceTensionModel,
             dictionary,
@@ -117,7 +117,7 @@ public:
     // Static data members
 
         //- Surface tension coefficient dimensions
-        static const dimensionSet dimSigma;
+        static interfaceProperties_API const dimensionSet dimSigma;
 
 
     // Constructors

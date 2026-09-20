@@ -175,7 +175,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("regionFunctionObject");
+    TypeNameApi(OpenFOAM_API, "regionFunctionObject");
 
 
     // Constructors

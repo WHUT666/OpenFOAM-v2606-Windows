@@ -71,8 +71,24 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Function1_defines_typeName in .C files that
+//  define the template statics of Function1 (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Function1_defines_typeName)
+#  define Foam_Function1_typeName_API
+#else
+#  define Foam_Function1_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1_H
 #define Foam_Function1_H
+
+#if defined(Foam_Function1Types_defines_typeName)
+#  define Foam_Function1Types_typeName_API
+#else
+#  define Foam_Function1Types_typeName_API OpenFOAM_API
+#endif
 
 #include "function1Base.H"
 #include "Field.H"
@@ -129,8 +145,7 @@ public:
     TypeName("Function1")
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTable(
         autoPtr,
         Function1,
         dictionary,
@@ -407,6 +422,14 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1<Foam::label>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1<Foam::tensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1<Foam::scalarField>);
 
 #endif
 

@@ -116,7 +116,7 @@ class patchProbes
 public:
 
     //- Runtime type information
-    TypeName("patchProbes");
+    TypeNameApi(sampling_API, "patchProbes");
 
 
     // Constructors

@@ -108,7 +108,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("prghPressure");
+    TypeNameApi(finiteVolume_API, "prghPressure");
 
 
     // Constructors

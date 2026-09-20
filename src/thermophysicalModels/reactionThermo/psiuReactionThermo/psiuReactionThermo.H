@@ -69,13 +69,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("psiuReactionThermo");
+    TypeNameApi(reactionThermophysicalModels_API, "psiuReactionThermo");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactionThermophysicalModels_API,
             autoPtr,
             psiuReactionThermo,
             fvMesh,
@@ -84,8 +84,8 @@ public:
         );
 
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactionThermophysicalModels_API,
             autoPtr,
             psiuReactionThermo,
             fvMeshDictPhase,

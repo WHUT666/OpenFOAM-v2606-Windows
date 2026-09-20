@@ -141,7 +141,7 @@ class snappyVoxelMeshDriver
 public:
 
     //- Runtime type information
-    ClassName("snappyVoxelMeshDriver");
+    ClassNameApi(snappyHexMesh_API, "snappyVoxelMeshDriver");
 
 
     // Constructors

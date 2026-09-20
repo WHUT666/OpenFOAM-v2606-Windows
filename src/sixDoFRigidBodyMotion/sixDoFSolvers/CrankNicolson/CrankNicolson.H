@@ -88,7 +88,7 @@ class CrankNicolson
 public:
 
     //- Runtime type information
-    TypeName("CrankNicolson");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "CrankNicolson");
 
 
     // Constructors

@@ -72,7 +72,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("constant");
+    TypeNameApi(laminarFlameSpeedModels_API, "constant");
 
 
     // Constructors

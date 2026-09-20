@@ -95,7 +95,7 @@ class freestreamPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("freestreamPressure");
+    TypeNameApi(finiteVolume_API, "freestreamPressure");
 
 
     // Constructors

@@ -68,7 +68,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("uniform");
+    TypeNameApi(randomProcesses_API, "uniform");
 
 
     //- Construct from dictionary

@@ -84,7 +84,7 @@ public:
     friend class liquidProperties;
 
     //- Runtime type information
-    TypeName("C2H5OH");
+    TypeNameApi(thermophysicalProperties_API, "C2H5OH");
 
 
     // Constructors

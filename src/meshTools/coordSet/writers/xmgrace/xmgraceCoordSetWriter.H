@@ -130,7 +130,7 @@ class xmgraceWriter
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("xmgr");
+    TypeNameNoDebugApi(meshTools_API, "xmgr");
 
 
     // Constructors

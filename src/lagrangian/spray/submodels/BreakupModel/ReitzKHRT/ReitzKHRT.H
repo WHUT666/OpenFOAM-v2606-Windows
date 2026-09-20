@@ -36,6 +36,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ReitzKHRT_defines_typeName in .C files that
+//  define the template statics of ReitzKHRT (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ReitzKHRT_defines_typeName)
+#  define Foam_ReitzKHRT_typeName_API
+#else
+#  define Foam_ReitzKHRT_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef ReitzKHRT_H
 #define ReitzKHRT_H
 
@@ -70,7 +80,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("ReitzKHRT");
+    TypeNameApi(Foam_ReitzKHRT_typeName_API, "ReitzKHRT");
 
 
     // Constructors

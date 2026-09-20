@@ -96,7 +96,7 @@ class cellBitSet
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("cellBitSet");
+    TypeNameNoDebugApi(meshTools_API, "cellBitSet");
 
 
     // Constructors

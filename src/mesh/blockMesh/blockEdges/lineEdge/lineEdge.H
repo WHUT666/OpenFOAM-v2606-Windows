@@ -58,7 +58,7 @@ class lineEdge
 public:
 
     //- Runtime type information
-    TypeName("line");
+    TypeNameApi(blockMesh_API, "line");
 
 
     // Constructors

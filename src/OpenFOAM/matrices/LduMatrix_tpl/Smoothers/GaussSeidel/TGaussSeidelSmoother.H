@@ -37,6 +37,12 @@ SourceFiles
 #ifndef TGaussSeidelSmoother_H
 #define TGaussSeidelSmoother_H
 
+#if defined(Foam_LduSmoother_defines_typeName)
+#  define Foam_LduSmoother_typeName_API
+#else
+#  define Foam_LduSmoother_typeName_API OpenFOAM_API
+#endif
+
 #include <LduMatrix_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -62,7 +68,7 @@ class TGaussSeidelSmoother
 public:
 
     //- Runtime type information
-    TypeName("GaussSeidel");
+    TypeNameApi(Foam_LduSmoother_typeName_API, "GaussSeidel");
 
 
     // Constructors

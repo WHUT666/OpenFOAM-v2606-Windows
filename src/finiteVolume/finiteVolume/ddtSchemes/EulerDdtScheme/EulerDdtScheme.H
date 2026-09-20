@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_EulerDdtScheme_defines_typeName in .C files that
+//  define the template statics of EulerDdtScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_EulerDdtScheme_defines_typeName)
+#  define Foam_EulerDdtScheme_typeName_API
+#else
+#  define Foam_EulerDdtScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef EulerDdtScheme_H
 #define EulerDdtScheme_H
 
@@ -74,7 +84,7 @@ class EulerDdtScheme
 public:
 
     //- Runtime type information
-    TypeName("Euler");
+    TypeNameApi(Foam_EulerDdtScheme_typeName_API, "Euler");
 
 
     // Constructors

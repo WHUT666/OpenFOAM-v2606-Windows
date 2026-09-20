@@ -304,7 +304,7 @@ class isoAdvection
 public:
 
     //- Runtime type information
-    TypeName("isoAdvection");
+    TypeNameApi(geometricVoF_API, "isoAdvection");
 
     //- Constructors
 

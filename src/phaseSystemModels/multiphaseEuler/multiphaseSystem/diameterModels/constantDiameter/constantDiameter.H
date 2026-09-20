@@ -66,7 +66,7 @@ class constant
 public:
 
     //- Runtime type information
-    TypeName("constant");
+    TypeNameApi(multiphaseSystem_API, "constant");
 
 
     // Constructors

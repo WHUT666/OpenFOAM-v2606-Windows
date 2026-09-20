@@ -43,6 +43,16 @@ SeeAlso
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PatchFunction1_defines_typeName in .C files that
+//  define the template statics of PatchFunction1 (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PatchFunction1_defines_typeName)
+#  define Foam_PatchFunction1_typeName_API
+#else
+#  define Foam_PatchFunction1_typeName_API meshTools_API
+#endif
+
 #ifndef Foam_PatchFunction1_H
 #define Foam_PatchFunction1_H
 
@@ -112,8 +122,7 @@ public:
     TypeName("PatchFunction1")
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTable( 
         autoPtr,
         PatchFunction1,
         dictionary,
@@ -353,6 +362,13 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1<Foam::label>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1<Foam::scalar>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1<Foam::vector>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1<Foam::sphericalTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1<Foam::symmTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1<Foam::tensor>);
 
 #endif
 

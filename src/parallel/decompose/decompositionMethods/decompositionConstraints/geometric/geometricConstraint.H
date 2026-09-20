@@ -128,7 +128,7 @@ class geometric
 public:
 
     //- Runtime type information
-    TypeName("geometric");
+    TypeNameApi(decompositionMethods_API, "geometric");
 
 
     // Constructors

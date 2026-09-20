@@ -56,6 +56,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FreezeParticles_defines_typeName in .C files that
+//  define the template statics of FreezeParticles (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FreezeParticles_defines_typeName)
+#  define Foam_FreezeParticles_typeName_API
+#else
+#  define Foam_FreezeParticles_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Foam_FreezeParticles_H
 #define Foam_FreezeParticles_H
 
@@ -87,7 +97,7 @@ public:
     typedef typename CloudType::parcelType parcelType;
 
     //- Runtime type information
-    TypeName("FreezeParticles");
+    TypeNameApi(Foam_FreezeParticles_typeName_API, "FreezeParticles");
 
 
     // Constructors

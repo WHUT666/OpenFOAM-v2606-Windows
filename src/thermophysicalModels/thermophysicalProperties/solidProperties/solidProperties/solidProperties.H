@@ -99,13 +99,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("solid");
+    TypeNameApi(thermophysicalProperties_API, "solid");
 
 
     // Declare run-time constructor selection tables
 
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( thermophysicalProperties_API,
         autoPtr,
         solidProperties,
         ,
@@ -113,8 +113,8 @@ public:
         ()
     );
 
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( thermophysicalProperties_API,
         autoPtr,
         solidProperties,
         dictionary,

@@ -76,7 +76,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("laminar");
+    TypeNameApi(surfaceFilmModels_API, "laminar");
 
 
     // Constructors

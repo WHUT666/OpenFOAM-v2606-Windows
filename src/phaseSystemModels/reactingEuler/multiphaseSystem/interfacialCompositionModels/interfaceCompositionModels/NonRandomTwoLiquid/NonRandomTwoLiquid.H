@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NonRandomTwoLiquid_defines_typeName in .C files that
+//  define the template statics of NonRandomTwoLiquid (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NonRandomTwoLiquid_defines_typeName)
+#  define Foam_NonRandomTwoLiquid_typeName_API
+#else
+#  define Foam_NonRandomTwoLiquid_typeName_API reactingMultiphaseSystem_API
+#endif
+
 #ifndef NonRandomTwoLiquid_H
 #define NonRandomTwoLiquid_H
 
@@ -112,7 +122,7 @@ class NonRandomTwoLiquid
 public:
 
     //- Runtime type information
-    TypeName("nonRandomTwoLiquid");
+    TypeNameApi(Foam_NonRandomTwoLiquid_typeName_API, "nonRandomTwoLiquid");
 
     // Constructors
 

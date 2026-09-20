@@ -155,7 +155,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("particleDistribution");
+    TypeNameApi(fieldFunctionObjects_API, "particleDistribution");
 
 
     // Constructors

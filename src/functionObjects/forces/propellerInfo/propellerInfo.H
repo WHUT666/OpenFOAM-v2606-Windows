@@ -199,7 +199,7 @@ public:
         MRF
     };
 
-    static const Enum<rotationMode> rotationModeNames_;
+    static forces_API const Enum<rotationMode> rotationModeNames_;
 
 
 protected:
@@ -361,7 +361,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("propellerInfo");
+    TypeNameApi(forces_API, "propellerInfo");
 
 
     // Constructors

@@ -69,7 +69,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName(symmetryPolyPatch::typeName_());  // ie, "symmetry"
+    TypeNameApi(finiteArea_API, symmetryPolyPatch::typeName_());  // ie, "symmetry"
 
 
     // Constructors

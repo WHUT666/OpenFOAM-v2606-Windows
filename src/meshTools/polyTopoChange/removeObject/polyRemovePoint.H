@@ -64,7 +64,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("removePoint");
+        TypeNameApi(meshTools_API, "removePoint");
 
 
     // Constructors

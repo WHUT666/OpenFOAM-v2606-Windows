@@ -84,13 +84,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("solidBodyMotionFunction");
+    TypeNameApi(meshTools_API, "solidBodyMotionFunction");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             solidBodyMotionFunction,
             dictionary,

@@ -99,7 +99,7 @@ class RKDP45
 public:
 
     //- Runtime type information
-    TypeName("RKDP45");
+    TypeNameApi(ODE_API, "RKDP45");
 
 
     // Constructors

@@ -157,7 +157,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cloudInfo");
+    TypeNameApi(lagrangianFunctionObjects_API, "cloudInfo");
 
 
     // Constructors

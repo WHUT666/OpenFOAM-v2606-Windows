@@ -91,13 +91,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("reactionRateFlameArea");
+    TypeNameApi(combustionModels_API, "reactionRateFlameArea");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( combustionModels_API,
             autoPtr,
             reactionRateFlameArea,
             dictionary,

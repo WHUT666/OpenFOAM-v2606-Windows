@@ -62,7 +62,7 @@ class SpalartAllmaras
 public:
 
     //- Runtime type information
-    TypeName("SpalartAllmaras");
+    TypeNameApi(adjointOptimisation_API, "SpalartAllmaras");
 
 
     // Constructors

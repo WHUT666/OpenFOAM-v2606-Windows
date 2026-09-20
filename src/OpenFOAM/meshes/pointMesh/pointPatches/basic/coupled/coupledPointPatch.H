@@ -86,7 +86,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName(coupledPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, coupledPolyPatch::typeName_());
 
 
     // Constructors

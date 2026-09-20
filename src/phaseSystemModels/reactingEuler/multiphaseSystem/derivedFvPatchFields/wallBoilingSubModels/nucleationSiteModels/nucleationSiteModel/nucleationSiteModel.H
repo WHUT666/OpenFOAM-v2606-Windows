@@ -61,12 +61,12 @@ class nucleationSiteModel
 public:
 
     //- Runtime type information
-    TypeName("nucleationSiteModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "nucleationSiteModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         nucleationSiteModel,
         dictionary,

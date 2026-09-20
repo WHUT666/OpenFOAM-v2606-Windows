@@ -112,7 +112,7 @@ class LambVector
 public:
 
     //- Runtime type information
-    TypeName("LambVector");
+    TypeNameApi(fieldFunctionObjects_API, "LambVector");
 
 
     // Constructors

@@ -60,12 +60,12 @@ class departureFrequencyModel
 public:
 
     //- Runtime type information
-    TypeName("departureFrequencyModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "departureFrequencyModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         departureFrequencyModel,
         dictionary,

@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_laminar_defines_typeName in .C files that
+//  define the template statics of laminar (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_laminar_defines_typeName)
+#  define Foam_laminar_typeName_API
+#else
+#  define Foam_laminar_typeName_API combustionModels_API
+#endif
+
 #ifndef combustionModels_laminar_H
 #define combustionModels_laminar_H
 
@@ -85,7 +95,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("laminar");
+    TypeNameApi(Foam_laminar_typeName_API, "laminar");
 
 
     // Constructors

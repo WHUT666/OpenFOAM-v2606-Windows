@@ -53,7 +53,7 @@ class sprayCloud
 public:
 
     //- Runtime type information
-    TypeName("sprayCloud");
+    TypeNameApi(lagrangianSpray_API, "sprayCloud");
 
     // Constructors
 

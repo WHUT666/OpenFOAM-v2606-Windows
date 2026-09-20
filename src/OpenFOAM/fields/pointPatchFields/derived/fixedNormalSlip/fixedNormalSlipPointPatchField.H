@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fixedNormalSlipPointPatchField_defines_typeName in .C files that
+//  define the template statics of fixedNormalSlipPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fixedNormalSlipPointPatchField_defines_typeName)
+#  define Foam_fixedNormalSlipPointPatchField_typeName_API
+#else
+#  define Foam_fixedNormalSlipPointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_fixedNormalSlipPointPatchField_H
 #define Foam_fixedNormalSlipPointPatchField_H
 
@@ -65,7 +75,7 @@ class fixedNormalSlipPointPatchField
 public:
 
     //- Runtime type information
-    TypeName("fixedNormalSlip");
+    TypeNameApi(Foam_fixedNormalSlipPointPatchField_typeName_API, "fixedNormalSlip");
 
 
     // Constructors

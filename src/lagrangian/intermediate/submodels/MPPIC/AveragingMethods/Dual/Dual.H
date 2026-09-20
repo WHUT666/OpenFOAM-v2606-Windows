@@ -48,6 +48,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Dual_defines_typeName in .C files that
+//  define the template statics of Dual (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Dual_defines_typeName)
+#  define Foam_Dual_typeName_API
+#else
+#  define Foam_Dual_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Dual_H
 #define Dual_H
 
@@ -109,7 +119,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("dual");
+    TypeNameApi(Foam_Dual_typeName_API, "dual");
 
 
     //- Constructors

@@ -78,6 +78,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_advectiveFvPatchField_defines_typeName in .C files that
+//  define the template statics of advectiveFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_advectiveFvPatchField_defines_typeName)
+#  define Foam_advectiveFvPatchField_typeName_API
+#else
+#  define Foam_advectiveFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_advectiveFvPatchField_H
 #define Foam_advectiveFvPatchField_H
 
@@ -121,7 +131,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("advective");
+    TypeNameApi(Foam_advectiveFvPatchField_typeName_API, "advective");
 
 
     // Constructors

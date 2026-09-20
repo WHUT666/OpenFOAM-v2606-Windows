@@ -101,7 +101,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("lumpedMassWallTemperature");
+    TypeNameApi(thermoTools_API, "lumpedMassWallTemperature");
 
 
     // Constructors

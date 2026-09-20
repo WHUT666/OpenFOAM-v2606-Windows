@@ -54,6 +54,16 @@ See also
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_InjectedParticleInjection_defines_typeName in .C files that
+//  define the template statics of InjectedParticleInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_InjectedParticleInjection_defines_typeName)
+#  define Foam_InjectedParticleInjection_typeName_API
+#else
+#  define Foam_InjectedParticleInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef InjectedParticleInjection_H
 #define InjectedParticleInjection_H
 
@@ -127,7 +137,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("injectedParticleInjection");
+    TypeNameApi(Foam_InjectedParticleInjection_typeName_API, "injectedParticleInjection");
 
 
     // Constructors

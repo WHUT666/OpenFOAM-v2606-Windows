@@ -77,7 +77,7 @@ public:
             DELETED = 2
         };
 
-        static const Enum<fileState> fileStateNames_;
+        static OpenFOAM_API const Enum<fileState> fileStateNames_;
 
 private:
 
@@ -117,7 +117,7 @@ private:
 public:
 
     //- Named/registered debug switch: 'fileMonitor'
-    static int debug;
+    static OpenFOAM_API int debug;
 
 
     // Constructors

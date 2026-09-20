@@ -32,6 +32,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_interpolationCellPointWallModified_defines_typeName in .C files that
+//  define the template statics of interpolationCellPointWallModified (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_interpolationCellPointWallModified_defines_typeName)
+#  define Foam_interpolationCellPointWallModified_typeName_API
+#else
+#  define Foam_interpolationCellPointWallModified_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_interpolationCellPointWallModified_H
 #define Foam_interpolationCellPointWallModified_H
 
@@ -55,7 +65,7 @@ class interpolationCellPointWallModified
 public:
 
     //- Runtime type information
-    TypeName("cellPointWallModified");
+    TypeNameApi(Foam_interpolationCellPointWallModified_typeName_API, "cellPointWallModified");
 
 
     // Constructors

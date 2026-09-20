@@ -103,7 +103,7 @@ class rotatingTotalPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("rotatingTotalPressure");
+    TypeNameApi(finiteVolume_API, "rotatingTotalPressure");
 
 
     // Constructors

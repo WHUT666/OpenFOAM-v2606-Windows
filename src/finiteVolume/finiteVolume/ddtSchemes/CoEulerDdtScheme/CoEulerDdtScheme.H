@@ -44,6 +44,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CoEulerDdtScheme_defines_typeName in .C files that
+//  define the template statics of CoEulerDdtScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CoEulerDdtScheme_defines_typeName)
+#  define Foam_CoEulerDdtScheme_typeName_API
+#else
+#  define Foam_CoEulerDdtScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef CoEulerDdtScheme_H
 #define CoEulerDdtScheme_H
 
@@ -99,7 +109,7 @@ class CoEulerDdtScheme
 public:
 
     //- Runtime type information
-    TypeName("CoEuler");
+    TypeNameApi(Foam_CoEulerDdtScheme_typeName_API, "CoEuler");
 
 
     // Constructors

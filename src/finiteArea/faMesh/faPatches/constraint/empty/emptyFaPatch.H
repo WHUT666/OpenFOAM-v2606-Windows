@@ -61,7 +61,7 @@ class emptyFaPatch
 public:
 
     //- Runtime type information
-    TypeName("empty");
+    TypeNameApi(finiteArea_API, "empty");
 
 
     // Constructors

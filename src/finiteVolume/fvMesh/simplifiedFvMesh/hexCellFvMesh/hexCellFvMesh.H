@@ -58,7 +58,7 @@ class hexCellFvMesh
 public:
 
     //- Runtime type information
-    TypeName("hexCellFvMesh");
+    TypeNameApi(finiteVolume_API, "hexCellFvMesh");
 
     //- Constructor
     hexCellFvMesh(const Time& runTime, const scalar d = 1);

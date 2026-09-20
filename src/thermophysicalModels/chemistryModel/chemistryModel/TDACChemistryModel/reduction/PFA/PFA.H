@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PFA_defines_typeName in .C files that
+//  define the template statics of PFA (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PFA_defines_typeName)
+#  define Foam_PFA_typeName_API
+#else
+#  define Foam_PFA_typeName_API chemistryModel_API
+#endif
+
 #ifndef PFA_H
 #define PFA_H
 
@@ -62,7 +72,7 @@ class PFA
 public:
 
     //- Runtime type information
-    TypeName("PFA");
+    TypeNameApi(Foam_PFA_typeName_API, "PFA");
 
 
     // Constructors

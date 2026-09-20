@@ -63,7 +63,7 @@ class freeSurfaceVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("freeSurfaceVelocity");
+    TypeNameApi(interfaceTrackingFvMesh_API, "freeSurfaceVelocity");
 
 
     // Constructors

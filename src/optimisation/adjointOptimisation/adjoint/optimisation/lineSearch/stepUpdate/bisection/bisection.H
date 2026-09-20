@@ -76,7 +76,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("bisection");
+    TypeNameApi(adjointOptimisation_API, "bisection");
 
 
     // Constructors

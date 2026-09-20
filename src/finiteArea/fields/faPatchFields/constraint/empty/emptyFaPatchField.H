@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_emptyFaPatchField_defines_typeName in .C files that
+//  define the template statics of emptyFaPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_emptyFaPatchField_defines_typeName)
+#  define Foam_emptyFaPatchField_typeName_API
+#else
+#  define Foam_emptyFaPatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_emptyFaPatchField_H
 #define Foam_emptyFaPatchField_H
 
@@ -64,7 +74,7 @@ class emptyFaPatchField
 public:
 
     //- Runtime type information
-    TypeName(emptyFaPatch::typeName_());
+    TypeNameApi(Foam_emptyFaPatchField_typeName_API, emptyFaPatch::typeName_());
 
 
     // Constructors

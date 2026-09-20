@@ -464,7 +464,7 @@ protected:
 public:
 
         //- Runtime type information
-        TypeName("masterUncollated");
+        TypeNameApi(OpenFOAM_API, "masterUncollated");
 
 
     // Static Data
@@ -472,7 +472,7 @@ public:
         //- Max size of parallel communications. Switches from non-blocking
         //  to scheduled when reading/writing files. Read as float to enable
         //  easy specification of large sizes.
-        static float maxMasterFileBufferSize;
+        static OpenFOAM_API float maxMasterFileBufferSize;
 
 
     // Constructors

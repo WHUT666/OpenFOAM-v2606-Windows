@@ -119,13 +119,13 @@ public:
         };
 
         //- Names for the normTypes
-        static const Enum<normTypes> normTypesNames_;
+        static OpenFOAM_API const Enum<normTypes> normTypesNames_;
 
         //- Default maximum number of iterations for solvers (1000)
         static constexpr const label defaultMaxIter = 1000;
 
         //- Default (absolute) tolerance (1e-6)
-        static const scalar defaultTolerance;
+        static OpenFOAM_API const scalar defaultTolerance;
 
 
     // -----------------------------------------------------------------------
@@ -181,8 +181,8 @@ public:
 
         // Declare run-time constructor selection tables
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi
+            ( OpenFOAM_API,
                 autoPtr,
                 solver,
                 symMatrix,
@@ -204,8 +204,8 @@ public:
                 )
             );
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi
+            ( OpenFOAM_API,
                 autoPtr,
                 solver,
                 asymMatrix,
@@ -371,8 +371,8 @@ public:
 
         // Declare run-time constructor selection tables
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi
+            ( OpenFOAM_API,
                 autoPtr,
                 smoother,
                 symMatrix,
@@ -394,8 +394,8 @@ public:
                 )
             );
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi
+            ( OpenFOAM_API,
                 autoPtr,
                 smoother,
                 asymMatrix,
@@ -520,8 +520,8 @@ public:
 
         // Declare run-time constructor selection tables
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi
+            ( OpenFOAM_API,
                 autoPtr,
                 preconditioner,
                 symMatrix,
@@ -532,8 +532,8 @@ public:
                 (sol, solverControls)
             );
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi
+            ( OpenFOAM_API,
                 autoPtr,
                 preconditioner,
                 asymMatrix,
@@ -607,7 +607,7 @@ public:
     // Static Data
 
         // Declare name of the class and its debug switch
-        ClassName("lduMatrix");
+        ClassNameApi(OpenFOAM_API, "lduMatrix");
 
 
     // Constructors

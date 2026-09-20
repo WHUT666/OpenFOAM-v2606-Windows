@@ -72,7 +72,7 @@ class specified
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("specified");
+    TypeNameNoDebugApi(OpenFOAM_API, "specified");
 
 
     // Constructors

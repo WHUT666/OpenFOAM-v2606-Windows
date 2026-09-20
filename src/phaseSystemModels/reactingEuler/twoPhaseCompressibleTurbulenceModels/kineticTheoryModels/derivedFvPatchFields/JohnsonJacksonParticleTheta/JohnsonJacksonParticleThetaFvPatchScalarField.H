@@ -83,7 +83,7 @@ class JohnsonJacksonParticleThetaFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("JohnsonJacksonParticleTheta");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "JohnsonJacksonParticleTheta");
 
 
     // Constructors

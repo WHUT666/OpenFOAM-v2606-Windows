@@ -66,7 +66,7 @@ class isothermal
 public:
 
     //- Runtime type information
-    TypeName("isothermal");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "isothermal");
 
 
     // Constructors

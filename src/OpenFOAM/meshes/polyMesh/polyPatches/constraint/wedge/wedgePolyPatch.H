@@ -84,7 +84,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("wedge");
+    TypeNameApi(OpenFOAM_API, "wedge");
 
 
     // Constructors

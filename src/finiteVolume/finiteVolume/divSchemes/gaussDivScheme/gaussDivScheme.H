@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_gaussDivScheme_defines_typeName in .C files that
+//  define the template statics of gaussDivScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_gaussDivScheme_defines_typeName)
+#  define Foam_gaussDivScheme_typeName_API
+#else
+#  define Foam_gaussDivScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef gaussDivScheme_H
 #define gaussDivScheme_H
 
@@ -73,7 +83,7 @@ class gaussDivScheme
 public:
 
     //- Runtime type information
-    TypeName("Gauss");
+    TypeNameApi(Foam_gaussDivScheme_typeName_API, "Gauss");
 
 
     // Constructors

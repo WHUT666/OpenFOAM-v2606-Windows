@@ -70,7 +70,7 @@ class harmonic
 public:
 
     //- Runtime type information
-    TypeName("harmonic");
+    TypeNameApi(finiteVolume_API, "harmonic");
 
 
     // Constructors

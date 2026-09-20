@@ -69,7 +69,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("processorLOD");
+    TypeNameApi(meshTools_API, "processorLOD");
 
     //- Construct from components
     processorLOD

@@ -154,7 +154,7 @@ protected:
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("decomposedBlockData");
+    TypeNameApi(OpenFOAM_API, "decomposedBlockData");
 
 
     // Constructors

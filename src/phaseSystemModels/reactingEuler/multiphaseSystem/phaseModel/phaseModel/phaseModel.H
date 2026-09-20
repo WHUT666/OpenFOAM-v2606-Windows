@@ -85,13 +85,13 @@ class phaseModel
 public:
 
     //- Runtime type information
-    ClassName("phaseModel");
+    ClassNameApi(reactingMultiphaseSystem_API, "phaseModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             phaseModel,
             phaseSystem,

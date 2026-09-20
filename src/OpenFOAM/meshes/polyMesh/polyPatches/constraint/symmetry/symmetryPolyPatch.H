@@ -58,7 +58,7 @@ class symmetryPolyPatch
 public:
 
     //- Runtime type information
-    TypeName("symmetry");
+    TypeNameApi(OpenFOAM_API, "symmetry");
 
 
     // Constructors

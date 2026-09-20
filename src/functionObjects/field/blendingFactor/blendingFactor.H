@@ -156,7 +156,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("blendingFactor");
+    TypeNameApi(fieldFunctionObjects_API, "blendingFactor");
 
 
     // Constructors

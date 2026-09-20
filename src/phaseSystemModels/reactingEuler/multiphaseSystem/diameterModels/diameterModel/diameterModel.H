@@ -65,13 +65,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("diameterModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "diameterModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             diameterModel,
             dictionary,

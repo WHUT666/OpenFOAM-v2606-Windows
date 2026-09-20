@@ -142,7 +142,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("series");
+    TypeNameApi(fvOptions_API, "series");
 
 
     // Constructors

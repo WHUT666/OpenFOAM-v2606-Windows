@@ -108,7 +108,7 @@ class searchableSurfaceToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- The searchableSurface
         autoPtr<searchableSurface> surf_;
@@ -122,7 +122,7 @@ class searchableSurfaceToFace
 public:
 
     //- Runtime type information
-    TypeName("searchableSurfaceToFace");
+    TypeNameApi(meshTools_API, "searchableSurfaceToFace");
 
 
     // Constructors

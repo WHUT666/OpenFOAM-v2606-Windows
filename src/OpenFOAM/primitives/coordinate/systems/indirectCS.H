@@ -120,7 +120,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("indirect");
+    TypeNameApi(OpenFOAM_API, "indirect");
 
 
     // Constructors

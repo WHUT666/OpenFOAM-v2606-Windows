@@ -97,7 +97,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("geometricElementTransform");
+    TypeNameApi(dynamicMesh_API, "geometricElementTransform");
 
 
     // Constructors

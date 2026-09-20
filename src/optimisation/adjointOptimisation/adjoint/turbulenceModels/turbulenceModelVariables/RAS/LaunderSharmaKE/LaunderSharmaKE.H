@@ -62,7 +62,7 @@ class LaunderSharmaKE
 public:
 
     //- Runtime type information
-    TypeName("LaunderSharmaKE");
+    TypeNameApi(adjointOptimisation_API, "LaunderSharmaKE");
 
 
     // Constructors

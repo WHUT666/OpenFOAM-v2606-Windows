@@ -67,13 +67,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("dragModel");
+    TypeNameApi(multiphaseSystem_API, "dragModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( multiphaseSystem_API,
             autoPtr,
             dragModel,
             dictionary,

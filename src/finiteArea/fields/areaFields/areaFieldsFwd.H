@@ -93,10 +93,10 @@ namespace fieldTypes
 {
 
 //- Standard area field types (scalar, vector, tensor, etc)
-extern const wordList area;
+extern finiteArea_API const wordList area;
 
 //- Standard area internal field types (scalar, vector, tensor, etc)
-extern const wordList area_internal;
+extern finiteArea_API const wordList area_internal;
 
 //- Test if the class name appears to be an area field
 bool is_area(const word& clsName);

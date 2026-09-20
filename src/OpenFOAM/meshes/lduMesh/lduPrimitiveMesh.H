@@ -105,7 +105,7 @@ public:
     // Static data
 
         // Declare name of the class and its debug switch
-        ClassName("lduPrimitiveMesh");
+        ClassNameApi(OpenFOAM_API, "lduPrimitiveMesh");
 
 
     // Constructors

@@ -69,6 +69,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_uniformJumpFvPatchField_defines_typeName in .C files that
+//  define the template statics of uniformJumpFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_uniformJumpFvPatchField_defines_typeName)
+#  define Foam_uniformJumpFvPatchField_typeName_API
+#else
+#  define Foam_uniformJumpFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_uniformJumpFvPatchField_H
 #define Foam_uniformJumpFvPatchField_H
 
@@ -103,7 +113,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("uniformJump");
+    TypeNameApi(Foam_uniformJumpFvPatchField_typeName_API, "uniformJump");
 
     // Constructors
 

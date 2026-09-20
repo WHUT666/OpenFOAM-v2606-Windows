@@ -98,7 +98,7 @@ class vanDriestDelta
 public:
 
     //- Runtime type information
-    TypeName("vanDriest");
+    TypeNameApi(turbulenceModels_API, "vanDriest");
 
 
     // Constructors

@@ -123,7 +123,7 @@ class zoneToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Matcher for zones
         wordRes zoneMatcher_;
@@ -149,7 +149,7 @@ class zoneToFace
 public:
 
     //- Runtime type information
-    TypeName("zoneToFace");
+    TypeNameApi(meshTools_API, "zoneToFace");
 
 
     // Constructors

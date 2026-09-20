@@ -61,7 +61,7 @@ class stepFunction
 public:
 
     //- Runtime type information
-    TypeName("step");
+    TypeNameApi(OpenFOAM_API, "step");
 
 
     // Constructors

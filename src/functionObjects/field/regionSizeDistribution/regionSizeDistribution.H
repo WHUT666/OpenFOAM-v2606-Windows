@@ -289,7 +289,7 @@ class regionSizeDistribution
 public:
 
     //- Runtime type information
-    TypeName("regionSizeDistribution");
+    TypeNameApi(fieldFunctionObjects_API, "regionSizeDistribution");
 
 
     // Constructors

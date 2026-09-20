@@ -59,6 +59,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SpalartAllmarasDDES_defines_typeName in .C files that
+//  define the template statics of SpalartAllmarasDDES (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SpalartAllmarasDDES_defines_typeName)
+#  define Foam_SpalartAllmarasDDES_typeName_API
+#else
+#  define Foam_SpalartAllmarasDDES_typeName_API turbulenceModels_API
+#endif
+
 #ifndef Foam_SpalartAllmarasDDES_H
 #define Foam_SpalartAllmarasDDES_H
 
@@ -93,7 +103,7 @@ public:
         };
 
         //- Shielding mode names
-        static const Enum<shieldingMode> shieldingModeNames;
+        static Foam_SpalartAllmarasDDES_typeName_API const Enum<shieldingMode> shieldingModeNames;
 
 
 private:
@@ -155,7 +165,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("SpalartAllmarasDDES");
+    TypeNameApi(Foam_SpalartAllmarasDDES_typeName_API, "SpalartAllmarasDDES");
 
 
     // Constructors

@@ -80,7 +80,7 @@ class lduPrimitiveProcessorInterface
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("processorInterface");
+    TypeNameNoDebugApi(OpenFOAM_API, "processorInterface");
 
 
     // Generated Methods

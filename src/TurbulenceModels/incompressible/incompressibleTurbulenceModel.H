@@ -90,7 +90,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("incompressibleTurbulenceModel");
+    TypeNameApi(incompressibleTurbulenceModels_API, "incompressibleTurbulenceModel");
 
 
     // Constructors

@@ -128,7 +128,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("alphatFilmWallFunction");
+    TypeNameApi(surfaceFilmModels_API, "alphatFilmWallFunction");
 
 
     // Constructors

@@ -110,7 +110,7 @@ class setTimeStepFaRegionsFunctionObject
 public:
 
     //- Runtime type information
-    TypeName("setTimeStepFaRegion");
+    TypeNameApi(regionFaModels_API, "setTimeStepFaRegion");
 
 
     // Constructors

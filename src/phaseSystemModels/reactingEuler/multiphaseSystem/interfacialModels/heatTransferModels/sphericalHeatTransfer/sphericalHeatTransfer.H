@@ -61,7 +61,7 @@ class sphericalHeatTransfer
 public:
 
     //- Runtime type information
-    TypeName("spherical");
+    TypeNameApi(reactingMultiphaseSystem_API, "spherical");
 
 
     // Constructors

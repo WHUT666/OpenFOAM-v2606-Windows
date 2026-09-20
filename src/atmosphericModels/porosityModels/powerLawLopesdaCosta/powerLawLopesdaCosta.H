@@ -159,7 +159,7 @@ class powerLawLopesdaCosta
 public:
 
     //- Runtime type information
-    TypeName("powerLawLopesdaCosta");
+    TypeNameApi(atmosphericModels_API, "powerLawLopesdaCosta");
 
     //- Constructor
     powerLawLopesdaCosta

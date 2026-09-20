@@ -162,7 +162,7 @@ class uniformSet
 public:
 
     //- Runtime type information
-    TypeName("uniform");
+    TypeNameApi(sampling_API, "uniform");
 
 
     // Constructors

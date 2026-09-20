@@ -113,7 +113,7 @@ class ddt
 public:
 
     //- Runtime type information
-    TypeName("ddt");
+    TypeNameApi(fieldFunctionObjects_API, "ddt");
 
 
     // Constructors

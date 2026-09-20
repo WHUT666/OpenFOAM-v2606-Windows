@@ -258,7 +258,7 @@ public:
     // Static Data
 
         //- Output verbosity when writing
-        static int verbose_;
+        static decompose_API int verbose_;
 
 
     // Constructors

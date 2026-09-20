@@ -131,7 +131,7 @@ class DarcyForchheimer
 public:
 
     //- Runtime type information
-    TypeName("DarcyForchheimer");
+    TypeNameApi(finiteVolume_API, "DarcyForchheimer");
 
     //- Constructor
     DarcyForchheimer

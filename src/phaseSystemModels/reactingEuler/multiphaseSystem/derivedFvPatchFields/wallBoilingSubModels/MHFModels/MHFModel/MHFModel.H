@@ -59,12 +59,12 @@ class MHFModel
 public:
 
     //- Runtime type information
-    TypeName("MHFModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "MHFModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         MHFModel,
         dictionary,

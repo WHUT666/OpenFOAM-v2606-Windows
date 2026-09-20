@@ -334,7 +334,7 @@ class bladeForces
 public:
 
     //- Runtime type information
-    TypeName("bladeForces");
+    TypeNameApi(forces_API, "bladeForces");
 
 
     // Constructors

@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_correctedLnGrad_defines_typeName in .C files that
+//  define the template statics of correctedLnGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_correctedLnGrad_defines_typeName)
+#  define Foam_correctedLnGrad_typeName_API
+#else
+#  define Foam_correctedLnGrad_typeName_API finiteArea_API
+#endif
+
 #ifndef correctedLnGrad_H
 #define correctedLnGrad_H
 
@@ -61,7 +71,7 @@ class correctedLnGrad
 public:
 
     //- Runtime type information
-    TypeName("corrected");
+    TypeNameApi(Foam_correctedLnGrad_typeName_API, "corrected");
 
 
     // Generated Methods

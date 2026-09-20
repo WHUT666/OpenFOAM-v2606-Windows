@@ -81,7 +81,7 @@ class TomiyamaAnalytic
 public:
 
     //- Runtime type information
-    TypeName("TomiyamaAnalytic");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "TomiyamaAnalytic");
 
 
     // Constructors

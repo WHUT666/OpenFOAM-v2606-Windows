@@ -39,6 +39,12 @@ SourceFiles
 #ifndef Foam_LduInterfaceField_H
 #define Foam_LduInterfaceField_H
 
+#if defined(Foam_LduInterfaceField_defines_typeName)
+#  define Foam_LduInterfaceField_typeName_API
+#else
+#  define Foam_LduInterfaceField_typeName_API OpenFOAM_API
+#endif
+
 #include <lduInterfaceField.H>
 #include "primitiveFieldsFwd.H"
 #include "Pstream.H"
@@ -73,7 +79,7 @@ class LduInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("LduInterfaceField");
+    TypeNameApi(Foam_LduInterfaceField_typeName_API, "LduInterfaceField");
 
 
     // Constructors

@@ -158,13 +158,13 @@ public:
 public:
 
     //- Runtime type information
-    TypeName("reconstructionSchemes");
+    TypeNameApi(geometricVoF_API, "reconstructionSchemes");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( geometricVoF_API,
             autoPtr,
             reconstructionSchemes,
             components,

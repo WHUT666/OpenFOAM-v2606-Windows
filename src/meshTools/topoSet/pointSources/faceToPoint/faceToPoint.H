@@ -140,9 +140,9 @@ private:
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
-        static const Enum<faceAction> faceActionNames_;
+        static meshTools_API const Enum<faceAction> faceActionNames_;
 
         //- Names of sets or zones to use
         wordList names_;
@@ -162,7 +162,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("faceToPoint");
+    TypeNameApi(meshTools_API, "faceToPoint");
 
 
     // Constructors

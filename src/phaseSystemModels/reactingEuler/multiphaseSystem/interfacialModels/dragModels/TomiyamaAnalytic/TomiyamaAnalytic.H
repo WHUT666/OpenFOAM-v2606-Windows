@@ -80,7 +80,7 @@ class TomiyamaAnalytic
 public:
 
     //- Runtime type information
-    TypeName("TomiyamaAnalytic");
+    TypeNameApi(reactingMultiphaseSystem_API, "TomiyamaAnalytic");
 
 
     // Constructors

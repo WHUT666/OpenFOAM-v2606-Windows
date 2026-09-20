@@ -84,13 +84,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("phaseChangeModel");
+    TypeNameApi(surfaceFilmModels_API, "phaseChangeModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( surfaceFilmModels_API,
              autoPtr,
              phaseChangeModel,
              dictionary,

@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_EulerImplicit_defines_typeName in .C files that
+//  define the template statics of EulerImplicit (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_EulerImplicit_defines_typeName)
+#  define Foam_EulerImplicit_typeName_API
+#else
+#  define Foam_EulerImplicit_typeName_API chemistryModel_API
+#endif
+
 #ifndef EulerImplicit_H
 #define EulerImplicit_H
 
@@ -78,7 +88,7 @@ class EulerImplicit
 public:
 
     //- Runtime type information
-    TypeName("EulerImplicit");
+    TypeNameApi(Foam_EulerImplicit_typeName_API, "EulerImplicit");
 
 
     // Constructors

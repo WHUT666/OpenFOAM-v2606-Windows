@@ -101,10 +101,10 @@ protected:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("expressionEntry");
+    TypeNameNoDebugApi(OpenFOAM_API, "expressionEntry");
 
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( OpenFOAM_API,
         autoPtr,
         expressionEntry,
         empty,

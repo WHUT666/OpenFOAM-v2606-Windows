@@ -86,13 +86,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("decompositionConstraint");
+    TypeNameApi(decompositionMethods_API, "decompositionConstraint");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( decompositionMethods_API,
             autoPtr,
             decompositionConstraint,
             dictionary,

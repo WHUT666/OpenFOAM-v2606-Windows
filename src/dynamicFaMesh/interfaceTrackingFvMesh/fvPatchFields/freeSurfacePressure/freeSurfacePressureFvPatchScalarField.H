@@ -99,7 +99,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("freeSurfacePressure");
+    TypeNameApi(interfaceTrackingFvMesh_API, "freeSurfacePressure");
 
 
     // Constructors

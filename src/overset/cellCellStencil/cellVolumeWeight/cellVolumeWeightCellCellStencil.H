@@ -61,7 +61,7 @@ protected:
     // Static data members
 
         //- Default overlap tolerance. Fraction of volume
-        static scalar defaultOverlapTolerance_;
+        static overset_API scalar defaultOverlapTolerance_;
 
 
     // Protected data
@@ -164,7 +164,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("cellVolumeWeight");
+    TypeNameApi(overset_API, "cellVolumeWeight");
 
 
     // Constructors

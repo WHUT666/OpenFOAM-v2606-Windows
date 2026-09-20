@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SingleMixtureFraction_defines_typeName in .C files that
+//  define the template statics of SingleMixtureFraction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SingleMixtureFraction_defines_typeName)
+#  define Foam_SingleMixtureFraction_typeName_API
+#else
+#  define Foam_SingleMixtureFraction_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef SingleMixtureFraction_H
 #define SingleMixtureFraction_H
 
@@ -86,7 +96,7 @@ class SingleMixtureFraction
 public:
 
     //- Runtime type information
-    TypeName("singleMixtureFraction");
+    TypeNameApi(Foam_SingleMixtureFraction_typeName_API, "singleMixtureFraction");
 
 
     // Constructors

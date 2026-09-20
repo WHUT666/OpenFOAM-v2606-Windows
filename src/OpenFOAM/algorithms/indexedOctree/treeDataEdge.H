@@ -139,7 +139,7 @@ public:
 
 
     // Declare name of the class and its debug switch
-    ClassNameNoDebug("treeDataEdge");
+    ClassNameNoDebugApi(OpenFOAM_API, "treeDataEdge");
 
 
     // Constructors (cachable versions)

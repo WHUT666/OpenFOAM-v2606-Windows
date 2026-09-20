@@ -96,7 +96,7 @@ class surfaceNormalFixedValueFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("surfaceNormalFixedValue");
+    TypeNameApi(finiteVolume_API, "surfaceNormalFixedValue");
 
 
     // Constructors

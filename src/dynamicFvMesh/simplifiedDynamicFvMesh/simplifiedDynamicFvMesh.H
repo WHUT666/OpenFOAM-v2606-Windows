@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SimplifiedDynamicFvMesh_defines_typeName in .C files that
+//  define the template statics of SimplifiedDynamicFvMesh (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SimplifiedDynamicFvMesh_defines_typeName)
+#  define Foam_SimplifiedDynamicFvMesh_typeName_API
+#else
+#  define Foam_SimplifiedDynamicFvMesh_typeName_API dynamicFvMesh_API
+#endif
+
 #ifndef simplifiedDynamicFvMesh_H
 #define simplifiedDynamicFvMesh_H
 
@@ -59,12 +69,12 @@ class simplifiedDynamicFvMeshBase
 public:
 
     //- Runtime type information
-    TypeName("simplifiedDynamicFvMeshBase");
+    TypeNameApi(dynamicFvMesh_API, "simplifiedDynamicFvMeshBase");
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( dynamicFvMesh_API,
             autoPtr,
             dynamicFvMesh,
             time,
@@ -101,7 +111,7 @@ class SimplifiedDynamicFvMesh
 
 public:
 
-    ClassNameNoDebug(DynamicMeshType::typeName_.c_str());
+    ClassNameNoDebugApi(Foam_SimplifiedDynamicFvMesh_typeName_API, DynamicMeshType::typeName_.c_str());
 
     //- Constructor
     SimplifiedDynamicFvMesh(const Time& runTime, const word& regionName);

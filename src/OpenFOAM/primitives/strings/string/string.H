@@ -160,13 +160,13 @@ public:
     // Static Data Members
 
         //- The type name "string"
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
         //- The debug flag
-        static int debug;
+        static OpenFOAM_API int debug;
 
         //- An empty string
-        static const string null;
+        static OpenFOAM_API const string null;
 
 
     // Constructors

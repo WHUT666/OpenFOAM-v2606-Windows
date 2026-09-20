@@ -41,6 +41,16 @@ SourceFiles
 #include "autoPtr.H"
 #include "runTimeSelectionTables.H"
 
+//- Define Foam_TurbulenceModel_defines_typeName in .C files that
+//  define the template statics of TurbulenceModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+#if defined(Foam_TurbulenceModel_defines_typeName)
+#  define Foam_TurbulenceModel_typeName_API
+#else
+#  define Foam_TurbulenceModel_typeName_API turbulenceModels_API
+#endif
+
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 namespace Foam
@@ -90,8 +100,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeNewSelectionTable
-        (
+        declareRunTimeNewSelectionTableApi
+        ( Foam_TurbulenceModel_typeName_API,
             autoPtr,
             TurbulenceModel,
             dictionary,

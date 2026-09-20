@@ -249,7 +249,7 @@ class ensightWrite
 public:
 
     //- Runtime type information
-    TypeName("ensightWrite");
+    TypeNameApi(utilityFunctionObjects_API, "ensightWrite");
 
 
     // Constructors

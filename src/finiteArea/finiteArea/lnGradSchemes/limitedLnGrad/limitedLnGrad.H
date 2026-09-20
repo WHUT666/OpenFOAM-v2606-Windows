@@ -44,6 +44,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_limitedLnGrad_defines_typeName in .C files that
+//  define the template statics of limitedLnGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_limitedLnGrad_defines_typeName)
+#  define Foam_limitedLnGrad_typeName_API
+#else
+#  define Foam_limitedLnGrad_typeName_API finiteArea_API
+#endif
+
 #ifndef limitedLnGrad_H
 #define limitedLnGrad_H
 
@@ -74,7 +84,7 @@ class limitedLnGrad
 public:
 
     //- Runtime type information
-    TypeName("limited");
+    TypeNameApi(Foam_limitedLnGrad_typeName_API, "limited");
 
 
     // Generated Methods

@@ -114,7 +114,7 @@ class AttouFerschneider
 public:
 
     //- Runtime type information
-    TypeName("AttouFerschneider");
+    TypeNameApi(reactingMultiphaseSystem_API, "AttouFerschneider");
 
 
     // Constructors

@@ -85,7 +85,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("constraintProjection");
+    TypeNameApi(adjointOptimisation_API, "constraintProjection");
 
 
     // Constructors

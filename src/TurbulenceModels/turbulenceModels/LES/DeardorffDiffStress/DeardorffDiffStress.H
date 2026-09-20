@@ -65,6 +65,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DeardorffDiffStress_defines_typeName in .C files that
+//  define the template statics of DeardorffDiffStress (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DeardorffDiffStress_defines_typeName)
+#  define Foam_DeardorffDiffStress_typeName_API
+#else
+#  define Foam_DeardorffDiffStress_typeName_API turbulenceModels_API
+#endif
+
 #ifndef DeardorffDiffStress_H
 #define DeardorffDiffStress_H
 
@@ -122,7 +132,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("DeardorffDiffStress");
+    TypeNameApi(Foam_DeardorffDiffStress_typeName_API, "DeardorffDiffStress");
 
 
     // Constructors

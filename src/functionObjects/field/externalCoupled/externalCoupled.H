@@ -283,10 +283,10 @@ class externalCoupled
 public:
 
     //- Runtime type information
-    TypeName("externalCoupled");
+    TypeNameApi(fieldFunctionObjects_API, "externalCoupled");
 
     //- Name of patch key, e.g. '// Patch:' when looking for start of patch data
-    static string patchKey;
+    static fieldFunctionObjects_API string patchKey;
 
     //- Inherited variable for logging
     using functionObject::log;

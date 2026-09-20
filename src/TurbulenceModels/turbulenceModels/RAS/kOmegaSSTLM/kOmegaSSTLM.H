@@ -88,6 +88,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kOmegaSSTLM_defines_typeName in .C files that
+//  define the template statics of kOmegaSSTLM (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kOmegaSSTLM_defines_typeName)
+#  define Foam_kOmegaSSTLM_typeName_API
+#else
+#  define Foam_kOmegaSSTLM_typeName_API turbulenceModels_API
+#endif
+
 #ifndef kOmegaSSTLM_H
 #define kOmegaSSTLM_H
 
@@ -221,7 +231,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("kOmegaSSTLM");
+    TypeNameApi(Foam_kOmegaSSTLM_typeName_API, "kOmegaSSTLM");
 
 
     // Constructors

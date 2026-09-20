@@ -80,7 +80,7 @@ class NSRDSfunc5
 public:
 
     //- Runtime type information
-    TypeName("NSRDSfunc5");
+    TypeNameApi(thermophysicalProperties_API, "NSRDSfunc5");
 
 
     // Constructors

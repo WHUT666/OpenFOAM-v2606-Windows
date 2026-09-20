@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cyclicACMIFvsPatchField_defines_typeName in .C files that
+//  define the template statics of cyclicACMIFvsPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cyclicACMIFvsPatchField_defines_typeName)
+#  define Foam_cyclicACMIFvsPatchField_typeName_API
+#else
+#  define Foam_cyclicACMIFvsPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_cyclicACMIFvsPatchField_H
 #define Foam_cyclicACMIFvsPatchField_H
 
@@ -68,7 +78,7 @@ class cyclicACMIFvsPatchField
 public:
 
     //- Runtime type information
-    TypeName(cyclicACMIFvPatch::typeName_());
+    TypeNameApi(Foam_cyclicACMIFvsPatchField_typeName_API, cyclicACMIFvPatch::typeName_());
 
 
     // Constructors

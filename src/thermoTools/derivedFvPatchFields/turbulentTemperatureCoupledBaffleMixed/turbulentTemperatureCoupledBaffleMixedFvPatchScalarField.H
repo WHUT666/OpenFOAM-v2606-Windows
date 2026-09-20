@@ -138,7 +138,7 @@ class turbulentTemperatureCoupledBaffleMixedFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("compressible::turbulentTemperatureCoupledBaffleMixed");
+    TypeNameApi(thermoTools_API, "compressible::turbulentTemperatureCoupledBaffleMixed");
 
 
     // Constructors

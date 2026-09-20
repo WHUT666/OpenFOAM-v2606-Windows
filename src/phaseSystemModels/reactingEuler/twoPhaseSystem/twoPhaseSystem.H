@@ -88,12 +88,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("twoPhaseSystem");
+    TypeNameApi(reactingTwoPhaseSystem_API, "twoPhaseSystem");
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingTwoPhaseSystem_API,
             autoPtr,
             twoPhaseSystem,
             dictionary,

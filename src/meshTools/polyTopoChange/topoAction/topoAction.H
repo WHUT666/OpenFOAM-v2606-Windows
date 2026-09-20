@@ -56,7 +56,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("topoAction");
+        TypeNameApi(meshTools_API, "topoAction");
 
 
     // Constructors

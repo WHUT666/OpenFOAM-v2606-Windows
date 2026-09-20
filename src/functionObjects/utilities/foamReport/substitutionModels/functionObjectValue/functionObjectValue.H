@@ -124,7 +124,7 @@ class functionObjectValue
 public:
 
     //- Runtime type information
-    TypeName("functionObjectValue");
+    TypeNameApi(utilityFunctionObjects_API, "functionObjectValue");
 
 
     //- Constructor

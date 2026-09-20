@@ -56,7 +56,7 @@ class algebraicPairGAMGAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("algebraicPair");
+    TypeNameApi(OpenFOAM_API, "algebraicPair");
 
 
     // Constructors

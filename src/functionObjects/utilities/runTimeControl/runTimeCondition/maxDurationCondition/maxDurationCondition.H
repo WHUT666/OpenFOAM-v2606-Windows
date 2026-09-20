@@ -77,7 +77,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("maxDuration");
+    TypeNameApi(utilityFunctionObjects_API, "maxDuration");
 
     //- Constructor
     maxDurationCondition

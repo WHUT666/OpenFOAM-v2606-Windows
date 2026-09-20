@@ -27,6 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "uniformDimensionedFields.H"
+#include "ListExpression.H"  // complete UniformListWrap for explicit instantiation
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -47,3 +48,4 @@ defineTemplateTypeNameAndDebug(uniformDimensionedTensorField, 0);
 } // End namespace Foam
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+

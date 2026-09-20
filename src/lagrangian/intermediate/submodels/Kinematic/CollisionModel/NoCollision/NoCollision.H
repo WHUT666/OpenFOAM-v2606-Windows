@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoCollision_defines_typeName in .C files that
+//  define the template statics of NoCollision (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoCollision_defines_typeName)
+#  define Foam_NoCollision_typeName_API
+#else
+#  define Foam_NoCollision_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoCollision_H
 #define NoCollision_H
 
@@ -60,7 +70,7 @@ class NoCollision
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoCollision_typeName_API, "none");
 
 
     // Constructors

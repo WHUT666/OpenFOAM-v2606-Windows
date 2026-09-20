@@ -90,6 +90,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_thermalBaffle1DFvPatchScalarField_defines_typeName in .C files that
+//  define the template statics of thermalBaffle1DFvPatchScalarField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_thermalBaffle1DFvPatchScalarField_defines_typeName)
+#  define Foam_thermalBaffle1DFvPatchScalarField_typeName_API
+#else
+#  define Foam_thermalBaffle1DFvPatchScalarField_typeName_API thermoTools_API
+#endif
+
 #ifndef Foam_thermalBaffle1DFvPatchScalarField_H
 #define Foam_thermalBaffle1DFvPatchScalarField_H
 
@@ -165,7 +175,7 @@ class thermalBaffle1DFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("compressible::thermalBaffle1D");
+    TypeNameApi(Foam_thermalBaffle1DFvPatchScalarField_typeName_API, "compressible::thermalBaffle1D");
 
 
     // Constructors

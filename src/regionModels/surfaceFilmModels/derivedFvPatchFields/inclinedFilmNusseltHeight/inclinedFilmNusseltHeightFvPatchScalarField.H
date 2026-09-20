@@ -77,7 +77,7 @@ class inclinedFilmNusseltHeightFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("inclinedFilmNusseltHeight");
+    TypeNameApi(surfaceFilmModels_API, "inclinedFilmNusseltHeight");
 
 
     // Constructors

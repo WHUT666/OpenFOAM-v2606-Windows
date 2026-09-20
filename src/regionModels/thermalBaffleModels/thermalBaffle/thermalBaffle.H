@@ -126,7 +126,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("thermalBaffle");
+    TypeNameApi(thermalBaffleModels_API, "thermalBaffle");
 
 
     // Constructors

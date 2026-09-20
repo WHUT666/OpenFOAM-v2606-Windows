@@ -93,7 +93,7 @@ public:
         };
 
         //- Names for the opType enumeration.
-        static const Enum<opType> opNames;
+        static OpenFOAM_API const Enum<opType> opNames;
 
 
     // Standard comparison methods

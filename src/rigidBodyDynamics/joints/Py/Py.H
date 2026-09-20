@@ -71,7 +71,7 @@ class Py
 public:
 
     //- Runtime type information
-    TypeName("Py");
+    TypeNameApi(rigidBodyDynamics_API, "Py");
 
 
     // Constructors

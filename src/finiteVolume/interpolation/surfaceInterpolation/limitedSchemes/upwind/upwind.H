@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_upwind_defines_typeName in .C files that
+//  define the template statics of upwind (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_upwind_defines_typeName)
+#  define Foam_upwind_typeName_API
+#else
+#  define Foam_upwind_typeName_API finiteVolume_API
+#endif
+
 #ifndef upwind_H
 #define upwind_H
 
@@ -67,7 +77,7 @@ class upwind
 public:
 
     //- Runtime type information
-    TypeName("upwind");
+    TypeNameApi(Foam_upwind_typeName_API, "upwind");
 
 
     // Constructors

@@ -59,13 +59,13 @@ class motionDiffusivity
 public:
 
     //- Runtime type information
-    TypeName("motionDiffusivity");
+    TypeNameApi(fvMotionSolvers_API, "motionDiffusivity");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fvMotionSolvers_API,
             autoPtr,
             motionDiffusivity,
             Istream,

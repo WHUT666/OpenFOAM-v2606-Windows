@@ -95,7 +95,7 @@ class fixedValue
 public:
 
     //- Runtime type information
-    TypeName("fixedValue");
+    TypeNameApi(distributionModels_API, "fixedValue");
 
 
     // Constructors

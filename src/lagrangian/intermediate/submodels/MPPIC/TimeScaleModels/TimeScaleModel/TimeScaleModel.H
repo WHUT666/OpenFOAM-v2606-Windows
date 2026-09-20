@@ -79,11 +79,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("timeScaleModel");
+    TypeNameApi(lagrangianIntermediate_API, "timeScaleModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( lagrangianIntermediate_API,
         autoPtr,
         TimeScaleModel,
         dictionary,

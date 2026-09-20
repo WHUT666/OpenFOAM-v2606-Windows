@@ -81,13 +81,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("filmViscosityModel");
+    TypeNameApi(surfaceFilmModels_API, "filmViscosityModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( surfaceFilmModels_API,
              autoPtr,
              filmViscosityModel,
              dictionary,

@@ -55,7 +55,7 @@ class mapPolyMesh;
                             Class cloud Declaration
 \*---------------------------------------------------------------------------*/
 
-class cloud
+class OpenFOAM_API cloud
 :
     public objectRegistry
 {

@@ -72,7 +72,7 @@ class Rzyx
 public:
 
     //- Runtime type information
-    TypeName("Rzyx");
+    TypeNameApi(rigidBodyDynamics_API, "Rzyx");
 
 
     // Constructors

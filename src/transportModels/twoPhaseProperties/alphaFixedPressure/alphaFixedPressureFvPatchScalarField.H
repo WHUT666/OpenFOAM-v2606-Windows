@@ -64,7 +64,7 @@ class alphaFixedPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("alphaFixedPressure");
+    TypeNameApi(twoPhaseProperties_API, "alphaFixedPressure");
 
 
     // Constructors

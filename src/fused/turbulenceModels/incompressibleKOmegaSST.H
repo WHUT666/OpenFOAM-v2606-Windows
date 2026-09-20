@@ -297,7 +297,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("incompressibleKOmegaSST");
+    TypeNameApi(fusedTurbulenceModels_API, "incompressibleKOmegaSST");
 
 
     // Constructors

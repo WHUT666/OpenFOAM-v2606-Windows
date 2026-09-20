@@ -216,13 +216,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("NURBS3DVolume");
+    TypeNameApi(adjointOptimisation_API, "NURBS3DVolume");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             NURBS3DVolume,
             dictionary,

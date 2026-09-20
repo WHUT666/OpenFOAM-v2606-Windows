@@ -73,7 +73,7 @@ class adjointOutletVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("adjointOutletVelocity");
+    TypeNameApi(adjointOptimisation_API, "adjointOutletVelocity");
 
 
     // Constructors

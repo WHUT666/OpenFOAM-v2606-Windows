@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ParticleForce_defines_typeName in .C files that
+//  define the template statics of ParticleForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ParticleForce_defines_typeName)
+#  define Foam_ParticleForce_typeName_API
+#else
+#  define Foam_ParticleForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Foam_ParticleForce_H
 #define Foam_ParticleForce_H
 
@@ -73,11 +83,11 @@ class ParticleForce
 public:
 
     //- Runtime type information
-    TypeName("particleForce");
+    TypeNameApi(Foam_ParticleForce_typeName_API, "particleForce");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_ParticleForce_typeName_API,
         autoPtr,
         ParticleForce,
         dictionary,

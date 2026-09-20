@@ -188,7 +188,7 @@ class PopeIndex
 public:
 
     //- Runtime type information
-    TypeName("PopeIndex");
+    TypeNameApi(fieldFunctionObjects_API, "PopeIndex");
 
 
     // Constructors

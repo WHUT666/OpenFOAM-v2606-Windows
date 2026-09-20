@@ -165,7 +165,7 @@ class volPointInterpolation
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("volPointInterpolation");
+    ClassNameApi(finiteVolume_API, "volPointInterpolation");
 
 
     // Constructors

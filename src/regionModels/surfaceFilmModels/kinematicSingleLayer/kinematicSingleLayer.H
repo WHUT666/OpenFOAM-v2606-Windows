@@ -299,7 +299,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("kinematicSingleLayer");
+    TypeNameApi(surfaceFilmModels_API, "kinematicSingleLayer");
 
 
     // Constructors

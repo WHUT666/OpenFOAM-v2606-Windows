@@ -136,7 +136,7 @@ class specularRadiationMixedFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("specularRadiation");
+    TypeNameApi(radiationModels_API, "specularRadiation");
 
 
     // Constructors

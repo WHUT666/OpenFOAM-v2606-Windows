@@ -105,7 +105,7 @@ class GuldersEGR
 public:
 
     //- Runtime type information
-    TypeName("GuldersEGR");
+    TypeNameApi(laminarFlameSpeedModels_API, "GuldersEGR");
 
     // Constructors
 

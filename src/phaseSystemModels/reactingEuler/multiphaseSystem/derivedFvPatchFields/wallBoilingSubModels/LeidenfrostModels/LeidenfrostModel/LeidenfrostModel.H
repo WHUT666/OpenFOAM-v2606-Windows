@@ -59,12 +59,12 @@ class LeidenfrostModel
 public:
 
     //- Runtime type information
-    TypeName("LeidenfrostModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "LeidenfrostModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         LeidenfrostModel,
         dictionary,

@@ -32,6 +32,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_TrajectoryCollision_defines_typeName in .C files that
+//  define the template statics of TrajectoryCollision (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_TrajectoryCollision_defines_typeName)
+#  define Foam_TrajectoryCollision_typeName_API
+#else
+#  define Foam_TrajectoryCollision_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef TrajectoryCollision_H
 #define TrajectoryCollision_H
 
@@ -87,7 +97,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("trajectory");
+    TypeNameApi(Foam_TrajectoryCollision_typeName_API, "trajectory");
 
 
     // Constructors

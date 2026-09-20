@@ -301,11 +301,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("coordSetWriter");
+    TypeNameApi(meshTools_API, "coordSetWriter");
 
         // Declare run-time constructor selection table
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             coordSetWriter,
             word,
@@ -313,8 +313,8 @@ public:
             ()
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             coordSetWriter,
             wordDict,

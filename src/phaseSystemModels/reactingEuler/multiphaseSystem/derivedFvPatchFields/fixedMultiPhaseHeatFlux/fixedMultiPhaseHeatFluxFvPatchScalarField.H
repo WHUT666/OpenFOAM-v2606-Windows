@@ -111,7 +111,7 @@ class fixedMultiPhaseHeatFluxFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("fixedMultiPhaseHeatFlux");
+    TypeNameApi(reactingMultiphaseSystem_API, "fixedMultiPhaseHeatFlux");
 
 
     // Constructors

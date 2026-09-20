@@ -80,7 +80,7 @@ class PPCR
 public:
 
     //- Runtime type information
-    TypeName("PPCR");
+    TypeNameApi(OpenFOAM_API, "PPCR");
 
 
     // Constructors

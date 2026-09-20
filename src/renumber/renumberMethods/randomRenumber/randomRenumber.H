@@ -54,7 +54,7 @@ class randomRenumber
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("random");
+    TypeNameNoDebugApi(renumberMethods_API, "random");
 
 
     // Constructors

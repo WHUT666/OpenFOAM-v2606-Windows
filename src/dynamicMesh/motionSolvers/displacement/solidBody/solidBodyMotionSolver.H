@@ -63,7 +63,7 @@ class solidBodyMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("solidBody");
+    TypeNameApi(dynamicMesh_API, "solidBody");
 
     // Generated Methods
 

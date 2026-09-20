@@ -90,13 +90,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("barotropicCompressibilityModel");
+    TypeNameApi(barotropicCompressibilityModel_API, "barotropicCompressibilityModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( barotropicCompressibilityModel_API,
             autoPtr,
             barotropicCompressibilityModel,
             dictionary,

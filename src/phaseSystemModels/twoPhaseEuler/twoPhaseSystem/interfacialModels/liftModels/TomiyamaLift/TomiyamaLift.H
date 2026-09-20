@@ -72,7 +72,7 @@ class TomiyamaLift
 public:
 
     //- Runtime type information
-    TypeName("Tomiyama");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Tomiyama");
 
 
     // Constructors

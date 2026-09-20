@@ -72,7 +72,7 @@ class edgeNormalFixedValueFaPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("edgeNormalFixedValue");
+    TypeNameApi(finiteArea_API, "edgeNormalFixedValue");
 
 
     // Constructors

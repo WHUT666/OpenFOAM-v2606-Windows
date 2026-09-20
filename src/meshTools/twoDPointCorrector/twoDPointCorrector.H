@@ -119,13 +119,13 @@ class twoDPointCorrector
     // Static data members
 
         //- Edge orthogonality tolerance
-        static const scalar edgeOrthogonalityTol;
+        static meshTools_API const scalar edgeOrthogonalityTol;
 
 
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("twoDPointCorrector");
+    ClassNameApi(meshTools_API, "twoDPointCorrector");
 
 
     // Constructors

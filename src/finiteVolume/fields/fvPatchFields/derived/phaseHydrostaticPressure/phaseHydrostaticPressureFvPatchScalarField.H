@@ -121,7 +121,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("phaseHydrostaticPressure");
+    TypeNameApi(finiteVolume_API, "phaseHydrostaticPressure");
 
 
     // Constructors

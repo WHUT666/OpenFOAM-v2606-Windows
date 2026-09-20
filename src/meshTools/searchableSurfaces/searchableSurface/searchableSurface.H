@@ -90,13 +90,13 @@ class searchableSurface
 public:
 
     //- Runtime type information
-    TypeName("searchableSurface");
+    TypeNameApi(meshTools_API, "searchableSurface");
 
     // Declare run-time constructor selection table
 
         // For the dictionary constructor
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             searchableSurface,
             dict,

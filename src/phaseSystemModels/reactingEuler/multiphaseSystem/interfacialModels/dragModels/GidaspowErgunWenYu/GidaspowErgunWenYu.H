@@ -80,7 +80,7 @@ class GidaspowErgunWenYu
 public:
 
     //- Runtime type information
-    TypeName("GidaspowErgunWenYu");
+    TypeNameApi(reactingMultiphaseSystem_API, "GidaspowErgunWenYu");
 
 
     // Constructors

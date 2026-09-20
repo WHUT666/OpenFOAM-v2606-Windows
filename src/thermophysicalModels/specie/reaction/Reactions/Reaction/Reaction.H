@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Reaction_defines_typeName in .C files that
+//  define the template statics of Reaction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Reaction_defines_typeName)
+#  define Foam_Reaction_typeName_API
+#else
+#  define Foam_Reaction_typeName_API specie_API
+#endif
+
 #ifndef Foam_Reaction_H
 #define Foam_Reaction_H
 
@@ -178,13 +188,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Reaction");
+    TypeNameApi(Foam_Reaction_typeName_API, "Reaction");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_Reaction_typeName_API,
             autoPtr,
             Reaction,
             dictionary,

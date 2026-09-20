@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_lnGradScheme_defines_typeName in .C files that
+//  define the template statics of lnGradScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_lnGradScheme_defines_typeName)
+#  define Foam_lnGradScheme_typeName_API
+#else
+#  define Foam_lnGradScheme_typeName_API finiteArea_API
+#endif
+
 #ifndef lnGradScheme_H
 #define lnGradScheme_H
 
@@ -73,8 +83,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_lnGradScheme_typeName_API,
             tmp,
             lnGradScheme,
             Mesh,

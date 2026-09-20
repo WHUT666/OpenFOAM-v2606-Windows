@@ -64,7 +64,7 @@ class basicSpecieMixture
 public:
 
     //- Run time type information
-    TypeName("basicSpecieMixture");
+    TypeNameApi(reactionThermophysicalModels_API, "basicSpecieMixture");
 
     //- The base class of the mixture
     typedef basicSpecieMixture basicMixtureType;

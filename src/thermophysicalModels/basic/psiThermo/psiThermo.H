@@ -78,12 +78,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("psiThermo");
+    TypeNameApi(fluidThermophysicalModels_API, "psiThermo");
 
 
     //- Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( fluidThermophysicalModels_API,
         autoPtr,
         psiThermo,
         fvMesh,
@@ -93,8 +93,8 @@ public:
 
 
     //- Declare run-time constructor selection table for dictionary based
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( fluidThermophysicalModels_API,
         autoPtr,
         psiThermo,
         fvMeshDictPhase,

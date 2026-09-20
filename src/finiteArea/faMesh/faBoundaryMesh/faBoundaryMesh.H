@@ -101,7 +101,7 @@ class faBoundaryMesh
 public:
 
     //- Runtime type information
-    TypeName("faBoundaryMesh");
+    TypeNameApi(finiteArea_API, "faBoundaryMesh");
 
 
     // Generated Methods

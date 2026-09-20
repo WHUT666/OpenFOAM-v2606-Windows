@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_BasicChemistryModel_defines_typeName in .C files that
+//  define the template statics of BasicChemistryModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_BasicChemistryModel_defines_typeName)
+#  define Foam_BasicChemistryModel_typeName_API
+#else
+#  define Foam_BasicChemistryModel_typeName_API chemistryModel_API
+#endif
+
 #ifndef BasicChemistryModel_H
 #define BasicChemistryModel_H
 
@@ -82,7 +92,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("BasicChemistryModel");
+    TypeNameApi(Foam_BasicChemistryModel_typeName_API, "BasicChemistryModel");
 
 
     //- Thermo type
@@ -90,8 +100,8 @@ public:
 
 
     //- Declare run-time constructor selection tables
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_BasicChemistryModel_typeName_API,
         autoPtr,
         BasicChemistryModel,
         thermo,

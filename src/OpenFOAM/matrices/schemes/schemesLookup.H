@@ -189,7 +189,7 @@ class schemesLookup
 public:
 
     //- Debug switch
-    static int debug;
+    static OpenFOAM_API int debug;
 
 
     // Constructors

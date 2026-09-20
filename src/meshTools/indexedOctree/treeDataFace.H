@@ -62,7 +62,7 @@ class treeDataFace
     // Static Data
 
         //- Tolerance on linear dimensions
-        static scalar tolSqr;
+        static meshTools_API scalar tolSqr;
 
 
     // Private Data
@@ -152,7 +152,7 @@ public:
 
 
     // Declare name of the class and its debug switch
-    ClassName("treeDataFace");
+    ClassNameApi(meshTools_API, "treeDataFace");
 
 
     // Constructors (cachable versions)

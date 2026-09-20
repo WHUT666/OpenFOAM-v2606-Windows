@@ -63,7 +63,7 @@ class CuthillMcKeeRenumber
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("CuthillMcKee");
+    TypeNameNoDebugApi(renumberMethods_API, "CuthillMcKee");
 
 
     // Constructors
@@ -130,7 +130,7 @@ class reverseCuthillMcKeeRenumber
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("reverseCuthillMcKee");
+    TypeNameNoDebugApi(renumberMethods_API, "reverseCuthillMcKee");
 
 
     // Constructors

@@ -41,6 +41,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_pTraits_defines_typeName in .C files that
+//  define the template statics of pTraits (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_pTraits_defines_typeName)
+#  define Foam_pTraits_typeName_API
+#else
+#  define Foam_pTraits_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_pointConstraint_H
 #define Foam_pointConstraint_H
 
@@ -115,7 +125,7 @@ public:
 template<>
 struct pTraits<pointConstraint>
 {
-    static const char* const typeName;
+    static Foam_pTraits_typeName_API const char* const typeName;
 };
 
 //- Contiguous data for pointConstraint

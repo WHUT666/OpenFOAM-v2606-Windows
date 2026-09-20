@@ -126,13 +126,13 @@ private:
         word rhoName_;
 
         //- Time scheme type names
-        static const Enum<ddtSchemeType> ddtSchemeTypeNames_;
+        static finiteVolume_API const Enum<ddtSchemeType> ddtSchemeTypeNames_;
 
 
 public:
 
     //- Runtime type information
-    TypeName("waveSurfacePressure");
+    TypeNameApi(finiteVolume_API, "waveSurfacePressure");
 
 
     // Constructors

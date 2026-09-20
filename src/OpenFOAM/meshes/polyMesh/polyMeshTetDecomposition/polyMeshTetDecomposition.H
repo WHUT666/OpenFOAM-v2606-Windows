@@ -63,7 +63,7 @@ public:
     // Static Data Members
 
         //- Minimum tetrahedron quality
-        static const scalar minTetQuality;
+        static OpenFOAM_API const scalar minTetQuality;
 
 
     // Member Functions

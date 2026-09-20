@@ -133,7 +133,7 @@ class searchableSurfaceCollection
 public:
 
     //- Runtime type information
-    TypeName("searchableSurfaceCollection");
+    TypeNameApi(meshTools_API, "searchableSurfaceCollection");
 
 
     // Constructors

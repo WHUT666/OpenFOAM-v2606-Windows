@@ -210,7 +210,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sampledCuttingPlane");
+    TypeNameApi(sampling_API, "sampledCuttingPlane");
 
 
     // Constructors

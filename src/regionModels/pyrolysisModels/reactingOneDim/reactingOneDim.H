@@ -202,7 +202,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("reactingOneDim");
+    TypeNameApi(pyrolysisModels_API, "reactingOneDim");
 
 
     // Constructors

@@ -67,7 +67,7 @@ class Lamb
 public:
 
     //- Runtime type information
-    TypeName("Lamb");
+    TypeNameApi(reactingMultiphaseSystem_API, "Lamb");
 
 
     // Constructors

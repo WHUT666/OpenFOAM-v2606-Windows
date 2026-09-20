@@ -138,7 +138,7 @@ class undoableMeshCutter
 public:
 
     //- Runtime type information
-    ClassName("undoableMeshCutter");
+    ClassNameApi(dynamicMesh_API, "undoableMeshCutter");
 
 
     // Constructors

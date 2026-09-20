@@ -146,7 +146,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("displacementSmartPointSmoothing");
+    TypeNameApi(dynamicMesh_API, "displacementSmartPointSmoothing");
 
 
     // Constructors

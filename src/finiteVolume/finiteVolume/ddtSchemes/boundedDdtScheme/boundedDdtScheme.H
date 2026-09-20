@@ -44,6 +44,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_boundedDdtScheme_defines_typeName in .C files that
+//  define the template statics of boundedDdtScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_boundedDdtScheme_defines_typeName)
+#  define Foam_boundedDdtScheme_typeName_API
+#else
+#  define Foam_boundedDdtScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef boundedDdtScheme_H
 #define boundedDdtScheme_H
 
@@ -85,7 +95,7 @@ class boundedDdtScheme
 public:
 
     //- Runtime type information
-    TypeName("bounded");
+    TypeNameApi(Foam_boundedDdtScheme_typeName_API, "bounded");
 
 
     // Constructors

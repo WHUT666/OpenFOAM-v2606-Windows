@@ -93,7 +93,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("uncollated");
+    TypeNameApi(OpenFOAM_API, "uncollated");
 
 
     // Constructors

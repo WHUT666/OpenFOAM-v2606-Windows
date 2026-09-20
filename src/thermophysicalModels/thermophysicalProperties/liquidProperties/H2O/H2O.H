@@ -83,7 +83,7 @@ public:
     friend class liquidProperties;
 
     //- Runtime type information
-    TypeName("H2O");
+    TypeNameApi(thermophysicalProperties_API, "H2O");
 
 
     // Constructors

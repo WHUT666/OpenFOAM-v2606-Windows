@@ -59,8 +59,8 @@ class legacyRawFormatter
 {
     // Private Data Members
 
-        static const char* legacyName_;
-        static const vtk::outputOptions opts_;
+        static fileFormats_API const char* legacyName_;
+        static fileFormats_API const vtk::outputOptions opts_;
 
 
 protected:

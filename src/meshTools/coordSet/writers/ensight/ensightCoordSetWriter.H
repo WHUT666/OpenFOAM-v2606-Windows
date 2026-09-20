@@ -162,7 +162,7 @@ class ensightWriter
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("ensight");
+    TypeNameNoDebugApi(meshTools_API, "ensight");
 
 
     // Constructors

@@ -363,10 +363,10 @@ class faMesh
     // Static Private Data
 
         //- The prefix to local: %finite-area
-        static const word prefix_;
+        static finiteArea_API const word prefix_;
 
         //- Quadrics fit for pointAreaNormals (experimental)
-        static const int quadricsFit_;
+        static finiteArea_API const int quadricsFit_;
 
 
     // Private Member Functions
@@ -551,17 +551,17 @@ public:
     // Tuning switches
 
         //- Geometry treatment
-        static int geometryOrder_;
+        static finiteArea_API int geometryOrder_;
 
 
     //- Runtime type information
-    TypeName("faMesh");
+    TypeNameApi(finiteArea_API, "faMesh");
 
         //- The prefix to the parent registry name: %finite-area
         static const word& prefix() noexcept;
 
         //- The mesh sub-directory name (usually "faMesh")
-        static word meshSubDir;
+        static finiteArea_API word meshSubDir;
 
 
     // Generated Methods

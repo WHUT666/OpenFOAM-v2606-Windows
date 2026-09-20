@@ -79,7 +79,7 @@ class commSchedule
 public:
 
     //- Runtime type information
-    ClassName("commSchedule");
+    ClassNameApi(OpenFOAM_API, "commSchedule");
 
 
     // Constructors

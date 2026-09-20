@@ -65,7 +65,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("point");
+    TypeNameApi(blockMesh_API, "point");
 
 
     // Constructors

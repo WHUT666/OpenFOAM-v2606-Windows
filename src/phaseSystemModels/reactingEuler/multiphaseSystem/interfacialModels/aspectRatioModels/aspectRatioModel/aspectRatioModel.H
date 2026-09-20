@@ -66,12 +66,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("aspectRatioModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "aspectRatioModel");
 
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         aspectRatioModel,
         dictionary,

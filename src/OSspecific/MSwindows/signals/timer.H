@@ -86,7 +86,7 @@ class timer
     // Private Data
 
         //- Old alarm() value
-        static unsigned int oldTimeOut_;
+        static OpenFOAM_API unsigned int oldTimeOut_;
 
 
     // Private Member Functions
@@ -100,13 +100,13 @@ public:
     // Public Data
 
         //- Named/registered debug switch: 'timer'
-        static int debug;
+        static OpenFOAM_API int debug;
 
         //- The time-out value (seconds). Needed by macro timedOut
         unsigned int timeOut_;
 
         //- State for setjmp. Needed by macro timedOut
-        static jmp_buf envAlarm;
+        static OpenFOAM_API jmp_buf envAlarm;
 
 
     // Constructors

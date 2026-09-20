@@ -150,7 +150,7 @@ public:
             NODEMASTER = 4
         };
 
-        static const Enum<distributionType> distributionTypeNames_;
+        static distributed_API const Enum<distributionType> distributionTypeNames_;
 
 private:
 
@@ -587,7 +587,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("distributedTriSurfaceMesh");
+    TypeNameApi(distributed_API, "distributedTriSurfaceMesh");
 
 
     // Constructors

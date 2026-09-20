@@ -55,12 +55,12 @@ class blendingMethod
 public:
 
     //- Runtime type information
-    TypeName("blendingMethod");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "blendingMethod");
 
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( compressibleTwoPhaseSystem_API,
         autoPtr,
         blendingMethod,
         dictionary,

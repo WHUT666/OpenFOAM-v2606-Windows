@@ -105,7 +105,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("incompressibleAdjointMeanFlowVars");
+        TypeNameApi(adjointOptimisation_API, "incompressibleAdjointMeanFlowVars");
 
 
     // Constructors

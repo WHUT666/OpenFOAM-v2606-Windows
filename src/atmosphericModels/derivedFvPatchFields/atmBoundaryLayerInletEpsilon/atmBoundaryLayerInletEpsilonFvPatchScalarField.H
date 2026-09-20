@@ -121,7 +121,7 @@ class atmBoundaryLayerInletEpsilonFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("atmBoundaryLayerInletEpsilon");
+    TypeNameApi(atmosphericModels_API, "atmBoundaryLayerInletEpsilon");
 
 
     // Constructors

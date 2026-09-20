@@ -118,7 +118,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Boussinesq");
+    TypeNameApi(waveModels_API, "Boussinesq");
 
     //- Constructor
     Boussinesq

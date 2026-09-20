@@ -66,13 +66,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("liftModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "liftModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             liftModel,
             dictionary,
@@ -87,7 +87,7 @@ public:
     // Static Data Members
 
         //- Force dimensions
-        static const dimensionSet dimF;
+        static reactingMultiphaseSystem_API const dimensionSet dimF;
 
 
     // Constructors

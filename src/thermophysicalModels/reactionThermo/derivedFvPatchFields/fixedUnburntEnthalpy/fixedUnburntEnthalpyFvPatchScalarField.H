@@ -61,7 +61,7 @@ class fixedUnburntEnthalpyFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("fixedUnburntEnthalpy");
+    TypeNameApi(reactionThermophysicalModels_API, "fixedUnburntEnthalpy");
 
 
     // Constructors

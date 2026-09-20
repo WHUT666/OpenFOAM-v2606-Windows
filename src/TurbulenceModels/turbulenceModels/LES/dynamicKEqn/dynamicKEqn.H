@@ -59,6 +59,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_dynamicKEqn_defines_typeName in .C files that
+//  define the template statics of dynamicKEqn (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_dynamicKEqn_defines_typeName)
+#  define Foam_dynamicKEqn_typeName_API
+#else
+#  define Foam_dynamicKEqn_typeName_API turbulenceModels_API
+#endif
+
 #ifndef dynamicKEqn_H
 #define dynamicKEqn_H
 
@@ -144,7 +154,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("dynamicKEqn");
+    TypeNameApi(Foam_dynamicKEqn_typeName_API, "dynamicKEqn");
 
 
     // Constructors

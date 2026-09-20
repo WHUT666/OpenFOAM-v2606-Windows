@@ -46,6 +46,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_emptyFvsPatchField_defines_typeName in .C files that
+//  define the template statics of emptyFvsPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_emptyFvsPatchField_defines_typeName)
+#  define Foam_emptyFvsPatchField_typeName_API
+#else
+#  define Foam_emptyFvsPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_emptyFvsPatchField_H
 #define Foam_emptyFvsPatchField_H
 
@@ -72,7 +82,7 @@ class emptyFvsPatchField
 public:
 
     //- Runtime type information
-    TypeName(emptyFvPatch::typeName_());  // fieldTypes::emptyTypeName_()
+    TypeNameApi(Foam_emptyFvsPatchField_typeName_API, emptyFvPatch::typeName_());  // fieldTypes::emptyTypeName_()
 
 
     // Constructors

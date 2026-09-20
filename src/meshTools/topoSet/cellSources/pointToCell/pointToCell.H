@@ -153,9 +153,9 @@ private:
     //Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
-        static const Enum<pointAction> pointActionNames_;
+        static meshTools_API const Enum<pointAction> pointActionNames_;
 
         //- Names of sets or zones to use
         wordList names_;
@@ -185,7 +185,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("pointToCell");
+    TypeNameApi(meshTools_API, "pointToCell");
 
 
     // Constructors

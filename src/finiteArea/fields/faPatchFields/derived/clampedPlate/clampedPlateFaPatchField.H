@@ -56,6 +56,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_clampedPlateFaPatchField_defines_typeName in .C files that
+//  define the template statics of clampedPlateFaPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_clampedPlateFaPatchField_defines_typeName)
+#  define Foam_clampedPlateFaPatchField_typeName_API
+#else
+#  define Foam_clampedPlateFaPatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_clampedPlateFaPatchField_H
 #define Foam_clampedPlateFaPatchField_H
 
@@ -81,7 +91,7 @@ class clampedPlateFaPatchField
 public:
 
     //- Runtime type information
-    TypeName("clampedPlate");
+    TypeNameApi(Foam_clampedPlateFaPatchField_typeName_API, "clampedPlate");
 
 
     // Constructors

@@ -214,7 +214,7 @@ class comfort
 public:
 
     //- Runtime type information
-    TypeName("comfort");
+    TypeNameApi(fieldFunctionObjects_API, "comfort");
 
 
     // Constructors

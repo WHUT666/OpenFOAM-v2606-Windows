@@ -160,7 +160,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("solverInfo");
+    TypeNameApi(utilityFunctionObjects_API, "solverInfo");
 
 
     // Constructors

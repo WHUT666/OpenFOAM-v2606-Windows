@@ -109,7 +109,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("adjointSimple");
+        TypeNameApi(adjointOptimisation_API, "adjointSimple");
 
 
     // Constructors

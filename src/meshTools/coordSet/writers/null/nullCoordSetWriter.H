@@ -82,7 +82,7 @@ class nullWriter
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("none");
+    TypeNameNoDebugApi(meshTools_API, "none");
 
 
     // Constructors

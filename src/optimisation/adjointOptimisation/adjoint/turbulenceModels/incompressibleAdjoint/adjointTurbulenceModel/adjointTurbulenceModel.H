@@ -97,13 +97,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("adjointTurbulenceModel");
+    TypeNameApi(adjointOptimisation_API, "adjointTurbulenceModel");
 
 
     // Declare run-time New selection table
 
-        declareRunTimeNewSelectionTable
-        (
+        declareRunTimeNewSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             adjointTurbulenceModel,
             adjointTurbulenceModel,

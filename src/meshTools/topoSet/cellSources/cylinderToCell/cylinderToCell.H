@@ -109,7 +109,7 @@ class cylinderToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- First point on cylinder axis
         point point1_;
@@ -145,7 +145,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cylinderToCell");
+    TypeNameApi(meshTools_API, "cylinderToCell");
 
 
     // Constructors

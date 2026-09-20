@@ -67,16 +67,16 @@ class surfaceFilmModel
 public:
 
     //- Runtime type information
-    TypeName("surfaceFilmModel");
+    TypeNameApi(surfaceFilmModels_API, "surfaceFilmModel");
 
     //- Reference temperature for enthalpy
-    static const dimensionedScalar Tref;
+    static surfaceFilmModels_API const dimensionedScalar Tref;
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( surfaceFilmModels_API,
              autoPtr,
              surfaceFilmModel,
              mesh,

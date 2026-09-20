@@ -76,7 +76,7 @@ public:
             PYRAMID,          //- Faces not decomposed (generates pyramids)
             FACE_DIAG_QUADS   //- Like FACE_DIAG_TRIS but does quads mainly
         };
-        static const Enum<decompositionType> decompositionTypeNames;
+        static dynamicMesh_API const Enum<decompositionType> decompositionTypeNames;
 
 
 private:
@@ -184,7 +184,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("tetDecomposer");
+    ClassNameApi(dynamicMesh_API, "tetDecomposer");
 
 
     // Constructors

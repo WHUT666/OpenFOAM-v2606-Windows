@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_AtomizationModel_defines_typeName in .C files that
+//  define the template statics of AtomizationModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_AtomizationModel_defines_typeName)
+#  define Foam_AtomizationModel_typeName_API
+#else
+#  define Foam_AtomizationModel_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef AtomizationModel_H
 #define AtomizationModel_H
 
@@ -63,11 +73,11 @@ class AtomizationModel
 public:
 
     //- Runtime type information
-    TypeName("atomizationModel");
+    TypeNameApi(Foam_AtomizationModel_typeName_API, "atomizationModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_AtomizationModel_typeName_API,
         autoPtr,
         AtomizationModel,
         dictionary,

@@ -103,13 +103,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("rigidBodySolver");
+    TypeNameApi(rigidBodyDynamics_API, "rigidBodySolver");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( rigidBodyDynamics_API,
             autoPtr,
             rigidBodySolver,
             dictionary,

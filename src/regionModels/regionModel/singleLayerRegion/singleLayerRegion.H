@@ -97,7 +97,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("regionModel");
+    TypeNameApi(regionModels_API, "regionModel");
 
 
     // Constructors

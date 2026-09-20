@@ -72,7 +72,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("faFaceZone");
+    TypeNameApi(finiteArea_API, "faFaceZone");
 
 
     // Constructors

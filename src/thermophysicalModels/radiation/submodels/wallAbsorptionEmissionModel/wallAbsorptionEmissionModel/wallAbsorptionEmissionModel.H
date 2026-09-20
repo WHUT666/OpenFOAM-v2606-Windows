@@ -63,12 +63,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("wallAbsorptionEmissionModel");
+    TypeNameApi(radiationModels_API, "wallAbsorptionEmissionModel");
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( radiationModels_API,
             autoPtr,
             wallAbsorptionEmissionModel,
             dictionary,

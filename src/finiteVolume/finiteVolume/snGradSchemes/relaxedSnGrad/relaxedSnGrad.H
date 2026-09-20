@@ -59,6 +59,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_relaxedSnGrad_defines_typeName in .C files that
+//  define the template statics of relaxedSnGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_relaxedSnGrad_defines_typeName)
+#  define Foam_relaxedSnGrad_typeName_API
+#else
+#  define Foam_relaxedSnGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef relaxedSnGrad_H
 #define relaxedSnGrad_H
 
@@ -98,7 +108,7 @@ class relaxedSnGrad
 public:
 
     //- Runtime type information
-    TypeName("relaxed");
+    TypeNameApi(Foam_relaxedSnGrad_typeName_API, "relaxed");
 
 
     // Constructors

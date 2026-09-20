@@ -467,7 +467,7 @@ class cellCuts
 public:
 
     //- Runtime type information
-    ClassName("cellCuts");
+    ClassNameApi(dynamicMesh_API, "cellCuts");
 
 
     // Constructors

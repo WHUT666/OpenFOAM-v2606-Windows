@@ -147,7 +147,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("wallShearStress");
+    TypeNameApi(fieldFunctionObjects_API, "wallShearStress");
 
 
     // Constructors

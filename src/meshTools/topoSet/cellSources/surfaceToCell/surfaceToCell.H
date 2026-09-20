@@ -142,7 +142,7 @@ class surfaceToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of surface file
         const fileName surfName_;
@@ -220,7 +220,7 @@ class surfaceToCell
 public:
 
     //- Runtime type information
-    TypeName("surfaceToCell");
+    TypeNameApi(meshTools_API, "surfaceToCell");
 
     // Constructors
 

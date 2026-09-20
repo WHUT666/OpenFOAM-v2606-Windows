@@ -103,7 +103,7 @@ class nearestToPoint
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Points to select nearest to
         pointField points_;
@@ -117,7 +117,7 @@ class nearestToPoint
 public:
 
     //- Runtime type information
-    TypeName("nearestToPoint");
+    TypeNameApi(meshTools_API, "nearestToPoint");
 
 
     // Constructors

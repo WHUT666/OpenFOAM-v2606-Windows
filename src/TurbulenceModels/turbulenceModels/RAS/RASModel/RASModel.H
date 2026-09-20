@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_RASModel_defines_typeName in .C files that
+//  define the template statics of RASModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_RASModel_defines_typeName)
+#  define Foam_RASModel_typeName_API
+#else
+#  define Foam_RASModel_typeName_API turbulenceModels_API
+#endif
+
 #ifndef Foam_RASModel_H
 #define Foam_RASModel_H
 
@@ -54,7 +64,7 @@ class RASModelBase
 public:
 
     //- Runtime type information
-    ClassName("RASModelBase");
+    ClassNameApi(turbulenceModels_API, "RASModelBase");
 
 
     // Constructors
@@ -124,13 +134,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("RAS");
+    TypeNameApi(Foam_RASModel_typeName_API, "RAS");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_RASModel_typeName_API,
             autoPtr,
             RASModel,
             dictionary,

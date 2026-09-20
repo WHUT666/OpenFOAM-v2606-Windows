@@ -77,7 +77,7 @@ class diagonalPreconditioner
 public:
 
     //- Runtime type information
-    TypeName("diagonal");
+    TypeNameApi(OpenFOAM_API, "diagonal");
 
 
     // Constructors

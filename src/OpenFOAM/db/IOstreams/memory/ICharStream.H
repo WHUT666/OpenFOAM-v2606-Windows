@@ -64,7 +64,7 @@ typedef ICharStream IListStream;
 //- Similar to std::istringstream, but with the ability to swap
 //- character content.
 //- Has some similarity to std::ispanstream (C++23)
-class icharstream
+class OpenFOAM_API icharstream
 :
     virtual public std::ios,
     protected Foam::memorybuf::in_dynamic,
@@ -224,7 +224,7 @@ public:
 \*---------------------------------------------------------------------------*/
 
 //- An ISstream with internal List storage. Always UNCOMPRESSED.
-class ICharStream
+class OpenFOAM_API ICharStream
 :
     public Foam::Detail::StreamAllocator<Foam::icharstream>,
     public Foam::ISstream

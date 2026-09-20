@@ -44,6 +44,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_jumpCyclicAMIFvPatchField_defines_typeName in .C files that
+//  define the template statics of jumpCyclicAMIFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_jumpCyclicAMIFvPatchField_defines_typeName)
+#  define Foam_jumpCyclicAMIFvPatchField_typeName_API
+#else
+#  define Foam_jumpCyclicAMIFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_jumpCyclicAMIFvPatchField_H
 #define Foam_jumpCyclicAMIFvPatchField_H
 
@@ -69,7 +79,7 @@ class jumpCyclicAMIFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("jumpCyclicAMI");
+    TypeNameApi(Foam_jumpCyclicAMIFvPatchField_typeName_API, "jumpCyclicAMI");
 
 
     // Constructors

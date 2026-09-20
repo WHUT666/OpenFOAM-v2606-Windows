@@ -55,7 +55,7 @@ class ash
 public:
 
     //- Runtime type information
-    TypeName("ash");
+    TypeNameApi(thermophysicalProperties_API, "ash");
 
 
     // Constructors

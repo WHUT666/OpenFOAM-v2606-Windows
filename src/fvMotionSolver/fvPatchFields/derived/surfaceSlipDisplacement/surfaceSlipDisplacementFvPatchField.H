@@ -33,6 +33,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_surfaceSlipDisplacementFvPatchField_defines_typeName in .C files that
+//  define the template statics of surfaceSlipDisplacementFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_surfaceSlipDisplacementFvPatchField_defines_typeName)
+#  define Foam_surfaceSlipDisplacementFvPatchField_typeName_API
+#else
+#  define Foam_surfaceSlipDisplacementFvPatchField_typeName_API fvMotionSolvers_API
+#endif
+
 #ifndef surfaceSlipDisplacementFvPatchField_H
 #define surfaceSlipDisplacementFvPatchField_H
 
@@ -58,7 +68,7 @@ class surfaceSlipDisplacementFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("surfaceSlipDisplacement");
+    TypeNameApi(Foam_surfaceSlipDisplacementFvPatchField_typeName_API, "surfaceSlipDisplacement");
 
 
     // Constructors

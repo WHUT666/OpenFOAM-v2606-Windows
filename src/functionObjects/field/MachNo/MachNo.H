@@ -99,7 +99,7 @@ class MachNo
 public:
 
     //- Runtime type information
-    TypeName("MachNo");
+    TypeNameApi(fieldFunctionObjects_API, "MachNo");
 
 
     // Constructors

@@ -72,7 +72,7 @@ class Rs
 public:
 
     //- Runtime type information
-    TypeName("Rs");
+    TypeNameApi(rigidBodyDynamics_API, "Rs");
 
 
     // Constructors

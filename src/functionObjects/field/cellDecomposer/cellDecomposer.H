@@ -205,7 +205,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("cellDecomposer");
+    TypeNameApi(fieldFunctionObjects_API, "cellDecomposer");
 
 
     // Constructors

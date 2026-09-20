@@ -118,6 +118,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_RanzMarshall_defines_typeName in .C files that
+//  define the template statics of RanzMarshall (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_RanzMarshall_defines_typeName)
+#  define Foam_RanzMarshall_typeName_API
+#else
+#  define Foam_RanzMarshall_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef RanzMarshall_H
 #define RanzMarshall_H
 
@@ -155,7 +165,7 @@ class RanzMarshall
 public:
 
     //- Runtime type information
-    TypeName("RanzMarshall");
+    TypeNameApi(Foam_RanzMarshall_typeName_API, "RanzMarshall");
 
 
     // Generated Methods

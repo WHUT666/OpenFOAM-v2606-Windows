@@ -114,7 +114,7 @@ class exponential
 public:
 
     //- Runtime type information
-    TypeName("exponential");
+    TypeNameApi(reactingMultiphaseSystem_API, "exponential");
 
 
     // Constructors

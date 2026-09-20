@@ -42,6 +42,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FacePostProcessing_defines_typeName in .C files that
+//  define the template statics of FacePostProcessing (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FacePostProcessing_defines_typeName)
+#  define Foam_FacePostProcessing_typeName_API
+#else
+#  define Foam_FacePostProcessing_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef FacePostProcessing_H
 #define FacePostProcessing_H
 
@@ -122,7 +132,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("facePostProcessing");
+    TypeNameApi(Foam_FacePostProcessing_typeName_API, "facePostProcessing");
 
 
     // Constructors

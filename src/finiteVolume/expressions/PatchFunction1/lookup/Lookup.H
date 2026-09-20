@@ -50,6 +50,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Lookup_defines_typeName in .C files that
+//  define the template statics of Lookup (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Lookup_defines_typeName)
+#  define Foam_Lookup_typeName_API
+#else
+#  define Foam_Lookup_typeName_API finiteVolume_API
+#endif
+
 #ifndef Function1Types_Lookup_H
 #define Function1Types_Lookup_H
 
@@ -76,7 +86,7 @@ class Lookup
 public:
 
     // Runtime type information
-    TypeName("lookup");
+    TypeNameApi(Foam_Lookup_typeName_API, "lookup");
 
 
     // Generated Methods

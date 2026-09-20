@@ -110,7 +110,7 @@ class valueAverage
 public:
 
     //- Runtime type information
-    TypeName("valueAverage");
+    TypeNameApi(fieldFunctionObjects_API, "valueAverage");
 
 
     // Constructors

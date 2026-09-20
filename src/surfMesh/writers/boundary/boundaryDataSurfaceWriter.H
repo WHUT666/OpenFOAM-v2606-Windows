@@ -188,7 +188,7 @@ class boundaryDataWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("boundaryData");
+    TypeNameNoDebugApi(surfMesh_API, "boundaryData");
 
 
     // Constructors

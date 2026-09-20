@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fourthGrad_defines_typeName in .C files that
+//  define the template statics of fourthGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fourthGrad_defines_typeName)
+#  define Foam_fourthGrad_typeName_API
+#else
+#  define Foam_fourthGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef fourthGrad_H
 #define fourthGrad_H
 
@@ -74,7 +84,7 @@ class fourthGrad
 public:
 
     //- Runtime type information
-    TypeName("fourth");
+    TypeNameApi(Foam_fourthGrad_typeName_API, "fourth");
 
 
     // Constructors

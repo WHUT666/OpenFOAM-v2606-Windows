@@ -62,7 +62,7 @@ class symmetryPlaneFvPatch
 public:
 
     //- Runtime type information
-    TypeName(symmetryPlanePolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, symmetryPlanePolyPatch::typeName_());
 
 
     // Constructors

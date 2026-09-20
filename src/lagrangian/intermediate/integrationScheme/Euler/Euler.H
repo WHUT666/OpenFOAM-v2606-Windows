@@ -58,7 +58,7 @@ class Euler
 public:
 
     //- Runtime type information
-    TypeName("Euler");
+    TypeNameApi(lagrangianIntermediate_API, "Euler");
 
 
     // Constructors

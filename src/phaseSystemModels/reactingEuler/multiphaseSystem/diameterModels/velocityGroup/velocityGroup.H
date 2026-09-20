@@ -141,7 +141,7 @@ class velocityGroup
 public:
 
     //- Runtime type information
-    TypeName("velocityGroup");
+    TypeNameApi(reactingMultiphaseSystem_API, "velocityGroup");
 
 
     // Constructors

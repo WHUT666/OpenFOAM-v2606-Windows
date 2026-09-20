@@ -65,13 +65,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("binaryBreakupModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "binaryBreakupModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             binaryBreakupModel,
             dictionary,

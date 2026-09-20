@@ -89,7 +89,7 @@ typedef ISpanStream UIListStream;
 //- which makes it most similar to std::ispanstream (C++23)
 //  This allows the input buffer to be filled or refilled from various sources
 //  without copying.
-class ispanstream
+class OpenFOAM_API ispanstream
 :
     virtual public std::ios,
     protected Foam::memorybuf::in_base,
@@ -234,7 +234,7 @@ public:
                          Class ISpanStream Declaration
 \*---------------------------------------------------------------------------*/
 
-class ISpanStream
+class OpenFOAM_API ISpanStream
 :
     public Foam::Detail::StreamAllocator<Foam::ispanstream>,
     public Foam::ISstream

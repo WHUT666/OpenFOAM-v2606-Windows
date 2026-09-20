@@ -75,7 +75,7 @@ class TomiyamaCorrelated
 public:
 
     //- Runtime type information
-    TypeName("TomiyamaCorrelated");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "TomiyamaCorrelated");
 
 
     // Constructors

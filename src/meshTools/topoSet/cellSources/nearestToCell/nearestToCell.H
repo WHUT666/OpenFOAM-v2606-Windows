@@ -104,7 +104,7 @@ class nearestToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Points to select nearest to
         pointField points_;
@@ -118,7 +118,7 @@ class nearestToCell
 public:
 
     //- Runtime type information
-    TypeName("nearestToCell");
+    TypeNameApi(meshTools_API, "nearestToCell");
 
 
     // Constructors

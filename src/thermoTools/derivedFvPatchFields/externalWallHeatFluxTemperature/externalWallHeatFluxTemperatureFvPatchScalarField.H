@@ -143,7 +143,7 @@ public:
             fixedHeatTransferCoeff, //!< Heat transfer coefficient [W/m^2/K]
         };
 
-        static const Enum<operationMode> operationModeNames;
+        static thermoTools_API const Enum<operationMode> operationModeNames;
 
 
 private:
@@ -190,7 +190,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("externalWallHeatFluxTemperature");
+    TypeNameApi(thermoTools_API, "externalWallHeatFluxTemperature");
 
 
     // Constructors

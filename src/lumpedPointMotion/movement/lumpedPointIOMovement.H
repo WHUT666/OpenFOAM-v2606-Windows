@@ -67,7 +67,7 @@ class lumpedPointIOMovement
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("lumpedPointMovement");
+    TypeNameNoDebugApi(lumpedPointMotion_API, "lumpedPointMovement");
 
 
     // Static Member Functions

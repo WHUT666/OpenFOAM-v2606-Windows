@@ -74,7 +74,7 @@ class cuboid
 public:
 
     //- Runtime type information
-    TypeName("cuboid");
+    TypeNameApi(rigidBodyDynamics_API, "cuboid");
 
 
     // Constructors

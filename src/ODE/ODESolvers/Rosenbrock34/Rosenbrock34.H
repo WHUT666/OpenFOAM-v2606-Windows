@@ -103,7 +103,7 @@ class Rosenbrock34
 public:
 
     //- Runtime type information
-    TypeName("Rosenbrock34");
+    TypeNameApi(ODE_API, "Rosenbrock34");
 
 
     // Constructors

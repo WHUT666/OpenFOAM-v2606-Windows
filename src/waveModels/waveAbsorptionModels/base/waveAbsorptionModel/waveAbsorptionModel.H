@@ -62,7 +62,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("waveAbsorptionModel");
+    TypeNameApi(waveModels_API, "waveAbsorptionModel");
 
     //- Constructor
     waveAbsorptionModel

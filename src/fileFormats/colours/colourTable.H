@@ -88,10 +88,10 @@ public:
 
 
         //- Enumeration names for interpolationType
-        static const Enum<interpolationType> interpolationTypeNames;
+        static fileFormats_API const Enum<interpolationType> interpolationTypeNames;
 
         //- Enumeration names for predefinedType
-        static const Enum<predefinedType> predefinedNames;
+        static fileFormats_API const Enum<predefinedType> predefinedNames;
 
         //- The data lookup type
         typedef Tuple2<scalar, vector> pair_type;
@@ -117,7 +117,7 @@ private:
     // Private Static Data
 
         //- Predefined tables
-        static HashPtrTable<colourTable> tables_;
+        static fileFormats_API HashPtrTable<colourTable> tables_;
 
 
     // Private Data

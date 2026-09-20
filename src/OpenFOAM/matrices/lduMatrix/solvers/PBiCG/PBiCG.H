@@ -72,7 +72,7 @@ class PBiCG
 public:
 
     //- Runtime type information
-    TypeName("PBiCG");
+    TypeNameApi(OpenFOAM_API, "PBiCG");
 
 
     // Constructors

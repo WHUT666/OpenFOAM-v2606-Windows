@@ -49,6 +49,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_timeVaryingMappedFixedValuePointPatchField_defines_typeName in .C files that
+//  define the template statics of timeVaryingMappedFixedValuePointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_timeVaryingMappedFixedValuePointPatchField_defines_typeName)
+#  define Foam_timeVaryingMappedFixedValuePointPatchField_typeName_API
+#else
+#  define Foam_timeVaryingMappedFixedValuePointPatchField_typeName_API fvMotionSolvers_API
+#endif
+
 #ifndef Foam_timeVaryingMappedFixedValuePointPatchField_H
 #define Foam_timeVaryingMappedFixedValuePointPatchField_H
 
@@ -129,7 +139,7 @@ class timeVaryingMappedFixedValuePointPatchField
 public:
 
     //- Runtime type information
-    TypeName("timeVaryingMappedFixedValue");
+    TypeNameApi(Foam_timeVaryingMappedFixedValuePointPatchField_typeName_API, "timeVaryingMappedFixedValue");
 
 
     // Constructors

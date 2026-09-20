@@ -65,7 +65,7 @@ class waveDisplacementPointPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("waveDisplacement");
+    TypeNameApi(fvMotionSolvers_API, "waveDisplacement");
 
 
     // Constructors

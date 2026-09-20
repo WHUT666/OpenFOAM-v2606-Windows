@@ -49,6 +49,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ParticleTrap_defines_typeName in .C files that
+//  define the template statics of ParticleTrap (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ParticleTrap_defines_typeName)
+#  define Foam_ParticleTrap_typeName_API
+#else
+#  define Foam_ParticleTrap_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ParticleTrap_H
 #define ParticleTrap_H
 
@@ -93,7 +103,7 @@ class ParticleTrap
 public:
 
     //- Runtime type information
-    TypeName("particleTrap");
+    TypeNameApi(Foam_ParticleTrap_typeName_API, "particleTrap");
 
 
     // Constructors

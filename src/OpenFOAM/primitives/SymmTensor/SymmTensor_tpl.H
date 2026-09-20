@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SymmTensor_defines_typeName in .C files that
+//  define the template statics of SymmTensor (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SymmTensor_defines_typeName)
+#  define Foam_SymmTensor_typeName_API
+#else
+#  define Foam_SymmTensor_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_SymmTensor_H
 #define Foam_SymmTensor_H
 
@@ -72,7 +82,7 @@ public:
 
     // Static Data Members
 
-        static const SymmTensor I;
+        static Foam_SymmTensor_typeName_API const SymmTensor I;
 
 
     //- Component labeling enumeration

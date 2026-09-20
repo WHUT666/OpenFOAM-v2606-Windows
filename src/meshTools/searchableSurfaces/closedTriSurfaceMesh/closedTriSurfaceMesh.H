@@ -67,7 +67,7 @@ class closedTriSurfaceMesh
 public:
 
     //- Runtime type information
-    TypeName("closedTriSurfaceMesh");
+    TypeNameApi(meshTools_API, "closedTriSurfaceMesh");
 
 
     // Constructors

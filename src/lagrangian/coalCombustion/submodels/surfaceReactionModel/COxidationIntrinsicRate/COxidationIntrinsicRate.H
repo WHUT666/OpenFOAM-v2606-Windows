@@ -39,6 +39,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_COxidationIntrinsicRate_defines_typeName in .C files that
+//  define the template statics of COxidationIntrinsicRate (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_COxidationIntrinsicRate_defines_typeName)
+#  define Foam_COxidationIntrinsicRate_typeName_API
+#else
+#  define Foam_COxidationIntrinsicRate_typeName_API coalCombustion_API
+#endif
+
 #ifndef COxidationIntrinsicRate_H
 #define COxidationIntrinsicRate_H
 
@@ -120,7 +130,7 @@ class COxidationIntrinsicRate
 public:
 
     //- Runtime type information
-    TypeName("COxidationIntrinsicRate");
+    TypeNameApi(Foam_COxidationIntrinsicRate_typeName_API, "COxidationIntrinsicRate");
 
 
     // Constructors

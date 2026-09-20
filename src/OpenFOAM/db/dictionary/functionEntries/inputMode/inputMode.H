@@ -80,7 +80,7 @@ class inputMode
 public:
 
     //- Text representations of the selectable input modes
-    static const Enum<entry::inputMode> selectableNames;
+    static OpenFOAM_API const Enum<entry::inputMode> selectableNames;
 
     //- Change the global input-mode.
     static bool execute(dictionary& unused, Istream& is);

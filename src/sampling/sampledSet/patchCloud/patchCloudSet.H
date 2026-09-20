@@ -95,7 +95,7 @@ class patchCloudSet
 public:
 
     //- Runtime type information
-    TypeName("patchCloud");
+    TypeNameApi(sampling_API, "patchCloud");
 
 
     // Constructors

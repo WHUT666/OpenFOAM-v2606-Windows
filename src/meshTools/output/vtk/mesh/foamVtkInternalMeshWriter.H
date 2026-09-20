@@ -119,7 +119,7 @@ private:
 public:
 
     //- Debug information
-    static int debug;
+    static meshTools_API int debug;
 
 //- File extension for given output type
 //  constexpr static vtk::fileTag content = vtk::fileTag::UNSTRUCTURED_GRID;

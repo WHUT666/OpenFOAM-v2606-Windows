@@ -81,7 +81,7 @@ public:
         };
 
         //- Names of preconditioners for the subproblem
-        static const Enum<preconditioners> preconditionerNames;
+        static adjointOptimisation_API const Enum<preconditioners> preconditionerNames;
 
 
 protected:
@@ -340,7 +340,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("ISQP");
+    TypeNameApi(adjointOptimisation_API, "ISQP");
 
 
     // Constructors

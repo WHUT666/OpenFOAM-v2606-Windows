@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_processorPointPatchField_defines_typeName in .C files that
+//  define the template statics of processorPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_processorPointPatchField_defines_typeName)
+#  define Foam_processorPointPatchField_typeName_API
+#else
+#  define Foam_processorPointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_processorPointPatchField_H
 #define Foam_processorPointPatchField_H
 
@@ -65,7 +75,7 @@ class processorPointPatchField
 public:
 
     //- Runtime type information
-    TypeName(processorPointPatch::typeName_());
+    TypeNameApi(Foam_processorPointPatchField_typeName_API, processorPointPatch::typeName_());
 
 
     // Constructors

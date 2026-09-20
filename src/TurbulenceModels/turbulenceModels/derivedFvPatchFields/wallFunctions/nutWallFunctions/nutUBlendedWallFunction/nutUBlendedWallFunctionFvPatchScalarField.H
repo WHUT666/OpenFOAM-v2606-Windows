@@ -141,7 +141,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nutUBlendedWallFunction");
+    TypeNameApi(turbulenceModels_API, "nutUBlendedWallFunction");
 
 
     // Constructors

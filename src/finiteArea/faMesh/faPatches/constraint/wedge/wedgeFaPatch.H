@@ -75,7 +75,7 @@ class wedgeFaPatch
 public:
 
     //- Runtime type information
-    TypeName("wedge");
+    TypeNameApi(finiteArea_API, "wedge");
 
     //- Construct from dictionary.
     //  Fatal if ngbPolyPatchIndex is not defined

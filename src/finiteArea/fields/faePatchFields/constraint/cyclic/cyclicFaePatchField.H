@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cyclicFaePatchField_defines_typeName in .C files that
+//  define the template statics of cyclicFaePatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cyclicFaePatchField_defines_typeName)
+#  define Foam_cyclicFaePatchField_typeName_API
+#else
+#  define Foam_cyclicFaePatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_cyclicFaePatchField_H
 #define Foam_cyclicFaePatchField_H
 
@@ -71,7 +81,7 @@ class cyclicFaePatchField
 public:
 
     //- Runtime type information
-    TypeName(cyclicFaPatch::typeName_());
+    TypeNameApi(Foam_cyclicFaePatchField_typeName_API, cyclicFaPatch::typeName_());
 
 
     // Constructors

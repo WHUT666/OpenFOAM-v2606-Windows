@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_linear_defines_typeName in .C files that
+//  define the template statics of linear (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_linear_defines_typeName)
+#  define Foam_linear_typeName_API
+#else
+#  define Foam_linear_typeName_API finiteVolume_API
+#endif
+
 #ifndef linear_H
 #define linear_H
 
@@ -66,7 +76,7 @@ class linear
 public:
 
     //- Runtime type information
-    TypeName("linear");
+    TypeNameApi(Foam_linear_typeName_API, "linear");
 
 
     // Constructors

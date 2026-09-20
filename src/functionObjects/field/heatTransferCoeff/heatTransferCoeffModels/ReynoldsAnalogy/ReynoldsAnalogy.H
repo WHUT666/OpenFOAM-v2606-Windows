@@ -168,7 +168,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("ReynoldsAnalogy");
+    TypeNameApi(fieldFunctionObjects_API, "ReynoldsAnalogy");
 
 
     // Constructors

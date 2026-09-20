@@ -154,7 +154,7 @@ class age
 public:
 
     //- Runtime type information
-    TypeName("age");
+    TypeNameApi(fieldFunctionObjects_API, "age");
 
 
     // Constructors

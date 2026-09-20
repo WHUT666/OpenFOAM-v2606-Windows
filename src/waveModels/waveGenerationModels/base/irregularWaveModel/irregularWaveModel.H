@@ -74,7 +74,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("irregularWaveModel");
+    TypeNameApi(waveModels_API, "irregularWaveModel");
 
 
     //- Constructor

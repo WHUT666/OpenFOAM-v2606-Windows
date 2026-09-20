@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_IOPtrList_defines_typeName in .C files that
+//  define the template statics of IOPtrList (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_IOPtrList_defines_typeName)
+#  define Foam_IOPtrList_typeName_API
+#else
+#  define Foam_IOPtrList_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_IOPtrList_H
 #define Foam_IOPtrList_H
 
@@ -59,7 +69,7 @@ class IOPtrList
 public:
 
     //- Runtime type information
-    TypeName("PtrList");
+    TypeNameApi(Foam_IOPtrList_typeName_API, "PtrList");
 
 
     // Constructors

@@ -131,17 +131,17 @@ class layerAdditionRemoval
     // Static Data Members
 
         //- Thickness insertion fraction for the pre-motion
-        static const scalar addDelta_;
+        static dynamicMesh_API const scalar addDelta_;
 
         //- Thickness removal fraction for the cell collapse
         //  Note: the cell will be collapsed to this relative
         //  thickness before the layer is removed.
-        static const scalar removeDelta_;
+        static dynamicMesh_API const scalar removeDelta_;
 
 public:
 
     //- Runtime type information
-    TypeName("layerAdditionRemoval");
+    TypeNameApi(dynamicMesh_API, "layerAdditionRemoval");
 
 
     // Constructors

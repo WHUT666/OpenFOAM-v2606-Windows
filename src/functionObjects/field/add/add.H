@@ -120,7 +120,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("add");
+    TypeNameApi(fieldFunctionObjects_API, "add");
 
 
     // Constructors

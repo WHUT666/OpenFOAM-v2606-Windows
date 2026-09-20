@@ -69,7 +69,7 @@ class angularOscillatingVelocityPointPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("angularOscillatingVelocity");
+    TypeNameApi(fvMotionSolvers_API, "angularOscillatingVelocity");
 
 
     // Constructors

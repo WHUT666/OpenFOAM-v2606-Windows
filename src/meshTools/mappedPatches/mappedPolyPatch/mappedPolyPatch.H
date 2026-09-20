@@ -87,7 +87,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("mappedPatch");
+    TypeNameApi(meshTools_API, "mappedPatch");
 
 
     // Constructors

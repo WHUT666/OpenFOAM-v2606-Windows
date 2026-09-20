@@ -77,7 +77,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("null");
+        TypeNameApi(adjointOptimisation_API, "null");
 
 
     // Constructors

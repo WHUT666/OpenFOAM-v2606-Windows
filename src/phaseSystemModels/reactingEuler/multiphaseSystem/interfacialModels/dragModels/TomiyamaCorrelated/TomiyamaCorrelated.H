@@ -74,7 +74,7 @@ class TomiyamaCorrelated
 public:
 
     //- Runtime type information
-    TypeName("TomiyamaCorrelated");
+    TypeNameApi(reactingMultiphaseSystem_API, "TomiyamaCorrelated");
 
 
     // Constructors

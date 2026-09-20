@@ -83,7 +83,7 @@ class wideBandDiffusiveRadiationMixedFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("wideBandDiffusiveRadiation");
+    TypeNameApi(radiationModels_API, "wideBandDiffusiveRadiation");
 
 
     // Constructors

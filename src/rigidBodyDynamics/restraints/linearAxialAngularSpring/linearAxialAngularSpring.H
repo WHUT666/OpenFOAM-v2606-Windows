@@ -77,7 +77,7 @@ class linearAxialAngularSpring
 public:
 
     //- Runtime type information
-    TypeName("linearAxialAngularSpring");
+    TypeNameApi(rigidBodyDynamics_API, "linearAxialAngularSpring");
 
 
     // Constructors

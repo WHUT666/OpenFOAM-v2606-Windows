@@ -104,7 +104,7 @@ class function1
 public:
 
     //- Runtime type information
-    TypeName("function1");
+    TypeNameApi(saturationModel_API, "function1");
 
     // Constructors
 

@@ -48,13 +48,13 @@ namespace Foam
 \*---------------------------------------------------------------------------*/
 
 //- A basic output stream for calculating SHA1 digests
-class osha1stream
+class OpenFOAM_API osha1stream
 :
     virtual public std::ios,
     public std::ostream
 {
     //- A streambuf class for calculating SHA1 digests
-    class sha1buf : public std::streambuf
+    class OpenFOAM_API sha1buf : public std::streambuf
     {
         //- This does all the work and has its own buffering
         SHA1 sha1_;
@@ -119,7 +119,7 @@ public:
 \*---------------------------------------------------------------------------*/
 
 //- The output stream for calculating SHA1 digests
-class OSHA1stream
+class OpenFOAM_API OSHA1stream
 :
     public Foam::Detail::StreamAllocator<Foam::osha1stream>,
     public Foam::OSstream

@@ -91,7 +91,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("SQP");
+    TypeNameApi(adjointOptimisation_API, "SQP");
 
 
     // Constructors

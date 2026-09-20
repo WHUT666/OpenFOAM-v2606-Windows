@@ -66,7 +66,7 @@ class VakhrushevEfremov
 public:
 
     //- Runtime type information
-    TypeName("VakhrushevEfremov");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "VakhrushevEfremov");
 
 
     // Constructors

@@ -211,7 +211,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("kkLOmega");
+    TypeNameApi(incompressibleTurbulenceModels_API, "kkLOmega");
 
 
     // Constructors

@@ -178,7 +178,7 @@ public:
         };
 
         //- Operation type names
-        static const Enum<operationType> operationTypeNames_;
+        static fieldFunctionObjects_API const Enum<operationType> operationTypeNames_;
 
 
         //- Post-operation type enumeration
@@ -190,7 +190,7 @@ public:
         };
 
         //- Operation type names
-        static const Enum<postOperationType> postOperationTypeNames_;
+        static fieldFunctionObjects_API const Enum<postOperationType> postOperationTypeNames_;
 
 
 protected:
@@ -269,7 +269,7 @@ protected:
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("volFieldValue");
+    TypeNameApi(fieldFunctionObjects_API, "volFieldValue");
 
 
     // Constructors

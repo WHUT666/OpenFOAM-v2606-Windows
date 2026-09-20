@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_noCombustion_defines_typeName in .C files that
+//  define the template statics of noCombustion (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_noCombustion_defines_typeName)
+#  define Foam_noCombustion_typeName_API
+#else
+#  define Foam_noCombustion_typeName_API combustionModels_API
+#endif
+
 #ifndef noCombustion_H
 #define noCombustion_H
 
@@ -69,7 +79,7 @@ class noCombustion
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_noCombustion_typeName_API, "none");
 
 
     // Constructors

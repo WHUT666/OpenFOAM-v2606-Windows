@@ -100,7 +100,7 @@ class hostCollatedFileOperation
 public:
 
         //- Runtime type information
-        TypeName("hostCollated");
+        TypeNameApi(OpenFOAM_API, "hostCollated");
 
 
     // Constructors

@@ -33,6 +33,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MaxwellianThermal_defines_typeName in .C files that
+//  define the template statics of MaxwellianThermal (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MaxwellianThermal_defines_typeName)
+#  define Foam_MaxwellianThermal_typeName_API
+#else
+#  define Foam_MaxwellianThermal_typeName_API DSMC_API
+#endif
+
 #ifndef MaxwellianThermal_H
 #define MaxwellianThermal_H
 
@@ -54,7 +64,7 @@ class MaxwellianThermal
 public:
 
     //- Runtime type information
-    TypeName("MaxwellianThermal");
+    TypeNameApi(Foam_MaxwellianThermal_typeName_API, "MaxwellianThermal");
 
 
     // Constructors

@@ -41,6 +41,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CompositionModel_defines_typeName in .C files that
+//  define the template statics of CompositionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CompositionModel_defines_typeName)
+#  define Foam_CompositionModel_typeName_API
+#else
+#  define Foam_CompositionModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef CompositionModel_H
 #define CompositionModel_H
 
@@ -80,11 +90,11 @@ class CompositionModel
 public:
 
     //- Runtime type information
-    TypeName("compositionModel");
+    TypeNameApi(Foam_CompositionModel_typeName_API, "compositionModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_CompositionModel_typeName_API,
         autoPtr,
         CompositionModel,
         dictionary,

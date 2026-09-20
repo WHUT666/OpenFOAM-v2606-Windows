@@ -71,7 +71,7 @@ class plane
 public:
 
     //- Runtime type information
-    TypeName("plane");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "plane");
 
 
     // Constructors

@@ -103,13 +103,13 @@ class block
 public:
 
     //- Runtime type information
-    TypeName("block");
+    TypeNameApi(blockMesh_API, "block");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( blockMesh_API,
             autoPtr,
             block,
             Istream,

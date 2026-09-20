@@ -137,7 +137,7 @@ class atmPlantCanopyUSource
 public:
 
     //- Runtime type information
-    TypeName("atmPlantCanopyUSource");
+    TypeNameApi(atmosphericModels_API, "atmPlantCanopyUSource");
 
 
     // Constructors

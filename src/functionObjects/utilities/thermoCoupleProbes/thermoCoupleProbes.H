@@ -165,7 +165,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("thermoCoupleProbes");
+    TypeNameApi(utilityFunctionObjects_API, "thermoCoupleProbes");
 
 
     // Constructors

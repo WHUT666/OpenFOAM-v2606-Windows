@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ParticleTracks_defines_typeName in .C files that
+//  define the template statics of ParticleTracks (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ParticleTracks_defines_typeName)
+#  define Foam_ParticleTracks_typeName_API
+#else
+#  define Foam_ParticleTracks_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ParticleTracks_H
 #define ParticleTracks_H
 
@@ -91,7 +101,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("particleTracks");
+    TypeNameApi(Foam_ParticleTracks_typeName_API, "particleTracks");
 
 
     // Constructors

@@ -74,13 +74,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("filmTurbulenceModel");
+    TypeNameApi(surfaceFilmModels_API, "filmTurbulenceModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( surfaceFilmModels_API,
              autoPtr,
              filmTurbulenceModel,
              dictionary,

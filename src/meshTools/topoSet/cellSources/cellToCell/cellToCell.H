@@ -132,7 +132,7 @@ class cellToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Names of sets or zones to use
         wordList names_;
@@ -144,7 +144,7 @@ class cellToCell
 public:
 
     //- Runtime type information
-    TypeName("cellToCell");
+    TypeNameApi(meshTools_API, "cellToCell");
 
 
     // Constructors

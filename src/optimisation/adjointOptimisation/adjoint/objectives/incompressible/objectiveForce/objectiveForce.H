@@ -74,7 +74,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("force");
+    TypeNameApi(adjointOptimisation_API, "force");
 
 
     // Constructors

@@ -80,7 +80,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("transformBox");
+    TypeNameApi(adjointOptimisation_API, "transformBox");
 
 
     // Constructors

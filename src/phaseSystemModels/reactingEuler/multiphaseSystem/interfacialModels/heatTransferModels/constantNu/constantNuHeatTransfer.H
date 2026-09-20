@@ -66,7 +66,7 @@ class constantNuHeatTransfer
 public:
 
     //- Runtime type information
-    TypeName("constantNu");
+    TypeNameApi(reactingMultiphaseSystem_API, "constantNu");
 
 
     // Constructors

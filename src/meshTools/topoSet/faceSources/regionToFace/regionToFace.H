@@ -103,7 +103,7 @@ class regionToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of set or zone to use
         word setName_;
@@ -138,7 +138,7 @@ class regionToFace
 public:
 
     //- Runtime type information
-    TypeName("regionToFace");
+    TypeNameApi(meshTools_API, "regionToFace");
 
 
     // Constructors

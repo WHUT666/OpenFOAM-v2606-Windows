@@ -52,7 +52,7 @@ namespace Foam
                           Class OPstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class OPstream
+class OpenFOAM_API OPstream
 :
     public Pstream,
     public UOPstream
@@ -146,7 +146,7 @@ public:
 
 //- Output inter-processor communications stream
 //- using MPI broadcast.
-class OPBstream
+class OpenFOAM_API OPBstream
 :
     public Pstream,
     public UOPBstream

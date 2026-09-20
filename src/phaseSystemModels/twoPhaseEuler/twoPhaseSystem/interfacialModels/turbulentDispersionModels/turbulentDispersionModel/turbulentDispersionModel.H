@@ -66,13 +66,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("turbulentDispersionModel");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "turbulentDispersionModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( compressibleTwoPhaseSystem_API,
             autoPtr,
             turbulentDispersionModel,
             dictionary,
@@ -86,10 +86,10 @@ public:
     // Static Data Members
 
         //- Diffusivity dimensions
-        static const dimensionSet dimD;
+        static compressibleTwoPhaseSystem_API const dimensionSet dimD;
 
         //- Force dimensions
-        static const dimensionSet dimF;
+        static compressibleTwoPhaseSystem_API const dimensionSet dimF;
 
 
     // Constructors

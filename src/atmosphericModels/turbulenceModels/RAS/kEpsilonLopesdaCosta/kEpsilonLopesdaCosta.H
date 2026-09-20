@@ -62,6 +62,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kEpsilonLopesdaCosta_defines_typeName in .C files that
+//  define the template statics of kEpsilonLopesdaCosta (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kEpsilonLopesdaCosta_defines_typeName)
+#  define Foam_kEpsilonLopesdaCosta_typeName_API
+#else
+#  define Foam_kEpsilonLopesdaCosta_typeName_API atmosphericModels_API
+#endif
+
 #ifndef kEpsilonLopesdaCosta_H
 #define kEpsilonLopesdaCosta_H
 
@@ -160,7 +170,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("kEpsilonLopesdaCosta");
+    TypeNameApi(Foam_kEpsilonLopesdaCosta_typeName_API, "kEpsilonLopesdaCosta");
 
 
     // Constructors

@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_limitWith_defines_typeName in .C files that
+//  define the template statics of limitWith (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_limitWith_defines_typeName)
+#  define Foam_limitWith_typeName_API
+#else
+#  define Foam_limitWith_typeName_API finiteVolume_API
+#endif
+
 #ifndef limitWith_H
 #define limitWith_H
 
@@ -77,7 +87,7 @@ class limitWith
 public:
 
     //- Runtime type information
-    TypeName("limitWith");
+    TypeNameApi(Foam_limitWith_typeName_API, "limitWith");
 
 
     // Constructors

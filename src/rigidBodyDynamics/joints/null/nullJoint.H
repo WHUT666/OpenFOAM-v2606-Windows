@@ -71,7 +71,7 @@ class null
 public:
 
     //- Runtime type information
-    TypeName("null");
+    TypeNameApi(rigidBodyDynamics_API, "null");
 
 
     // Constructors

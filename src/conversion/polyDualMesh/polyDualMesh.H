@@ -159,7 +159,7 @@ class polyDualMesh
 public:
 
     //- Runtime type information
-    ClassName("polyDualMesh");
+    ClassNameApi(conversion_API, "polyDualMesh");
 
 
     // Constructors

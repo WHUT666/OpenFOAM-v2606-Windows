@@ -87,7 +87,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("exp");
+    TypeNameApi(adjointOptimisation_API, "exp");
 
 
     // Constructors

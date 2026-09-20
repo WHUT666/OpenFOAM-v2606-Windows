@@ -73,7 +73,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("relative");
+    TypeNameApi(lagrangianIntermediate_API, "relative");
 
 
     // Constructors

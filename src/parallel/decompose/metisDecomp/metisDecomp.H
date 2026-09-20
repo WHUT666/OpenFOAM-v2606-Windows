@@ -102,7 +102,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("metis");
+    TypeNameApi(metisDecomp_API, "metis");
 
 
     // Constructors

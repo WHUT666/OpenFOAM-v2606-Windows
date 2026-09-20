@@ -76,7 +76,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("sinh");
+    TypeNameApi(adjointOptimisation_API, "sinh");
 
 
     // Constructors

@@ -95,7 +95,7 @@ class SRFWallVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("SRFWallVelocity");
+    TypeNameApi(finiteVolume_API, "SRFWallVelocity");
 
 
     // Constructors

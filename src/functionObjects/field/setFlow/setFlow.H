@@ -162,7 +162,7 @@ class setFlow
         };
 
         //- Names for modeType
-        static const Enum<modeType> modeTypeNames;
+        static fieldFunctionObjects_API const Enum<modeType> modeTypeNames;
 
 
    // Private Data
@@ -213,7 +213,7 @@ class setFlow
 public:
 
     //- Runtime type information
-    TypeName("setFlow");
+    TypeNameApi(fieldFunctionObjects_API, "setFlow");
 
 
     // Constructors

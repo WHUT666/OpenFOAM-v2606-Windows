@@ -48,6 +48,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ConeInjection_defines_typeName in .C files that
+//  define the template statics of ConeInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ConeInjection_defines_typeName)
+#  define Foam_ConeInjection_typeName_API
+#else
+#  define Foam_ConeInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ConeInjection_H
 #define ConeInjection_H
 
@@ -123,7 +133,7 @@ class ConeInjection
 public:
 
     //- Runtime type information
-    TypeName("coneInjection");
+    TypeNameApi(Foam_ConeInjection_typeName_API, "coneInjection");
 
 
     // Constructors

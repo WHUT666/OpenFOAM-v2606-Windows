@@ -102,7 +102,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("basicChemistryModel");
+    TypeNameApi(chemistryModel_API, "basicChemistryModel");
 
 
     // Constructors

@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoSurfaceFilm_defines_typeName in .C files that
+//  define the template statics of NoSurfaceFilm (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoSurfaceFilm_defines_typeName)
+#  define Foam_NoSurfaceFilm_typeName_API
+#else
+#  define Foam_NoSurfaceFilm_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoSurfaceFilm_H
 #define NoSurfaceFilm_H
 
@@ -67,7 +77,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoSurfaceFilm_typeName_API, "none");
 
 
     // Constructors

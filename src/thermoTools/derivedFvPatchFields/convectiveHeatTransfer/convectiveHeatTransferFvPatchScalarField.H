@@ -109,7 +109,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("convectiveHeatTransfer");
+    TypeNameApi(thermoTools_API, "convectiveHeatTransfer");
 
 
     // Constructors

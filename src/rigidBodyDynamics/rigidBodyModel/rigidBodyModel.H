@@ -215,7 +215,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("rigidBodyModel");
+    TypeNameApi(rigidBodyDynamics_API, "rigidBodyModel");
 
 
     // Constructors

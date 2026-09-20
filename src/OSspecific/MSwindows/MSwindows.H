@@ -50,7 +50,7 @@ namespace Foam
 namespace MSwindows
 {
     //- Declare namespace and its debug switch
-    NamespaceName("MSwindows");
+    NamespaceNameApi(OpenFOAM_API, "MSwindows");
 
     //- The last Windows API error from GetLastError
     std::string lastError();

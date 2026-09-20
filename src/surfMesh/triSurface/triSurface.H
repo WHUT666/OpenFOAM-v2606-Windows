@@ -213,7 +213,7 @@ public:
 
 
     //- Runtime type information
-    ClassName("triSurface");
+    ClassNameApi(surfMesh_API, "triSurface");
 
 
     // Static

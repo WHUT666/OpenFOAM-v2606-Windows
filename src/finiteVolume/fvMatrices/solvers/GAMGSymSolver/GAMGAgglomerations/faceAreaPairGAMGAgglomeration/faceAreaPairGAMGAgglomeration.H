@@ -56,7 +56,7 @@ class faceAreaPairGAMGAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("faceAreaPair");
+    TypeNameApi(finiteVolume_API, "faceAreaPair");
 
 
     // Constructors

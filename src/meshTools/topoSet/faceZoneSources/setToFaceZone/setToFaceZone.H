@@ -105,7 +105,7 @@ class setToFaceZone
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of set to use
         word setName_;
@@ -114,7 +114,7 @@ class setToFaceZone
 public:
 
     //- Runtime type information
-    TypeName("setToFaceZone");
+    TypeNameApi(meshTools_API, "setToFaceZone");
 
 
     // Constructors

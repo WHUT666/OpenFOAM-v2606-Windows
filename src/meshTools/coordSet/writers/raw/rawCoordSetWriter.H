@@ -116,7 +116,7 @@ protected:
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("raw");
+    TypeNameNoDebugApi(meshTools_API, "raw");
 
 
     // Constructors

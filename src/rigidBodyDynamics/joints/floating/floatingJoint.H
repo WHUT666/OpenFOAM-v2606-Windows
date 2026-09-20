@@ -76,7 +76,7 @@ class floating
 public:
 
     //- Runtime type information
-    TypeName("floating");
+    TypeNameApi(rigidBodyDynamics_API, "floating");
 
 
     // Constructors

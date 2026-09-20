@@ -71,7 +71,7 @@ Ostream& operator<<(Ostream& os, const token& tok);
                             Class token Declaration
 \*---------------------------------------------------------------------------*/
 
-class token
+class OpenFOAM_API token
 {
 public:
 
@@ -195,11 +195,11 @@ public:
     public:
 
         //- Declare type-name, virtual type (without debug switch)
-        TypeNameNoDebug("compound");
+        TypeNameNoDebugApi(OpenFOAM_API, "compound");
 
         //- Declare run-time constructor selection table
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             compound,
             empty,

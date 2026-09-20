@@ -66,7 +66,7 @@ class SchillerNaumann
 public:
 
     //- Runtime type information
-    TypeName("SchillerNaumann");
+    TypeNameApi(reactingMultiphaseSystem_API, "SchillerNaumann");
 
 
     // Constructors

@@ -91,13 +91,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("LESfilter");
+    TypeNameApi(turbulenceModels_API, "LESfilter");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( turbulenceModels_API,
             autoPtr,
             LESfilter,
             dictionary,

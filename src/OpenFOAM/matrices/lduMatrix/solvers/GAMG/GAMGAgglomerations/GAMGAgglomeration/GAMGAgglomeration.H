@@ -264,14 +264,14 @@ public:
     friend class GAMGProcAgglomeration;
 
     //- Runtime type information
-    TypeName("GAMGAgglomeration");
+    TypeNameApi(OpenFOAM_API, "GAMGAgglomeration");
 
 
     // Declare run-time constructor selection tables
 
         //- Runtime selection table for pure geometric agglomerators
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGAgglomeration,
             lduMesh,
@@ -287,8 +287,8 @@ public:
 
         //- Runtime selection table for matrix or mixed geometric/matrix
         //- agglomerators
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGAgglomeration,
             lduMatrix,
@@ -304,8 +304,8 @@ public:
 
         //- Runtime selection table for matrix or mixed geometric/matrix
         //- agglomerators
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGAgglomeration,
             geometry,

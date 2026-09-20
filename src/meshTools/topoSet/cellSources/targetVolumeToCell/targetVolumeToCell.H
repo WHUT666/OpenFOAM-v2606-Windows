@@ -108,7 +108,7 @@ class targetVolumeToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Target volume
         const scalar vol_;
@@ -138,7 +138,7 @@ class targetVolumeToCell
 public:
 
     //- Runtime type information
-    TypeName("targetVolumeToCell");
+    TypeNameApi(meshTools_API, "targetVolumeToCell");
 
 
     // Constructors

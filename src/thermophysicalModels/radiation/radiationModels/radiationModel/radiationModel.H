@@ -82,13 +82,13 @@ public:
     // Static data
 
         //- Static name external radiative fluxes
-        static const word externalRadHeatFieldName_;
+        static radiationModels_API const word externalRadHeatFieldName_;
 
         //- Static name for primary solar fluxes
-        static const word primaryFluxName_;
+        static radiationModels_API const word primaryFluxName_;
 
         //- Static name for reflected solar fluxes
-        static const word relfectedFluxName_;
+        static radiationModels_API const word relfectedFluxName_;
 
 
 protected:
@@ -155,13 +155,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("radiationModel");
+    TypeNameApi(radiationModels_API, "radiationModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( radiationModels_API,
             autoPtr,
             radiationModel,
             T,
@@ -171,8 +171,8 @@ public:
             (T)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( radiationModels_API,
             autoPtr,
             radiationModel,
             dictionary,

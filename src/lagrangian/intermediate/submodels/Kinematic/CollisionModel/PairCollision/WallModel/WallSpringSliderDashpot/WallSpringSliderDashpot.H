@@ -41,6 +41,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_WallSpringSliderDashpot_defines_typeName in .C files that
+//  define the template statics of WallSpringSliderDashpot (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_WallSpringSliderDashpot_defines_typeName)
+#  define Foam_WallSpringSliderDashpot_typeName_API
+#else
+#  define Foam_WallSpringSliderDashpot_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef WallSpringSliderDashpot_H
 #define WallSpringSliderDashpot_H
 
@@ -135,7 +145,7 @@ class WallSpringSliderDashpot
 public:
 
     //- Runtime type information
-    TypeName("wallSpringSliderDashpot");
+    TypeNameApi(Foam_WallSpringSliderDashpot_typeName_API, "wallSpringSliderDashpot");
 
 
     // Constructors

@@ -64,7 +64,7 @@ class oscillatingDisplacementPointPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("oscillatingDisplacement");
+    TypeNameApi(fvMotionSolvers_API, "oscillatingDisplacement");
 
 
     // Constructors

@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_backwardFaDdtScheme_defines_typeName in .C files that
+//  define the template statics of backwardFaDdtScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_backwardFaDdtScheme_defines_typeName)
+#  define Foam_backwardFaDdtScheme_typeName_API
+#else
+#  define Foam_backwardFaDdtScheme_typeName_API finiteArea_API
+#endif
+
 #ifndef backwardFaDdtScheme_H
 #define backwardFaDdtScheme_H
 
@@ -76,7 +86,7 @@ class backwardFaDdtScheme
 public:
 
     //- Runtime type information
-    TypeName("backward");
+    TypeNameApi(Foam_backwardFaDdtScheme_typeName_API, "backward");
 
 
     // Generated Methods

@@ -157,7 +157,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("binField");
+    TypeNameApi(fieldFunctionObjects_API, "binField");
 
 
     // Constructors

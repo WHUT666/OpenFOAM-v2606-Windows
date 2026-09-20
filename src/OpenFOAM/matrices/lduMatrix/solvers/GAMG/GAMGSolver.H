@@ -329,7 +329,7 @@ public:
     friend class GAMGPreconditioner;
 
     //- Runtime type information
-    TypeName("GAMG");
+    TypeNameApi(OpenFOAM_API, "GAMG");
 
 
     // Constructors

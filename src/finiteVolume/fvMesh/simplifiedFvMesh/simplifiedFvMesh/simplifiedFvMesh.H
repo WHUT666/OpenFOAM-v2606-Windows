@@ -57,12 +57,12 @@ class simplifiedFvMesh
 public:
 
     //- Runtime type information
-    TypeName("simplifiedFvMesh");
+    TypeNameApi(finiteVolume_API, "simplifiedFvMesh");
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( finiteVolume_API,
             autoPtr,
             simplifiedFvMesh,
             time,

@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_GeometricBoundaryField_defines_typeName in .C files that
+//  define the template statics of GeometricBoundaryField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_GeometricBoundaryField_defines_typeName)
+#  define Foam_GeometricBoundaryField_typeName_API
+#else
+#  define Foam_GeometricBoundaryField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_GeometricBoundaryField_H
 #define Foam_GeometricBoundaryField_H
 
@@ -99,7 +109,7 @@ private:
 public:
 
     //- Enable debug
-    static int debug;
+    static Foam_GeometricBoundaryField_typeName_API int debug;
 
 
     // Constructors

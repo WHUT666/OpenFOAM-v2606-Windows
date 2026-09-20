@@ -139,7 +139,7 @@ public:
         };
 
         //- Action type names
-        static const Enum<actionType> actionNames_;
+        static fieldFunctionObjects_API const Enum<actionType> actionNames_;
 
 
 protected:
@@ -210,7 +210,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("exprField");
+    TypeNameApi(fieldFunctionObjects_API, "exprField");
 
 
     // Constructors

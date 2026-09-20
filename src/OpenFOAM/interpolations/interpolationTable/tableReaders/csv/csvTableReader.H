@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_csvTableReader_defines_typeName in .C files that
+//  define the template statics of csvTableReader (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_csvTableReader_defines_typeName)
+#  define Foam_csvTableReader_typeName_API
+#else
+#  define Foam_csvTableReader_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_csvTableReader_H
 #define Foam_csvTableReader_H
 
@@ -87,7 +97,7 @@ class csvTableReader
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("csv");
+    TypeNameApi(Foam_csvTableReader_typeName_API, "csv");
 
 
     // Constructors

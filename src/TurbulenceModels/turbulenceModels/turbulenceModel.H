@@ -95,10 +95,10 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("turbulenceModel");
+    TypeNameApi(turbulenceModels_API, "turbulenceModel");
 
     //- Default name of the turbulence properties dictionary
-    static const word propertiesName;
+    static turbulenceModels_API const word propertiesName;
 
 
     // Constructors

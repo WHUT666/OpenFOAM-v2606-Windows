@@ -165,7 +165,7 @@ class velocityFilmShellFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("velocityFilmShell");
+    TypeNameApi(regionFaModels_API, "velocityFilmShell");
 
 
     // Constructors

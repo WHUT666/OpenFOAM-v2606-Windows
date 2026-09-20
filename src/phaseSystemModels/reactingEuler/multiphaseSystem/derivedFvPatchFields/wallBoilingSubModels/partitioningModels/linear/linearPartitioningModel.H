@@ -117,7 +117,7 @@ class linear
 public:
 
     //- Runtime type information
-    TypeName("linear");
+    TypeNameApi(reactingMultiphaseSystem_API, "linear");
 
 
     // Constructors

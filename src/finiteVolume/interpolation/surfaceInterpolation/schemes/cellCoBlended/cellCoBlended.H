@@ -72,6 +72,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cellCoBlended_defines_typeName in .C files that
+//  define the template statics of cellCoBlended (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cellCoBlended_defines_typeName)
+#  define Foam_cellCoBlended_typeName_API
+#else
+#  define Foam_cellCoBlended_typeName_API finiteVolume_API
+#endif
+
 #ifndef cellCoBlended_H
 #define cellCoBlended_H
 
@@ -126,7 +136,7 @@ class cellCoBlended
 public:
 
     //- Runtime type information
-    TypeName("cellCoBlended");
+    TypeNameApi(Foam_cellCoBlended_typeName_API, "cellCoBlended");
 
 
     // Constructors

@@ -97,7 +97,7 @@ private:
     // Private Data
 
         //- Project mode names
-        static const Enum<projectMode> projectModeNames_;
+        static fvMotionSolvers_API const Enum<projectMode> projectModeNames_;
 
         //- Maximum velocity
         const vector velocity_;
@@ -129,7 +129,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("surfaceDisplacement");
+    TypeNameApi(fvMotionSolvers_API, "surfaceDisplacement");
 
 
     // Constructors

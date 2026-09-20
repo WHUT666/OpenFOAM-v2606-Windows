@@ -75,7 +75,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("deposition");
+    TypeNameApi(reactingMultiphaseSystem_API, "deposition");
 
 
     // Constructors

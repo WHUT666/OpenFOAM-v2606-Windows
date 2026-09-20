@@ -57,7 +57,7 @@ class genericFvPatch
 public:
 
     //- Runtime type information
-    TypeName(genericPolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, genericPolyPatch::typeName_());
 
 
     // Constructors

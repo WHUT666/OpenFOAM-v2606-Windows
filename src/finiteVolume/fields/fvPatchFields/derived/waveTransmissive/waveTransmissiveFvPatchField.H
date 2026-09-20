@@ -78,6 +78,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_waveTransmissiveFvPatchField_defines_typeName in .C files that
+//  define the template statics of waveTransmissiveFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_waveTransmissiveFvPatchField_defines_typeName)
+#  define Foam_waveTransmissiveFvPatchField_typeName_API
+#else
+#  define Foam_waveTransmissiveFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_waveTransmissiveFvPatchField_H
 #define Foam_waveTransmissiveFvPatchField_H
 
@@ -112,7 +122,7 @@ class waveTransmissiveFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("waveTransmissive");
+    TypeNameApi(Foam_waveTransmissiveFvPatchField_typeName_API, "waveTransmissive");
 
 
     // Constructors

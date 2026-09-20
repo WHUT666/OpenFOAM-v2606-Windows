@@ -170,7 +170,7 @@ protected:
 
 public:
 
-    ClassName("volumeExpr::driver");
+    ClassNameApi(finiteVolume_API, "volumeExpr::driver");
 
     // Generated Methods
 

@@ -105,7 +105,7 @@ class sphereToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Centre point of the sphere
         point origin_;
@@ -125,7 +125,7 @@ class sphereToCell
 public:
 
     //- Runtime type information
-    TypeName("sphereToCell");
+    TypeNameApi(meshTools_API, "sphereToCell");
 
 
     // Constructors

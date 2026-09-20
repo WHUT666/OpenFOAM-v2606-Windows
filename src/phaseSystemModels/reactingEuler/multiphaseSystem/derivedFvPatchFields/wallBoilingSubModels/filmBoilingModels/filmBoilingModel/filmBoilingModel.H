@@ -59,12 +59,12 @@ class filmBoilingModel
 public:
 
     //- Runtime type information
-    TypeName("filmBoilingModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "filmBoilingModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         filmBoilingModel,
         dictionary,

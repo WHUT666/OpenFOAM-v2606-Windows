@@ -1,3 +1,5 @@
+#define Foam_ode_defines_typeName
+#define Foam_noChemistrySolver_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

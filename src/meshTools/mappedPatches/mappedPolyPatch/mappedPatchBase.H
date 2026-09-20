@@ -137,9 +137,9 @@ public:
             NORMAL              //!< use face normal + distance
         };
 
-        static const Enum<sampleMode> sampleModeNames_;
+        static meshTools_API const Enum<sampleMode> sampleModeNames_;
 
-        static const Enum<offsetMode> offsetModeNames_;
+        static meshTools_API const Enum<offsetMode> offsetModeNames_;
 
 
     //- Helper class for finding nearest
@@ -435,7 +435,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("mappedPatchBase");
+    TypeNameApi(meshTools_API, "mappedPatchBase");
 
 
     // Constructors

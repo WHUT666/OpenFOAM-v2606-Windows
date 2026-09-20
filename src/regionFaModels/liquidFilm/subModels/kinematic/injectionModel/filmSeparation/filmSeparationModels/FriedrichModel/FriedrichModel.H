@@ -173,7 +173,7 @@ class FriedrichModel
         };
 
         //- Names for separationType
-        static const Enum<separationType> separationTypeNames;
+        static regionFaModels_API const Enum<separationType> separationTypeNames;
 
 
     // Private Data
@@ -250,7 +250,7 @@ class FriedrichModel
 public:
 
     //- Runtime type information
-    TypeName("Friedrich");
+    TypeNameApi(regionFaModels_API, "Friedrich");
 
 
     // Constructors

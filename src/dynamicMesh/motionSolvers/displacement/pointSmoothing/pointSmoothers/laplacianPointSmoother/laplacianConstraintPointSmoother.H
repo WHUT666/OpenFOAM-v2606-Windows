@@ -59,7 +59,7 @@ class laplacianConstraintPointSmoother
 public:
 
     //- Runtime type information
-    TypeName("laplacianConstraint");
+    TypeNameApi(dynamicMesh_API, "laplacianConstraint");
 
 
     // Constructors

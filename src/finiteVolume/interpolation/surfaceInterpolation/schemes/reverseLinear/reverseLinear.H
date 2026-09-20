@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_reverseLinear_defines_typeName in .C files that
+//  define the template statics of reverseLinear (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_reverseLinear_defines_typeName)
+#  define Foam_reverseLinear_typeName_API
+#else
+#  define Foam_reverseLinear_typeName_API finiteVolume_API
+#endif
+
 #ifndef reverseLinear_H
 #define reverseLinear_H
 
@@ -68,7 +78,7 @@ class reverseLinear
 public:
 
     //- Runtime type information
-    TypeName("reverseLinear");
+    TypeNameApi(Foam_reverseLinear_typeName_API, "reverseLinear");
 
 
     // Constructors

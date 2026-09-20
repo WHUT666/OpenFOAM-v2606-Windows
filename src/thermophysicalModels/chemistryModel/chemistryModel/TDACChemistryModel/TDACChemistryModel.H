@@ -63,6 +63,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_TDACChemistryModel_defines_typeName in .C files that
+//  define the template statics of TDACChemistryModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_TDACChemistryModel_defines_typeName)
+#  define Foam_TDACChemistryModel_typeName_API
+#else
+#  define Foam_TDACChemistryModel_typeName_API chemistryModel_API
+#endif
+
 #ifndef TDACChemistryModel_H
 #define TDACChemistryModel_H
 
@@ -149,7 +159,7 @@ class TDACChemistryModel
 public:
 
     //- Runtime type information
-    TypeName("TDAC");
+    TypeNameApi(Foam_TDACChemistryModel_typeName_API, "TDAC");
 
 
     // Constructors

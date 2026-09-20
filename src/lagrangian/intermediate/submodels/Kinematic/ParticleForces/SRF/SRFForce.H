@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SRFForce_defines_typeName in .C files that
+//  define the template statics of SRFForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SRFForce_defines_typeName)
+#  define Foam_SRFForce_typeName_API
+#else
+#  define Foam_SRFForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef SRFForce_H
 #define SRFForce_H
 
@@ -68,7 +78,7 @@ class SRFForce
 public:
 
     //- Runtime type information
-    TypeName("SRF");
+    TypeNameApi(Foam_SRFForce_typeName_API, "SRF");
 
 
     // Constructors

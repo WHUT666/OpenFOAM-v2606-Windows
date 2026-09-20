@@ -70,7 +70,7 @@ class dummyAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("dummy");
+    TypeNameApi(OpenFOAM_API, "dummy");
 
 
     // Constructors

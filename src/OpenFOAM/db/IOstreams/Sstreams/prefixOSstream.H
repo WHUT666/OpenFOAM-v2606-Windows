@@ -52,7 +52,7 @@ namespace Foam
                        Class prefixOSstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class prefixOSstream
+class OpenFOAM_API prefixOSstream
 :
     public OSstream
 {

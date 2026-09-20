@@ -99,7 +99,7 @@ class fixedIncidentRadiationFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("fixedIncidentRadiation");
+    TypeNameApi(thermoTools_API, "fixedIncidentRadiation");
 
 
     // Constructors

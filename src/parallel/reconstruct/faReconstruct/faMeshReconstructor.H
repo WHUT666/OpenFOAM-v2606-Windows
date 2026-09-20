@@ -126,7 +126,7 @@ class faMeshReconstructor
     // Private Static Data
 
         //- Disable use of edgeProcAddressing turning index
-        static bool disallowEdgeEncoding_;
+        static faReconstruct_API bool disallowEdgeEncoding_;
 
 
 
@@ -145,7 +145,7 @@ class faMeshReconstructor
 public:
 
     //- Debug flag
-    static int debug;
+    static faReconstruct_API int debug;
 
 
     // Tuning switches

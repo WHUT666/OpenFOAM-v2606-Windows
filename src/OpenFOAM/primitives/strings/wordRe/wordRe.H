@@ -93,7 +93,7 @@ public:
     // Static Data Members
 
         //- An empty wordRe
-        static const wordRe null;
+        static OpenFOAM_API const wordRe null;
 
 
     // Public Data Types

@@ -85,7 +85,7 @@ public:
     // Static Data Members
 
         //- Debugging
-        static int debug;
+        static OpenFOAM_API int debug;
 
 
     // Generated Methods

@@ -94,7 +94,7 @@ class fvExprDriver
         static const fvMesh *defaultMeshPtr_;
 
         //- Cache cellSets, faceSets instead of reading from disc each time
-        static bool cacheSets_;
+        static finiteVolume_API bool cacheSets_;
 
 
     // Private Data
@@ -328,13 +328,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("fvExprDriver");
+    TypeNameApi(finiteVolume_API, "fvExprDriver");
 
 
     // Run-time selection
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( finiteVolume_API,
             autoPtr,
             fvExprDriver,
             dictionary,
@@ -345,8 +345,8 @@ public:
             (dict,mesh)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( finiteVolume_API,
             autoPtr,
             fvExprDriver,
             idName,

@@ -87,7 +87,7 @@ class PBiCGStab
 public:
 
     //- Runtime type information
-    TypeName("PBiCGStab");
+    TypeNameApi(OpenFOAM_API, "PBiCGStab");
 
 
     // Constructors

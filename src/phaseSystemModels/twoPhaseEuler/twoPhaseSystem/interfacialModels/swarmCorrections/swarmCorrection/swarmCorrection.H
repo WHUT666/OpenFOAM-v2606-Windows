@@ -66,12 +66,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("swarmCorrection");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "swarmCorrection");
 
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( compressibleTwoPhaseSystem_API,
         autoPtr,
         swarmCorrection,
         dictionary,

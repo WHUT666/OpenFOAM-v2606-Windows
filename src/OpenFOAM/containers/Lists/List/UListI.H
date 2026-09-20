@@ -98,12 +98,13 @@ inline void Foam::UList<T>::fill_uniform(Foam::zero)
             {
                 *first = Foam::zero{};
             }
-            else
+            else if constexpr (pTraits_has_zero<T>::value)
             {
                 // Non-assignable from Foam::zero (eg weightedPosition):
                 // fall back to the canonical pTraits<T>::zero value
                 *first = Foam::pTraits<T>::zero;
             }
+            // else: no zero semantic for T (eg token) - keep default value
         }
     }
 }

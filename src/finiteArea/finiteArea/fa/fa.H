@@ -42,7 +42,7 @@ namespace Foam
 {
     namespace fa
     {
-        NamespaceName("fa");
+        NamespaceNameApi(finiteArea_API, "fa");
     }
 }
 

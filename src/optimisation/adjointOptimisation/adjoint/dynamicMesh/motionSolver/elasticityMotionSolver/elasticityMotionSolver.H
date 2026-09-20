@@ -122,7 +122,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("elasticityMotionSolver");
+    TypeNameApi(adjointOptimisation_API, "elasticityMotionSolver");
 
 
     // Constructors

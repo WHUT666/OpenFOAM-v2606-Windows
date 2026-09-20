@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cyclicSlipPointPatchField_defines_typeName in .C files that
+//  define the template statics of cyclicSlipPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cyclicSlipPointPatchField_defines_typeName)
+#  define Foam_cyclicSlipPointPatchField_typeName_API
+#else
+#  define Foam_cyclicSlipPointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_cyclicSlipPointPatchField_H
 #define Foam_cyclicSlipPointPatchField_H
 
@@ -60,7 +70,7 @@ class cyclicSlipPointPatchField
 public:
 
     //- Runtime type information
-    TypeName(cyclicSlipPointPatch::typeName_());
+    TypeNameApi(Foam_cyclicSlipPointPatchField_typeName_API, cyclicSlipPointPatch::typeName_());
 
 
     // Constructors

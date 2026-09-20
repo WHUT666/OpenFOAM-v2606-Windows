@@ -70,7 +70,7 @@ public:
         omMax           //!< Maximum
     };
 
-    static const Enum<operatingMode> operatingModeNames;
+    static utilityFunctionObjects_API const Enum<operatingMode> operatingModeNames;
 
 
 protected:
@@ -108,7 +108,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("equationInitialResidual");
+    TypeNameApi(utilityFunctionObjects_API, "equationInitialResidual");
 
     //- Constructor
     equationInitialResidualCondition

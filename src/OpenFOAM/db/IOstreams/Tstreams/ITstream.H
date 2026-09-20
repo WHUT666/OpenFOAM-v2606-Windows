@@ -54,7 +54,7 @@ namespace Foam
                            Class ITstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class ITstream
+class OpenFOAM_API ITstream
 :
     public Istream,
     public tokenList

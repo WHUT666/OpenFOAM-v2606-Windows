@@ -63,7 +63,7 @@ class adjointOutletPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("adjointOutletPressure");
+    TypeNameApi(adjointOptimisation_API, "adjointOutletPressure");
 
 
     // Constructors

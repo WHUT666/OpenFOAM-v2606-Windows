@@ -169,7 +169,7 @@ class atmCoriolisUSource
 public:
 
     //- Runtime type information
-    TypeName("atmCoriolisUSource");
+    TypeNameApi(atmosphericModels_API, "atmCoriolisUSource");
 
 
     // Constructors

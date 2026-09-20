@@ -123,7 +123,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("pimpleControl");
+        TypeNameApi(finiteVolume_API, "pimpleControl");
 
 
     // Constructors

@@ -116,7 +116,7 @@ public:
     // Public Data
 
         //- BaiGosman type keyword used in patch entries
-        static const word beiGosmanTypeName;
+        static lagrangianIntermediate_API const word beiGosmanTypeName;
 
 
     // Constructor

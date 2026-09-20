@@ -61,7 +61,7 @@ class RanzMarshall
 public:
 
     //- Runtime type information
-    TypeName("RanzMarshall");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "RanzMarshall");
 
 
     // Constructors

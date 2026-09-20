@@ -160,7 +160,7 @@ class surfaceAlignedSBRStressFvMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("surfaceAlignedSBRStress");
+    TypeNameApi(fvMotionSolvers_API, "surfaceAlignedSBRStress");
 
 
     // Constructors

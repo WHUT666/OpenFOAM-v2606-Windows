@@ -106,7 +106,7 @@ class circleSet
 public:
 
     //- Runtime type information
-    TypeName("circle");
+    TypeNameApi(sampling_API, "circle");
 
 
     // Constructors

@@ -129,7 +129,7 @@ class faceZoneReferenceTemperature
 public:
 
     //- Runtime type information
-    TypeName("faceZoneReferenceTemperature");
+    TypeNameApi(fieldFunctionObjects_API, "faceZoneReferenceTemperature");
 
 
     // Constructors

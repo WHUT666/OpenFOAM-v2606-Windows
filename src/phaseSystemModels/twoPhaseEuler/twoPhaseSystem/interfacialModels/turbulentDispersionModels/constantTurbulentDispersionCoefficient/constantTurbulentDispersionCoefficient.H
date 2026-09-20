@@ -66,7 +66,7 @@ class constantTurbulentDispersionCoefficient
 public:
 
     //- Runtime type information
-    TypeName("constantCoefficient");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "constantCoefficient");
 
 
     // Constructors

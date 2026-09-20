@@ -78,7 +78,7 @@ class Tenneti
 public:
 
     //- Runtime type information
-    TypeName("Tenneti");
+    TypeNameApi(reactingMultiphaseSystem_API, "Tenneti");
 
 
     // Constructors

@@ -70,7 +70,7 @@ class centredCPCCellToCellStencilObject
 
 public:
 
-    TypeName("centredCPCCellToCellStencil");
+    TypeNameApi(finiteVolume_API, "centredCPCCellToCellStencil");
 
 
     // Constructors

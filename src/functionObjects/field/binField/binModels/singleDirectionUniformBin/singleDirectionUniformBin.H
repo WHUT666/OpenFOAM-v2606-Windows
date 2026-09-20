@@ -131,7 +131,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("singleDirectionUniformBin");
+    TypeNameApi(fieldFunctionObjects_API, "singleDirectionUniformBin");
 
 
     // Constructors

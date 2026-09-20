@@ -81,7 +81,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("basicSolidChemistryModel");
+    TypeNameApi(solidChemistryModel_API, "basicSolidChemistryModel");
 
 
     //- Thermo type
@@ -89,8 +89,8 @@ public:
 
 
     //- Declare run-time constructor selection tables
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( solidChemistryModel_API,
         autoPtr,
         basicSolidChemistryModel,
         thermo,

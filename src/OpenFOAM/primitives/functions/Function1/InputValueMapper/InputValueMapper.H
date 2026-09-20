@@ -104,6 +104,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_InputValueMapper_defines_typeName in .C files that
+//  define the template statics of InputValueMapper (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_InputValueMapper_defines_typeName)
+#  define Foam_InputValueMapper_typeName_API
+#else
+#  define Foam_InputValueMapper_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_InputValueMapper_H
 #define Foam_Function1Types_InputValueMapper_H
 
@@ -242,6 +252,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::InputValueMapper<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::InputValueMapper<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::InputValueMapper<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::InputValueMapper<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::InputValueMapper<Foam::tensor>);
 
 #endif
 

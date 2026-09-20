@@ -101,6 +101,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_diffusionGasEvaporation_defines_typeName in .C files that
+//  define the template statics of diffusionGasEvaporation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_diffusionGasEvaporation_defines_typeName)
+#  define Foam_diffusionGasEvaporation_typeName_API
+#else
+#  define Foam_diffusionGasEvaporation_typeName_API incompressibleMultiphaseSystems_API
+#endif
+
 #ifndef Foam_meltingEvaporationModels_diffusionGasEvaporation_H
 #define Foam_meltingEvaporationModels_diffusionGasEvaporation_H
 
@@ -157,7 +167,7 @@ class diffusionGasEvaporation
 public:
 
     //- Runtime type information
-    TypeName("diffusionGasEvaporation");
+    TypeNameApi(Foam_diffusionGasEvaporation_typeName_API, "diffusionGasEvaporation");
 
 
     // Constructors

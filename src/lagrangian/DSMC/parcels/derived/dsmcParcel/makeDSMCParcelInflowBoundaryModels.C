@@ -1,3 +1,7 @@
+#define Foam_DispersionRASModel_defines_typeName
+#define Foam_FreeStream_defines_typeName
+#define Foam_InflowBoundaryModel_defines_typeName
+#define Foam_NoInflow_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

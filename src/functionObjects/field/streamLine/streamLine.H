@@ -170,7 +170,7 @@ class streamLine
 public:
 
     //- Runtime type information
-    TypeName("streamLine");
+    TypeNameApi(fieldFunctionObjects_API, "streamLine");
 
 
     // Constructors

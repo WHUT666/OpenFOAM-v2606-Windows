@@ -62,7 +62,7 @@ class laminar
 public:
 
     //- Runtime type information
-    TypeName("laminar");
+    TypeNameApi(adjointOptimisation_API, "laminar");
 
 
     // Constructors

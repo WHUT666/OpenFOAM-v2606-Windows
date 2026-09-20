@@ -79,10 +79,10 @@ public:
 
     // Static Data
 
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
-        static const septernion zero;
-        static const septernion I;
+        static OpenFOAM_API const septernion zero;
+        static OpenFOAM_API const septernion I;
 
 
     // Generated Methods

@@ -96,7 +96,7 @@ class HarrisCrighton
 public:
 
     //- Runtime type information
-    TypeName("HarrisCrighton");
+    TypeNameApi(lagrangianIntermediate_API, "HarrisCrighton");
 
 
     //- Constructors

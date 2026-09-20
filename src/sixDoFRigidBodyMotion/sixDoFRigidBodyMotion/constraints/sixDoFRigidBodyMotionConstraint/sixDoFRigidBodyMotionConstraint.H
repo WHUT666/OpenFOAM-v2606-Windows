@@ -86,13 +86,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sixDoFRigidBodyMotionConstraint");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "sixDoFRigidBodyMotionConstraint");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( sixDoFRigidBodyMotion_API,
             autoPtr,
             sixDoFRigidBodyMotionConstraint,
             dictionary,

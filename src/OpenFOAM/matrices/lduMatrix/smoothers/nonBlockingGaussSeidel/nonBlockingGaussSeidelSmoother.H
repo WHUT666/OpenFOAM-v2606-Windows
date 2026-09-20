@@ -72,7 +72,7 @@ class nonBlockingGaussSeidelSmoother
 public:
 
     //- Runtime type information
-    TypeName("nonBlockingGaussSeidel");
+    TypeNameApi(OpenFOAM_API, "nonBlockingGaussSeidel");
 
 
     // Constructors

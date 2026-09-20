@@ -210,7 +210,7 @@ protected:
         };
 
         //- Names for blenderType
-        static const Enum<blenderType> blenderTypeNames;
+        static turbulenceModels_API const Enum<blenderType> blenderTypeNames;
 
 
     // Protected Data

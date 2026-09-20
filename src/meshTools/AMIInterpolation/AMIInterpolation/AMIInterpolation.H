@@ -79,17 +79,17 @@ public:
     // Public Data Types
 
         //- Flag to store face-to-face intersection triangles; default = false
-        static bool cacheIntersections_;
+        static meshTools_API bool cacheIntersections_;
 
         //- Control use of local communicator for AMI communication
         //  localComm : 0 : all processors (backwards compatible)
         //  localComm : 1 : only processors with patch faces
         //  localComm : 2 : like 1 but always include master (for messages)
-        static int useLocalComm_;
+        static meshTools_API int useLocalComm_;
 
         //- Tolerance used when caching the AMI to identify e.g. if the
         //- current rotation angle has already been captured
-        static scalar cacheThetaTolerance_;
+        static meshTools_API scalar cacheThetaTolerance_;
 
 
 protected:
@@ -251,13 +251,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("AMIInterpolation");
+    TypeNameApi(meshTools_API, "AMIInterpolation");
 
     // Selection tables
 
         //- Selection table for dictionary construction
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             AMIInterpolation,
             dict,
@@ -272,8 +272,8 @@ public:
         );
 
         //- Selection table for component-wise construction
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( meshTools_API,
             autoPtr,
             AMIInterpolation,
             component,

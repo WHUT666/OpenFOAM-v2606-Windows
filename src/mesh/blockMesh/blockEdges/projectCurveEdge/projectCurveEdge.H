@@ -80,7 +80,7 @@ class projectCurveEdge
 public:
 
     //- Runtime type information
-    TypeName("projectCurve");
+    TypeNameApi(blockMesh_API, "projectCurve");
 
 
     // Constructors

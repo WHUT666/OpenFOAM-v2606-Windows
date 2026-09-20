@@ -88,7 +88,7 @@ protected:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("extendedCellToFaceStencil");
+    ClassNameApi(finiteVolume_API, "extendedCellToFaceStencil");
 
 
     // Constructors

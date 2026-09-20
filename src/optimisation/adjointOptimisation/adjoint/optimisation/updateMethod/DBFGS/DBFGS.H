@@ -89,7 +89,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("DBFGS");
+    TypeNameApi(adjointOptimisation_API, "DBFGS");
 
 
     // Constructors

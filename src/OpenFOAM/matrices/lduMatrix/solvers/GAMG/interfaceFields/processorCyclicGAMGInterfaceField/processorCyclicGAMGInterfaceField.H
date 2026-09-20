@@ -67,7 +67,7 @@ class processorCyclicGAMGInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("processorCyclic");
+    TypeNameApi(OpenFOAM_API, "processorCyclic");
 
 
     // Constructors

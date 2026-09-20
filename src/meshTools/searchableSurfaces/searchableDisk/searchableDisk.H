@@ -110,7 +110,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("searchableDisk");
+    TypeNameApi(meshTools_API, "searchableDisk");
 
 
     // Constructors

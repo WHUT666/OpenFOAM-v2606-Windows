@@ -99,7 +99,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("meshPoint");
+    TypeNameApi(OpenFOAM_API, "meshPoint");
 
 
     // Constructors

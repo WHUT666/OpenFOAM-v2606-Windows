@@ -85,13 +85,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("GAMGInterface");
+    TypeNameApi(OpenFOAM_API, "GAMGInterface");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGInterface,
             lduInterface,
@@ -115,8 +115,8 @@ public:
             )
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             GAMGInterface,
             Istream,

@@ -76,7 +76,7 @@ class Beetstra
 public:
 
     //- Runtime type information
-    TypeName("Beetstra");
+    TypeNameApi(reactingMultiphaseSystem_API, "Beetstra");
 
 
     // Constructors

@@ -141,7 +141,7 @@ class prghPermeableAlphaTotalPressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("prghPermeableAlphaTotalPressure");
+    TypeNameApi(finiteVolume_API, "prghPermeableAlphaTotalPressure");
 
 
     // Constructors

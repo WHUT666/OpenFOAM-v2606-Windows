@@ -97,7 +97,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("processorColour");
+    TypeNameApi(meshTools_API, "processorColour");
 
 
     // Constructors

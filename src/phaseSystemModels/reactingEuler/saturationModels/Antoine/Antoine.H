@@ -78,7 +78,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Antoine");
+    TypeNameApi(saturationModel_API, "Antoine");
 
     // Constructors
 

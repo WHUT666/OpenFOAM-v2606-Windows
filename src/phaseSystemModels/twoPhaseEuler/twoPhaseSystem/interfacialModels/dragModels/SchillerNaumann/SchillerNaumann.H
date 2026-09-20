@@ -66,7 +66,7 @@ class SchillerNaumann
 public:
 
     //- Runtime type information
-    TypeName("SchillerNaumann");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "SchillerNaumann");
 
 
     // Constructors

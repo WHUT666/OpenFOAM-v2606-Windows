@@ -65,7 +65,7 @@ class wallLayerCells
 public:
 
     //- Runtime type information
-    ClassName("wallLayerCells");
+    ClassNameApi(dynamicMesh_API, "wallLayerCells");
 
 
     // Constructors

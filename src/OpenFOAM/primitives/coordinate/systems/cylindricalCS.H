@@ -103,13 +103,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("cylindrical");
+    TypeNameNoDebugApi(OpenFOAM_API, "cylindrical");
 
 
     // Static Members
 
         //- Global (identity) cylindrical coordinate system
-        static const cylindrical null;
+        static OpenFOAM_API const cylindrical null;
 
 
     // Constructors

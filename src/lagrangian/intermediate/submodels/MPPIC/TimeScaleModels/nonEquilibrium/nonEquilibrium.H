@@ -71,7 +71,7 @@ class nonEquilibrium
 public:
 
     //- Runtime type information
-    TypeName("nonEquilibrium");
+    TypeNameApi(lagrangianIntermediate_API, "nonEquilibrium");
 
 
     //- Constructors

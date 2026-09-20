@@ -43,6 +43,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SHF_defines_typeName in .C files that
+//  define the template statics of SHF (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SHF_defines_typeName)
+#  define Foam_SHF_typeName_API
+#else
+#  define Foam_SHF_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef SHF_H
 #define SHF_H
 
@@ -113,7 +123,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("SHF");
+    TypeNameApi(Foam_SHF_typeName_API, "SHF");
 
 
     // Constructors

@@ -89,7 +89,7 @@ class displacementSBRStressFvMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("displacementSBRStress");
+    TypeNameApi(fvMotionSolvers_API, "displacementSBRStress");
 
 
     // Constructors

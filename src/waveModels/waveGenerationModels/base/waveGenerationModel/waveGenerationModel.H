@@ -65,7 +65,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("waveGenerationModel");
+    TypeNameApi(waveModels_API, "waveGenerationModel");
 
     //- Constructor
     waveGenerationModel

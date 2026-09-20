@@ -81,6 +81,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_zoneBlended_defines_typeName in .C files that
+//  define the template statics of zoneBlended (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_zoneBlended_defines_typeName)
+#  define Foam_zoneBlended_typeName_API
+#else
+#  define Foam_zoneBlended_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_zoneBlended_H
 #define Foam_zoneBlended_H
 
@@ -165,7 +175,7 @@ class zoneBlended
 public:
 
     //- Runtime type information
-    TypeName("zoneBlended");
+    TypeNameApi(Foam_zoneBlended_typeName_API, "zoneBlended");
 
 
     // Constructors

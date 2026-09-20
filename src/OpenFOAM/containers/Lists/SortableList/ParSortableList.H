@@ -61,7 +61,7 @@ namespace Foam
                         Class ParSortableListName Declaration
 \*---------------------------------------------------------------------------*/
 
-TemplateName(ParSortableList);
+TemplateNameApi(OpenFOAM_API, ParSortableList);
 
 
 /*---------------------------------------------------------------------------*\

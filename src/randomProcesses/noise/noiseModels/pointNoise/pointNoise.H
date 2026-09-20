@@ -124,7 +124,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("pointNoise");
+    TypeNameApi(randomProcesses_API, "pointNoise");
 
     //- Constructor
     pointNoise

@@ -126,7 +126,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("probeModel");
+    TypeNameApi(sampling_API, "probeModel");
 
 
     // Generated Methods

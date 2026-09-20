@@ -139,7 +139,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("marchingCells");
+    TypeNameApi(adjointOptimisation_API, "marchingCells");
 
 
     // Constructors

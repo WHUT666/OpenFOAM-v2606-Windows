@@ -53,7 +53,7 @@ class DSMCBaseCloud
 public:
 
     //- Runtime type information
-    TypeName("DSMCBaseCloud");
+    TypeNameApi(DSMC_API, "DSMCBaseCloud");
 
 
     // Constructors

@@ -62,6 +62,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FaceInteraction_defines_typeName in .C files that
+//  define the template statics of FaceInteraction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FaceInteraction_defines_typeName)
+#  define Foam_FaceInteraction_typeName_API
+#else
+#  define Foam_FaceInteraction_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef FaceInteraction_H
 #define FaceInteraction_H
 
@@ -100,7 +110,7 @@ public:
         };
 
         //- Names for the interaction types
-        static const Enum<interactionType> interactionTypeNames_;
+        static Foam_FaceInteraction_typeName_API const Enum<interactionType> interactionTypeNames_;
 
 
 private:
@@ -149,7 +159,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("faceInteraction");
+    TypeNameApi(Foam_FaceInteraction_typeName_API, "faceInteraction");
 
 
     // Constructors

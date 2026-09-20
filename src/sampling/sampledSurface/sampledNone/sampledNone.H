@@ -68,7 +68,7 @@ class sampledNone
 public:
 
     //- Runtime type information
-    TypeName("sampledNone");
+    TypeNameApi(sampling_API, "sampledNone");
 
 
     // Constructors

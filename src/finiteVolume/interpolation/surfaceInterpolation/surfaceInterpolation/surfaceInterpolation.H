@@ -97,7 +97,7 @@ protected:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("surfaceInterpolation");
+    ClassNameApi(finiteVolume_API, "surfaceInterpolation");
 
 
     // Constructors

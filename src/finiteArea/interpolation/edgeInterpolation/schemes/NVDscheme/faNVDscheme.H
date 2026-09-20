@@ -46,6 +46,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_faNVDscheme_defines_typeName in .C files that
+//  define the template statics of faNVDscheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_faNVDscheme_defines_typeName)
+#  define Foam_faNVDscheme_typeName_API
+#else
+#  define Foam_faNVDscheme_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_faNVDscheme_H
 #define Foam_faNVDscheme_H
 
@@ -80,7 +90,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("faNVDscheme");
+    TypeNameApi(Foam_faNVDscheme_typeName_API, "faNVDscheme");
 
 
     // Generated Methods

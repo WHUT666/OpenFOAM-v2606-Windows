@@ -83,7 +83,7 @@ class leastSquaresFaVectors
 public:
 
     // Declare name of the class and its debug switch
-    TypeName("leastSquaresFaVectors");
+    TypeNameApi(finiteArea_API, "leastSquaresFaVectors");
 
 
     // Constructors

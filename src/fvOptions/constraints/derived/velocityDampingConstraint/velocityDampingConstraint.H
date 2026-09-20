@@ -148,7 +148,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("velocityDampingConstraint");
+    TypeNameApi(fvOptions_API, "velocityDampingConstraint");
 
 
     // Constructors

@@ -105,6 +105,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MapFieldConstraint_defines_typeName in .C files that
+//  define the template statics of MapFieldConstraint (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MapFieldConstraint_defines_typeName)
+#  define Foam_MapFieldConstraint_typeName_API
+#else
+#  define Foam_MapFieldConstraint_typeName_API fvOptions_API
+#endif
+
 #ifndef Foam_fv_MapFieldConstraint_H
 #define Foam_fv_MapFieldConstraint_H
 
@@ -262,7 +272,7 @@ class MapFieldConstraint
 public:
 
     //- Runtime type information
-    TypeName("MapFieldConstraint");
+    TypeNameApi(Foam_MapFieldConstraint_typeName_API, "MapFieldConstraint");
 
 
     // Constructors

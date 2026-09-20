@@ -76,7 +76,7 @@ class segregated
 public:
 
     //- Runtime type information
-    TypeName("segregated");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "segregated");
 
 
     // Constructors

@@ -63,7 +63,7 @@ class constant
 public:
 
     //- Runtime type information
-    TypeName("constant");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "constant");
 
 
     // Constructors

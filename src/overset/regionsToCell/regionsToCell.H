@@ -74,7 +74,7 @@ class regionsToCell
     // Private data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static overset_API addToUsageTable usage_;
 
         //- Name of cellSet to keep to
         const word setName_;
@@ -120,7 +120,7 @@ class regionsToCell
 public:
 
     //- Runtime type information
-    TypeName("regionsToCell");
+    TypeNameApi(overset_API, "regionsToCell");
 
     // Constructors
 

@@ -129,8 +129,8 @@ protected:
 
         //- Solution parameters
 
-            static scalar tolerance_;
-            static label maxIters_;
+            static atmosphericModels_API scalar tolerance_;
+            static atmosphericModels_API label maxIters_;
 
 
     // Protected Member Functions
@@ -145,7 +145,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("atmAlphatkWallFunction");
+    TypeNameApi(atmosphericModels_API, "atmAlphatkWallFunction");
 
 
     // Constructors

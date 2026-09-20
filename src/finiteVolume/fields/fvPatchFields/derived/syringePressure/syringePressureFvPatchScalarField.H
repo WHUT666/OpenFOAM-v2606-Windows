@@ -153,7 +153,7 @@ class syringePressureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("syringePressure");
+    TypeNameApi(finiteVolume_API, "syringePressure");
 
 
     // Constructors

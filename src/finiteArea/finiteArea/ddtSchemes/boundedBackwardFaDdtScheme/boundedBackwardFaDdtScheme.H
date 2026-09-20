@@ -84,7 +84,7 @@ class boundedBackwardFaDdtScheme
 public:
 
     //- Runtime type information
-    TypeName("boundedBackward");
+    TypeNameApi(finiteArea_API, "boundedBackward");
 
 
     // Generated Methods

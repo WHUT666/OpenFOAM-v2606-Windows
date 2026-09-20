@@ -70,13 +70,13 @@ class force
 public:
 
     //- Runtime type information
-    TypeName("force");
+    TypeNameApi(regionFaModels_API, "force");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( regionFaModels_API,
              autoPtr,
              force,
              dictionary,

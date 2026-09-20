@@ -119,7 +119,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nutkRoughWallFunction");
+    TypeNameApi(turbulenceModels_API, "nutkRoughWallFunction");
 
 
     // Constructors

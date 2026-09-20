@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_leastSquaresGrad_defines_typeName in .C files that
+//  define the template statics of leastSquaresGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_leastSquaresGrad_defines_typeName)
+#  define Foam_leastSquaresGrad_typeName_API
+#else
+#  define Foam_leastSquaresGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef leastSquaresGrad_H
 #define leastSquaresGrad_H
 
@@ -74,7 +84,7 @@ class leastSquaresGrad
 public:
 
     //- Runtime type information
-    TypeName("leastSquares");
+    TypeNameApi(Foam_leastSquaresGrad_typeName_API, "leastSquares");
 
 
     // Constructors

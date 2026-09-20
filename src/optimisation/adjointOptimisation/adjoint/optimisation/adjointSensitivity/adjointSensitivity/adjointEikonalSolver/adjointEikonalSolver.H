@@ -202,7 +202,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("adjointEikonalSolver");
+    TypeNameApi(adjointOptimisation_API, "adjointEikonalSolver");
 
 
     // Constructors

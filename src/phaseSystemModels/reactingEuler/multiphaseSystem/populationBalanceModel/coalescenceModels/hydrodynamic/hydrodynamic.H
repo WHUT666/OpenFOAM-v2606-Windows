@@ -60,7 +60,7 @@ class hydrodynamic
 public:
 
     //- Runtime type information
-    TypeName("hydrodynamic");
+    TypeNameApi(reactingMultiphaseSystem_API, "hydrodynamic");
 
     // Constructor
 

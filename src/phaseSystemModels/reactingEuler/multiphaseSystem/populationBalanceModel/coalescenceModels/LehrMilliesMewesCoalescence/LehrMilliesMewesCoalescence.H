@@ -117,7 +117,7 @@ class LehrMilliesMewesCoalescence
 public:
 
     //- Runtime type information
-    TypeName("LehrMilliesMewes");
+    TypeNameApi(reactingMultiphaseSystem_API, "LehrMilliesMewes");
 
     // Constructor
 

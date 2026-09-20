@@ -45,6 +45,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Sample_defines_typeName in .C files that
+//  define the template statics of Sample (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Sample_defines_typeName)
+#  define Foam_Sample_typeName_API
+#else
+#  define Foam_Sample_typeName_API sampling_API
+#endif
+
 #ifndef Foam_Function1Types_Sample_H
 #define Foam_Function1Types_Sample_H
 
@@ -97,7 +107,7 @@ class Sample
 public:
 
     //- Runtime type information
-    TypeName("sample");
+    TypeNameApi(Foam_Sample_typeName_API, "sample");
 
 
     // Constructors

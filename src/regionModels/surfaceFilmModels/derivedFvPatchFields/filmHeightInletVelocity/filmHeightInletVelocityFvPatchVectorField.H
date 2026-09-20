@@ -114,7 +114,7 @@ class filmHeightInletVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("filmHeightInletVelocity");
+    TypeNameApi(surfaceFilmModels_API, "filmHeightInletVelocity");
 
 
     // Constructors

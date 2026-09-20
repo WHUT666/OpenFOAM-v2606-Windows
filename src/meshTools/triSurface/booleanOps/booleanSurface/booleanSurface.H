@@ -158,7 +158,7 @@ class booleanSurface
 
 public:
 
-    ClassName("booleanSurface");
+    ClassNameApi(meshTools_API, "booleanSurface");
 
 
     // Data types
@@ -175,7 +175,7 @@ public:
 
     // Static data
 
-        static const Enum<booleanOpType> booleanOpTypeNames;
+        static meshTools_API const Enum<booleanOpType> booleanOpTypeNames;
 
 
 

@@ -55,7 +55,7 @@ class cyclicAMILduInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("cyclicAMILduInterfaceField");
+    TypeNameApi(meshTools_API, "cyclicAMILduInterfaceField");
 
 
     // Constructors

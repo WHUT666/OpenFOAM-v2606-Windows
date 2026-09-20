@@ -106,7 +106,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("exprResultDelayed");
+    TypeNameNoDebugApi(OpenFOAM_API, "exprResultDelayed");
 
 
     // Constructors

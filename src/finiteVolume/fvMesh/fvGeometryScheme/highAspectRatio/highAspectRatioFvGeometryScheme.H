@@ -102,7 +102,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("highAspectRatio");
+    TypeNameApi(finiteVolume_API, "highAspectRatio");
 
 
     // Constructors

@@ -67,7 +67,7 @@ namespace PstreamUtils {}
                           Class UPstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class UPstream
+class OpenFOAM_API UPstream
 {
 public:
 

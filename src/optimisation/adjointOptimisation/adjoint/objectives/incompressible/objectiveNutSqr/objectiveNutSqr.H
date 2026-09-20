@@ -94,7 +94,7 @@ class objectiveNutSqr
 public:
 
     //- Runtime type information
-    TypeName("nutSqr");
+    TypeNameApi(adjointOptimisation_API, "nutSqr");
 
 
     // Constructors

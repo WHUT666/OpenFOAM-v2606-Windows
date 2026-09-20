@@ -82,7 +82,7 @@ class specie
 public:
 
     //- Declare type-name (with debug switch)
-    ClassName("specie");
+    ClassNameApi(specie_API, "specie");
 
 
     // Generated Methods

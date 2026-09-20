@@ -92,7 +92,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("solidification");
+    TypeNameApi(surfaceFilmModels_API, "solidification");
 
 
     // Constructors

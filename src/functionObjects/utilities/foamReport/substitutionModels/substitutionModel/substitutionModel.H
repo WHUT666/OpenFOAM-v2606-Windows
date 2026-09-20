@@ -61,13 +61,13 @@ public:
     // Static Data Members
 
         //- Keyword starting characters
-        static const word KEY_BEGIN;
+        static utilityFunctionObjects_API const word KEY_BEGIN;
 
         //- Keyword ending characters
-        static const word KEY_END;
+        static utilityFunctionObjects_API const word KEY_END;
 
         //- Built-in substitutions
-        static HashTable<string> builtin_;
+        static utilityFunctionObjects_API HashTable<string> builtin_;
 
 
     // Static Member Functions
@@ -134,12 +134,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("substitutionModel");
+    TypeNameApi(utilityFunctionObjects_API, "substitutionModel");
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( utilityFunctionObjects_API,
             autoPtr,
             substitutionModel,
             dictionary,

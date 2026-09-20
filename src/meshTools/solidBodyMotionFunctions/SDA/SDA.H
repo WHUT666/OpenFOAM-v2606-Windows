@@ -109,7 +109,7 @@ class SDA
 public:
 
     //- Runtime type information
-    TypeName("SDA");
+    TypeNameApi(meshTools_API, "SDA");
 
 
     // Constructors

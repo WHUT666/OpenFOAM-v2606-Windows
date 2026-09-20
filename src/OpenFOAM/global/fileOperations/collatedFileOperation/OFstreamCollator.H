@@ -184,7 +184,7 @@ class OFstreamCollator
 public:
 
     // Declare name of the class and its debug switch
-    TypeName("OFstreamCollator");
+    TypeNameApi(OpenFOAM_API, "OFstreamCollator");
 
 
     // Constructors

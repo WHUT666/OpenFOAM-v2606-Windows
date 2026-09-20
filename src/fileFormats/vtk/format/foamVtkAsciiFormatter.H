@@ -58,8 +58,8 @@ class asciiFormatter
 {
     // Private Data Members
 
-        static const char* name_;
-        static const outputOptions opts_;
+        static fileFormats_API const char* name_;
+        static fileFormats_API const outputOptions opts_;
 
         //- Number of items per line
         static constexpr unsigned short itemsPerLine_ = 9;

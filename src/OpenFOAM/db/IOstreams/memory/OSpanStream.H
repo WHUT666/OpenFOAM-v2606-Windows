@@ -104,7 +104,7 @@ typedef OSpanStream UOListStream;
 
 //- Similar to std::ostringstream, but with an externally managed output buffer
 //- which makes it most similar to std::ospanstream (C++23)
-class ospanstream
+class OpenFOAM_API ospanstream
 :
     virtual public std::ios,
     protected Foam::memorybuf::out_base,
@@ -258,7 +258,7 @@ public:
                          Class OSpanStream Declaration
 \*---------------------------------------------------------------------------*/
 
-class OSpanStream
+class OpenFOAM_API OSpanStream
 :
     public Foam::Detail::StreamAllocator<Foam::ospanstream>,
     public Foam::OSstream

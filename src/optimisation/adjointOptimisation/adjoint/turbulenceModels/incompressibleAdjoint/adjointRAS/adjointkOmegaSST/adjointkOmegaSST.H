@@ -522,7 +522,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("adjointkOmegaSST");
+    TypeNameApi(adjointOptimisation_API, "adjointkOmegaSST");
 
 
     // Constructors

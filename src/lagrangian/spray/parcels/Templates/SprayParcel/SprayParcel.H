@@ -32,6 +32,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SprayParcel_defines_typeName in .C files that
+//  define the template statics of SprayParcel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SprayParcel_defines_typeName)
+#  define Foam_SprayParcel_typeName_API
+#else
+#  define Foam_SprayParcel_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef SprayParcel_H
 #define SprayParcel_H
 
@@ -180,10 +190,10 @@ public:
     // Static data members
 
         //- Size in bytes of the fields
-        static const std::size_t sizeofFields;
+        static Foam_SprayParcel_typeName_API const std::size_t sizeofFields;
 
         //- Runtime type information
-        TypeName("SprayParcel");
+        TypeNameApi(Foam_SprayParcel_typeName_API, "SprayParcel");
 
         //- String representation of properties
         AddToPropertyList

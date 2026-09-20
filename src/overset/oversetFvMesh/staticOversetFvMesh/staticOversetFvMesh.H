@@ -66,7 +66,7 @@ class staticOversetFvMesh
 public:
 
     //- Runtime type information
-    TypeName("staticOversetFvMesh");
+    TypeNameApi(overset_API, "staticOversetFvMesh");
 
 
     // Constructors

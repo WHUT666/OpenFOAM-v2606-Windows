@@ -90,13 +90,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("displacementMethod");
+    TypeNameApi(adjointOptimisation_API, "displacementMethod");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             displacementMethod,
             dictionary,

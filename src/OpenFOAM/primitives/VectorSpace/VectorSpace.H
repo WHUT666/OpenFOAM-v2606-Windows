@@ -119,14 +119,14 @@ public:
 
     // Static Data Members
 
-        static const char* const typeName;
-        static const char* const componentNames[];
-        static const Form zero;
-        static const Form one;
-        static const Form max;
-        static const Form min;
-        static const Form rootMax;
-        static const Form rootMin;
+        static OpenFOAM_API const char* const typeName;
+        static OpenFOAM_API const char* const componentNames[];
+        static OpenFOAM_API const Form zero;
+        static OpenFOAM_API const Form one;
+        static OpenFOAM_API const Form max;
+        static OpenFOAM_API const Form min;
+        static OpenFOAM_API const Form rootMax;
+        static OpenFOAM_API const Form rootMin;
 
 
     // Sub-Block Classes

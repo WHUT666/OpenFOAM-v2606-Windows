@@ -58,7 +58,7 @@ class dummyFileOperation
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("dummy");
+    TypeNameNoDebugApi(OpenFOAM_API, "dummy");
 
 
     // Constructors

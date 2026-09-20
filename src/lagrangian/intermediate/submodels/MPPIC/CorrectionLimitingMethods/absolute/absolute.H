@@ -73,7 +73,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("absolute");
+    TypeNameApi(lagrangianIntermediate_API, "absolute");
 
 
     // Constructors

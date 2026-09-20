@@ -116,13 +116,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("basePatch");
+    TypeNameApi(OpenFOAM_API, "basePatch");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             pointPatch,
             dictionary,

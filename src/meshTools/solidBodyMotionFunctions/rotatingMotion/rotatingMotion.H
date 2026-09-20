@@ -78,7 +78,7 @@ class rotatingMotion
 public:
 
     //- Runtime type information
-    TypeName("rotatingMotion");
+    TypeNameApi(meshTools_API, "rotatingMotion");
 
 
     // Generated Methods

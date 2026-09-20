@@ -99,7 +99,7 @@ class processorPointPatch
 public:
 
     //- Runtime type information
-    TypeName(processorPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, processorPolyPatch::typeName_());
 
 
     // Constructors

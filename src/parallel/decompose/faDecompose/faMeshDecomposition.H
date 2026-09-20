@@ -126,7 +126,7 @@ class faMeshDecomposition
     // Private Static Data
 
         //- Disable use of edgeProcAddressing turning index
-        static bool disallowEdgeEncoding_;
+        static faDecompose_API bool disallowEdgeEncoding_;
 
 
     // Private Member Functions

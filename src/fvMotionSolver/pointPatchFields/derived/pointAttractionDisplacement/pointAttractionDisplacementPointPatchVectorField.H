@@ -95,7 +95,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("pointAttraction");
+    TypeNameApi(fvMotionSolvers_API, "pointAttraction");
 
 
     // Constructors

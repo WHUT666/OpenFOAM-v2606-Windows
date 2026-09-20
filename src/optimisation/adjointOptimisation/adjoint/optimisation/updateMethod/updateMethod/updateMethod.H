@@ -165,13 +165,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("updateMethod");
+    TypeNameApi(adjointOptimisation_API, "updateMethod");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             updateMethod,
             dictionary,

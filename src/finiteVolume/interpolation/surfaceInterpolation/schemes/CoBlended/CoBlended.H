@@ -65,6 +65,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CoBlended_defines_typeName in .C files that
+//  define the template statics of CoBlended (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CoBlended_defines_typeName)
+#  define Foam_CoBlended_typeName_API
+#else
+#  define Foam_CoBlended_typeName_API finiteVolume_API
+#endif
+
 #ifndef CoBlended_H
 #define CoBlended_H
 
@@ -117,7 +127,7 @@ class CoBlended
 public:
 
     //- Runtime type information
-    TypeName("CoBlended");
+    TypeNameApi(Foam_CoBlended_typeName_API, "CoBlended");
 
 
     // Constructors

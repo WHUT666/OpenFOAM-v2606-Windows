@@ -77,7 +77,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("constant");
+    TypeNameApi(surfaceFilmModels_API, "constant");
 
 
     // Constructors

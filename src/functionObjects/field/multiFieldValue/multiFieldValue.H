@@ -155,7 +155,7 @@ public:
         };
 
         //- Operation type names
-        static const Enum<operationType> operationTypeNames_;
+        static fieldFunctionObjects_API const Enum<operationType> operationTypeNames_;
 
 
 private:
@@ -202,7 +202,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("multiFieldValue");
+    TypeNameApi(fieldFunctionObjects_API, "multiFieldValue");
 
 
     // Constructors

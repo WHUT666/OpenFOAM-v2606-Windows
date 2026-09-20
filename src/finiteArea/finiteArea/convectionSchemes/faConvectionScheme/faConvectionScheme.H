@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_convectionScheme_defines_typeName in .C files that
+//  define the template statics of convectionScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_convectionScheme_defines_typeName)
+#  define Foam_convectionScheme_typeName_API
+#else
+#  define Foam_convectionScheme_typeName_API finiteArea_API
+#endif
+
 #ifndef faConvectionScheme_H
 #define faConvectionScheme_H
 
@@ -76,8 +86,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_convectionScheme_typeName_API,
             tmp,
             convectionScheme,
             Istream,

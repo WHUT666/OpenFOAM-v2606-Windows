@@ -78,7 +78,7 @@ class JohnsonJacksonSchaeffer
 public:
 
     //- Runtime type information
-    TypeName("JohnsonJacksonSchaeffer");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "JohnsonJacksonSchaeffer");
 
 
     // Constructors

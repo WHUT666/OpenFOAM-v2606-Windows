@@ -76,7 +76,7 @@ class NURBSbasis
 public:
 
     //- Runtime type information
-    TypeName("NURBbasis");
+    TypeNameApi(adjointOptimisation_API, "NURBbasis");
 
     // Constructors
 

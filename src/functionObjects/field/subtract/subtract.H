@@ -120,7 +120,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("subtract");
+    TypeNameApi(fieldFunctionObjects_API, "subtract");
 
 
     // Constructors

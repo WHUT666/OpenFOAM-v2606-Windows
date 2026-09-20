@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_gradScheme_defines_typeName in .C files that
+//  define the template statics of gradScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_gradScheme_defines_typeName)
+#  define Foam_gradScheme_typeName_API
+#else
+#  define Foam_gradScheme_typeName_API finiteArea_API
+#endif
+
 #ifndef faGradScheme_H
 #define faGradScheme_H
 
@@ -74,8 +84,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_gradScheme_typeName_API,
             tmp,
             gradScheme,
             Istream,

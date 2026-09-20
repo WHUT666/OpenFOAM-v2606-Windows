@@ -139,7 +139,7 @@ class wallHeatFlux
 public:
 
     //- Runtime type information
-    TypeName("wallHeatFlux");
+    TypeNameApi(fieldFunctionObjects_API, "wallHeatFlux");
 
 
     // Constructors

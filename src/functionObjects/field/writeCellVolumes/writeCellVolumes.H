@@ -93,7 +93,7 @@ class writeCellVolumes
 public:
 
     //- Runtime type information
-    TypeName("writeCellVolumes");
+    TypeNameApi(fieldFunctionObjects_API, "writeCellVolumes");
 
 
     // Constructors

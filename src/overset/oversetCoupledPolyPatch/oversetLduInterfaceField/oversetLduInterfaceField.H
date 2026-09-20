@@ -54,7 +54,7 @@ class oversetLduInterfaceField
 public:
 
     //- Runtime type information
-    TypeName("oversetLduInterfaceField");
+    TypeNameApi(overset_API, "oversetLduInterfaceField");
 
 
     // Constructors

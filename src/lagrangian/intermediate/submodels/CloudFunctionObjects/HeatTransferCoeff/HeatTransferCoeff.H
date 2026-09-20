@@ -64,6 +64,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_HeatTransferCoeff_defines_typeName in .C files that
+//  define the template statics of HeatTransferCoeff (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_HeatTransferCoeff_defines_typeName)
+#  define Foam_HeatTransferCoeff_typeName_API
+#else
+#  define Foam_HeatTransferCoeff_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef HeatTransferCoeff_H
 #define HeatTransferCoeff_H
 
@@ -94,7 +104,7 @@ class HeatTransferCoeff
 public:
 
     //- Runtime type information
-    TypeName("HeatTransferCoeff");
+    TypeNameApi(Foam_HeatTransferCoeff_typeName_API, "HeatTransferCoeff");
 
 
     // Generated Methods

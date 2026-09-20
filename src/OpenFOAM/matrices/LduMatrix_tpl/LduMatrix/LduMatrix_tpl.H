@@ -53,6 +53,12 @@ SourceFiles
 #ifndef Foam_LduMatrix_H
 #define Foam_LduMatrix_H
 
+#if defined(Foam_LduMatrix_defines_typeName)
+#  define Foam_LduMatrix_typeName_API
+#else
+#  define Foam_LduMatrix_typeName_API OpenFOAM_API
+#endif
+
 #include "lduMesh.H"
 #include <lduMatrix.H>
 #include "Field.H"
@@ -176,8 +182,7 @@ public:
 
         // Declare run-time constructor selection tables
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi(Foam_LduMatrix_typeName_API, 
                 autoPtr,
                 solver,
                 symMatrix,
@@ -193,8 +198,7 @@ public:
                 )
             );
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi(Foam_LduMatrix_typeName_API, 
                 autoPtr,
                 solver,
                 asymMatrix,
@@ -301,8 +305,7 @@ public:
 
         // Declare run-time constructor selection tables
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi(Foam_LduMatrix_typeName_API, 
                 autoPtr,
                 smoother,
                 symMatrix,
@@ -316,8 +319,7 @@ public:
                 )
             );
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi(Foam_LduMatrix_typeName_API, 
                 autoPtr,
                 smoother,
                 asymMatrix,
@@ -399,8 +401,7 @@ public:
 
         // Declare run-time constructor selection tables
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi(Foam_LduMatrix_typeName_API, 
                 autoPtr,
                 preconditioner,
                 symMatrix,
@@ -411,8 +412,7 @@ public:
                 (sol, preconditionerDict)
             );
 
-            declareRunTimeSelectionTable
-            (
+            declareRunTimeSelectionTableApi(Foam_LduMatrix_typeName_API, 
                 autoPtr,
                 preconditioner,
                 asymMatrix,
@@ -480,7 +480,7 @@ public:
     // Static Data
 
         // Declare name of the class and its debug switch
-        ClassName("LduMatrix");
+        ClassNameApi(Foam_LduMatrix_typeName_API, "LduMatrix");
 
 
     // Constructors

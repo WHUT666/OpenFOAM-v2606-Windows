@@ -98,12 +98,12 @@ protected:
 public:
 
     //-Runtime type information
-    TypeName("distributionModel");
+    TypeNameApi(distributionModels_API, "distributionModel");
 
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( distributionModels_API,
         autoPtr,
         distributionModel,
         dictionary,

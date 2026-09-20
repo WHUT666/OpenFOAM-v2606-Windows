@@ -64,6 +64,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kqRWallFunctionFvPatchField_defines_typeName in .C files that
+//  define the template statics of kqRWallFunctionFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kqRWallFunctionFvPatchField_defines_typeName)
+#  define Foam_kqRWallFunctionFvPatchField_typeName_API
+#else
+#  define Foam_kqRWallFunctionFvPatchField_typeName_API turbulenceModels_API
+#endif
+
 #ifndef kqRWallFunctionFvPatchField_H
 #define kqRWallFunctionFvPatchField_H
 
@@ -89,7 +99,7 @@ class kqRWallFunctionFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("kqRWallFunction");
+    TypeNameApi(Foam_kqRWallFunctionFvPatchField_typeName_API, "kqRWallFunction");
 
 
     // Constructors

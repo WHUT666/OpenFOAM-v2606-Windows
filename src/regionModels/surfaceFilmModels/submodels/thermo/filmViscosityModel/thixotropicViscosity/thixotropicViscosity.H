@@ -134,7 +134,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("thixotropic");
+    TypeNameApi(surfaceFilmModels_API, "thixotropic");
 
 
     // Constructors

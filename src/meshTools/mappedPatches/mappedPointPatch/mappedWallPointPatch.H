@@ -57,7 +57,7 @@ class mappedWallPointPatch
 public:
 
     //- Runtime type information
-    TypeName(mappedWallPolyPatch::typeName_());
+    TypeNameApi(meshTools_API, mappedWallPolyPatch::typeName_());
 
 
     // Constructors

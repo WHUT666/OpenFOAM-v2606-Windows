@@ -81,7 +81,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("function1");
+    TypeNameApi(surfaceFilmModels_API, "function1");
 
 
     // Constructors

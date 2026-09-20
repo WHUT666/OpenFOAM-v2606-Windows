@@ -143,7 +143,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("BrunDrippingInjection");
+    TypeNameApi(regionFaModels_API, "BrunDrippingInjection");
 
 
     // Constructors

@@ -105,7 +105,7 @@ protected:
 public:
 
     //- Runtime scalar information
-    TypeName("variableHeightFlowRate");
+    TypeNameApi(finiteVolume_API, "variableHeightFlowRate");
 
 
     // Constructors

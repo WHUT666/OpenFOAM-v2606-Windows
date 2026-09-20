@@ -108,7 +108,7 @@ class displacementInterpolationMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("displacementInterpolation");
+    TypeNameApi(dynamicMesh_API, "displacementInterpolation");
 
 
     // Constructors

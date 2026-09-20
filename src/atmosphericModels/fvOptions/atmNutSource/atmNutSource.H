@@ -119,7 +119,7 @@ class atmNutSource
 public:
 
     //- Runtime type information
-    TypeName("atmNutSource");
+    TypeNameApi(atmosphericModels_API, "atmNutSource");
 
 
     // Constructors

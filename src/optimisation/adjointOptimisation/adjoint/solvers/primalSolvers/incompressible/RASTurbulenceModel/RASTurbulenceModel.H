@@ -88,7 +88,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("RASTurbulenceModel");
+        TypeNameApi(adjointOptimisation_API, "RASTurbulenceModel");
 
 
     // Constructors

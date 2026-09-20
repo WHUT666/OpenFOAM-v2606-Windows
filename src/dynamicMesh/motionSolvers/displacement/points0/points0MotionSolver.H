@@ -72,7 +72,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("points0MotionSolver");
+    TypeNameApi(dynamicMesh_API, "points0MotionSolver");
 
     // Generated Methods
 

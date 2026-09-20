@@ -78,13 +78,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("topOInterpolationFunction");
+    TypeNameApi(adjointOptimisation_API, "topOInterpolationFunction");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             topOInterpolationFunction,
             dictionary,

@@ -117,6 +117,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CodedSource_defines_typeName in .C files that
+//  define the template statics of CodedSource (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CodedSource_defines_typeName)
+#  define Foam_CodedSource_typeName_API
+#else
+#  define Foam_CodedSource_typeName_API fvOptions_API
+#endif
+
 #ifndef fv_CodedFvSource_H
 #define fv_CodedFvSource_H
 
@@ -187,7 +197,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("coded");
+    TypeNameApi(Foam_CodedSource_typeName_API, "coded");
 
 
     // Constructors

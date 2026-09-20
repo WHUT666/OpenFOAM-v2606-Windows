@@ -90,7 +90,7 @@ class mixerFvMesh
 public:
 
     //- Runtime type information
-    TypeName("mixerFvMesh");
+    TypeNameApi(topoChangerFvMesh_API, "mixerFvMesh");
 
 
     // Constructors

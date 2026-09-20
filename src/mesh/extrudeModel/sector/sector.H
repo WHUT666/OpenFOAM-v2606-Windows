@@ -87,7 +87,7 @@ class sector
 public:
 
     //- Runtime type information
-    TypeName("sector");
+    TypeNameApi(extrudeModel_API, "sector");
 
     // Constructors
 

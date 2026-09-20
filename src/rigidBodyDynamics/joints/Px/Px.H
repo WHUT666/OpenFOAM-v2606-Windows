@@ -71,7 +71,7 @@ class Px
 public:
 
     //- Runtime type information
-    TypeName("Px");
+    TypeNameApi(rigidBodyDynamics_API, "Px");
 
 
     // Constructors

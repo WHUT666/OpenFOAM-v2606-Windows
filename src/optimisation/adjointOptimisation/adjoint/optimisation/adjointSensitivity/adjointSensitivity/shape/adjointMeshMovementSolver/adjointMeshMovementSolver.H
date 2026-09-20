@@ -121,7 +121,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("adjointMeshMovementSolver");
+    TypeNameApi(adjointOptimisation_API, "adjointMeshMovementSolver");
 
 
     // Constructors

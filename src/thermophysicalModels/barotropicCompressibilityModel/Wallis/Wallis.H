@@ -68,7 +68,7 @@ class Wallis
 public:
 
     //- Runtime type information
-    TypeName("Wallis");
+    TypeNameApi(barotropicCompressibilityModel_API, "Wallis");
 
 
     // Constructors

@@ -214,7 +214,7 @@ public:
         };
 
         //- Names for geometryModeType
-        static const Enum<geometryModeType> geometryModelNames_;
+        static fvOptions_API const Enum<geometryModeType> geometryModelNames_;
 
 
 private:
@@ -264,7 +264,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("tabulatedNTUHeatTransfer");
+    TypeNameApi(fvOptions_API, "tabulatedNTUHeatTransfer");
 
 
     // Constructors

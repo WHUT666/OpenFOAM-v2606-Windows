@@ -88,7 +88,7 @@ class Frank
 public:
 
     //- Runtime type information
-    TypeName("Frank");
+    TypeNameApi(reactingMultiphaseSystem_API, "Frank");
 
 
     // Constructors

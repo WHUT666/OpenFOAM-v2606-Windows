@@ -68,7 +68,7 @@ class linearInterpolationWeights
 public:
 
     //- Runtime type information
-    TypeName("linear");
+    TypeNameApi(OpenFOAM_API, "linear");
 
 
     // Constructors

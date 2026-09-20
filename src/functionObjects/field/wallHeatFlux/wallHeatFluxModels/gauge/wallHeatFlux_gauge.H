@@ -200,7 +200,7 @@ class gauge
 public:
 
     //- Runtime type information
-    TypeName("gauge");
+    TypeNameApi(fieldFunctionObjects_API, "gauge");
 
 
     // Constructors

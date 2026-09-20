@@ -131,7 +131,7 @@ public:
     };
 
     //- String representation of temperatureMode enums
-    static const Enum<temperatureMode> temperatureModeNames_;
+    static fvOptions_API const Enum<temperatureMode> temperatureModeNames_;
 
 
 protected:
@@ -151,7 +151,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fixedTemperatureConstraint");
+    TypeNameApi(fvOptions_API, "fixedTemperatureConstraint");
 
 
     // Constructors

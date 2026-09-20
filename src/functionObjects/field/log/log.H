@@ -148,7 +148,7 @@ class log
 public:
 
     //- Runtime type information
-    TypeName("log");
+    TypeNameApi(fieldFunctionObjects_API, "log");
 
 
     // Constructors

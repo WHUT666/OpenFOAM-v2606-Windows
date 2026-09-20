@@ -57,7 +57,7 @@ class wallPointPatch
 public:
 
     //- Runtime type information
-    TypeName(wallPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, wallPolyPatch::typeName_());
 
 
     // Constructors

@@ -181,7 +181,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("cyclicACMI");
+    TypeNameApi(meshTools_API, "cyclicACMI");
 
 
     // Constructors

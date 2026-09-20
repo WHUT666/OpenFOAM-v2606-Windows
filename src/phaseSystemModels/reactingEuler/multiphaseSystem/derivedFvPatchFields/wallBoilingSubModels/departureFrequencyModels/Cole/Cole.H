@@ -95,7 +95,7 @@ class Cole
 public:
 
     //- Runtime type information
-    TypeName("Cole");
+    TypeNameApi(reactingMultiphaseSystem_API, "Cole");
 
 
     // Constructors

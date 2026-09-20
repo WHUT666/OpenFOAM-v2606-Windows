@@ -66,7 +66,7 @@ class surfZoneIOList
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("surfZoneList");
+    TypeNameNoDebugApi(surfMesh_API, "surfZoneList");
 
 
     // Constructors

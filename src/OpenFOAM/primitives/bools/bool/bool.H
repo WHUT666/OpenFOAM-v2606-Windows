@@ -64,7 +64,7 @@ bool readBool(Istream& is);
 
 //- Template specialisation for pTraits\<bool\>
 template<>
-class pTraits<bool>
+class OpenFOAM_API pTraits<bool>
 {
     bool p_;
 

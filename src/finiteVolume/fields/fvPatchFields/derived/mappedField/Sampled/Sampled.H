@@ -71,6 +71,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Sampled_defines_typeName in .C files that
+//  define the template statics of Sampled (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Sampled_defines_typeName)
+#  define Foam_Sampled_typeName_API
+#else
+#  define Foam_Sampled_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_PatchFunction1Types_Sampled_H
 #define Foam_PatchFunction1Types_Sampled_H
 
@@ -225,6 +235,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::Sampled<Foam::scalar>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::Sampled<Foam::vector>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::Sampled<Foam::sphericalTensor>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::Sampled<Foam::symmTensor>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::Sampled<Foam::tensor>);
 
 #endif
 

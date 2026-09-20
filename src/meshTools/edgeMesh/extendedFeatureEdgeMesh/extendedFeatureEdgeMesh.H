@@ -63,7 +63,7 @@ class extendedFeatureEdgeMesh
 public:
 
     //- Runtime type information
-    TypeName("extendedFeatureEdgeMesh");
+    TypeNameApi(meshTools_API, "extendedFeatureEdgeMesh");
 
 
     // Constructors

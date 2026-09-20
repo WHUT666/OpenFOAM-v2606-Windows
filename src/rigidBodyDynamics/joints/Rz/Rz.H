@@ -71,7 +71,7 @@ class Rz
 public:
 
     //- Runtime type information
-    TypeName("Rz");
+    TypeNameApi(rigidBodyDynamics_API, "Rz");
 
 
     // Constructors

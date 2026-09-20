@@ -57,6 +57,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PatchInteractionFields_defines_typeName in .C files that
+//  define the template statics of PatchInteractionFields (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PatchInteractionFields_defines_typeName)
+#  define Foam_PatchInteractionFields_typeName_API
+#else
+#  define Foam_PatchInteractionFields_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PatchInteractionFields_H
 #define PatchInteractionFields_H
 
@@ -90,7 +100,7 @@ public:
             writeTime
         };
 
-        static const Enum<resetMode> resetModeNames_;
+        static Foam_PatchInteractionFields_typeName_API const Enum<resetMode> resetModeNames_;
 
 
 private:
@@ -132,7 +142,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("patchInteractionFields");
+    TypeNameApi(Foam_PatchInteractionFields_typeName_API, "patchInteractionFields");
 
 
     // Constructors

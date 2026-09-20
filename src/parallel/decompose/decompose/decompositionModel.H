@@ -83,11 +83,11 @@ class decompositionModel
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("decompositionModel");
+    ClassNameApi(decompose_API, "decompositionModel");
 
     //- The canonical name ("decomposeParDict") under which the
     //- MeshObject is registered
-    static const word canonicalName;
+    static decompose_API const word canonicalName;
 
 
     // Constructors

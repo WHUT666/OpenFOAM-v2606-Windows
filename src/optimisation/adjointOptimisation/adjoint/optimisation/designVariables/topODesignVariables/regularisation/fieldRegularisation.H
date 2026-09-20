@@ -133,7 +133,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("fieldRegularisation");
+    TypeNameApi(adjointOptimisation_API, "fieldRegularisation");
 
 
     // Constructors

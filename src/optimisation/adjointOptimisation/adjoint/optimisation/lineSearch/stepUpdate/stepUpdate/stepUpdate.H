@@ -81,13 +81,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("stepUpdate");
+    TypeNameApi(adjointOptimisation_API, "stepUpdate");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             stepUpdate,
             dictionary,

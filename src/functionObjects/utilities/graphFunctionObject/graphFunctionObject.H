@@ -175,7 +175,7 @@ class graphFunctionObject
     // Private Data
 
         //- List of default curve colours
-        static wordList defaultColours;
+        static utilityFunctionObjects_API wordList defaultColours;
 
         //- Names of function objects
         List<word> objects_;
@@ -265,7 +265,7 @@ class graphFunctionObject
 public:
 
     //- Runtime type information
-    TypeName("graphFunctionObject");
+    TypeNameApi(utilityFunctionObjects_API, "graphFunctionObject");
 
     //- Construct from name, Time and dictionary
     graphFunctionObject

@@ -74,7 +74,7 @@ class WenYu
 public:
 
     //- Runtime type information
-    TypeName("WenYu");
+    TypeNameApi(multiphaseSystem_API, "WenYu");
 
 
     // Constructors

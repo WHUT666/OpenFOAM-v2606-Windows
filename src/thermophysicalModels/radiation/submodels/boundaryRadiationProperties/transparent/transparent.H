@@ -78,7 +78,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("transparent");
+    TypeNameApi(radiationModels_API, "transparent");
 
     // Constructors
 

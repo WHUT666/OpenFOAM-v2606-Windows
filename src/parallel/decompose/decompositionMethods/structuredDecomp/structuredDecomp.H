@@ -73,7 +73,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("structured");
+    TypeNameApi(decompositionMethods_API, "structured");
 
 
     // Constructors

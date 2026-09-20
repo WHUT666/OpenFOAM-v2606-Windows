@@ -104,7 +104,7 @@ class walkPatch
 
 public:
 
-    ClassName("walkPatch");
+    ClassNameApi(OpenFOAM_API, "walkPatch");
 
 
     // Constructors

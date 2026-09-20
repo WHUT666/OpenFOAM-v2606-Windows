@@ -611,7 +611,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("snappyLayerDriver");
+    ClassNameApi(snappyHexMesh_API, "snappyLayerDriver");
 
     // Constructors
 

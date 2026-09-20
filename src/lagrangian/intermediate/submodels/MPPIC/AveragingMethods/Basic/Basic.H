@@ -44,6 +44,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Basic_defines_typeName in .C files that
+//  define the template statics of Basic (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Basic_defines_typeName)
+#  define Foam_Basic_typeName_API
+#else
+#  define Foam_Basic_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Basic_H
 #define Basic_H
 
@@ -95,7 +105,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("basic");
+    TypeNameApi(Foam_Basic_typeName_API, "basic");
 
 
     //- Constructors

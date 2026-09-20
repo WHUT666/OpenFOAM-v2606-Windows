@@ -184,7 +184,7 @@ class norm
         };
 
         //- Names for normType
-        static const Enum<normType> normTypeNames;
+        static fieldFunctionObjects_API const Enum<normType> normTypeNames;
 
 
     // Private Data
@@ -240,7 +240,7 @@ class norm
 public:
 
     //- Runtime type information
-    TypeName("norm");
+    TypeNameApi(fieldFunctionObjects_API, "norm");
 
 
     // Constructors

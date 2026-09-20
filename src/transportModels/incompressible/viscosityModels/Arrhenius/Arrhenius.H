@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Arrhenius_defines_typeName in .C files that
+//  define the template statics of Arrhenius (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Arrhenius_defines_typeName)
+#  define Foam_Arrhenius_typeName_API
+#else
+#  define Foam_Arrhenius_typeName_API incompressibleTransportModels_API
+#endif
+
 #ifndef Arrhenius_H
 #define Arrhenius_H
 
@@ -89,7 +99,7 @@ class Arrhenius
 public:
 
     //- Runtime type information
-    TypeName("Arrhenius");
+    TypeNameApi(Foam_Arrhenius_typeName_API, "Arrhenius");
 
 
     // Constructors

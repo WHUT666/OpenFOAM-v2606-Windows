@@ -87,7 +87,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("polyTopoChanger");
+    TypeNameApi(dynamicMesh_API, "polyTopoChanger");
 
 
     // Constructors

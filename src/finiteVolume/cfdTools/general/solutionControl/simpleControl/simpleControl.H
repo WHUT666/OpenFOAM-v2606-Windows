@@ -88,7 +88,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("simpleControl");
+        TypeNameApi(finiteVolume_API, "simpleControl");
 
 
     // Constructors

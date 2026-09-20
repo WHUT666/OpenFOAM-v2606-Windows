@@ -198,7 +198,7 @@ class atmLengthScaleTurbSource
 public:
 
     //- Runtime type information
-    TypeName("atmLengthScaleTurbSource");
+    TypeNameApi(atmosphericModels_API, "atmLengthScaleTurbSource");
 
 
     // Constructors

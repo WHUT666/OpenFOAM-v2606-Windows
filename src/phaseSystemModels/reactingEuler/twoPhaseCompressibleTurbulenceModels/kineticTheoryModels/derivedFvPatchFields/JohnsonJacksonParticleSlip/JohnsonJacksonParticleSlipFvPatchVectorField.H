@@ -80,7 +80,7 @@ class JohnsonJacksonParticleSlipFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("JohnsonJacksonParticleSlip");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "JohnsonJacksonParticleSlip");
 
 
     // Constructors

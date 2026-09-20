@@ -108,7 +108,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("GCMMA");
+    TypeNameApi(adjointOptimisation_API, "GCMMA");
 
 
     // Constructors

@@ -108,7 +108,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("ShihQuadraticKE");
+    TypeNameApi(incompressibleTurbulenceModels_API, "ShihQuadraticKE");
 
 
     // Constructors

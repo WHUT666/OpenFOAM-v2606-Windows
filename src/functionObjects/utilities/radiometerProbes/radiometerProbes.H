@@ -149,7 +149,7 @@ class radiometerProbes
 public:
 
     //- Runtime type information
-    TypeName("radiometerProbes");
+    TypeNameApi(utilityFunctionObjects_API, "radiometerProbes");
 
 
     // Generated Methods

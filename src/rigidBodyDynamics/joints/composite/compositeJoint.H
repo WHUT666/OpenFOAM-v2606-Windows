@@ -82,7 +82,7 @@ class composite
 public:
 
     //- Runtime type information
-    TypeName("composite");
+    TypeNameApi(rigidBodyDynamics_API, "composite");
 
     //- Allow the rigidBodyModel class to set the last joint state
     friend class Foam::RBD::rigidBodyModel;

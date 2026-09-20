@@ -47,6 +47,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ConstantField_defines_typeName in .C files that
+//  define the template statics of ConstantField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ConstantField_defines_typeName)
+#  define Foam_ConstantField_typeName_API
+#else
+#  define Foam_ConstantField_typeName_API meshTools_API
+#endif
+
 #ifndef Foam_PatchFunction1Types_ConstantField_H
 #define Foam_PatchFunction1Types_ConstantField_H
 
@@ -236,6 +246,13 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::ConstantField<Foam::label>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::ConstantField<Foam::scalar>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::ConstantField<Foam::vector>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::ConstantField<Foam::sphericalTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::ConstantField<Foam::symmTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::ConstantField<Foam::tensor>);
 
 #endif
 

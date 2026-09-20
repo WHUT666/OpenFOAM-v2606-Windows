@@ -36,6 +36,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LocalInteraction_defines_typeName in .C files that
+//  define the template statics of LocalInteraction (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LocalInteraction_defines_typeName)
+#  define Foam_LocalInteraction_typeName_API
+#else
+#  define Foam_LocalInteraction_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef LocalInteraction_H
 #define LocalInteraction_H
 
@@ -170,7 +180,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("localInteraction");
+    TypeNameApi(Foam_LocalInteraction_typeName_API, "localInteraction");
 
 
     // Constructors

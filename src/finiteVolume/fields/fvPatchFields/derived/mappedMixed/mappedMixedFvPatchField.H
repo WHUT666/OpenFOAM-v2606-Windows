@@ -84,6 +84,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_mappedMixedFvPatchField_defines_typeName in .C files that
+//  define the template statics of mappedMixedFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_mappedMixedFvPatchField_defines_typeName)
+#  define Foam_mappedMixedFvPatchField_typeName_API
+#else
+#  define Foam_mappedMixedFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_mappedMixedFvPatchField_H
 #define Foam_mappedMixedFvPatchField_H
 
@@ -117,7 +127,7 @@ class mappedMixedFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("mappedMixed");
+    TypeNameApi(Foam_mappedMixedFvPatchField_typeName_API, "mappedMixed");
 
 
     // Constructors

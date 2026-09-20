@@ -103,7 +103,7 @@ class Zuber
 public:
 
     //- Runtime type information
-    TypeName("Zuber");
+    TypeNameApi(reactingMultiphaseSystem_API, "Zuber");
 
 
     // Constructors

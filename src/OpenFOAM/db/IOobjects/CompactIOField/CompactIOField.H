@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CompactIOField_defines_typeName in .C files that
+//  define the template statics of CompactIOField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CompactIOField_defines_typeName)
+#  define Foam_CompactIOField_typeName_API
+#else
+#  define Foam_CompactIOField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_CompactIOField_H
 #define Foam_CompactIOField_H
 
@@ -85,7 +95,7 @@ public:
     typedef Field<Type> content_type;
 
     //- Runtime type information
-    TypeName("FieldField");
+    TypeNameApi(Foam_CompactIOField_typeName_API, "FieldField");
 
 
     // Constructors

@@ -88,7 +88,7 @@ class Frank
 public:
 
     //- Runtime type information
-    TypeName("Frank");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Frank");
 
 
     // Constructors

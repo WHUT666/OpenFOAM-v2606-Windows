@@ -75,11 +75,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("regionModelFunctionObject");
+    TypeNameApi(regionModels_API, "regionModelFunctionObject");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( regionModels_API,
         autoPtr,
         regionModelFunctionObject,
         dictionary,

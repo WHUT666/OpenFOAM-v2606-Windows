@@ -75,14 +75,14 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("constrainedOptimisationMethod");
+    TypeNameApi(adjointOptimisation_API, "constrainedOptimisationMethod");
 
     // Declare table with available constrainedOptimisation methods.
     // Not used for run-time selection, just for keeping track of the
     // available methods
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             constrainedOptimisationMethod,
             dictionary,

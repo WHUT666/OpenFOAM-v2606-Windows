@@ -245,7 +245,7 @@ class interfaceTrackingFvMesh
 public:
 
     //- Runtime type information
-    TypeName("interfaceTrackingFvMesh");
+    TypeNameApi(interfaceTrackingFvMesh_API, "interfaceTrackingFvMesh");
 
 
     // Constructors

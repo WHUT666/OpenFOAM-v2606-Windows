@@ -66,12 +66,12 @@ class boundaryMesh
 
         //- Normal along which to divide faces into categories
         //  (used in getNearest)
-        static const vector splitNormal_;
+        static dynamicMesh_API const vector splitNormal_;
 
         //- Distance to face tolerance for getNearest. Triangles are considered
         //  near if they are nearer than distanceTol_*typDim where typDim is
         //  the largest distance from face centre to one of its vertices.
-        static const scalar distanceTol_;
+        static dynamicMesh_API const scalar distanceTol_;
 
 
     // Private Data
@@ -185,7 +185,7 @@ class boundaryMesh
 public:
 
     //- Runtime type information
-    ClassName("boundaryMesh");
+    ClassNameApi(dynamicMesh_API, "boundaryMesh");
 
 
     // Constructors

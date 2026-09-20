@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_StandardChemistryModel_defines_typeName in .C files that
+//  define the template statics of StandardChemistryModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_StandardChemistryModel_defines_typeName)
+#  define Foam_StandardChemistryModel_typeName_API
+#else
+#  define Foam_StandardChemistryModel_typeName_API chemistryModel_API
+#endif
+
 #ifndef StandardChemistryModel_H
 #define StandardChemistryModel_H
 
@@ -129,7 +139,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("standard");
+    TypeNameApi(Foam_StandardChemistryModel_typeName_API, "standard");
 
 
     // Constructors

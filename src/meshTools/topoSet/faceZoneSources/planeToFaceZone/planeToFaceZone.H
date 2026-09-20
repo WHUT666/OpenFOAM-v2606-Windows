@@ -131,10 +131,10 @@ private:
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Plane selection methods
-        static const Enum<faceAction> faceActionNames_;
+        static meshTools_API const Enum<faceAction> faceActionNames_;
 
         //- Point on the input plane
         const vector point_;
@@ -154,7 +154,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("planeToFaceZone");
+    TypeNameApi(meshTools_API, "planeToFaceZone");
 
 
     // Constructors

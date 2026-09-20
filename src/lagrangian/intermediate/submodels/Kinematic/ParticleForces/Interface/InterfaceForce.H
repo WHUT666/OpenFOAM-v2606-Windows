@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_InterfaceForce_defines_typeName in .C files that
+//  define the template statics of InterfaceForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_InterfaceForce_defines_typeName)
+#  define Foam_InterfaceForce_typeName_API
+#else
+#  define Foam_InterfaceForce_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef InterfaceForce_H
 #define InterfaceForce_H
 
@@ -72,7 +82,7 @@ class InterfaceForce
 public:
 
     //- Runtime type information
-    TypeName("interface");
+    TypeNameApi(Foam_InterfaceForce_typeName_API, "interface");
 
 
     // Constructors

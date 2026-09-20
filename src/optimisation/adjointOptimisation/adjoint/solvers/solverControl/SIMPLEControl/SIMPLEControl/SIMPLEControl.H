@@ -88,13 +88,13 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("SIMPLEControl");
+        TypeNameApi(adjointOptimisation_API, "SIMPLEControl");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             SIMPLEControl,
             dictionary,

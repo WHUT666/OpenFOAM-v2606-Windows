@@ -73,7 +73,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("smoothHeaviside");
+    TypeNameApi(adjointOptimisation_API, "smoothHeaviside");
 
 
     // Constructors

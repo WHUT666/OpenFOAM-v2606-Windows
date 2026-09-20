@@ -132,7 +132,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("momentumError");
+    TypeNameApi(fieldFunctionObjects_API, "momentumError");
 
 
     // Constructors

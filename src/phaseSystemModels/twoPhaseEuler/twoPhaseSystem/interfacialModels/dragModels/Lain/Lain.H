@@ -76,7 +76,7 @@ class Lain
 public:
 
     //- Runtime type information
-    TypeName("Lain");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Lain");
 
 
     // Constructors

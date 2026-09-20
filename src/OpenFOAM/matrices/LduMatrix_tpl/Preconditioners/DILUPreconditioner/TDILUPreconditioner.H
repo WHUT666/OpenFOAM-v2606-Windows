@@ -42,6 +42,12 @@ SourceFiles
 #ifndef TDILUPreconditioner_H
 #define TDILUPreconditioner_H
 
+#if defined(Foam_LduPreconditioner_defines_typeName)
+#  define Foam_LduPreconditioner_typeName_API
+#else
+#  define Foam_LduPreconditioner_typeName_API OpenFOAM_API
+#endif
+
 #include <LduMatrix_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -67,7 +73,7 @@ class TDILUPreconditioner
 public:
 
     //- Runtime type information
-    TypeName("DILU");
+    TypeNameApi(Foam_LduPreconditioner_typeName_API, "DILU");
 
 
     // Constructors

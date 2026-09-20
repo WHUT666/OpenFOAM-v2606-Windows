@@ -98,6 +98,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Sine_defines_typeName in .C files that
+//  define the template statics of Sine (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Sine_defines_typeName)
+#  define Foam_Sine_typeName_API
+#else
+#  define Foam_Sine_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_Sine_H
 #define Foam_Function1Types_Sine_H
 
@@ -242,6 +252,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Sine<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Sine<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Sine<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Sine<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Sine<Foam::tensor>);
 
 #endif
 

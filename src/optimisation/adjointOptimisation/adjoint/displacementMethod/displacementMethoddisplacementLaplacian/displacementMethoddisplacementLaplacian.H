@@ -82,7 +82,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("displacementLaplacian");
+    TypeNameApi(adjointOptimisation_API, "displacementLaplacian");
 
 
     // Constructors

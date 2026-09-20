@@ -92,7 +92,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("singleRun");
+        TypeNameApi(adjointOptimisation_API, "singleRun");
 
 
     // Constructors

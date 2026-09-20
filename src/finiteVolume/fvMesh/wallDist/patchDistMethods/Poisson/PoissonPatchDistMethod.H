@@ -139,7 +139,7 @@ class Poisson
 public:
 
     //- Runtime type information
-    TypeName("Poisson");
+    TypeNameApi(finiteVolume_API, "Poisson");
 
 
     // Constructors

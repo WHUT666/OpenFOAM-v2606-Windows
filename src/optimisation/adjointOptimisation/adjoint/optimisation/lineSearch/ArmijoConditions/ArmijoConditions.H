@@ -77,7 +77,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("ArmijoConditions");
+    TypeNameApi(adjointOptimisation_API, "ArmijoConditions");
 
 
     // Constructors

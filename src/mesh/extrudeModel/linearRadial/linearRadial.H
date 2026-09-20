@@ -68,7 +68,7 @@ class linearRadial
 public:
 
     //- Runtime type information
-    TypeName("linearRadial");
+    TypeNameApi(extrudeModel_API, "linearRadial");
 
     // Constructors
 

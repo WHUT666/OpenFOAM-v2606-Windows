@@ -160,7 +160,7 @@ class sampledSurfaces
     // Static Data Members
 
         //- Tolerance for merging points (fraction of mesh bounding box)
-        static scalar mergeTol_;
+        static sampling_API scalar mergeTol_;
 
         //- Local control for sampling actions
         enum sampleActionType : unsigned
@@ -331,7 +331,7 @@ class sampledSurfaces
 public:
 
     //- Runtime type information
-    TypeName("surfaces");
+    TypeNameApi(sampling_API, "surfaces");
 
 
     // Constructors

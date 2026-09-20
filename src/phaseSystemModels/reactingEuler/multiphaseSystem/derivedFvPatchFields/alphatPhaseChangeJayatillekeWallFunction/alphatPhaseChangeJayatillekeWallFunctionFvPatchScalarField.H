@@ -122,10 +122,10 @@ protected:
         // Solution parameters
 
             //- Absolute tolerance
-            static scalar tolerance_;
+            static reactingMultiphaseSystem_API scalar tolerance_;
 
             //- Maximum number of iterations
-            static label maxIters_;
+            static reactingMultiphaseSystem_API label maxIters_;
 
 
     // Protected Member Functions
@@ -153,7 +153,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("compressible::alphatPhaseChangeJayatillekeWallFunction");
+    TypeNameApi(reactingMultiphaseSystem_API, "compressible::alphatPhaseChangeJayatillekeWallFunction");
 
 
     // Constructors

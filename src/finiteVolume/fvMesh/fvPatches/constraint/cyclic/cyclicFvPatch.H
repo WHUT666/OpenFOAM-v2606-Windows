@@ -73,7 +73,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName(cyclicPolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, cyclicPolyPatch::typeName_());
 
 
     // Constructors

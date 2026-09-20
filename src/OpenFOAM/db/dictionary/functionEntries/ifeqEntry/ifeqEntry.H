@@ -166,7 +166,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("ifeq");
+    ClassNameApi(OpenFOAM_API, "ifeq");
 
     // Member Functions
 

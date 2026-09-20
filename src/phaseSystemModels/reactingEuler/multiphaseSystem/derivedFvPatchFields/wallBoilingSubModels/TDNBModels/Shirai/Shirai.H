@@ -111,7 +111,7 @@ class Shirai
 public:
 
     //- Runtime type information
-    TypeName("Shirai");
+    TypeNameApi(reactingMultiphaseSystem_API, "Shirai");
 
 
     // Constructors

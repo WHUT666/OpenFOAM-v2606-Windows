@@ -58,14 +58,14 @@ public:
     // Static Data Members
 
         //- The prefix to local: %surfaces
-        static const word prefix;
+        static surfMesh_API const word prefix;
 
         //- The default surface name: %default
-        static word defaultName;
+        static surfMesh_API word defaultName;
 
 
     //- Runtime type information
-    TypeName("surfaceRegistry");
+    TypeNameApi(surfMesh_API, "surfaceRegistry");
 
 
     // Generated Methods

@@ -62,7 +62,7 @@ class splineInterpolationWeights
 public:
 
     //- Runtime type information
-    TypeName("spline");
+    TypeNameApi(OpenFOAM_API, "spline");
 
 
     // Constructors

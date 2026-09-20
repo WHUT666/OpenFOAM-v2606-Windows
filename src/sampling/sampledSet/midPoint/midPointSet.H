@@ -62,7 +62,7 @@ class midPointSet
 public:
 
     //- Runtime type information
-    TypeName("midPoint");
+    TypeNameApi(sampling_API, "midPoint");
 
 
     // Constructors

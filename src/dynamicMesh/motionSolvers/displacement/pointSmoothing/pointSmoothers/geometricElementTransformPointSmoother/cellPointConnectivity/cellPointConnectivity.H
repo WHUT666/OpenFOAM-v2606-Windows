@@ -83,7 +83,7 @@ class cellPointConnectivity
 public:
 
     // Run-time type information
-    TypeName("cellPointConnectivity");
+    TypeNameApi(dynamicMesh_API, "cellPointConnectivity");
 
 
     // Constructors

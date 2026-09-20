@@ -181,7 +181,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nearWallFields");
+    TypeNameApi(fieldFunctionObjects_API, "nearWallFields");
 
 
     // Constructors

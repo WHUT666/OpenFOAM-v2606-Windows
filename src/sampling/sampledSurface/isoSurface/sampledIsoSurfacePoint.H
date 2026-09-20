@@ -90,7 +90,7 @@ class sampledIsoSurfacePoint
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("sampledIsoSurfacePoint");
+    TypeNameNoDebugApi(sampling_API, "sampledIsoSurfacePoint");
 
 
     // Constructors

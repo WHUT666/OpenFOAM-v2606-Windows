@@ -107,7 +107,7 @@ class clipPlaneToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Point on the plane
         const vector point_;
@@ -124,7 +124,7 @@ class clipPlaneToFace
 public:
 
     //- Runtime type information
-    TypeName("clipPlaneToFace");
+    TypeNameApi(meshTools_API, "clipPlaneToFace");
 
 
     // Constructors

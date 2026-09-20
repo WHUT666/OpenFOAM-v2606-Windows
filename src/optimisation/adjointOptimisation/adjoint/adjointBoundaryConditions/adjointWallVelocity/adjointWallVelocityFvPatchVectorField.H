@@ -83,7 +83,7 @@ class adjointWallVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("adjointWallVelocity");
+    TypeNameApi(adjointOptimisation_API, "adjointWallVelocity");
 
 
     // Constructors

@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_oversetFvPatchField_defines_typeName in .C files that
+//  define the template statics of oversetFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_oversetFvPatchField_defines_typeName)
+#  define Foam_oversetFvPatchField_typeName_API
+#else
+#  define Foam_oversetFvPatchField_typeName_API overset_API
+#endif
+
 #ifndef Foam_oversetFvPatchField_H
 #define Foam_oversetFvPatchField_H
 
@@ -103,7 +113,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName(oversetFvPatch::typeName_());
+    TypeNameApi(Foam_oversetFvPatchField_typeName_API, oversetFvPatch::typeName_());
 
 
     // Constructors

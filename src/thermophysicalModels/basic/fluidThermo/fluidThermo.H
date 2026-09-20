@@ -59,12 +59,12 @@ class fluidThermo
 public:
 
     //- Runtime type information
-    TypeName("fluidThermo");
+    TypeNameApi(fluidThermophysicalModels_API, "fluidThermo");
 
 
     //- Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( fluidThermophysicalModels_API,
         autoPtr,
         fluidThermo,
         fvMesh,
@@ -74,8 +74,8 @@ public:
 
 
     //- Declare run-time constructor selection table for dictionary based
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( fluidThermophysicalModels_API,
         autoPtr,
         fluidThermo,
         fvMeshDictPhase,

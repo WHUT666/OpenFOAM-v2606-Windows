@@ -45,6 +45,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_dynamicLagrangian_defines_typeName in .C files that
+//  define the template statics of dynamicLagrangian (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_dynamicLagrangian_defines_typeName)
+#  define Foam_dynamicLagrangian_typeName_API
+#else
+#  define Foam_dynamicLagrangian_typeName_API turbulenceModels_API
+#endif
+
 #ifndef dynamicLagrangian_H
 #define dynamicLagrangian_H
 
@@ -108,7 +118,7 @@ public:
     typedef typename BasicTurbulenceModel::transportModel transportModel;
 
     //- Runtime type information
-    TypeName("dynamicLagrangian");
+    TypeNameApi(Foam_dynamicLagrangian_typeName_API, "dynamicLagrangian");
 
 
     // Constructors

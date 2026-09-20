@@ -164,7 +164,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("uniformBin");
+    TypeNameApi(fieldFunctionObjects_API, "uniformBin");
 
 
     // Constructors

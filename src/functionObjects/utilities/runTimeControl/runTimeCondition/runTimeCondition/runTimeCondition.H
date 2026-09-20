@@ -101,11 +101,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("runTimeCondition");
+    TypeNameApi(utilityFunctionObjects_API, "runTimeCondition");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( utilityFunctionObjects_API,
         autoPtr,
         runTimeCondition,
         dictionary,

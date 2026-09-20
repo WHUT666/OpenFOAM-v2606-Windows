@@ -121,7 +121,7 @@ class x3dWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("x3d");
+    TypeNameNoDebugApi(surfMesh_API, "x3d");
 
 
     // Constructors

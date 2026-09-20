@@ -140,7 +140,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("kLowReWallFunction");
+    TypeNameApi(turbulenceModels_API, "kLowReWallFunction");
 
 
     // Constructors

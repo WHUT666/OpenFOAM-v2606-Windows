@@ -135,7 +135,7 @@ class boxToPoint
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Bounding boxes
         treeBoundBoxList bbs_;
@@ -149,7 +149,7 @@ class boxToPoint
 public:
 
     //- Runtime type information
-    TypeName("boxToPoint");
+    TypeNameApi(meshTools_API, "boxToPoint");
 
 
     // Constructors

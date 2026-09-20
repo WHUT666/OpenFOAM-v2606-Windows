@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SurfaceFilmModel_defines_typeName in .C files that
+//  define the template statics of SurfaceFilmModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SurfaceFilmModel_defines_typeName)
+#  define Foam_SurfaceFilmModel_typeName_API
+#else
+#  define Foam_SurfaceFilmModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Foam_SurfaceFilmModel_H
 #define Foam_SurfaceFilmModel_H
 
@@ -186,11 +196,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceFilmModel");
+    TypeNameApi(Foam_SurfaceFilmModel_typeName_API, "surfaceFilmModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_SurfaceFilmModel_typeName_API,
         autoPtr,
         SurfaceFilmModel,
         dictionary,

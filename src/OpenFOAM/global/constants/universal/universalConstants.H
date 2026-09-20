@@ -52,7 +52,7 @@ namespace universal
     constexpr const char* const group = "universal";
 
     //- Reduced Planck constant: default SI units: [J/s]
-    extern const dimensionedScalar hr;
+    extern OpenFOAM_API const dimensionedScalar hr;
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

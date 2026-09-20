@@ -62,7 +62,7 @@ class quarterSineRamp
 public:
 
     //- Runtime type information
-    TypeName("quarterSineRamp");
+    TypeNameApi(OpenFOAM_API, "quarterSineRamp");
 
 
     // Constructors

@@ -72,7 +72,7 @@ class Wellek
 public:
 
     //- Runtime type information
-    TypeName("Wellek");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Wellek");
 
 
     // Constructors

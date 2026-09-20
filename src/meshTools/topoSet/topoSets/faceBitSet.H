@@ -56,7 +56,7 @@ class faceBitSet
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("faceBitSet");
+    TypeNameNoDebugApi(meshTools_API, "faceBitSet");
 
 
     // Constructors

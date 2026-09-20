@@ -269,7 +269,7 @@ class electrostaticDepositionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("electrostaticDeposition");
+    TypeNameApi(finiteVolume_API, "electrostaticDeposition");
 
 
     // Constructors

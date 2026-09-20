@@ -83,6 +83,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LRR_defines_typeName in .C files that
+//  define the template statics of LRR (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LRR_defines_typeName)
+#  define Foam_LRR_typeName_API
+#else
+#  define Foam_LRR_typeName_API turbulenceModels_API
+#endif
+
 #ifndef LRR_H
 #define LRR_H
 
@@ -159,7 +169,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("LRR");
+    TypeNameApi(Foam_LRR_typeName_API, "LRR");
 
 
     // Constructors

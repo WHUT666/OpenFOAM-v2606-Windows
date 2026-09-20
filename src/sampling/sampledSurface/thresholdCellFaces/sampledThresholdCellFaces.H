@@ -140,7 +140,7 @@ class sampledThresholdCellFaces
 public:
 
     //- Runtime type information
-    TypeName("sampledThresholdCellFaces");
+    TypeNameApi(sampling_API, "sampledThresholdCellFaces");
 
 
     // Constructors

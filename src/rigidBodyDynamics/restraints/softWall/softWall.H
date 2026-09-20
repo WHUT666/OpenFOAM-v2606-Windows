@@ -87,7 +87,7 @@ class softWall
 public:
 
     //- Runtime type information
-    TypeName("softWall");
+    TypeNameApi(rigidBodyDynamics_API, "softWall");
 
 
     // Constructors

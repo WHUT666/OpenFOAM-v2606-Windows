@@ -35,6 +35,18 @@ option(FOAM_BUILD_APPS "Build applications" OFF)
 # keep the runTimeSelection mechanism working.
 option(FOAM_STATIC_LIBS "Build static libs instead of DLLs" ON)
 
+if(NOT FOAM_STATIC_LIBS)
+    # Shared build: activates the <Target>_API import/export macros
+    # (cmake/compat/foamApi.h, force-included via msvcCompat.h)
+    add_compile_definitions(FOAM_SHARED_LIBS)
+    # genExportsDef.py harvests all strong symbols into each DLL's .def,
+    # which also re-exports template instantiations (eg HashSet<label>
+    # members forced by dllexport'd classes). Consumers locally instantiate
+    # the same COMDAT members - identical code, so letting the linker pick
+    # one is safe for functions. Data symbols are all explicitly annotated.
+    add_link_options(/FORCE:MULTIPLE)
+endif()
+
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
 endif()
@@ -246,6 +258,15 @@ if(EXISTS "${BOOST_DIR}/boost/config.hpp")
 endif()
 
 #------------------------------------------------------------------------------
+# Legacy-CRT stdio shim: supplies __iob_func/__imp___iob_func for objects
+# built against the pre-UCRT stdio ABI (conda-forge metis/scotch...).
+# Static lib linked on demand into whichever module references it.
+# Never export __imp___iob_func from a DLL - the __imp_* name corrupts
+# link.exe's .exp generation (LNK1106); genExportsDef.py filters it.
+#------------------------------------------------------------------------------
+add_library(legacyStdioShim STATIC "cmake/compat/legacyStdioShim.c")
+
+#------------------------------------------------------------------------------
 # Third-party: METIS (mesh decomposition) - optional
 #------------------------------------------------------------------------------
 set(METIS_INC_DIR "")
@@ -260,7 +281,7 @@ if(EXISTS "${METIS_DIR}/include/metis.h" AND EXISTS "${METIS_DIR}/lib/metis.lib"
             IMPORTED_LOCATION "${METIS_LIB_DIR}/metis.lib"
             INTERFACE_INCLUDE_DIRECTORIES "${METIS_INC_DIR}"
             # conda-forge metis carries pre-UCRT stdio refs (__iob_func etc)
-            INTERFACE_LINK_LIBRARIES "legacy_stdio_definitions.lib")
+            INTERFACE_LINK_LIBRARIES "legacy_stdio_definitions.lib;legacyStdioShim")
     endif()
     message(STATUS "Using vendored METIS: ${METIS_DIR}")
 endif()
@@ -281,7 +302,7 @@ if(EXISTS "${SCOTCH_DIR}/include/scotch.h" AND EXISTS "${SCOTCH_DIR}/lib/scotch.
             INTERFACE_INCLUDE_DIRECTORIES "${SCOTCH_INC_DIR}"
             # conda-forge splits error handling into separate archives
             INTERFACE_LINK_LIBRARIES
-                "${SCOTCH_LIB_DIR}/scotcherr.lib;${SCOTCH_LIB_DIR}/scotcherrexit.lib")
+                "${SCOTCH_LIB_DIR}/scotcherr.lib;${SCOTCH_LIB_DIR}/scotcherrexit.lib;legacyStdioShim")
     endif()
     message(STATUS "Using vendored SCOTCH: ${SCOTCH_DIR}")
 endif()
@@ -299,7 +320,7 @@ if(EXISTS "${PTSCOTCH_DIR}/include/ptscotch.h" AND EXISTS "${PTSCOTCH_DIR}/lib/p
             INTERFACE_INCLUDE_DIRECTORIES "${PTSCOTCH_INC_DIR}")
         # Error-handling archives; MPI binding is added after MPI detection
         set_target_properties(ptscotch PROPERTIES INTERFACE_LINK_LIBRARIES
-            "${PTSCOTCH_LIB_DIR}/ptscotcherr.lib;${PTSCOTCH_LIB_DIR}/ptscotcherrexit.lib;scotch")
+            "${PTSCOTCH_LIB_DIR}/ptscotcherr.lib;${PTSCOTCH_LIB_DIR}/ptscotcherrexit.lib;scotch;legacyStdioShim")
     endif()
     message(STATUS "Using vendored PTSCOTCH: ${PTSCOTCH_DIR}")
 endif()

@@ -143,7 +143,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("averageNeighbour");
+    TypeNameApi(finiteVolume_API, "averageNeighbour");
 
 
     // Constructors

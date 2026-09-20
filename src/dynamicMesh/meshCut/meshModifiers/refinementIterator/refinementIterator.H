@@ -87,7 +87,7 @@ class refinementIterator
 public:
 
     //- Runtime type information
-    ClassName("refinementIterator");
+    ClassNameApi(dynamicMesh_API, "refinementIterator");
 
 
     // Constructors

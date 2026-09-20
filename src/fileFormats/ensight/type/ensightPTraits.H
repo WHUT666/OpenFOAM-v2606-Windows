@@ -35,6 +35,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ensightPTraits_defines_typeName in .C files that
+//  define the template statics of ensightPTraits (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ensightPTraits_defines_typeName)
+#  define Foam_ensightPTraits_typeName_API
+#else
+#  define Foam_ensightPTraits_typeName_API fileFormats_API
+#endif
+
 #ifndef Foam_ensightPTraits_H
 #define Foam_ensightPTraits_H
 
@@ -62,6 +72,15 @@ struct ensightPTraits
     //  Ensight uses (XX, YY, ZZ, XY, YZ, XZ) order (like VTK).
     static const direction componentOrder[];
 };
+
+
+fileFormats_TEMPLATE_IMPORT(ensightPTraits<Foam::label>);
+fileFormats_TEMPLATE_IMPORT(ensightPTraits<float>);
+fileFormats_TEMPLATE_IMPORT(ensightPTraits<double>);
+fileFormats_TEMPLATE_IMPORT(ensightPTraits<Foam::vector>);
+fileFormats_TEMPLATE_IMPORT(ensightPTraits<Foam::sphericalTensor>);
+fileFormats_TEMPLATE_IMPORT(ensightPTraits<Foam::symmTensor>);
+fileFormats_TEMPLATE_IMPORT(ensightPTraits<Foam::tensor>);
 
 
 // Specializations

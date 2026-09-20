@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CollisionModel_defines_typeName in .C files that
+//  define the template statics of CollisionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CollisionModel_defines_typeName)
+#  define Foam_CollisionModel_typeName_API
+#else
+#  define Foam_CollisionModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef CollisionModel_H
 #define CollisionModel_H
 
@@ -69,11 +79,11 @@ class CollisionModel
 public:
 
     //- Runtime type information
-    TypeName("collisionModel");
+    TypeNameApi(Foam_CollisionModel_typeName_API, "collisionModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_CollisionModel_typeName_API,
         autoPtr,
         CollisionModel,
         dictionary,

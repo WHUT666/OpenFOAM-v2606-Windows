@@ -78,13 +78,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("regularisationRadius");
+    TypeNameApi(adjointOptimisation_API, "regularisationRadius");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             regularisationRadius,
             dictionary,

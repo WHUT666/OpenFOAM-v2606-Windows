@@ -72,11 +72,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("windowModel");
+    TypeNameApi(randomProcesses_API, "windowModel");
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( randomProcesses_API,
         autoPtr,
         windowModel,
         dictionary,

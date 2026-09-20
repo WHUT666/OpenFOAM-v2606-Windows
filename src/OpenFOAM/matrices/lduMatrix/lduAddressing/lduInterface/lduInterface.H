@@ -60,7 +60,7 @@ class lduInterface
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("lduInterface");
+    TypeNameNoDebugApi(OpenFOAM_API, "lduInterface");
 
 
     // Constructors

@@ -168,7 +168,7 @@ class removeFaces
 public:
 
     //- Runtime type information
-    ClassName("removeFaces");
+    ClassNameApi(dynamicMesh_API, "removeFaces");
 
 
     // Constructors

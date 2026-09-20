@@ -109,7 +109,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("PPCG");
+    TypeNameApi(OpenFOAM_API, "PPCG");
 
 
     // Constructors

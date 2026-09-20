@@ -77,7 +77,7 @@ class OBJstream
 public:
 
     //- Declare type-name (no debug switch)
-    ClassNameNoDebug("OBJstream");
+    ClassNameNoDebugApi(fileFormats_API, "OBJstream");
 
 
     // Constructors

@@ -145,7 +145,7 @@ class radialActuationDiskSource
 public:
 
     //- Runtime type information
-    TypeName("radialActuationDiskSource");
+    TypeNameApi(fvOptions_API, "radialActuationDiskSource");
 
 
     // Constructors

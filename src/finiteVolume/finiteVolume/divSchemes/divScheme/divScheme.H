@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_divScheme_defines_typeName in .C files that
+//  define the template statics of divScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_divScheme_defines_typeName)
+#  define Foam_divScheme_typeName_API
+#else
+#  define Foam_divScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_divScheme_H
 #define Foam_divScheme_H
 
@@ -97,8 +107,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_divScheme_typeName_API,
             tmp,
             divScheme,
             Istream,

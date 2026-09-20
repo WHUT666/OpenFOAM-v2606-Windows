@@ -104,7 +104,7 @@ class streamFunction
 public:
 
     //- Runtime type information
-    TypeName("streamFunction");
+    TypeNameApi(fieldFunctionObjects_API, "streamFunction");
 
 
     // Constructors

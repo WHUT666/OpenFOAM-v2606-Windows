@@ -59,7 +59,7 @@ class equipotentialPointSmoother
 public:
 
     //- Runtime type information
-    TypeName("equipotential");
+    TypeNameApi(dynamicMesh_API, "equipotential");
 
 
     // Constructors

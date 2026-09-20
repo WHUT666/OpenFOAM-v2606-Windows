@@ -104,7 +104,7 @@ class pointConstraints
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("pointConstraints");
+    ClassNameApi(finiteVolume_API, "pointConstraints");
 
 
     // Constructors

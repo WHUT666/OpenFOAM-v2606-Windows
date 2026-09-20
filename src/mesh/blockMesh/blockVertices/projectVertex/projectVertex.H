@@ -76,7 +76,7 @@ class projectVertex
 public:
 
     //- Runtime type information
-    TypeName("project");
+    TypeNameApi(blockMesh_API, "project");
 
 
     // Constructors

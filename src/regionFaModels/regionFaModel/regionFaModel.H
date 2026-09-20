@@ -154,11 +154,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("regionFaModel");
+    TypeNameApi(regionFaModels_API, "regionFaModel");
 
 
     //- Default name regionFaModel
-    static const word regionFaModelName;
+    static regionFaModels_API const word regionFaModelName;
 
     // Constructors
 

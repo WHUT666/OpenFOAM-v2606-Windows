@@ -114,7 +114,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("patchMeanVelocityForce");
+    TypeNameApi(fvOptions_API, "patchMeanVelocityForce");
 
 
     // Constructors

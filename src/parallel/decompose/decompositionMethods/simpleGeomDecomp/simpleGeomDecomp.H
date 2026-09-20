@@ -83,7 +83,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("simple");
+    TypeNameApi(decompositionMethods_API, "simple");
 
 
     // Constructors

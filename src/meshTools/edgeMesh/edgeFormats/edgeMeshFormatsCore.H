@@ -73,7 +73,7 @@ public:
 
         //- The file extension corresponding to 'native' edge format
         //  Normally "eMesh" (edge-mesh)
-        static word nativeExt;
+        static meshTools_API word nativeExt;
 
 
     // Static Member Functions

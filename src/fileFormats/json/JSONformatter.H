@@ -66,7 +66,7 @@ class JSONformatter
 public:
 
     //- Declare type-name
-    TypeName("JSONformatter");
+    TypeNameApi(fileFormats_API, "JSONformatter");
 
     //- Construct from Ostream
     explicit JSONformatter(Ostream& os);

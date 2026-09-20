@@ -171,7 +171,7 @@ class abaqusWriter
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeNameNoDebug("abaqus");
+    TypeNameNoDebugApi(surfMesh_API, "abaqus");
 
 
     // Constructors

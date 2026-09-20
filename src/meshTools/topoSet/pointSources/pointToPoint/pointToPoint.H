@@ -131,7 +131,7 @@ class pointToPoint
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Names of sets or zones to use
         wordList names_;
@@ -143,7 +143,7 @@ class pointToPoint
 public:
 
     //- Runtime type information
-    TypeName("pointToPoint");
+    TypeNameApi(meshTools_API, "pointToPoint");
 
 
     // Constructors

@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_AssemblyFvPatch_defines_typeName in .C files that
+//  define the template statics of AssemblyFvPatch (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_AssemblyFvPatch_defines_typeName)
+#  define Foam_AssemblyFvPatch_typeName_API
+#else
+#  define Foam_AssemblyFvPatch_typeName_API finiteVolume_API
+#endif
+
 #ifndef AssemblyFvPatch_H
 #define AssemblyFvPatch_H
 
@@ -76,7 +86,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName(CyclicType::typeName_());
+    TypeNameApi(Foam_AssemblyFvPatch_typeName_API, CyclicType::typeName_());
 
 
     // Constructors

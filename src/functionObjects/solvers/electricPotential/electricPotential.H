@@ -258,7 +258,7 @@ class electricPotential
 public:
 
     //- Runtime type information
-    TypeName("electricPotential");
+    TypeNameApi(solverFunctionObjects_API, "electricPotential");
 
 
     // Constructors

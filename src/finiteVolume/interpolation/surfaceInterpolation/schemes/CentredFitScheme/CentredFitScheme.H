@@ -35,6 +35,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CentredFitScheme_defines_typeName in .C files that
+//  define the template statics of CentredFitScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CentredFitScheme_defines_typeName)
+#  define Foam_CentredFitScheme_typeName_API
+#else
+#  define Foam_CentredFitScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef CentredFitScheme_H
 #define CentredFitScheme_H
 
@@ -78,7 +88,7 @@ class CentredFitScheme
 public:
 
     //- Runtime type information
-    TypeName("CentredFitScheme");
+    TypeNameApi(Foam_CentredFitScheme_typeName_API, "CentredFitScheme");
 
 
     // Constructors

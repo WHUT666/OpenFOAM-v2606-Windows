@@ -302,7 +302,7 @@ class vtkWrite
 public:
 
     //- Runtime type information
-    TypeName("vtkWrite");
+    TypeNameApi(utilityFunctionObjects_API, "vtkWrite");
 
 
     // Constructors

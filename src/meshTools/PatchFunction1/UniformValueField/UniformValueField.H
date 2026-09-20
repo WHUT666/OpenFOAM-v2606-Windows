@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_UniformValueField_defines_typeName in .C files that
+//  define the template statics of UniformValueField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_UniformValueField_defines_typeName)
+#  define Foam_UniformValueField_typeName_API
+#else
+#  define Foam_UniformValueField_typeName_API meshTools_API
+#endif
+
 #ifndef Foam_PatchFunction1Types_UniformValueField_H
 #define Foam_PatchFunction1Types_UniformValueField_H
 
@@ -198,6 +208,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::UniformValueField<Foam::scalar>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::UniformValueField<Foam::vector>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::UniformValueField<Foam::sphericalTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::UniformValueField<Foam::symmTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::UniformValueField<Foam::tensor>);
 
 #endif
 

@@ -88,7 +88,7 @@ class offsetSurface
 public:
 
     //- Runtime type information
-    TypeName("offsetSurface");
+    TypeNameApi(extrudeModel_API, "offsetSurface");
 
     // Constructors
 

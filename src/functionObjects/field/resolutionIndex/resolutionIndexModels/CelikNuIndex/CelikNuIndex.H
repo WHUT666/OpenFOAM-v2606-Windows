@@ -197,7 +197,7 @@ class CelikNuIndex
 public:
 
     //- Runtime type information
-    TypeName("CelikNuIndex");
+    TypeNameApi(fieldFunctionObjects_API, "CelikNuIndex");
 
 
     // Constructors

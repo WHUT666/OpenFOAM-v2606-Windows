@@ -69,7 +69,7 @@ class isothermal
 public:
 
     //- Runtime type information
-    TypeName("isothermal");
+    TypeNameApi(multiphaseSystem_API, "isothermal");
 
 
     // Constructors

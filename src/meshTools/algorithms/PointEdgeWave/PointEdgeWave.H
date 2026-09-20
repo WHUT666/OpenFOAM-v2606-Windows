@@ -88,7 +88,7 @@ protected:
         //- Relative tolerance.
         //  Stop propagation if relative changes less than this tolerance
         //  (responsibility for checking this is up to Type implementation)
-        static scalar propagationTol_;
+        static meshTools_API scalar propagationTol_;
 
 
     // Protected Data
@@ -121,11 +121,11 @@ protected:
 public:
 
     //- Default trackData value (for default template argument)
-    static int dummyTrackData_;
+    static meshTools_API int dummyTrackData_;
 
 
     //- Runtime type information
-    ClassName("PointEdgeWave");
+    ClassNameApi(meshTools_API, "PointEdgeWave");
 
 
     // Constructors

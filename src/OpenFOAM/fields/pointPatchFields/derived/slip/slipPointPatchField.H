@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_slipPointPatchField_defines_typeName in .C files that
+//  define the template statics of slipPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_slipPointPatchField_defines_typeName)
+#  define Foam_slipPointPatchField_typeName_API
+#else
+#  define Foam_slipPointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_slipPointPatchField_H
 #define Foam_slipPointPatchField_H
 
@@ -59,7 +69,7 @@ class slipPointPatchField
 public:
 
     //- Runtime type information
-    TypeName("slip");
+    TypeNameApi(Foam_slipPointPatchField_typeName_API, "slip");
 
 
     // Constructors

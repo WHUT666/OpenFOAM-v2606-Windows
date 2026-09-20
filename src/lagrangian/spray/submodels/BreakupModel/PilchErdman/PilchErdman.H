@@ -70,6 +70,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PilchErdman_defines_typeName in .C files that
+//  define the template statics of PilchErdman (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PilchErdman_defines_typeName)
+#  define Foam_PilchErdman_typeName_API
+#else
+#  define Foam_PilchErdman_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef PilchErdman_H
 #define PilchErdman_H
 
@@ -101,7 +111,7 @@ class PilchErdman
 public:
 
     //- Runtime type information
-    TypeName("PilchErdman");
+    TypeNameApi(Foam_PilchErdman_typeName_API, "PilchErdman");
 
 
     // Constructors

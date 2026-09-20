@@ -68,7 +68,7 @@ class constantDrift
 public:
 
     //- Runtime type information
-    TypeName("constant");
+    TypeNameApi(reactingMultiphaseSystem_API, "constant");
 
     // Constructor
 

@@ -59,7 +59,7 @@ class laplacianPointSmoother
 public:
 
     //- Runtime type information
-    TypeName("laplacian");
+    TypeNameApi(dynamicMesh_API, "laplacian");
 
 
     // Constructors

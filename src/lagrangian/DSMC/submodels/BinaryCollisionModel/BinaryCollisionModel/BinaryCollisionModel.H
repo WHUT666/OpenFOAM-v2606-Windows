@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_BinaryCollisionModel_defines_typeName in .C files that
+//  define the template statics of BinaryCollisionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_BinaryCollisionModel_defines_typeName)
+#  define Foam_BinaryCollisionModel_typeName_API
+#else
+#  define Foam_BinaryCollisionModel_typeName_API DSMC_API
+#endif
+
 #ifndef BinaryCollisionModel_H
 #define BinaryCollisionModel_H
 
@@ -69,11 +79,11 @@ class BinaryCollisionModel
 public:
 
     //- Runtime type information
-    TypeName("BinaryCollisionModel");
+    TypeNameApi(Foam_BinaryCollisionModel_typeName_API, "BinaryCollisionModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_BinaryCollisionModel_typeName_API,
         autoPtr,
         BinaryCollisionModel,
         dictionary,

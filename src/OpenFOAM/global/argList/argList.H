@@ -125,13 +125,13 @@ class argList
     // Private Data
 
         //- Command arguments are mandatory (default) or optional
-        static bool argsMandatory_;
+        static OpenFOAM_API bool argsMandatory_;
 
         //- Check presence of processor directories (default: on)
-        static bool checkProcessorDirectories_;
+        static OpenFOAM_API bool checkProcessorDirectories_;
 
         //- MPI threads are desired for the application (default: off)
-        static bool parallelThreads_;
+        static OpenFOAM_API bool parallelThreads_;
 
         //- Switch on/off parallel mode, dry-run etc.
         //  Construct first so destructor is done last.
@@ -206,42 +206,42 @@ public:
     // Static Data Members
 
         //- A list of valid (mandatory) arguments
-        static SLList<string> validArgs;
+        static OpenFOAM_API SLList<string> validArgs;
 
         //- The "advanced" options are shown with -help-full (not with --help)
-        static HashSet<string> advancedOptions;
+        static OpenFOAM_API HashSet<string> advancedOptions;
 
         //- A list of valid options
-        static HashTable<string> validOptions;
+        static OpenFOAM_API HashTable<string> validOptions;
 
         //- A list of valid parallel options
-        static HashTable<string> validParOptions;
+        static OpenFOAM_API HashTable<string> validParOptions;
 
         //- A list of aliases for options.
         //  Stored as (alias = canonical, version)
-        static HashTable<std::pair<word,int>> validOptionsCompat;
+        static OpenFOAM_API HashTable<std::pair<word,int>> validOptionsCompat;
 
         //- A list of options to ignore.
         //  Stored as (option = bool, version)
-        static HashTable<std::pair<bool,int>> ignoreOptionsCompat;
+        static OpenFOAM_API HashTable<std::pair<bool,int>> ignoreOptionsCompat;
 
         //- Short description for program arguments
-        static HashTable<string, label, Hash<label>> argUsage;
+        static OpenFOAM_API HashTable<string, label, Hash<label>> argUsage;
 
         //- Short description for validOptions
-        static HashTable<string> optionUsage;
+        static OpenFOAM_API HashTable<string> optionUsage;
 
         //- General usage notes
-        static SLList<string> notes;
+        static OpenFOAM_API SLList<string> notes;
 
         //- Min indentation when displaying usage (default: 20)
-        static std::string::size_type usageMin;
+        static OpenFOAM_API std::string::size_type usageMin;
 
         //- Max screen width when displaying usage (default: 80)
-        static std::string::size_type usageMax;
+        static OpenFOAM_API std::string::size_type usageMax;
 
         //- Standard name for the post-processing option
-        static word postProcessOptionName;
+        static OpenFOAM_API word postProcessOptionName;
 
         //! \cond internalClass
         //  The constructor populates the standard options

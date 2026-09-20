@@ -110,7 +110,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("euler");
+    TypeNameNoDebugApi(OpenFOAM_API, "euler");
 
 
     // Constructors

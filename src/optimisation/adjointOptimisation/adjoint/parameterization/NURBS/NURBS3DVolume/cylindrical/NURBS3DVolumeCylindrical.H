@@ -90,7 +90,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("cylindrical");
+    TypeNameApi(adjointOptimisation_API, "cylindrical");
 
 
     // Constructors

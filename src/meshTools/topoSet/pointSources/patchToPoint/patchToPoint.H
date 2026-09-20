@@ -120,7 +120,7 @@ class patchToPoint
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Matcher for patches
         wordRes selectedPatches_;
@@ -134,7 +134,7 @@ class patchToPoint
 public:
 
     //- Runtime type information
-    TypeName("patchToPoint");
+    TypeNameApi(meshTools_API, "patchToPoint");
 
 
     // Constructors

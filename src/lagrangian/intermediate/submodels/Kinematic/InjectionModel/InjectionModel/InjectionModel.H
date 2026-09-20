@@ -51,6 +51,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_InjectionModel_defines_typeName in .C files that
+//  define the template statics of InjectionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_InjectionModel_defines_typeName)
+#  define Foam_InjectionModel_typeName_API
+#else
+#  define Foam_InjectionModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef InjectionModel_H
 #define InjectionModel_H
 
@@ -202,11 +212,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("injectionModel");
+    TypeNameApi(Foam_InjectionModel_typeName_API, "injectionModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_InjectionModel_typeName_API,
         autoPtr,
         InjectionModel,
         dictionary,

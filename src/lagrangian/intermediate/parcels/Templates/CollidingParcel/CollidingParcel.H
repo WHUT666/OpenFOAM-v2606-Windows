@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CollidingParcel_defines_typeName in .C files that
+//  define the template statics of CollidingParcel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CollidingParcel_defines_typeName)
+#  define Foam_CollidingParcel_typeName_API
+#else
+#  define Foam_CollidingParcel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef CollidingParcel_H
 #define CollidingParcel_H
 
@@ -151,7 +161,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("CollidingParcel");
+        TypeNameApi(Foam_CollidingParcel_typeName_API, "CollidingParcel");
 
         //- String representation of properties
         AddToPropertyList

@@ -157,10 +157,10 @@ private:
 
     // Private Data
 
-        static const Enum<faceAction> faceActionNames_;
+        static meshTools_API const Enum<faceAction> faceActionNames_;
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Names of sets or zones to use
         wordList names_;
@@ -190,7 +190,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("faceToCell");
+    TypeNameApi(meshTools_API, "faceToCell");
 
 
     // Constructors

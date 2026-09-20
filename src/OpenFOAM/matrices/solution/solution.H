@@ -154,7 +154,7 @@ public:
     static label upgradeSolverDict(dictionary& dict, const bool verbose=true);
 
     //- Debug switch (registered name: "solution")
-    static int debug;
+    static OpenFOAM_API int debug;
 
 
     // Constructors

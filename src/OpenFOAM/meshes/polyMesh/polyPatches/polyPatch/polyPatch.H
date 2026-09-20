@@ -131,16 +131,16 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("patch");
+    TypeNameApi(OpenFOAM_API, "patch");
 
     //- Debug switch to disallow the use of genericPolyPatch
-    static int disallowGenericPolyPatch;
+    static OpenFOAM_API int disallowGenericPolyPatch;
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             polyPatch,
             word,
@@ -155,8 +155,8 @@ public:
             (name, size, start, index, bm, patchType)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             polyPatch,
             dictionary,

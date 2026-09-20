@@ -60,12 +60,12 @@ class CHFSubCoolModel
 public:
 
     //- Runtime type information
-    TypeName("CHFSubCoolModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "CHFSubCoolModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         CHFSubCoolModel,
         dictionary,

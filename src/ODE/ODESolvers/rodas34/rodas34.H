@@ -96,7 +96,7 @@ class rodas34
 public:
 
     //- Runtime type information
-    TypeName("rodas34");
+    TypeNameApi(ODE_API, "rodas34");
 
 
     // Constructors

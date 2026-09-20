@@ -69,7 +69,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("shapeFI");
+    TypeNameApi(adjointOptimisation_API, "shapeFI");
 
 
     // Constructors

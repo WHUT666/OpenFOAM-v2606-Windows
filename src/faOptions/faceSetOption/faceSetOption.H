@@ -131,7 +131,7 @@ public:
         };
 
         //- List of selection mode type names
-        static const Enum<selectionModeType> selectionModeTypeNames_;
+        static faOptions_API const Enum<selectionModeType> selectionModeTypeNames_;
 
 
 protected:
@@ -176,7 +176,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("faceSetOption");
+    TypeNameApi(faOptions_API, "faceSetOption");
 
 
     // Constructors

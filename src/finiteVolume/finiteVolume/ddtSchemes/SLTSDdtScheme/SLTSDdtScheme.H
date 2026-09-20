@@ -46,6 +46,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SLTSDdtScheme_defines_typeName in .C files that
+//  define the template statics of SLTSDdtScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SLTSDdtScheme_defines_typeName)
+#  define Foam_SLTSDdtScheme_typeName_API
+#else
+#  define Foam_SLTSDdtScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef SLTSDdtScheme_H
 #define SLTSDdtScheme_H
 
@@ -101,7 +111,7 @@ class SLTSDdtScheme
 public:
 
     //- Runtime type information
-    TypeName("SLTS");
+    TypeNameApi(Foam_SLTSDdtScheme_typeName_API, "SLTS");
 
 
     // Constructors

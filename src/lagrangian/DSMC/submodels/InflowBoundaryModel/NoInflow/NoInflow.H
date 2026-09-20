@@ -31,6 +31,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoInflow_defines_typeName in .C files that
+//  define the template statics of NoInflow (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoInflow_defines_typeName)
+#  define Foam_NoInflow_typeName_API
+#else
+#  define Foam_NoInflow_typeName_API DSMC_API
+#endif
+
 #ifndef NoInflow_H
 #define NoInflow_H
 
@@ -52,7 +62,7 @@ class NoInflow
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoInflow_typeName_API, "none");
 
 
     // Constructors

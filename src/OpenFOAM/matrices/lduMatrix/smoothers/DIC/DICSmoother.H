@@ -69,7 +69,7 @@ class DICSmoother
 public:
 
     //- Runtime type information
-    TypeName("DIC");
+    TypeNameApi(OpenFOAM_API, "DIC");
 
 
     // Constructors

@@ -40,6 +40,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_COxidationKineticDiffusionLimitedRate_defines_typeName in .C files that
+//  define the template statics of COxidationKineticDiffusionLimitedRate (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_COxidationKineticDiffusionLimitedRate_defines_typeName)
+#  define Foam_COxidationKineticDiffusionLimitedRate_typeName_API
+#else
+#  define Foam_COxidationKineticDiffusionLimitedRate_typeName_API coalCombustion_API
+#endif
+
 #ifndef COxidationKineticDiffusionLimitedRate_H
 #define COxidationKineticDiffusionLimitedRate_H
 
@@ -107,7 +117,7 @@ class COxidationKineticDiffusionLimitedRate
 public:
 
     //- Runtime type information
-    TypeName("COxidationKineticDiffusionLimitedRate");
+    TypeNameApi(Foam_COxidationKineticDiffusionLimitedRate_typeName_API, "COxidationKineticDiffusionLimitedRate");
 
 
     // Constructors

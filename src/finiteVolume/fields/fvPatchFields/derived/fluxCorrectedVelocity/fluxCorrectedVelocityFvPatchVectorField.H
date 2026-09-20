@@ -113,7 +113,7 @@ class fluxCorrectedVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("fluxCorrectedVelocity");
+    TypeNameApi(finiteVolume_API, "fluxCorrectedVelocity");
 
 
     // Constructors

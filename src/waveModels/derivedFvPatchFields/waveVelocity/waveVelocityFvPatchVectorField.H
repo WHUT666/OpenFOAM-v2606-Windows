@@ -83,7 +83,7 @@ class waveVelocityFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("waveVelocity");
+   TypeNameApi(waveModels_API, "waveVelocity");
 
 
    // Constructors

@@ -110,7 +110,7 @@ class CourantNo
 public:
 
     //- Runtime type information
-    TypeName("CourantNo");
+    TypeNameApi(fieldFunctionObjects_API, "CourantNo");
 
 
     // Constructors

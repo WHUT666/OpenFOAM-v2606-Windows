@@ -218,7 +218,7 @@ public:
         };
 
         //- Names for geometryModeType
-        static const Enum<geometryModeType> geometryModeTypeNames_;
+        static fvOptions_API const Enum<geometryModeType> geometryModeTypeNames_;
 
         //- Options for the inlet flow type specification
         enum inletFlowType
@@ -229,7 +229,7 @@ public:
         };
 
         //- Names for inletFlowType
-        static const Enum<inletFlowType> inletFlowTypeNames_;
+        static fvOptions_API const Enum<inletFlowType> inletFlowTypeNames_;
 
 
 protected:
@@ -329,7 +329,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("rotorDisk");
+    TypeNameApi(fvOptions_API, "rotorDisk");
 
 
     // Constructors

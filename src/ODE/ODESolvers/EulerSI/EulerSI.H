@@ -83,7 +83,7 @@ class EulerSI
 public:
 
     //- Runtime type information
-    TypeName("EulerSI");
+    TypeNameApi(ODE_API, "EulerSI");
 
 
     // Constructors

@@ -75,7 +75,7 @@ class Gosman
 public:
 
     //- Runtime type information
-    TypeName("Gosman");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Gosman");
 
 
     // Constructors

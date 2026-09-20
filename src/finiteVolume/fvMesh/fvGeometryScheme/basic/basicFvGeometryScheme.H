@@ -64,7 +64,7 @@ class basicFvGeometryScheme
 public:
 
     //- Runtime type information
-    TypeName("basic");
+    TypeNameApi(finiteVolume_API, "basic");
 
 
     // Constructors

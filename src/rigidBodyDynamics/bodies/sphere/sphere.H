@@ -73,7 +73,7 @@ class sphere
 public:
 
     //- Runtime type information
-    TypeName("sphere");
+    TypeNameApi(rigidBodyDynamics_API, "sphere");
 
 
     // Constructors

@@ -58,7 +58,7 @@ class manualRenumber
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("manual");
+    TypeNameNoDebugApi(renumberMethods_API, "manual");
 
 
     // Constructors

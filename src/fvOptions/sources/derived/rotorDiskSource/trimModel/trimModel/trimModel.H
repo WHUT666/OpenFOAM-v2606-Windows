@@ -110,13 +110,13 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("trimModel");
+    TypeNameApi(fvOptions_API, "trimModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fvOptions_API,
             autoPtr,
             trimModel,
             dictionary,

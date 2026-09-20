@@ -156,7 +156,7 @@ class general
 public:
 
     //- Runtime type information
-    TypeName("general");
+    TypeNameApi(distributionModels_API, "general");
 
 
     // Constructors

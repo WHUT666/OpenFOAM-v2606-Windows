@@ -160,13 +160,13 @@ namespace vtk
     };
 
     //- File extension (without ".") for some vtk XML file content types
-    extern const Foam::Enum<fileTag> fileExtension;
+    extern fileFormats_API const Foam::Enum<fileTag> fileExtension;
 
     //- Version string for some vtk XML file content types
-    extern const Foam::Enum<fileTag> fileContentVersions;
+    extern fileFormats_API const Foam::Enum<fileTag> fileContentVersions;
 
     //- Strings corresponding to the vtk XML tags
-    extern const Foam::Enum<fileTag> fileTagNames;
+    extern fileFormats_API const Foam::Enum<fileTag> fileTagNames;
 
     //- Some common XML attributes for vtk files
     enum class fileAttr : uint8_t
@@ -182,7 +182,7 @@ namespace vtk
     };
 
     //- Strings corresponding to the vtk XML attributes
-    extern const Foam::Enum<fileAttr> fileAttrNames;
+    extern fileFormats_API const Foam::Enum<fileAttr> fileAttrNames;
 
     //- Some common names for XML DataArray entries
     enum class dataArrayAttr : uint8_t
@@ -196,7 +196,7 @@ namespace vtk
     };
 
     //- Strings corresponding to the vtk XML DataArray attributes
-    extern const Foam::Enum<dataArrayAttr> dataArrayAttrNames;
+    extern fileFormats_API const Foam::Enum<dataArrayAttr> dataArrayAttrNames;
 
 
 /*---------------------------------------------------------------------------*\
@@ -207,16 +207,16 @@ namespace legacy
 {
 
     //- Legacy file extension ("vtk")
-    extern const word fileExtension;
+    extern fileFormats_API const word fileExtension;
 
     //- Legacy content names (POLYDATA, UNSTRUCTURED_GRID)
-    extern const Foam::Enum<vtk::fileTag> contentNames;
+    extern fileFormats_API const Foam::Enum<vtk::fileTag> contentNames;
 
     //- Legacy file tags (eg, LINES, CELL_DATA, POINT_DATA, ...)
-    extern const Foam::Enum<vtk::fileTag> fileTagNames;
+    extern fileFormats_API const Foam::Enum<vtk::fileTag> fileTagNames;
 
     //- Legacy attributes (eg, OFFSETS)
-    extern const Foam::Enum<dataArrayAttr> dataArrayAttrNames;
+    extern fileFormats_API const Foam::Enum<dataArrayAttr> dataArrayAttrNames;
 
 } // End namespace Foam::vtk::legacy
 

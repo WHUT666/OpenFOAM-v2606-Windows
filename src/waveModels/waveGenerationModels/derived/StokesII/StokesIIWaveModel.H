@@ -102,7 +102,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("StokesII");
+    TypeNameApi(waveModels_API, "StokesII");
 
     //- Constructor
     StokesII

@@ -116,7 +116,7 @@ class thermalShellFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("compressible::thermalShell");
+    TypeNameApi(regionFaModels_API, "compressible::thermalShell");
 
 
     // Constructors

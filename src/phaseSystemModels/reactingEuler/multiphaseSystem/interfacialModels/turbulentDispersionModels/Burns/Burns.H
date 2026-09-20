@@ -85,7 +85,7 @@ class Burns
 public:
 
     //- Runtime type information
-    TypeName("Burns");
+    TypeNameApi(reactingMultiphaseSystem_API, "Burns");
 
 
     // Constructors

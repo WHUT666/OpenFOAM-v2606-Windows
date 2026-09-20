@@ -94,7 +94,7 @@ class pointHistory
 public:
 
     //- Runtime type information
-    TypeName("pointHistory");
+    TypeNameApi(interfaceTrackingFvMesh_API, "pointHistory");
 
 
     // Constructors

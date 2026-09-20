@@ -86,7 +86,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("mappedConvectiveHeatTransfer");
+    TypeNameApi(surfaceFilmModels_API, "mappedConvectiveHeatTransfer");
 
 
     // Constructors

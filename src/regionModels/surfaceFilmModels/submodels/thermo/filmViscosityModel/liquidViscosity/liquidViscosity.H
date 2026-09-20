@@ -76,7 +76,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("liquid");
+    TypeNameApi(surfaceFilmModels_API, "liquid");
 
 
     // Constructors

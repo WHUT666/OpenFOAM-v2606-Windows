@@ -84,10 +84,10 @@ private:
     // Static data members
 
         //- Default angle for faces to be concave
-        static const scalar defaultConcaveAngle;
+        static snappyHexMesh_API const scalar defaultConcaveAngle;
 
         //- thicknessModelType names
-        static const Enum<thicknessModelType> thicknessModelTypeNames_;
+        static snappyHexMesh_API const Enum<thicknessModelType> thicknessModelTypeNames_;
 
 
     // Private Data

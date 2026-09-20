@@ -69,13 +69,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("wallLubricationModel");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "wallLubricationModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( compressibleTwoPhaseSystem_API,
             autoPtr,
             wallLubricationModel,
             dictionary,
@@ -90,7 +90,7 @@ public:
     // Static data members
 
         //- Coefficient dimensions
-        static const dimensionSet dimF;
+        static compressibleTwoPhaseSystem_API const dimensionSet dimF;
 
 
     // Constructors

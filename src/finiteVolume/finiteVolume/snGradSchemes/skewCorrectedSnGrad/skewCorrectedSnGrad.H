@@ -48,6 +48,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_skewCorrectedSnGrad_defines_typeName in .C files that
+//  define the template statics of skewCorrectedSnGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_skewCorrectedSnGrad_defines_typeName)
+#  define Foam_skewCorrectedSnGrad_typeName_API
+#else
+#  define Foam_skewCorrectedSnGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef skewCorrectedSnGrad_H
 #define skewCorrectedSnGrad_H
 
@@ -81,7 +91,7 @@ class skewCorrectedSnGrad
 public:
 
     //- Runtime type information
-    TypeName("skewCorrected");
+    TypeNameApi(Foam_skewCorrectedSnGrad_typeName_API, "skewCorrected");
 
 
     // Constructors

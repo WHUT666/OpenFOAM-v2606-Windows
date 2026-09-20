@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CombustionModel_defines_typeName in .C files that
+//  define the template statics of CombustionModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CombustionModel_defines_typeName)
+#  define Foam_CombustionModel_typeName_API
+#else
+#  define Foam_CombustionModel_typeName_API combustionModels_API
+#endif
+
 #ifndef CombustionModel_H
 #define CombustionModel_H
 
@@ -73,12 +83,12 @@ public:
 
 
     //- Runtime type information
-    TypeName("CombustionModel");
+    TypeNameApi(Foam_CombustionModel_typeName_API, "CombustionModel");
 
 
     //- Declare run-time constructor selection tables
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_CombustionModel_typeName_API,
         autoPtr,
         CombustionModel,
         dictionary,

@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_solidChemistryModel_defines_typeName in .C files that
+//  define the template statics of solidChemistryModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_solidChemistryModel_defines_typeName)
+#  define Foam_solidChemistryModel_typeName_API
+#else
+#  define Foam_solidChemistryModel_typeName_API solidChemistryModel_API
+#endif
+
 #ifndef solidChemistryModel_H
 #define solidChemistryModel_H
 
@@ -111,7 +121,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("solidChemistryModel");
+    TypeNameApi(Foam_solidChemistryModel_typeName_API, "solidChemistryModel");
 
 
     // Constructors

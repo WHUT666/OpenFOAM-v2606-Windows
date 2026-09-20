@@ -149,7 +149,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("explicitPorositySource");
+    TypeNameApi(fvOptions_API, "explicitPorositySource");
 
 
     // Constructors

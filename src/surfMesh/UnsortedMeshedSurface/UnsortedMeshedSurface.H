@@ -46,6 +46,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_UnsortedMeshedSurface_defines_typeName in .C files that
+//  define the template statics of UnsortedMeshedSurface (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_UnsortedMeshedSurface_defines_typeName)
+#  define Foam_UnsortedMeshedSurface_typeName_API
+#else
+#  define Foam_UnsortedMeshedSurface_typeName_API surfMesh_API
+#endif
+
 #ifndef Foam_UnsortedMeshedSurface_H
 #define Foam_UnsortedMeshedSurface_H
 
@@ -167,7 +177,7 @@ public:
 
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("UnsortedMeshedSurface");
+    TypeNameApi(Foam_UnsortedMeshedSurface_typeName_API, "UnsortedMeshedSurface");
 
 
     // Static Functions
@@ -247,8 +257,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_UnsortedMeshedSurface_typeName_API,
             autoPtr,
             UnsortedMeshedSurface,
             fileExtension,
@@ -282,8 +292,9 @@ public:
 
     // Member Function Selectors
 
-        declareMemberFunctionSelectionTable
+        declareMemberFunctionSelectionTableApi
         (
+            surfMesh_API,
             void,
             UnsortedMeshedSurface,
             write,

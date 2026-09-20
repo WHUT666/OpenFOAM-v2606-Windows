@@ -76,7 +76,7 @@ class Euler
 public:
 
     //- Runtime type information
-    TypeName("Euler");
+    TypeNameApi(ODE_API, "Euler");
 
 
     // Constructors

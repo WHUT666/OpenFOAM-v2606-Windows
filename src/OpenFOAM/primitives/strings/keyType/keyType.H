@@ -103,7 +103,7 @@ public:
     // Static Data Members
 
         //- An empty keyType
-        static const keyType null;
+        static OpenFOAM_API const keyType null;
 
 
     // Constructors

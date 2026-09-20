@@ -172,13 +172,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sampledSet");
+    TypeNameApi(sampling_API, "sampledSet");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( sampling_API,
             autoPtr,
             sampledSet,
             word,

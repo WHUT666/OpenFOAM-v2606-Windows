@@ -147,7 +147,7 @@ class displacementLayeredMotionMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("displacementLayeredMotion");
+    TypeNameApi(dynamicMesh_API, "displacementLayeredMotion");
 
 
     // Constructors

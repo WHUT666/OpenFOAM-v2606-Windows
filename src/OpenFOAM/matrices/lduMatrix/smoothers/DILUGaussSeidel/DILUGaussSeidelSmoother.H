@@ -66,7 +66,7 @@ class DILUGaussSeidelSmoother
 public:
 
     //- Runtime type information
-    TypeName("DILUGaussSeidel");
+    TypeNameApi(OpenFOAM_API, "DILUGaussSeidel");
 
 
     // Constructors

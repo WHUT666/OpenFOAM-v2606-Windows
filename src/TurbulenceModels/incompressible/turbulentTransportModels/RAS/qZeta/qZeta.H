@@ -116,7 +116,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("qZeta");
+    TypeNameApi(incompressibleTurbulenceModels_API, "qZeta");
 
     // Constructors
 

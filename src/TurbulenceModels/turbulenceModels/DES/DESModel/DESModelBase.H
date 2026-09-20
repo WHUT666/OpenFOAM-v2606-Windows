@@ -56,7 +56,7 @@ class DESModelBase
 public:
 
     //- Runtime type information
-    ClassName("DESModelBase");
+    ClassNameApi(turbulenceModels_API, "DESModelBase");
 
     // Constructors
 

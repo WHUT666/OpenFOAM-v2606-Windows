@@ -94,7 +94,7 @@ public:
         static constexpr int nTypes = 3;
 
         //- The ensight 'Face' element type names
-        static const char* elemNames[nTypes];
+        static fileFormats_API const char* elemNames[nTypes];
 
 
     // Static Functions
@@ -140,7 +140,7 @@ private:
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("ensightFaces");
+    TypeNameApi(fileFormats_API, "ensightFaces");
 
 
     // Constructors

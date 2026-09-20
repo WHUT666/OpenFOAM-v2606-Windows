@@ -99,13 +99,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("restraint");
+    TypeNameApi(rigidBodyDynamics_API, "restraint");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( rigidBodyDynamics_API,
             autoPtr,
             restraint,
             dictionary,

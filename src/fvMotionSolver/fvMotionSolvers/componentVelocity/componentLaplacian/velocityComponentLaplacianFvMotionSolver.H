@@ -92,7 +92,7 @@ class velocityComponentLaplacianFvMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("velocityComponentLaplacian");
+    TypeNameApi(fvMotionSolvers_API, "velocityComponentLaplacian");
 
 
     // Constructors

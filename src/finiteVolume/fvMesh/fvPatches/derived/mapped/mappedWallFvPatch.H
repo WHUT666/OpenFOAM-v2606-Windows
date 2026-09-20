@@ -57,7 +57,7 @@ class mappedWallFvPatch
 public:
 
     //- Runtime type information
-    TypeName(mappedWallPolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, mappedWallPolyPatch::typeName_());
 
 
     // Constructors

@@ -69,7 +69,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("symmetryPlane");
+    TypeNameApi(OpenFOAM_API, "symmetryPlane");
 
 
     // Constructors

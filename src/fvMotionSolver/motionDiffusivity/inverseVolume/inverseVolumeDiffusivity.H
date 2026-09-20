@@ -64,7 +64,7 @@ class inverseVolumeDiffusivity
 public:
 
     //- Runtime type information
-    TypeName("inverseVolume");
+    TypeNameApi(fvMotionSolvers_API, "inverseVolume");
 
 
     // Constructors

@@ -61,7 +61,7 @@ class adjointFarFieldTMVar1FvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("adjointFarFieldTMVar1");
+    TypeNameApi(adjointOptimisation_API, "adjointFarFieldTMVar1");
 
 
     // Constructors

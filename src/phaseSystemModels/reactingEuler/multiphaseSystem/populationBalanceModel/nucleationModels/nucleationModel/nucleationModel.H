@@ -63,13 +63,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nucleationModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "nucleationModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             nucleationModel,
             dictionary,

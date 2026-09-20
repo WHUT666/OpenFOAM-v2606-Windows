@@ -71,7 +71,7 @@ public:
             mdMax           //!< Maximum
         };
 
-        static const Enum<modeType> modeTypeNames_;
+        static utilityFunctionObjects_API const Enum<modeType> modeTypeNames_;
 
 
 protected:
@@ -103,7 +103,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("minMax");
+    TypeNameApi(utilityFunctionObjects_API, "minMax");
 
     //- Constructor
     minMaxCondition

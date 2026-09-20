@@ -76,7 +76,7 @@ class gravity
 public:
 
     //- Run-time type information
-    TypeNameNoDebug("g");
+    TypeNameNoDebugApi(finiteVolume_API, "g");
 
 
     // Constructors
@@ -91,16 +91,14 @@ public:
         {}
 
         //- Return named gravity field cached or construct on Time
-        static const gravity& New(const word& name, const Time& runTime)
-        {
-            return MeshObject_type::New(name, runTime);
-        }
+        static finiteVolume_API const gravity& New
+        (
+            const word& name,
+            const Time& runTime
+        );
 
         //- Return gravity "g" field cached or construct on Time
-        static const gravity& New(const Time& runTime)
-        {
-            return MeshObject_type::New(runTime);
-        }
+        static finiteVolume_API const gravity& New(const Time& runTime);
 
 
     //- Destructor

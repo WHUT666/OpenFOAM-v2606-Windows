@@ -58,12 +58,12 @@ namespace ensightOutput
 typedef DynamicList<float> floatBufferType;
 
 //- Static debugging option
-extern int debug;
+extern fileFormats_API int debug;
 
 //- Upper limit on number of items for bundled off-processor field transfers.
 //- The component-wise transfer uses float (4 bytes).
 //  Eg, 5M for 50 ranks of 100k cells each
-extern int maxChunk_;
+extern fileFormats_API int maxChunk_;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

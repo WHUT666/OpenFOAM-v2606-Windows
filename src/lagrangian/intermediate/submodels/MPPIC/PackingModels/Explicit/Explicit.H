@@ -51,6 +51,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Explicit_defines_typeName in .C files that
+//  define the template statics of Explicit (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Explicit_defines_typeName)
+#  define Foam_Explicit_typeName_API
+#else
+#  define Foam_Explicit_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Explicit_H
 #define Explicit_H
 
@@ -92,7 +102,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("explicit");
+    TypeNameApi(Foam_Explicit_typeName_API, "explicit");
 
     // Constructors
 

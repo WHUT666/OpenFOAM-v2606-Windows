@@ -62,7 +62,7 @@ class faBoundaryMeshEntries
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("faBoundaryMesh");
+    TypeNameNoDebugApi(finiteArea_API, "faBoundaryMesh");
 
 
     // Constructors

@@ -41,6 +41,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PaSR_defines_typeName in .C files that
+//  define the template statics of PaSR (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PaSR_defines_typeName)
+#  define Foam_PaSR_typeName_API
+#else
+#  define Foam_PaSR_typeName_API combustionModels_API
+#endif
+
 #ifndef PaSR_H
 #define PaSR_H
 
@@ -83,7 +93,7 @@ class PaSR
 public:
 
     //- Runtime type information
-    TypeName("PaSR");
+    TypeNameApi(Foam_PaSR_typeName_API, "PaSR");
 
 
     // Constructors

@@ -60,7 +60,7 @@ class processorCyclicFvPatch
 public:
 
     //- Runtime type information
-    TypeName(processorCyclicPolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, processorCyclicPolyPatch::typeName_());
 
 
     // Constructors

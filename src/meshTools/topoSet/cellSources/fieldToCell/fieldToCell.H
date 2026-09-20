@@ -105,7 +105,7 @@ class fieldToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of volScalarField, volVectorField
         word fieldName_;
@@ -131,7 +131,7 @@ class fieldToCell
 public:
 
     //- Runtime type information
-    TypeName("fieldToCell");
+    TypeNameApi(meshTools_API, "fieldToCell");
 
 
     // Constructors

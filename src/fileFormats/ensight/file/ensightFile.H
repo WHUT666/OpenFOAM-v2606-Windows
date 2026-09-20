@@ -52,7 +52,7 @@ namespace Foam
                          Class ensightFile Declaration
 \*---------------------------------------------------------------------------*/
 
-class ensightFile
+class fileFormats_API ensightFile
 :
     public OFstream
 {

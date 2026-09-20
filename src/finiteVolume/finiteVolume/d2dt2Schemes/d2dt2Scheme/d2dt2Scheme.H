@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_d2dt2Scheme_defines_typeName in .C files that
+//  define the template statics of d2dt2Scheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_d2dt2Scheme_defines_typeName)
+#  define Foam_d2dt2Scheme_typeName_API
+#else
+#  define Foam_d2dt2Scheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef d2dt2Scheme_H
 #define d2dt2Scheme_H
 
@@ -93,8 +103,8 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( Foam_d2dt2Scheme_typeName_API,
             tmp,
             d2dt2Scheme,
             Istream,

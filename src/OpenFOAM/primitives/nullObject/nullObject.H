@@ -95,7 +95,7 @@ public:
     // Static Data
 
         //- A unique null object
-        static const NullObject nullObject;
+        static OpenFOAM_API const NullObject nullObject;
 
 
     // Member Functions
@@ -153,7 +153,7 @@ public:
 // Globals
 
 //- Pointer to the unique nullObject
-extern const NullObject* nullObjectPtr;
+extern OpenFOAM_API const NullObject* nullObjectPtr;
 
 
 // IOstream Operators

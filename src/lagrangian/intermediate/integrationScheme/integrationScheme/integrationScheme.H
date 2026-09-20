@@ -93,13 +93,13 @@ class integrationScheme
 public:
 
     //- Runtime type information
-    TypeName("integrationScheme");
+    TypeNameApi(lagrangianIntermediate_API, "integrationScheme");
 
 
     //- Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( lagrangianIntermediate_API,
              autoPtr,
              integrationScheme,
              word,

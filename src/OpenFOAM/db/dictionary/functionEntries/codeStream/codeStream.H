@@ -151,7 +151,7 @@ public:
     static constexpr const char* const codeTemplateC = "codeStreamTemplate.C";
 
     //- Runtime type information
-    ClassName("codeStream");
+    ClassNameApi(OpenFOAM_API, "codeStream");
 
 
     // Member Functions

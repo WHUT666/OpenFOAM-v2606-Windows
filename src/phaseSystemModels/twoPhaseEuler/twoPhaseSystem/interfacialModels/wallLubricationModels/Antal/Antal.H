@@ -78,7 +78,7 @@ class Antal
 public:
 
     //- Runtime type information
-    TypeName("Antal");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Antal");
 
 
     // Constructors

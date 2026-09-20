@@ -98,7 +98,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("strainRateFunction");
+    TypeNameApi(incompressibleTransportModels_API, "strainRateFunction");
 
 
     // Constructors

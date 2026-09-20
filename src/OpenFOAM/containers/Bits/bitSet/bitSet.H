@@ -131,7 +131,7 @@ public:
 
 
     //- Declare type-name (with debug switch)
-    ClassName("bitSet");
+    ClassNameApi(OpenFOAM_API, "bitSet");
 
 
     // Constructors

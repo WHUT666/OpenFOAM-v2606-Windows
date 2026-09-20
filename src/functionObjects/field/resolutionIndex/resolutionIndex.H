@@ -145,7 +145,7 @@ class resolutionIndex
 public:
 
     //- Runtime type information
-    TypeName("resolutionIndex");
+    TypeNameApi(fieldFunctionObjects_API, "resolutionIndex");
 
 
     // Constructors

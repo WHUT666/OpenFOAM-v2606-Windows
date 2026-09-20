@@ -102,7 +102,7 @@ class normalToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- The surface normal direction
         vector normal_;
@@ -120,7 +120,7 @@ class normalToFace
 public:
 
     //- Runtime type information
-    TypeName("normalToFace");
+    TypeNameApi(meshTools_API, "normalToFace");
 
 
     // Constructors

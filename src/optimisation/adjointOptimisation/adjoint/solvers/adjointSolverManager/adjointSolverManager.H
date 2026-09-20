@@ -98,7 +98,7 @@ protected:
 
 public:
 
-    TypeName("adjointSolverManager");
+    TypeNameApi(adjointOptimisation_API, "adjointSolverManager");
 
 
     // Constructors

@@ -91,7 +91,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("meshWaveAddressing");
+    TypeNameApi(finiteVolume_API, "meshWaveAddressing");
 
 
     // Constructors

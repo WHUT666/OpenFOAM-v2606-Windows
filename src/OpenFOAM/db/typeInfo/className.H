@@ -69,11 +69,28 @@ public:                                                                        \
     ClassNameNoDebug(TypeNameString);                                          \
     static int debug
 
+//- ClassName with an explicit import/export specifier (Windows DLL builds).
+//  Use when the typeName/debug statics are defined in a library .C file
+//  and must be imported by consumers - ie ClassNameApi(OpenFOAM_API, "x").
+#define ClassNameNoDebugApi(ApiSpec, TypeNameString)                           \
+    static const char* typeName_() { return TypeNameString; }                  \
+    static ApiSpec const ::Foam::word typeName
+
+#define ClassNameApi(ApiSpec, TypeNameString)                                  \
+    ClassNameNoDebugApi(ApiSpec, TypeNameString);                              \
+    static ApiSpec int debug
+
 //- Add typeName information from argument \a TypeNameString to a namespace.
 //  Also declares debug information.
 #define NamespaceName(TypeNameString)                                          \
     NamespaceNameNoDebug(TypeNameString);                                      \
     extern int debug
+
+//- NamespaceName with an explicit import/export specifier (Windows DLL builds)
+#define NamespaceNameApi(ApiSpec, TypeNameString)                              \
+    inline const char* typeName_() { return TypeNameString; }                  \
+    extern ApiSpec const ::Foam::word typeName;                                \
+    extern ApiSpec int debug
 
 //- Add typeName information from argument \a TypeNameString to a
 //  template class.  Also declares debug information.
@@ -83,6 +100,23 @@ class TemplateNameString##Name                                                 \
 public:                                                                        \
     TemplateNameString##Name() noexcept = default;                             \
     ClassName(#TemplateNameString);                                            \
+}
+
+//- TemplateName with an explicit import/export specifier (Windows DLL builds)
+#define TemplateNameNoDebugApi(ApiSpec, TemplateNameString)                    \
+class TemplateNameString##Name                                                 \
+{                                                                              \
+public:                                                                        \
+    TemplateNameString##Name() noexcept = default;                             \
+    ClassNameNoDebugApi(ApiSpec, #TemplateNameString);                         \
+}
+
+#define TemplateNameApi(ApiSpec, TemplateNameString)                           \
+class TemplateNameString##Name                                                 \
+{                                                                              \
+public:                                                                        \
+    TemplateNameString##Name() noexcept = default;                             \
+    ClassNameApi(ApiSpec, #TemplateNameString);                                \
 }
 
 

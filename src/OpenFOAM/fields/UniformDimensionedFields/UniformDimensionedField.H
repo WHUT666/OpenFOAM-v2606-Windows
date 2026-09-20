@@ -63,7 +63,7 @@ class UniformDimensionedField
 public:
 
     //- Runtime type information
-    TypeName("UniformDimensionedField");
+    TypeNameApi(OpenFOAM_API, "UniformDimensionedField");
 
 
     // Constructors
@@ -170,6 +170,8 @@ struct is_globalIOobject<UniformDimensionedField<Type>> : std::true_type {};
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
 
 #endif
 

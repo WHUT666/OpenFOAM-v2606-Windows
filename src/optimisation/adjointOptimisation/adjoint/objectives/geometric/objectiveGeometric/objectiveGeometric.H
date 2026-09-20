@@ -70,13 +70,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("geometric");
+    TypeNameApi(adjointOptimisation_API, "geometric");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             objectiveGeometric,
             dictionary,

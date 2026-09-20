@@ -63,11 +63,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("conductivityModel");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "conductivityModel");
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( twoPhaseReactingTurbulenceModels_API,
         autoPtr,
         conductivityModel,
         dictionary,

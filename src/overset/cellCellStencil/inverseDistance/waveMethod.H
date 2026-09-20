@@ -64,7 +64,7 @@ class waveMethod
 public:
 
     //- Run-time type information
-    TypeName("wave");
+    TypeNameApi(overset_API, "wave");
 
     //- Construct from source and target meshes
     waveMethod(const polyMesh& src, const polyMesh& tgt);

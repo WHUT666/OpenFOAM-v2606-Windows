@@ -73,13 +73,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("force");
+    TypeNameApi(surfaceFilmModels_API, "force");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( surfaceFilmModels_API,
              autoPtr,
              force,
              dictionary,

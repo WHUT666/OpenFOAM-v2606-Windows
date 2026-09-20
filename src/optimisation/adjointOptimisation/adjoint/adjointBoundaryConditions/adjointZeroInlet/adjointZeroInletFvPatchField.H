@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_adjointZeroInletFvPatchField_defines_typeName in .C files that
+//  define the template statics of adjointZeroInletFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_adjointZeroInletFvPatchField_defines_typeName)
+#  define Foam_adjointZeroInletFvPatchField_typeName_API
+#else
+#  define Foam_adjointZeroInletFvPatchField_typeName_API adjointOptimisation_API
+#endif
+
 #ifndef adjointZeroInletFvPatchField_H
 #define adjointZeroInletFvPatchField_H
 
@@ -62,7 +72,7 @@ class adjointZeroInletFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("adjointZeroInlet");
+    TypeNameApi(Foam_adjointZeroInletFvPatchField_typeName_API, "adjointZeroInlet");
 
 
     // Constructors

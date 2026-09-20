@@ -60,7 +60,7 @@ class SchillerNaumann
 public:
 
     //- Runtime type information
-    TypeName("SchillerNaumann");
+    TypeNameApi(multiphaseSystem_API, "SchillerNaumann");
 
 
     // Constructors

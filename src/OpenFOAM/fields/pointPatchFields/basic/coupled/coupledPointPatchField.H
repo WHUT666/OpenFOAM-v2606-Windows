@@ -61,8 +61,7 @@ class coupledPointPatchField
 public:
 
     //- Runtime type information
-    TypeName(coupledPointPatch::typeName_());
-
+    TypeNameApi(OpenFOAM_API, coupledPointPatch::typeName_());
 
     // Constructors
 
@@ -112,7 +111,6 @@ public:
             const DimensionedField<Type, pointMesh>& iF
         ) const = 0;
 
-
     // Member Functions
 
         // Access
@@ -146,13 +144,11 @@ public:
                 Field<Type>&
             ) const = 0;
 
-
     // Member Operators
 
         //- Inherit assignment
         using parent_bctype::operator=;
 };
-
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

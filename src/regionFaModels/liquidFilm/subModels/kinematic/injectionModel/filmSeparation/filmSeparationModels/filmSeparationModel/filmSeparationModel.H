@@ -66,13 +66,13 @@ class filmSeparationModel
 public:
 
     //- Runtime type information
-    TypeName("filmSeparationModel");
+    TypeNameApi(regionFaModels_API, "filmSeparationModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( regionFaModels_API,
             autoPtr,
             filmSeparationModel,
             dictionary,

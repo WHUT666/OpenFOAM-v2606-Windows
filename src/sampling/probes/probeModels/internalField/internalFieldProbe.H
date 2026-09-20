@@ -80,7 +80,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("internalFieldProbe");
+    TypeNameApi(sampling_API, "internalFieldProbe");
 
 
     // Constructors

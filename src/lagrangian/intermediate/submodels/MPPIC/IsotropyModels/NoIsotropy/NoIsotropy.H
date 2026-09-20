@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoIsotropy_defines_typeName in .C files that
+//  define the template statics of NoIsotropy (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoIsotropy_defines_typeName)
+#  define Foam_NoIsotropy_typeName_API
+#else
+#  define Foam_NoIsotropy_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef NoIsotropy_H
 #define NoIsotropy_H
 
@@ -61,7 +71,7 @@ class NoIsotropy
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoIsotropy_typeName_API, "none");
 
     // Constructors
 

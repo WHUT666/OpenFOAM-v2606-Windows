@@ -66,7 +66,7 @@ public:
         mag
     };
 
-    static const Enum<areaNormalisationMode> areaNormalisationModeNames_;
+    static meshTools_API const Enum<areaNormalisationMode> areaNormalisationModeNames_;
 
 
 private:
@@ -230,7 +230,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("advancingFrontAMI");
+    TypeNameApi(meshTools_API, "advancingFrontAMI");
 
     // Constructors
 

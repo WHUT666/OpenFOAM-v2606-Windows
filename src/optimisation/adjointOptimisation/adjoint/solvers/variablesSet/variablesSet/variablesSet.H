@@ -122,7 +122,7 @@ public:
     // Static Data Members
 
         //- Run-time type information
-        TypeName("variablesSet");
+        TypeNameApi(adjointOptimisation_API, "variablesSet");
 
 
     // Constructors

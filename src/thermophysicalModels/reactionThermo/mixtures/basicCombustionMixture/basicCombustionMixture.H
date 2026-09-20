@@ -59,7 +59,7 @@ class basicCombustionMixture
 public:
 
     //- Run time type information
-    TypeName("basicCombustionMixture");
+    TypeNameApi(reactionThermophysicalModels_API, "basicCombustionMixture");
 
 
     //- The base class of the mixture

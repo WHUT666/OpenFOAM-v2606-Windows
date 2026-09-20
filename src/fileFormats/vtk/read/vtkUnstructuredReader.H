@@ -86,7 +86,7 @@ public:
             VTK_ID
         };
 
-        static const Enum<vtkDataType> vtkDataTypeNames;
+        static fileFormats_API const Enum<vtkDataType> vtkDataTypeNames;
 
 
         //- Enumeration defining the vtk dataset types
@@ -97,7 +97,7 @@ public:
             VTK_VECTORS
         };
 
-        static const Enum<vtkDataSetType> vtkDataSetTypeNames;
+        static fileFormats_API const Enum<vtkDataSetType> vtkDataSetTypeNames;
 
 
         //- Enumeration defining the parse mode - type of data being read
@@ -110,7 +110,7 @@ public:
             POINT_DATA
         };
 
-        static const Enum<parseMode> parseModeNames;
+        static fileFormats_API const Enum<parseMode> parseModeNames;
 
 
 private:
@@ -223,7 +223,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("vtkUnstructuredReader");
+    ClassNameApi(fileFormats_API, "vtkUnstructuredReader");
 
 
     // Constructors

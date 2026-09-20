@@ -108,7 +108,7 @@ class searchableBox
 public:
 
     //- Runtime type information
-    TypeName("searchableBox");
+    TypeNameApi(meshTools_API, "searchableBox");
 
 
     // Constructors

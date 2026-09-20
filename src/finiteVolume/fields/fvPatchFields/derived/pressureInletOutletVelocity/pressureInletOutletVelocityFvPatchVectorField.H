@@ -100,7 +100,7 @@ class pressureInletOutletVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("pressureInletOutletVelocity");
+    TypeNameApi(finiteVolume_API, "pressureInletOutletVelocity");
 
 
     // Constructors

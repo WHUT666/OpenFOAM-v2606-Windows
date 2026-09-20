@@ -95,7 +95,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("volBSplinesBase");
+    TypeNameApi(adjointOptimisation_API, "volBSplinesBase");
 
 
     // Constructors

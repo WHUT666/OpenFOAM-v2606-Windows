@@ -134,7 +134,7 @@ class tabulatedHeatTransfer
 public:
 
     //- Runtime type information
-    TypeName("tabulatedHeatTransfer");
+    TypeNameApi(fvOptions_API, "tabulatedHeatTransfer");
 
 
     // Constructors

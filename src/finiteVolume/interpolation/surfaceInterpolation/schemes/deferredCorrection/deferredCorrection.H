@@ -55,6 +55,16 @@ SeeAlso
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_deferredCorrection_defines_typeName in .C files that
+//  define the template statics of deferredCorrection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_deferredCorrection_defines_typeName)
+#  define Foam_deferredCorrection_typeName_API
+#else
+#  define Foam_deferredCorrection_typeName_API finiteVolume_API
+#endif
+
 #ifndef deferredCorrection_H
 #define deferredCorrection_H
 
@@ -92,7 +102,7 @@ class deferredCorrection
 public:
 
     //- Runtime type information
-    TypeName("deferredCorrection");
+    TypeNameApi(Foam_deferredCorrection_typeName_API, "deferredCorrection");
 
 
     // Constructors

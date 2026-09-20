@@ -996,9 +996,19 @@ bool Foam::HashTable<T, Key, Hash>::operator==
     {
         const const_iterator other(this->cfind(iter.key()));
 
-        if (!other.good() || other.val() != iter.val())
+        if (!other.good())
         {
             return false;
+        }
+
+        // A value_type of Foam::zero has no equality comparison and all
+        // values are equal anyhow (eg, when used as a hash set)
+        if constexpr (!std::is_same_v<T, Foam::zero>)
+        {
+            if (other.val() != iter.val())
+            {
+                return false;
+            }
         }
     }
 

@@ -94,7 +94,7 @@ class Tatsumoto
 public:
 
     //- Runtime type information
-    TypeName("Tatsumoto");
+    TypeNameApi(reactingMultiphaseSystem_API, "Tatsumoto");
 
 
     // Constructors

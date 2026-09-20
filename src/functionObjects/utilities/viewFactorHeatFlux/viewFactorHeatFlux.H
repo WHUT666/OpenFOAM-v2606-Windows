@@ -122,7 +122,7 @@ class viewFactorHeatFlux
 public:
 
     //- Runtime type information
-    TypeName("viewFactorHeatFlux");
+    TypeNameApi(utilityFunctionObjects_API, "viewFactorHeatFlux");
 
 
     // Constructors

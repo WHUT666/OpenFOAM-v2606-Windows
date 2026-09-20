@@ -77,7 +77,7 @@ class Antal
 public:
 
     //- Runtime type information
-    TypeName("Antal");
+    TypeNameApi(reactingMultiphaseSystem_API, "Antal");
 
 
     // Constructors

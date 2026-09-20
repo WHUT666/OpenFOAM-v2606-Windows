@@ -78,7 +78,7 @@ class TomiyamaKataokaZunSakaguchi
 public:
 
     //- Runtime type information
-    TypeName("TomiyamaKataokaZunSakaguchi");
+    TypeNameApi(reactingMultiphaseSystem_API, "TomiyamaKataokaZunSakaguchi");
 
 
     // Constructors

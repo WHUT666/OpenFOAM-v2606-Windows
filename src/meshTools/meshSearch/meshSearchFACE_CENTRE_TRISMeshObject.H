@@ -71,7 +71,7 @@ class meshSearchFACE_CENTRE_TRISMeshObject
 public:
 
     // Declare name of the class and its debug switch
-    TypeName("meshSearchFACE_CENTRE_TRISMeshObject");
+    TypeNameApi(meshTools_API, "meshSearchFACE_CENTRE_TRISMeshObject");
 
 
     // Constructors

@@ -64,7 +64,7 @@ public:
     // Static Data Members
 
         //- The type name (eg, for pTraits)
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
 
     // Generated Methods

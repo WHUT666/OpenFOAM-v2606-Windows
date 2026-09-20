@@ -33,6 +33,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_interpolationCellPatchConstrained_defines_typeName in .C files that
+//  define the template statics of interpolationCellPatchConstrained (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_interpolationCellPatchConstrained_defines_typeName)
+#  define Foam_interpolationCellPatchConstrained_typeName_API
+#else
+#  define Foam_interpolationCellPatchConstrained_typeName_API finiteVolume_API
+#endif
+
 #ifndef interpolationCellPatchConstrained_H
 #define interpolationCellPatchConstrained_H
 
@@ -55,7 +65,7 @@ class interpolationCellPatchConstrained
 public:
 
     //- Runtime type information
-    TypeName("cellPatchConstrained");
+    TypeNameApi(Foam_interpolationCellPatchConstrained_typeName_API, "cellPatchConstrained");
 
 
     // Constructors

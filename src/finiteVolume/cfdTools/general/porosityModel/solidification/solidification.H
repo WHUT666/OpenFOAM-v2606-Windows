@@ -167,7 +167,7 @@ class solidification
 public:
 
     //- Runtime type information
-    TypeName("solidification");
+    TypeNameApi(finiteVolume_API, "solidification");
 
     //- Constructor
     solidification

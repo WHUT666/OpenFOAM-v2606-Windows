@@ -125,7 +125,7 @@ class faceCollapser
 public:
 
     //- Runtime type information
-    ClassName("faceCollapser");
+    ClassNameApi(dynamicMesh_API, "faceCollapser");
 
 
     // Constructors

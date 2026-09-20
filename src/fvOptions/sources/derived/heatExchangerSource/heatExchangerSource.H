@@ -135,7 +135,7 @@ class heatExchangerSource
 public:
 
     //- Runtime type information
-    TypeName("heatExchangerSource");
+    TypeNameApi(fvOptions_API, "heatExchangerSource");
 
 
     // Constructors

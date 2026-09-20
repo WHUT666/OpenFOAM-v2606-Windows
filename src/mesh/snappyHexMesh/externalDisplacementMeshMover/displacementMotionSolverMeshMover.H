@@ -105,7 +105,7 @@ class displacementMotionSolverMeshMover
 public:
 
     //- Runtime type information
-    TypeName("displacementMotionSolver");
+    TypeNameApi(snappyHexMesh_API, "displacementMotionSolver");
 
 
     // Constructors

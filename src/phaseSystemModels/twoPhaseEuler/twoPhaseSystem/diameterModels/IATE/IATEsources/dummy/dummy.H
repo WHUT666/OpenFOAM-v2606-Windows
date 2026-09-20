@@ -60,7 +60,7 @@ class dummy
 public:
 
     //- Runtime type information
-    TypeName("dummy");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "dummy");
 
     // Constructors
 

@@ -122,7 +122,7 @@ class patchToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Matcher for patches
         wordRes selectedPatches_;
@@ -136,7 +136,7 @@ class patchToCell
 public:
 
     //- Runtime type information
-    TypeName("patchToCell");
+    TypeNameApi(meshTools_API, "patchToCell");
 
     // Constructors
 

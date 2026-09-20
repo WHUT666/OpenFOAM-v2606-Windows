@@ -82,6 +82,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_uniformMixedFaPatchField_defines_typeName in .C files that
+//  define the template statics of uniformMixedFaPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_uniformMixedFaPatchField_defines_typeName)
+#  define Foam_uniformMixedFaPatchField_typeName_API
+#else
+#  define Foam_uniformMixedFaPatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_uniformMixedFaPatchField_H
 #define Foam_uniformMixedFaPatchField_H
 
@@ -120,7 +130,7 @@ class uniformMixedFaPatchField
 public:
 
     //- Runtime type information
-    TypeName("uniformMixed");
+    TypeNameApi(Foam_uniformMixedFaPatchField_typeName_API, "uniformMixed");
 
 
     // Constructors

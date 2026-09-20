@@ -102,13 +102,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("externalDisplacementMeshMover");
+    TypeNameApi(snappyHexMesh_API, "externalDisplacementMeshMover");
 
 
     // Declare run-time New selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( snappyHexMesh_API,
             autoPtr,
             externalDisplacementMeshMover,
             dictionary,

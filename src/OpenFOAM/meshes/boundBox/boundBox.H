@@ -117,13 +117,13 @@ public:
         };
 
         //- A large boundBox: min/max == -/+ ROOTVGREAT
-        static const boundBox greatBox;
+        static OpenFOAM_API const boundBox greatBox;
 
         //- A large inverted boundBox: min/max == +/- ROOTVGREAT
-        static const boundBox invertedBox;
+        static OpenFOAM_API const boundBox invertedBox;
 
         //- The unit normal per face
-        static const FixedList<vector, 6> faceNormals;
+        static OpenFOAM_API const FixedList<vector, 6> faceNormals;
 
 
     // Static Methods

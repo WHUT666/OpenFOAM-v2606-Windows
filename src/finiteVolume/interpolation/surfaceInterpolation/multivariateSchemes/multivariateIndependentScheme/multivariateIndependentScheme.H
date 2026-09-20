@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_multivariateIndependentScheme_defines_typeName in .C files that
+//  define the template statics of multivariateIndependentScheme (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_multivariateIndependentScheme_defines_typeName)
+#  define Foam_multivariateIndependentScheme_typeName_API
+#else
+#  define Foam_multivariateIndependentScheme_typeName_API finiteVolume_API
+#endif
+
 #ifndef multivariateIndependentScheme_H
 #define multivariateIndependentScheme_H
 
@@ -81,7 +91,7 @@ class multivariateIndependentScheme
 public:
 
     //- Runtime type information
-    TypeName("multivariateIndependent");
+    TypeNameApi(Foam_multivariateIndependentScheme_typeName_API, "multivariateIndependent");
 
 
     // Constructors

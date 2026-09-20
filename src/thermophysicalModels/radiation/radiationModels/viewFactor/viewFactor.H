@@ -95,7 +95,7 @@ protected:
     // Static data
 
         //- Static name for view factor walls
-        static const word viewFactorWalls;
+        static radiationModels_API const word viewFactorWalls;
 
 
     // Private data
@@ -200,7 +200,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("viewFactor");
+    TypeNameApi(radiationModels_API, "viewFactor");
 
 
     // Constructors

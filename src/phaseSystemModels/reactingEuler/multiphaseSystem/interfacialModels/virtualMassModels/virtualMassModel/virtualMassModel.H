@@ -68,13 +68,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("virtualMassModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "virtualMassModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             virtualMassModel,
             dictionary,
@@ -90,7 +90,7 @@ public:
     // Static Data Members
 
         //- Coefficient dimensions
-        static const dimensionSet dimK;
+        static reactingMultiphaseSystem_API const dimensionSet dimK;
 
 
     // Constructors

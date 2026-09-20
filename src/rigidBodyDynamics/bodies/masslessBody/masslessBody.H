@@ -61,7 +61,7 @@ class masslessBody
 public:
 
     //- Runtime type information
-    TypeName("masslessBody");
+    TypeNameApi(rigidBodyDynamics_API, "masslessBody");
 
 
     // Constructors

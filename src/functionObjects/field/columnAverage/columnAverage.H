@@ -143,7 +143,7 @@ class columnAverage
 public:
 
     //- Runtime type information
-    TypeName("columnAverage");
+    TypeNameApi(fieldFunctionObjects_API, "columnAverage");
 
 
     // Constructors

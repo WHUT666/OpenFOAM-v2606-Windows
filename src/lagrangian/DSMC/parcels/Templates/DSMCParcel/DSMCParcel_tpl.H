@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DSMCParcel_defines_typeName in .C files that
+//  define the template statics of DSMCParcel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DSMCParcel_defines_typeName)
+#  define Foam_DSMCParcel_typeName_API
+#else
+#  define Foam_DSMCParcel_typeName_API DSMC_API
+#endif
+
 #ifndef DSMCParcel_H
 #define DSMCParcel_H
 
@@ -74,7 +84,7 @@ class DSMCParcel
 public:
 
     //- Size in bytes of the fields
-    static const std::size_t sizeofFields;
+    static Foam_DSMCParcel_typeName_API const std::size_t sizeofFields;
 
 
     //- Class to hold DSMC particle constant properties
@@ -151,7 +161,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("DSMCParcel");
+    TypeNameApi(Foam_DSMCParcel_typeName_API, "DSMCParcel");
 
     friend class Cloud<ParcelType>;
 

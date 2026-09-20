@@ -139,7 +139,7 @@ class axis
 public:
 
     //- Runtime type information
-    TypeName("axis");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "axis");
 
 
     // Constructors

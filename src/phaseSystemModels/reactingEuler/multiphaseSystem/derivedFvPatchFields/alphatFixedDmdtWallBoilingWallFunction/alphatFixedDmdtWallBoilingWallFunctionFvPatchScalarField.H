@@ -120,7 +120,7 @@ class alphatFixedDmdtWallBoilingWallFunctionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("compressible::alphatFixedDmdtWallBoilingWallFunction");
+    TypeNameApi(reactingMultiphaseSystem_API, "compressible::alphatFixedDmdtWallBoilingWallFunction");
 
 
     // Constructors

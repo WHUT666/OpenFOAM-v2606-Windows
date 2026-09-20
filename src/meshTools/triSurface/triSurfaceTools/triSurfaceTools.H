@@ -379,9 +379,9 @@ public:
         //  noEdge: no edge can be collapsed
         //  collapsed: already collapsed
         //  >0: edge label that can be collapsed
-        static const label ANYEDGE;
-        static const label NOEDGE;
-        static const label COLLAPSED;
+        static meshTools_API const label ANYEDGE;
+        static meshTools_API const label NOEDGE;
+        static meshTools_API const label COLLAPSED;
 
         //- Create new triSurface by collapsing edges to specified
         //  positions. faceStatus allows

@@ -127,7 +127,7 @@ class sampledDistanceSurface
 public:
 
     //- Runtime type information
-    TypeName("sampledDistanceSurface");
+    TypeNameApi(sampling_API, "sampledDistanceSurface");
 
 
     // Constructors

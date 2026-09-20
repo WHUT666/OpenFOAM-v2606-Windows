@@ -730,9 +730,12 @@ public:
         using is_List = void;
 
         //- Wrap value as expression
+        //- (member template: not force-instantiated by dll-interface classes
+        //-  that have UList<T> as a base, eg ITstream -> List<token>)
+        template<class U = T>
         auto expr() const
         {
-            return Expression::ListConstRefWrap<T>(*this);
+            return Expression::ListConstRefWrap<U>(*this);
         }
 
         //- Assign values from expression

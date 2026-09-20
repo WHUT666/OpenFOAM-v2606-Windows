@@ -61,7 +61,7 @@ class adjointOutletKaFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("adjointOutletKa");
+    TypeNameApi(adjointOptimisation_API, "adjointOutletKa");
 
 
     // Constructors

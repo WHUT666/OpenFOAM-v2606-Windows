@@ -122,7 +122,7 @@ namespace Foam
 
 // Forward Declarations
 class dictionary;
-class OSstream;
+class OpenFOAM_API OSstream;
 class SHA1Digest;
 
 Istream& operator>>(Istream& is, dictionary& dict);
@@ -385,20 +385,20 @@ private:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("dictionary");
+    ClassNameApi(OpenFOAM_API, "dictionary");
 
     // Static Data
 
         //- Report optional keywords and values if not present in dictionary
         //  For value greater than 1: fatal.
         //  Set/unset via an InfoSwitch or -info-switch at the command-line
-        static int writeOptionalEntries;
+        static OpenFOAM_API int writeOptionalEntries;
 
         //- An empty dictionary, which is also the parent for all dictionaries
-        static const dictionary null;
+        static OpenFOAM_API const dictionary null;
 
         //- Output location when reporting default values
-        static refPtr<OSstream> reportingOutput;
+        static OpenFOAM_API refPtr<OSstream> reportingOutput;
 
 
     // Static Member Functions

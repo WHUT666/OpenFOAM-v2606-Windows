@@ -133,7 +133,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("lookup");
+    TypeNameApi(fvOptions_API, "lookup");
 
 
     // Constructors

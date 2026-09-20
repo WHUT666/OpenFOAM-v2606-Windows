@@ -98,7 +98,7 @@ namespace fieldTypes
 {
 
 //- Standard point field types (scalar, vector, tensor, etc)
-extern const wordList point;
+extern OpenFOAM_API const wordList point;
 
 //- Test if the class name appears to be a point field
 bool is_point(const word& clsName);

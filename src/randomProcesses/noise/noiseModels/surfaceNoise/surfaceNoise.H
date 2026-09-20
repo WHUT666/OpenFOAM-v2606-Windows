@@ -238,7 +238,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceNoise");
+    TypeNameApi(randomProcesses_API, "surfaceNoise");
 
 
     //- Constructor

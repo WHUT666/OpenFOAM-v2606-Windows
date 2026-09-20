@@ -58,7 +58,7 @@ class foamVtkBase64Layer
 {
     // Private Data Members
 
-        static const char* encoding_;
+        static fileFormats_API const char* encoding_;
 
 
 protected:

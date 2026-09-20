@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Raoult_defines_typeName in .C files that
+//  define the template statics of Raoult (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Raoult_defines_typeName)
+#  define Foam_Raoult_typeName_API
+#else
+#  define Foam_Raoult_typeName_API reactingMultiphaseSystem_API
+#endif
+
 #ifndef Raoult_H
 #define Raoult_H
 
@@ -75,7 +85,7 @@ class Raoult
 public:
 
     //- Runtime type information
-    TypeName("Raoult");
+    TypeNameApi(Foam_Raoult_typeName_API, "Raoult");
 
     // Constructors
 

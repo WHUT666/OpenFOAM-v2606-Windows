@@ -160,7 +160,7 @@ class kineticTheoryModel
 public:
 
     //- Runtime type information
-    TypeName("kineticTheory");
+    TypeNameApi(phaseCompressibleTurbulenceModels_API, "kineticTheory");
 
 
     // Constructors

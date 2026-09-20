@@ -118,7 +118,7 @@ private:
     // Private Data
 
         //- Names for motion types
-        static const Enum<motionTypes> motionTypeNames;
+        static waveModels_API const Enum<motionTypes> motionTypeNames;
 
         //- Motion type
         motionTypes motionType_;
@@ -216,7 +216,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("waveMaker");
+    TypeNameApi(waveModels_API, "waveMaker");
 
 
     // Constructors

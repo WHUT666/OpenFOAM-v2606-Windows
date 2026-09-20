@@ -59,7 +59,7 @@ public:
 
         //- Flag to use experimental ddtCorr from org version
         //- Default is off for backwards compatibility
-        static bool experimentalDdtCorr;
+        static finiteVolume_API bool experimentalDdtCorr;
 
         ddtSchemeBase()
         {}

@@ -378,7 +378,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("MMA");
+    TypeNameApi(adjointOptimisation_API, "MMA");
 
 
     // Constructors

@@ -123,7 +123,7 @@ class Luo
 public:
 
     //- Runtime type information
-    TypeName("Luo");
+    TypeNameApi(reactingMultiphaseSystem_API, "Luo");
 
     // Constructor
 

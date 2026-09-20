@@ -120,7 +120,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("tabulatedAccelerationSource");
+    TypeNameApi(fvOptions_API, "tabulatedAccelerationSource");
 
 
     // Constructors

@@ -103,7 +103,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("meshWave");
+    TypeNameApi(finiteVolume_API, "meshWave");
 
 
     // Constructors

@@ -58,6 +58,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kEqn_defines_typeName in .C files that
+//  define the template statics of kEqn (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kEqn_defines_typeName)
+#  define Foam_kEqn_typeName_API
+#else
+#  define Foam_kEqn_typeName_API turbulenceModels_API
+#endif
+
 #ifndef kEqn_H
 #define kEqn_H
 
@@ -114,7 +124,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("kEqn");
+    TypeNameApi(Foam_kEqn_typeName_API, "kEqn");
 
 
     // Constructors

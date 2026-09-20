@@ -127,7 +127,7 @@ class polyMeshGeometry
 
 public:
 
-    ClassName("polyMeshGeometry");
+    ClassNameApi(dynamicMesh_API, "polyMeshGeometry");
 
     // Constructors
 

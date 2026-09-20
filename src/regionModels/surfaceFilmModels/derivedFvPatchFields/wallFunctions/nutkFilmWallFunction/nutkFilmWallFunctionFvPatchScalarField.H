@@ -124,7 +124,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nutkFilmWallFunction");
+    TypeNameApi(surfaceFilmModels_API, "nutkFilmWallFunction");
 
 
     // Constructors

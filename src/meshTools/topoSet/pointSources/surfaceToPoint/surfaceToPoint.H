@@ -118,7 +118,7 @@ class surfaceToPoint
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of surface file
         const fileName surfName_;
@@ -151,7 +151,7 @@ class surfaceToPoint
 public:
 
     //- Runtime type information
-    TypeName("surfaceToPoint");
+    TypeNameApi(meshTools_API, "surfaceToPoint");
 
 
     // Constructors

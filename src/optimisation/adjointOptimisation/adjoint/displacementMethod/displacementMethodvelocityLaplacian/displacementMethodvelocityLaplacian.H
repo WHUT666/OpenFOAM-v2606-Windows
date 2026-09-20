@@ -84,7 +84,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("velocityLaplacian");
+    TypeNameApi(adjointOptimisation_API, "velocityLaplacian");
 
 
     // Constructors

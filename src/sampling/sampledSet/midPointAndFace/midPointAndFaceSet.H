@@ -63,7 +63,7 @@ class midPointAndFaceSet
 public:
 
     //- Runtime type information
-    TypeName("midPointAndFace");
+    TypeNameApi(sampling_API, "midPointAndFace");
 
 
     // Constructors

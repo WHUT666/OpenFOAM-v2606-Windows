@@ -50,8 +50,8 @@ namespace Foam
 
 // Forward Declarations
 class dynamicCodeContext;
-class ISstream;
-class OSstream;
+class OpenFOAM_API ISstream;
+class OpenFOAM_API OSstream;
 class SHA1Digest;
 
 /*---------------------------------------------------------------------------*\
@@ -95,10 +95,10 @@ protected:
     // Static Data Members
 
         //- Directory for library targets for Make/files
-        static const char* const targetLibDir;
+        static OpenFOAM_API const char* const targetLibDir;
 
         //- Top-level directory name for copy/compiling
-        static const char* const topDirName;
+        static OpenFOAM_API const char* const topDirName;
 
 
     // Protected Member Functions
@@ -143,14 +143,14 @@ public:
 
         //- Name of the code template environment variable
         //  Used to located the codeTemplateName
-        static const word codeTemplateEnvName;
+        static OpenFOAM_API const word codeTemplateEnvName;
 
         //- Name of the code template sub-directory
         //  Used when locating the codeTemplateName via Foam::findEtcFile
-        static const fileName codeTemplateDirName;
+        static OpenFOAM_API const fileName codeTemplateDirName;
 
         //- Flag if system operations are allowed
-        static int allowSystemOperations;
+        static OpenFOAM_API int allowSystemOperations;
 
 
     // Static Member Functions

@@ -67,7 +67,7 @@ class energyJumpAMIFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("energyJumpAMI");
+    TypeNameApi(fluidThermophysicalModels_API, "energyJumpAMI");
 
     // Constructors
 

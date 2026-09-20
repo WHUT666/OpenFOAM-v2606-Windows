@@ -64,7 +64,7 @@ class cellCellStencilObject
 
 public:
 
-    TypeName("cellCellStencilObject");
+    TypeNameApi(overset_API, "cellCellStencilObject");
 
 
     // Constructors

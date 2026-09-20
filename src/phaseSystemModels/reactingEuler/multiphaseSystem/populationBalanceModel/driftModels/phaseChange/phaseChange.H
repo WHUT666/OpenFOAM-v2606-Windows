@@ -75,7 +75,7 @@ class phaseChange
 public:
 
     //- Runtime type information
-    TypeName("phaseChange");
+    TypeNameApi(reactingMultiphaseSystem_API, "phaseChange");
 
     // Constructor
 

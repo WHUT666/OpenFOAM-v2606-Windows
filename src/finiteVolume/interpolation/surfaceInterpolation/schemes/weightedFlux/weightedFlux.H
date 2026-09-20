@@ -68,6 +68,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_weightedFlux_defines_typeName in .C files that
+//  define the template statics of weightedFlux (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_weightedFlux_defines_typeName)
+#  define Foam_weightedFlux_typeName_API
+#else
+#  define Foam_weightedFlux_typeName_API finiteVolume_API
+#endif
+
 #ifndef weightedFlux_H
 #define weightedFlux_H
 
@@ -124,7 +134,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("weightedFlux");
+    TypeNameApi(Foam_weightedFlux_typeName_API, "weightedFlux");
 
 
     // Constructors

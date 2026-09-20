@@ -68,7 +68,7 @@ public:
         NOORDERING          // unspecified, no automatic ordering
     };
 
-    static const Enum<transformType> transformTypeNames;
+    static OpenFOAM_API const Enum<transformType> transformTypeNames;
 
 
 private:
@@ -76,7 +76,7 @@ private:
     // Private data
 
         //- Default matching tolerance
-        static const scalar defaultMatchTol_;
+        static OpenFOAM_API const scalar defaultMatchTol_;
 
         //- Local matching tolerance
         const scalar matchTolerance_;
@@ -181,7 +181,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("coupled");
+    TypeNameApi(OpenFOAM_API, "coupled");
 
 
     // Constructors

@@ -183,7 +183,7 @@ public:
 
 
     // Declare name of the class and its debug switch
-    ClassName("fvMesh");
+    ClassNameApi(finiteVolume_API, "fvMesh");
 
 
     // Constructors

@@ -60,7 +60,7 @@ class wedge
 public:
 
     //- Runtime type information
-    TypeName("wedge");
+    TypeNameApi(extrudeModel_API, "wedge");
 
     // Constructors
 

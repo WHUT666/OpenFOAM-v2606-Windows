@@ -91,7 +91,7 @@ class coordinateSystems
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("coordinateSystems");
+    TypeNameNoDebugApi(OpenFOAM_API, "coordinateSystems");
 
 
     // Generated Methods

@@ -59,12 +59,12 @@ class TDNBModel
 public:
 
     //- Runtime type information
-    TypeName("TDNBModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "TDNBModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         TDNBModel,
         dictionary,

@@ -69,7 +69,7 @@ class HerschelBulkley
 public:
 
     //- Runtime type information
-    TypeName("HerschelBulkley");
+    TypeNameApi(turbulenceModels_API, "HerschelBulkley");
 
 
     // Constructors

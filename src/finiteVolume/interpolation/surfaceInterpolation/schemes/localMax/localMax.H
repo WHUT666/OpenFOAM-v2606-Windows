@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_localMax_defines_typeName in .C files that
+//  define the template statics of localMax (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_localMax_defines_typeName)
+#  define Foam_localMax_typeName_API
+#else
+#  define Foam_localMax_typeName_API finiteVolume_API
+#endif
+
 #ifndef localMax_H
 #define localMax_H
 
@@ -70,7 +80,7 @@ class localMax
 public:
 
     //- Runtime type information
-    TypeName("localMax");
+    TypeNameApi(Foam_localMax_typeName_API, "localMax");
 
 
     // Constructors

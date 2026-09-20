@@ -84,13 +84,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fvGeometryScheme");
+    TypeNameApi(finiteVolume_API, "fvGeometryScheme");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( finiteVolume_API,
             tmp,
             fvGeometryScheme,
             dict,

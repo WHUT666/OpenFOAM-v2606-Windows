@@ -78,7 +78,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("opaqueDiffusive");
+    TypeNameApi(radiationModels_API, "opaqueDiffusive");
 
     // Constructors
 

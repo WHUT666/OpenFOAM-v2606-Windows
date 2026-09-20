@@ -53,7 +53,7 @@ namespace Foam
                           Class IFstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class IFstream
+class OpenFOAM_API IFstream
 :
     private Foam::ifstreamPointer,
     public Foam::ISstream

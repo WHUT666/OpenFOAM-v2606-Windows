@@ -68,13 +68,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("IATEsource");
+    TypeNameApi(reactingTwoPhaseSystem_API, "IATEsource");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingTwoPhaseSystem_API,
             autoPtr,
             IATEsource,
             dictionary,

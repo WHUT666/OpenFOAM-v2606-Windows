@@ -37,6 +37,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ReactingWeberNumber_defines_typeName in .C files that
+//  define the template statics of ReactingWeberNumber (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ReactingWeberNumber_defines_typeName)
+#  define Foam_ReactingWeberNumber_typeName_API
+#else
+#  define Foam_ReactingWeberNumber_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ReactingWeberNumber_H
 #define ReactingWeberNumber_H
 
@@ -67,7 +77,7 @@ class ReactingWeberNumber
 public:
 
     //- Runtime type information
-    TypeName("WeberNumber");
+    TypeNameApi(Foam_ReactingWeberNumber_typeName_API, "WeberNumber");
 
 
     // Constructors

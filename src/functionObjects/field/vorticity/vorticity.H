@@ -109,7 +109,7 @@ class vorticity
 public:
 
     //- Runtime type information
-    TypeName("vorticity");
+    TypeNameApi(fieldFunctionObjects_API, "vorticity");
 
 
     // Constructors

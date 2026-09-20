@@ -75,7 +75,7 @@ class PCG
 public:
 
     //- Runtime type information
-    TypeName("PCG");
+    TypeNameApi(OpenFOAM_API, "PCG");
 
 
     // Constructors

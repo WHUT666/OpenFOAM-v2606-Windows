@@ -107,7 +107,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nonUniformTable");
+    TypeNameApi(thermophysicalProperties_API, "nonUniformTable");
 
 
     // Constructors

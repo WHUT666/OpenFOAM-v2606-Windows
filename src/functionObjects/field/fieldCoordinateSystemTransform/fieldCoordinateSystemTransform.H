@@ -161,7 +161,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fieldCoordinateSystemTransform");
+    TypeNameApi(fieldFunctionObjects_API, "fieldCoordinateSystemTransform");
 
 
     // Constructors

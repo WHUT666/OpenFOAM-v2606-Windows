@@ -99,7 +99,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("incompressible");
+    TypeNameApi(adjointOptimisation_API, "incompressible");
 
 
     // Constructors

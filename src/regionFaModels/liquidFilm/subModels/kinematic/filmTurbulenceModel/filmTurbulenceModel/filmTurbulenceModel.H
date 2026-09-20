@@ -159,10 +159,10 @@ protected:
         const liquidFilmBase& film_;
 
         //- Names for friction models
-        static const Enum<frictionMethodType> frictionMethodTypeNames_;
+        static regionFaModels_API const Enum<frictionMethodType> frictionMethodTypeNames_;
 
         //- Names for shear stress models
-        static const Enum<shearMethodType> shearMethodTypeNames_;
+        static regionFaModels_API const Enum<shearMethodType> shearMethodTypeNames_;
 
         //- Model dictionary
         const dictionary dict_;
@@ -189,13 +189,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("filmTurbulenceModel");
+    TypeNameApi(regionFaModels_API, "filmTurbulenceModel");
 
 
     // Declare runtime constructor selection table
 
-         declareRunTimeSelectionTable
-         (
+         declareRunTimeSelectionTableApi
+         ( regionFaModels_API,
              autoPtr,
              filmTurbulenceModel,
              dictionary,

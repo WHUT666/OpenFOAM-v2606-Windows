@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SphericalTensor_defines_typeName in .C files that
+//  define the template statics of SphericalTensor (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SphericalTensor_defines_typeName)
+#  define Foam_SphericalTensor_typeName_API
+#else
+#  define Foam_SphericalTensor_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_SphericalTensor_H
 #define Foam_SphericalTensor_H
 
@@ -75,9 +85,9 @@ public:
 
     // Static Data Members
 
-        static const SphericalTensor I;
-        static const SphericalTensor oneThirdI;
-        static const SphericalTensor twoThirdsI;
+        static Foam_SphericalTensor_typeName_API const SphericalTensor I;
+        static Foam_SphericalTensor_typeName_API const SphericalTensor oneThirdI;
+        static Foam_SphericalTensor_typeName_API const SphericalTensor twoThirdsI;
 
 
     //- Component labeling enumeration

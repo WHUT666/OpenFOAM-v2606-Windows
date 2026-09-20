@@ -69,13 +69,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("heatTransferModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "heatTransferModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             heatTransferModel,
             dictionary,
@@ -90,7 +90,7 @@ public:
     // Static Data Members
 
         //- Coefficient dimensions
-        static const dimensionSet dimK;
+        static reactingMultiphaseSystem_API const dimensionSet dimK;
 
 
     // Constructors

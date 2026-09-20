@@ -146,11 +146,11 @@ public:
     typedef bool BoundaryMesh;
 
     //- Name for point fields sub-registry
-    static const word pointDataName;
+    static surfMesh_API const word pointDataName;
 
 
     //- Runtime type information
-    TypeName("polySurface");
+    TypeNameApi(surfMesh_API, "polySurface");
 
 
     // Generated Methods

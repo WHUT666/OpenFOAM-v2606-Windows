@@ -88,7 +88,7 @@ class boundaryRadiationProperties
 public:
 
     // Declare name of the class and its debug switch
-    TypeName("boundaryRadiationProperties");
+    TypeNameApi(radiationModels_API, "boundaryRadiationProperties");
 
 
     // Constructors

@@ -195,7 +195,7 @@ private:
 public:
 
     // Static data members
-    ClassName("cellClassification");
+    ClassNameApi(meshTools_API, "cellClassification");
 
     // Constructors
 

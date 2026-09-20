@@ -210,7 +210,7 @@ private:
 
     // Private data
 
-        static const Enum<massTransferMode> massModeTypeNames_;
+        static thermoTools_API const Enum<massTransferMode> massModeTypeNames_;
 
         //- Operating mode
         massTransferMode mode_;
@@ -309,7 +309,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("humidityTemperatureCoupledMixed");
+    TypeNameApi(thermoTools_API, "humidityTemperatureCoupledMixed");
 
 
     // Constructors

@@ -111,7 +111,7 @@ class outletMappedUniformInletHeatAdditionFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("outletMappedUniformInletHeatAddition");
+    TypeNameApi(thermoTools_API, "outletMappedUniformInletHeatAddition");
 
 
     // Constructors

@@ -81,7 +81,7 @@ public:
     // Static data members
 
         //- Identity matrix for square matrices
-        static const SpatialTensor I;
+        static OpenFOAM_API const SpatialTensor I;
 
 
     // Constructors
@@ -127,6 +127,7 @@ public:
         //- Construct from Istream
         inline explicit SpatialTensor(Istream&);
 };
+
 
 
 // * * * * * * * * * * * * * * * * * Traits  * * * * * * * * * * * * * * * * //

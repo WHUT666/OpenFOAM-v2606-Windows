@@ -49,6 +49,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LiquidEvapFuchsKnudsen_defines_typeName in .C files that
+//  define the template statics of LiquidEvapFuchsKnudsen (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LiquidEvapFuchsKnudsen_defines_typeName)
+#  define Foam_LiquidEvapFuchsKnudsen_typeName_API
+#else
+#  define Foam_LiquidEvapFuchsKnudsen_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef LiquidEvapFuchsKnudsen_H
 #define LiquidEvapFuchsKnudsen_H
 
@@ -133,7 +143,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("liquidEvapFuchsKnudsen");
+    TypeNameApi(Foam_LiquidEvapFuchsKnudsen_typeName_API, "liquidEvapFuchsKnudsen");
 
 
     // Constructors

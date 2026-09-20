@@ -75,7 +75,7 @@ class rpm
 public:
 
     //- Runtime type information
-    TypeName("rpm");
+    TypeNameApi(finiteVolume_API, "rpm");
 
 
     // Constructors

@@ -66,7 +66,7 @@ class meshSearchMeshObject
 public:
 
     // Declare name of the class and its debug switch
-    TypeName("meshSearchMeshObject");
+    TypeNameApi(meshTools_API, "meshSearchMeshObject");
 
 
     // Constructors

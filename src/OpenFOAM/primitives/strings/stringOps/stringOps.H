@@ -57,7 +57,7 @@ namespace Foam
 {
 
 // Forward Declarations
-class OSstream;
+class OpenFOAM_API OSstream;
 template<class T1, class T2> class Tuple2;
 
 /*---------------------------------------------------------------------------*\

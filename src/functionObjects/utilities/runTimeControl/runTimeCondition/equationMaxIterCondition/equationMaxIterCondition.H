@@ -75,7 +75,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("equationMaxIter");
+    TypeNameApi(utilityFunctionObjects_API, "equationMaxIter");
 
     //- Constructor
     equationMaxIterCondition

@@ -102,7 +102,7 @@ class totalTemperatureFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("totalTemperature");
+    TypeNameApi(finiteVolume_API, "totalTemperature");
 
 
     // Constructors

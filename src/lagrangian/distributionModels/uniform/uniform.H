@@ -120,7 +120,7 @@ class uniform
 public:
 
     //- Runtime type information
-    TypeName("uniform");
+    TypeNameApi(distributionModels_API, "uniform");
 
 
     // Constructors

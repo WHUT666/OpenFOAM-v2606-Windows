@@ -156,7 +156,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("interfaceHeight");
+    TypeNameApi(fieldFunctionObjects_API, "interfaceHeight");
 
 
     // Constructors

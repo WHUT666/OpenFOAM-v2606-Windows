@@ -140,7 +140,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("faceZone");
+    TypeNameApi(sampling_API, "faceZone");
 
 
     // Constructors

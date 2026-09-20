@@ -92,7 +92,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Hanning");
+    TypeNameApi(randomProcesses_API, "Hanning");
 
 
     //- Construct from dictionary

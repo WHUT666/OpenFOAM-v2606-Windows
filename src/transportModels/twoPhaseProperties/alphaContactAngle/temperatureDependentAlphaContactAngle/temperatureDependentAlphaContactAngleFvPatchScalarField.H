@@ -94,7 +94,7 @@ class temperatureDependentAlphaContactAngleFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("temperatureDependentAlphaContactAngle");
+    TypeNameApi(twoPhaseProperties_API, "temperatureDependentAlphaContactAngle");
 
 
     // Constructors

@@ -70,7 +70,7 @@ class powerLaw
 public:
 
     //- Runtime type information
-    TypeName("powerLaw");
+    TypeNameApi(turbulenceModels_API, "powerLaw");
 
 
     // Constructors

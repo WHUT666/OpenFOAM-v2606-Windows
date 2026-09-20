@@ -74,7 +74,7 @@ class constantAbsorption
 public:
 
     //- Runtime type information
-    TypeName("constantAbsorption");
+    TypeNameApi(radiationModels_API, "constantAbsorption");
 
 
     // Constructors

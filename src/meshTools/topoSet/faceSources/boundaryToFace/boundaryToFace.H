@@ -97,7 +97,7 @@ class boundaryToFace
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
 
     // Private Member Functions
@@ -108,7 +108,7 @@ class boundaryToFace
 public:
 
     //- Runtime type information
-    TypeName("boundaryToFace");
+    TypeNameApi(meshTools_API, "boundaryToFace");
 
 
     // Constructors

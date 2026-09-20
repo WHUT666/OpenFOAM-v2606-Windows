@@ -92,6 +92,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ParticleCollector_defines_typeName in .C files that
+//  define the template statics of ParticleCollector (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ParticleCollector_defines_typeName)
+#  define Foam_ParticleCollector_typeName_API
+#else
+#  define Foam_ParticleCollector_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ParticleCollector_H
 #define ParticleCollector_H
 
@@ -246,7 +256,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("particleCollector");
+    TypeNameApi(Foam_ParticleCollector_typeName_API, "particleCollector");
 
 
     // Constructors

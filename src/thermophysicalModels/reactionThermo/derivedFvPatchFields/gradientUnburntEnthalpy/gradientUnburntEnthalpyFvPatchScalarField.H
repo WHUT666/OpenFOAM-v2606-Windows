@@ -61,7 +61,7 @@ class gradientUnburntEnthalpyFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("gradientUnburntEnthalpy");
+    TypeNameApi(reactionThermophysicalModels_API, "gradientUnburntEnthalpy");
 
 
     // Constructors

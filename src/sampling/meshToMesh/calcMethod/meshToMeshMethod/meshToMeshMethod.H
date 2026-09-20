@@ -66,7 +66,7 @@ protected:
         scalar V_;
 
         //- Tolerance used in volume overlap calculations
-        static scalar tolerance_;
+        static sampling_API scalar tolerance_;
 
 
     // Protected Member Functions
@@ -127,11 +127,11 @@ private:
 public:
 
     //- Run-time type information
-    TypeName("meshToMeshMethod");
+    TypeNameApi(sampling_API, "meshToMeshMethod");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( sampling_API,
         autoPtr,
         meshToMeshMethod,
         components,

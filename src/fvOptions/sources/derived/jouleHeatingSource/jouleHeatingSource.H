@@ -229,7 +229,7 @@ class jouleHeatingSource
 public:
 
     //- Runtime type information
-    TypeName("jouleHeatingSource");
+    TypeNameApi(fvOptions_API, "jouleHeatingSource");
 
 
     // Constructors

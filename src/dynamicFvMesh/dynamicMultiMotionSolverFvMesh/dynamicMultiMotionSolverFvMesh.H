@@ -68,7 +68,7 @@ class dynamicMultiMotionSolverFvMesh
 public:
 
     //- Runtime type information
-    TypeName("dynamicMultiMotionSolverFvMesh");
+    TypeNameApi(dynamicFvMesh_API, "dynamicMultiMotionSolverFvMesh");
 
 
     // Generated Methods

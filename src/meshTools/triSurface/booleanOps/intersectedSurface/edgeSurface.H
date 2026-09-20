@@ -107,7 +107,7 @@ private:
 
 public:
 
-    ClassName("edgeSurface");
+    ClassNameApi(meshTools_API, "edgeSurface");
 
     // Constructors
 

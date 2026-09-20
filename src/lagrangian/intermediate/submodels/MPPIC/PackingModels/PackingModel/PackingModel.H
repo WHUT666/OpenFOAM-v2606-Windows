@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PackingModel_defines_typeName in .C files that
+//  define the template statics of PackingModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PackingModel_defines_typeName)
+#  define Foam_PackingModel_typeName_API
+#else
+#  define Foam_PackingModel_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PackingModel_H
 #define PackingModel_H
 
@@ -81,11 +91,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("packingModel");
+    TypeNameApi(Foam_PackingModel_typeName_API, "packingModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( Foam_PackingModel_typeName_API,
         autoPtr,
         PackingModel,
         dictionary,

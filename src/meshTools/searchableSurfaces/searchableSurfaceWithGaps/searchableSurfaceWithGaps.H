@@ -130,7 +130,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("searchableSurfaceWithGaps");
+    TypeNameApi(meshTools_API, "searchableSurfaceWithGaps");
 
 
     // Constructors

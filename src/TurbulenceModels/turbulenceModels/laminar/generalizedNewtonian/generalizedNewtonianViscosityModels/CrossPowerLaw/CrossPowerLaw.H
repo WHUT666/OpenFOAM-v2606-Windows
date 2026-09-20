@@ -98,7 +98,7 @@ class CrossPowerLaw
 public:
 
     //- Runtime type information
-    TypeName("CrossPowerLaw");
+    TypeNameApi(turbulenceModels_API, "CrossPowerLaw");
 
 
     // Constructors

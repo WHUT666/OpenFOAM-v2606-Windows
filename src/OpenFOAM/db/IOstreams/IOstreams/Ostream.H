@@ -58,7 +58,7 @@ constexpr char nl = '\n';   //!< The newline \c '\\n' character (0x0a)
                            Class Ostream Declaration
 \*---------------------------------------------------------------------------*/
 
-class Ostream
+class OpenFOAM_API Ostream
 :
     public IOstream
 {

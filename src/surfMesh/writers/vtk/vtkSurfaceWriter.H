@@ -140,7 +140,7 @@ class vtkWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("vtk");
+    TypeNameNoDebugApi(surfMesh_API, "vtk");
 
 
     // Constructors

@@ -56,7 +56,7 @@ class sigWriteNow
     // Private Data
 
         //- Signal number to use
-        static int signal_;
+        static OpenFOAM_API int signal_;
 
 
     // Private Member Functions

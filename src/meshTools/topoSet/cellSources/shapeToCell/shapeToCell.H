@@ -117,7 +117,7 @@ class shapeToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of cell shape/type
         word shape_;
@@ -131,13 +131,13 @@ class shapeToCell
 public:
 
     //- Runtime type information
-    TypeName("shapeToCell");
+    TypeNameApi(meshTools_API, "shapeToCell");
 
 
     // Static Data
 
         //- Cos of feature angle for polyHedral to be splitHex
-        static scalar featureCos;
+        static meshTools_API scalar featureCos;
 
 
     // Constructors

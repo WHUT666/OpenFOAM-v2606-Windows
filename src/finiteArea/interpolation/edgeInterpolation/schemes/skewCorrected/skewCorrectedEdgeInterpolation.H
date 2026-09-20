@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_skewCorrectedEdgeInterpolation_defines_typeName in .C files that
+//  define the template statics of skewCorrectedEdgeInterpolation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_skewCorrectedEdgeInterpolation_defines_typeName)
+#  define Foam_skewCorrectedEdgeInterpolation_typeName_API
+#else
+#  define Foam_skewCorrectedEdgeInterpolation_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_skewCorrectedEdgeInterpolation_H
 #define Foam_skewCorrectedEdgeInterpolation_H
 
@@ -65,7 +75,7 @@ class skewCorrectedEdgeInterpolation
 public:
 
     //- Runtime type information
-    TypeName("skewCorrected");
+    TypeNameApi(Foam_skewCorrectedEdgeInterpolation_typeName_API, "skewCorrected");
 
 
     // Generated Methods

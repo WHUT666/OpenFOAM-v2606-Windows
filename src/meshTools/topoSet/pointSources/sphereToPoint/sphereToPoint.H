@@ -104,7 +104,7 @@ class sphereToPoint
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Centre point of the sphere
         point origin_;
@@ -124,7 +124,7 @@ class sphereToPoint
 public:
 
     //- Runtime type information
-    TypeName("sphereToPoint");
+    TypeNameApi(meshTools_API, "sphereToPoint");
 
 
     // Constructors

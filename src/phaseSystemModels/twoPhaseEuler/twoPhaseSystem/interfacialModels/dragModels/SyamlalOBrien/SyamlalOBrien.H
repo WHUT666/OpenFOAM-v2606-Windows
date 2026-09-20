@@ -62,7 +62,7 @@ class SyamlalOBrien
 public:
 
     //- Runtime type information
-    TypeName("SyamlalOBrien");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "SyamlalOBrien");
 
 
     // Constructors

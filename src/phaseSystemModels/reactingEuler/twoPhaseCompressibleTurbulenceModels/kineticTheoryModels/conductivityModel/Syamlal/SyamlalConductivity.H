@@ -59,7 +59,7 @@ class Syamlal
 public:
 
     //- Runtime type information
-    TypeName("Syamlal");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "Syamlal");
 
 
     // Constructors

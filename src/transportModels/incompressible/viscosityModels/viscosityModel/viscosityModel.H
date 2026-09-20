@@ -91,13 +91,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("viscosityModel");
+    TypeNameApi(incompressibleTransportModels_API, "viscosityModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( incompressibleTransportModels_API,
             autoPtr,
             viscosityModel,
             dictionary,

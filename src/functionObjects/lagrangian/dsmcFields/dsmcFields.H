@@ -100,7 +100,7 @@ class dsmcFields
 public:
 
     //- Runtime type information
-    TypeName("dsmcFields");
+    TypeNameApi(lagrangianFunctionObjects_API, "dsmcFields");
 
 
     // Constructors

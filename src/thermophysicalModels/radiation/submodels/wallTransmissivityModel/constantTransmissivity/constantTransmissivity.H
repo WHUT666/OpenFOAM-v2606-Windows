@@ -71,7 +71,7 @@ class constantTransmissivity
 public:
 
     //- Runtime type information
-    TypeName("constantTransmissivity");
+    TypeNameApi(radiationModels_API, "constantTransmissivity");
 
 
     // Constructors

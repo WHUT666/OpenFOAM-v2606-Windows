@@ -77,7 +77,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("average");
+    TypeNameApi(utilityFunctionObjects_API, "average");
 
     //- Constructor
     averageCondition

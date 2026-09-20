@@ -120,7 +120,7 @@ class atmBoundaryLayerInletKFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("atmBoundaryLayerInletK");
+    TypeNameApi(atmosphericModels_API, "atmBoundaryLayerInletK");
 
 
     // Constructors

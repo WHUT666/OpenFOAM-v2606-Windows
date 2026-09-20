@@ -307,7 +307,7 @@ class energyTransport
 public:
 
     //- Runtime type information
-    TypeName("energyTransport");
+    TypeNameApi(solverFunctionObjects_API, "energyTransport");
 
 
     // Constructors

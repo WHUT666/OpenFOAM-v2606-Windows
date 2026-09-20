@@ -84,7 +84,7 @@ class SLGThermo
 public:
 
     //- Runtime type information
-    TypeName("SLGThermo");
+    TypeNameApi(SLGThermo_API, "SLGThermo");
 
     // Constructors
 

@@ -94,7 +94,7 @@ public:
 
         //- Names of commonly used cellModels corresponding to modelType.
         //  The names must match those in "etc/cellModels"
-        static const Enum<modelType> modelNames;
+        static OpenFOAM_API const Enum<modelType> modelNames;
 
 
     // Lookup Methods
@@ -124,10 +124,10 @@ private:
     // Private Static Data
 
         //- PtrList of predefined models
-        static PtrList<cellModel> models_;
+        static OpenFOAM_API PtrList<cellModel> models_;
 
         //- Lookup of model pointers (in models_) by index
-        static List<const cellModel*> modelPtrs_;
+        static OpenFOAM_API List<const cellModel*> modelPtrs_;
 
 
     // Private Data

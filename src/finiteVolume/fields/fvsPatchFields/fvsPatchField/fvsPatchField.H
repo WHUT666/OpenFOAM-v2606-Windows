@@ -101,10 +101,10 @@ protected:
 public:
 
     //- Debug switch to disallow the use of generic fvsPatchField
-    static int disallowGenericPatchField;
+    static finiteVolume_API int disallowGenericPatchField;
 
     //- Runtime type information
-    TypeName("fvsPatchField");
+    TypeNameApi(finiteVolume_API, "fvsPatchField");
 
 
     // Constructors
@@ -297,8 +297,9 @@ public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
+        declareRunTimeSelectionTableApi
         (
+            finiteVolume_API,
             tmp,
             fvsPatchField,
             patch,
@@ -309,8 +310,9 @@ public:
             (p, iF)
         );
 
-        declareRunTimeSelectionTable
+        declareRunTimeSelectionTableApi
         (
+            finiteVolume_API,
             tmp,
             fvsPatchField,
             patchMapper,
@@ -323,8 +325,9 @@ public:
             (dynamic_cast<const fvsPatchFieldType&>(ptf), p, iF, m)
         );
 
-        declareRunTimeSelectionTable
+        declareRunTimeSelectionTableApi
         (
+            finiteVolume_API,
             tmp,
             fvsPatchField,
             dictionary,

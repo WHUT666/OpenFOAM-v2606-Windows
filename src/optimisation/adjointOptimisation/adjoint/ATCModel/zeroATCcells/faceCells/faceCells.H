@@ -73,7 +73,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("faceCells");
+    TypeNameApi(adjointOptimisation_API, "faceCells");
 
 
     // Constructors

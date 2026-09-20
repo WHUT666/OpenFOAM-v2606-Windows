@@ -63,7 +63,7 @@ class SyamlalOBrien
 public:
 
     //- Runtime type information
-    TypeName("SyamlalOBrien");
+    TypeNameApi(multiphaseSystem_API, "SyamlalOBrien");
 
 
     // Constructors

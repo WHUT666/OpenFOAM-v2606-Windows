@@ -62,7 +62,7 @@ class quarterCosineRamp
 public:
 
     // Runtime type information
-    TypeName("quarterCosineRamp");
+    TypeNameApi(OpenFOAM_API, "quarterCosineRamp");
 
 
     // Constructors

@@ -34,6 +34,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DRG_defines_typeName in .C files that
+//  define the template statics of DRG (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DRG_defines_typeName)
+#  define Foam_DRG_typeName_API
+#else
+#  define Foam_DRG_typeName_API chemistryModel_API
+#endif
+
 #ifndef DRG_H
 #define DRG_H
 
@@ -63,7 +73,7 @@ class DRG
 public:
 
     //- Runtime type information
-    TypeName("DRG");
+    TypeNameApi(Foam_DRG_typeName_API, "DRG");
 
 
     // Constructors

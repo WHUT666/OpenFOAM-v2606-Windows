@@ -47,7 +47,7 @@ namespace Foam
                       Class ensightGeoFile Declaration
 \*---------------------------------------------------------------------------*/
 
-class ensightGeoFile
+class fileFormats_API ensightGeoFile
 :
     public ensightFile
 {

@@ -172,7 +172,7 @@ protected:
 public:
 
     //- Runtime type information
-    ClassName("codedBase");
+    ClassNameApi(OpenFOAM_API, "codedBase");
 
 
     // Generated Methods

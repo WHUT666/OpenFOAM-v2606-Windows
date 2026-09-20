@@ -200,7 +200,7 @@ protected:
 public:
 
     //- Additional characters for writing
-    static label addChars;
+    static OpenFOAM_API label addChars;
 
 
     // Constructors

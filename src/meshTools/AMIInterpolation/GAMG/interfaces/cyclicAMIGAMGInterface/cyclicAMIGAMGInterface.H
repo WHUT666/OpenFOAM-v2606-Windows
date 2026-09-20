@@ -86,7 +86,7 @@ class cyclicAMIGAMGInterface
 public:
 
     //- Runtime type information
-    TypeName("cyclicAMI");
+    TypeNameApi(meshTools_API, "cyclicAMI");
 
 
     // Constructors

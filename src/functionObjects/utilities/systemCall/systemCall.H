@@ -150,7 +150,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("systemCall");
+    TypeNameApi(utilityFunctionObjects_API, "systemCall");
 
 
     // Constructors

@@ -35,6 +35,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_MixedDiffuseSpecular_defines_typeName in .C files that
+//  define the template statics of MixedDiffuseSpecular (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_MixedDiffuseSpecular_defines_typeName)
+#  define Foam_MixedDiffuseSpecular_typeName_API
+#else
+#  define Foam_MixedDiffuseSpecular_typeName_API DSMC_API
+#endif
+
 #ifndef MixedDiffuseSpecular_H
 #define MixedDiffuseSpecular_H
 
@@ -62,7 +72,7 @@ class MixedDiffuseSpecular
 public:
 
     //- Runtime type information
-    TypeName("MixedDiffuseSpecular");
+    TypeNameApi(Foam_MixedDiffuseSpecular_typeName_API, "MixedDiffuseSpecular");
 
 
     // Constructors

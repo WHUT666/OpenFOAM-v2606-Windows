@@ -72,7 +72,7 @@ public:
     typedef Field<Type> content_type;
 
     //- Runtime type information
-    TypeName("Field");
+    TypeNameApi(OpenFOAM_API, "Field");
 
 
     // Constructors

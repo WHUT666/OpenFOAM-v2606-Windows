@@ -10,7 +10,15 @@
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
-set(FOAM_WMAKE2CMAKE "${CMAKE_CURRENT_LIST_DIR}/wmake2cmake.py")
+set(FOAM_CMAKE_DIR "${CMAKE_CURRENT_LIST_DIR}")
+set(FOAM_WMAKE2CMAKE "${FOAM_CMAKE_DIR}/wmake2cmake.py")
+
+# dumpbin.exe lives next to link.exe - needed by the shared-build .def
+# generator (foam_export_all).
+if(NOT FOAM_DUMPBIN_EXE)
+    get_filename_component(_msvc_bindir "${CMAKE_LINKER}" DIRECTORY)
+    find_program(FOAM_DUMPBIN_EXE dumpbin HINTS "${_msvc_bindir}" REQUIRED)
+endif()
 
 # Resolve @MARKER@ paths produced by wmake2cmake into real paths
 function(foam_resolve_marker outvar token)
@@ -200,6 +208,33 @@ endfunction()
 
 
 #------------------------------------------------------------------------------
+# foam_export_all(<target>)
+#   Shared-build export generation. Replaces WINDOWS_EXPORT_ALL_SYMBOLS:
+#   a PRE_LINK step scans the target's objects with dumpbin and writes a
+#   filtered .def (cmake/genExportsDef.py). Needed because link.exe's
+#   .exp writer corrupts on .def entries naming '__imp_*' data symbols
+#   (LNK1106) - eg legacyStdioShim.c's __imp___iob_func.
+#------------------------------------------------------------------------------
+function(foam_export_all name)
+    if(FOAM_STATIC_LIBS)
+        return()
+    endif()
+    set(_objdir "${CMAKE_CURRENT_BINARY_DIR}/${name}.dir/$<CONFIG>")
+    set(_project "${CMAKE_CURRENT_BINARY_DIR}/${name}.vcxproj")
+    set(_def "${_objdir}/foam_exports.def")
+    add_custom_command(TARGET ${name} PRE_LINK
+        COMMAND "${Python3_EXECUTABLE}" "${FOAM_CMAKE_DIR}/genExportsDef.py"
+            --project "${_project}"
+            --config "$<CONFIG>"
+            --objdir "${_objdir}"
+            --dumpbin "${FOAM_DUMPBIN_EXE}"
+            --out "${_def}"
+        VERBATIM)
+    target_link_options(${name} PRIVATE "/DEF:${_def}")
+endfunction()
+
+
+#------------------------------------------------------------------------------
 # foam_gen_lemon(<outvar> <name>)
 #   Emit custom commands for FOAM_LEMON_SOURCES (*.lyy-m4 -> m4 -> lemon -> .cc)
 #   and append generated sources to <outvar> in caller scope.
@@ -327,11 +362,11 @@ function(foam_add_library dir)
         add_library(${name} SHARED ${srcs})
         set_target_properties(${name} PROPERTIES
             PREFIX "lib"
-            WINDOWS_EXPORT_ALL_SYMBOLS ON
             RUNTIME_OUTPUT_DIRECTORY "${FOAM_LIBBIN_DIR}"
             LIBRARY_OUTPUT_DIRECTORY "${FOAM_LIBBIN_DIR}"
             ARCHIVE_OUTPUT_DIRECTORY "${FOAM_IMPBIN_DIR}"
         )
+        foam_export_all(${name})
     endif()
     foam_apply_common(${name})
     foam_enable_static_registration(${name})
@@ -370,7 +405,17 @@ function(foam_add_library dir)
         if(FOAM_STATIC_LIBS)
             target_link_libraries(${name} PUBLIC ${linklibs})
         else()
-            target_link_libraries(${name} PRIVATE ${linklibs})
+            # Shared: every DLL must link its dependencies' import libs
+            # explicitly. wmake links -lOpenFOAM implicitly for all libs,
+            # which upstream Make/options files therefore never declare.
+            if(NOT "${name}" STREQUAL "OpenFOAM" AND TARGET OpenFOAM)
+                list(APPEND linklibs OpenFOAM)
+            endif()
+            # PUBLIC: propagate import libs transitively, mirroring ELF
+            # DT_NEEDED semantics - upstream Make/options rely on it and
+            # under-declare direct deps (eg conformalVoronoiMesh uses
+            # finiteVolume via dynamicMesh but never links -lfiniteVolume)
+            target_link_libraries(${name} PUBLIC ${linklibs})
         endif()
     endif()
 

@@ -95,10 +95,10 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("combustionModel");
+    TypeNameApi(combustionModels_API, "combustionModel");
 
     //- Default combustionProperties dictionary name
-    static const word combustionPropertiesName;
+    static combustionModels_API const word combustionPropertiesName;
 
 
     // Constructors

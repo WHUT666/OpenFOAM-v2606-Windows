@@ -138,7 +138,7 @@ class pow
 public:
 
     //- Runtime type information
-    TypeName("pow");
+    TypeNameApi(fieldFunctionObjects_API, "pow");
 
 
     // Constructors

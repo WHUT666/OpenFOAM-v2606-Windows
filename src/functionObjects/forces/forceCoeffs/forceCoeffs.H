@@ -514,7 +514,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("forceCoeffs");
+    TypeNameApi(forces_API, "forceCoeffs");
 
 
     // Constructors

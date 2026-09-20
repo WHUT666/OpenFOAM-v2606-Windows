@@ -87,7 +87,7 @@ class linearValveLayersFvMesh
 public:
 
     //- Runtime type information
-    TypeName("linearValveLayersFvMesh");
+    TypeNameApi(topoChangerFvMesh_API, "linearValveLayersFvMesh");
 
 
     // Constructors

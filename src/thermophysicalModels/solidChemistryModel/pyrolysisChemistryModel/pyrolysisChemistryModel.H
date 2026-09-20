@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_pyrolysisChemistryModel_defines_typeName in .C files that
+//  define the template statics of pyrolysisChemistryModel (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_pyrolysisChemistryModel_defines_typeName)
+#  define Foam_pyrolysisChemistryModel_typeName_API
+#else
+#  define Foam_pyrolysisChemistryModel_typeName_API solidChemistryModel_API
+#endif
+
 #ifndef pyrolysisChemistryModel_H
 #define pyrolysisChemistryModel_H
 
@@ -101,7 +111,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("pyrolysis");
+    TypeNameApi(Foam_pyrolysisChemistryModel_typeName_API, "pyrolysis");
 
 
     // Constructors

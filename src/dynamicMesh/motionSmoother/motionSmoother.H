@@ -97,7 +97,7 @@ class motionSmoother
 {
 public:
 
-    ClassName("motionSmoother");
+    ClassNameApi(dynamicMesh_API, "motionSmoother");
 
     // Constructors
 

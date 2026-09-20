@@ -49,36 +49,36 @@ namespace Foam
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 //- Dimensionless
-extern const dimensionSet dimless;
+extern OpenFOAM_API const dimensionSet dimless;
 
-extern const dimensionSet dimMass;
-extern const dimensionSet dimLength;
-extern const dimensionSet dimTime;
-extern const dimensionSet dimTemperature;
-extern const dimensionSet dimMoles;
-extern const dimensionSet dimCurrent;
-extern const dimensionSet dimLuminousIntensity;
+extern OpenFOAM_API const dimensionSet dimMass;
+extern OpenFOAM_API const dimensionSet dimLength;
+extern OpenFOAM_API const dimensionSet dimTime;
+extern OpenFOAM_API const dimensionSet dimTemperature;
+extern OpenFOAM_API const dimensionSet dimMoles;
+extern OpenFOAM_API const dimensionSet dimCurrent;
+extern OpenFOAM_API const dimensionSet dimLuminousIntensity;
 
-extern const dimensionSet dimArea;
-extern const dimensionSet dimVolume;
+extern OpenFOAM_API const dimensionSet dimArea;
+extern OpenFOAM_API const dimensionSet dimVolume;
 
 //- Older spelling for dimVolume
 //  \deprecated(2019-01) use dimVolume instead
-extern const dimensionSet dimVol;
+extern OpenFOAM_API const dimensionSet dimVol;
 
-extern const dimensionSet dimDensity;
-extern const dimensionSet dimForce;
-extern const dimensionSet dimEnergy;
-extern const dimensionSet dimPower;
+extern OpenFOAM_API const dimensionSet dimDensity;
+extern OpenFOAM_API const dimensionSet dimForce;
+extern OpenFOAM_API const dimensionSet dimEnergy;
+extern OpenFOAM_API const dimensionSet dimPower;
 
-extern const dimensionSet dimVelocity;
-extern const dimensionSet dimAcceleration;
-extern const dimensionSet dimPressure;
-extern const dimensionSet dimCompressibility;
-extern const dimensionSet dimGasConstant;
-extern const dimensionSet dimSpecificHeatCapacity;
-extern const dimensionSet dimViscosity;
-extern const dimensionSet dimDynamicViscosity;
+extern OpenFOAM_API const dimensionSet dimVelocity;
+extern OpenFOAM_API const dimensionSet dimAcceleration;
+extern OpenFOAM_API const dimensionSet dimPressure;
+extern OpenFOAM_API const dimensionSet dimCompressibility;
+extern OpenFOAM_API const dimensionSet dimGasConstant;
+extern OpenFOAM_API const dimensionSet dimSpecificHeatCapacity;
+extern OpenFOAM_API const dimensionSet dimViscosity;
+extern OpenFOAM_API const dimensionSet dimDynamicViscosity;
 
 
 /*---------------------------------------------------------------------------*\

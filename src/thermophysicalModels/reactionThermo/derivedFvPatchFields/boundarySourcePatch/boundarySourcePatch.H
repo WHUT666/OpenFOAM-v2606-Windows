@@ -53,7 +53,7 @@ class boundarySourcePatch
 public:
 
     //- Runtime type information
-    TypeName("boundarySourcePatch");
+    TypeNameApi(reactionThermophysicalModels_API, "boundarySourcePatch");
 
 
     //- Destructor

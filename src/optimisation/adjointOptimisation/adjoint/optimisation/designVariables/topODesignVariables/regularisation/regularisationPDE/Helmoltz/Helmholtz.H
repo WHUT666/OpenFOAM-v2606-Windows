@@ -98,7 +98,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("Helmholtz");
+    TypeNameApi(adjointOptimisation_API, "Helmholtz");
 
 
     // Constructors

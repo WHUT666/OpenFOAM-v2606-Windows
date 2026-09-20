@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_None_defines_typeName in .C files that
+//  define the template statics of None (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_None_defines_typeName)
+#  define Foam_None_typeName_API
+#else
+#  define Foam_None_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_None_H
 #define Foam_Function1Types_None_H
 
@@ -129,6 +139,15 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+// Explicit instantiation declarations (Windows DLL import)
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::None<Foam::label>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::None<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::None<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::None<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::None<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::None<Foam::tensor>);
 
 #endif
 

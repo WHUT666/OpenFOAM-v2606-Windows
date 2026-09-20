@@ -184,7 +184,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("interRegionHeatTransferModel");
+    TypeNameApi(fvOptions_API, "interRegionHeatTransferModel");
 
 
     // Constructors

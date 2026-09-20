@@ -92,7 +92,7 @@ class Casson
 public:
 
     //- Runtime type information
-    TypeName("Casson");
+    TypeNameApi(turbulenceModels_API, "Casson");
 
 
     // Constructors

@@ -79,7 +79,7 @@ class relaxation
 public:
 
     //- Runtime type information
-    TypeName("relaxation");
+    TypeNameApi(combustionModels_API, "relaxation");
 
 
     // Constructors

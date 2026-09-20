@@ -247,7 +247,7 @@ class regionSplit
 public:
 
     //- Runtime type information
-    ClassName("regionSplit");
+    ClassNameApi(meshTools_API, "regionSplit");
 
 
     // Constructors

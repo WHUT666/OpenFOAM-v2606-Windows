@@ -154,7 +154,7 @@ private:
 
     // Private Data
 
-        static const Enum<samplingSource> samplingSourceNames_;
+        static sampling_API const Enum<samplingSource> samplingSourceNames_;
 
         //- The name of the input surface
         word surfaceName_;
@@ -211,7 +211,7 @@ private:
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("sampledMeshedSurface");
+    TypeNameApi(sampling_API, "sampledMeshedSurface");
 
 
     // Constructors

@@ -265,7 +265,7 @@ class isoSurfaceCell
 public:
 
     //- Runtime type information
-    TypeName("isoSurfaceCell");
+    TypeNameApi(sampling_API, "isoSurfaceCell");
 
 
     // Constructors

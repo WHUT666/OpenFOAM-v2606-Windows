@@ -95,7 +95,7 @@ namespace Foam
 {
 
 // Forward Declarations
-class polyMesh;
+class OpenFOAM_API polyMesh;
 class mapDistribute;
 template<class T> class CompactListList;
 template<class T> class EdgeMap;
@@ -320,13 +320,13 @@ public:
 
 
     //- Runtime type information
-    ClassName("globalMeshData");
+    ClassNameApi(OpenFOAM_API, "globalMeshData");
 
 
     // Static data members
 
         //- Geometric tolerance (fraction of bounding box)
-        static const Foam::scalar matchTol_;
+        static OpenFOAM_API const Foam::scalar matchTol_;
 
 
     // Constructors

@@ -152,7 +152,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("filmPyrolysisRadiativeCoupledMixed");
+    TypeNameApi(regionCoupling_API, "filmPyrolysisRadiativeCoupledMixed");
 
 
     // Constructors

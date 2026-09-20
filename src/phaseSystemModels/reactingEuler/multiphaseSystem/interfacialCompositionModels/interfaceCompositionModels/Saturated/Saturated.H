@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Saturated_defines_typeName in .C files that
+//  define the template statics of Saturated (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Saturated_defines_typeName)
+#  define Foam_Saturated_typeName_API
+#else
+#  define Foam_Saturated_typeName_API reactingMultiphaseSystem_API
+#endif
+
 #ifndef Saturated_H
 #define Saturated_H
 
@@ -84,7 +94,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("saturated");
+    TypeNameApi(Foam_Saturated_typeName_API, "saturated");
 
     // Constructors
 

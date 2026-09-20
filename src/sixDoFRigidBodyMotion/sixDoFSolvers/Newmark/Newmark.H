@@ -86,7 +86,7 @@ class Newmark
 public:
 
     //- Runtime type information
-    TypeName("Newmark");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "Newmark");
 
 
     // Constructors

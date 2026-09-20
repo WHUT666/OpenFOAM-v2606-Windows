@@ -58,7 +58,7 @@ class nonuniformTransformCyclicPointPatch
 public:
 
     //- Runtime type information
-    TypeName(nonuniformTransformCyclicPolyPatch::typeName_());
+    TypeNameApi(OpenFOAM_API, nonuniformTransformCyclicPolyPatch::typeName_());
 
 
     // Constructors

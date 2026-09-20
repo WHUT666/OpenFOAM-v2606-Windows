@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_clippedLinear_defines_typeName in .C files that
+//  define the template statics of clippedLinear (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_clippedLinear_defines_typeName)
+#  define Foam_clippedLinear_typeName_API
+#else
+#  define Foam_clippedLinear_typeName_API finiteVolume_API
+#endif
+
 #ifndef clippedLinear_H
 #define clippedLinear_H
 
@@ -86,7 +96,7 @@ class clippedLinear
 public:
 
     //- Runtime type information
-    TypeName("clippedLinear");
+    TypeNameApi(Foam_clippedLinear_typeName_API, "clippedLinear");
 
 
     // Constructors

@@ -83,7 +83,7 @@ public:
 
 
     //- Runtime type information
-    TypeNameNoDebug("random");
+    TypeNameNoDebugApi(decompositionMethods_API, "random");
 
 
     // Constructors

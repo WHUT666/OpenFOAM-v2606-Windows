@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LeastSquaresVectors_defines_typeName in .C files that
+//  define the template statics of LeastSquaresVectors (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LeastSquaresVectors_defines_typeName)
+#  define Foam_LeastSquaresVectors_typeName_API
+#else
+#  define Foam_LeastSquaresVectors_typeName_API finiteVolume_API
+#endif
+
 #ifndef LeastSquaresVectors_H
 #define LeastSquaresVectors_H
 
@@ -88,7 +98,7 @@ class LeastSquaresVectors
 public:
 
     // Declare name of the class and its debug switch
-    TypeName("LeastSquaresVectors");
+    TypeNameApi(Foam_LeastSquaresVectors_typeName_API, "LeastSquaresVectors");
 
 
     // Constructors

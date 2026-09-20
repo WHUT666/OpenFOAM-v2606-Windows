@@ -68,7 +68,7 @@ class linearDamper
 public:
 
     //- Runtime type information
-    TypeName("linearDamper");
+    TypeNameApi(rigidBodyDynamics_API, "linearDamper");
 
 
     // Constructors

@@ -123,7 +123,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("streamFunction");
+    TypeNameApi(waveModels_API, "streamFunction");
 
     //- Constructor
     streamFunction

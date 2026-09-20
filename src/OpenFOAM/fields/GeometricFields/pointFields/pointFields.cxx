@@ -1,3 +1,6 @@
+#define Foam_GeometricField_defines_typeName
+#define Foam_DimensionedField_defines_typeName
+#define Foam_GeometricBoundaryField_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

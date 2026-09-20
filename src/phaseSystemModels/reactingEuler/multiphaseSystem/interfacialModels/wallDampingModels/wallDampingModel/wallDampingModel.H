@@ -69,13 +69,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("wallDampingModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "wallDampingModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             wallDampingModel,
             dictionary,
@@ -90,7 +90,7 @@ public:
     // Static Data Members
 
         //- Coefficient dimensions
-        static const dimensionSet dimF;
+        static reactingMultiphaseSystem_API const dimensionSet dimF;
 
 
     // Constructors

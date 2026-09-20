@@ -25,6 +25,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_LduInterfaceField_defines_typeName
 #include <LduInterfaceField_tpl.H>
 #include "fieldTypes.H"
 

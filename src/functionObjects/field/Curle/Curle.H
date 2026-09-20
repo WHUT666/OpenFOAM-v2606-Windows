@@ -145,7 +145,7 @@ class Curle
         };
 
         //- Names for modeType
-        static const Enum<modeType> modeTypeNames_;
+        static fieldFunctionObjects_API const Enum<modeType> modeTypeNames_;
 
 
     // Private Data
@@ -175,7 +175,7 @@ class Curle
 public:
 
     //- Runtime type information
-    TypeName("Curle");
+    TypeNameApi(fieldFunctionObjects_API, "Curle");
 
 
     // Constructors

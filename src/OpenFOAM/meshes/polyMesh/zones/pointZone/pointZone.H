@@ -81,13 +81,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("pointZone");
+    TypeNameApi(OpenFOAM_API, "pointZone");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             pointZone,
             dictionary,

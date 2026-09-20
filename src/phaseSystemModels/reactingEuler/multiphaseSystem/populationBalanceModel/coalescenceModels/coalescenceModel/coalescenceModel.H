@@ -63,13 +63,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("coalescenceModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "coalescenceModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             coalescenceModel,
             dictionary,

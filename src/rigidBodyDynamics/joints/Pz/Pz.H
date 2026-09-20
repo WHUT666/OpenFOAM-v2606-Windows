@@ -71,7 +71,7 @@ class Pz
 public:
 
     //- Runtime type information
-    TypeName("Pz");
+    TypeNameApi(rigidBodyDynamics_API, "Pz");
 
 
     // Constructors

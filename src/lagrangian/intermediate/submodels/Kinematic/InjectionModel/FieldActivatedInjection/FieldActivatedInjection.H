@@ -48,6 +48,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_FieldActivatedInjection_defines_typeName in .C files that
+//  define the template statics of FieldActivatedInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_FieldActivatedInjection_defines_typeName)
+#  define Foam_FieldActivatedInjection_typeName_API
+#else
+#  define Foam_FieldActivatedInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef FieldActivatedInjection_H
 #define FieldActivatedInjection_H
 
@@ -124,7 +134,7 @@ class FieldActivatedInjection
 public:
 
     //- Runtime type information
-    TypeName("fieldActivatedInjection");
+    TypeNameApi(Foam_FieldActivatedInjection_typeName_API, "fieldActivatedInjection");
 
 
     // Constructors

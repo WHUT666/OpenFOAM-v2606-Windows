@@ -113,7 +113,7 @@ class edgeInterpolation
 public:
 
     // Declare name of the class and it's debug switch
-    ClassName("edgeInterpolation");
+    ClassNameApi(finiteArea_API, "edgeInterpolation");
 
 
     // Generated Methods

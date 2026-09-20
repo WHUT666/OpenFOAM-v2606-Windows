@@ -89,7 +89,7 @@ class patchZones
 
 public:
 
-    ClassName("patchZones");
+    ClassNameApi(OpenFOAM_API, "patchZones");
 
 
     // Constructors

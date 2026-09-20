@@ -87,7 +87,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("modifyFace");
+        TypeNameApi(meshTools_API, "modifyFace");
 
 
     // Constructors

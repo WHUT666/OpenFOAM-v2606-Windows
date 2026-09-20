@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_generalizedNewtonian_defines_typeName in .C files that
+//  define the template statics of generalizedNewtonian (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_generalizedNewtonian_defines_typeName)
+#  define Foam_generalizedNewtonian_typeName_API
+#else
+#  define Foam_generalizedNewtonian_typeName_API turbulenceModels_API
+#endif
+
 #ifndef generalizedNewtonian_H
 #define generalizedNewtonian_H
 
@@ -82,7 +92,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("generalizedNewtonian");
+    TypeNameApi(Foam_generalizedNewtonian_typeName_API, "generalizedNewtonian");
 
 
     // Constructors

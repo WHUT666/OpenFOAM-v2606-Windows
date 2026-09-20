@@ -99,10 +99,10 @@ class JobInfo
 public:
 
     //- Global value for constructed job info
-    static bool constructed;
+    static OpenFOAM_API bool constructed;
 
     //- Global value for writeJobInfo enabled
-    static bool writeJobInfo;
+    static OpenFOAM_API bool writeJobInfo;
 
 
     // Constructors
@@ -156,7 +156,7 @@ public:
 
 
 // Job information bookkeeping (global)
-extern JobInfo jobInfo;
+extern OpenFOAM_API JobInfo jobInfo;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

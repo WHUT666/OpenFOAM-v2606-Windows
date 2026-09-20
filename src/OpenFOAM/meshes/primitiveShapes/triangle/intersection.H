@@ -60,7 +60,7 @@ private:
         //  The tolerance is relative to the object size.
         //  Used to determine if a half-ray from a point in plane of triangle
         // intersects the triangle or not.
-        static scalar planarTol_;
+        static OpenFOAM_API scalar planarTol_;
 
 public:
 
@@ -80,10 +80,10 @@ public:
     // Static Member Functions
 
         //- Direction names
-        static const Enum<direction> directionNames_;
+        static OpenFOAM_API const Enum<direction> directionNames_;
 
         //- Projection algorithm names
-        static const Enum<algorithm> algorithmNames_;
+        static OpenFOAM_API const Enum<algorithm> algorithmNames_;
 
         //- Return planar tolerance
         static scalar planarTol()

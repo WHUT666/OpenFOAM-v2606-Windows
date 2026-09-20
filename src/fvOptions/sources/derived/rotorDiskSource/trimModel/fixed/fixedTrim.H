@@ -92,7 +92,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("fixedTrim");
+    TypeNameApi(fvOptions_API, "fixedTrim");
 
 
     // Constructors

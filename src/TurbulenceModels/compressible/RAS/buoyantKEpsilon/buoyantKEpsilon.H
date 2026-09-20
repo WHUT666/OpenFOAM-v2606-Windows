@@ -64,6 +64,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_buoyantKEpsilon_defines_typeName in .C files that
+//  define the template statics of buoyantKEpsilon (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_buoyantKEpsilon_defines_typeName)
+#  define Foam_buoyantKEpsilon_typeName_API
+#else
+#  define Foam_buoyantKEpsilon_typeName_API compressibleTurbulenceModels_API
+#endif
+
 #ifndef buoyantKEpsilon_H
 #define buoyantKEpsilon_H
 
@@ -118,7 +128,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("buoyantKEpsilon");
+    TypeNameApi(Foam_buoyantKEpsilon_typeName_API, "buoyantKEpsilon");
 
 
     // Constructors

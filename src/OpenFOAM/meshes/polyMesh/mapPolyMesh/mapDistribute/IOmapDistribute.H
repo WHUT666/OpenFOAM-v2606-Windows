@@ -65,7 +65,7 @@ class IOmapDistribute
 public:
 
     //- Runtime type information
-    TypeName("mapDistribute");
+    TypeNameApi(OpenFOAM_API, "mapDistribute");
 
     // Constructors
 

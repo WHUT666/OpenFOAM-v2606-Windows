@@ -25,6 +25,16 @@ License
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_LESModel_defines_typeName
+#define Foam_RASModel_defines_typeName
+#define Foam_Smagorinsky_defines_typeName
+#define Foam_Stokes_defines_typeName
+#define Foam_TurbulenceModel_defines_typeName
+#define Foam_kEpsilon_defines_typeName
+#define Foam_kEqn_defines_typeName
+#define Foam_kOmegaSST_defines_typeName
+#define Foam_laminarModel_defines_typeName
+#define Foam_realizableKE_defines_typeName
 #include "DPMIncompressibleTurbulenceModel.H"
 #include "singlePhaseTransportModel.H"
 #include "addToRunTimeSelectionTable.H"

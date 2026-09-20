@@ -133,13 +133,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("binModel");
+    TypeNameApi(fieldFunctionObjects_API, "binModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fieldFunctionObjects_API,
             autoPtr,
             binModel,
             dictionary,

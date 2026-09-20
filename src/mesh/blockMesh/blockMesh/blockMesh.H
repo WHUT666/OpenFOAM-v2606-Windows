@@ -116,7 +116,7 @@ private:
     // Static Data
 
         //- Names corresponding to the mergeStrategy
-        static const Enum<mergeStrategy> strategyNames_;
+        static blockMesh_API const Enum<mergeStrategy> strategyNames_;
 
 
     // Data Types
@@ -262,11 +262,11 @@ public:
     // Static Data
 
         //- The default verbosity (true)
-        static bool verboseOutput;
+        static blockMesh_API bool verboseOutput;
 
 
     //- Runtime type information
-    ClassName("blockMesh");
+    ClassNameApi(blockMesh_API, "blockMesh");
 
 
     // Constructors

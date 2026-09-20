@@ -47,6 +47,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CellZoneInjection_defines_typeName in .C files that
+//  define the template statics of CellZoneInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CellZoneInjection_defines_typeName)
+#  define Foam_CellZoneInjection_typeName_API
+#else
+#  define Foam_CellZoneInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef CellZoneInjection_H
 #define CellZoneInjection_H
 
@@ -106,7 +116,7 @@ class CellZoneInjection
 public:
 
     //- Runtime type information
-    TypeName("cellZoneInjection");
+    TypeNameApi(Foam_CellZoneInjection_typeName_API, "cellZoneInjection");
 
 
     // Constructors

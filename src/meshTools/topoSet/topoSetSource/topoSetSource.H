@@ -65,7 +65,7 @@ class topoSet;
                         Class topoSetSource Declaration
 \*---------------------------------------------------------------------------*/
 
-class topoSetSource
+class meshTools_API topoSetSource
 {
 public:
 

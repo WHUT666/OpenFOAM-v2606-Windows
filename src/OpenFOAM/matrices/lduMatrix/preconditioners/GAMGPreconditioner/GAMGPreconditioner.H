@@ -73,7 +73,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("GAMG");
+    TypeNameApi(OpenFOAM_API, "GAMG");
 
 
     // Constructors

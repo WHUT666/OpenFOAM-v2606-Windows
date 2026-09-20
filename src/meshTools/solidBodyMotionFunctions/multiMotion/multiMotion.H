@@ -74,7 +74,7 @@ class multiMotion
 public:
 
     //- Runtime type information
-    TypeName("multiMotion");
+    TypeNameApi(meshTools_API, "multiMotion");
 
 
     // Constructors

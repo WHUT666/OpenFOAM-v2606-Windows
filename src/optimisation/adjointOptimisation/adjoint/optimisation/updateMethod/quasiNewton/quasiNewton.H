@@ -106,7 +106,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("quasiNewton");
+    TypeNameApi(adjointOptimisation_API, "quasiNewton");
 
 
     // Constructors

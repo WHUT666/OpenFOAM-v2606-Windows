@@ -46,7 +46,7 @@ Description
 namespace Foam
 {
 
-TemplateName(blendedSchemeBase);
+TemplateNameApi(finiteVolume_API, blendedSchemeBase);
 
 /*---------------------------------------------------------------------------*\
                       Class blendedSchemeBase Declaration

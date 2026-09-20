@@ -95,7 +95,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName(cyclicACMIPolyPatch::typeName_());
+    TypeNameApi(meshTools_API, cyclicACMIPolyPatch::typeName_());
 
 
     // Constructors

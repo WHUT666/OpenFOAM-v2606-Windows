@@ -104,7 +104,7 @@ private:
     // Static data
 
         //- Tolerance for determining whether two vectors are parallel
-        static const scalar parallelTolerance;
+        static meshTools_API const scalar parallelTolerance;
 
 
     // Private data
@@ -197,7 +197,7 @@ private:
 
 public:
 
-    ClassName("surfaceFeatures");
+    ClassNameApi(meshTools_API, "surfaceFeatures");
 
     // Constructors
 

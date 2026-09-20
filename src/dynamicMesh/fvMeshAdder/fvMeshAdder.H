@@ -119,7 +119,7 @@ private:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("fvMeshAdder");
+    ClassNameApi(dynamicMesh_API, "fvMeshAdder");
 
 
     // Member Functions

@@ -63,6 +63,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_realizableKE_defines_typeName in .C files that
+//  define the template statics of realizableKE (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_realizableKE_defines_typeName)
+#  define Foam_realizableKE_typeName_API
+#else
+#  define Foam_realizableKE_typeName_API turbulenceModels_API
+#endif
+
 #ifndef realizableKE_H
 #define realizableKE_H
 
@@ -133,7 +143,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("realizableKE");
+    TypeNameApi(Foam_realizableKE_typeName_API, "realizableKE");
 
     // Constructors
 

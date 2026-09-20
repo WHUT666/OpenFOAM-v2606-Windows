@@ -155,13 +155,13 @@ class meshSearch
 public:
 
     //- Declare type-name (with debug switch)
-    ClassName("meshSearch");
+    ClassNameApi(meshTools_API, "meshSearch");
 
 
     // Static Data
 
         //- Tolerance on linear dimensions
-        static scalar tol_;
+        static meshTools_API scalar tol_;
 
 
     // Constructors

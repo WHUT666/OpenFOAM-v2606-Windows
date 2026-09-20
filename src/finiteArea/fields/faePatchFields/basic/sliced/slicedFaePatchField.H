@@ -41,6 +41,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_slicedFaePatchField_defines_typeName in .C files that
+//  define the template statics of slicedFaePatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_slicedFaePatchField_defines_typeName)
+#  define Foam_slicedFaePatchField_typeName_API
+#else
+#  define Foam_slicedFaePatchField_typeName_API finiteArea_API
+#endif
+
 #ifndef Foam_slicedFaePatchField_H
 #define Foam_slicedFaePatchField_H
 
@@ -71,7 +81,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("sliced");
+    TypeNameApi(Foam_slicedFaePatchField_typeName_API, "sliced");
 
 
     // Constructors

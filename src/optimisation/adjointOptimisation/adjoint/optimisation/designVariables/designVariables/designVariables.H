@@ -111,13 +111,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("designVariables");
+    TypeNameApi(adjointOptimisation_API, "designVariables");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeNewSelectionTable
-        (
+        declareRunTimeNewSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             designVariables,
             designVariables,

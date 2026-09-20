@@ -103,7 +103,7 @@ class uniformInterpolatedDisplacementPointPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("uniformInterpolatedDisplacement");
+    TypeNameApi(fvMotionSolvers_API, "uniformInterpolatedDisplacement");
 
 
     // Constructors

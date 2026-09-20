@@ -254,7 +254,7 @@ class scalarTransport
 public:
 
     //- Runtime type information
-    TypeName("scalarTransport");
+    TypeNameApi(solverFunctionObjects_API, "scalarTransport");
 
 
     // Constructors

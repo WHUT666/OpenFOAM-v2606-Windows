@@ -55,7 +55,7 @@ class cyclicAMILduInterface
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("cyclicAMILduInterface");
+    TypeNameNoDebugApi(meshTools_API, "cyclicAMILduInterface");
 
 
     // Constructors

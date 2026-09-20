@@ -80,7 +80,7 @@ class tabulated6DoFAcceleration
 public:
 
     //- Runtime type information
-    TypeName("tabulated6DoFAcceleration");
+    TypeNameApi(fvOptions_API, "tabulated6DoFAcceleration");
 
 
     // Constructors

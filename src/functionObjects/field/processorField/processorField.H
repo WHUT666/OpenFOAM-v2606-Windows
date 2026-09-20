@@ -94,7 +94,7 @@ class processorField
 public:
 
     //- Runtime type information
-    TypeName("processorField");
+    TypeNameApi(fieldFunctionObjects_API, "processorField");
 
 
     // Constructors

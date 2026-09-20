@@ -73,7 +73,7 @@ class uncoupledSixDoFRigidBodyDisplacementPointPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("uncoupledSixDoFRigidBodyDisplacement");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "uncoupledSixDoFRigidBodyDisplacement");
 
 
     // Constructors

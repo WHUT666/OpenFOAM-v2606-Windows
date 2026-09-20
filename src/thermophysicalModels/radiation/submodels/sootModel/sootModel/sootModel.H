@@ -70,12 +70,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("sootModel");
+    TypeNameApi(radiationModels_API, "sootModel");
 
     //- Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( radiationModels_API,
             autoPtr,
             sootModel,
             dictionary,

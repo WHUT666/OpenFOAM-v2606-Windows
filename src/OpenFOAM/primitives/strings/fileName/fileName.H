@@ -92,16 +92,16 @@ public:
     // Static Data Members
 
         //- The typeName
-        static const char* const typeName;
+        static OpenFOAM_API const char* const typeName;
 
         //- Debugging
-        static int debug;
+        static OpenFOAM_API int debug;
 
         //- Allow space character in fileName. To be used with caution.
-        static int allowSpaceInFileName;
+        static OpenFOAM_API int allowSpaceInFileName;
 
         //- An empty fileName
-        static const fileName null;
+        static OpenFOAM_API const fileName null;
 
 
     // Constructors

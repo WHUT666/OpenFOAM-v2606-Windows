@@ -74,7 +74,7 @@ class inversePointDistanceDiffusivity
 public:
 
     //- Runtime type information
-    TypeName("inversePointDistance");
+    TypeNameApi(fvMotionSolvers_API, "inversePointDistance");
 
 
     // Constructors

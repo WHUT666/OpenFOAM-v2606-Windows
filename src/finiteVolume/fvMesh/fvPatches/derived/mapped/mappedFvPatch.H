@@ -57,7 +57,7 @@ class mappedFvPatch
 public:
 
     //- Runtime type information
-    TypeName(mappedPolyPatch::typeName_());
+    TypeNameApi(finiteVolume_API, mappedPolyPatch::typeName_());
 
 
     // Constructors

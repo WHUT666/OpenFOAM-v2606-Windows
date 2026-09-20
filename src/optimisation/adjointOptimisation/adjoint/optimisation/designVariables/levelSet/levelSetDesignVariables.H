@@ -153,7 +153,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("levelSet");
+    TypeNameApi(adjointOptimisation_API, "levelSet");
 
 
     // Constructors

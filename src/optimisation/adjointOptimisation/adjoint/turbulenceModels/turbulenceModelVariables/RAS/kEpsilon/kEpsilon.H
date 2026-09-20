@@ -77,7 +77,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("kEpsilon");
+    TypeNameApi(adjointOptimisation_API, "kEpsilon");
 
 
     // Constructors

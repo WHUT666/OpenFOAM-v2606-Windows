@@ -97,7 +97,7 @@ class mappedVelocityFluxFixedValueFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("mappedVelocityFlux");
+    TypeNameApi(finiteVolume_API, "mappedVelocityFlux");
 
 
     // Constructors

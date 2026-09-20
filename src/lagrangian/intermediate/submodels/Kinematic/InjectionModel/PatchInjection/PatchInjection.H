@@ -49,6 +49,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_PatchInjection_defines_typeName in .C files that
+//  define the template statics of PatchInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_PatchInjection_defines_typeName)
+#  define Foam_PatchInjection_typeName_API
+#else
+#  define Foam_PatchInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef PatchInjection_H
 #define PatchInjection_H
 
@@ -85,7 +95,7 @@ public:
         };
 
         //- Velocity type names
-        static const Enum<velocityType> velocityTypeNames_;
+        static Foam_PatchInjection_typeName_API const Enum<velocityType> velocityTypeNames_;
 
 
 private:
@@ -121,7 +131,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("patchInjection");
+    TypeNameApi(Foam_PatchInjection_typeName_API, "patchInjection");
 
 
     // Constructors

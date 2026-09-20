@@ -95,13 +95,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("histogramModel");
+    TypeNameApi(fieldFunctionObjects_API, "histogramModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fieldFunctionObjects_API,
             autoPtr,
             histogramModel,
             dictionary,

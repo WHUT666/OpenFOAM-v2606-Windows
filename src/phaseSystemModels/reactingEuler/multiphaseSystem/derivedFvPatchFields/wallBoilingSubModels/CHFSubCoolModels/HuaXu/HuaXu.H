@@ -104,7 +104,7 @@ class HuaXu
 public:
 
     //- Runtime type information
-    TypeName("HuaXu");
+    TypeNameApi(reactingMultiphaseSystem_API, "HuaXu");
 
 
     // Constructors

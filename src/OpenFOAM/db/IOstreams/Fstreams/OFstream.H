@@ -73,7 +73,7 @@ namespace Foam
                           Class OFstream Declaration
 \*---------------------------------------------------------------------------*/
 
-class OFstream
+class OpenFOAM_API OFstream
 :
     private Foam::ofstreamPointer,
     public OSstream
@@ -210,7 +210,7 @@ public:
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 //- Global predefined null output stream "/dev/null"
-extern OFstream Snull;
+extern OpenFOAM_API OFstream Snull;
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

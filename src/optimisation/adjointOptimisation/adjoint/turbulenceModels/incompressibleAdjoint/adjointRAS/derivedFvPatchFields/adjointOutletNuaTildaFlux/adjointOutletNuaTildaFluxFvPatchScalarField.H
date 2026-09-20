@@ -62,7 +62,7 @@ class adjointOutletNuaTildaFluxFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("adjointOutletNuaTildaFlux");
+    TypeNameApi(adjointOptimisation_API, "adjointOutletNuaTildaFlux");
 
 
     // Constructors

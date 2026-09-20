@@ -84,7 +84,7 @@ class thresholdCellFaces
 public:
 
     //- Runtime type information
-    TypeName("thresholdCellFaces");
+    TypeNameApi(sampling_API, "thresholdCellFaces");
 
 
     // Constructors

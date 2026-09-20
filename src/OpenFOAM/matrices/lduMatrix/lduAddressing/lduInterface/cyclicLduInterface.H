@@ -55,7 +55,7 @@ class cyclicLduInterface
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("cyclicLduInterface");
+    TypeNameNoDebugApi(OpenFOAM_API, "cyclicLduInterface");
 
 
     // Constructors

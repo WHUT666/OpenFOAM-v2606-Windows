@@ -47,6 +47,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_faceCorrectedSnGrad_defines_typeName in .C files that
+//  define the template statics of faceCorrectedSnGrad (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_faceCorrectedSnGrad_defines_typeName)
+#  define Foam_faceCorrectedSnGrad_typeName_API
+#else
+#  define Foam_faceCorrectedSnGrad_typeName_API finiteVolume_API
+#endif
+
 #ifndef faceCorrectedSnGrad_H
 #define faceCorrectedSnGrad_H
 
@@ -80,7 +90,7 @@ class faceCorrectedSnGrad
 public:
 
     //- Runtime type information
-    TypeName("faceCorrected");
+    TypeNameApi(Foam_faceCorrectedSnGrad_typeName_API, "faceCorrected");
 
 
     // Constructors

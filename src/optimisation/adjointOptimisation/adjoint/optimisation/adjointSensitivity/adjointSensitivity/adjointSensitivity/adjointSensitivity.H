@@ -135,13 +135,13 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("adjointSensitivity");
+    TypeNameApi(adjointOptimisation_API, "adjointSensitivity");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             adjointSensitivity,
             dictionary,

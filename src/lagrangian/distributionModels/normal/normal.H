@@ -184,7 +184,7 @@ class normal
 public:
 
     //- Runtime type information
-    TypeName("normal");
+    TypeNameApi(distributionModels_API, "normal");
 
 
     // Constructors

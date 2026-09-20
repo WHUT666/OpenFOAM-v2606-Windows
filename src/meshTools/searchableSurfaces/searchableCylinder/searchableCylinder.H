@@ -125,7 +125,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("searchableCylinder");
+    TypeNameApi(meshTools_API, "searchableCylinder");
 
 
     // Constructors

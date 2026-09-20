@@ -66,7 +66,7 @@ class cloudAbsorptionEmission
 public:
 
     //- Runtime type information
-    TypeName("cloudAbsorptionEmission");
+    TypeNameApi(lagrangianIntermediate_API, "cloudAbsorptionEmission");
 
 
     // Constructors

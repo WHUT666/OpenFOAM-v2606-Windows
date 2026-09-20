@@ -90,7 +90,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("cyclicPeriodicAMI");
+    TypeNameApi(meshTools_API, "cyclicPeriodicAMI");
 
 
     // Constructors

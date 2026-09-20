@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cubic_defines_typeName in .C files that
+//  define the template statics of cubic (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cubic_defines_typeName)
+#  define Foam_cubic_typeName_API
+#else
+#  define Foam_cubic_typeName_API finiteVolume_API
+#endif
+
 #ifndef cubic_H
 #define cubic_H
 
@@ -70,7 +80,7 @@ class cubic
 public:
 
     //- Runtime type information
-    TypeName("cubic");
+    TypeNameApi(Foam_cubic_typeName_API, "cubic");
 
 
     // Constructors

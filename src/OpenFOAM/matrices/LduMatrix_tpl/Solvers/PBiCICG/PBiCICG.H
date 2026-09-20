@@ -39,6 +39,12 @@ SourceFiles
 #ifndef PBiCICG_H
 #define PBiCICG_H
 
+#if defined(Foam_LduSolver_defines_typeName)
+#  define Foam_LduSolver_typeName_API
+#else
+#  define Foam_LduSolver_typeName_API OpenFOAM_API
+#endif
+
 #include <LduMatrix_tpl.H>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -67,7 +73,7 @@ class PBiCICG
 public:
 
     //- Runtime type information
-    TypeName("PBiCICG");
+    TypeNameApi(Foam_LduSolver_typeName_API, "PBiCICG");
 
 
     // Constructors

@@ -59,7 +59,7 @@ class SyamlalRogersOBrien
 public:
 
     //- Runtime type information
-    TypeName("SyamlalRogersOBrien");
+    TypeNameApi(twoPhaseReactingTurbulenceModels_API, "SyamlalRogersOBrien");
 
 
     // Constructors

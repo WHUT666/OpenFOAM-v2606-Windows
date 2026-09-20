@@ -81,6 +81,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_KinematicWeberNumber_defines_typeName in .C files that
+//  define the template statics of KinematicWeberNumber (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_KinematicWeberNumber_defines_typeName)
+#  define Foam_KinematicWeberNumber_typeName_API
+#else
+#  define Foam_KinematicWeberNumber_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef KinematicWeberNumber_H
 #define KinematicWeberNumber_H
 
@@ -115,7 +125,7 @@ class KinematicWeberNumber
 public:
 
     //- Runtime type information
-    TypeName("WeberNumber");
+    TypeNameApi(Foam_KinematicWeberNumber_typeName_API, "WeberNumber");
 
 
     // Generated Methods

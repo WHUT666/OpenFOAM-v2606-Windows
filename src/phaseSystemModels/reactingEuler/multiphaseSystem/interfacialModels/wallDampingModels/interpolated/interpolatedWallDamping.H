@@ -67,7 +67,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("interpolated");
+    TypeNameApi(reactingMultiphaseSystem_API, "interpolated");
 
 
     // Constructors

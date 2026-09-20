@@ -111,7 +111,7 @@ class setTimeStepFunctionObject
 public:
 
     //- Runtime type information
-    TypeName("setTimeStep");
+    TypeNameApi(utilityFunctionObjects_API, "setTimeStep");
 
 
     // Constructors

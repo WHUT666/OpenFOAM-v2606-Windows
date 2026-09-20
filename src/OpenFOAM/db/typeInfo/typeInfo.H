@@ -71,6 +71,15 @@ Description
     ClassName(TypeNameString);                                                 \
     virtual const word& type() const { return typeName; }
 
+//- TypeName with an explicit import/export specifier (Windows DLL builds)
+#define TypeNameNoDebugApi(ApiSpec, TypeNameString)                            \
+    ClassNameNoDebugApi(ApiSpec, TypeNameString);                              \
+    virtual const word& type() const { return typeName; }
+
+#define TypeNameApi(ApiSpec, TypeNameString)                                   \
+    ClassNameApi(ApiSpec, TypeNameString);                                     \
+    virtual const word& type() const { return typeName; }
+
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

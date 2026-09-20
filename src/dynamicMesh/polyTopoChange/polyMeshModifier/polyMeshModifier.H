@@ -97,13 +97,13 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("meshModifier");
+        TypeNameApi(dynamicMesh_API, "meshModifier");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( dynamicMesh_API,
             autoPtr,
             polyMeshModifier,
             dictionary,

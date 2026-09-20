@@ -86,7 +86,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("patchFieldProbe");
+    TypeNameApi(sampling_API, "patchFieldProbe");
 
 
     // Constructors

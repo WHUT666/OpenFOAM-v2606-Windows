@@ -75,7 +75,7 @@ class Lain
 public:
 
     //- Runtime type information
-    TypeName("Lain");
+    TypeNameApi(reactingMultiphaseSystem_API, "Lain");
 
 
     // Constructors

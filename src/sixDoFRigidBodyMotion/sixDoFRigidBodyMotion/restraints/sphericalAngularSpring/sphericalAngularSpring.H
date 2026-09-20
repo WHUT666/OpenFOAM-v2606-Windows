@@ -72,7 +72,7 @@ class sphericalAngularSpring
 public:
 
     //- Runtime type information
-    TypeName("sphericalAngularSpring");
+    TypeNameApi(sixDoFRigidBodyMotion_API, "sphericalAngularSpring");
 
 
     // Constructors

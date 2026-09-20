@@ -30,6 +30,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_none_defines_typeName in .C files that
+//  define the template statics of none (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_none_defines_typeName)
+#  define Foam_none_typeName_API
+#else
+#  define Foam_none_typeName_API chemistryModel_API
+#endif
+
 #ifndef chemistryTabulationMethod_none_H
 #define chemistryTabulationMethod_none_H
 
@@ -60,7 +70,7 @@ class none
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_none_typeName_API, "none");
 
     // Constructors
 

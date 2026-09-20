@@ -83,6 +83,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_reactionsSensitivityAnalysis_defines_typeName in .C files that
+//  define the template statics of reactionsSensitivityAnalysis (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_reactionsSensitivityAnalysis_defines_typeName)
+#  define Foam_reactionsSensitivityAnalysis_typeName_API
+#else
+#  define Foam_reactionsSensitivityAnalysis_typeName_API fieldFunctionObjects_API
+#endif
+
 #ifndef functionObjescts_reactionsSensitivityAnalysis_H
 #define functionObjescts_reactionsSensitivityAnalysis_H
 
@@ -169,7 +179,7 @@ class reactionsSensitivityAnalysis
 public:
 
     //- Runtime type information
-    TypeName("reactionsSensitivityAnalysis");
+    TypeNameApi(Foam_reactionsSensitivityAnalysis_typeName_API, "reactionsSensitivityAnalysis");
 
 
     // Constructors

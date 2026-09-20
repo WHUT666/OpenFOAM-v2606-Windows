@@ -118,7 +118,7 @@ class regionToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Name of cellSet or cellZone to keep to
         word setName_;
@@ -162,7 +162,7 @@ class regionToCell
 public:
 
     //- Runtime type information
-    TypeName("regionToCell");
+    TypeNameApi(meshTools_API, "regionToCell");
 
 
     // Constructors

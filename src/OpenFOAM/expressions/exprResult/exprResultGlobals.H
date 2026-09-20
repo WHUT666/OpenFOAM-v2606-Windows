@@ -117,7 +117,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("exprResultGlobals");
+    TypeNameNoDebugApi(OpenFOAM_API, "exprResultGlobals");
 
 
     // Selectors

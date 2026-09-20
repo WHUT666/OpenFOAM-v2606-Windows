@@ -42,6 +42,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_outletStabilised_defines_typeName in .C files that
+//  define the template statics of outletStabilised (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_outletStabilised_defines_typeName)
+#  define Foam_outletStabilised_typeName_API
+#else
+#  define Foam_outletStabilised_typeName_API finiteVolume_API
+#endif
+
 #ifndef outletStabilised_H
 #define outletStabilised_H
 
@@ -85,7 +95,7 @@ class outletStabilised
 public:
 
     //- Runtime type information
-    TypeName("outletStabilised");
+    TypeNameApi(Foam_outletStabilised_typeName_API, "outletStabilised");
 
 
     // Constructors

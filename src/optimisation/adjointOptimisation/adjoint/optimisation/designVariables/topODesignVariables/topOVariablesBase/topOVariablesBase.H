@@ -178,7 +178,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("topOVariablesBase");
+    TypeNameApi(adjointOptimisation_API, "topOVariablesBase");
 
     // Constructors
 

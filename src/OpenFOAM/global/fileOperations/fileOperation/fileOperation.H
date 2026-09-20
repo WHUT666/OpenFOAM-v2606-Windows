@@ -93,8 +93,8 @@ namespace Foam
 // Forward Declarations
 class fileOperation;
 class objectRegistry;
-class regIOobject;
-class IOobject;
+class OpenFOAM_API regIOobject;
+class OpenFOAM_API IOobject;
 class Time;
 
 Ostream& operator<<(Ostream& os, const InfoProxy<fileOperation>& info);
@@ -132,7 +132,7 @@ public:
             PROCBASEINSTANCE,       //!< as PROCBASEOBJECT but with instance
             PROCINSTANCE            //!< as PROCOBJECT but with instance
         };
-        static const Enum<pathType> pathTypeNames_;
+        static OpenFOAM_API const Enum<pathType> pathTypeNames_;
 
         //- Augment fileName with pathType and local offset
         typedef Tuple2<fileName, Tuple2<pathType, int>> dirIndex;
@@ -151,7 +151,7 @@ private:
         //  - >0 : accept the specified number of processors
         //  - -1 : uses \c UPstream::nProcs(UPstream::worldComm) [default]
         //  .
-        static int nProcsFilter_;
+        static OpenFOAM_API int nProcsFilter_;
 
 
 protected:
@@ -159,7 +159,7 @@ protected:
     // Protected Static Data
 
         //- Cache level (eg, for caching time directories). Default: 1
-        static int cacheLevel_;
+        static OpenFOAM_API int cacheLevel_;
 
 
     // Protected Data
@@ -270,20 +270,20 @@ public:
     // Static Data
 
         //- Return the processors directory name (usually "processors")
-        static word processorsBaseDir;
+        static OpenFOAM_API word processorsBaseDir;
 
         //- Name of the default fileHandler
-        static word defaultFileHandler;
+        static OpenFOAM_API word defaultFileHandler;
 
 
     // Public Data Types
 
         //- Runtime type information
-        TypeName("fileOperation");
+        TypeNameApi(OpenFOAM_API, "fileOperation");
 
 
     //- The currently active file handler. Avoid accessing directly
-    static refPtr<fileOperation> fileHandlerPtr_;
+    static OpenFOAM_API refPtr<fileOperation> fileHandlerPtr_;
 
     //- Reference to a dummy file handler.
     static refPtr<fileOperation> null();
@@ -310,8 +310,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             fileOperation,
             word,
@@ -321,8 +321,8 @@ public:
             (verbose)
         );
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             fileOperation,
             comm,

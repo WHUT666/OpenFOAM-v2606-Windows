@@ -87,6 +87,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ThermoReynoldsNumber_defines_typeName in .C files that
+//  define the template statics of ThermoReynoldsNumber (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ThermoReynoldsNumber_defines_typeName)
+#  define Foam_ThermoReynoldsNumber_typeName_API
+#else
+#  define Foam_ThermoReynoldsNumber_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ThermoReynoldsNumber_H
 #define ThermoReynoldsNumber_H
 
@@ -117,7 +127,7 @@ class ThermoReynoldsNumber
 public:
 
     //- Runtime type information
-    TypeName("ReynoldsNumber");
+    TypeNameApi(Foam_ThermoReynoldsNumber_typeName_API, "ReynoldsNumber");
 
 
     // Generated Methods

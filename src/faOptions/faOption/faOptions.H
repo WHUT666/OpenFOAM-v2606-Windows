@@ -86,7 +86,7 @@ class options
 public:
 
     //- Runtime information
-    ClassName("faOptions");
+    ClassNameApi(faOptions_API, "faOptions");
 
 
     // Constructors

@@ -59,6 +59,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_SingleKineticRateDevolatilisation_defines_typeName in .C files that
+//  define the template statics of SingleKineticRateDevolatilisation (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_SingleKineticRateDevolatilisation_defines_typeName)
+#  define Foam_SingleKineticRateDevolatilisation_typeName_API
+#else
+#  define Foam_SingleKineticRateDevolatilisation_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef SingleKineticRateDevolatilisation_H
 #define SingleKineticRateDevolatilisation_H
 
@@ -184,7 +194,7 @@ class SingleKineticRateDevolatilisation
 public:
 
     //- Declare type-name, virtual type (with debug switch)
-    TypeName("singleKineticRateDevolatilisation");
+    TypeNameApi(Foam_SingleKineticRateDevolatilisation_typeName_API, "singleKineticRateDevolatilisation");
 
 
     // Constructors

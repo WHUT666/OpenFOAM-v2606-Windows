@@ -230,7 +230,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("targetCoeffTrim");
+    TypeNameApi(fvOptions_API, "targetCoeffTrim");
 
     // Constructors
 

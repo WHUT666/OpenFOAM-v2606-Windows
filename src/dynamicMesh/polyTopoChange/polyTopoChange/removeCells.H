@@ -75,7 +75,7 @@ class removeCells
 public:
 
     //- Runtime type information
-    ClassName("removeCells");
+    ClassNameApi(dynamicMesh_API, "removeCells");
 
 
     // Constructors

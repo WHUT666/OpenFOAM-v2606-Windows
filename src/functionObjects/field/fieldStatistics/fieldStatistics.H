@@ -145,7 +145,7 @@ class fieldStatistics
         };
 
         //- Names for modeType
-        static const Enum<modeType> modeTypeNames_;
+        static fieldFunctionObjects_API const Enum<modeType> modeTypeNames_;
 
         //- Options for the mean type of the specified fields
         enum class meanType : char
@@ -155,7 +155,7 @@ class fieldStatistics
         };
 
         //- Names for meanType
-        static const Enum<meanType> meanTypeNames_;
+        static fieldFunctionObjects_API const Enum<meanType> meanTypeNames_;
 
         //- Options for the type of statistics calculation
         enum class calcType : char
@@ -168,7 +168,7 @@ class fieldStatistics
         };
 
         //- Names for calcType
-        static const Enum<calcType> calcTypeNames_;
+        static fieldFunctionObjects_API const Enum<calcType> calcTypeNames_;
 
 
     // Private Classes
@@ -331,7 +331,7 @@ class fieldStatistics
 public:
 
     //- Runtime type information
-    TypeName("fieldStatistics");
+    TypeNameApi(fieldFunctionObjects_API, "fieldStatistics");
 
 
     // Generated Methods

@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Cloud_defines_typeName in .C files that
+//  define the template statics of Cloud (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Cloud_defines_typeName)
+#  define Foam_Cloud_typeName_API
+#else
+#  define Foam_Cloud_typeName_API lagrangian_API
+#endif
+
 #ifndef Foam_Cloud_H
 #define Foam_Cloud_H
 
@@ -119,7 +129,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("Cloud");
+    TypeNameApi(Foam_Cloud_typeName_API, "Cloud");
 
 
     // Static Data

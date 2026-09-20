@@ -109,7 +109,7 @@ class grad
 public:
 
     //- Runtime type information
-    TypeName("grad");
+    TypeNameApi(fieldFunctionObjects_API, "grad");
 
 
     // Constructors

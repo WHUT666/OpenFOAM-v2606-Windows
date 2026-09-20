@@ -67,12 +67,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("porousModel");
+    TypeNameApi(incompressibleMultiphaseSystems_API, "porousModel");
 
 
     // Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( incompressibleMultiphaseSystems_API,
         autoPtr,
         porousModel,
         dictionary,

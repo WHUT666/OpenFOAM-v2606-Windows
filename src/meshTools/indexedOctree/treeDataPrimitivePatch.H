@@ -53,7 +53,7 @@ template<class Type> class indexedOctree;
                  Class treeDataPrimitivePatchName Declaration
 \*---------------------------------------------------------------------------*/
 
-TemplateName(treeDataPrimitivePatch);
+TemplateNameApi(meshTools_API, treeDataPrimitivePatch);
 
 
 /*---------------------------------------------------------------------------*\

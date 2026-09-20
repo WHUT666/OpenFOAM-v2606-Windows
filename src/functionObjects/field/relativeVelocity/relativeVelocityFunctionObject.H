@@ -180,8 +180,8 @@ public:
 
 private:
 
-    static const Enum<backgroundMode> backgroundModeNames_;
-    static const Enum<rotationMode> rotationModeNames_;
+    static fieldFunctionObjects_API const Enum<backgroundMode> backgroundModeNames_;
+    static fieldFunctionObjects_API const Enum<rotationMode> rotationModeNames_;
 
     // Private Data
 
@@ -221,7 +221,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("relativeVelocity");
+    TypeNameApi(fieldFunctionObjects_API, "relativeVelocity");
 
 
     // Constructors

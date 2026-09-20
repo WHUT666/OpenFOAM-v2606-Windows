@@ -1,3 +1,8 @@
+#define Foam_Smagorinsky_defines_typeName
+#define Foam_kEqn_defines_typeName
+#define Foam_kEpsilon_defines_typeName
+#define Foam_kOmegaSST_defines_typeName
+
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

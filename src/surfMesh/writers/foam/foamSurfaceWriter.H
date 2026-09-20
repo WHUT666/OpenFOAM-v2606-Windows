@@ -133,7 +133,7 @@ class foamWriter
 public:
 
     //- Declare type-name, virtual type (without debug switch)
-    TypeNameNoDebug("foam");
+    TypeNameNoDebugApi(surfMesh_API, "foam");
 
 
     // Constructors

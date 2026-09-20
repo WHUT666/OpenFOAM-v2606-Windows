@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_infinitelyFastChemistry_defines_typeName in .C files that
+//  define the template statics of infinitelyFastChemistry (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_infinitelyFastChemistry_defines_typeName)
+#  define Foam_infinitelyFastChemistry_typeName_API
+#else
+#  define Foam_infinitelyFastChemistry_typeName_API combustionModels_API
+#endif
+
 #ifndef infinitelyFastChemistry_H
 #define infinitelyFastChemistry_H
 
@@ -78,7 +88,7 @@ class infinitelyFastChemistry
 public:
 
     //- Runtime type information
-    TypeName("infinitelyFastChemistry");
+    TypeNameApi(Foam_infinitelyFastChemistry_typeName_API, "infinitelyFastChemistry");
 
 
     // Constructors

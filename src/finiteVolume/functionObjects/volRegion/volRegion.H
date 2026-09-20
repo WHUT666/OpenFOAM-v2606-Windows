@@ -113,7 +113,7 @@ public:
         };
 
         //- Region type names
-        static const Enum<regionTypes> regionTypeNames_;
+        static finiteVolume_API const Enum<regionTypes> regionTypeNames_;
 
 
 private:
@@ -168,7 +168,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("volRegion");
+    TypeNameApi(finiteVolume_API, "volRegion");
 
 
     // Constructors

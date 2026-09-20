@@ -117,7 +117,7 @@ class areaWrite
     // Static Data Members
 
         //- Tolerance for merging points (fraction of mesh bounding box)
-        static scalar mergeTol_;
+        static utilityFunctionObjects_API scalar mergeTol_;
 
 
     // Private Data
@@ -183,7 +183,7 @@ class areaWrite
 public:
 
     //- Runtime type information
-    TypeName("areaWrite");
+    TypeNameApi(utilityFunctionObjects_API, "areaWrite");
 
 
     // Generated Methods

@@ -66,7 +66,7 @@ class oversetGAMGInterface
 public:
 
     //- Runtime type information
-    TypeName("overset");
+    TypeNameApi(overset_API, "overset");
 
 
     // Constructors

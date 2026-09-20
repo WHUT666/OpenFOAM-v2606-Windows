@@ -104,7 +104,7 @@ public:
     // Static Data Members
 
         //- Tolerance for 'small' exponents, for near-zero rounding
-        static const scalar smallExponent;
+        static OpenFOAM_API const scalar smallExponent;
 
 
 private:
@@ -178,7 +178,7 @@ private:
 public:
 
     // Declare name of the class and its debug switch
-    ClassName("dimensionSet");
+    ClassNameApi(OpenFOAM_API, "dimensionSet");
 
 
     // Static Functions

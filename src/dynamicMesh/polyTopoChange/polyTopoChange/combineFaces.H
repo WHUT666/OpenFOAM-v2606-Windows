@@ -126,7 +126,7 @@ class combineFaces
 public:
 
     //- Runtime type information
-    ClassName("combineFaces");
+    ClassNameApi(dynamicMesh_API, "combineFaces");
 
 
     // Constructors

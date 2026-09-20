@@ -85,7 +85,7 @@ public:
 
 private:
 
-        static const Enum<directionType> directionTypeNames_;
+        static dynamicMesh_API const Enum<directionType> directionTypeNames_;
 
 
     // Private Member Functions

@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_calculatedPointPatchField_defines_typeName in .C files that
+//  define the template statics of calculatedPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_calculatedPointPatchField_defines_typeName)
+#  define Foam_calculatedPointPatchField_typeName_API
+#else
+#  define Foam_calculatedPointPatchField_typeName_API OpenFOAM_API
+#endif
+
 #ifndef calculatedPointPatchField_H
 #define calculatedPointPatchField_H
 
@@ -60,7 +70,7 @@ class calculatedPointPatchField
 public:
 
     //- Runtime type information
-    TypeName("calculated");  // fieldTypes::calculatedTypeName_()
+    TypeNameApi(Foam_calculatedPointPatchField_typeName_API, "calculated");  // fieldTypes::calculatedTypeName_()
 
 
     // Constructors

@@ -105,13 +105,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("ATCModel");
+    TypeNameApi(adjointOptimisation_API, "ATCModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             ATCModel,
             dictionary,

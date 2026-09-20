@@ -70,7 +70,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName(mappedVariableThicknessWallPolyPatch::typeName_());
+    TypeNameApi(regionModels_API, mappedVariableThicknessWallPolyPatch::typeName_());
 
 
     // Constructors

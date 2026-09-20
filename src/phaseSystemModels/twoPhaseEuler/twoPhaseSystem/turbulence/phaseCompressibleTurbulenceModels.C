@@ -1,3 +1,8 @@
+#define Foam_TurbulenceModel_defines_typeName
+#define Foam_LESModel_defines_typeName
+#define Foam_RASModel_defines_typeName
+#define Foam_laminarModel_defines_typeName
+#define Foam_Stokes_defines_typeName
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

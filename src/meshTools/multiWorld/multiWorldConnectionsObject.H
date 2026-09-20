@@ -95,7 +95,7 @@ class multiWorldConnections
 public:
 
     //- Run-time type information
-    TypeName("multiWorld");
+    TypeNameApi(meshTools_API, "multiWorld");
 
 
     // Constructors

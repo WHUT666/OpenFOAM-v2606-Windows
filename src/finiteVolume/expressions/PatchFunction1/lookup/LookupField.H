@@ -51,6 +51,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LookupField_defines_typeName in .C files that
+//  define the template statics of LookupField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LookupField_defines_typeName)
+#  define Foam_LookupField_typeName_API
+#else
+#  define Foam_LookupField_typeName_API finiteVolume_API
+#endif
+
 #ifndef PatchFunction1Types_LookupField_H
 #define PatchFunction1Types_LookupField_H
 
@@ -165,6 +175,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::LookupField<Foam::scalar>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::LookupField<Foam::vector>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::LookupField<Foam::sphericalTensor>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::LookupField<Foam::symmTensor>);
+finiteVolume_TEMPLATE_IMPORT(Foam::PatchFunction1Types::LookupField<Foam::tensor>);
 
 #endif
 

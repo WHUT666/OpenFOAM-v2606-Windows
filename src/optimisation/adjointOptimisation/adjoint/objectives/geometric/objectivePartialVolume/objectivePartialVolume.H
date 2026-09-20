@@ -66,7 +66,7 @@ class objectivePartialVolume
 public:
 
     //- Runtime type information
-    TypeName("partialVolume");
+    TypeNameApi(adjointOptimisation_API, "partialVolume");
 
 
     // Constructors

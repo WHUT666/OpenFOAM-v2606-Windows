@@ -113,7 +113,7 @@ class PecletNo
 public:
 
     //- Runtime type information
-    TypeName("PecletNo");
+    TypeNameApi(fieldFunctionObjects_API, "PecletNo");
 
 
     // Constructors

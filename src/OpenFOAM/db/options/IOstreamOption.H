@@ -190,13 +190,13 @@ public:
     // Public Static Data
 
         //- Names for float formats (general, fixed, scientific)
-        static const Enum<floatFormat> floatFormatNames;
+        static OpenFOAM_API const Enum<floatFormat> floatFormatNames;
 
         //- Stream format names (ascii, binary)
-        static const Enum<streamFormat> formatNames;
+        static OpenFOAM_API const Enum<streamFormat> formatNames;
 
         //- The current version number (2.0)
-        static const versionNumber currentVersion;
+        static OpenFOAM_API const versionNumber currentVersion;
 
 
     // Static Helpers

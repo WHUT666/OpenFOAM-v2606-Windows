@@ -54,6 +54,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ThermoLookupTableInjection_defines_typeName in .C files that
+//  define the template statics of ThermoLookupTableInjection (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ThermoLookupTableInjection_defines_typeName)
+#  define Foam_ThermoLookupTableInjection_typeName_API
+#else
+#  define Foam_ThermoLookupTableInjection_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef ThermoLookupTableInjection_H
 #define ThermoLookupTableInjection_H
 
@@ -104,7 +114,7 @@ class ThermoLookupTableInjection
 public:
 
     //- Runtime type information
-    TypeName("thermoLookupTableInjection");
+    TypeNameApi(Foam_ThermoLookupTableInjection_typeName_API, "thermoLookupTableInjection");
 
 
     // Constructors

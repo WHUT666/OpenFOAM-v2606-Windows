@@ -67,7 +67,7 @@ class Frossling
 public:
 
     //- Runtime type information
-    TypeName("Frossling");
+    TypeNameApi(reactingMultiphaseSystem_API, "Frossling");
 
 
     // Constructors

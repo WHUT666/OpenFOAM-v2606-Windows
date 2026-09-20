@@ -161,7 +161,7 @@ class multiphaseStabilizedTurbulence
 public:
 
     //- Runtime type information
-    TypeName("multiphaseStabilizedTurbulence");
+    TypeNameApi(fvOptions_API, "multiphaseStabilizedTurbulence");
 
 
     // Constructors

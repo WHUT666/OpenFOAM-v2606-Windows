@@ -91,7 +91,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("stabilised");
+    TypeNameApi(finiteVolume_API, "stabilised");
 
 
     // Constructors

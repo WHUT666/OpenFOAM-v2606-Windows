@@ -108,7 +108,7 @@ class createShellMesh
 public:
 
     //- Runtime type information
-    ClassName("createShellMesh");
+    ClassNameApi(dynamicMesh_API, "createShellMesh");
 
 
     // Constructors

@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Rebound_defines_typeName in .C files that
+//  define the template statics of Rebound (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Rebound_defines_typeName)
+#  define Foam_Rebound_typeName_API
+#else
+#  define Foam_Rebound_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Rebound_H
 #define Rebound_H
 
@@ -62,7 +72,7 @@ class Rebound
 public:
 
     //- Runtime type information
-    TypeName("rebound");
+    TypeNameApi(Foam_Rebound_typeName_API, "rebound");
 
 
     // Constructors

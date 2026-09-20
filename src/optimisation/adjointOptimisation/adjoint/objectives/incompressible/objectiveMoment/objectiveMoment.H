@@ -75,7 +75,7 @@ class objectiveMoment
 public:
 
     //- Runtime type information
-    TypeName("moment");
+    TypeNameApi(adjointOptimisation_API, "moment");
 
 
     // Constructors

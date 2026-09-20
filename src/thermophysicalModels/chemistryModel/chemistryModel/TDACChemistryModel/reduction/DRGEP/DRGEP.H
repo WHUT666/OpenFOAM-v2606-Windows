@@ -102,6 +102,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_DRGEP_defines_typeName in .C files that
+//  define the template statics of DRGEP (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_DRGEP_defines_typeName)
+#  define Foam_DRGEP_typeName_API
+#else
+#  define Foam_DRGEP_typeName_API chemistryModel_API
+#endif
+
 #ifndef DRGEP_H
 #define DRGEP_H
 
@@ -134,7 +144,7 @@ class DRGEP
 public:
 
     //- Runtime type information
-    TypeName("DRGEP");
+    TypeNameApi(Foam_DRGEP_typeName_API, "DRGEP");
 
 
     // Constructors

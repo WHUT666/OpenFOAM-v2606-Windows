@@ -38,6 +38,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_UpwindFitData_defines_typeName in .C files that
+//  define the template statics of UpwindFitData (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_UpwindFitData_defines_typeName)
+#  define Foam_UpwindFitData_typeName_API
+#else
+#  define Foam_UpwindFitData_typeName_API finiteVolume_API
+#endif
+
 #ifndef UpwindFitData_H
 #define UpwindFitData_H
 
@@ -84,7 +94,7 @@ class UpwindFitData
 
 public:
 
-    TypeName("UpwindFitData");
+    TypeNameApi(Foam_UpwindFitData_typeName_API, "UpwindFitData");
 
 
     // Constructors

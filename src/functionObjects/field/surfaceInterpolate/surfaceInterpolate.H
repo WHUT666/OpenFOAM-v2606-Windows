@@ -122,7 +122,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("surfaceInterpolate");
+    TypeNameApi(fieldFunctionObjects_API, "surfaceInterpolate");
 
 
     // Constructors

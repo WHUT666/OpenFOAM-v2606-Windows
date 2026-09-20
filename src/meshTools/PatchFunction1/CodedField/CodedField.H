@@ -84,6 +84,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_CodedField_defines_typeName in .C files that
+//  define the template statics of CodedField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_CodedField_defines_typeName)
+#  define Foam_CodedField_typeName_API
+#else
+#  define Foam_CodedField_typeName_API meshTools_API
+#endif
+
 #ifndef PatchFunction1Types_CodedField_H
 #define PatchFunction1Types_CodedField_H
 
@@ -259,6 +269,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::CodedField<Foam::scalar>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::CodedField<Foam::vector>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::CodedField<Foam::sphericalTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::CodedField<Foam::symmTensor>);
+meshTools_TEMPLATE_IMPORT(Foam::PatchFunction1Types::CodedField<Foam::tensor>);
 
 #endif
 

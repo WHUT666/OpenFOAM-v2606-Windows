@@ -72,6 +72,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Scale_defines_typeName in .C files that
+//  define the template statics of Scale (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Scale_defines_typeName)
+#  define Foam_Scale_typeName_API
+#else
+#  define Foam_Scale_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_Function1Types_Scale_H
 #define Foam_Function1Types_Scale_H
 
@@ -171,6 +181,12 @@ public:
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Scale<Foam::scalar>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Scale<Foam::vector>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Scale<Foam::sphericalTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Scale<Foam::symmTensor>);
+OpenFOAM_TEMPLATE_IMPORT(Foam::Function1Types::Scale<Foam::tensor>);
 
 #endif
 

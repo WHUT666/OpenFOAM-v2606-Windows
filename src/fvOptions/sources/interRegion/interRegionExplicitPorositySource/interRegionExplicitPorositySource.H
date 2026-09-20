@@ -147,7 +147,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("interRegionExplicitPorositySource");
+    TypeNameApi(fvOptions_API, "interRegionExplicitPorositySource");
 
 
     // Constructors

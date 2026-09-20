@@ -101,7 +101,7 @@ public:
     friend class ODESystem;
 
     //- Runtime type information
-    TypeName("ODESolver");
+    TypeNameApi(ODE_API, "ODESolver");
 
     class stepState
     {
@@ -130,8 +130,8 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( ODE_API,
             autoPtr,
             ODESolver,
             dictionary,

@@ -67,6 +67,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_ParticleDose_defines_typeName in .C files that
+//  define the template statics of ParticleDose (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_ParticleDose_defines_typeName)
+#  define Foam_ParticleDose_typeName_API
+#else
+#  define Foam_ParticleDose_typeName_API lagrangianIntermediate_API
+#endif
+
 #ifndef Foam_ParticleDose_H
 #define Foam_ParticleDose_H
 
@@ -101,7 +111,7 @@ class ParticleDose
 public:
 
     //- Runtime type information
-    TypeName("particleDose");
+    TypeNameApi(Foam_ParticleDose_typeName_API, "particleDose");
 
 
     // Generated Methods

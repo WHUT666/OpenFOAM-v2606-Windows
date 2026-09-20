@@ -75,13 +75,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("displacementMotionSolver");
+    TypeNameApi(dynamicMesh_API, "displacementMotionSolver");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( dynamicMesh_API,
             autoPtr,
             displacementMotionSolver,
             displacement,

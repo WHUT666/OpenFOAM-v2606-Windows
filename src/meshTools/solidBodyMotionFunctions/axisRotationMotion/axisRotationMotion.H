@@ -79,7 +79,7 @@ class axisRotationMotion
 public:
 
     //- Runtime type information
-    TypeName("axisRotationMotion");
+    TypeNameApi(meshTools_API, "axisRotationMotion");
 
 
     // Constructors

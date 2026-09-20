@@ -94,7 +94,6 @@ class pointPatchFieldBase
         //  patch type as 'patchType'
         word patchType_;
 
-
 protected:
 
     // Protected Member Functions
@@ -103,15 +102,13 @@ protected:
         //  Useful when initially constructed without a dictionary
         virtual void readDict(const dictionary& dict);
 
-
 public:
 
     //- Debug switch to disallow the use of generic pointPatchField
-    static int disallowGenericPatchField;
+    static OpenFOAM_API int disallowGenericPatchField;
 
     //- Runtime type information
-    TypeName("pointPatchField");
-
+    TypeNameApi(OpenFOAM_API, "pointPatchField");
 
     // Constructors
 
@@ -130,10 +127,8 @@ public:
         //- Copy construct
         pointPatchFieldBase(const pointPatchFieldBase&);
 
-
     //- Destructor
     virtual ~pointPatchFieldBase() = default;
-
 
     // Static Member Functions
 
@@ -160,7 +155,6 @@ public:
         {
             return Foam::fieldTypes::zeroValueType;
         }
-
 
     // Member Functions
 
@@ -189,7 +183,6 @@ public:
         {
             return word::null;
         }
-
 
     // Access
 
@@ -220,7 +213,6 @@ public:
             return !patchType_.empty() && patchType_ != type();
         }
 
-
     // Solution
 
         //- True if the boundary condition has already been updated
@@ -247,13 +239,11 @@ public:
         void setManipulated(bool state) noexcept
         {}
 
-
     // Check
 
         //- Check that patches are identical
         void checkPatch(const pointPatchFieldBase& rhs) const;
 };
-
 
 /*---------------------------------------------------------------------------*\
                        Class pointPatchField Declaration
@@ -283,7 +273,6 @@ public:
         //- Type for a \em calculated patch
         typedef calculatedPointPatchField<Type> Calculated;
 
-
 private:
 
     // Private Data
@@ -291,13 +280,13 @@ private:
         //- Reference to internal field
         const DimensionedField<Type, pointMesh>& internalField_;
 
-
 public:
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
+        declareRunTimeSelectionTableApi
         (
+            OpenFOAM_API,
             autoPtr,
             pointPatchField,
             patch,
@@ -308,8 +297,9 @@ public:
             (p, iF)
         );
 
-        declareRunTimeSelectionTable
+        declareRunTimeSelectionTableApi
         (
+            OpenFOAM_API,
             autoPtr,
             pointPatchField,
             patchMapper,
@@ -322,8 +312,9 @@ public:
             (dynamic_cast<const pointPatchFieldType&>(ptf), p, iF, m)
         );
 
-        declareRunTimeSelectionTable
+        declareRunTimeSelectionTableApi
         (
+            OpenFOAM_API,
             autoPtr,
             pointPatchField,
             dictionary,
@@ -334,7 +325,6 @@ public:
             ),
             (p, iF, dict)
         );
-
 
     // Constructors
 
@@ -401,7 +391,6 @@ public:
         (
             const DimensionedField<Type, pointMesh>& iF
         ) const = 0;
-
 
     // Factory Methods
 
@@ -477,10 +466,8 @@ public:
             const pointPatchField<AnyType>& pf
         );
 
-
     //- Destructor
     virtual ~pointPatchField() = default;
-
 
     // Member Functions
 
@@ -503,7 +490,6 @@ public:
         {
             return internalField_;
         }
-
 
         // Evaluation Functions
 
@@ -545,7 +531,6 @@ public:
             //- Return field created from appropriate internal field values
             tmp<Field<Type>> patchInternalField() const;
 
-
             //- Given the internal field and a patch field,
             //- add the patch field to the internal field
             template<class Type1>
@@ -584,7 +569,6 @@ public:
                 const Field<Type1>& pF
             ) const;
 
-
     // Mapping Functions
 
         //- Map (and resize as needed) from self given a mapping object
@@ -601,7 +585,6 @@ public:
             const labelList&
         )
         {}
-
 
     // Evaluation Functions
 
@@ -636,12 +619,10 @@ public:
         )
         {}
 
-
     // Other
 
         //- Write
         virtual void write(Ostream& os) const;
-
 
     // Member Operators
 
@@ -664,7 +645,6 @@ public:
         virtual void operator*=(const scalar){}
         virtual void operator/=(const scalar){}
 
-
         // Force an assignment irrespective of form of patch.
         // Do nothing unless the patch actually has boundary values
 
@@ -677,7 +657,6 @@ public:
         bool operator!=(const Field<Type>&) const = delete;
         bool operator!=(const Type&) const = delete;
 
-
     // Ostream Operator
 
         friend Ostream& operator<< <Type>
@@ -685,7 +664,6 @@ public:
             Ostream&,
             const pointPatchField<Type>&
         );
-
 
     // Other Methods
 
@@ -695,7 +673,6 @@ public:
         //- Normalise the field inplace. Dummy placeholder for FieldField
         void normalise() {}
 };
-
 
 // This function is added as a hack to enable simple backward compatibility
 // with versions using referenceLevel in GeometricField
@@ -708,7 +685,6 @@ const pointPatchField<Type>& operator+
 {
     return ppf;
 }
-
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

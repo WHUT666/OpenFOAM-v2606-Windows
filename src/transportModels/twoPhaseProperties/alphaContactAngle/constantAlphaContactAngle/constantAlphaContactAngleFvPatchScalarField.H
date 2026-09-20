@@ -69,7 +69,7 @@ class constantAlphaContactAngleFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("constantAlphaContactAngle");
+    TypeNameApi(twoPhaseProperties_API, "constantAlphaContactAngle");
 
 
     // Constructors

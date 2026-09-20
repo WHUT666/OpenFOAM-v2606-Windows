@@ -64,7 +64,7 @@ class eagerGAMGProcAgglomeration
 public:
 
     //- Runtime type information
-    TypeName("eager");
+    TypeNameApi(OpenFOAM_API, "eager");
 
     //- No copy construct
     eagerGAMGProcAgglomeration(const eagerGAMGProcAgglomeration&) = delete;

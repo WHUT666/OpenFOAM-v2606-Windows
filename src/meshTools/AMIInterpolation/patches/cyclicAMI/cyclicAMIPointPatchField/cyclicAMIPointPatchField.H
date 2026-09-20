@@ -35,6 +35,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_cyclicAMIPointPatchField_defines_typeName in .C files that
+//  define the template statics of cyclicAMIPointPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_cyclicAMIPointPatchField_defines_typeName)
+#  define Foam_cyclicAMIPointPatchField_typeName_API
+#else
+#  define Foam_cyclicAMIPointPatchField_typeName_API meshTools_API
+#endif
+
 #ifndef Foam_cyclicAMIPointPatchField_H
 #define Foam_cyclicAMIPointPatchField_H
 
@@ -111,7 +121,7 @@ class cyclicAMIPointPatchField
 public:
 
     //- Runtime type information
-    TypeName(cyclicAMIPointPatch::typeName_());
+    TypeNameApi(Foam_cyclicAMIPointPatchField_typeName_API, cyclicAMIPointPatch::typeName_());
 
 
     // Constructors

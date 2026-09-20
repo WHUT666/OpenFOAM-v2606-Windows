@@ -51,19 +51,19 @@ Description
 namespace Foam
 {
     //- ISstream wrapped stdin (std::cin)
-    extern ISstream Sin;
+    extern OpenFOAM_API ISstream Sin;
 
     //- OSstream wrapped stdout (std::cout)
-    extern OSstream Sout;
+    extern OpenFOAM_API OSstream Sout;
 
     //- OSstream wrapped stderr (std::cerr)
-    extern OSstream Serr;
+    extern OpenFOAM_API OSstream Serr;
 
     //- OSstream wrapped stdout (std::cout) with parallel prefix
-    extern prefixOSstream Pout;
+    extern OpenFOAM_API prefixOSstream Pout;
 
     //- OSstream wrapped stderr (std::cerr) with parallel prefix
-    extern prefixOSstream Perr;
+    extern OpenFOAM_API prefixOSstream Perr;
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

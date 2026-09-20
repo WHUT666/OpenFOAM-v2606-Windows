@@ -148,7 +148,7 @@ protected:
     // Protected Data
 
         //- Mode type names
-        static const Enum<modeType> modeTypeNames_;
+        static fieldFunctionObjects_API const Enum<modeType> modeTypeNames_;
 
         //- Only use internal fields for the calculations
         bool internal_;
@@ -210,7 +210,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("fieldMinMax");
+    TypeNameApi(fieldFunctionObjects_API, "fieldMinMax");
 
 
     // Constructors

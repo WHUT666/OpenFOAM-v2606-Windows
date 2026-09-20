@@ -67,7 +67,7 @@ public:
     typedef zero value_type;
 
     //- A static instance, when modifiable reference is required by an API
-    static zero dummy;
+    static OpenFOAM_API zero dummy;
 
     //- Default construct
     constexpr zero() noexcept {}

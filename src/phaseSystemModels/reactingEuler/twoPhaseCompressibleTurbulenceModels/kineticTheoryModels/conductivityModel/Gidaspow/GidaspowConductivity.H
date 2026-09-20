@@ -59,7 +59,7 @@ class Gidaspow
 public:
 
         //- Runtime type information
-        TypeName("Gidaspow");
+        TypeNameApi(twoPhaseReactingTurbulenceModels_API, "Gidaspow");
 
 
     // Constructors

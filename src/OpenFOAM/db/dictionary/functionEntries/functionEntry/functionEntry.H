@@ -105,8 +105,9 @@ public:
 
     // Member Function Selectors
 
-        declareMemberFunctionSelectionTable
+        declareMemberFunctionSelectionTableApi
         (
+            OpenFOAM_API,
             bool,
             functionEntry,
             execute,
@@ -126,8 +127,9 @@ public:
             Istream& is
         );
 
-        declareMemberFunctionSelectionTable
+        declareMemberFunctionSelectionTableApi
         (
+            OpenFOAM_API,
             bool,
             functionEntry,
             execute,

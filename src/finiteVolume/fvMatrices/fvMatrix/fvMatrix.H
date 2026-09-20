@@ -40,6 +40,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_fvMatrix_defines_typeName in .C files that
+//  define the template statics of fvMatrix (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_fvMatrix_defines_typeName)
+#  define Foam_fvMatrix_typeName_API
+#else
+#  define Foam_fvMatrix_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_fvMatrix_H
 #define Foam_fvMatrix_H
 
@@ -297,7 +307,7 @@ public:
 
 
     // Runtime information
-    ClassName("fvMatrix");
+    ClassNameApi(Foam_fvMatrix_typeName_API, "fvMatrix");
 
 
     // Constructors

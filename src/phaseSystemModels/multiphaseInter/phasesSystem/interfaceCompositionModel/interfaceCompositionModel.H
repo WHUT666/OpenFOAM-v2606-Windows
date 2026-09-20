@@ -83,7 +83,7 @@ protected:
     // Protected Data
 
         //- Selection names for the modelVariable
-        static const Enum<modelVariable> modelVariableNames_;
+        static incompressibleMultiphaseSystems_API const Enum<modelVariable> modelVariableNames_;
 
         //- Enumeration for the model variable
         modelVariable modelVariable_;
@@ -104,13 +104,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("interfaceCompositionModel");
+    TypeNameApi(incompressibleMultiphaseSystems_API, "interfaceCompositionModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( incompressibleMultiphaseSystems_API,
             autoPtr,
             interfaceCompositionModel,
             dictionary,

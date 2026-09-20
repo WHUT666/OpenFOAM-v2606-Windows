@@ -36,6 +36,13 @@ namespace Foam
     makePatchFunction1Type(PatchExprField, sphericalTensor);
     makePatchFunction1Type(PatchExprField, symmTensor);
     makePatchFunction1Type(PatchExprField, tensor);
+
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::PatchExprField<Foam::scalar>);
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::PatchExprField<Foam::vector>);
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::PatchExprField<Foam::sphericalTensor>);
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::PatchExprField<Foam::symmTensor>);
+    finiteVolume_TEMPLATE_EXPORT(PatchFunction1Types::PatchExprField<Foam::tensor>);
+
 }
 
 

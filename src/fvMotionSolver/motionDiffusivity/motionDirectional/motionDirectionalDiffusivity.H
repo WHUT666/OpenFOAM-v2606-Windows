@@ -72,7 +72,7 @@ class motionDirectionalDiffusivity
 public:
 
     //- Runtime type information
-    TypeName("motionDirectional");
+    TypeNameApi(fvMotionSolvers_API, "motionDirectional");
 
 
     // Constructors

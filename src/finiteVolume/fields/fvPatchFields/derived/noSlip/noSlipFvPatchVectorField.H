@@ -74,7 +74,7 @@ class noSlipFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("noSlip");
+    TypeNameApi(finiteVolume_API, "noSlip");
 
 
     // Constructors

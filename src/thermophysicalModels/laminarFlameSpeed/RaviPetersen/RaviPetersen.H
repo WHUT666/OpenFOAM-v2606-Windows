@@ -170,7 +170,7 @@ class RaviPetersen
 public:
 
     //- Runtime type information
-    TypeName("RaviPetersen");
+    TypeNameApi(laminarFlameSpeedModels_API, "RaviPetersen");
 
     // Constructors
 

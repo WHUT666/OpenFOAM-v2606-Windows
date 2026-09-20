@@ -105,7 +105,7 @@ class haloToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
         //- Number of grow/shrink steps
         label steps_;
@@ -119,7 +119,7 @@ class haloToCell
 public:
 
     //- Runtime type information
-    TypeName("haloToCell");
+    TypeNameApi(meshTools_API, "haloToCell");
 
 
     // Constructors

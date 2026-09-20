@@ -118,7 +118,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("axes");
+    TypeNameNoDebugApi(OpenFOAM_API, "axes");
 
 
     // Constructors

@@ -65,7 +65,7 @@ class staticFvMesh
 public:
 
     //- Runtime type information
-    TypeName("staticFvMesh");
+    TypeNameApi(dynamicFvMesh_API, "staticFvMesh");
 
 
     // Constructors

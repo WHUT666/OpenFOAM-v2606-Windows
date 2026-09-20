@@ -69,7 +69,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("name");
+    TypeNameApi(blockMesh_API, "name");
 
 
     // Constructors

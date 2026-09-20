@@ -128,7 +128,7 @@ class rigidBodyMeshMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("rigidBodyMotionSolver");
+    TypeNameApi(rigidBodyMeshMotion_API, "rigidBodyMotionSolver");
 
 
     // Constructors

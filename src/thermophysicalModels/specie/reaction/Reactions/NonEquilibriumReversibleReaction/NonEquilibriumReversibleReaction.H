@@ -39,6 +39,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NonEquilibriumReversibleReaction_defines_typeName in .C files that
+//  define the template statics of ReactionType (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NonEquilibriumReversibleReaction_defines_typeName)
+#  define Foam_NonEquilibriumReversibleReaction_typeName_API
+#else
+#  define Foam_NonEquilibriumReversibleReaction_typeName_API specie_API
+#endif
+
 #ifndef NonEquilibriumReversibleReaction_H
 #define NonEquilibriumReversibleReaction_H
 
@@ -84,7 +94,7 @@ class NonEquilibriumReversibleReaction
 public:
 
     //- Runtime type information
-    TypeName("nonEquilibriumReversible");
+    TypeNameApi(Foam_NonEquilibriumReversibleReaction_typeName_API, "nonEquilibriumReversible");
 
 
     // Constructors

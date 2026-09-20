@@ -156,7 +156,7 @@ public:
     };
 
     //- Names for the actionType
-    static const Enum<actionType> actionNames;
+    static lagrangianFunctionObjects_API const Enum<actionType> actionNames;
 
 
     //- Enumeration defining the valid sources
@@ -167,14 +167,14 @@ public:
     };
 
     //- Names for the sourceType
-    static const Enum<sourceType> sourceNames;
+    static lagrangianFunctionObjects_API const Enum<sourceType> sourceNames;
 
 
     //- Enumeration defining and/or logic
     enum logicType { AND, OR };
 
     //- Names for the logicType
-    static const Enum<logicType> logicNames;
+    static lagrangianFunctionObjects_API const Enum<logicType> logicNames;
 
 
 protected:

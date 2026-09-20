@@ -137,7 +137,7 @@ class viscousDissipation
 public:
 
     //- Runtime type information
-    TypeName("viscousDissipation");
+    TypeNameApi(fvOptions_API, "viscousDissipation");
 
 
     // Constructors

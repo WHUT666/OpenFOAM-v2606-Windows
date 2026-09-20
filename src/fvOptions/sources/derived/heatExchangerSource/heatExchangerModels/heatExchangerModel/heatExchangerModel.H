@@ -99,13 +99,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("heatExchangerModel");
+    TypeNameApi(fvOptions_API, "heatExchangerModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fvOptions_API,
             autoPtr,
             heatExchangerModel,
             dictionary,

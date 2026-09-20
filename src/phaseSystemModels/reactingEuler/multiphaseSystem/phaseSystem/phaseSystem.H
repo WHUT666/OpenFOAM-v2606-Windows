@@ -285,10 +285,10 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("phaseSystem");
+    TypeNameApi(reactingMultiphaseSystem_API, "phaseSystem");
 
     //- Default name of the phase properties dictionary
-    static const word propertiesName;
+    static reactingMultiphaseSystem_API const word propertiesName;
 
 
     // Constructors

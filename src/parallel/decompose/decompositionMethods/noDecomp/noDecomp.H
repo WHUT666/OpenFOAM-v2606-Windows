@@ -65,7 +65,7 @@ public:
 
 
     //- Runtime type information
-    TypeNameNoDebug("none");
+    TypeNameNoDebugApi(decompositionMethods_API, "none");
 
 
     // Constructors

@@ -80,7 +80,7 @@ class processorLduInterface
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("processorLduInterface");
+    TypeNameNoDebugApi(OpenFOAM_API, "processorLduInterface");
 
 
     // Constructors

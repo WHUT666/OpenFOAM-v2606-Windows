@@ -108,7 +108,7 @@ public:
     // Static Data Members
 
         //- Name for exposed internal edges (default: oldInternalEdges)
-        static word exposedPatchName;
+        static finiteArea_API word exposedPatchName;
 
 
     // Generated Methods

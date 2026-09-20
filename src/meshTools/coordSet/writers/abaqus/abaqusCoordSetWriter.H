@@ -133,7 +133,7 @@ private:
     // Private Data
 
         //- Time base names
-        static const Enum<timeBase> timeBaseNames_;
+        static meshTools_API const Enum<timeBase> timeBaseNames_;
 
         //- Optional user-defined header
         List<string> outputHeader_;
@@ -193,7 +193,7 @@ private:
 public:
 
     //- Runtime type information (no debug)
-    TypeNameNoDebug("abaqus");
+    TypeNameNoDebugApi(meshTools_API, "abaqus");
 
 
     // Constructors

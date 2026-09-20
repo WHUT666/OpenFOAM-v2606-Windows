@@ -60,12 +60,12 @@ class CHFModel
 public:
 
     //- Runtime type information
-    TypeName("CHFModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "CHFModel");
 
 
     //- Declare runtime construction
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( reactingMultiphaseSystem_API,
         autoPtr,
         CHFModel,
         dictionary,

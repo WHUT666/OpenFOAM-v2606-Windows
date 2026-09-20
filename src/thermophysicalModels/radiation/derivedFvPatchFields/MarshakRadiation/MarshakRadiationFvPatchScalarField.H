@@ -93,7 +93,7 @@ class MarshakRadiationFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("MarshakRadiation");
+    TypeNameApi(radiationModels_API, "MarshakRadiation");
 
 
     // Constructors

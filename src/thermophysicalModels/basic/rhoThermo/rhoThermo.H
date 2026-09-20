@@ -82,12 +82,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("rhoThermo");
+    TypeNameApi(fluidThermophysicalModels_API, "rhoThermo");
 
 
     //- Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( fluidThermophysicalModels_API,
         autoPtr,
         rhoThermo,
         fvMesh,
@@ -97,8 +97,8 @@ public:
 
 
     //- Declare run-time constructor selection table for dictionary based
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi
+    ( fluidThermophysicalModels_API,
         autoPtr,
         rhoThermo,
         fvMeshDictPhase,

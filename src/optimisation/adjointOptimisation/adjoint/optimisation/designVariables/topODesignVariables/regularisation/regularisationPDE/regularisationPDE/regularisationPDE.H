@@ -113,13 +113,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("regularisationPDE");
+    TypeNameApi(adjointOptimisation_API, "regularisationPDE");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             regularisationPDE,
             dictionary,

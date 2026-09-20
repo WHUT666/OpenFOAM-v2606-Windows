@@ -77,7 +77,7 @@ class inclinedFilmNusseltInletVelocityFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("inclinedFilmNusseltInletVelocity");
+    TypeNameApi(surfaceFilmModels_API, "inclinedFilmNusseltInletVelocity");
 
 
     // Constructors

@@ -40,6 +40,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_COxidationMurphyShaddix_defines_typeName in .C files that
+//  define the template statics of COxidationMurphyShaddix (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_COxidationMurphyShaddix_defines_typeName)
+#  define Foam_COxidationMurphyShaddix_typeName_API
+#else
+#  define Foam_COxidationMurphyShaddix_typeName_API coalCombustion_API
+#endif
+
 #ifndef COxidationMurphyShaddix_H
 #define COxidationMurphyShaddix_H
 
@@ -95,10 +105,10 @@ class COxidationMurphyShaddix
         // Static constants
 
             //- Maximum number of iterations
-            static label maxIters_;
+            static Foam_COxidationMurphyShaddix_typeName_API label maxIters_;
 
             //- Tolerance used in inner iterations
-            static scalar tolerance_;
+            static Foam_COxidationMurphyShaddix_typeName_API scalar tolerance_;
 
 
         // Addressing
@@ -128,7 +138,7 @@ class COxidationMurphyShaddix
 public:
 
     //- Runtime type information
-    TypeName("COxidationMurphyShaddix");
+    TypeNameApi(Foam_COxidationMurphyShaddix_typeName_API, "COxidationMurphyShaddix");
 
 
     // Constructors

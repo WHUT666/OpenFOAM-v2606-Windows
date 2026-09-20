@@ -44,6 +44,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_specieReactionRates_defines_typeName in .C files that
+//  define the template statics of specieReactionRates (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_specieReactionRates_defines_typeName)
+#  define Foam_specieReactionRates_typeName_API
+#else
+#  define Foam_specieReactionRates_typeName_API chemistryModel_API
+#endif
+
 #ifndef functionObjects_specieReactionRates_H
 #define functionObjects_specieReactionRates_H
 
@@ -89,7 +99,7 @@ class specieReactionRates
 public:
 
     //- Runtime type information
-    TypeName("specieReactionRates");
+    TypeNameApi(Foam_specieReactionRates_typeName_API, "specieReactionRates");
 
 
     // Constructors

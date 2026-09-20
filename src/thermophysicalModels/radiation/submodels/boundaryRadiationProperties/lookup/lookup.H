@@ -79,7 +79,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("lookup");
+    TypeNameApi(radiationModels_API, "lookup");
 
     // Constructors
 

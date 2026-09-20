@@ -77,7 +77,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("multiple");
+    TypeNameApi(adjointOptimisation_API, "multiple");
 
 
     // Constructors

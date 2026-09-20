@@ -219,7 +219,7 @@ class sorptionWallFunctionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("sorptionWallFunction");
+    TypeNameApi(thermoTools_API, "sorptionWallFunction");
 
 
     // Constructors

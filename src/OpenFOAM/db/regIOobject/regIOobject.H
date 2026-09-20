@@ -55,7 +55,7 @@ namespace Foam
 
 // Forward Declarations
 class dictionary;
-class regIOobject;
+class OpenFOAM_API regIOobject;
 
 namespace functionEntries
 {
@@ -70,7 +70,7 @@ namespace fileOperations
                          Class regIOobject Declaration
 \*---------------------------------------------------------------------------*/
 
-class regIOobject
+class OpenFOAM_API regIOobject
 :
     public IOobject
 {

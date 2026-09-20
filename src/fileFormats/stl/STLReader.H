@@ -125,7 +125,7 @@ public:
     // Static Data
 
         //- ASCII parser types (0=Flex, 1=Ragel, 2=Manual)
-        static int parserType;
+        static fileFormats_API int parserType;
 
 
     // Constructors

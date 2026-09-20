@@ -213,7 +213,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("ObukhovLength");
+    TypeNameApi(atmosphericModels_API, "ObukhovLength");
 
 
     // Constructors

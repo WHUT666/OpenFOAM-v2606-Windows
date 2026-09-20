@@ -112,7 +112,7 @@ class mag
 public:
 
     //- Runtime type information
-    TypeName("mag");
+    TypeNameApi(fieldFunctionObjects_API, "mag");
 
 
     // Constructors

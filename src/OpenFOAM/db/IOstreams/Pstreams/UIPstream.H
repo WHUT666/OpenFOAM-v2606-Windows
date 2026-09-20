@@ -58,7 +58,7 @@ namespace Foam
                         Class UIPstreamBase Declaration
 \*---------------------------------------------------------------------------*/
 
-class UIPstreamBase
+class OpenFOAM_API UIPstreamBase
 :
     public UPstream,
     public Istream
@@ -277,7 +277,7 @@ public:
 
 //- Input inter-processor communications stream
 //- using MPI send/recv etc. - operating on external buffer.
-class UIPstream
+class OpenFOAM_API UIPstream
 :
     public UIPstreamBase
 {
@@ -420,7 +420,7 @@ public:
 
 //- Input inter-processor communications stream
 //- using MPI broadcast - operating on external buffer.
-class UIPBstream
+class OpenFOAM_API UIPBstream
 :
     public UIPstreamBase
 {

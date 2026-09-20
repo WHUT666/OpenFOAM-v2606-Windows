@@ -34,6 +34,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_NoBreakup_defines_typeName in .C files that
+//  define the template statics of NoBreakup (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_NoBreakup_defines_typeName)
+#  define Foam_NoBreakup_typeName_API
+#else
+#  define Foam_NoBreakup_typeName_API lagrangianSpray_API
+#endif
+
 #ifndef NoBreakup_H
 #define NoBreakup_H
 
@@ -55,7 +65,7 @@ class NoBreakup
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(Foam_NoBreakup_typeName_API, "none");
 
 
     // Constructors

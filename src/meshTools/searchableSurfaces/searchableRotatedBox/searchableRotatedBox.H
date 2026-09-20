@@ -105,7 +105,7 @@ class searchableRotatedBox
 public:
 
     //- Runtime type information
-    TypeName("searchableRotatedBox");
+    TypeNameApi(meshTools_API, "searchableRotatedBox");
 
 
     // Constructors

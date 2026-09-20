@@ -63,7 +63,7 @@ class Ergun
 public:
 
     //- Runtime type information
-    TypeName("Ergun");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Ergun");
 
 
     // Constructors

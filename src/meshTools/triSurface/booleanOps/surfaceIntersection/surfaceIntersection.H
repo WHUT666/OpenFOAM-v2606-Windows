@@ -114,7 +114,7 @@ public:
     };
 
     //- The user-selectable self-intersection enumeration names
-    static const Enum<intersectionType> selfIntersectionNames;
+    static meshTools_API const Enum<intersectionType> selfIntersectionNames;
 
 
 private:
@@ -263,7 +263,7 @@ public:
 
     // Public Data, Declarations
 
-    ClassName("surfaceIntersection");
+    ClassNameApi(meshTools_API, "surfaceIntersection");
 
 
     // Constructors

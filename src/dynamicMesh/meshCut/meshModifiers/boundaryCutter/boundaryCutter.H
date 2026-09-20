@@ -123,7 +123,7 @@ class boundaryCutter
 public:
 
     //- Runtime type information
-    ClassName("boundaryCutter");
+    ClassNameApi(dynamicMesh_API, "boundaryCutter");
 
     // Constructors
 

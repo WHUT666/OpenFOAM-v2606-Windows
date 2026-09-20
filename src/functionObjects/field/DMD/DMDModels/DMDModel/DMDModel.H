@@ -96,13 +96,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("DMDModel");
+    TypeNameApi(fieldFunctionObjects_API, "DMDModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fieldFunctionObjects_API,
             autoPtr,
             DMDModel,
             dictionary,

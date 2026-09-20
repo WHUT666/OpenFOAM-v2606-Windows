@@ -71,6 +71,16 @@ SeeAlso
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_scaledFixedValueFvPatchField_defines_typeName in .C files that
+//  define the template statics of scaledFixedValueFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_scaledFixedValueFvPatchField_defines_typeName)
+#  define Foam_scaledFixedValueFvPatchField_typeName_API
+#else
+#  define Foam_scaledFixedValueFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_scaledFixedValueFvPatchField_H
 #define Foam_scaledFixedValueFvPatchField_H
 
@@ -108,7 +118,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("scaledFixedValue");
+    TypeNameApi(Foam_scaledFixedValueFvPatchField_typeName_API, "scaledFixedValue");
 
 
     // Constructors

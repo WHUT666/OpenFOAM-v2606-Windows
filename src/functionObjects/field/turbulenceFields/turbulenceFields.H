@@ -178,7 +178,7 @@ public:
         };
 
         //- Names for compressibleField turbulence fields
-        static const Enum<compressibleField> compressibleFieldNames_;
+        static fieldFunctionObjects_API const Enum<compressibleField> compressibleFieldNames_;
 
         //- Options for the turbulence fields (incompressible)
         enum incompressibleField
@@ -198,10 +198,10 @@ public:
         };
 
         //- Names for incompressibleField turbulence fields
-        static const Enum<incompressibleField> incompressibleFieldNames_;
+        static fieldFunctionObjects_API const Enum<incompressibleField> incompressibleFieldNames_;
 
         //- Name of the turbulence properties dictionary
-        static const word modelName_;
+        static fieldFunctionObjects_API const word modelName_;
 
 
 protected:
@@ -250,7 +250,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("turbulenceFields");
+    TypeNameApi(fieldFunctionObjects_API, "turbulenceFields");
 
 
     // Constructors

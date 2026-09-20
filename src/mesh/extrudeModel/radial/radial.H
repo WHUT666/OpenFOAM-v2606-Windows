@@ -67,7 +67,7 @@ class radial
 public:
 
     //- Runtime type information
-    TypeName("radial");
+    TypeNameApi(extrudeModel_API, "radial");
 
     // Constructors
 

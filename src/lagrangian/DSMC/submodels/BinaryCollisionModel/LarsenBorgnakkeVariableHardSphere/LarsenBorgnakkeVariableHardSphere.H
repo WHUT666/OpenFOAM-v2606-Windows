@@ -32,6 +32,16 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_LarsenBorgnakkeVariableHardSphere_defines_typeName in .C files that
+//  define the template statics of LarsenBorgnakkeVariableHardSphere (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_LarsenBorgnakkeVariableHardSphere_defines_typeName)
+#  define Foam_LarsenBorgnakkeVariableHardSphere_typeName_API
+#else
+#  define Foam_LarsenBorgnakkeVariableHardSphere_typeName_API DSMC_API
+#endif
+
 #ifndef LarsenBorgnakkeVariableHardSphere_H
 #define LarsenBorgnakkeVariableHardSphere_H
 
@@ -73,7 +83,7 @@ class LarsenBorgnakkeVariableHardSphere
 public:
 
     //- Runtime type information
-    TypeName("LarsenBorgnakkeVariableHardSphere");
+    TypeNameApi(Foam_LarsenBorgnakkeVariableHardSphere_typeName_API, "LarsenBorgnakkeVariableHardSphere");
 
 
     // Constructors

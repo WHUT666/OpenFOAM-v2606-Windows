@@ -88,7 +88,7 @@ class patchTransformedInterpolation
 public:
 
     //- Runtime type information
-    TypeName("patchTransformed");
+    TypeNameApi(fvMotionSolvers_API, "patchTransformed");
 
 
     // Constructors

@@ -99,6 +99,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_turbulentInletFvPatchField_defines_typeName in .C files that
+//  define the template statics of turbulentInletFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_turbulentInletFvPatchField_defines_typeName)
+#  define Foam_turbulentInletFvPatchField_typeName_API
+#else
+#  define Foam_turbulentInletFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_turbulentInletFvPatchField_H
 #define Foam_turbulentInletFvPatchField_H
 
@@ -143,7 +153,7 @@ class turbulentInletFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("turbulentInlet");
+    TypeNameApi(Foam_turbulentInletFvPatchField_typeName_API, "turbulentInlet");
 
 
     // Constructors

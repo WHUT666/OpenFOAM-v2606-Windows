@@ -100,7 +100,7 @@ public:
     friend class IATEsource;
 
     //- Runtime type information
-    TypeName("IATE");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "IATE");
 
 
     // Constructors

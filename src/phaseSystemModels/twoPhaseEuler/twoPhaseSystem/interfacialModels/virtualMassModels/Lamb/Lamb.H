@@ -67,7 +67,7 @@ class Lamb
 public:
 
     //- Runtime type information
-    TypeName("Lamb");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Lamb");
 
 
     // Constructors

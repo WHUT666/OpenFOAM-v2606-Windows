@@ -127,7 +127,7 @@ class yPlus
 public:
 
     //- Runtime type information
-    TypeName("yPlus");
+    TypeNameApi(fieldFunctionObjects_API, "yPlus");
 
 
     // Constructors

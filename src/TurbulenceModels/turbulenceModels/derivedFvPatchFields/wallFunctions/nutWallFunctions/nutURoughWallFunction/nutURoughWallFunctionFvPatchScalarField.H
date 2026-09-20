@@ -137,7 +137,7 @@ class nutURoughWallFunctionFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("nutURoughWallFunction");
+    TypeNameApi(turbulenceModels_API, "nutURoughWallFunction");
 
 
     // Constructors

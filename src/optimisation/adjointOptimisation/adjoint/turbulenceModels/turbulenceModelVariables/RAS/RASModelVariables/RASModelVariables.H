@@ -106,12 +106,12 @@ public:
 
 
     //- Runtime type information
-    TypeName("RASModelVariables");
+    TypeNameApi(adjointOptimisation_API, "RASModelVariables");
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( adjointOptimisation_API,
             autoPtr,
             RASModelVariables,
             dictionary,

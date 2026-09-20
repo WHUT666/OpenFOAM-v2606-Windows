@@ -111,7 +111,7 @@ class Schroeder
 public:
 
     //- Runtime type information
-    TypeName("Schroeder");
+    TypeNameApi(reactingMultiphaseSystem_API, "Schroeder");
 
 
     // Constructors

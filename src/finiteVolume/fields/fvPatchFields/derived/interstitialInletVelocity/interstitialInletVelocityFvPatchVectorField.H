@@ -78,7 +78,7 @@ class interstitialInletVelocityFvPatchVectorField
 public:
 
    //- Runtime type information
-   TypeName("interstitialInletVelocity");
+   TypeNameApi(finiteVolume_API, "interstitialInletVelocity");
 
 
    // Constructors

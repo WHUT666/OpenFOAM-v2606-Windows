@@ -74,13 +74,13 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("interfaceCompositionModel");
+    TypeNameApi(reactingMultiphaseSystem_API, "interfaceCompositionModel");
 
 
     // Declare runtime construction
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( reactingMultiphaseSystem_API,
             autoPtr,
             interfaceCompositionModel,
             dictionary,

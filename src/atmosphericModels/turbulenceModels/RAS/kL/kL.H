@@ -119,6 +119,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_kL_defines_typeName in .C files that
+//  define the template statics of kL (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_kL_defines_typeName)
+#  define Foam_kL_typeName_API
+#else
+#  define Foam_kL_typeName_API atmosphericModels_API
+#endif
+
 #ifndef kL_H
 #define kL_H
 
@@ -246,7 +256,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("kL");
+    TypeNameApi(Foam_kL_typeName_API, "kL");
 
 
     // Constructors

@@ -101,7 +101,7 @@ class userValue
 public:
 
     //- Runtime type information
-    TypeName("userValue");
+    TypeNameApi(utilityFunctionObjects_API, "userValue");
 
 
     //- Constructor

@@ -63,7 +63,7 @@ class Gibilaro
 public:
 
     //- Runtime type information
-    TypeName("Gibilaro");
+    TypeNameApi(compressibleTwoPhaseSystem_API, "Gibilaro");
 
 
     // Constructors

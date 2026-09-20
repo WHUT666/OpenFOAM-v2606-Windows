@@ -110,7 +110,7 @@ class zoneSubSet
 public:
 
     //- Runtime type information
-    TypeName("zoneSubSet");
+    TypeNameApi(dynamicMesh_API, "zoneSubSet");
 
 
     // Constructors

@@ -166,7 +166,7 @@ class fanMomentumSource
 public:
 
     //- Runtime type information
-    TypeName("fanMomentumSource");
+    TypeNameApi(fvOptions_API, "fanMomentumSource");
 
 
     // Constructors

@@ -162,10 +162,10 @@ public:
     // Static Data Members
 
         //- Face to point addressing, using octant corner points.
-        static const faceList faces;
+        static OpenFOAM_API const faceList faces;
 
         //- Edge to point addressing, using octant corner points.
-        static const edgeList edges;
+        static OpenFOAM_API const edgeList edges;
 
 
     // Static Methods

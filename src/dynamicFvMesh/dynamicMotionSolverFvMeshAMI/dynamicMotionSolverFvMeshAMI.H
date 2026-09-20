@@ -75,7 +75,7 @@ class dynamicMotionSolverFvMeshAMI
 public:
 
     //- Runtime type information
-    TypeName("dynamicMotionSolverFvMeshAMI");
+    TypeNameApi(dynamicFvMesh_API, "dynamicMotionSolverFvMeshAMI");
 
 
     // Constructors

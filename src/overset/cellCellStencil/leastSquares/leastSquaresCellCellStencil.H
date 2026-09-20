@@ -72,7 +72,7 @@ class leastSquares
 public:
 
     //- Runtime type information
-    TypeName("leastSquares");
+    TypeNameApi(overset_API, "leastSquares");
 
 
     // Constructors

@@ -79,13 +79,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("cellZone");
+    TypeNameApi(OpenFOAM_API, "cellZone");
 
 
     // Declare run-time constructor selection tables
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( OpenFOAM_API,
             autoPtr,
             cellZone,
             dictionary,

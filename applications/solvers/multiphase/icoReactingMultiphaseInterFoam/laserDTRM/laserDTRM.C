@@ -25,6 +25,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_Cloud_defines_typeName
 #include "laserDTRM.H"
 #include "fvmLaplacian.H"
 #include "fvmSup.H"

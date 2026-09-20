@@ -125,7 +125,7 @@ public:
             SET_TRIGGER //!< "setTrigger" - trigger another condition
         };
 
-        static Enum<satisfiedAction> satisfiedActionNames;
+        static utilityFunctionObjects_API Enum<satisfiedAction> satisfiedActionNames;
 
 
 private:
@@ -173,7 +173,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("runTimeControl");
+    TypeNameApi(utilityFunctionObjects_API, "runTimeControl");
 
 
     // Constructors

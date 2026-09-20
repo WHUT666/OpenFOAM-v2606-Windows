@@ -92,7 +92,7 @@ class starcd
 public:
 
     //- Runtime type information
-    TypeNameNoDebug("starcd");
+    TypeNameNoDebugApi(OpenFOAM_API, "starcd");
 
 
     // Constructors

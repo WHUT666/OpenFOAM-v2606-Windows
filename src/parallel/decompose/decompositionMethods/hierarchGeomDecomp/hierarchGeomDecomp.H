@@ -171,7 +171,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("hierarchical");
+    TypeNameApi(decompositionMethods_API, "hierarchical");
 
 
     // Constructors

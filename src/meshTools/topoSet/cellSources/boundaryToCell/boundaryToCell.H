@@ -97,7 +97,7 @@ class boundaryToCell
     // Private Data
 
         //- Add usage string
-        static addToUsageTable usage_;
+        static meshTools_API addToUsageTable usage_;
 
 
     // Private Member Functions
@@ -108,7 +108,7 @@ class boundaryToCell
 public:
 
     //- Runtime type information
-    TypeName("boundaryToCell");
+    TypeNameApi(meshTools_API, "boundaryToCell");
 
 
     // Constructors

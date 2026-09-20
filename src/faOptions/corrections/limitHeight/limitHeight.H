@@ -103,7 +103,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("limitHeight");
+    TypeNameApi(faOptions_API, "limitHeight");
 
 
     // Constructors

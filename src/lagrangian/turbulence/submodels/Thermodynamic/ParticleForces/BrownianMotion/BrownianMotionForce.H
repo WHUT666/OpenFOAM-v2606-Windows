@@ -56,6 +56,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_BrownianMotionForce_defines_typeName in .C files that
+//  define the template statics of BrownianMotionForce (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_BrownianMotionForce_defines_typeName)
+#  define Foam_BrownianMotionForce_typeName_API
+#else
+#  define Foam_BrownianMotionForce_typeName_API lagrangianTurbulence_API
+#endif
+
 #ifndef Foam_BrownianMotionForce_H
 #define Foam_BrownianMotionForce_H
 
@@ -106,7 +116,7 @@ class BrownianMotionForce
 public:
 
     //- Runtime type information
-    TypeName("BrownianMotion");
+    TypeNameApi(Foam_BrownianMotionForce_typeName_API, "BrownianMotion");
 
 
     // Constructors

@@ -80,13 +80,13 @@ class wallHeatFluxModel
 public:
 
     //- Runtime type information
-    TypeName("wallHeatFluxModel");
+    TypeNameApi(fieldFunctionObjects_API, "wallHeatFluxModel");
 
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi
+        ( fieldFunctionObjects_API,
             autoPtr,
             wallHeatFluxModel,
             dictionary,

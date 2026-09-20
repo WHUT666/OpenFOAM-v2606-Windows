@@ -67,7 +67,7 @@ public:
     // Static data members
 
         //- Runtime type information
-        TypeName("modifyCell");
+        TypeNameApi(meshTools_API, "modifyCell");
 
 
     // Constructors

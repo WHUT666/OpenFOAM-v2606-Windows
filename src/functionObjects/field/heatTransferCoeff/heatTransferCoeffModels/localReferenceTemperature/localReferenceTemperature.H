@@ -109,7 +109,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("localReferenceTemperature");
+    TypeNameApi(fieldFunctionObjects_API, "localReferenceTemperature");
 
 
     // Constructors

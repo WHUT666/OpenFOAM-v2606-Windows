@@ -55,6 +55,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_Maxwell_defines_typeName in .C files that
+//  define the template statics of Maxwell (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_Maxwell_defines_typeName)
+#  define Foam_Maxwell_typeName_API
+#else
+#  define Foam_Maxwell_typeName_API turbulenceModels_API
+#endif
+
 #ifndef Maxwell_H
 #define Maxwell_H
 
@@ -109,7 +119,7 @@ public:
 
 
     //- Runtime type information
-    TypeName("Maxwell");
+    TypeNameApi(Foam_Maxwell_typeName_API, "Maxwell");
 
 
     // Constructors

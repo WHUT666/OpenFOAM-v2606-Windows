@@ -36,6 +36,16 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_IOMap_defines_typeName in .C files that
+//  define the template statics of IOMap (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_IOMap_defines_typeName)
+#  define Foam_IOMap_typeName_API
+#else
+#  define Foam_IOMap_typeName_API OpenFOAM_API
+#endif
+
 #ifndef Foam_IOMap_H
 #define Foam_IOMap_H
 
@@ -68,7 +78,7 @@ public:
     typedef Map<T> content_type;
 
     //- Runtime type information
-    TypeName("Map");
+    TypeNameApi(Foam_IOMap_typeName_API, "Map");
 
 
     // Constructors

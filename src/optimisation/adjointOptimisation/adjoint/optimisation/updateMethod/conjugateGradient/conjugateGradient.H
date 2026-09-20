@@ -82,7 +82,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("conjugateGradient");
+    TypeNameApi(adjointOptimisation_API, "conjugateGradient");
 
 
     // Constructors

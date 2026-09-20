@@ -96,7 +96,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("dynamicTopO");
+    TypeNameApi(adjointOptimisation_API, "dynamicTopO");
 
 
     // Constructors

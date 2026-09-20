@@ -43,6 +43,16 @@ Usage
 
 \*---------------------------------------------------------------------------*/
 
+//- Define Foam_slipFvPatchField_defines_typeName in .C files that
+//  define the template statics of slipFvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declaration is left undecorated there.
+#if defined(Foam_slipFvPatchField_defines_typeName)
+#  define Foam_slipFvPatchField_typeName_API
+#else
+#  define Foam_slipFvPatchField_typeName_API finiteVolume_API
+#endif
+
 #ifndef Foam_slipFvPatchField_H
 #define Foam_slipFvPatchField_H
 
@@ -68,7 +78,7 @@ class slipFvPatchField
 public:
 
     //- Runtime type information
-    TypeName("slip");
+    TypeNameApi(Foam_slipFvPatchField_typeName_API, "slip");
 
 
     // Constructors

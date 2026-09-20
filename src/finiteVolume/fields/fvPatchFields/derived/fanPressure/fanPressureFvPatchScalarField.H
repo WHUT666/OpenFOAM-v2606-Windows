@@ -140,7 +140,7 @@ public:
         };
 
         //- Fan flow direction names
-        static const Enum<fanFlowDirection> fanFlowDirectionNames_;
+        static finiteVolume_API const Enum<fanFlowDirection> fanFlowDirectionNames_;
 
 
 private:
@@ -166,7 +166,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("fanPressure");
+    TypeNameApi(finiteVolume_API, "fanPressure");
 
 
     // Constructors

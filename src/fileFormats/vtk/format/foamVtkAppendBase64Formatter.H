@@ -57,8 +57,8 @@ class appendBase64Formatter
 {
     // Private Data Members
 
-        static const char* name_;
-        static const outputOptions opts_;
+        static fileFormats_API const char* name_;
+        static fileFormats_API const outputOptions opts_;
 
         //- The current offset for append data.
         uint64_t offset_;

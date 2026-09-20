@@ -41,7 +41,8 @@
 ### 已验证工作流
 
 - `decomposePar → mpiexec -n 2 icoFoam -parallel → reconstructPar` 完整闭环
-- `redistributePar`(metis / scotch / ptscotch)及 `redistributePar -reconstruct`
+- `redistributePar`(metis / scotch / ptscotch / kahip)及
+  `redistributePar -reconstruct`;GAMG `agglomerator MGridGen` 可用
 - 串行:`blockMesh`、`checkMesh`、`topoSet`、`setFields`、`snappyHexMesh`
   (motorBike 3.8M cells)、`foamyHexMesh`(CGAL blob)、`laplacianFoam`、
   `icoFoam`、`pisoFoam`、`simpleFoam`、`potentialFoam`、`interFoam`、
@@ -52,8 +53,6 @@
 - 应用按白名单启用(`-DFOAM_APP_<路径>=ON`),当前仅 ~33 个常用 app;
   其余 ~560 个未编译验证,启用后可能仍需个别 MSVC 适配
 - 静态构建下运行时 `libs` 动态加载不可用,插件必须在应用链接闭包内
-- `kahip` / `mgridgen` 为 stub(无 Windows 包);`MGridGen` GAMG
-  agglomerator 不可用(默认 `faceAreaPair` 正常)
 - `foamyHexMeshSurfaceSimplify` 跳过(缺 `fastdualoctree_sgp` + OpenGL,
   上游同样跳过)
 - POSIX shell 工具脚本(`foamJob`、`runParallel`、`foamLog` 等)在 cmd

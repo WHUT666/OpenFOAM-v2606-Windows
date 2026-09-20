@@ -347,6 +347,49 @@ if(EXISTS "${CGAL_DIR}/include/CGAL/version.h")
 endif()
 
 #------------------------------------------------------------------------------
+# Third-party: KaHIP (graph partitioning) - optional
+#------------------------------------------------------------------------------
+set(KAHIP_INC_DIR "")
+set(KAHIP_LIB_DIR "")
+set(KAHIP_DIR "${FOAM_PROJECT_DIR}/thirdparty/kahip")
+if(EXISTS "${KAHIP_DIR}/include/kaHIP_interface.h" AND EXISTS "${KAHIP_DIR}/lib/kahip.lib")
+    set(KAHIP_INC_DIR "${KAHIP_DIR}/include")
+    set(KAHIP_LIB_DIR "${KAHIP_DIR}/lib")
+    if(NOT TARGET kahip)
+        add_library(kahip UNKNOWN IMPORTED GLOBAL)
+        set_target_properties(kahip PROPERTIES
+            IMPORTED_LOCATION "${KAHIP_LIB_DIR}/kahip.lib"
+            INTERFACE_INCLUDE_DIRECTORIES "${KAHIP_INC_DIR}")
+    endif()
+    message(STATUS "Using vendored KaHIP: ${KAHIP_DIR}")
+endif()
+
+#------------------------------------------------------------------------------
+# Third-party: MGridGen (GAMG agglomeration) - optional, built in-tree
+#------------------------------------------------------------------------------
+# Ancient C code (Karypis/Moulitsas, metis4-era). Sources are vendored under
+# thirdparty/mgridgen/src so the CRT/toolset always matches the main build;
+# only drand48/srand48 needed a shim (src/IMlib/msvc_drand48.c).
+set(MGRIDGEN_INC_DIR "")
+set(MGRIDGEN_LIB_DIR "")
+set(MGRIDGEN_DIR "${FOAM_PROJECT_DIR}/thirdparty/mgridgen")
+if(EXISTS "${MGRIDGEN_DIR}/src/Lib/mgridgen.c" AND EXISTS "${MGRIDGEN_DIR}/include/mgridgen.h")
+    set(MGRIDGEN_INC_DIR "${MGRIDGEN_DIR}/include")
+    if(NOT TARGET mgrid)
+        file(GLOB MGRIDGEN_SOURCES
+            "${MGRIDGEN_DIR}/src/Lib/*.c"
+            "${MGRIDGEN_DIR}/src/IMlib/*.c")
+        add_library(mgrid STATIC ${MGRIDGEN_SOURCES})
+        target_include_directories(mgrid
+            PUBLIC "${MGRIDGEN_INC_DIR}"
+            PRIVATE "${MGRIDGEN_DIR}/src/Lib" "${MGRIDGEN_DIR}/src/IMlib")
+        set_target_properties(mgrid PROPERTIES
+            ARCHIVE_OUTPUT_DIRECTORY "${FOAM_LIBBIN_DIR}")
+    endif()
+    message(STATUS "Using vendored MGridGen sources: ${MGRIDGEN_DIR}")
+endif()
+
+#------------------------------------------------------------------------------
 # Third-party: MPI (MS-MPI) - optional
 #------------------------------------------------------------------------------
 set(FOAM_HAVE_MPI FALSE)

@@ -267,7 +267,12 @@ else()
     foam_lib(dummyThirdParty/kahipDecomp)
 endif()
 
-foam_lib(dummyThirdParty/MGridGen)
+# MGridGen: real sources vendored under thirdparty/mgridgen build the
+# 'mgrid' target; the dummy stub provides the same MGridGen() symbol and
+# must not be built alongside it.
+if(NOT TARGET mgrid)
+    foam_lib(dummyThirdParty/MGridGen)
+endif()
 foam_lib(fvOptions)
 foam_lib(lagrangian/basic)
 foam_lib(lagrangian/distributionModels)
@@ -311,7 +316,18 @@ foam_lib(fvMotionSolver)
 foam_lib(mesh/snappyHexMesh)
 foam_lib(fvAgglomerationMethods/AllwmakeTest OPTIONAL)
 foam_lib(fvAgglomerationMethods/pairPatchAgglomeration)
-foam_lib(fvAgglomerationMethods/MGridGenGamgAgglomeration OPTIONAL)
+# MGridGen GAMG agglomerator - needs the vendored 'mgrid' target
+set(_mgridgen_agglom_default OFF)
+if(TARGET mgrid)
+    set(_mgridgen_agglom_default ON)
+endif()
+option(FOAM_ENABLE_fvAgglomerationMethods_MGridGenGamgAgglomeration "Build MGridGenGamgAgglomeration" ${_mgridgen_agglom_default})
+if(FOAM_ENABLE_fvAgglomerationMethods_MGridGenGamgAgglomeration)
+    foam_lib(fvAgglomerationMethods/MGridGenGamgAgglomeration)
+    # Static build: controlDict 'libs' cannot load it at runtime - fold it
+    # into finiteVolume so every solver registers 'agglomerator MGridGen'.
+    target_link_libraries(finiteVolume PUBLIC MGridGenGAMGAgglomeration)
+endif()
 foam_lib(waveModels)
 foam_lib(engine)
 foam_lib(conversion)

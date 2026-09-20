@@ -94,11 +94,23 @@ or set `PATH=E:\openfoam\build\bin\Release;E:\openfoam\thirdparty\fftw;%PATH%`.
   (headers, `msmpi.lib`, `msmpi.dll`, `mpiexec.exe`, `smpd.exe`).
   `mpiexec -n N <solver> -parallel` verified end-to-end on
   `icoFoam/cavity` (decomposePar → parallel solve → reconstructPar).
-- Decomposition: real `metis`, `scotch`, `ptscotch` backends built from
-  vendored conda-forge int32 libs (`thirdparty/{metis,scotch,ptscotch}`).
-  `kahip`/`mgridgen` remain stubs (no Windows packages). `metis.lib`
-  needs `cmake/compat/legacyStdioShim.c` (provides `__imp___iob_func`
-  for its VS2013-era CRT).
+- Decomposition: real `metis`, `scotch`, `ptscotch`, `kahip` backends.
+  METIS/SCOTCH/PT-SCOTCH are vendored conda-forge int32 libs
+  (`thirdparty/{metis,scotch,ptscotch}`); KaHIP is vendored as a
+  prebuilt MSVC `kahip.lib` + `kaHIP_interface.h`
+  (`thirdparty/kahip`, built from KaHIP sources with MSVC).
+  `metis.lib` needs `cmake/compat/legacyStdioShim.c` (provides
+  `__imp___iob_func` for its VS2013-era CRT).
+- MGridGen GAMG agglomeration: serial MGridGen sources are vendored
+  under `thirdparty/mgridgen` and compiled in-tree as the `mgrid`
+  static target (MSVC shim `msvc_drand48.c` provides `drand48`/
+  `srand48`; internal `errexit` renamed to `mgridgen_errexit` to
+  avoid symbol clashes). `src/fvAgglomerationMethods/MGridGenGamgAgglomeration`
+  builds the real `MGridGenGAMGAgglomeration` lib, force-linked into
+  `finiteVolume` so `agglomerator MGridGen` registers in every solver.
+  Verified on `icoFoam` cavity (GAMG + `agglomerator MGridGen`).
+  Requires `minSize`/`maxSize`/`nProcConsistencyIter` entries in the
+  solver dict.
 - CGAL 6.x + GMP/MPFR vendored (`thirdparty/{cgal,gmp,mpfr}`). CGAL
   apps enabled: `foamyHexMesh` (verified on `mesh/foamyHexMesh/blob`),
   `foamyQuadMesh`, `cv2DMesh`, `cellSizeAndAlignmentGrid`,
@@ -111,8 +123,9 @@ or set `PATH=E:\openfoam\build\bin\Release;E:\openfoam\thirdparty\fftw;%PATH%`.
 
 ## Remaining optional components
 
-- `kahip` and `mgridgen` use stubs because no compatible native Windows SDK
-  is vendored. METIS, SCOTCH, and PT-SCOTCH are real implementations.
+- `kahip` and `mgridgen` are real implementations (see above); the
+  `src/dummyThirdParty/{kahipDecomp,MGridGen}` stubs remain as
+  configure-time fallbacks when the vendored dependencies are absent.
 - `foamyHexMeshSurfaceSimplify` remains disabled because the external
   `fastdualoctree_sgp` and OpenGL dependency is unavailable; upstream also
   skips this application when that optional dependency is absent.

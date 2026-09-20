@@ -27,7 +27,8 @@ function(foam_resolve_marker outvar token)
                KAHIP_INC_DIR KAHIP_LIB_DIR METIS_INC_DIR METIS_LIB_DIR
                ZOLTAN_INC_DIR ZOLTAN_LIB_DIR FFTW_INC_DIR FFTW_LIB_DIR
                CGAL_INC_DIR CGAL_LIB_DIR BOOST_INC_DIR BOOST_LIB_DIR PETSC_DIR
-               GMP_INC_DIR GMP_LIB_DIR MPFR_INC_DIR MPFR_LIB_DIR)
+               GMP_INC_DIR GMP_LIB_DIR MPFR_INC_DIR MPFR_LIB_DIR
+               MGRIDGEN_INC_DIR MGRIDGEN_LIB_DIR)
         if(DEFINED ${mp} AND ${mp})
             string(REPLACE "@${mp}@" "${${mp}}" val "${val}")
         endif()
@@ -93,7 +94,7 @@ function(foam_map_lib outvar item)
         return()
     endif()
     # Third party optional libs - only resolve when a matching target exists
-    if(lib MATCHES "^(scotch|ptscotch|ptscotcherrexit|scotcherrexit|metis|kahip|zoltan|parmetis|fftw3|fftw3f|gsl|gslcblas|mgridGen|petsc|hdf5|adios2.*|boost_.*|gmp|mpfr)$")
+    if(lib MATCHES "^(scotch|ptscotch|ptscotcherrexit|scotcherrexit|metis|kahip|zoltan|parmetis|fftw3|fftw3f|gsl|gslcblas|mgridGen|mgrid|petsc|hdf5|adios2.*|boost_.*|gmp|mpfr)$")
         set(tgt "")
         if(TARGET ${lib})
             set(tgt "${lib}")

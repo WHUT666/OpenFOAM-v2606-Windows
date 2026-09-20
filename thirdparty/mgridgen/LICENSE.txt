@@ -1,0 +1,16 @@
+Copyright & License Notice
+---------------------------
+
+Copyright 2001, Regents of the University of Minnesota
+
+MGridGen was written by Irene Moulitsas and George Karypis at the
+University of Minnesota and is distributed as part of the ParMGridGen
+package. The original distribution retains the copyright notice above
+in each source file.
+
+The serial MGridGen sources vendored here are a subset of the
+ParMGridGen 1.0 distribution (MGridGen/Lib + IMlib), with a small
+MSVC compatibility shim (IMlib/msvc_drand48.c) and an internal symbol
+rename (errexit -> mgridgen_errexit) to avoid clashes with OpenFOAM.
+
+Original package URL: http://www.cs.umn.edu/~moulitsa/software.html

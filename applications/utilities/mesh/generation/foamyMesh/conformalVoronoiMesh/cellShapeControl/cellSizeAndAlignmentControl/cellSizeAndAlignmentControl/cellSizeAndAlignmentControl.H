@@ -86,13 +86,12 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("cellSizeAndAlignmentControl");
+    TypeNameApi(conformalVoronoiMesh_API, "cellSizeAndAlignmentControl");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(conformalVoronoiMesh_API,
             autoPtr,
             cellSizeAndAlignmentControl,
             dictionary,

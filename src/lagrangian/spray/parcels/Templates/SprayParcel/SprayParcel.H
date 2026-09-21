@@ -190,7 +190,7 @@ public:
     // Static data members
 
         //- Size in bytes of the fields
-        static Foam_SprayParcel_typeName_API const std::size_t sizeofFields;
+        static const std::size_t sizeofFields;
 
         //- Runtime type information
         TypeNameApi(Foam_SprayParcel_typeName_API, "SprayParcel");

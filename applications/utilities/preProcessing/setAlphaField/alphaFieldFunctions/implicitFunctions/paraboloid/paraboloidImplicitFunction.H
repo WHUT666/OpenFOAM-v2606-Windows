@@ -67,7 +67,7 @@ class paraboloidImplicitFunction
 public:
 
     //- Runtime type information
-    TypeName("paraboloid");
+    TypeNameApi(alphaFieldFunctions_API, "paraboloid");
 
 
     // Constructors

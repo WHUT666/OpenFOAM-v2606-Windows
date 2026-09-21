@@ -190,7 +190,7 @@ class backgroundMeshDecomposition
 public:
 
     //- Runtime type information
-    ClassName("backgroundMeshDecomposition");
+    ClassNameApi(conformalVoronoiMesh_API, "backgroundMeshDecomposition");
 
 
     // Constructors

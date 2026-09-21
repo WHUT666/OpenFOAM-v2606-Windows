@@ -92,7 +92,7 @@ class SchnerrSauer
 public:
 
     //- Runtime type information
-    TypeName("SchnerrSauer");
+    TypeNameApi(phaseChangeTwoPhaseMixtures_API, "SchnerrSauer");
 
 
     // Constructors

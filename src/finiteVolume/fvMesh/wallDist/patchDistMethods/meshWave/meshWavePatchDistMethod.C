@@ -30,6 +30,7 @@ License
 #include "fvMesh.H"
 #include "volFields.H"
 #include "patchWave.H"
+#define Foam_patchDataWave_defines_typeName
 #include "patchDataWave.H"
 #include "wallPointData.H"
 #include "emptyFvPatchFields.H"

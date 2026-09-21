@@ -79,13 +79,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("faceAreaWeightModel");
+    TypeNameApi(conformalVoronoiMesh_API, "faceAreaWeightModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(conformalVoronoiMesh_API,
             autoPtr,
             faceAreaWeightModel,
             dictionary,

@@ -79,7 +79,7 @@ class Merkle
 public:
 
     //- Runtime type information
-    TypeName("Merkle");
+    TypeNameApi(phaseChangeTwoPhaseMixtures_API, "Merkle");
 
 
     // Constructors

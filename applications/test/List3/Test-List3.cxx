@@ -115,9 +115,14 @@ int main(int argc, char *argv[])
 
 
 //            List<List<label>> list(std::move(sll));
-                List<List<label>> list;
+                List<List<label>> list(sll.size());
                 Info<< "move to List" << nl;
-                list = std::move(sll);
+                {
+                    // No LList->List conversion/assignment exists -
+                    // copy the elements instead of std::move(sll)
+                    auto iter = list.begin();
+                    for (const auto& e : sll) { *iter++ = e; }
+                }
 
                 Info<< "sll" << nl;
                 for (const auto& elem : sll)

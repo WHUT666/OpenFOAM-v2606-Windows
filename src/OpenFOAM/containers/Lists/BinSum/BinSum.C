@@ -29,15 +29,15 @@ License
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
-template<class IndexType, class List, class CombineOp>
-Foam::BinSum<IndexType, List, CombineOp>::BinSum
+template<class IndexType, class ListType, class CombineOp>
+Foam::BinSum<IndexType, ListType, CombineOp>::BinSum
 (
     const IndexType min,
     const IndexType max,
     const IndexType delta
 )
 :
-    List(ceil((max-min)/delta), Zero),
+    ListType(ceil((max-min)/delta), Zero),
     min_(min),
     max_(max),
     delta_(delta),
@@ -46,18 +46,18 @@ Foam::BinSum<IndexType, List, CombineOp>::BinSum
 {}
 
 
-template<class IndexType, class List, class CombineOp>
-Foam::BinSum<IndexType, List, CombineOp>::BinSum
+template<class IndexType, class ListType, class CombineOp>
+Foam::BinSum<IndexType, ListType, CombineOp>::BinSum
 (
     const IndexType min,
     const IndexType max,
     const IndexType delta,
     const UList<IndexType>& indexVals,
-    const List& vals,
+    const ListType& vals,
     const CombineOp& cop
 )
 :
-    List(ceil((max-min)/delta), Zero),
+    ListType(ceil((max-min)/delta), Zero),
     min_(min),
     max_(max),
     delta_(delta),
@@ -73,11 +73,11 @@ Foam::BinSum<IndexType, List, CombineOp>::BinSum
 
 // * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * * //
 
-template<class IndexType, class List, class CombineOp>
-void Foam::BinSum<IndexType, List, CombineOp>::add
+template<class IndexType, class ListType, class CombineOp>
+void Foam::BinSum<IndexType, ListType, CombineOp>::add
 (
     const IndexType& indexVal,
-    const typename List::const_reference val,
+    const typename ListType::const_reference val,
     const CombineOp& cop
 )
 {
@@ -97,11 +97,11 @@ void Foam::BinSum<IndexType, List, CombineOp>::add
 }
 
 
-template<class IndexType, class List, class CombineOp>
-void Foam::BinSum<IndexType, List, CombineOp>::add
+template<class IndexType, class ListType, class CombineOp>
+void Foam::BinSum<IndexType, ListType, CombineOp>::add
 (
     const UList<IndexType>& indexVals,
-    const List& vals,
+    const ListType& vals,
     const CombineOp& cop
 )
 {

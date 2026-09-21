@@ -47,6 +47,7 @@ Description
 #include "OFstream.H"
 #include "meshTools.H"
 #include "faceSet.H"
+#define Foam_IOPtrList_defines_typeName
 #include "IOPtrList.H"
 #include "cyclicPolyPatch.H"
 #include "syncTools.H"

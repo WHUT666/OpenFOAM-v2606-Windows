@@ -81,7 +81,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("nonUniformField");
+    TypeNameApi(conformalVoronoiMesh_API, "nonUniformField");
 
 
     // Constructors

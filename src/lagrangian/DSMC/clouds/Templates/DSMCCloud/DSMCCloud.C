@@ -923,7 +923,8 @@ void Foam::DSMCCloud<ParcelType>::evolve()
     // Reset the data collection fields
     resetFields();
 
-    if (debug)
+    // debug found in both Cloud<ParcelType> and DSMCBaseCloud (C2385)
+    if (Cloud<ParcelType>::debug)
     {
         this->dumpParticlePositions();
     }

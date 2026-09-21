@@ -83,7 +83,7 @@ class liquidProperties
 public:
 
     //- Runtime type information
-    TypeName("liquidProperties");
+    TypeNameApi(twoPhaseSurfaceTension_API, "liquidProperties");
 
 
     // Constructors

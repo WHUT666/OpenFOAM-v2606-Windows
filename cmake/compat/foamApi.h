@@ -1109,4 +1109,304 @@
 #  define zoltanRenumber_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
 #endif
 
+#ifdef DPMTurbulenceModels_EXPORTS
+#  define DPMTurbulenceModels_API FOAM_EXPORT__
+#  define DPMTurbulenceModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define DPMTurbulenceModels_TEMPLATE_IMPORT(...)
+#else
+#  define DPMTurbulenceModels_API FOAM_IMPORT__
+#  define DPMTurbulenceModels_TEMPLATE_EXPORT(...)
+#  define DPMTurbulenceModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef PolyhedronReader_EXPORTS
+#  define PolyhedronReader_API FOAM_EXPORT__
+#  define PolyhedronReader_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define PolyhedronReader_TEMPLATE_IMPORT(...)
+#else
+#  define PolyhedronReader_API FOAM_IMPORT__
+#  define PolyhedronReader_TEMPLATE_EXPORT(...)
+#  define PolyhedronReader_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef VoFphaseCompressibleTurbulenceModels_EXPORTS
+#  define VoFphaseCompressibleTurbulenceModels_API FOAM_EXPORT__
+#  define VoFphaseCompressibleTurbulenceModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define VoFphaseCompressibleTurbulenceModels_TEMPLATE_IMPORT(...)
+#else
+#  define VoFphaseCompressibleTurbulenceModels_API FOAM_IMPORT__
+#  define VoFphaseCompressibleTurbulenceModels_TEMPLATE_EXPORT(...)
+#  define VoFphaseCompressibleTurbulenceModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef alphaFieldFunctions_EXPORTS
+#  define alphaFieldFunctions_API FOAM_EXPORT__
+#  define alphaFieldFunctions_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define alphaFieldFunctions_TEMPLATE_IMPORT(...)
+#else
+#  define alphaFieldFunctions_API FOAM_IMPORT__
+#  define alphaFieldFunctions_TEMPLATE_EXPORT(...)
+#  define alphaFieldFunctions_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef compressibleTwoPhaseMixtureTurbulenceModels_EXPORTS
+#  define compressibleTwoPhaseMixtureTurbulenceModels_API FOAM_EXPORT__
+#  define compressibleTwoPhaseMixtureTurbulenceModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define compressibleTwoPhaseMixtureTurbulenceModels_TEMPLATE_IMPORT(...)
+#else
+#  define compressibleTwoPhaseMixtureTurbulenceModels_API FOAM_IMPORT__
+#  define compressibleTwoPhaseMixtureTurbulenceModels_TEMPLATE_EXPORT(...)
+#  define compressibleTwoPhaseMixtureTurbulenceModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef conformalVoronoiMesh_EXPORTS
+#  define conformalVoronoiMesh_API FOAM_EXPORT__
+#  define conformalVoronoiMesh_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define conformalVoronoiMesh_TEMPLATE_IMPORT(...)
+#else
+#  define conformalVoronoiMesh_API FOAM_IMPORT__
+#  define conformalVoronoiMesh_TEMPLATE_EXPORT(...)
+#  define conformalVoronoiMesh_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef cv2DMesh_EXPORTS
+#  define cv2DMesh_API FOAM_EXPORT__
+#  define cv2DMesh_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define cv2DMesh_TEMPLATE_IMPORT(...)
+#else
+#  define cv2DMesh_API FOAM_IMPORT__
+#  define cv2DMesh_TEMPLATE_EXPORT(...)
+#  define cv2DMesh_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef driftFluxRelativeVelocityModels_EXPORTS
+#  define driftFluxRelativeVelocityModels_API FOAM_EXPORT__
+#  define driftFluxRelativeVelocityModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define driftFluxRelativeVelocityModels_TEMPLATE_IMPORT(...)
+#else
+#  define driftFluxRelativeVelocityModels_API FOAM_IMPORT__
+#  define driftFluxRelativeVelocityModels_TEMPLATE_EXPORT(...)
+#  define driftFluxRelativeVelocityModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef driftFluxTransportModels_EXPORTS
+#  define driftFluxTransportModels_API FOAM_EXPORT__
+#  define driftFluxTransportModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define driftFluxTransportModels_TEMPLATE_IMPORT(...)
+#else
+#  define driftFluxTransportModels_API FOAM_IMPORT__
+#  define driftFluxTransportModels_TEMPLATE_EXPORT(...)
+#  define driftFluxTransportModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef extrude2DMesh_EXPORTS
+#  define extrude2DMesh_API FOAM_EXPORT__
+#  define extrude2DMesh_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define extrude2DMesh_TEMPLATE_IMPORT(...)
+#else
+#  define extrude2DMesh_API FOAM_IMPORT__
+#  define extrude2DMesh_TEMPLATE_EXPORT(...)
+#  define extrude2DMesh_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef helpTypes_EXPORTS
+#  define helpTypes_API FOAM_EXPORT__
+#  define helpTypes_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define helpTypes_TEMPLATE_IMPORT(...)
+#else
+#  define helpTypes_API FOAM_IMPORT__
+#  define helpTypes_TEMPLATE_EXPORT(...)
+#  define helpTypes_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef laserDTRM_EXPORTS
+#  define laserDTRM_API FOAM_EXPORT__
+#  define laserDTRM_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define laserDTRM_TEMPLATE_IMPORT(...)
+#else
+#  define laserDTRM_API FOAM_IMPORT__
+#  define laserDTRM_TEMPLATE_EXPORT(...)
+#  define laserDTRM_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef multiphaseInterFoam_EXPORTS
+#  define multiphaseInterFoam_API FOAM_EXPORT__
+#  define multiphaseInterFoam_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define multiphaseInterFoam_TEMPLATE_IMPORT(...)
+#else
+#  define multiphaseInterFoam_API FOAM_IMPORT__
+#  define multiphaseInterFoam_TEMPLATE_EXPORT(...)
+#  define multiphaseInterFoam_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef multiphaseMixtureThermo_EXPORTS
+#  define multiphaseMixtureThermo_API FOAM_EXPORT__
+#  define multiphaseMixtureThermo_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define multiphaseMixtureThermo_TEMPLATE_IMPORT(...)
+#else
+#  define multiphaseMixtureThermo_API FOAM_IMPORT__
+#  define multiphaseMixtureThermo_TEMPLATE_EXPORT(...)
+#  define multiphaseMixtureThermo_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef pdrFields_EXPORTS
+#  define pdrFields_API FOAM_EXPORT__
+#  define pdrFields_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define pdrFields_TEMPLATE_IMPORT(...)
+#else
+#  define pdrFields_API FOAM_IMPORT__
+#  define pdrFields_TEMPLATE_EXPORT(...)
+#  define pdrFields_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef phaseChangeTwoPhaseMixtures_EXPORTS
+#  define phaseChangeTwoPhaseMixtures_API FOAM_EXPORT__
+#  define phaseChangeTwoPhaseMixtures_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define phaseChangeTwoPhaseMixtures_TEMPLATE_IMPORT(...)
+#else
+#  define phaseChangeTwoPhaseMixtures_API FOAM_IMPORT__
+#  define phaseChangeTwoPhaseMixtures_TEMPLATE_EXPORT(...)
+#  define phaseChangeTwoPhaseMixtures_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef phaseTemperatureChangeTwoPhaseMixtures_EXPORTS
+#  define phaseTemperatureChangeTwoPhaseMixtures_API FOAM_EXPORT__
+#  define phaseTemperatureChangeTwoPhaseMixtures_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define phaseTemperatureChangeTwoPhaseMixtures_TEMPLATE_IMPORT(...)
+#else
+#  define phaseTemperatureChangeTwoPhaseMixtures_API FOAM_IMPORT__
+#  define phaseTemperatureChangeTwoPhaseMixtures_TEMPLATE_EXPORT(...)
+#  define phaseTemperatureChangeTwoPhaseMixtures_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef rhoCentralFoam_EXPORTS
+#  define rhoCentralFoam_API FOAM_EXPORT__
+#  define rhoCentralFoam_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define rhoCentralFoam_TEMPLATE_IMPORT(...)
+#else
+#  define rhoCentralFoam_API FOAM_IMPORT__
+#  define rhoCentralFoam_TEMPLATE_EXPORT(...)
+#  define rhoCentralFoam_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef surfaceFeatureExtract_EXPORTS
+#  define surfaceFeatureExtract_API FOAM_EXPORT__
+#  define surfaceFeatureExtract_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define surfaceFeatureExtract_TEMPLATE_IMPORT(...)
+#else
+#  define surfaceFeatureExtract_API FOAM_IMPORT__
+#  define surfaceFeatureExtract_TEMPLATE_EXPORT(...)
+#  define surfaceFeatureExtract_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef tabulatedWallFunctions_EXPORTS
+#  define tabulatedWallFunctions_API FOAM_EXPORT__
+#  define tabulatedWallFunctions_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define tabulatedWallFunctions_TEMPLATE_IMPORT(...)
+#else
+#  define tabulatedWallFunctions_API FOAM_IMPORT__
+#  define tabulatedWallFunctions_TEMPLATE_EXPORT(...)
+#  define tabulatedWallFunctions_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef testFunctionObjects_EXPORTS
+#  define testFunctionObjects_API FOAM_EXPORT__
+#  define testFunctionObjects_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define testFunctionObjects_TEMPLATE_IMPORT(...)
+#else
+#  define testFunctionObjects_API FOAM_IMPORT__
+#  define testFunctionObjects_TEMPLATE_EXPORT(...)
+#  define testFunctionObjects_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef twoPhaseMixtureThermo_EXPORTS
+#  define twoPhaseMixtureThermo_API FOAM_EXPORT__
+#  define twoPhaseMixtureThermo_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define twoPhaseMixtureThermo_TEMPLATE_IMPORT(...)
+#else
+#  define twoPhaseMixtureThermo_API FOAM_IMPORT__
+#  define twoPhaseMixtureThermo_TEMPLATE_EXPORT(...)
+#  define twoPhaseMixtureThermo_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef twoPhaseSurfaceTension_EXPORTS
+#  define twoPhaseSurfaceTension_API FOAM_EXPORT__
+#  define twoPhaseSurfaceTension_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define twoPhaseSurfaceTension_TEMPLATE_IMPORT(...)
+#else
+#  define twoPhaseSurfaceTension_API FOAM_IMPORT__
+#  define twoPhaseSurfaceTension_TEMPLATE_EXPORT(...)
+#  define twoPhaseSurfaceTension_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef viewFactorModels_EXPORTS
+#  define viewFactorModels_API FOAM_EXPORT__
+#  define viewFactorModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define viewFactorModels_TEMPLATE_IMPORT(...)
+#else
+#  define viewFactorModels_API FOAM_IMPORT__
+#  define viewFactorModels_TEMPLATE_EXPORT(...)
+#  define viewFactorModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef molecule_EXPORTS
+#  define molecule_API FOAM_EXPORT__
+#  define molecule_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define molecule_TEMPLATE_IMPORT(...)
+#else
+#  define molecule_API FOAM_IMPORT__
+#  define molecule_TEMPLATE_EXPORT(...)
+#  define molecule_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef potential_EXPORTS
+#  define potential_API FOAM_EXPORT__
+#  define potential_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define potential_TEMPLATE_IMPORT(...)
+#else
+#  define potential_API FOAM_IMPORT__
+#  define potential_TEMPLATE_EXPORT(...)
+#  define potential_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef molecularMeasurements_EXPORTS
+#  define molecularMeasurements_API FOAM_EXPORT__
+#  define molecularMeasurements_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define molecularMeasurements_TEMPLATE_IMPORT(...)
+#else
+#  define molecularMeasurements_API FOAM_IMPORT__
+#  define molecularMeasurements_TEMPLATE_EXPORT(...)
+#  define molecularMeasurements_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef surfaceFilmDerivedFvPatchFields_EXPORTS
+#  define surfaceFilmDerivedFvPatchFields_API FOAM_EXPORT__
+#  define surfaceFilmDerivedFvPatchFields_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define surfaceFilmDerivedFvPatchFields_TEMPLATE_IMPORT(...)
+#else
+#  define surfaceFilmDerivedFvPatchFields_API FOAM_IMPORT__
+#  define surfaceFilmDerivedFvPatchFields_TEMPLATE_EXPORT(...)
+#  define surfaceFilmDerivedFvPatchFields_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef TestDummy_OpenFOAM_EXPORTS
+#  define TestDummy_OpenFOAM_API FOAM_EXPORT__
+#  define TestDummy_OpenFOAM_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define TestDummy_OpenFOAM_TEMPLATE_IMPORT(...)
+#else
+#  define TestDummy_OpenFOAM_API FOAM_IMPORT__
+#  define TestDummy_OpenFOAM_TEMPLATE_EXPORT(...)
+#  define TestDummy_OpenFOAM_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef TestDummyMpi_EXPORTS
+#  define TestDummyMpi_API FOAM_EXPORT__
+#  define TestDummyMpi_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define TestDummyMpi_TEMPLATE_IMPORT(...)
+#else
+#  define TestDummyMpi_API FOAM_IMPORT__
+#  define TestDummyMpi_TEMPLATE_EXPORT(...)
+#  define TestDummyMpi_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
 #endif // FOAM_API_H

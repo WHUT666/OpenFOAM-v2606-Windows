@@ -75,7 +75,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("searchablePlateFeatures");
+    TypeNameApi(conformalVoronoiMesh_API, "searchablePlateFeatures");
 
 
     // Static data members

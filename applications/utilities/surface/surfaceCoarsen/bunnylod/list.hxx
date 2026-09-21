@@ -12,6 +12,9 @@
 #include <cassert>
 #include <cstdio>
 
+namespace bunnylod
+{
+
 template<class Type> class List {
         public:
                 List(int s=0);
@@ -125,5 +128,8 @@ void List<Type>::Remove(Type t){
                 assert(element[i] != t);
         }
 }
+
+
+} // End namespace bunnylod
 
 #endif

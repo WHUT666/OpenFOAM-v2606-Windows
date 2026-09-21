@@ -71,7 +71,7 @@ class planeImplicitFunction
 public:
 
     //- Runtime type information
-    TypeName("plane");
+    TypeNameApi(alphaFieldFunctions_API, "plane");
 
 
     // Constructors

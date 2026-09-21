@@ -82,7 +82,7 @@ class smoluchowskiJumpTFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("smoluchowskiJumpT");
+    TypeNameApi(rhoCentralFoam_API, "smoluchowskiJumpT");
 
 
     // Constructors

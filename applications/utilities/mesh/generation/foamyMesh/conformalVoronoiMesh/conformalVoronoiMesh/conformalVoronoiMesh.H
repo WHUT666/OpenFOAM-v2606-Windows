@@ -860,7 +860,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("conformalVoronoiMesh");
+    ClassNameApi(conformalVoronoiMesh_API, "conformalVoronoiMesh");
 
 
     // Constructors

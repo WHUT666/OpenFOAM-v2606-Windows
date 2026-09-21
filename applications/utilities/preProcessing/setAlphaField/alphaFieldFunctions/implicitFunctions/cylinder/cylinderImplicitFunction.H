@@ -79,7 +79,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("cylinder");
+    TypeNameApi(alphaFieldFunctions_API, "cylinder");
 
 
     // Constructors

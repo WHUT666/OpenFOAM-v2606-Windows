@@ -65,12 +65,11 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("reflectionModel");
+    TypeNameApi(laserDTRM_API, "reflectionModel");
 
     // Declare runtime constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(laserDTRM_API,
             autoPtr,
             reflectionModel,
             dictionary,

@@ -99,7 +99,7 @@ class fixedRhoFvPatchScalarField
 public:
 
     //- Runtime type information
-    TypeName("fixedRho");
+    TypeNameApi(rhoCentralFoam_API, "fixedRho");
 
 
     // Constructors

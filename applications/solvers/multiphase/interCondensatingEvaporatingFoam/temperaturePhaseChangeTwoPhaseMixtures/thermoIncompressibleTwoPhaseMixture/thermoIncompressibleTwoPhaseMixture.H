@@ -73,7 +73,7 @@ protected:
 
 public:
 
-    TypeName("thermoIncompressibleTwoPhaseMixture");
+    TypeNameApi(phaseTemperatureChangeTwoPhaseMixtures_API, "thermoIncompressibleTwoPhaseMixture");
 
 
     // Constructors

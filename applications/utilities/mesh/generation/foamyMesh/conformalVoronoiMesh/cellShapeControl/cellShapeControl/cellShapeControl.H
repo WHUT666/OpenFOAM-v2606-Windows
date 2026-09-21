@@ -93,7 +93,7 @@ class cellShapeControl
 public:
 
     //- Runtime type information
-    ClassName("cellShapeControl");
+    ClassNameApi(conformalVoronoiMesh_API, "cellShapeControl");
 
 
     // Constructors

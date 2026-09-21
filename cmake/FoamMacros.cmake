@@ -118,6 +118,24 @@ function(foam_map_lib outvar item)
 endfunction()
 
 
+# Compute the lnInclude output dir for a source dir. Dirs outside
+# FOAM_SRC_DIR (applications/...) get a flattened _apps/ name: their
+# Make dirs can nest inside another target's dir, and a nested
+# lnInclude would be wiped when the parent's lnInclude regenerates
+# (make_lninclude does rmtree on its outdir first).
+function(foam_lndir_for isrc outvar)
+    file(RELATIVE_PATH rel "${FOAM_SRC_DIR}" "${isrc}")
+    if(rel MATCHES "^\\.\\./")
+        string(REGEX REPLACE "\\.\\./" "" r "${rel}")
+        string(REPLACE "/" "_" r "${r}")
+        set(r "_apps/${r}")
+    else()
+        set(r "${rel}")
+    endif()
+    set(${outvar} "${FOAM_LNINCLUDE_ROOT}/${r}" PARENT_SCOPE)
+endfunction()
+
+
 # Run wmake2cmake over <dir> and load the generated fragment.
 # Sets FOAM_* vars in parent scope.
 function(foam_parse_dir dir)
@@ -129,7 +147,7 @@ function(foam_parse_dir dir)
 
     set(lninc "")
     string(REGEX MATCH "^(.*)/Make$" _m "${abs}")
-    set(lndir "${FOAM_LNINCLUDE_ROOT}/${rel}")
+    foam_lndir_for("${abs}" lndir)
     set(lninc "${lndir}")
 
     execute_process(
@@ -153,6 +171,11 @@ function(foam_parse_dir dir)
         message(FATAL_ERROR "wmake2cmake produced no output for ${dir}")
     endif()
     include("${gen}")
+    # Track every known OpenFOAM library name (even ones that will be
+    # skipped for missing SDK deps) so dependents can be skipped too.
+    if(FOAM_TARGET_TYPE STREQUAL "LIB")
+        set_property(GLOBAL APPEND PROPERTY FOAM_KNOWN_LIBS "${FOAM_TARGET_NAME}")
+    endif()
     # Export vars to caller
     foreach(v FOAM_SOURCES FOAM_FLEX_SOURCES FOAM_LEMON_SOURCES FOAM_TARGET_NAME
               FOAM_TARGET_TYPE FOAM_TARGET_OUTDIR FOAM_TARGET_DIR
@@ -175,8 +198,7 @@ function(foam_resolve_includes outvar)
         # Map <src>/X/lnInclude -> generated lnInclude root for <src>/X
         if(i MATCHES "/lnInclude$")
             string(REGEX REPLACE "/lnInclude$" "" isrc "${i}")
-            file(RELATIVE_PATH r "${FOAM_SRC_DIR}" "${isrc}")
-            set(i "${FOAM_LNINCLUDE_ROOT}/${r}")
+            foam_lndir_for("${isrc}" i)
         endif()
         list(APPEND res "${i}")
     endforeach()
@@ -187,12 +209,18 @@ endfunction()
 # Common per-target setup: PROJECT_INC equivalents + gen dir
 function(foam_apply_common name)
     target_include_directories(${name} PRIVATE
+        "${FOAM_LNINCLUDE_ROOT}"                    # lib-qualified paths (finiteVolume/CorrectPhi.H)
         "${FOAM_LNINCLUDE_ROOT}/OpenFOAM"
         "${FOAM_LNINCLUDE_ROOT}/OSspecific/MSwindows"
         "${FOAM_GEN_DIR}"
         "${FOAM_SRC_DIR}/OpenFOAM/include"          # OSspecific.H etc.
         "${FOAM_SRC_DIR}/OSspecific/MSwindows"      # MSwindows.H etc.
     )
+    # FlexLexer.h: some installed headers (chemkinReader.H) include it,
+    # so every consumer needs the dir - not just targets with .L sources
+    if(FOAM_FLEX_INCLUDE_DIR)
+        target_include_directories(${name} PRIVATE "${FOAM_FLEX_INCLUDE_DIR}")
+    endif()
 endfunction()
 
 
@@ -321,6 +349,26 @@ function(foam_add_library dir)
         return()
     endif()
 
+    # -l<name> naming a known OpenFOAM lib that was not built (missing
+    # SDK dep like CCMIO) -> this target can never link, skip it.
+    get_property(_knownlibs GLOBAL PROPERTY FOAM_KNOWN_LIBS)
+    foreach(l ${FOAM_LIBS})
+        foam_resolve_marker(_lm "${l}")
+        if(_lm MATCHES "^@")
+            message(STATUS "  [skip] ${dir} - unavailable dep ${l}")
+            return()
+        endif()
+        if(_lm MATCHES "^-l(.*)$")
+            set(_ln "${CMAKE_MATCH_1}")
+        else()
+            set(_ln "${_lm}")
+        endif()
+        if(_ln IN_LIST _knownlibs AND NOT TARGET ${_ln})
+            message(STATUS "  [skip] ${dir} - unavailable lib ${_ln}")
+            return()
+        endif()
+    endforeach()
+
     # Source list: handle .Cver (configure) and .L (flex)
     set(srcs "")
     foreach(s ${FOAM_SOURCES})
@@ -441,6 +489,27 @@ function(foam_add_executable dir)
             return()
         endif()
     endforeach()
+
+    # -l<name> naming a known OpenFOAM lib that was not built (missing
+    # SDK dep like CCMIO) -> this target can never link, skip it.
+    get_property(_knownlibs GLOBAL PROPERTY FOAM_KNOWN_LIBS)
+    foreach(l ${FOAM_LIBS})
+        foam_resolve_marker(_lm "${l}")
+        if(_lm MATCHES "^@")
+            message(STATUS "  [skip] ${dir} - unavailable dep ${l}")
+            return()
+        endif()
+        if(_lm MATCHES "^-l(.*)$")
+            set(_ln "${CMAKE_MATCH_1}")
+        else()
+            set(_ln "${_lm}")
+        endif()
+        if(_ln IN_LIST _knownlibs AND NOT TARGET ${_ln})
+            message(STATUS "  [skip] ${dir} - unavailable lib ${_ln}")
+            return()
+        endif()
+    endforeach()
+
     if(NOT FOAM_SOURCES)
         message(STATUS "  [skip] ${dir} - no sources")
         return()

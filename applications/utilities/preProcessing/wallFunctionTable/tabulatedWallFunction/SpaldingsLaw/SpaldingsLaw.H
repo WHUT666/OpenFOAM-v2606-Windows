@@ -101,7 +101,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("SpaldingsLaw");
+    TypeNameApi(tabulatedWallFunctions_API, "SpaldingsLaw");
 
 
     // Constructors

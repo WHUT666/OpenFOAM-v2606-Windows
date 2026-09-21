@@ -68,7 +68,7 @@ class PDRmeshArrays
 public:
 
     //- Relative tolerance when matching grid points. Default = 0.02
-    static scalar gridPointRelTol;
+    static pdrFields_API scalar gridPointRelTol;
 
     //- The cell i-j-k addressing range
     labelVector cellDims;

@@ -85,7 +85,7 @@ class Kunz
 public:
 
     //- Runtime type information
-    TypeName("Kunz");
+    TypeNameApi(phaseChangeTwoPhaseMixtures_API, "Kunz");
 
 
     // Constructors

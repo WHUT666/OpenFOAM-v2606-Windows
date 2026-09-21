@@ -86,13 +86,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("mixtureViscosityModel");
+    TypeNameApi(driftFluxTransportModels_API, "mixtureViscosityModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(driftFluxTransportModels_API,
             autoPtr,
             mixtureViscosityModel,
             dictionary,

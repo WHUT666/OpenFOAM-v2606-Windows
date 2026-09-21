@@ -57,6 +57,16 @@ SourceFiles
 #define Foam_fvPatchField_copyConstruct(TypeName) \
     TypeName(const TypeName& pfld) : TypeName(pfld, pfld.internalField()) {}
 
+//- Define Foam_fvPatchField_defines_typeName in .C files that
+//  define the template statics of fvPatchField (eg via
+//  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
+//  so the declarations are left undecorated there.
+#if defined(Foam_fvPatchField_defines_typeName)
+#  define Foam_fvPatchField_typeName_API
+#else
+#  define Foam_fvPatchField_typeName_API finiteVolume_API
+#endif
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 namespace Foam
@@ -351,7 +361,7 @@ public:
 
         declareRunTimeSelectionTableApi
         (
-            finiteVolume_API,
+            Foam_fvPatchField_typeName_API,
             tmp,
             fvPatchField,
             patch,
@@ -364,7 +374,7 @@ public:
 
         declareRunTimeSelectionTableApi
         (
-            finiteVolume_API,
+            Foam_fvPatchField_typeName_API,
             tmp,
             fvPatchField,
             patchMapper,
@@ -379,7 +389,7 @@ public:
 
         declareRunTimeSelectionTableApi
         (
-            finiteVolume_API,
+            Foam_fvPatchField_typeName_API,
             tmp,
             fvPatchField,
             dictionary,

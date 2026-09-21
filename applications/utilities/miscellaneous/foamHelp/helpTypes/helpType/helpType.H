@@ -82,11 +82,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("helpType");
+    TypeNameApi(helpTypes_API, "helpType");
 
     // Declare runtime constructor selection table
-    declareRunTimeSelectionTable
+    declareRunTimeSelectionTableApi
     (
+        helpTypes_API,
         autoPtr,
         helpType,
         dictionary,

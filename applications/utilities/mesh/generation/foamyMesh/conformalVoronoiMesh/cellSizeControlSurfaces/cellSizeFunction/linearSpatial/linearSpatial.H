@@ -80,7 +80,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("linearSpatial");
+    TypeNameApi(conformalVoronoiMesh_API, "linearSpatial");
 
     // Constructors
 

@@ -47,7 +47,7 @@ Description
 #include "pimpleControl.H"
 #include "pressureControl.H"
 
-#include <CorrectPhi.H>
+#include "finiteVolume/CorrectPhi.H"
 #include "cellCellStencilObject.H"
 #include "localMin.H"
 #include "oversetAdjustPhi.H"

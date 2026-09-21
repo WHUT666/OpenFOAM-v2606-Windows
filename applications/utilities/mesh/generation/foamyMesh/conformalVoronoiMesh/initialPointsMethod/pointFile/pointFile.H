@@ -78,7 +78,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("pointFile");
+    TypeNameApi(conformalVoronoiMesh_API, "pointFile");
 
     // Constructors
 

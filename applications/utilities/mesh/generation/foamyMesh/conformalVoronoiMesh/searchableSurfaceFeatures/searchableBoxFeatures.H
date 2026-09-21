@@ -71,7 +71,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("searchableBoxFeatures");
+    TypeNameApi(conformalVoronoiMesh_API, "searchableBoxFeatures");
 
 
     // Constructors

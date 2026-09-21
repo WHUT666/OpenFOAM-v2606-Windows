@@ -70,7 +70,7 @@ public:
     };
 
     //- Runtime type information
-    TypeName("cellSizeFunction");
+    TypeNameApi(conformalVoronoiMesh_API, "cellSizeFunction");
 
 
 protected:
@@ -121,8 +121,7 @@ public:
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(conformalVoronoiMesh_API,
             autoPtr,
             cellSizeFunction,
             dictionary,

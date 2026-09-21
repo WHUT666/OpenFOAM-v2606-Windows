@@ -219,7 +219,7 @@ int main(int argc, char *argv[])
             list1,
             [](const auto& t2) -> indexedLabel
             {
-                return { t2.first(), t2.second() };
+                return { t2.first(), label(t2.second()) };
             }
         );
 
@@ -243,7 +243,7 @@ int main(int argc, char *argv[])
             list1,
             [](const auto& t2) -> indexedLabel
             {
-                return { t2.first(), t2.second() };
+                return { t2.first(), label(t2.second()) };
             }
         );
 

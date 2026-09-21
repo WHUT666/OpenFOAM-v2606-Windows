@@ -96,7 +96,7 @@ private:
 public:
 
     //- Runtime type information
-    ClassName("cellShapeControlMesh");
+    ClassNameApi(conformalVoronoiMesh_API, "cellShapeControlMesh");
 
     //- Return the mesh sub-directory name (usually "cellShapeControlMesh")
     static word meshSubDir;

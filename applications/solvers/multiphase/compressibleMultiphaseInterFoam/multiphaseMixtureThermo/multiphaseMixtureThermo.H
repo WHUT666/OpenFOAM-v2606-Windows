@@ -170,7 +170,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("multiphaseMixtureThermo");
+    TypeNameApi(multiphaseMixtureThermo_API, "multiphaseMixtureThermo");
 
 
     // Constructors

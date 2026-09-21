@@ -45,7 +45,7 @@ Description
 #include "rhoThermo.H"
 #include "turbulentFluidThermoModel.H"
 #include "radiationModel.H"
-#include "CorrectPhi.H"
+#include "finiteVolume/CorrectPhi.H"
 #include "fvOptions.H"
 #include "pimpleControl.H"
 #include "pressureControl.H"

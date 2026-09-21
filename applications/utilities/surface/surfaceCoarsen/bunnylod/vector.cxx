@@ -4,6 +4,9 @@
 
 #include "vector.hxx"
 
+namespace bunnylod
+{
+
 float  sqr(float a) {return a*a;}
 
 // vector (floating point) implementation
@@ -115,3 +118,5 @@ Quaternion slerp(Quaternion a,Quaternion b,float interp){
             a*float(sin(theta-interp*theta)/sin(theta))
           + b*float(sin(interp*theta)/sin(theta));
 }
+
+} // End namespace bunnylod

@@ -75,7 +75,7 @@ class fileControl
 public:
 
     //- Runtime type information
-    TypeName("fileControl");
+    TypeNameApi(conformalVoronoiMesh_API, "fileControl");
 
 
     // Constructors

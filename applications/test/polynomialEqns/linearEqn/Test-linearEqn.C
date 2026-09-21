@@ -140,15 +140,15 @@ scalar randomScalar(const scalar min, const scalar max)
 {
     static_assert
     (
-        sizeof(long) == sizeof(scalar),
-        "Scalar and long are not the same size"
+        sizeof(long long) == sizeof(scalar),
+        "Scalar and long long are not the same size"
     );
     static std::default_random_engine generator(std::time(0));
-    static std::uniform_int_distribution<long>
+    static std::uniform_int_distribution<long long>
         distribution
         (
-            std::numeric_limits<long>::min(),
-            std::numeric_limits<long>::max()
+            std::numeric_limits<long long>::min(),
+            std::numeric_limits<long long>::max()
         );
 
     scalar x = 0;

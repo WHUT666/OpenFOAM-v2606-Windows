@@ -98,13 +98,12 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("initialPointsMethod");
+    TypeNameApi(conformalVoronoiMesh_API, "initialPointsMethod");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(conformalVoronoiMesh_API,
             autoPtr,
             initialPointsMethod,
             dictionary,

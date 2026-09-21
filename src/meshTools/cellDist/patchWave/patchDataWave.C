@@ -26,6 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_patchDataWave_defines_typeName
 #include "patchDataWave.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

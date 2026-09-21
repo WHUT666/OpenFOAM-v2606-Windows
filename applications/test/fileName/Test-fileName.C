@@ -39,7 +39,9 @@ Description
 #include "IOobject.H"
 #include "IOstreams.H"
 #include "OSspecific.H"
+#ifndef _WIN32
 #include "POSIX.H"
+#endif
 #include "Switch.H"
 #include "etcFiles.H"
 #include "Pair.H"
@@ -669,8 +671,10 @@ int main(int argc, char *argv[])
             touchFileContent(file);
         }
 
+#ifndef _WIN32
         const int oldDebug = POSIX::debug;
         POSIX::debug = 1;
+#endif
 
 
         // Create link and test it
@@ -735,7 +739,9 @@ int main(int argc, char *argv[])
             Foam::rmDir(lnB);
         }
 
+#ifndef _WIN32
         POSIX::debug = oldDebug;
+#endif
 
         // Verify that rmDir works with bad names too
         Foam::rmDir(dirA);

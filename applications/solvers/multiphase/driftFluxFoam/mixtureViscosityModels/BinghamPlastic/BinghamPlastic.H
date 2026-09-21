@@ -76,7 +76,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("BinghamPlastic");
+    TypeNameApi(driftFluxTransportModels_API, "BinghamPlastic");
 
 
     // Constructors

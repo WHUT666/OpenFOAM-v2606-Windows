@@ -61,7 +61,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("uniform");
+    TypeNameApi(conformalVoronoiMesh_API, "uniform");
 
     // Constructors
 

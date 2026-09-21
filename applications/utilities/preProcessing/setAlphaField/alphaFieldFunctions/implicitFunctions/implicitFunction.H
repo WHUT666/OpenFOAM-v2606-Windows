@@ -59,11 +59,10 @@ class implicitFunction
 public:
 
     //- Runtime type information
-    TypeName("implicitFunction");
+    TypeNameApi(alphaFieldFunctions_API, "implicitFunction");
 
     //- Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi(alphaFieldFunctions_API,
         autoPtr,
         implicitFunction,
         dict,

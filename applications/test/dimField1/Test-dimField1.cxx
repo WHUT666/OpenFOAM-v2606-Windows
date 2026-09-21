@@ -31,12 +31,14 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
-#define Foam_GeometricField_defines_typeName
+// #define TEST_UINT8_FIELD
+
+#ifdef TEST_UINT8_FIELD
 #define Foam_DimensionedField_defines_typeName
+#endif
+
 #include "fvCFD.H"
 #include "GeometricFields.H"
-
-// #undef TEST_UINT8_FIELD
 
 #ifdef TEST_UINT8_FIELD
 namespace Foam

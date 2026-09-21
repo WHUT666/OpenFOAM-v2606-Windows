@@ -41,6 +41,7 @@ SourceFiles
 #ifndef testing_dummyLib_H
 #define testing_dummyLib_H
 
+#include "foamApi.h"
 #include <string>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -54,7 +55,7 @@ namespace Detail
                           Class dummyLib Declaration
 \*---------------------------------------------------------------------------*/
 
-struct dummyLib
+struct TestDummy_OpenFOAM_API dummyLib
 {
     //- Compile-time value of WM_ARCH
     static const std::string arch;

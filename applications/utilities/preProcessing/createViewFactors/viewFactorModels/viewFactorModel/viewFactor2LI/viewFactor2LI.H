@@ -108,7 +108,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("viewFactor2LI");
+    TypeNameApi(viewFactorModels_API, "viewFactor2LI");
 
     //- Constructor
     viewFactor2LI(const fvMesh& mesh, const dictionary& dict);

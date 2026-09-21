@@ -83,7 +83,7 @@ class cellSizeAndAlignmentControls
 public:
 
         //- Runtime type information
-        ClassName("cellSizeAndAlignmentControls");
+        ClassNameApi(conformalVoronoiMesh_API, "cellSizeAndAlignmentControls");
 
 
     // Constructors

@@ -91,7 +91,7 @@ inline T* my_allocate(IntType n)
         else
         #endif
         {
-            return new (default_alignment()) T[n];
+            return new (::operator new[](sizeof(T)*n, default_alignment())) T[n];
         }
     }
     else

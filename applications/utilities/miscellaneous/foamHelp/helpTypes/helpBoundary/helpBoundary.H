@@ -90,7 +90,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("helpBoundary");
+    TypeNameApi(helpTypes_API, "helpBoundary");
 
     //- Constructor
     helpBoundary();

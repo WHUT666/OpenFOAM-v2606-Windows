@@ -27,6 +27,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "wallDistData.H"
+#define Foam_patchDataWave_defines_typeName
 #include "patchDataWave.H"
 #include "wallPolyPatch.H"
 #include "emptyFvPatchFields.H"

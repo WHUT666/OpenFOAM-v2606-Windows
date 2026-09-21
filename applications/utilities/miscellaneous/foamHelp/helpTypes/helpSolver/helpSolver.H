@@ -67,7 +67,7 @@ class helpSolver
 public:
 
     //- Runtime type information
-    TypeName("helpSolver");
+    TypeNameApi(helpTypes_API, "helpSolver");
 
     //- Constructor
     helpSolver();

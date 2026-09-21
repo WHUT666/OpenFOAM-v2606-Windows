@@ -146,7 +146,7 @@ public:
     // Static Data Members
 
         //- Size in bytes of the fields
-        static fieldFunctionObjects_API const std::size_t sizeofFields_;
+        static const std::size_t sizeofFields_;
 
 
     // Constructors

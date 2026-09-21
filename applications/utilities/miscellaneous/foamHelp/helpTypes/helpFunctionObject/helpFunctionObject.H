@@ -68,7 +68,7 @@ class helpFunctionObject
 public:
 
     //- Runtime type information
-    TypeName("helpFunctionObject");
+    TypeNameApi(helpTypes_API, "helpFunctionObject");
 
     //- Constructor
     helpFunctionObject();

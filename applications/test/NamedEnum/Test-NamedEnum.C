@@ -30,6 +30,7 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_NamedEnum_defines_typeName
 #include "NamedEnum.H"
 #include "FlatOutput.H"
 

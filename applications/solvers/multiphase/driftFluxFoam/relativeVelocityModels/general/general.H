@@ -72,7 +72,7 @@ class general
 public:
 
     //- Runtime type information
-    TypeName("general");
+    TypeNameApi(driftFluxRelativeVelocityModels_API, "general");
 
 
     // Constructors

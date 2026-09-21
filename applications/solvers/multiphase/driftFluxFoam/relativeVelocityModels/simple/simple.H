@@ -69,7 +69,7 @@ class simple
 public:
 
     //- Runtime type information
-    TypeName("simple");
+    TypeNameApi(driftFluxRelativeVelocityModels_API, "simple");
 
 
     // Constructors

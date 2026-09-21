@@ -71,7 +71,7 @@ class twoPhaseMixtureThermo
 public:
 
     //- Runtime type information
-    TypeName("twoPhaseMixtureThermo");
+    TypeNameApi(twoPhaseMixtureThermo_API, "twoPhaseMixtureThermo");
 
 
     // Constructors

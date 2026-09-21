@@ -85,7 +85,7 @@ Ostream& printView(Ostream& os, const char* first, const char* last)
 
 Ostream& printView(Ostream& os, std::string_view s)
 {
-    return printView(os, s.begin(), s.end());
+    return printView(os, s.data(), s.data() + s.size());
 }
 
 

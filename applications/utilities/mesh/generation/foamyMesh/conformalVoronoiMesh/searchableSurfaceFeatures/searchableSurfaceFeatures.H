@@ -72,13 +72,12 @@ class searchableSurfaceFeatures
 public:
 
     //- Runtime type information
-    TypeName("searchableSurfaceFeatures");
+    TypeNameApi(conformalVoronoiMesh_API, "searchableSurfaceFeatures");
 
     // Declare run-time constructor selection table
 
         // For the dictionary constructor
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(conformalVoronoiMesh_API,
             autoPtr,
             searchableSurfaceFeatures,
             dict,

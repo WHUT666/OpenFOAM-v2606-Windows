@@ -81,7 +81,7 @@ class ReactingHeterogeneousParcel
 public:
 
     //- Size in bytes of the fields
-    static Foam_ReactingHeterogeneousParcel_typeName_API const std::size_t sizeofFields;
+    static const std::size_t sizeofFields;
 
     //- Class to hold reacting particle constant properties
     class constantProperties

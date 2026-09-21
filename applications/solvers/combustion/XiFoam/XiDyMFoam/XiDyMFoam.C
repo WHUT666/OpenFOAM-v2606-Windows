@@ -63,7 +63,7 @@ Description
 #include "ignition.H"
 #include "Switch.H"
 #include "pimpleControl.H"
-#include <CorrectPhi.H>
+#include "finiteVolume/CorrectPhi.H"
 #include "fvOptions.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

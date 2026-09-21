@@ -49,7 +49,7 @@ Description
 #include "pimpleControl.H"
 #include "fvOptions.H"
 #include "radiationModel.H"
-#include "CorrectPhi.H"
+#include "finiteVolume/CorrectPhi.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

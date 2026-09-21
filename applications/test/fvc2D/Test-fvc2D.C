@@ -33,6 +33,7 @@ Description
 
 #define Foam_GeometricField_defines_typeName
 #define Foam_DimensionedField_defines_typeName
+#define Foam_fvPatchField_defines_typeName
 #include "fvCFD.H"
 #include "vector2D.H"
 

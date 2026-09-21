@@ -52,12 +52,12 @@ namespace Foam
 template
 <
     class IndexType,
-    class List,
-    class CombineOp = plusEqOp<typename List::value_type>
+    class ListType,
+    class CombineOp = plusEqOp<typename ListType::value_type>
 >
 class BinSum
 :
-    public List
+    public ListType
 {
     // Private data
 
@@ -69,10 +69,10 @@ class BinSum
 
 
         //- Sum < lowest bin
-        typename List::value_type lowSum_;
+        typename ListType::value_type lowSum_;
 
         //- Sum of >= highest bin
-        typename List::value_type highSum_;
+        typename ListType::value_type highSum_;
 
 public:
 
@@ -93,8 +93,8 @@ public:
             const IndexType max,
             const IndexType delta,
             const UList<IndexType>& indexVals,
-            const List& vals,
-            const CombineOp& cop = plusEqOp<typename List::value_type>()
+            const ListType& vals,
+            const CombineOp& cop = plusEqOp<typename ListType::value_type>()
         );
 
 
@@ -121,15 +121,15 @@ public:
             void add
             (
                 const IndexType& indexVal,
-                const typename List::const_reference val,
-                const CombineOp& cop = plusEqOp<typename List::value_type>()
+                const typename ListType::const_reference val,
+                const CombineOp& cop = plusEqOp<typename ListType::value_type>()
             );
 
             void add
             (
                 const UList<IndexType>& indexVals,
-                const List& vals,
-                const CombineOp& cop = plusEqOp<typename List::value_type>()
+                const ListType& vals,
+                const CombineOp& cop = plusEqOp<typename ListType::value_type>()
             );
 };
 

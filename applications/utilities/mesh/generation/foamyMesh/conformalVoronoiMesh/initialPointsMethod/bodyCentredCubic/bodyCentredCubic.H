@@ -71,7 +71,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("bodyCentredCubic");
+    TypeNameApi(conformalVoronoiMesh_API, "bodyCentredCubic");
 
     // Constructors
 

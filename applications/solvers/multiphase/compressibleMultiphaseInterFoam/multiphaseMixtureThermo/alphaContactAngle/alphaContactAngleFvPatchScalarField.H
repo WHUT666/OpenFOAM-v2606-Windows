@@ -137,7 +137,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("alphaContactAngle");
+    TypeNameApi(multiphaseMixtureThermo_API, "alphaContactAngle");
 
 
     // Constructors

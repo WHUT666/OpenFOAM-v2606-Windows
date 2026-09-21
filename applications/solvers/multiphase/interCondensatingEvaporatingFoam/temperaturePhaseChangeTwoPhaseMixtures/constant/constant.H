@@ -67,7 +67,7 @@ class constant
 public:
 
     //- Runtime type information
-    TypeName("constant");
+    TypeNameApi(phaseTemperatureChangeTwoPhaseMixtures_API, "constant");
 
 
     // Constructors

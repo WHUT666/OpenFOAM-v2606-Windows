@@ -67,7 +67,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("piecewiseLinearRamp");
+    TypeNameApi(conformalVoronoiMesh_API, "piecewiseLinearRamp");
 
     // Constructors
 

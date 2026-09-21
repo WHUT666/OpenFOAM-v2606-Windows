@@ -133,7 +133,7 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("general");
+    TypeNameApi(tabulatedWallFunctions_API, "general");
 
 
     // Constructors

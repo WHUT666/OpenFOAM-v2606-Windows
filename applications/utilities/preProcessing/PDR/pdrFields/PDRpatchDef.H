@@ -66,7 +66,7 @@ public:
     };
 
     //- Names for predefined types
-    static const Enum<predefined> names;
+    static pdrFields_API const Enum<predefined> names;
 
 
     // Data Members

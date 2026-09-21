@@ -29,13 +29,15 @@ Application
 
 \*---------------------------------------------------------------------------*/
 
+// #define TEST_UINT8_FIELD
+
+#ifdef TEST_UINT8_FIELD
 #define Foam_GeometricField_defines_typeName
-#define Foam_DimensionedField_defines_typeName
+#endif
+
 #include "fvCFD.H"
 #include "GeometricFields.H"
 #include "transformGeometricField.H"
-
-// #undef TEST_UINT8_FIELD
 
 #ifdef TEST_UINT8_FIELD
 namespace Foam
@@ -45,6 +47,16 @@ namespace Foam
     typedef GeometricField<uint8_t, fvPatchField, volMesh> volUint8Field;
 
     defineTemplateTypeNameAndDebug(volUint8Field, 0);
+
+    // With Foam_GeometricField_defines_typeName this TU owns the statics of
+    // every GeometricField spec it references (MSVC cannot import
+    // individual specialisations), so emit the standard ones locally
+    defineTemplateTypeNameAndDebug(volScalarField, 0);
+    defineTemplateTypeNameAndDebug(volVectorField, 0);
+    defineTemplateTypeNameAndDebug(volTensorField, 0);
+    defineTemplateTypeNameAndDebug(volSymmTensorField, 0);
+    defineTemplateTypeNameAndDebug(surfaceScalarField, 0);
+    defineTemplateTypeNameAndDebug(surfaceSymmTensorField, 0);
 
 } // End namespace Foam
 #endif

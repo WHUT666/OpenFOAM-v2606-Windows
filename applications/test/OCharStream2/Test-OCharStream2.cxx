@@ -88,7 +88,7 @@ Ostream& printView(Ostream& os, const char* first, const char* last)
 
 Ostream& printView(Ostream& os, std::string_view s)
 {
-    return printView(os, s.begin(), s.end());
+    return printView(os, s.data(), s.data() + s.size());
 }
 
 
@@ -112,7 +112,7 @@ Ostream& toString(Ostream& os, const UList<char>& list)
 
 Ostream& toString(Ostream& os, std::string_view s)
 {
-    return printString(os, s.begin(), s.end());
+    return printString(os, s.data(), s.data() + s.size());
 }
 
 

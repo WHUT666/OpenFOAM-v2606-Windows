@@ -81,13 +81,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("relaxationModel");
+    TypeNameApi(conformalVoronoiMesh_API, "relaxationModel");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(conformalVoronoiMesh_API,
             autoPtr,
             relaxationModel,
             dictionary,

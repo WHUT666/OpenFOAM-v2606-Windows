@@ -87,13 +87,12 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("surfaceCellSizeFunction");
+    TypeNameApi(conformalVoronoiMesh_API, "surfaceCellSizeFunction");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(conformalVoronoiMesh_API,
             autoPtr,
             surfaceCellSizeFunction,
             dictionary,

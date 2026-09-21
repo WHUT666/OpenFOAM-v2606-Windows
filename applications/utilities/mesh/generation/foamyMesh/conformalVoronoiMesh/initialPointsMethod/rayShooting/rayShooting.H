@@ -76,7 +76,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("rayShooting");
+    TypeNameApi(conformalVoronoiMesh_API, "rayShooting");
 
     // Constructors
 

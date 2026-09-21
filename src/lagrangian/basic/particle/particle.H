@@ -83,7 +83,7 @@ class particle
         static lagrangian_API const std::size_t sizeofPosition;
 
         //- Size in bytes of the fields
-        static lagrangian_API const std::size_t sizeofFields;
+        static const std::size_t sizeofFields;
 
         //- The value of nBehind_ at which tracking is abandoned. See the
         //  description of nBehind_.

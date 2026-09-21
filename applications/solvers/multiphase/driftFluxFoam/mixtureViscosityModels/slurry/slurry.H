@@ -79,7 +79,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("slurry");
+    TypeNameApi(driftFluxTransportModels_API, "slurry");
 
 
     // Constructors

@@ -26,6 +26,8 @@ License
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_IOPtrList_defines_typeName
+
 #include "boundaryInfo.H"
 #include "Time.H"
 #include "polyMesh.H"

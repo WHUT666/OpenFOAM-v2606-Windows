@@ -111,7 +111,7 @@ class controlMeshRefinement
 public:
 
         //- Runtime type information
-        ClassName("controlMeshRefinement");
+        ClassNameApi(conformalVoronoiMesh_API, "controlMeshRefinement");
 
 
     // Constructors

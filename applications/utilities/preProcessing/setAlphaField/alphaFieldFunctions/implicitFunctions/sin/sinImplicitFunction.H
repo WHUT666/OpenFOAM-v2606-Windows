@@ -79,7 +79,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("sin");
+    TypeNameApi(alphaFieldFunctions_API, "sin");
 
 
     // Constructors

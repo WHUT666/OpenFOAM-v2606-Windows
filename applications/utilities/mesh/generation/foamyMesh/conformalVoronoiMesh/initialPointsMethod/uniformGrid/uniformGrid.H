@@ -71,7 +71,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("uniformGrid");
+    TypeNameApi(conformalVoronoiMesh_API, "uniformGrid");
 
     // Constructors
 

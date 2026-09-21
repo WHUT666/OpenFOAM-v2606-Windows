@@ -159,11 +159,10 @@ public:
     static const label maxDynListLength;
 
     //- Run-time type information
-    TypeName("raySearchEngine");
+    TypeNameApi(viewFactorModels_API, "raySearchEngine");
 
     //- Selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi(viewFactorModels_API,
         autoPtr,
         raySearchEngine,
         mesh,

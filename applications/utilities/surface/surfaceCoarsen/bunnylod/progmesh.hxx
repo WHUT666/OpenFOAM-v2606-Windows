@@ -23,6 +23,9 @@
 #include "vector.hxx"
 #include "list.hxx"
 
+namespace bunnylod
+{
+
 class tridata {
   public:
         int     v[3];  // indices to vertex list
@@ -31,5 +34,7 @@ class tridata {
 
 void ProgressiveMesh(List<Vector> &vert,  List<tridata> &tri,
                      List<int> &map,  List<int> &permutation );
+
+} // End namespace bunnylod
 
 #endif

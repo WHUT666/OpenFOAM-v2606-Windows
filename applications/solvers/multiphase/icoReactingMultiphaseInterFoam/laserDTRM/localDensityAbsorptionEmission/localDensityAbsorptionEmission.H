@@ -82,7 +82,7 @@ class localDensityAbsorptionEmission
 public:
 
     //- Runtime type information
-    TypeName("localDensityAbsorptionEmission");
+    TypeNameApi(laserDTRM_API, "localDensityAbsorptionEmission");
 
 
     // Constructors

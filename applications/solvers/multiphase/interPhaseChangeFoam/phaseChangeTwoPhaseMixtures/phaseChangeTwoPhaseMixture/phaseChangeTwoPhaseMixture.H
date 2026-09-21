@@ -82,13 +82,12 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("phaseChangeTwoPhaseMixture");
+    TypeNameApi(phaseChangeTwoPhaseMixtures_API, "phaseChangeTwoPhaseMixture");
 
 
     // Declare run-time constructor selection table
 
-        declareRunTimeSelectionTable
-        (
+        declareRunTimeSelectionTableApi(phaseChangeTwoPhaseMixtures_API,
             autoPtr,
             phaseChangeTwoPhaseMixture,
             components,

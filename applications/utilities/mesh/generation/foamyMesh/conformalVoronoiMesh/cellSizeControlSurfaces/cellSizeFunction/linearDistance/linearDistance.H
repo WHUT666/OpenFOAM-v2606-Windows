@@ -76,7 +76,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("linearDistance");
+    TypeNameApi(conformalVoronoiMesh_API, "linearDistance");
 
     // Constructors
 

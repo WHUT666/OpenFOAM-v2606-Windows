@@ -80,7 +80,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("surfaceOffsetLinearDistance");
+    TypeNameApi(conformalVoronoiMesh_API, "surfaceOffsetLinearDistance");
 
     // Constructors
 

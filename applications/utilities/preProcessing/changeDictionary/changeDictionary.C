@@ -76,6 +76,8 @@ Usage
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_IOPtrList_defines_typeName
+
 #include "argList.H"
 #include "IOobjectList.H"
 #include "IOPtrList.H"

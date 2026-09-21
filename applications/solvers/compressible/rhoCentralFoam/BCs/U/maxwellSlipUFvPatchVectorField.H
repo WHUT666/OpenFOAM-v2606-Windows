@@ -91,7 +91,7 @@ class maxwellSlipUFvPatchVectorField
 public:
 
     //- Runtime type information
-    TypeName("maxwellSlipU");
+    TypeNameApi(rhoCentralFoam_API, "maxwellSlipU");
 
 
     // Constructors

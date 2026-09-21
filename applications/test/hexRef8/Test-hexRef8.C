@@ -353,8 +353,8 @@ int main(int argc, char *argv[])
             {
                 FatalErrorInFunction
                     << "Uniform volVectorField not preserved."
-                    << " Min and max should both be 1.0. min:" << min
-                    << " max:" << max
+                    << " Min and max should both be 1.0. min:" << limits.min()
+                    << " max:" << limits.max()
                     << exit(FatalError);
             }
             else
@@ -375,8 +375,8 @@ int main(int argc, char *argv[])
             if (isNotEqual(limits.min(), 0) || isNotEqual(limits.max(), 0))
             {
                 Info<< "Linear profile not preserved."
-                    << " Min and max should both be 0.0. min:" << min
-                    << " max:" << max << nl << endl;
+                    << " Min and max should both be 0.0. min:" << limits.min()
+                    << " max:" << limits.max() << nl << endl;
             }
             else
             {
@@ -396,8 +396,8 @@ int main(int argc, char *argv[])
             {
                 FatalErrorInFunction
                     << "Uniform surfaceScalarField not preserved."
-                    << " Min and max should both be 1.0. min:" << min
-                    << " max:" << max
+                    << " Min and max should both be 1.0. min:" << limits.min()
+                    << " max:" << limits.max()
                     << exit(FatalError);
             }
             else

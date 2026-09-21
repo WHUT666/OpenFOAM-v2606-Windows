@@ -135,7 +135,7 @@ class conformationSurfaces
 public:
 
     //- Runtime type information
-    ClassName("conformationSurfaces");
+    ClassNameApi(conformalVoronoiMesh_API, "conformationSurfaces");
 
 
     // Constructors

@@ -84,7 +84,8 @@ class DSMCParcel
 public:
 
     //- Size in bytes of the fields
-    static Foam_DSMCParcel_typeName_API const std::size_t sizeofFields;
+    //  (defined in every TU via the NoRepository impl-include - do not annotate)
+    static const std::size_t sizeofFields;
 
 
     //- Class to hold DSMC particle constant properties

@@ -74,7 +74,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("triSurfaceMeshFeatures");
+    TypeNameApi(conformalVoronoiMesh_API, "triSurfaceMeshFeatures");
 
 
     // Constructors

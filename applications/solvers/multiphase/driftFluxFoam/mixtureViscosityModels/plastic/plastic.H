@@ -82,7 +82,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("plastic");
+    TypeNameApi(driftFluxTransportModels_API, "plastic");
 
 
     // Constructors

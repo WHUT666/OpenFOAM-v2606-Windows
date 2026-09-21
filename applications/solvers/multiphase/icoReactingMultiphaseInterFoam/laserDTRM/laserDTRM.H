@@ -226,7 +226,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("laserDTRM");
+    TypeNameApi(laserDTRM_API, "laserDTRM");
 
 
     // Constructors

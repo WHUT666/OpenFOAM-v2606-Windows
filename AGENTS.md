@@ -28,9 +28,13 @@ MSBuild build\src\<lib>.vcxproj -p:Configuration=Release -p:Platform=x64 -m
 MSBuild build\applications\<app>.vcxproj -p:Configuration=Release -p:Platform=x64 -m
 ```
 
-Apps are enabled via `FOAM_APP_<name>` CMake options (see
-`applications/CMakeLists.txt`). Library deps build automatically as project
-references.
+All apps build by default (`FOAM_APP_<name>` defaults ON; disable one
+with `-DFOAM_APP_<name>=OFF`, see `applications/CMakeLists.txt`).
+Library deps build automatically as project references. App-local
+helper libraries are registered via `foam_app_lib(<dir>)` and get the
+same DLL/API treatment as src libs. Full shared builds should use
+`/m:2` — higher parallelism has hit C1060 (compiler heap exhaustion)
+on the largest TUs.
 
 ## Layout
 
@@ -127,6 +131,28 @@ references.
   `Foam::` qualification (C2385).
 - `min`/`max`/`log`/`component` calls can hit members or bool data
   members on MSVC — qualify with `Foam::`.
+- The `Foam_<Tpl>_defines_typeName` opt-out is class-wide: a TU that
+  defines SOME specs of `<Tpl>` AND consumes others loses dllimport on
+  all of them → LNK2019 for the consumed statics. MSVC cannot re-import
+  single specialisations (C2720/C2370 on `template<> extern` declspec),
+  so such mixed TUs must also `defineTemplateTypeNameAndDebug` the
+  consumed specs locally (e.g. `Test-volField`), or drop the flag when
+  the spec def is `#ifdef`'d out (e.g. `Test-dimField1`).
+- Never annotate a NON-template class with a spec flag macro
+  (`Foam_<Tpl>_typeName_API`) — its single DLL-side definition then
+  disappears for flag-carrying consumers (`fvPatchFieldBase` bug). Use
+  the fixed `<Lib>_API` for concrete classes.
+- Windows filename collisions that actually bite: `correctPhi.H` (app
+  fragment) vs `CorrectPhi.H` (library header) — library includes use
+  `finiteVolume/CorrectPhi.H` qualified paths; pointer files
+  (`#include "X"` forwarding headers) must contain real includes, not
+  raw relative paths.
+- MS-MPI is MPI-2: no `MPI_Neighbor_alltoall` — emulated with pairwise
+  `MPI_Sendrecv` over the neighbour list (see
+  `applications/test/processorTopology`).
+- MSBuild occasionally idles after the last target finishes (node-reuse
+  hang). Verify completion by error count and a missing-output sweep,
+  then kill the lingering MSBuild.exe.
 
 ## Run
 

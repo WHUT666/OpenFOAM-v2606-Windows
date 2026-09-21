@@ -145,7 +145,7 @@ class featurePointConformer
 public:
 
     //- Runtime type information
-    ClassName("featurePointConformer");
+    ClassNameApi(conformalVoronoiMesh_API, "featurePointConformer");
 
 
     // Constructors

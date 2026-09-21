@@ -214,13 +214,16 @@ bool Foam::MeshObject<Mesh, MeshObjectType, Type>::Store
         // has its 'registered()' flag set.
         // Track if we need to re-register it (as int for debugging).
 
+        // Use the MeshObject branch explicitly: Type may have a second
+        // regIOobject base (eg gravity also derives a field type), which
+        // makes rawPtr->registered()/name()/checkIn ambiguous on MSVC.
+        auto* casted = static_cast<MeshObjectType<Mesh>*>(rawPtr);
+
         int registerAgain =
         (
-            (rawPtr->registered() || rawPtr->registerObject())
+            (casted->registered() || casted->registerObject())
           ? 1 : 0
         );
-
-        auto* casted = static_cast<MeshObjectType<Mesh>*>(rawPtr);
 
         ok = casted->regIOobject::store();
 
@@ -233,7 +236,7 @@ bool Foam::MeshObject<Mesh, MeshObjectType, Type>::Store
             {
                 auto& obr = rawPtr->mesh().thisDb();
 
-                if (obr.template foundObject<Type>(rawPtr->name()))
+                if (obr.template foundObject<Type>(casted->regIOobject::name()))
                 {
                     // Already in the database
                     registerAgain = -1;
@@ -241,7 +244,7 @@ bool Foam::MeshObject<Mesh, MeshObjectType, Type>::Store
                 else
                 {
                     // Add to the database
-                    obr.checkIn(rawPtr);
+                    obr.checkIn(casted);
                 }
             }
         }

@@ -67,7 +67,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("uniformDistance");
+    TypeNameApi(conformalVoronoiMesh_API, "uniformDistance");
 
     // Constructors
 

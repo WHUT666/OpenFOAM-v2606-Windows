@@ -72,7 +72,7 @@ class sphereImplicitFunction
 public:
 
     //- Runtime type information
-    TypeName("sphere");
+    TypeNameApi(alphaFieldFunctions_API, "sphere");
 
 
     // Constructors

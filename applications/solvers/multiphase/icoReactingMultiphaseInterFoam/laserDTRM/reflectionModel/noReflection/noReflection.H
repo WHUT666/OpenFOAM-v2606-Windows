@@ -58,7 +58,7 @@ class noReflection
 public:
 
     //- Runtime type information
-    TypeName("none");
+    TypeNameApi(laserDTRM_API, "none");
 
     //- Construct from components
     noReflection(const dictionary& dict, const fvMesh& mesh);

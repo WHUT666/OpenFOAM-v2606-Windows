@@ -25,6 +25,15 @@ License
 
 \*---------------------------------------------------------------------------*/
 
+#define Foam_TurbulenceModel_defines_typeName
+#define Foam_laminarModel_defines_typeName
+#define Foam_RASModel_defines_typeName
+#define Foam_LESModel_defines_typeName
+#define Foam_Stokes_defines_typeName
+#define Foam_kEpsilon_defines_typeName
+#define Foam_buoyantKEpsilon_defines_typeName
+#define Foam_Smagorinsky_defines_typeName
+#define Foam_kEqn_defines_typeName
 #include "CompressibleTurbulenceModel_tpl.H"
 #include "incompressibleTwoPhaseInteractingMixture.H"
 #include "addToRunTimeSelectionTable.H"

@@ -93,11 +93,10 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("relativeVelocityModel");
+    TypeNameApi(driftFluxRelativeVelocityModels_API, "relativeVelocityModel");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi(driftFluxRelativeVelocityModels_API,
         autoPtr,
         relativeVelocityModel,
         dictionary,

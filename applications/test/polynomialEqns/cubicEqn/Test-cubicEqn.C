@@ -33,6 +33,7 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include <ctime>
+#include <cstdint>
 #include <random>
 
 #include "cubicEqn.H"
@@ -200,15 +201,15 @@ scalar randomScalar(const scalar min, const scalar max)
 {
     static_assert
     (
-        sizeof(long) == sizeof(scalar),
-        "Scalar and long are not the same size"
+        sizeof(int64_t) == sizeof(scalar),
+        "Scalar and int64_t are not the same size"
     );
     static std::default_random_engine generator(std::time(0));
-    static std::uniform_int_distribution<long>
+    static std::uniform_int_distribution<int64_t>
         distribution
         (
-            std::numeric_limits<long>::min(),
-            std::numeric_limits<long>::max()
+            std::numeric_limits<int64_t>::min(),
+            std::numeric_limits<int64_t>::max()
         );
 
     scalar x = 0;

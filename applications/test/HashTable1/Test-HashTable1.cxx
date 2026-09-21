@@ -35,6 +35,8 @@ License
 #include "ListOps.H"
 #include "stringListOps.H"
 
+#include <sstream>
+
 using namespace Foam;
 
 void checkCanonicalSize(label size)

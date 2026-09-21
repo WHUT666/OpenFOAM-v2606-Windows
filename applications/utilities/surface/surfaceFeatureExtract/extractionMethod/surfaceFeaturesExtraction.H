@@ -83,8 +83,7 @@ public:
 
 
     // Declare run-time constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi(surfaceFeatureExtract_API,
         autoPtr,
         method,
         dictionary,

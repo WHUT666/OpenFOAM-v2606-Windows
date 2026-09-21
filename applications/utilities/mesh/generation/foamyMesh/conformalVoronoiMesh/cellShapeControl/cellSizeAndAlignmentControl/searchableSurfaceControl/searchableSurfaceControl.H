@@ -100,7 +100,7 @@ class searchableSurfaceControl
 public:
 
     //- Runtime type information
-    TypeName("searchableSurfaceControl");
+    TypeNameApi(conformalVoronoiMesh_API, "searchableSurfaceControl");
 
 
     // Constructors

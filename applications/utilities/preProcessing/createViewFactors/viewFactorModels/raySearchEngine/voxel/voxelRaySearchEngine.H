@@ -230,7 +230,7 @@ class voxel
 public:
 
     //- Runtime type information
-    TypeName("voxel");
+    TypeNameApi(viewFactorModels_API, "voxel");
 
     //- Constructor
     voxel(const fvMesh& mesh, const dictionary& dict);

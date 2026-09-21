@@ -204,6 +204,7 @@ int main(int argc, char *argv[])
 
         List<int> nbrPatchIds(neighbours.size(), Zero);
 
+        #if defined(MPI_VERSION) && (MPI_VERSION >= 3)
         mpiErrorCode = MPI_Neighbor_alltoall
         (
             myPatchIds.data(),
@@ -214,6 +215,20 @@ int main(int argc, char *argv[])
             MPI_INT,
             topoComm
         );
+        #else
+        // MSMPI is MPI-2: emulate the alltoall with pairwise
+        // sendrecv over the (symmetric) neighbour list
+        forAll(neighbours, i)
+        {
+            mpiErrorCode = MPI_Sendrecv
+            (
+                &myPatchIds[i], 1, MPI_INT, neighbours[i], 0,
+                &nbrPatchIds[i], 1, MPI_INT, neighbours[i], 0,
+                topoComm, MPI_STATUS_IGNORE
+            );
+            if (mpiErrorCode) break;
+        }
+        #endif
 
         if (mpiErrorCode)
         {

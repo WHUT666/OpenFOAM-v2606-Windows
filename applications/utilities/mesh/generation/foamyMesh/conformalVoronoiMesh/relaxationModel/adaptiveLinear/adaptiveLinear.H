@@ -77,7 +77,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("adaptiveLinear");
+    TypeNameApi(conformalVoronoiMesh_API, "adaptiveLinear");
 
     // Constructors
 

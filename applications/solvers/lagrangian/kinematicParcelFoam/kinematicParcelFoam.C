@@ -46,7 +46,7 @@ Description
 #include "basicKinematicCloud.H"
 #include "fvOptions.H"
 #include "pimpleControl.H"
-#include "CorrectPhi.H"
+#include "finiteVolume/CorrectPhi.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

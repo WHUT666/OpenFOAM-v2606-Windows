@@ -45,7 +45,9 @@ Foam::singleCellFvMesh::interpolate
     (
         new GeometricField<Type, fvPatchField, volMesh>
         (
-            IOobject
+            // Foam:: qualifier required: unqualified 'IOobject' resolves
+            // ambiguously here on MSVC (member vs global name)
+            Foam::IOobject
             (
                 vf.name(),
                 time().timeName(),

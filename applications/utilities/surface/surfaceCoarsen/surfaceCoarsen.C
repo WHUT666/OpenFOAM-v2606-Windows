@@ -57,7 +57,7 @@ using namespace Foam;
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-int mapVertex(::List<int>& collapse_map, int a, int mx)
+int mapVertex(bunnylod::List<int>& collapse_map, int a, int mx)
 {
     if (mx <= 0)
     {
@@ -119,8 +119,8 @@ int main(int argc, char *argv[])
     surf.writeStats(Info);
     Info<< endl;
 
-    ::List<::Vector> vert;     // global list of vertices
-    ::List<::tridata> tri;     // global list of triangles
+    bunnylod::List<bunnylod::Vector> vert;     // global list of vertices
+    bunnylod::List<bunnylod::tridata> tri;     // global list of triangles
 
 
     // Convert triSurface to progmesh format. Note: can use global point
@@ -129,25 +129,25 @@ int main(int argc, char *argv[])
 
     for (const point& pt : pts)
     {
-        vert.Add(::Vector(pt.x(), pt.y(), pt.z()));
+        vert.Add(bunnylod::Vector(pt.x(), pt.y(), pt.z()));
     }
 
     for (const labelledTri& f : surf)
     {
-        tridata td;
+        bunnylod::tridata td;
         td.v[0] = f[0];
         td.v[1] = f[1];
         td.v[2] = f[2];
         tri.Add(td);
     }
 
-    ::List<int> collapse_map;   // to which neighbor each vertex collapses
-    ::List<int> permutation;
+    bunnylod::List<int> collapse_map;   // to which neighbor each vertex collapses
+    bunnylod::List<int> permutation;
 
-    ::ProgressiveMesh(vert,tri,collapse_map,permutation);
+    bunnylod::ProgressiveMesh(vert,tri,collapse_map,permutation);
 
     // rearrange the vertex list
-    ::List<::Vector> temp_list;
+    bunnylod::List<bunnylod::Vector> temp_list;
     for (int i=0; i<vert.num; i++)
     {
         temp_list.Add(vert[i]);
@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
 
     for (int i=0; i<vert.num; i++)
     {
-        const ::Vector & v = vert[i];
+        const bunnylod::Vector & v = vert[i];
 
         newPoints[i] = point(v.x, v.y, v.z);
     }

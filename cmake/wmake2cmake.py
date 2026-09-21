@@ -450,7 +450,9 @@ def parse_options(path, ev):
             if tok.startswith('-I'):
                 inc.append(tok[2:])
             elif tok.startswith('-D'):
-                dfn.append(tok[2:])
+                # Make-level \" quoting -> plain ": the cmake writer
+                # re-escapes " -> \" (double-escaping breaks MSVC)
+                dfn.append(tok[2:].replace('\\"', '"'))
             elif tok.startswith('-U'):
                 dfn.append('__UNDEF__' + tok[2:])
             elif tok.startswith('-L'):
@@ -715,6 +717,7 @@ def main():
     predefined = {
         'WM_PROJECT_DIR': proj.replace('\\', '/'),
         'LIB_SRC': libsrc,
+        'FOAM_SRC': libsrc,
         'FOAM_LIBBIN': '@FOAM_LIBBIN@',
         'FOAM_USER_LIBBIN': '@FOAM_USER_LIBBIN@',
         'FOAM_MPI_LIBBIN': '@FOAM_MPI_LIBBIN@',
@@ -729,8 +732,14 @@ def main():
         'WM_MPLIB': os.environ.get('FOAM_MPLIB', 'dummy'),
         'WM_OPTIONS': '',
         'WM_ARCH': 'windows',
+        'WM_COMPILER': os.environ.get('FOAM_COMPILER', 'msvc'),
         'EXT_SO': '.dll',
         'WM_PRECISION_OPTION': os.environ.get('FOAM_PRECISION', 'DP'),
+        'PRECISION': os.environ.get('FOAM_PRECISION', 'DP'),
+        'SCALAR_SIZE': (
+            '32' if os.environ.get('FOAM_PRECISION', 'DP') == 'SP' else '64'
+        ),
+        'WM_COMPILE_OPTION': os.environ.get('FOAM_COMPILE_OPTION', 'Opt'),
         'WM_LABEL_SIZE': os.environ.get('FOAM_LABEL_SIZE', '32'),
         'WM_COMPILE_CONTROL': os.environ.get('FOAM_COMPILE_CONTROL', ''),
         'WM_PROJECT_VERSION': os.environ.get('FOAM_VERSION', '2606'),
@@ -762,6 +771,8 @@ def main():
         'FFTW_INC_DIR': '@FFTW_INC_DIR@',
         'FFTW_LIB_DIR': '@FFTW_LIB_DIR@',
         'PETSC_ARCH_PATH': '@PETSC_DIR@',
+        'CCMIO_INC_DIR': '@CCMIO_INC_DIR@',
+        'CCMIO_LIB_DIR': '@CCMIO_LIB_DIR@',
         'GFLAGS': '', 'GINC': '', 'GLIBS': '', 'GLIB_LIBS': '',
         'SYS_INC': '', 'SYS_LIBS': '',
         'COMP_FLAGS': '', 'LINK_FLAGS': '',
@@ -816,6 +827,23 @@ def main():
         p = s if os.path.isabs(s) else os.path.join(srcdir, s)
         p = os.path.normpath(p).replace('\\', '/')
         if os.path.isfile(p):
+            # wmake "pointer" files: a stub whose entire content is one
+            # relative path to the real source (eg chtMultiRegionFoam
+            # variants). Resolve it to the real file.
+            try:
+                with open(p, 'r', encoding='utf-8', errors='replace') as fh:
+                    content = fh.read().strip()
+            except OSError:
+                content = ''
+            if (content and '\n' not in content
+                    and not content.startswith('#')
+                    and ('/' in content or '\\' in content)
+                    and content.lower().endswith(('.c', '.cxx', '.cc'))):
+                q = os.path.normpath(
+                    os.path.join(os.path.dirname(p), content)
+                ).replace('\\', '/')
+                if os.path.isfile(q):
+                    p = q
             abs_sources.append(p)
         else:
             missing.append(s)
@@ -831,6 +859,37 @@ def main():
         p = os.path.normpath(os.path.join(srcdir, s)).replace('\\', '/')
         if os.path.isfile(p):
             abs_lemon.append(p)
+
+    # MPI auto-detection. On Linux wmake's mpi-rules supplies PINC/PLIBS
+    # (and mpi.h lives on the system include path for serial builds); on
+    # Windows the MSMPI include/lib dirs must come from MPI::MPI_CXX.
+    # Map any of these to the 'mpi' lib dependency which FoamMacros
+    # resolves to MPI::MPI_CXX:
+    #   - Make/options including mpi-rules or referencing PINC/PLIBS/PFLAGS
+    #   - sources including mpi.h / openfoam_mpi.H or calling MPI_* APIs
+    needs_mpi = False
+    try:
+        with open(options_path, 'r', encoding='utf-8',
+                  errors='replace') as fh:
+            needs_mpi = bool(re.search(
+                r'mpi-rules|\$\((?:PINC|PLIBS|PFLAGS)\)', fh.read()))
+    except OSError:
+        pass
+    if not needs_mpi:
+        mpi_src_re = re.compile(
+            r'#\s*include\s*[<"](?:mpi\.h|.*openfoam_mpi\.H)[>"]'
+            r'|\bMPI_[A-Za-z]+')
+        for p in abs_sources:
+            try:
+                with open(p, 'r', encoding='utf-8',
+                          errors='replace') as fh:
+                    if mpi_src_re.search(fh.read()):
+                        needs_mpi = True
+                        break
+            except OSError:
+                continue
+    if needs_mpi and 'mpi' not in libs:
+        libs.append('mpi')
 
     # wmake resolves relative -I/-L paths against the target's own directory
     incs = [_norm(srcdir, i) for i in includes]

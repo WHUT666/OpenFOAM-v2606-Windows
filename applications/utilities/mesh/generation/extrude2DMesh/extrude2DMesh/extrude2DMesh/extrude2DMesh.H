@@ -99,7 +99,7 @@ class extrude2DMesh
 public:
 
     //- Runtime type information
-    ClassName("extrude2DMesh");
+    ClassNameApi(extrude2DMesh_API, "extrude2DMesh");
 
 
     // Constructors

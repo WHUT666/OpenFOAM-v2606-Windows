@@ -113,7 +113,7 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("viewFactorHottel");
+    TypeNameApi(viewFactorModels_API, "viewFactorHottel");
 
     //- Constructor
     viewFactorHottel(const fvMesh& mesh, const dictionary& dict);

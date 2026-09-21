@@ -135,7 +135,7 @@ class composedFunctionImplicitFunction
 public:
 
     //- Runtime type information
-    TypeName("composedFunction");
+    TypeNameApi(alphaFieldFunctions_API, "composedFunction");
 
 
     // Constructors

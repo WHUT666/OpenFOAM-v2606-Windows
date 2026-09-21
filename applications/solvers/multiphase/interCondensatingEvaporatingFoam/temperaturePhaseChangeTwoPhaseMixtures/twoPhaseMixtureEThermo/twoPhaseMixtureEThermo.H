@@ -65,7 +65,7 @@ protected:
 
 public:
 
-    TypeName("twoPhaseMixtureEThermo");
+    TypeNameApi(phaseTemperatureChangeTwoPhaseMixtures_API, "twoPhaseMixtureEThermo");
 
     // Constructor
     twoPhaseMixtureEThermo

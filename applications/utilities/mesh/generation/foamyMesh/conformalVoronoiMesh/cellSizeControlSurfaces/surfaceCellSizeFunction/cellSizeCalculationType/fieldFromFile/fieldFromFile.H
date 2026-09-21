@@ -74,7 +74,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("fieldFromFile");
+    TypeNameApi(conformalVoronoiMesh_API, "fieldFromFile");
 
 
     // Constructors

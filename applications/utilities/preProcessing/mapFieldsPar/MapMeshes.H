@@ -32,6 +32,9 @@ License
 #include "mapLagrangian.H"
 #include "UnMapped.H"
 #include "pointMesh.H"
+// Complete type for pointPatchField needed when instantiating
+// GeometricBoundaryField write ops on MSVC
+#include "pointFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

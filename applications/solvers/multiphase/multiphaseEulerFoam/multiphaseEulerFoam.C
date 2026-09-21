@@ -45,7 +45,7 @@ Description
 #include "turbulentTransportModel.H"
 #include "pimpleControl.H"
 #include "IOMRFZoneList.H"
-#include <CorrectPhi.H>
+#include "finiteVolume/CorrectPhi.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

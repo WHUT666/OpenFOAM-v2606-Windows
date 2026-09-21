@@ -12,6 +12,9 @@
 #include <cmath>
 
 
+namespace bunnylod
+{
+
 class Vector {
   public:
         float x,y,z;
@@ -76,5 +79,8 @@ Quaternion operator*(Quaternion a,Quaternion b);
 Vector    operator*(Quaternion q,Vector v);
 Vector    operator*(Vector v,Quaternion q);
 Quaternion slerp(Quaternion a,Quaternion b,float interp);
+
+
+} // End namespace bunnylod
 
 #endif

@@ -104,7 +104,7 @@ class fakeErrorFunctionObject
 public:
 
     //- Runtime type information
-    TypeName("fakeError");
+    TypeNameApi(testFunctionObjects_API, "fakeError");
 
 
     // Constructors

@@ -44,14 +44,14 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
-//- Define Foam_FOAM_DEPRECATED_FOR_defines_typeName in .C files that
-//  define the template statics of FOAM_DEPRECATED_FOR (eg via
+//- Define Foam_NamedEnum_defines_typeName in .C files that
+//  define the template statics of NamedEnum (eg via
 //  defineTemplateTypeNameAndDebug / *RunTimeSelectionTable)
 //  so the declaration is left undecorated there.
-#if defined(Foam_FOAM_DEPRECATED_FOR_defines_typeName)
-#  define Foam_FOAM_DEPRECATED_FOR_typeName_API
+#if defined(Foam_NamedEnum_defines_typeName)
+#  define Foam_NamedEnum_typeName_API
 #else
-#  define Foam_FOAM_DEPRECATED_FOR_typeName_API OpenFOAM_API
+#  define Foam_NamedEnum_typeName_API OpenFOAM_API
 #endif
 
 #ifndef FoamCompat_NamedEnum_H
@@ -108,7 +108,7 @@ public:
     // Static data members
 
         //- The set of names corresponding to the enumeration EnumType
-        static Foam_FOAM_DEPRECATED_FOR_typeName_API const char* names[nEnum];
+        static Foam_NamedEnum_typeName_API const char* names[nEnum];
 
 
     // Constructors

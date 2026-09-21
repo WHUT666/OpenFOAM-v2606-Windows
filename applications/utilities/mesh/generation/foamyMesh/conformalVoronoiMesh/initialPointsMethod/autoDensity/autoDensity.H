@@ -139,7 +139,7 @@ private:
 public:
 
     //- Runtime type information
-    TypeName("autoDensity");
+    TypeNameApi(conformalVoronoiMesh_API, "autoDensity");
 
     // Constructors
 

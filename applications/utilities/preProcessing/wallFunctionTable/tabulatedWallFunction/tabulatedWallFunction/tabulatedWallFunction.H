@@ -79,11 +79,10 @@ protected:
 public:
 
     //- Run-time type information
-    TypeName("tabulatedWallFunction");
+    TypeNameApi(tabulatedWallFunctions_API, "tabulatedWallFunction");
 
     //- Declare runtime constructor selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi(tabulatedWallFunctions_API,
         autoPtr,
         tabulatedWallFunction,
         dictionary,

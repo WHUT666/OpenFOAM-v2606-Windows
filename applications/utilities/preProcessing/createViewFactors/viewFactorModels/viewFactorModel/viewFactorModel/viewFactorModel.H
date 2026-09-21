@@ -127,11 +127,10 @@ protected:
 public:
 
     //- Runtime type information
-    TypeName("viewFactorModel");
+    TypeNameApi(viewFactorModels_API, "viewFactorModel");
 
     //- Selection table
-    declareRunTimeSelectionTable
-    (
+    declareRunTimeSelectionTableApi(viewFactorModels_API,
         autoPtr,
         viewFactorModel,
         mesh,

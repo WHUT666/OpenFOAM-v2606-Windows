@@ -21,17 +21,24 @@
 ### 已完成
 
 - ✅ **共享库(DLL)构建**:`FOAM_STATIC_LIBS=OFF` 时每个 OpenFOAM 库
-  独立产出 DLL(128 个库),逐库 `<Lib>_API` 导入/导出标注
+  独立产出 DLL(134 个库),逐库 `<Lib>_API` 导入/导出标注
   (`cmake/compat/foamApi.h`),运行时选择表经
   `TableInsert/TableSet/TableErase` 成员函数封装跨 DLL 访问,
   模板静态成员用 `Foam_<Class>_defines_typeName` opt-out 保证单一属主;
   `cmake/genExportsDef.py` 从 obj 收割强符号生成 `.def` 导出表
+- ✅ **全部应用默认可构建**:596 个应用目标全部启用
+  (`FOAM_APP_<路径>` 默认 ON,可用 `-DFOAM_APP_<路径>=OFF` 关闭单个),
+  共享构建产出 **594 个 exe + 134 个 DLL,零编译/链接错误**;
+  应用级本地库(湍流模型、相系统、DSMC、conformalVoronoiMesh 等
+  28 个)同样以 DLL 构建并被依赖应用正确链接;仅 `foamToCcm`/
+  `ccmToFoam` 因 CCMIO 专有 SDK 缺失按设计跳过
 - ✅ **静态库构建保持可用**:`FOAM_STATIC_LIBS=ON`(默认)产出
   `/WHOLEARCHIVE` 静态库,保留 runTimeSelection 自注册语义,
   两种模式共用同一套源码与标注
 - ✅ **构建系统**:完整 CMake 移植(`cmake/wmake2cmake.py` 从 `Make/files`
-  + `Make/options` 自动生成目标),VS2022 x64 / C++17 / DP / label32,
-  全量构建零编译错误
+  + `Make/options` 自动生成目标,自动识别 MPI 需求、解析 wmake
+  `mpi-rules`/`PFLAGS`/`PINC`/`PLIBS`),VS2022 x64 / C++17 / DP /
+  label32,全量构建零编译错误
 - ✅ **MPI**:vendored MS-MPI SDK(`thirdparty/msmpi`,含 mpiexec/smpd/
   msmpi.dll),`mpiexec -n N <solver> -parallel` 端到端可用;修复了
   MS-MPI 缺少 `MPI_Comm_create_group` 导致的子通信域集合调用错配
@@ -53,18 +60,24 @@
 - `snappyHexMesh` 串行与 MPI 并行(CGAL 几何内核),`simpleFoam`
   (湍流+functionObject+streamlines 收敛)、`pimpleFoam`
   (movingCone 动网格+GAMG+vtkWrite 全程)
+- `interFoam` damBreak(VoF+湍流+相系统 DLL 全链路)、
+  `surfaceFeatureExtract + snappyHexMesh` flange 案例
+  (19186 单元,零网格质量错误)
 - `redistributePar`(metis / scotch / ptscotch / kahip)及
   `redistributePar -reconstruct`;`setFields`、`checkMesh`、
   `foamDictionary`、`reconstructParMesh`
 - `controlDict` `libs ("libutilityFunctionObjects");` 动态插件加载;
   不存在的库优雅告警不崩溃
+- 测试应用:`Test-dummyLib`(WM_* 编译期值正确)、`Test-volField`、
+  `Test-dimField1`、`Test-fvc2D`、`Test-parallel-comm1`、
+  `Test-processorTopology`(9 进程,MPI-2 Sendrecv 邻居交换回退)
 - 静态回归:`FOAM_STATIC_LIBS=ON` 下 OpenFOAM/finiteVolume/icoFoam
   编译、链接、运行一致通过
 
 ### 已知限制
 
-- 应用按白名单启用(`-DFOAM_APP_<路径>=ON`),共享构建已验证 12 个
-  代表性应用;其余 ~560 个 app 启用后可能仍需个别 MSVC 适配
+- `foamToCcm`/`ccmToFoam` 未构建(需 CCMIO 专有 SDK,无 Windows
+  原生版本;构建系统自动跳过,不影响其余应用)
 - `foamyHexMeshSurfaceSimplify` 跳过(缺 `fastdualoctree_sgp` + OpenGL,
   上游同样跳过)
 - POSIX shell 工具脚本(`foamJob`、`runParallel`、`foamLog` 等)在 cmd
@@ -83,9 +96,7 @@ etc\build-windows.bat
 call etc\openfoam-env.bat
 
 rem --- 共享 DLL 构建 ---
-cmake -B build-shared -A x64 -DFOAM_MPI=msmpi -DFOAM_STATIC_LIBS=OFF ^
-  -DFOAM_APP_solvers_incompressible_icoFoam=ON
-rem (按需追加 -DFOAM_APP_<路径>=ON)
+cmake -B build-shared -A x64 -DFOAM_MPI=msmpi -DFOAM_STATIC_LIBS=OFF
 etc\build-windows.bat /d:build-shared
 call etc\openfoam-env.bat build-shared
 
@@ -93,8 +104,9 @@ blockMesh -help
 mpiexec -n 2 icoFoam -case <case> -parallel
 ```
 
-启用额外应用:`cmake -B <build> -DFOAM_APP_<路径>=ON`,如
-`-DFOAM_APP_solvers_compressible_rhoPimpleFoam=ON`
+应用默认全部构建(596 个目标);关闭单个应用:
+`cmake -B <build> -DFOAM_APP_<路径>=OFF`。MSBuild 全量构建建议
+`/m:2` 并行度(更高并行可能触发 C1060 编译器内存耗尽)。
 
 详细构建约定、坑位记录与调试须知见 [AGENTS.md](AGENTS.md)。
 

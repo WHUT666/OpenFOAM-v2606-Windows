@@ -160,7 +160,7 @@ public:
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-extern Foam::PDRparams pars;  //!< Globals for program parameters (ugly hack)
+extern pdrFields_API Foam::PDRparams pars;  //!< Globals for program parameters (ugly hack)
 
 } // End namespace Foam
 

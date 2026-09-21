@@ -97,7 +97,7 @@ class interfaceHeatResistance
 public:
 
     //- Runtime type information
-    TypeName("interfaceHeatResistance");
+    TypeNameApi(phaseTemperatureChangeTwoPhaseMixtures_API, "interfaceHeatResistance");
 
 
     // Constructors

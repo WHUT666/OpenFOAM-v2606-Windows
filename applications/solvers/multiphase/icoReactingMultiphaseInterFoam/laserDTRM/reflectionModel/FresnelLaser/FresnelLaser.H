@@ -70,7 +70,7 @@ class FresnelLaser
 public:
 
     //- Runtime type information
-    TypeName("FresnelLaser");
+    TypeNameApi(laserDTRM_API, "FresnelLaser");
 
     //- Construct from components
     FresnelLaser(const dictionary& dict, const fvMesh& mesh);

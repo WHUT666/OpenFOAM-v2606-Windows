@@ -70,7 +70,7 @@ class ellipsoidImplicitFunction
 public:
 
     //- Runtime type information
-    TypeName("ellipsoidImplicitFunction");
+    TypeNameApi(alphaFieldFunctions_API, "ellipsoidImplicitFunction");
 
 
     // Constructors

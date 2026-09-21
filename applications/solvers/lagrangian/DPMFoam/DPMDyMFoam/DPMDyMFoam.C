@@ -39,7 +39,7 @@ Description
 #include "singlePhaseTransportModel.H"
 #include "DPMIncompressibleTurbulenceModel.H"
 #include "pimpleControl.H"
-#include "CorrectPhi.H"
+#include "finiteVolume/CorrectPhi.H"
 
 #ifdef MPPIC
     #include "basicKinematicCloud.H"

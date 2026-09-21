@@ -87,7 +87,7 @@ class automatic
 public:
 
     //- Runtime type information
-    TypeName("automatic");
+    TypeNameApi(conformalVoronoiMesh_API, "automatic");
 
 
     // Constructors

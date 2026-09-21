@@ -18,6 +18,8 @@
 #include "list.hxx"
 #include "progmesh.hxx"
 
+using namespace bunnylod;
+
 #define min(x,y) (((x) <= (y)) ? (x) : (y))
 #define max(x,y) (((x) >= (y)) ? (x) : (y))
 
@@ -288,7 +290,7 @@ Vertex *MinimumCostEdge(){
         return mn;
 }
 
-void ProgressiveMesh(List<Vector> &vert, List<tridata> &tri,
+void bunnylod::ProgressiveMesh(List<Vector> &vert, List<tridata> &tri,
                      List<int> &map, List<int> &permutation)
 {
         AddVertex(vert);  // put input data into our data structures

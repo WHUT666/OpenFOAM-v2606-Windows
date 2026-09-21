@@ -31,7 +31,7 @@ env:
 
 jobs:
   package:
-    runs-on: windows-latest
+    runs-on: windows-2022  # VS2022 toolchain (windows-2025 image ships VS2026)
     timeout-minutes: 360
     steps:
       - name: Enable long paths

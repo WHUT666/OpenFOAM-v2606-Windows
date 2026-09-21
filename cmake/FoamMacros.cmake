@@ -36,7 +36,8 @@ function(foam_resolve_marker outvar token)
                ZOLTAN_INC_DIR ZOLTAN_LIB_DIR FFTW_INC_DIR FFTW_LIB_DIR
                CGAL_INC_DIR CGAL_LIB_DIR BOOST_INC_DIR BOOST_LIB_DIR PETSC_DIR
                GMP_INC_DIR GMP_LIB_DIR MPFR_INC_DIR MPFR_LIB_DIR
-               MGRIDGEN_INC_DIR MGRIDGEN_LIB_DIR)
+               MGRIDGEN_INC_DIR MGRIDGEN_LIB_DIR
+               CCMIO_INC_DIR CCMIO_LIB_DIR)
         if(DEFINED ${mp} AND ${mp})
             string(REPLACE "@${mp}@" "${${mp}}" val "${val}")
         endif()

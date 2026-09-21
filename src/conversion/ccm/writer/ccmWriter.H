@@ -126,7 +126,7 @@ class writer
     // Static Data
 
         //- The OpenFOAM -> CCM field mappings
-        static conversion_API dictionary defaultNameMapping;
+        static ccm_API dictionary defaultNameMapping;
 
 
     // Member Data
@@ -210,7 +210,7 @@ public:
 
         //- The name for the topology file reference
         FOAM_DLL_EXPORT
-        static conversion_API string defaultMeshName;
+        static ccm_API string defaultMeshName;
 
 
     // Generated Methods

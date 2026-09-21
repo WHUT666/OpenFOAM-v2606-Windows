@@ -229,6 +229,16 @@
 #  define conversion_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
 #endif
 
+#ifdef ccm_EXPORTS
+#  define ccm_API FOAM_EXPORT__
+#  define ccm_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define ccm_TEMPLATE_IMPORT(...)
+#else
+#  define ccm_API FOAM_IMPORT__
+#  define ccm_TEMPLATE_EXPORT(...)
+#  define ccm_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
 #ifdef decompose_EXPORTS
 #  define decompose_API FOAM_EXPORT__
 #  define decompose_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)

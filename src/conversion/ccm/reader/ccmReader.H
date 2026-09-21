@@ -197,10 +197,10 @@ private:
     // Static Data
 
         //- cellTable integer options
-        static conversion_API const char* cellTableOpti[];
+        static ccm_API const char* cellTableOpti[];
 
         //- cellTable string options
-        static conversion_API const char* cellTableOptstr[];
+        static ccm_API const char* cellTableOptstr[];
 
 
     // Private Data

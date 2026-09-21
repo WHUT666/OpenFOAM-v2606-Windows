@@ -222,6 +222,21 @@ or set `PATH=<bld>\bin\Release;<bld>\lib\Release;<repo>\thirdparty\fftw;%PATH%`
   Verified on `icoFoam` cavity (GAMG + `agglomerator MGridGen`).
   Requires `minSize`/`maxSize`/`nProcConsistencyIter` entries in the
   solver dict.
+- libccmio 2.6.1 (CD-adapco .ccm/.ccmg I/O): sources vendored under
+  `thirdparty/libccmio` (the publicly distributed foam-extend/VisIt
+  drop — `libccmio` + `libadf` C sources only; `ADF_fortran_2_c.c`
+  and the `ADF_interface_{new,old,mod}.c` alternates are excluded;
+  `ccmioread.c` is `#include`d by `ccmio.c`, never compile it
+  separately). Built in-tree as the `ccmio` STATIC target with
+  `ADFLIB` defined (code carries no export decls). `CCMIO_INC_DIR`/
+  `CCMIO_LIB_DIR` are set in the top-level CMakeLists and resolved
+  through `foam_resolve_marker`, so `src/conversion/ccm` (`libccm.dll`)
+  and `applications/.../ccm/{ccmToFoam,foamToCcm}` build natively.
+  Verified: `foamToCcm -mesh` (cavity → .ccmg) → `ccmToFoam` read-back
+  → `checkMesh` Mesh OK. The ccm lib's own statics are annotated
+  `ccm_API` (NOT `conversion_API` — the target is `ccm`, not
+  `conversion`; wrong macro = C2491 inside the lib and missing
+  exports for consumers).
 - CGAL 6.x + GMP/MPFR vendored (`thirdparty/{cgal,gmp,mpfr}`). CGAL
   apps enabled: `foamyHexMesh` (verified on `mesh/foamyHexMesh/blob`),
   `foamyQuadMesh`, `cv2DMesh`, `cellSizeAndAlignmentGrid`,

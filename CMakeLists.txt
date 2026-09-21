@@ -411,6 +411,38 @@ if(EXISTS "${MGRIDGEN_DIR}/src/Lib/mgridgen.c" AND EXISTS "${MGRIDGEN_DIR}/inclu
 endif()
 
 #------------------------------------------------------------------------------
+# Third-party: libccmio (STAR-CCM+/STAR-CD .ccm I/O) - optional
+#------------------------------------------------------------------------------
+# CD-adapco libccmio 2.6.1 sources vendored under thirdparty/libccmio
+# (the publicly distributed foam-extend/VisIt source drop). Plain C89;
+# Windows support is built-in (_WIN32/io.h paths, makefile.win heritage).
+# Static lib only - the code carries no export decls by design.
+# ADF_fortran_2_c.c is excluded (Fortran bindings, need fortran_macros.h);
+# ADF_interface_{new,old,mod}.c are unused alternates.
+set(CCMIO_INC_DIR "")
+set(CCMIO_LIB_DIR "")
+set(CCMIO_DIR "${FOAM_PROJECT_DIR}/thirdparty/libccmio")
+if(EXISTS "${CCMIO_DIR}/libccmio/ccmio.c" AND EXISTS "${CCMIO_DIR}/libadf/ADF.h")
+    set(CCMIO_INC_DIR "${CCMIO_DIR}")
+    if(NOT TARGET ccmio)
+        add_library(ccmio STATIC
+            "${CCMIO_DIR}/libccmio/ccmio.c"
+            "${CCMIO_DIR}/libccmio/ccmiocore.c"
+            "${CCMIO_DIR}/libccmio/ccmioprivate.c"
+            "${CCMIO_DIR}/libccmio/ccmioutility.c"
+            "${CCMIO_DIR}/libccmio/ccmioversion.c"
+            "${CCMIO_DIR}/libadf/ADF_interface.c"
+            "${CCMIO_DIR}/libadf/ADF_internals.c")
+        target_include_directories(ccmio PUBLIC "${CCMIO_INC_DIR}")
+        target_compile_definitions(ccmio PRIVATE ADFLIB)
+        set_target_properties(ccmio PROPERTIES
+            ARCHIVE_OUTPUT_DIRECTORY "${FOAM_LIBBIN_DIR}")
+    endif()
+    set(CCMIO_LIB_DIR "${FOAM_LIBBIN_DIR}")
+    message(STATUS "Using vendored libccmio sources: ${CCMIO_DIR}")
+endif()
+
+#------------------------------------------------------------------------------
 # Third-party: MPI (MS-MPI) - optional
 #------------------------------------------------------------------------------
 set(FOAM_HAVE_MPI FALSE)

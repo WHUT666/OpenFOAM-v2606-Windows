@@ -28,10 +28,13 @@
   `cmake/genExportsDef.py` 从 obj 收割强符号生成 `.def` 导出表
 - ✅ **全部应用默认可构建**:596 个应用目标全部启用
   (`FOAM_APP_<路径>` 默认 ON,可用 `-DFOAM_APP_<路径>=OFF` 关闭单个),
-  共享构建产出 **594 个 exe + 134 个 DLL,零编译/链接错误**;
+  共享构建产出 **596 个 exe + 135 个 DLL,零编译/链接错误**;
   应用级本地库(湍流模型、相系统、DSMC、conformalVoronoiMesh 等
-  28 个)同样以 DLL 构建并被依赖应用正确链接;仅 `foamToCcm`/
-  `ccmToFoam` 因 CCMIO 专有 SDK 缺失按设计跳过
+  28 个)同样以 DLL 构建并被依赖应用正确链接
+- ✅ **CCM 转换**:vendored `libccmio` 2.6.1(foam-extend 公开源码包,
+  纯 C)+ ADF 底层以 MSVC 静态编译为 `ccmio.lib`,链入 `libccm.dll`;
+  `foamToCcm`/`ccmToFoam` 双向转换经 cavity 案例验证
+  (写出 .ccmg → 读回 polyMesh → checkMesh OK)
 - ✅ **静态库构建保持可用**:`FOAM_STATIC_LIBS=ON`(默认)产出
   `/WHOLEARCHIVE` 静态库,保留 runTimeSelection 自注册语义,
   两种模式共用同一套源码与标注
@@ -68,6 +71,8 @@
   `foamDictionary`、`reconstructParMesh`
 - `controlDict` `libs ("libutilityFunctionObjects");` 动态插件加载;
   不存在的库优雅告警不崩溃
+- `foamToCcm -mesh`(cavity → `meshExport-*.ccmg`)→ `ccmToFoam`
+  读回 → `checkMesh` 网格 OK(882 点/400 单元,patch 名称保留)
 - 测试应用:`Test-dummyLib`(WM_* 编译期值正确)、`Test-volField`、
   `Test-dimField1`、`Test-fvc2D`、`Test-parallel-comm1`、
   `Test-processorTopology`(9 进程,MPI-2 Sendrecv 邻居交换回退)
@@ -76,8 +81,6 @@
 
 ### 已知限制
 
-- `foamToCcm`/`ccmToFoam` 未构建(需 CCMIO 专有 SDK,无 Windows
-  原生版本;构建系统自动跳过,不影响其余应用)
 - `foamyHexMeshSurfaceSimplify` 跳过(缺 `fastdualoctree_sgp` + OpenGL,
   上游同样跳过)
 - POSIX shell 工具脚本(`foamJob`、`runParallel`、`foamLog` 等)在 cmd

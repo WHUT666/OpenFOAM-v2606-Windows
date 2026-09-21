@@ -1,11 +1,13 @@
 @echo off
 rem OpenFOAM-v2606 Windows build helper
 rem
-rem   Usage: build-windows.bat [target ...] [/c]
+rem   Usage: build-windows.bat [target ...] [/c] [/d:<dir>]
 rem
 rem     no args        configure (if needed) + build ALL_BUILD Release
 rem     target names   build only those targets (e.g. icoFoam decomposePar)
 rem     /c             force a fresh cmake configure first
+rem     /d:<dir>       use <dir> as the build tree instead of build\
+rem                    (e.g. /d:build-shared for -DFOAM_STATIC_LIBS=OFF)
 rem
 rem Serializes MSBuild: kills stale build nodes that otherwise lock
 rem .obj/.tlog files, then runs a single build invocation.
@@ -15,7 +17,12 @@ rem concurrent cl.exe (project-level x /MP) -> C1060 heap exhaustion.
 setlocal EnableDelayedExpansion
 set "PROJ=%~dp0.."
 for %%i in ("%PROJ%") do set "PROJ=%%~fi"
-set "BLD=%PROJ%\build"
+set "BLDNAME=build"
+for %%a in (%*) do (
+    set "ARG=%%a"
+    if /i "!ARG:~0,3!"=="/d:" set "BLDNAME=!ARG:~3!"
+)
+set "BLD=%PROJ%\%BLDNAME%"
 
 rem --- locate MSBuild -------------------------------------------------------
 set "VSWHERE=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
@@ -49,13 +56,19 @@ if defined FORCECFG (
 )
 
 rem --- build ----------------------------------------------------------------
-if "%~1"=="" (
+set "HASTGT="
+for %%a in (%*) do (
+    set "ARG=%%a"
+    if not "!ARG:~0,1!"=="/" set "HASTGT=1"
+)
+if not defined HASTGT (
     "%MSBUILD%" "%BLD%\OpenFOAM.sln" -t:ALL_BUILD -p:Configuration=Release -m:2 -clp:Summary
 ) else (
     set "TGTS="
     :tgtloop
     if not "%~1"=="" (
-        set "TGTS=!TGTS!-t:%~1 "
+        set "ARG=%~1"
+        if not "!ARG:~0,1!"=="/" set "TGTS=!TGTS!-t:%~1 "
         shift
         goto tgtloop
     )

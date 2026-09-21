@@ -9,6 +9,18 @@ cmake -S . -B build -G "Visual Studio 17 2022" -A x64
 MSBuild build\OpenFOAM.sln -p:Configuration=Release -m
 ```
 
+Shared (DLL) build — every library becomes its own DLL:
+
+```bat
+cmake -S . -B build-shared -G "Visual Studio 17 2022" -A x64 -DFOAM_STATIC_LIBS=OFF
+MSBuild build-shared\OpenFOAM.sln -p:Configuration=Release -m
+```
+
+`FOAM_STATIC_LIBS=ON` (default) = static `/WHOLEARCHIVE` model;
+`OFF` = shared DLLs (`FOAM_SHARED_LIBS` defined, activates the
+`<Lib>_API` import/export layer). Same sources, same annotations —
+the macros expand empty in static mode.
+
 Or per target:
 
 ```bat
@@ -31,6 +43,22 @@ references.
   (lstat, strcasecmp, strncasecmp, strtok_r, alloca...). Do NOT add
   `#define` for names like read/write/close — they rewrite C++ member
   calls (`os.write()` → `os._write()`).
+- `cmake/compat/foamApi.h` — per-target `<Lib>_API` macros (also
+  force-included via msvcCompat.h). Resolve to
+  `__declspec(dllexport)` inside the owning lib (`<Lib>_EXPORTS` is
+  auto-defined by CMake for SHARED targets), `dllimport` for
+  consumers, empty under `FOAM_STATIC_LIBS`. Symbols declared by
+  `OSspecific/` and `Pstream/` headers live in libOpenFOAM.dll —
+  annotate with `OpenFOAM_API`. Maintenance tools:
+  `cmake/annotateClass.py` (class-decl annotation),
+  `cmake/harvestUnresolved.py` (classify LNK2019 symbols),
+  `cmake/_bulk_annotate.py` (member-level data annotation).
+- `cmake/genExportsDef.py` — PRE_LINK step per DLL: scans the
+  target's `.obj` files with dumpbin and writes `foam_exports.def`
+  with all strong symbols. Required because
+  `WINDOWS_EXPORT_ALL_SYMBOLS` hit a link.exe .exp-generation bug on
+  the `__imp___iob_func` shim, and because declspec alone cannot
+  cover symbols pulled in via embedded OBJECT libraries.
 - `build/lnInclude/` — copied headers replacing upstream symlinked
   lnInclude. Re-run CMake configuration after editing `src/**` headers to
   refresh the generated copies before building.
@@ -38,17 +66,57 @@ references.
 
 ## Key conventions
 
-- Each static library propagates `/WHOLEARCHIVE` through its CMake interface,
-  preserving runTimeSelection registration for an executable's transitive
-  dependency closure without `/FORCE:MULTIPLE` or unrelated duplicate symbols.
-  Add optional static plugins to the application's `Make/options` `EXE_LIBS`.
+- Static mode: each library propagates `/WHOLEARCHIVE` through its
+  CMake interface, preserving runTimeSelection registration for an
+  executable's transitive dependency closure. Add optional static
+  plugins to the application's `Make/options` `EXE_LIBS`.
+- Shared mode: library deps link `PUBLIC` so import libs propagate
+  transitively (mirrors ELF DT_NEEDED; upstream `Make/options`
+  under-declares direct deps — e.g. conformalVoronoiMesh uses
+  finiteVolume via dynamicMesh but never links -lfiniteVolume).
+  `/FORCE:MULTIPLE` is set globally: genExportsDef re-exports COMDAT
+  template instantiations (e.g. `HashSet<label>` members forced by
+  dllexport'd classes) that consumers also instantiate locally —
+  identical code, safe to fold. All *data* symbols are explicitly
+  owned via API annotations, never duplicated.
+- DLL data-sympol ownership rules (MSVC auto-imports functions via
+  linker thunks but never data — every cross-DLL data decl needs the
+  owner macro):
+  - `ClassNameApi(<Lib>_API, "name")` / `TypeNameApi(...)` /
+    `NamespaceNameApi(...)` carry declspec for `typeName`/`debug`
+    statics.
+  - `declareRunTimeSelectionTable{,New}Api(<Lib>_API, ...)` and
+    `declareMemberFunctionSelectionTableApi` annotate table
+    singletons. Table-pointer access goes through
+    `TableInsert`/`TableSet`/`TableErase` member functions — MSVC
+    emits bare refs (no `__imp_`) to extern-template static *data*
+    members through nested adder templates, while function refs
+    always resolve.
+  - Template classes whose spec definitions live in other TUs use
+    the opt-out pattern: header does
+    `#if defined(Foam_X_defines_typeName)` → undecorated decl, else
+    `<Lib>_API`; the owning .C defines `Foam_X_defines_typeName`
+    *before* any include.
+  - Closed instance sets (Function1/PatchFunction1 families) use
+    `<Lib>_TEMPLATE_IMPORT` in the header + `<Lib>_TEMPLATE_EXPORT`
+    (`template class`) in the owner TU — the only MSVC-legal way to
+    import statics of a template specialization (declspec on
+    `template<>` member decls is C2720; annotating the primary
+    template's member breaks downstream spec defs, C2491).
+  - Class-level `<Lib>_API` only for classes whose vtable crosses
+    DLL boundaries. Beware: exporting a class forces instantiation
+    of lazy members — `UList<token>` needed constexpr guards on
+    `expr()`/`fill_uniform`/`operator<`, and dllexport classes
+    instantiated over dllimport-member bases hit C2487.
 - App target dir comes AFTER library includes so `<CorrectPhi.H>`
   resolves to the library header, not the case-colliding local
   `correctPhi.H` fragment (Windows FS is case-insensitive).
 - `FOAM_CONFIGURED_PROJECT_DIR` is baked into libOpenFOAM so
   `#includeEtc`/`etc/caseDicts` resolve without `WM_PROJECT_DIR`.
-- `FOAM_STATIC_BUILD` makes `dlOpen` fall back to the process image. Any
-  `libs` plugin must be present in the application's static dependency closure.
+- `FOAM_STATIC_BUILD` makes `dlOpen` fall back to the process image.
+  Any `libs` plugin must be present in the application's static
+  dependency closure. In shared builds `dlOpen` loads the DLL
+  normally — `controlDict` `libs("libX")` verified working.
 - MSVC has no key-function vtable optimisation: any TU that sees a
   complete `GeometricField` must also see the complete patch-field
   type (include `volFields.H`/`surfaceFields.H`, not just `*Fwd.H`).
@@ -63,21 +131,30 @@ references.
 ## Run
 
 ```bat
-call etc\openfoam-env.bat
+call etc\openfoam-env.bat              rem static build tree (build\)
+call etc\openfoam-env.bat build-shared rem shared build tree
 ```
 
-or set `PATH=E:\openfoam\build\bin\Release;E:\openfoam\thirdparty\fftw;%PATH%`.
+or set `PATH=<bld>\bin\Release;<bld>\lib\Release;<repo>\thirdparty\fftw;%PATH%`
+(`lib\Release` holds the DLLs in shared builds; harmless in static).
 `WM_PROJECT_DIR` is optional (compile-time fallback baked in).
 
 ## Verified runtime
 
 - `blockMesh`, `topoSet`, `setFields`, `checkMesh`, `transformPoints`,
-  `decomposePar`/`reconstructPar`, `redistributePar`, `foamToVTK`,
-  `foamDictionary`, `foamFormatConvert`, `patchSummary`, `postProcess`
-- `laplacianFoam` (flange, cyclicAMI+GAMG), `icoFoam` (cavity 0.5 s),
-  `pisoFoam` (RAS cavity 0–10 s, k-ε+FOs), `simpleFoam` (pitzDaily,
-  converged, streamlines), `potentialFoam`, `interFoam` (damBreak VOF),
-  `snappyHexMesh` (motorBike, 3.8 M cells), `foamyHexMesh` (CGAL blob)
+  `decomposePar`/`reconstructPar`/`reconstructParMesh`,
+  `redistributePar`, `foamToVTK`, `foamDictionary`,
+  `foamFormatConvert`, `patchSummary`, `postProcess`
+- `laplacianFoam` (flange, cyclicAMI+GAMG), `icoFoam` (cavity 0.5 s,
+  serial + 9-rank MPI), `pisoFoam` (RAS cavity 0–10 s, k-ε+FOs),
+  `simpleFoam` (pitzDaily, converged, streamlines), `pimpleFoam`
+  (movingCone, dynamic mesh + GAMG + vtkWrite), `potentialFoam`,
+  `interFoam` (damBreak VOF), `snappyHexMesh` (motorBike 3.8 M cells,
+  serial + MPI, CGAL kernel), `foamyHexMesh` (CGAL blob)
+- Shared-build extras: `controlDict` `libs("libutilityFunctionObjects")`
+  plugin load; missing lib warns gracefully.
+- Static regression (`FOAM_STATIC_LIBS=ON`): libOpenFOAM,
+  libfiniteVolume, icoFoam compile + link + run cavity end-to-end.
 
 ## Caution
 
@@ -87,6 +164,14 @@ or set `PATH=E:\openfoam\build\bin\Release;E:\openfoam\thirdparty\fftw;%PATH%`.
 - Parallelism: `-m:2` is the safe default (32 GB RAM). `-m` alone spawns
   too many concurrent cl.exe (project-level × /MP) → C1060 heap
   exhaustion / pagefile errors.
+- MSBuild incremental builds under-track `lnInclude` header changes
+  (the /MP tlog shard merge drops header deps after compile errors).
+  After editing `src/**` headers, Rebuild the affected targets rather
+  than relying on incremental — stale .obj files produce misleading
+  bare-reference LNK2019s.
+- Changing any annotation in a widely-included header (foamApi.h,
+  runTimeSelectionTables.H, className.H) effectively requires a full
+  rebuild — plan accordingly.
 
 ## MPI / decomposition / CGAL
 

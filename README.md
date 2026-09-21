@@ -20,45 +20,57 @@
 
 ### 已完成
 
+- ✅ **共享库(DLL)构建**:`FOAM_STATIC_LIBS=OFF` 时每个 OpenFOAM 库
+  独立产出 DLL(128 个库),逐库 `<Lib>_API` 导入/导出标注
+  (`cmake/compat/foamApi.h`),运行时选择表经
+  `TableInsert/TableSet/TableErase` 成员函数封装跨 DLL 访问,
+  模板静态成员用 `Foam_<Class>_defines_typeName` opt-out 保证单一属主;
+  `cmake/genExportsDef.py` 从 obj 收割强符号生成 `.def` 导出表
+- ✅ **静态库构建保持可用**:`FOAM_STATIC_LIBS=ON`(默认)产出
+  `/WHOLEARCHIVE` 静态库,保留 runTimeSelection 自注册语义,
+  两种模式共用同一套源码与标注
 - ✅ **构建系统**:完整 CMake 移植(`cmake/wmake2cmake.py` 从 `Make/files`
   + `Make/options` 自动生成目标),VS2022 x64 / C++17 / DP / label32,
-  `ALL_BUILD` 零编译错误零链接警告
+  全量构建零编译错误
 - ✅ **MPI**:vendored MS-MPI SDK(`thirdparty/msmpi`,含 mpiexec/smpd/
   msmpi.dll),`mpiexec -n N <solver> -parallel` 端到端可用;修复了
   MS-MPI 缺少 `MPI_Comm_create_group` 导致的子通信域集合调用错配
 - ✅ **并行分解**:`decomposePar`/`redistributePar` 的 `metis`、`scotch`、
-  `ptscotch` 后端均为真实实现(vendored conda-forge int32 库)
+  `ptscotch`、`kahip` 后端均为真实实现(vendored 库)
 - ✅ **CGAL**:vendored CGAL 6.x + GMP/MPFR;`foamyHexMesh`、`foamyQuadMesh`、
   `cellSizeAndAlignmentGrid`、`viewFactorsGen`、`surfaceBooleanFeatures`
   均可构建运行
-- ✅ **静态链接模型**:每个静态库通过 `INTERFACE_LINK_OPTIONS` 传播
-  `/WHOLEARCHIVE`,保留 runTimeSelection 自注册语义,无需 `/FORCE:MULTIPLE`,
-  无重复符号
+- ✅ **运行时插件**:共享构建下 `controlDict` 的 `libs(...)` 动态加载
+  DLL 插件可用
 - ✅ **兼容性修复**:空 compound 类型名污染 token 表导致的并行反序列化
   bug、`argv[0]` 反斜杠/`.exe` 后缀、conda-forge metis 的 pre-UCRT stdio
   shim(`__iob_func`)、MSVC 名称限定与模板显式实例化等
 
-### 已验证工作流
+### 已验证工作流(共享 DLL 构建)
 
-- `decomposePar → mpiexec -n 2 icoFoam -parallel → reconstructPar` 完整闭环
+- `blockMesh → decomposePar → mpiexec -n N icoFoam -parallel →
+  reconstructPar` 完整闭环(9 进程 MPI 验证通过)
+- `snappyHexMesh` 串行与 MPI 并行(CGAL 几何内核),`simpleFoam`
+  (湍流+functionObject+streamlines 收敛)、`pimpleFoam`
+  (movingCone 动网格+GAMG+vtkWrite 全程)
 - `redistributePar`(metis / scotch / ptscotch / kahip)及
-  `redistributePar -reconstruct`;GAMG `agglomerator MGridGen` 可用
-- 串行:`blockMesh`、`checkMesh`、`topoSet`、`setFields`、`snappyHexMesh`
-  (motorBike 3.8M cells)、`foamyHexMesh`(CGAL blob)、`laplacianFoam`、
-  `icoFoam`、`pisoFoam`、`simpleFoam`、`potentialFoam`、`interFoam`、
-  `rhoCentralFoam`、`foamToVTK`、`foamDictionary` 等
+  `redistributePar -reconstruct`;`setFields`、`checkMesh`、
+  `foamDictionary`、`reconstructParMesh`
+- `controlDict` `libs ("libutilityFunctionObjects");` 动态插件加载;
+  不存在的库优雅告警不崩溃
+- 静态回归:`FOAM_STATIC_LIBS=ON` 下 OpenFOAM/finiteVolume/icoFoam
+  编译、链接、运行一致通过
 
 ### 已知限制
 
-- 应用按白名单启用(`-DFOAM_APP_<路径>=ON`),当前仅 ~33 个常用 app;
-  其余 ~560 个未编译验证,启用后可能仍需个别 MSVC 适配
-- 静态构建下运行时 `libs` 动态加载不可用,插件必须在应用链接闭包内
+- 应用按白名单启用(`-DFOAM_APP_<路径>=ON`),共享构建已验证 12 个
+  代表性应用;其余 ~560 个 app 启用后可能仍需个别 MSVC 适配
 - `foamyHexMeshSurfaceSimplify` 跳过(缺 `fastdualoctree_sgp` + OpenGL,
   上游同样跳过)
 - POSIX shell 工具脚本(`foamJob`、`runParallel`、`foamLog` 等)在 cmd
   下不可用
-- 仅验证过 2-rank MPI;Debug 配置与共享库构建(`FOAM_STATIC_LIBS=OFF`)
-  未验证
+- Debug 配置未验证;MSBuild 增量构建对生成头(`lnInclude`)变更的
+  依赖追踪不完整,头文件改动后建议对受影响目标用 Rebuild
 
 ## 快速开始(Windows)
 
@@ -66,17 +78,22 @@
 git clone https://github.com/WHUT666/OpenFOAM-v2606-Windows.git
 cd OpenFOAM-v2606-Windows
 
-rem 配置 + 全量构建(自动定位 MSBuild,串行化防止 .obj 锁)
+rem --- 静态构建(默认,FOAM_STATIC_LIBS=ON)---
 etc\build-windows.bat
-
-rem 加载环境(PATH / WM_PROJECT_DIR)
 call etc\openfoam-env.bat
+
+rem --- 共享 DLL 构建 ---
+cmake -B build-shared -A x64 -DFOAM_MPI=msmpi -DFOAM_STATIC_LIBS=OFF ^
+  -DFOAM_APP_solvers_incompressible_icoFoam=ON
+rem (按需追加 -DFOAM_APP_<路径>=ON)
+etc\build-windows.bat /d:build-shared
+call etc\openfoam-env.bat build-shared
 
 blockMesh -help
 mpiexec -n 2 icoFoam -case <case> -parallel
 ```
 
-启用额外应用:`cmake -B build -DFOAM_APP_<路径>=ON`,如
+启用额外应用:`cmake -B <build> -DFOAM_APP_<路径>=ON`,如
 `-DFOAM_APP_solvers_compressible_rhoPimpleFoam=ON`
 
 详细构建约定、坑位记录与调试须知见 [AGENTS.md](AGENTS.md)。

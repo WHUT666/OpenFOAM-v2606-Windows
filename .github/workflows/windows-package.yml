@@ -1,0 +1,102 @@
+name: windows-package
+
+# Builds the complete shared-DLL OpenFOAM distribution for Windows and
+# publishes it as a workflow artifact (and a GitHub Release on v* tags or
+# when requested via workflow_dispatch).
+
+on:
+  workflow_dispatch:
+    inputs:
+      make_release:
+        description: 'Create a GitHub Release'
+        type: boolean
+        default: false
+      release_tag:
+        description: 'Tag for the release (default: v2606-win.<run_number>)'
+        type: string
+        required: false
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: windows-package-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PKG_NAME: OpenFOAM-v2606-Windows-x64
+
+jobs:
+  package:
+    runs-on: windows-latest
+    timeout-minutes: 360
+    steps:
+      - name: Enable long paths
+        shell: pwsh
+        run: |
+          git config --global core.longpaths true
+          New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
+            -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force | Out-Null
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure (shared DLLs, no test apps)
+        shell: cmd
+        run: |
+          cmake -S . -B build-shared -G "Visual Studio 17 2022" -A x64 ^
+            -DCMAKE_BUILD_TYPE=Release ^
+            -DFOAM_STATIC_LIBS=OFF ^
+            -DFOAM_BUILD_APPS=ON ^
+            -DFOAM_APP_TESTS=OFF ^
+            -DFOAM_MPI=msmpi ^
+            -DFOAM_PRECISION=DP ^
+            -DFOAM_LABEL_SIZE=32
+
+      - name: Build
+        shell: cmd
+        run: cmake --build build-shared --config Release --parallel 2 -- /nr:false /v:m
+
+      - name: Assemble package
+        shell: pwsh
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File etc/package-windows.ps1
+
+      - name: Smoke test (from package)
+        shell: cmd
+        run: |
+          mkdir _smoke
+          xcopy /e /i /q "dist\%PKG_NAME%\tutorials\incompressible\icoFoam\cavity\cavity" _smoke\cavity >nul
+          call "dist\%PKG_NAME%\setenv.bat"
+          cd _smoke
+          blockMesh -case cavity || exit /b 1
+          icoFoam -case cavity || exit /b 1
+          checkMesh -case cavity || exit /b 1
+          foamToCcm -case cavity -mesh || exit /b 1
+          ccmToFoam -help >nul || exit /b 1
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.PKG_NAME }}
+          path: dist/${{ env.PKG_NAME }}.7z
+          compression-level: 0
+          retention-days: 90
+
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/') || inputs.make_release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $tag = "${{ inputs.release_tag }}"
+          if (-not $tag) {
+            if ($env:GITHUB_REF_TYPE -eq 'tag') { $tag = $env:GITHUB_REF_NAME }
+            else { $tag = "v2606-win.$($env:GITHUB_RUN_NUMBER)" }
+          }
+          gh release create $tag "dist/${{ env.PKG_NAME }}.7z" `
+            --title "OpenFOAM v2606 Windows x64 ($tag)" `
+            --notes "Automated MSVC shared-DLL build: solvers, utilities, MPI (MS-MPI), CGAL, mesh conversion incl. CCM. See PACKAGE-INFO.txt inside the archive." `
+            --latest=false

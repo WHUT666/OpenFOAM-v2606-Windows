@@ -5,6 +5,9 @@
 set(FOAM_APP_LIST "")
 
 function(foam_app dir)
+    if(NOT FOAM_APP_TESTS AND dir MATCHES "^test/")
+        return()
+    endif()
     cmake_parse_arguments(A "OPTIONAL" "ENABLE_VAR" "" ${ARGN})
     if(NOT A_ENABLE_VAR)
         string(REPLACE "/" "_" oname "${dir}")
@@ -28,6 +31,9 @@ endfunction()
 # several apps link them, eg -lrhoCentralFoam from rhoCentralFoam/BCs)
 #------------------------------------------------------------------------------
 function(foam_app_lib dir)
+    if(NOT FOAM_APP_TESTS AND dir MATCHES "^test/")
+        return()
+    endif()
     foam_add_library("${FOAM_APP_SRC_DIR}/${dir}")
 endfunction()
 

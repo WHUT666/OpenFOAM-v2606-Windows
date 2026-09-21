@@ -71,6 +71,11 @@
   `foamDictionary`、`reconstructParMesh`
 - `controlDict` `libs ("libutilityFunctionObjects");` 动态插件加载;
   不存在的库优雅告警不崩溃
+- GitHub Actions 自动打包(`.github/workflows/windows-package.yml`):
+  推送 `v*` tag 或手动触发即构建共享 DLL 全套(不含 test 应用),
+  产出 `OpenFOAM-v2606-Windows-x64.7z`(bin+lib+imp+include+etc+
+  tutorials+第三方运行时),并在包内冒烟验证 blockMesh/icoFoam/
+  checkMesh/foamToCcm 后上传 artifact/Release
 - `foamToCcm -mesh`(cavity → `meshExport-*.ccmg`)→ `ccmToFoam`
   读回 → `checkMesh` 网格 OK(882 点/400 单元,patch 名称保留)
 - 测试应用:`Test-dummyLib`(WM_* 编译期值正确)、`Test-volField`、
@@ -108,8 +113,12 @@ mpiexec -n 2 icoFoam -case <case> -parallel
 ```
 
 应用默认全部构建(596 个目标);关闭单个应用:
-`cmake -B <build> -DFOAM_APP_<路径>=OFF`。MSBuild 全量构建建议
+`cmake -B <build> -DFOAM_APP_<路径>=OFF`;关闭全部 test 应用:
+`-DFOAM_APP_TESTS=OFF`。MSBuild 全量构建建议
 `/m:2` 并行度(更高并行可能触发 C1060 编译器内存耗尽)。
+
+本地打包(与 CI 相同逻辑):`powershell -File etc/package-windows.ps1`
+→ `dist/OpenFOAM-v2606-Windows-x64(.7z)`,解压后 `setenv.bat` 即用。
 
 详细构建约定、坑位记录与调试须知见 [AGENTS.md](AGENTS.md)。
 

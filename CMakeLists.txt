@@ -34,6 +34,7 @@ option(FOAM_BUILD_APPS "Build applications" OFF)
 # each need __declspec(dllimport) annotations. Static libs + /WHOLEARCHIVE
 # keep the runTimeSelection mechanism working.
 option(FOAM_STATIC_LIBS "Build static libs instead of DLLs" ON)
+option(FOAM_APP_TESTS "Build applications/test/* test apps" ON)
 
 if(NOT FOAM_STATIC_LIBS)
     # Shared build: activates the <Target>_API import/export macros

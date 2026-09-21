@@ -30,6 +30,16 @@ MSBuild build\applications\<app>.vcxproj -p:Configuration=Release -p:Platform=x6
 
 All apps build by default (`FOAM_APP_<name>` defaults ON; disable one
 with `-DFOAM_APP_<name>=OFF`, see `applications/CMakeLists.txt`).
+`-DFOAM_APP_TESTS=OFF` skips the whole `applications/test/` tree
+(~320 targets) — used by the CI packaging workflow.
+
+CI packaging: `.github/workflows/windows-package.yml` builds the
+shared-DLL distribution on `windows-latest` (v* tags / dispatch),
+assembles `dist/OpenFOAM-v2606-Windows-x64` via
+`etc/package-windows.ps1`, smoke-tests the package itself
+(blockMesh/icoFoam/checkMesh/foamToCcm on cavity) and uploads
+the `.7z` as artifact (+ Release). MSBuild uses `/nr:false` to
+avoid the node-reuse end-of-build hang.
 Library deps build automatically as project references. App-local
 helper libraries are registered via `foam_app_lib(<dir>)` and get the
 same DLL/API treatment as src libs. Full shared builds should use

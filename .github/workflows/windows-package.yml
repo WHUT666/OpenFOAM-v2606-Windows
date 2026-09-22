@@ -33,13 +33,9 @@ jobs:
   package:
     runs-on: windows-2022  # VS2022 toolchain (windows-2025 image ships VS2026)
     timeout-minutes: 360
-    defaults:
-      run:
-        working-directory: of
     steps:
       - name: Enable long paths
         shell: pwsh
-        working-directory: ${{ github.workspace }}
         run: |
           git config --global core.longpaths true
           New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
@@ -47,13 +43,17 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          # Short checkout path: several sources exceed MAX_PATH (260)
-          # under the default D:\a\<repo>\<repo> workspace
-          path: of
+
+      # Some sources exceed MAX_PATH (260) under the runner workspace
+      # (D:\a\<repo>\<repo>) and cl.exe is not long-path aware, so build
+      # through a short drive-letter mapping.
+      - name: Map workspace to Z: (MAX_PATH workaround)
+        shell: cmd
+        run: subst Z: "%GITHUB_WORKSPACE%"
 
       - name: Configure (shared DLLs, no test apps)
         shell: cmd
+        working-directory: Z:\
         run: |
           cmake -S . -B build-shared -G "Visual Studio 17 2022" -A x64 ^
             -DCMAKE_BUILD_TYPE=Release ^
@@ -66,14 +66,17 @@ jobs:
 
       - name: Build
         shell: cmd
+        working-directory: Z:\
         run: cmake --build build-shared --config Release --parallel 2 -- /nr:false /v:m
 
       - name: Assemble package
         shell: pwsh
+        working-directory: Z:\
         run: powershell -NoProfile -ExecutionPolicy Bypass -File etc/package-windows.ps1
 
       - name: Smoke test (from package)
         shell: cmd
+        working-directory: Z:\
         run: |
           mkdir _smoke
           xcopy /e /i /q "dist\%PKG_NAME%\tutorials\incompressible\icoFoam\cavity\cavity" _smoke\cavity >nul
@@ -89,13 +92,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.PKG_NAME }}
-          path: of/dist/${{ env.PKG_NAME }}.7z
+          path: Z:/dist/${{ env.PKG_NAME }}.7z
           compression-level: 0
           retention-days: 90
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/') || inputs.make_release
         shell: pwsh
+        working-directory: Z:\
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

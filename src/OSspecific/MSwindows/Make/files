@@ -18,6 +18,6 @@ fileStat/fileStat.C
 /* Without inotify */
 fileMonitor/fileMonitor.C
 
-printStack/dummyPrintStack.C
+printStack/printStack.cxx
 
 LIB = $(FOAM_LIBBIN)/libOSspecific

@@ -35,6 +35,14 @@ option(FOAM_BUILD_APPS "Build applications" OFF)
 # keep the runTimeSelection mechanism working.
 option(FOAM_STATIC_LIBS "Build static libs instead of DLLs" ON)
 option(FOAM_APP_TESTS "Build applications/test/* test apps" ON)
+# PDBs let printStack resolve file:line info; without them it still
+# resolves symbols (shared builds export nearly everything anyway).
+option(FOAM_ENABLE_PDB "Emit PDBs in all configurations" ON)
+if(FOAM_ENABLE_PDB)
+    add_compile_options($<$<COMPILE_LANGUAGE:C,CXX>:/Zi>)
+    # /DEBUG disables the linker defaults /OPT:REF /OPT:ICF - restore them
+    add_link_options(/DEBUG /OPT:REF /OPT:ICF)
+endif()
 
 if(NOT FOAM_STATIC_LIBS)
     # Shared build: activates the <Target>_API import/export macros

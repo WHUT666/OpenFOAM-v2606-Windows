@@ -543,6 +543,11 @@ function(foam_add_executable dir)
     set_target_properties(${name} PROPERTIES
         OUTPUT_NAME "${exename}"
         RUNTIME_OUTPUT_DIRECTORY "${FOAM_APPBIN_DIR}")
+    # Linux default thread stack is 8MB, Windows' is 1MB - several test apps
+    # and OpenFOAM code paths legitimately place multi-MB objects on the
+    # stack (eg FixedList<T,100000>), which overflow with 0xC00000FD.
+    # Reserve 8MB (address-space only, committed on use).
+    target_link_options(${name} PRIVATE "/STACK:8388608")
     foam_apply_common(${name})
     if(FOAM_FLEX_SOURCES)
         # FlexLexer.h for generated lexers

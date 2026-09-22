@@ -92,7 +92,8 @@ doc/Doxygen/DTAGS
 
 # --- Windows/MSVC build tree ---
 /build/
-/build-shared/
+/build-*/
+/dist/
 *.obj
 *.tlog
 *.rsp

@@ -563,6 +563,36 @@ def _set_case_sensitive(dirpath):
     if os.name != 'nt':
         return True
     import subprocess
+    # Preferred: FileCaseSensitiveInfo via SetFileInformationByHandle.
+    # Unlike 'fsutil file setCaseSensitiveInfo' this does NOT require an
+    # elevated shell - write access to the directory is enough.
+    try:
+        import ctypes
+        from ctypes import wintypes
+        k32 = ctypes.windll.kernel32
+        k32.CreateFileW.restype = wintypes.HANDLE
+        invalid = wintypes.HANDLE(-1).value
+        h = k32.CreateFileW(
+            str(dirpath),
+            0xC0000000,  # GENERIC_READ | GENERIC_WRITE
+            7,           # FILE_SHARE_READ | WRITE | DELETE
+            None, 3,     # OPEN_EXISTING
+            0x02000000,  # FILE_FLAG_BACKUP_SEMANTICS (open a directory)
+            None)
+        if h and h != invalid:
+            try:
+                class _CSI(ctypes.Structure):
+                    _fields_ = [('Flags', wintypes.ULONG)]
+                info = _CSI(1)  # FILE_CASE_SENSITIVE_DIR
+                # FileCaseSensitiveInfo = 23
+                k32.SetFileInformationByHandle(
+                    h, 23, ctypes.byref(info), ctypes.sizeof(info))
+            finally:
+                k32.CloseHandle(h)
+        if _is_case_sensitive(dirpath):
+            return True
+    except Exception:
+        pass
     try:
         subprocess.run(
             ['fsutil.exe', 'file', 'setCaseSensitiveInfo', dirpath,
@@ -905,10 +935,13 @@ def main():
         ninc, mode = make_lninclude(srcdir, args.lninclude, sysinc)
         if mode == 'merged':
             sys.stderr.write(
-                'wmake2cmake: NOTE - %s is not case-sensitive; using\n'
-                'merged header shims (enable Developer Mode or run\n'
-                '"fsutil file setCaseSensitiveInfo <dir> enable" for the\n'
-                'cleaner mechanism)\n' % args.lninclude)
+                'wmake2cmake: WARNING - %s could not be made\n'
+                'case-sensitive; emitting merged header shims. These\n'
+                'pull Foam headers into system-header include chains\n'
+                'and are known to break MSVC builds. Fix the build\n'
+                'host instead (per-directory case sensitivity needs\n'
+                'Windows 10 1803+ on an NTFS volume).\n'
+                % args.lninclude)
 
     target_name = lib or exe or os.path.basename(srcdir)
     ttype = 'LIB' if lib else 'EXE'

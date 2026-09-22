@@ -131,6 +131,18 @@ on the largest TUs.
   Any `libs` plugin must be present in the application's static
   dependency closure. In shared builds `dlOpen` loads the DLL
   normally — `controlDict` `libs("libX")` verified working.
+- Crash diagnostics: `src/OSspecific/MSwindows/printStack/printStack.cxx`
+  implements `printStack`/`safePrintStack`/`demangle` via
+  `CaptureStackBackTrace` + DbgHelp (`SymFromAddr`/`SymGetLineFromAddr64`/
+  `SymGetModuleInfo64`, `UnDecorateSymbolName` for demangle). DbgHelp
+  calls are single-threaded — guarded by `try_lock`; on contention it
+  falls back to module+offset (kernel32 only). `FOAM_ENABLE_PDB`
+  (default ON) adds `/Zi` + `/DEBUG /OPT:REF /OPT:ICF` so frames
+  resolve to file:line; without PDBs symbols still resolve via DLL
+  exports in shared builds. `Dbghelp` is linked into libOpenFOAM.
+  Caution: dbghelp.h needs the SAL macros (`IN`/`OUT`/`INOUT`/
+  `OPTIONAL`) that msvcCompat.h undefines — printStack.cxx restores
+  them locally around the include only.
 - MSVC has no key-function vtable optimisation: any TU that sees a
   complete `GeometricField` must also see the complete patch-field
   type (include `volFields.H`/`surfaceFields.H`, not just `*Fwd.H`).
@@ -174,6 +186,37 @@ call etc\openfoam-env.bat build-shared rem shared build tree
 or set `PATH=<bld>\bin\Release;<bld>\lib\Release;<repo>\thirdparty\fftw;%PATH%`
 (`lib\Release` holds the DLLs in shared builds; harmless in static).
 `WM_PROJECT_DIR` is optional (compile-time fallback baked in).
+
+## Test suite
+
+`etc\run-test-apps.ps1` runs every `applications/test/Test-*.exe` under
+`bin\Release` (default `-BuildDir build-shared`): maps each exe back to
+its source dir, copies it to a temp workdir, runs `blockMesh` first when
+the case needs a mesh, synthesizes a minimal `system/controlDict` for
+tests that only need `Time`. Results CSV + per-test logs under
+`$env:TEMP\of-test-logs-*`; exit code = failure count.
+
+Baseline (shared build): ~250 PASS, ~55 SKIP (mpiexec/args/mesh/stdin —
+auto-detected from output), handful expected-abort tests
+(`Test-sigFpe` etc. — deliberate error paths, identical upstream).
+
+`-Parallel -NProcs 4` additionally runs MPI tests via
+`mpiexec -n N <exe> -parallel`; the runner synthesizes
+processor0..N-1 dirs (each with system/controlDict) since `-parallel`
+argList checks them. Verified under MS-MPI: broadcastCopy,
+parallel-barrier1, parallel-file-write1, parallel-scan,
+readBroadcast1, treeComms all PASS. `Test-one-sided1` HANGS under
+MS-MPI — all RMA output completes but the process never exits
+(MPI_Win/MPI_Fetch_and_op passive-target quirk; thin wrapper, likely
+MS-MPI limitation rather than port bug). `Test-decomposedBlockData`
+needs a real decomposedBlockData-format file (decomposed case) — kept
+as SKIP; feeding it a plain list makes it read-loop + ~3GB alloc.
+`Test-processorTopology` needs a decomposed mesh (decomposePar
+output) — SKIP.
+
+Executables link `/STACK:8388608` (8MB, matching the Linux default):
+Windows' 1MB default overflows on OpenFOAM's large automatic objects
+(e.g. `FixedList<T,100000>` — 0xC00000FD).
 
 ## Verified runtime
 

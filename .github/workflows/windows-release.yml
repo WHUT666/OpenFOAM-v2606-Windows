@@ -1,0 +1,50 @@
+name: windows-release
+
+# Creates a GitHub Release from the package artifact produced by an
+# earlier windows-package run — avoids rebuilding when only a release
+# is needed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'windows-package run id holding the artifact'
+        required: true
+      tag:
+        description: 'Release tag (e.g. v2606-win.1)'
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  PKG_NAME: OpenFOAM-v2606-Windows-x64
+
+jobs:
+  release:
+    runs-on: windows-2022
+    steps:
+      - name: Download package artifact from CI run
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.PKG_NAME }}
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify package
+        shell: pwsh
+        run: |
+          $pkg = Get-Item "${{ env.PKG_NAME }}.7z"
+          "{0}: {1:N0} bytes" -f $pkg.Name, $pkg.Length
+
+      - name: Create release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $tag = "${{ inputs.tag }}"
+          gh release create $tag "${{ env.PKG_NAME }}.7z" `
+            --repo WHUT666/OpenFOAM-v2606-Windows `
+            --title "OpenFOAM v2606 Windows x64 ($tag)" `
+            --notes "Automated MSVC shared-DLL build of OpenFOAM v2606 for Windows x64. Solvers, utilities, MS-MPI parallel, CGAL meshing (snappyHexMesh/foamyHexMesh), mesh conversion incl. CCM. Unpack, then call ``setenv.bat``; see PACKAGE-INFO.txt inside the archive."

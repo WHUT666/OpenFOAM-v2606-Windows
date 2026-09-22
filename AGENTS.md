@@ -76,6 +76,13 @@ on the largest TUs.
 - `build/lnInclude/` — copied headers replacing upstream symlinked
   lnInclude. Re-run CMake configuration after editing `src/**` headers to
   refresh the generated copies before building.
+  Each `lnInclude/<lib>` directory is made NTFS case-sensitive at
+  configure time (`SetFileInformationByHandle`/`FileCaseSensitiveInfo`,
+  no elevation needed; fsutil fallback) so Foam `string.H`/`Time.H`/
+  `wchar.H` cannot shadow `<string.h>`/`<time.h>`/`<wchar.h>`. If the
+  flag cannot be set, wmake2cmake falls back to merged shim headers —
+  these pull the Foam cascade into system-header parse order and break
+  MSVC; treat that path as unsupported.
 - `build/bin/Release`, `build/lib/Release` — exe/lib output.
 
 ## Key conventions
@@ -251,6 +258,13 @@ Windows' 1MB default overflows on OpenFOAM's large automatic objects
 - Changing any annotation in a widely-included header (foamApi.h,
   runTimeSelectionTables.H, className.H) effectively requires a full
   rebuild — plan accordingly.
+- Building through a `subst` drive (e.g. Z:\ for CI MAX_PATH) works, but
+  only after two latent bugs were fixed: wmake2cmake's project-root
+  walk-up used to exit before testing the drive root itself, leaving
+  `LIB_SRC` empty so `-I$(LIB_SRC)/...` paths resolved as
+  `<srcdir>/src/...` garbage; and unelevated `fsutil` silently failed to
+  make lnInclude case-sensitive, producing merged shims that poisoned
+  every `<string.h>`/`<time.h>` lookup.
 
 ## MPI / decomposition / CGAL
 

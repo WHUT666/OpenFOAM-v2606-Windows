@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenFOAM-v2606 for Windows — Native MSVC Port</title>
+<meta name="description" content="Unofficial native Windows port of OpenFOAM v2606: Visual Studio 2022 / MSVC build, real MS-MPI parallelism, all third-party dependencies vendored. No WSL, no MinGW, no Cygwin.">
+<style>
+  :root {
+    --bg: #0d1b2a;
+    --bg2: #12263a;
+    --card: #16293d;
+    --accent: #4fc3f7;
+    --accent2: #29b6f6;
+    --text: #e8f0f7;
+    --muted: #9db4c8;
+    --border: #23405c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre {
+    font-family: "Cascadia Code", Consolas, monospace;
+    background: #0a1520; border: 1px solid var(--border); border-radius: 6px;
+  }
+  code { padding: 0.1em 0.4em; font-size: 0.9em; }
+  pre { padding: 1em 1.2em; overflow-x: auto; font-size: 0.9em; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ---- nav ---- */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(13,27,42,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; align-items: center; gap: 1.2rem; height: 3.4rem; }
+  nav .brand { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+  nav .brand:hover { text-decoration: none; }
+  nav .spacer { flex: 1; }
+  nav a.navlink { color: var(--muted); font-size: 0.92rem; }
+  nav a.navlink:hover { color: var(--text); text-decoration: none; }
+  #langbtn {
+    background: var(--card); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.25rem 0.7rem; cursor: pointer; font-size: 0.85rem;
+  }
+  #langbtn:hover { border-color: var(--accent); }
+
+  /* ---- hero ---- */
+  header.hero {
+    background: linear-gradient(160deg, #10273e 0%, #0d1b2a 60%, #0a1520 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 4.5rem 0 3.5rem; text-align: center;
+  }
+  .hero h1 { font-size: 2.6rem; letter-spacing: 0.5px; }
+  .hero h1 .of { color: var(--accent); }
+  .hero .tag { color: var(--muted); font-size: 1.15rem; margin-top: 0.8rem; }
+  .hero .badges { margin-top: 1.4rem; color: var(--muted); font-size: 0.9rem; }
+  .hero .badges span {
+    display: inline-block; border: 1px solid var(--border); border-radius: 20px;
+    padding: 0.2rem 0.85rem; margin: 0.2rem; background: var(--card);
+  }
+  .btnrow { margin-top: 2rem; }
+  .btn {
+    display: inline-block; padding: 0.7rem 1.6rem; border-radius: 8px;
+    font-weight: 600; margin: 0.3rem; border: 1px solid var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: #08222f; }
+  .btn.primary:hover { background: var(--accent2); text-decoration: none; }
+  .btn.ghost { color: var(--accent); }
+  .btn.ghost:hover { background: rgba(79,195,247,.1); text-decoration: none; }
+
+  /* ---- sections ---- */
+  section { padding: 3.2rem 0; }
+  section.alt { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  h2 { font-size: 1.7rem; margin-bottom: 0.4rem; }
+  h2 + p.sub { color: var(--muted); margin-bottom: 1.6rem; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.3rem 1.4rem;
+  }
+  .card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--accent); }
+  .card p { color: var(--muted); font-size: 0.93rem; }
+
+  table.cmp { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.94rem; }
+  table.cmp th, table.cmp td {
+    border: 1px solid var(--border); padding: 0.7rem 0.9rem; text-align: left; vertical-align: top;
+  }
+  table.cmp th { background: var(--card); }
+  table.cmp td { color: var(--muted); }
+  table.cmp td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+  .yes { color: #7ee787; }
+  .no { color: #f08080; }
+
+  ul.tick { list-style: none; }
+  ul.tick li { padding: 0.25rem 0 0.25rem 1.6rem; position: relative; color: var(--muted); }
+  ul.tick li::before { content: "✓"; position: absolute; left: 0; color: #7ee787; font-weight: 700; }
+
+  ol.steps { margin-left: 1.3rem; color: var(--muted); }
+  ol.steps li { padding: 0.3rem 0; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 2.2rem 0 2.6rem;
+    color: var(--muted); font-size: 0.85rem;
+  }
+  footer p { margin-bottom: 0.5rem; }
+
+  [lang-zh] { display: none; }
+  html.zh [lang-zh] { display: revert; }
+  html.zh [lang-en] { display: none; }
+  html.zh li[lang-zh], html.zh td[lang-zh], html.zh span[lang-zh],
+  html.zh p[lang-zh], html.zh h1[lang-zh], html.zh h2[lang-zh], html.zh h3[lang-zh],
+  html.zh div[lang-zh], html.zh a[lang-zh] { display: revert; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">OpenFOAM<span style="color:var(--accent)">-v2606</span> for Windows</a>
+    <span class="spacer"></span>
+    <a class="navlink" href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/wiki">Wiki</a>
+    <a class="navlink" href="https://github.com/WHUT666/OpenFOAM-v2606-Windows">GitHub</a>
+    <a class="navlink" href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/releases">Releases</a>
+    <button id="langbtn" onclick="toggleLang()">中文</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1><span class="of">OpenFOAM v2606</span><br>
+      <span lang-en>Native Windows Port</span>
+      <span lang-zh>Windows 原生移植</span></h1>
+    <p class="tag">
+      <span lang-en>Built with Visual Studio 2022 &amp; CMake — real MS-MPI, vendored dependencies.<br>No WSL. No MinGW. No Cygwin.</span>
+      <span lang-zh>Visual Studio 2022 + CMake 原生构建 —— 真实 MS-MPI 并行,依赖全内置。<br>不用 WSL,不用 MinGW,不用 Cygwin。</span>
+    </p>
+    <div class="badges">
+      <span>596 apps</span><span>135 libraries</span><span>MS-MPI</span>
+      <span>CGAL · METIS · SCOTCH · KaHIP</span><span>GPL v3+</span>
+    </div>
+    <div class="btnrow">
+      <a class="btn primary" href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/releases">
+        <span lang-en>Download Release</span><span lang-zh>下载发行版</span></a>
+      <a class="btn ghost" href="https://github.com/WHUT666/OpenFOAM-v2606-Windows">
+        <span lang-en>View on GitHub</span><span lang-zh>查看源码</span></a>
+      <a class="btn ghost" href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/wiki/Build">
+        <span lang-en>Build from source</span><span lang-zh>从源码构建</span></a>
+    </div>
+  </div>
+</header>
+
+<section id="why">
+  <div class="wrap">
+    <h2 lang-en>Why a native port?</h2>
+    <h2 lang-zh>为什么要做原生移植?</h2>
+    <p class="sub" lang-en>Upstream OpenFOAM supports Windows through WSL or MinGW-cross-compiled binaries. Neither gives you a real Windows development workflow.</p>
+    <p class="sub" lang-zh>OpenFOAM 官方在 Windows 上只有 WSL 或 MinGW 交叉编译包两条路,都给不了真正的 Windows 开发体验。</p>
+    <table class="cmp">
+      <tr>
+        <th></th>
+        <th lang-en>Runs on Windows</th><th lang-zh>能在 Windows 跑</th>
+        <th lang-en>Edit &amp; rebuild on Windows</th><th lang-zh>能在 Windows 改代码重编</th>
+        <th lang-en>Debug in Visual Studio</th><th lang-zh>能用 VS 调试</th>
+        <th lang-en>Windows-native MPI</th><th lang-zh>Windows 原生 MPI</th>
+      </tr>
+      <tr>
+        <td>WSL / WSL2</td>
+        <td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td>
+      </tr>
+      <tr>
+        <td>MinGW prebuilt</td>
+        <td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td>
+      </tr>
+      <tr>
+        <td lang-en><b>This port</b></td><td lang-zh><b>本移植</b></td>
+        <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓ MS-MPI</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="alt" id="features">
+  <div class="wrap">
+    <h2 lang-en>Features</h2>
+    <h2 lang-zh>特性</h2>
+    <p class="sub" lang-en>Not a subset that "just compiles" — the workflows are verified end-to-end.</p>
+    <p class="sub" lang-zh>不是"能编译就算"的子集 —— 所有工作流都端到端实跑验证过。</p>
+    <div class="grid">
+      <div class="card">
+        <h3 lang-en>Visual Studio native</h3>
+        <h3 lang-zh>VS2022 原生工程</h3>
+        <p lang-en>CMake generates a real <code>.sln</code> — open in VS2022, set breakpoints, rebuild any solver or library.</p>
+        <p lang-zh>CMake 生成真正的 <code>.sln</code> —— VS2022 里打开、打断点、重编任意求解器或库。</p>
+      </div>
+      <div class="card">
+        <h3 lang-en>Real MS-MPI</h3>
+        <h3 lang-zh>真实 MS-MPI</h3>
+        <p lang-en><code>mpiexec -n N &lt;solver&gt; -parallel</code> verified end-to-end — decomposePar → parallel solve → reconstructPar.</p>
+        <p lang-zh><code>mpiexec -n N &lt;求解器&gt; -parallel</code> 端到端验证 —— 分解 → 并行求解 → 重构,非 dummy MPI。</p>
+      </div>
+      <div class="card">
+        <h3 lang-en>Everything vendored</h3>
+        <h3 lang-zh>依赖全内置</h3>
+        <p lang-en>METIS, SCOTCH, PT-SCOTCH, KaHIP, CGAL 6.x, GMP/MPFR, FFTW, zlib, MS-MPI — clone and build, no dependency hunt.</p>
+        <p lang-zh>METIS、SCOTCH、PT-SCOTCH、KaHIP、CGAL 6.x、GMP/MPFR、FFTW、zlib、MS-MPI 全部 vendored,clone 即可构建。</p>
+      </div>
+      <div class="card">
+        <h3 lang-en>Static or DLL</h3>
+        <h3 lang-zh>静态 / DLL 双模式</h3>
+        <p lang-en>Same sources build as <code>/WHOLEARCHIVE</code> static libs or 135 individual DLLs with runtime plugin loading.</p>
+        <p lang-zh>同一套源码可编成 <code>/WHOLEARCHIVE</code> 静态库或 135 个独立 DLL,支持 <code>controlDict libs()</code> 运行时插件。</p>
+      </div>
+      <div class="card">
+        <h3 lang-en>Full toolchain</h3>
+        <h3 lang-zh>完整工具链</h3>
+        <p lang-en>blockMesh, snappyHexMesh, foamyHexMesh (CGAL), cfmesh, decompose/reconstruct, foamToCcm, foamToVTK, 596 app targets total.</p>
+        <p lang-zh>blockMesh、snappyHexMesh、foamyHexMesh(CGAL)、cfmesh、分解/重构、foamToCcm、foamToVTK,共 596 个应用目标。</p>
+      </div>
+      <div class="card">
+        <h3 lang-en>CI-packaged releases</h3>
+        <h3 lang-zh>CI 自动打包</h3>
+        <p lang-en>GitHub Actions builds the full DLL distribution, runs the regression suite, smoke-tests the package and uploads a ready-to-unzip <code>.7z</code>.</p>
+        <p lang-zh>GitHub Actions 自动构建完整 DLL 发行版、跑回归测试、包内冒烟验证,产出解压即用的 <code>.7z</code>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quickstart">
+  <div class="wrap">
+    <h2 lang-en>Quick start</h2>
+    <h2 lang-zh>快速开始</h2>
+    <p class="sub" lang-en>From release package to a running case in four commands.</p>
+    <p class="sub" lang-zh>从发行包到跑通案例,四条命令。</p>
+    <pre>rem unpack OpenFOAM-v2606-Windows-x64.7z, then inside the package:
+call setenv.bat
+blockMesh -case tutorials\incompressible\icoFoam\cavity\cavity
+icoFoam   -case tutorials\incompressible\icoFoam\cavity\cavity
+
+rem MPI:
+decomposePar -case &lt;case&gt; &amp;&amp; mpiexec -n 4 icoFoam -case &lt;case&gt; -parallel</pre>
+    <p class="sub" style="margin-top:1.2rem">
+      <span lang-en>Building from source instead? See the <a href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/wiki/Build">Build guide</a>.</span>
+      <span lang-zh>想从源码构建?见 <a href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/wiki/Build">构建指南</a>。</span>
+    </p>
+  </div>
+</section>
+
+<section class="alt" id="verified">
+  <div class="wrap">
+    <h2 lang-en>Verified workflows</h2>
+    <h2 lang-zh>已验证工作流</h2>
+    <p class="sub" lang-en>Everything below has actually run on this port — full list on the <a href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/wiki/Testing">Testing page</a>.</p>
+    <p class="sub" lang-zh>以下全部在本移植上实际跑过 —— 完整清单见 <a href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/wiki/Testing">测试页</a>。</p>
+    <div class="grid">
+      <div class="card"><ul class="tick">
+        <li>snappyHexMesh — motorBike, 3.8 M cells, serial + MPI</li>
+        <li>simpleFoam — pitzDaily converged, streamlines</li>
+        <li>pimpleFoam — movingCone dynamic mesh + GAMG</li>
+        <li>interFoam — damBreak VOF</li>
+      </ul></div>
+      <div class="card"><ul class="tick">
+        <li>9-rank MPI cavity: decompose → solve → reconstruct</li>
+        <li>metis / scotch / ptscotch / kahip decomposition</li>
+        <li>foamToCcm ↔ ccmToFoam round-trip</li>
+        <li>foamyHexMesh + cfmesh + avalanche plugin solvers</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p lang-en><b>OpenFOAM-v2606 for Windows</b> is an unofficial, community-driven port. It is not affiliated with, endorsed by, or supported by OpenCFD Ltd or Keysight Technologies.</p>
+    <p lang-zh><b>OpenFOAM-v2606 for Windows</b> 是非官方社区移植,与 OpenCFD Ltd / Keysight Technologies 无关,也未获其背书或支持。</p>
+    <p lang-en>OPENFOAM® is a registered trademark of OpenCFD Ltd, used under the <a href="https://www.openfoam.com/opencfd-limited-trade-mark-policy">trademark policy</a>. OpenFOAM is licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL v3+</a>; this port inherits the same licence.</p>
+    <p lang-zh>OPENFOAM® 是 OpenCFD Ltd 的注册商标,依据<a href="https://www.openfoam.com/opencfd-limited-trade-mark-policy">商标政策</a>使用。OpenFOAM 以 <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL v3+</a> 授权,本移植沿用同一许可。</p>
+    <p>
+      <a href="https://github.com/WHUT666/OpenFOAM-v2606-Windows">Source</a> ·
+      <a href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/wiki">Wiki</a> ·
+      <a href="https://github.com/WHUT666/OpenFOAM-v2606-Windows/issues">Issues</a> ·
+      <a href="https://gitlab.com/openfoam/core/openfoam">Upstream OpenFOAM</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  function toggleLang() {
+    var zh = document.documentElement.classList.toggle('zh');
+    document.getElementById('langbtn').textContent = zh ? 'English' : '中文';
+    document.documentElement.lang = zh ? 'zh-CN' : 'en';
+  }
+</script>
+</body>
+</html>

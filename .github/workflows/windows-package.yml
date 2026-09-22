@@ -47,9 +47,9 @@ jobs:
       # Some sources exceed MAX_PATH (260) under the runner workspace
       # (D:\a\<repo>\<repo>) and cl.exe is not long-path aware, so build
       # through a short drive-letter mapping.
-      - name: Map workspace to Z: (MAX_PATH workaround)
+      - name: "Map workspace to Z: drive (MAX_PATH workaround)"
         shell: cmd
-        run: subst Z: "%GITHUB_WORKSPACE%"
+        run: 'subst Z: "%GITHUB_WORKSPACE%"'
 
       - name: Configure (shared DLLs, no test apps)
         shell: cmd

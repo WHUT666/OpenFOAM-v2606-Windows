@@ -734,14 +734,20 @@ def main():
     # Predefined wmake variables
     proj = os.environ.get('FOAM_PROJECT_DIR', '')
     if not proj:
-        # walk up until we find src/
+        # walk up until we find src/. Test the dir BEFORE the
+        # root-termination check: when the project root IS the drive
+        # root (eg a subst drive Z:\), dirname('Z:/') == 'Z:/' and a
+        # naive loop would stop without ever testing it.
         d = srcdir
-        while d and d != os.path.dirname(d):
+        while d:
             if os.path.isdir(os.path.join(d, 'src')) and \
                os.path.isdir(os.path.join(d, 'wmake')):
                 proj = d
                 break
-            d = os.path.dirname(d)
+            nd = os.path.dirname(d)
+            if not nd or nd == d:
+                break
+            d = nd
     libsrc = os.path.join(proj, 'src').replace('\\', '/')
 
     predefined = {

@@ -33,9 +33,13 @@ jobs:
   package:
     runs-on: windows-2022  # VS2022 toolchain (windows-2025 image ships VS2026)
     timeout-minutes: 360
+    defaults:
+      run:
+        working-directory: of
     steps:
       - name: Enable long paths
         shell: pwsh
+        working-directory: ${{ github.workspace }}
         run: |
           git config --global core.longpaths true
           New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
@@ -43,6 +47,10 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Short checkout path: several sources exceed MAX_PATH (260)
+          # under the default D:\a\<repo>\<repo> workspace
+          path: of
 
       - name: Configure (shared DLLs, no test apps)
         shell: cmd
@@ -81,7 +89,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.PKG_NAME }}
-          path: dist/${{ env.PKG_NAME }}.7z
+          path: of/dist/${{ env.PKG_NAME }}.7z
           compression-level: 0
           retention-days: 90
 

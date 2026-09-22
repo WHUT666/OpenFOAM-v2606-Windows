@@ -26,6 +26,12 @@ lex.yy.c
 
 # Core dumps
 core
+core.[0-9]*
+
+# ...but vendored third-party trees have real directories named core/CORE
+# (boost/*/core, CGAL/CORE) - re-include them explicitly
+!thirdparty/**/core/
+!thirdparty/**/CORE/
 
 # Dependency files - anywhere
 *.dep

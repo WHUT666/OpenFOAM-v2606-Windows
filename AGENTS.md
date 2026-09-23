@@ -241,6 +241,13 @@ Windows' 1MB default overflows on OpenFOAM's large automatic objects
   plugin load; missing lib warns gracefully.
 - Static regression (`FOAM_STATIC_LIBS=ON`): libOpenFOAM,
   libfiniteVolume, icoFoam compile + link + run cavity end-to-end.
+- plugins/cfmesh: `libmeshLibrary.dll` + `cartesianMesh`,
+  `cartesian2DMesh`, `pMesh`, `tetMesh`; cartesian2DMesh/hatOctree
+  tutorial runs end-to-end.
+- plugins/avalanche: `libfaAvalanche.dll` + `faSavageHutterFoam`,
+  `faTwoLayerAvalancheFoam`, `faParkerFukushimaFoam`, `gridToSTL`,
+  `releaseAreaMapping`, `slopeMesh`; `deposition` tutorial runs to
+  endTime=15 (slopeMesh → makeFaMesh → releaseAreaMapping → solver).
 
 ## Caution
 
@@ -322,3 +329,62 @@ Windows' 1MB default overflows on OpenFOAM's large automatic objects
 - `foamyHexMeshSurfaceSimplify` remains disabled because the external
   `fastdualoctree_sgp` and OpenGL dependency is unavailable; upstream also
   skips this application when that optional dependency is absent.
+
+## Modules / plugins
+
+`plugins/CMakeLists.txt` + `modules/CMakeLists.txt` drive submodule
+targets through the same wmake2cmake pipeline (per-dir `Make/files` +
+`Make/options` → `foam_parse_dir`). Gated by `FOAM_PLUGINS`/`FOAM_MODULES`
+(ON). Only self-contained targets are wired in — anything needing
+ADIOS2/PETSc/ParaView/VTK/Python (adios, external-solver, visualization,
+vtk-hdf, pyOFTools, pybFoam, OpenQBMM) stays OFF until the dependency is
+vendored.
+
+Ported so far:
+
+- **cfmesh** — meshLibrary + cartesianMesh/cartesian2DMesh/pMesh/tetMesh.
+- **avalanche** — faAvalanche + 3 solvers + 3 utilities.
+  Windows/MSVC fixes applied upstream-style:
+  - `shapefile.C`: local `ntohl` renamed `bswap32be` (winsock overload
+    ambiguity, C2668).
+  - `gridToSTL.C`: `and` → `&&` (MSVC default mode has no alternative
+    tokens; only enabled under /permissive- or /Za).
+  - `surfaceCourantNo*.H`: v2506+ made `faMesh::Le()` `setOriented()` —
+    `oriented + unoriented` now trips the `checkTypes` runtime check.
+    The `sqrt(gh)` wave-speed term is wrapped in an `edgeScalarField`
+    marked `setOriented()` before the sum (faParkerFukushimaFoam needs
+    no fix — its `mag()` already strips orientedness).
+  Verified: deposition tutorial ran t=0→15 s end-to-end.
+- **research** — projectionFoam, preciseFoam1-5, porousPimpleFoam,
+  aniPorousPimpleFoam. `porousPimpleFoam`/`aniPorousPimpleFoam` carry a
+  local `correctPhi.H` that collides with the finiteVolume `CorrectPhi.H`
+  on the case-insensitive FS — the library include there is written
+  `<CorrectPhi.H>` (angle brackets skip the local dir).
+- **turbulence-community** — all 15 registered targets build:
+  dynamicSmagorinsky, incompressible/compressibleSpalartAllmarasRC,
+  EllipticBlending, Incompressible/CompressibleGammaSST,
+  MachineLearningTurbulenceModels, CND ×2, PDA ×2, SAH ×2
+  (HelicitySpalartAllmaras), WallModelledLES.
+  MSVC-specific porting notes:
+  - Several `Make/options` under-declare `-lcompressibleTurbulenceModels`
+    /`-lincompressibleTurbulenceModels` (Linux weak-symbol luck); add the
+    missing `-l` or LNK2019s for turbulence-model ctor statics appear.
+  - `makeBaseTurbulenceModel(...)` in plugin "myTurbulent*Models.C" TUs
+    redefines the core selection tables → C2491 (dllimport static def).
+    Keep only `defineTurbulenceModelTypes` typedefs and define the
+    plugin's own model registrations explicitly.
+  - `kOmegaSSTPDA` links `-lstdc++` upstream — drop it (no libstdc++).
+  - `libWallModelledLES` samplers instantiate
+    `GeometricBoundaryField<vector,fvsPatchField,surfaceMesh>` with only
+    `surfaceFieldsFwd.H` visible → C2027; TUs need `surfaceFields.H`.
+  - `scalarListListIOList.C` defines `IOList<scalarListList>` statics:
+    `IOList.H` now has the same `Foam_IOList_defines_typeName` opt-out
+    that `GlobalIOList` already had — define it in the owning .C.
+  - WallModelledLES's `foamVersion4wmles.H` is a wmake codegen header
+    (`makeFoamVersionHeader.py`); generated once for v2606.
+  - HelicitySpalartAllmaras `compressible/`+`incompressible/` include
+    sibling headers via `-I../turbulenceModels/lnInclude`; plugins/
+    CMakeLists generates that lnInclude into
+    `lnInclude/_apps/plugins_turbulence-community_...` explicitly.
+- **plugins/research** `HelicalForce` is a LIBRARY (`LIB=...`), not an
+  exe — registration must dispatch on `LIB` vs `EXE` in Make/files.

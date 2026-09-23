@@ -108,6 +108,7 @@ endif()
 
 add_compile_options(
     /MP                 # parallel compile
+    /FS                 # serialize PDB writes (cl.exe instances racing vc143.pdb -> C1041)
     /bigobj             # large object files (template-heavy TUs)
     /EHsc               # normal C++ exceptions
     /Zc:__cplusplus     # correct __cplusplus macro
@@ -507,6 +508,13 @@ add_subdirectory(src)
 
 if(FOAM_BUILD_APPS)
     add_subdirectory(applications)
+endif()
+
+# Modules/plugins are git submodules; each guards on its own Make/files
+option(FOAM_BUILD_MODULES "Build modules/ and plugins/ submodules" ON)
+if(FOAM_BUILD_MODULES)
+    add_subdirectory(modules)
+    add_subdirectory(plugins)
 endif()
 
 #------------------------------------------------------------------------------

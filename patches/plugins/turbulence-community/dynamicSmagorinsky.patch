@@ -1,0 +1,13 @@
+diff --git a/dynamicSmagorinsky/makeDynamicSmagorinskyModel.C b/dynamicSmagorinsky/makeDynamicSmagorinskyModel.C
+index 0fe4b46..8562fa5 100644
+--- a/dynamicSmagorinsky/makeDynamicSmagorinskyModel.C
++++ b/dynamicSmagorinsky/makeDynamicSmagorinskyModel.C
+@@ -26,7 +26,7 @@ License
+ 
+ \*---------------------------------------------------------------------------*/
+ 
+-#include "IncompressibleTurbulenceModel.H"
++#include "IncompressibleTurbulenceModel_tpl.H"
+ #include "incompressible/transportModel/transportModel.H"
+ #include "addToRunTimeSelectionTable.H"
+ #include "makeTurbulenceModel.H"

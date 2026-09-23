@@ -1,0 +1,26 @@
+diff --git a/redistributedResistivityAlgorithm/code/aniPorousPimpleFoam/aniPorousPimpleFoam.C b/redistributedResistivityAlgorithm/code/aniPorousPimpleFoam/aniPorousPimpleFoam.C
+index e9642f0..e3e0bef 100644
+--- a/redistributedResistivityAlgorithm/code/aniPorousPimpleFoam/aniPorousPimpleFoam.C
++++ b/redistributedResistivityAlgorithm/code/aniPorousPimpleFoam/aniPorousPimpleFoam.C
+@@ -41,7 +41,7 @@ Description
+ #include "singlePhaseTransportModel.H"
+ #include "turbulentTransportModel.H"
+ #include "pimpleControl.H"
+-#include "CorrectPhi.H"
++#include <CorrectPhi.H>
+ #include "fvOptions.H"
+ #include "localEulerDdtScheme.H"
+ #include "fvcSmooth.H"
+diff --git a/redistributedResistivityAlgorithm/code/porousPimpleFoam/porousPimpleFoam.C b/redistributedResistivityAlgorithm/code/porousPimpleFoam/porousPimpleFoam.C
+index 9efcaf7..cd3d7ee 100644
+--- a/redistributedResistivityAlgorithm/code/porousPimpleFoam/porousPimpleFoam.C
++++ b/redistributedResistivityAlgorithm/code/porousPimpleFoam/porousPimpleFoam.C
+@@ -41,7 +41,7 @@ Description
+ #include "singlePhaseTransportModel.H"
+ #include "turbulentTransportModel.H"
+ #include "pimpleControl.H"
+-#include "CorrectPhi.H"
++#include <CorrectPhi.H>
+ #include "fvOptions.H"
+ #include "localEulerDdtScheme.H"
+ #include "fvcSmooth.H"

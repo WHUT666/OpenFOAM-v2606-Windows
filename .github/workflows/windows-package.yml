@@ -51,7 +51,7 @@ jobs:
         shell: cmd
         run: 'subst Z: "%GITHUB_WORKSPACE%"'
 
-      - name: Configure (shared DLLs, no test apps)
+      - name: Configure (shared DLLs + test apps)
         shell: cmd
         working-directory: Z:\
         run: |
@@ -59,7 +59,7 @@ jobs:
             -DCMAKE_BUILD_TYPE=Release ^
             -DFOAM_STATIC_LIBS=OFF ^
             -DFOAM_BUILD_APPS=ON ^
-            -DFOAM_APP_TESTS=OFF ^
+            -DFOAM_APP_TESTS=ON ^
             -DFOAM_MPI=msmpi ^
             -DFOAM_PRECISION=DP ^
             -DFOAM_LABEL_SIZE=32
@@ -68,6 +68,34 @@ jobs:
         shell: cmd
         working-directory: Z:\
         run: cmake --build build-shared --config Release --parallel 2 -- /nr:false /v:m
+
+      # Regression suite over applications/test/Test-*.exe. Known-bad list
+      # (skipped so the step stays green): Test-one-sided1 hangs in MS-MPI
+      # passive-target RMA; Test-cubicEqn has a marginal MSVC FP-tolerance
+      # deviation. Any NEW failure fails this step - flip continue-on-error
+      # to false to gate packaging on it once the baseline is trusted.
+      - name: Regression tests (Test-* suite)
+        shell: pwsh
+        working-directory: Z:\
+        continue-on-error: true
+        run: |
+          powershell -NoProfile -ExecutionPolicy Bypass `
+            -File etc\run-test-apps.ps1 -Parallel -OutDir _regression-logs `
+            -Skip Test-one-sided1,Test-cubicEqn
+
+      - name: Upload regression logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regression-logs
+          path: Z:/_regression-logs
+          retention-days: 30
+
+      # Keep Test-* binaries out of the shipped package
+      - name: Remove test binaries from staging
+        shell: pwsh
+        working-directory: Z:\
+        run: Remove-Item Z:\build-shared\bin\Release\Test-* -Force -ErrorAction SilentlyContinue
 
       - name: Assemble package
         shell: pwsh

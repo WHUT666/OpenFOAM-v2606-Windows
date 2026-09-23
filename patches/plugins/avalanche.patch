@@ -1,0 +1,210 @@
+diff --git a/applications/solvers/faParkerFukushimaFoam/faParkerFukushimaFoam.C b/applications/solvers/faParkerFukushimaFoam/faParkerFukushimaFoam.C
+index ce7ff6d..f797f8a 100644
+--- a/applications/solvers/faParkerFukushimaFoam/faParkerFukushimaFoam.C
++++ b/applications/solvers/faParkerFukushimaFoam/faParkerFukushimaFoam.C
+@@ -41,7 +41,7 @@ Author
+ 
+ #include "fvCFD.H"
+ #include "faCFD.H"
+-#include "SolverPerformance.H"
++#include "solverPerformance.H"
+ #include "suspensionFrictionModel.H"
+ #include "suspensionEntrainmentModel.H"
+ #include "suspensionDepositionModel.H"
+diff --git a/applications/solvers/faSavageHutterFoam/faSavageHutterFoam.C b/applications/solvers/faSavageHutterFoam/faSavageHutterFoam.C
+index 86b453f..dfe8eef 100644
+--- a/applications/solvers/faSavageHutterFoam/faSavageHutterFoam.C
++++ b/applications/solvers/faSavageHutterFoam/faSavageHutterFoam.C
+@@ -44,7 +44,7 @@ Author
+ #include "frictionModel.H"
+ #include "entrainmentModel.H"
+ #include "depositionModel.H"
+-#include "SolverPerformance.H"
++#include "solverPerformance.H"
+ 
+ #define CREATE_FIELDS createFaFields.H
+ 
+diff --git a/applications/solvers/faSavageHutterFoam/surfaceCourantNo.H b/applications/solvers/faSavageHutterFoam/surfaceCourantNo.H
+index 5c96d5d..12edb42 100644
+--- a/applications/solvers/faSavageHutterFoam/surfaceCourantNo.H
++++ b/applications/solvers/faSavageHutterFoam/surfaceCourantNo.H
+@@ -38,10 +38,18 @@ scalar meanCoNum = 0.0;
+ scalar velMag = 0.0;
+ if (aMesh.nInternalEdges())
+ {
++    // Le() is setOriented() since OpenFOAM v2506+ — mark the wave-speed
++    // term oriented too so the sum passes the orientedType runtime check
++    edgeScalarField waveSpeed
++    (
++        Foam::sqrt(max(dimensionedScalar("gh_min", dimensionSet(0, 2, -2, 0, 0, 0, 0), 0), fac::interpolate(h)*fac::interpolate(g&n)))
++    );
++    waveSpeed.setOriented();
++
+     edgeScalarField edgeSpeed
+     (
+         (xi*fac::interpolate(Us) & aMesh.Le()/aMesh.magLe())
+-      + Foam::sqrt(max(dimensionedScalar("gh_min", dimensionSet(0, 2, -2, 0, 0, 0, 0), 0), fac::interpolate(h)*fac::interpolate(g&n)))
++      + waveSpeed
+     );
+ 
+     velMag = max(edgeSpeed.internalField()).value();
+diff --git a/applications/solvers/faTwoLayerAvalancheFoam/faTwoLayerAvalancheFoam.C b/applications/solvers/faTwoLayerAvalancheFoam/faTwoLayerAvalancheFoam.C
+index 97e693b..da415a1 100644
+--- a/applications/solvers/faTwoLayerAvalancheFoam/faTwoLayerAvalancheFoam.C
++++ b/applications/solvers/faTwoLayerAvalancheFoam/faTwoLayerAvalancheFoam.C
+@@ -49,7 +49,7 @@ Author
+ #include "ambientEntrainmentModel.H"
+ #include "suspensionDepositionModel.H"
+ #include "couplingModel.H"
+-#include "SolverPerformance.H"
++#include "solverPerformance.H"
+ 
+ #define CREATE_FIELDS SHcreateFaFields.H
+ #define CREATE_FIELDS_2 PFcreateFaFields.H
+diff --git a/applications/solvers/faTwoLayerAvalancheFoam/surfaceCourantNo1.H b/applications/solvers/faTwoLayerAvalancheFoam/surfaceCourantNo1.H
+index abc0b69..ec2d7e8 100644
+--- a/applications/solvers/faTwoLayerAvalancheFoam/surfaceCourantNo1.H
++++ b/applications/solvers/faTwoLayerAvalancheFoam/surfaceCourantNo1.H
+@@ -38,10 +38,16 @@ scalar meanCoNum1 = 0.0;
+ scalar velMag1 = 0.0;
+ if (aMesh.nInternalEdges())
+ {
++    edgeScalarField waveSpeed
++    (
++        Foam::sqrt(max(dimensionedScalar("gh_min", dimensionSet(0, 2, -2, 0, 0, 0, 0), 0), fac::interpolate(h1)*fac::interpolate(g&n)))
++    );
++    waveSpeed.setOriented();
++
+     edgeScalarField edgeSpeed
+     (
+         (xi1*fac::interpolate(Us1) & aMesh.Le()/aMesh.magLe())
+-      + Foam::sqrt(max(dimensionedScalar("gh_min", dimensionSet(0, 2, -2, 0, 0, 0, 0), 0), fac::interpolate(h1)*fac::interpolate(g&n)))
++      + waveSpeed
+     );
+ 
+     velMag1 = max(edgeSpeed.internalField()).value();
+diff --git a/applications/solvers/faTwoLayerAvalancheFoam/surfaceCourantNo2.H b/applications/solvers/faTwoLayerAvalancheFoam/surfaceCourantNo2.H
+index 77e64e3..539c2e2 100644
+--- a/applications/solvers/faTwoLayerAvalancheFoam/surfaceCourantNo2.H
++++ b/applications/solvers/faTwoLayerAvalancheFoam/surfaceCourantNo2.H
+@@ -38,10 +38,16 @@ scalar meanCoNum2 = 0.0;
+ scalar velMag2 = 0.0;
+ if (aMesh.nInternalEdges())
+ {
++    edgeScalarField waveSpeed
++    (
++        Foam::sqrt(max(dimensionedScalar("gh_min", dimensionSet(0, 2, -2, 0, 0, 0, 0), 0), fac::interpolate(R2*c2*h2)*fac::interpolate(gn)))
++    );
++    waveSpeed.setOriented();
++
+     edgeScalarField edgeSpeed
+     (
+         (xi2*fac::interpolate(Us2) & aMesh.Le()/aMesh.magLe())
+-      + Foam::sqrt(max(dimensionedScalar("gh_min", dimensionSet(0, 2, -2, 0, 0, 0, 0), 0), fac::interpolate(R2*c2*h2)*fac::interpolate(gn)))
++      + waveSpeed
+     );
+ 
+     velMag2 = max(edgeSpeed.internalField()).value();
+diff --git a/applications/utilities/gridToSTL/gridToSTL.C b/applications/utilities/gridToSTL/gridToSTL.C
+index c718748..07fa6cc 100644
+--- a/applications/utilities/gridToSTL/gridToSTL.C
++++ b/applications/utilities/gridToSTL/gridToSTL.C
+@@ -106,7 +106,7 @@ public:
+         scalar t2 = (m2.y()*x2.x() + m2.x()*x1.y()-m2.y()*x1.x()-m2.x()*x2.y())/(m2.y()*m1.x()-m2.x()*m1.y());
+ 
+ 
+-        if (t1 > 0 and t1 < 1 and t2 > 0 and t2 < 1)
++        if (t1 > 0 && t1 < 1 && t2 > 0 && t2 < 1)
+         {
+             //Info << " -> crossing" << nl;
+             return true;
+diff --git a/src/avalanche/gistools/shapefile.C b/src/avalanche/gistools/shapefile.C
+index 934536b..4c691cb 100644
+--- a/src/avalanche/gistools/shapefile.C
++++ b/src/avalanche/gistools/shapefile.C
+@@ -58,7 +58,7 @@ namespace
+ #undef ntohl
+ #endif
+ 
+-inline uint32_t ntohl(uint32_t u)
++inline uint32_t bswap32be(uint32_t u)
+ {
+ #if (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+     return u;
+@@ -420,8 +420,8 @@ int shapefile::read(std::string filename)
+ 
+     do
+     {
+-        uint32_t recordoffset = ntohl(*reinterpret_cast<uint32_t*>(c+pos));
+-        uint32_t recordlength = ntohl(*reinterpret_cast<uint32_t*>(c+pos+4));
++        uint32_t recordoffset = bswap32be(*reinterpret_cast<uint32_t*>(c+pos));
++        uint32_t recordlength = bswap32be(*reinterpret_cast<uint32_t*>(c+pos+4));
+         pos += 8;
+ 
+         DebugInfo
+@@ -447,8 +447,8 @@ int shapefile::read(std::string filename)
+ 
+     DebugInfo << "\n\nShp-file is " << bufferlength << " byte long." << std::endl;
+ 
+-    uint32_t filecode = ntohl(*reinterpret_cast<uint32_t*>(c));
+-    uint32_t filelength = ntohl(*reinterpret_cast<uint32_t*>(c+24));
++    uint32_t filecode = bswap32be(*reinterpret_cast<uint32_t*>(c));
++    uint32_t filelength = bswap32be(*reinterpret_cast<uint32_t*>(c+24));
+     uint32_t version = *reinterpret_cast<uint32_t*>(c+28);
+     this->shptype_ = *reinterpret_cast<uint32_t*>(c+32);
+ 
+@@ -482,9 +482,9 @@ int shapefile::read(std::string filename)
+ 
+         char* pos2 = c+pos;
+ 
+-        uint32_t recordnumber = ntohl(*reinterpret_cast<uint32_t*>(pos2));
++        uint32_t recordnumber = bswap32be(*reinterpret_cast<uint32_t*>(pos2));
+         pos2 += 4;
+-        uint32_t recordlength = ntohl(*reinterpret_cast<uint32_t*>(pos2));
++        uint32_t recordlength = bswap32be(*reinterpret_cast<uint32_t*>(pos2));
+         pos2 += 4;
+ 
+         uint32_t shptype2 = *reinterpret_cast<uint32_t*>(pos2);
+@@ -1066,9 +1066,9 @@ int shapefile::write(std::string filename)
+     }
+ 
+ 
+-    uint32_t ft(ntohl(9994));
++    uint32_t ft(bswap32be(9994));
+     uint32_t empty(0);
+-    uint32_t fl(ntohl(totlength/2));
++    uint32_t fl(bswap32be(totlength/2));
+     uint32_t version(1000);
+ 
+     // 100 first bytes of header //
+@@ -1094,8 +1094,8 @@ int shapefile::write(std::string filename)
+ 
+     for (unsigned int i=0; i<this->recordcount_; i++)
+     {
+-        uint32_t recordnumber(ntohl(i+1));
+-        uint32_t contentlength(ntohl(recordLengths[i]));
++        uint32_t recordnumber(bswap32be(i+1));
++        uint32_t contentlength(bswap32be(recordLengths[i]));
+ 
+         output.write(reinterpret_cast<char*>(&recordnumber), 4);  //recordnumber
+         output.write(reinterpret_cast<char*>(&contentlength), 4);  //length of the record in byte
+@@ -1236,7 +1236,7 @@ int shapefile::write(std::string filename)
+     output.open(filename+".shx", std::ios::binary);
+ 
+     totlength = 100+this->recordcount_*8;
+-    fl = ntohl(totlength/2);
++    fl = bswap32be(totlength/2);
+     output.write(reinterpret_cast<char*>(&ft), 4); //file code
+     output.write(reinterpret_cast<char*>(&empty), 4); //unused
+     output.write(reinterpret_cast<char*>(&empty), 4); //unused
+@@ -1259,8 +1259,8 @@ int shapefile::write(std::string filename)
+     {
+         DebugInfo << "Writing indices: " << recordPos[i] << "/" << recordLengths[i] << std::endl;
+ 
+-       recordPos[i] = ntohl(recordPos[i]);
+-       recordLengths[i] = ntohl(recordLengths[i]);
++       recordPos[i] = bswap32be(recordPos[i]);
++       recordLengths[i] = bswap32be(recordLengths[i]);
+        output.write(reinterpret_cast<char*>(&recordPos[i]), 4);
+        output.write(reinterpret_cast<char*>(&recordLengths[i]), 4);
+    }

@@ -1,0 +1,38 @@
+diff --git a/compressible/Make/options b/compressible/Make/options
+index 8960631..4227559 100644
+--- a/compressible/Make/options
++++ b/compressible/Make/options
+@@ -22,4 +22,5 @@ LIB_LIBS = \
+     -lsolidThermo \
+     -lsolidSpecie \
+     -lturbulenceModels \
++    -lcompressibleTurbulenceModels \
+     -lspecie
+diff --git a/compressible/customTurbulentFluidThermoModel/customTurbulentFluidThermoModels.C b/compressible/customTurbulentFluidThermoModel/customTurbulentFluidThermoModels.C
+index fc041e7..d5acf8d 100644
+--- a/compressible/customTurbulentFluidThermoModel/customTurbulentFluidThermoModels.C
++++ b/compressible/customTurbulentFluidThermoModel/customTurbulentFluidThermoModels.C
+@@ -40,7 +40,10 @@ defineTurbulenceModelTypes
+     fluidThermo
+ );
+ 
+-makeBaseTurbulenceModel
++// Windows/MSVC: the fluidThermo combo tables already live in
++// libcompressibleTurbulenceModels — emit typedefs only (defining the
++// selection tables here duplicates dllimport-owned statics, C2491)
++defineTurbulenceModelTypes
+ (
+     geometricOneField,
+     volScalarField,
+diff --git a/incompressible/Make/options b/incompressible/Make/options
+index 5811a2b..8865e1a 100644
+--- a/incompressible/Make/options
++++ b/incompressible/Make/options
+@@ -10,6 +10,7 @@ EXE_INC = \
+ 
+ LIB_LIBS = \
+     -lturbulenceModels \
++    -lincompressibleTurbulenceModels \
+     -lfiniteVolume \
+     -lmeshTools \
+     -lincompressibleTransportModels

@@ -1,0 +1,25 @@
+diff --git a/kEpsilonLagEB/Make/options b/kEpsilonLagEB/Make/options
+index 0ac7465..4c4b031 100644
+--- a/kEpsilonLagEB/Make/options
++++ b/kEpsilonLagEB/Make/options
+@@ -9,6 +9,7 @@ EXE_INC =\
+ 
+ LIB_LIBS =\
+     -lturbulenceModels \
++    -lincompressibleTurbulenceModels \
+     -lOpenFOAM \
+     -lmeshTools \
+     -lincompressibleTransportModels
+diff --git a/kEpsilonLagEB/turbulentTransportModels.H b/kEpsilonLagEB/turbulentTransportModels.H
+index f9b25ca..1e8cd3c 100644
+--- a/kEpsilonLagEB/turbulentTransportModels.H
++++ b/kEpsilonLagEB/turbulentTransportModels.H
+@@ -25,7 +25,7 @@ License
+ 
+ \*---------------------------------------------------------------------------*/
+ 
+-#include "IncompressibleTurbulenceModel.H"
++#include "IncompressibleTurbulenceModel_tpl.H"
+ #include "incompressible/transportModel/transportModel.H"
+ #include "addToRunTimeSelectionTable.H"
+ #include "makeTurbulenceModel.H"

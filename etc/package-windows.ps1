@@ -5,7 +5,7 @@
 #   powershell -File etc/package-windows.ps1 [-BuildDir build-shared] [-OutDir dist]
 #
 # Layout produced under <OutDir>/<Name>:
-#   bin/         executables + staged runtime DLLs
+#   bin/         executables + staged runtime DLLs (no .pdb/.ilk unless -IncludePdb)
 #   lib/         OpenFOAM DLLs
 #   imp/         import libs (dev) + static third-party libs (ccmio, mgrid)
 #   include/     lnInclude tree, one flat dir per library
@@ -23,7 +23,10 @@ param(
     [string]$BuildDir = "build-shared",
     [string]$OutDir   = "dist",
     [string]$Name     = "OpenFOAM-v2606-Windows-x64",
-    [switch]$NoArchive
+    [switch]$NoArchive,
+    # Ship .pdb/.ilk debug artifacts in the package (default: exclude -
+    # FOAM_ENABLE_PDB generates them for stack traces but they are large)
+    [switch]$IncludePdb
 )
 
 $ErrorActionPreference = "Stop"
@@ -52,8 +55,14 @@ if (Test-Path $pkg) { Remove-Item $pkg -Recurse -Force }
 New-Item -ItemType Directory -Force -Path $pkg | Out-Null
 
 # --- payloads ----------------------------------------------------------------
-Copy-Item $binSrc  (Join-Path $pkg "bin") -Recurse
-Copy-Item $libSrc  (Join-Path $pkg "lib") -Recurse
+$binDst = Join-Path $pkg "bin"
+$libDst = Join-Path $pkg "lib"
+New-Item -ItemType Directory -Force -Path $binDst | Out-Null
+New-Item -ItemType Directory -Force -Path $libDst | Out-Null
+$excl = @()
+if (-not $IncludePdb) { $excl = @("*.pdb", "*.ilk") }
+Copy-Item "$binSrc\*" $binDst -Recurse -Exclude $excl
+Copy-Item "$libSrc\*" $libDst -Recurse -Exclude $excl
 if (Test-Path $impSrc) { Copy-Item $impSrc (Join-Path $pkg "imp") -Recurse }
 if (Test-Path $incSrc) { Copy-Item $incSrc (Join-Path $pkg "include") -Recurse }
 Copy-Item "etc"        (Join-Path $pkg "etc") -Recurse

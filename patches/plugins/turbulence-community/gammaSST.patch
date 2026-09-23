@@ -1,0 +1,49 @@
+diff --git a/compressible/Make/options b/compressible/Make/options
+index b9c5b9c..b150401 100644
+--- a/compressible/Make/options
++++ b/compressible/Make/options
+@@ -16,6 +16,7 @@ LIB_LIBS = \
+     -lsolidThermo \
+     -lsolidSpecie \
+     -lturbulenceModels \
++    -lcompressibleTurbulenceModels \
+     -lspecie \
+     -lfiniteVolume \
+     -lmeshTools
+diff --git a/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.C b/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.C
+index e255a9b..09d1982 100644
+--- a/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.C
++++ b/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.C
+@@ -23,7 +23,7 @@ License
+ 
+ \*---------------------------------------------------------------------------*/
+ 
+-#include "CompressibleTurbulenceModel.H"
++#include "CompressibleTurbulenceModel_tpl.H"
+ #include "compressibleTransportModel.H"
+ #include "fluidThermo.H"
+ #include "addToRunTimeSelectionTable.H"
+diff --git a/incompressible/Make/options b/incompressible/Make/options
+index 1708c7a..cb50f47 100644
+--- a/incompressible/Make/options
++++ b/incompressible/Make/options
+@@ -10,5 +10,6 @@ EXE_INC = \
+ LIB_LIBS = \
+     -lincompressibleTransportModels \
+     -lturbulenceModels \
++    -lincompressibleTurbulenceModels \
+     -lfiniteVolume \
+     -lmeshTools
+diff --git a/incompressible/turbulentTransportModels/myTurbulentTransportModels.C b/incompressible/turbulentTransportModels/myTurbulentTransportModels.C
+index 4615231..cf0c8a4 100644
+--- a/incompressible/turbulentTransportModels/myTurbulentTransportModels.C
++++ b/incompressible/turbulentTransportModels/myTurbulentTransportModels.C
+@@ -23,7 +23,7 @@ License
+ 
+ \*---------------------------------------------------------------------------*/
+ 
+-#include "IncompressibleTurbulenceModel.H"
++#include "IncompressibleTurbulenceModel_tpl.H"
+ #include "incompressible/transportModel/transportModel.H"
+ #include "addToRunTimeSelectionTable.H"
+ #include "makeTurbulenceModel.H"

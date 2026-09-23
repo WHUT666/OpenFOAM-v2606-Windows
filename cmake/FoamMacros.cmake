@@ -222,6 +222,14 @@ function(foam_apply_common name)
     if(FOAM_FLEX_INCLUDE_DIR)
         target_include_directories(${name} PRIVATE "${FOAM_FLEX_INCLUDE_DIR}")
     endif()
+    # zlib: lnInclude headers (gzstream.h) reference zlib.h, and module
+    # Make/options never declare the dependency (upstream gets it
+    # transitively via -lz). Include dir for compile, link for gz* refs.
+    if(TARGET ZLIB::ZLIB)
+        target_include_directories(${name} PRIVATE
+            $<TARGET_PROPERTY:ZLIB::ZLIB,INTERFACE_INCLUDE_DIRECTORIES>)
+        target_link_libraries(${name} PRIVATE ZLIB::ZLIB)
+    endif()
 endfunction()
 
 

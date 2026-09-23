@@ -1,0 +1,56 @@
+diff --git a/kOmegaSSTPDA/Make/options b/kOmegaSSTPDA/Make/options
+index bcd8d46..ed0f182 100644
+--- a/kOmegaSSTPDA/Make/options
++++ b/kOmegaSSTPDA/Make/options
+@@ -24,6 +24,5 @@ LIB_LIBS = \
+     -lfiniteVolume \
+     -lmeshTools \
+     -lincompressibleTransportModels \
+-    -lincompressibleTurbulenceModels \
+-    -lstdc++
++    -lincompressibleTurbulenceModels
+ 
+diff --git a/kOmegaSSTPDA_compressible/Make/options b/kOmegaSSTPDA_compressible/Make/options
+index 30ece7f..083f510 100644
+--- a/kOmegaSSTPDA_compressible/Make/options
++++ b/kOmegaSSTPDA_compressible/Make/options
+@@ -35,6 +35,7 @@ LIB_LIBS = \
+     -lsolidThermo \
+     -lsolidSpecie \
+     -lturbulenceModels \
++    -lcompressibleTurbulenceModels \
+     -lincompressibleTransportModels \
+     -lincompressibleTurbulenceModels \
+     -lspecie
+diff --git a/kOmegaSSTPDA_compressible/lnInclude/myTurbulentFluidThermoModels.C b/kOmegaSSTPDA_compressible/lnInclude/myTurbulentFluidThermoModels.C
+index 552e05e..22ec06b 100644
+--- a/kOmegaSSTPDA_compressible/lnInclude/myTurbulentFluidThermoModels.C
++++ b/kOmegaSSTPDA_compressible/lnInclude/myTurbulentFluidThermoModels.C
+@@ -45,7 +45,10 @@ defineTurbulenceModelTypes
+     fluidThermo
+ );
+ 
+-makeBaseTurbulenceModel
++// Windows/MSVC: the fluidThermo combo tables already live in
++// libcompressibleTurbulenceModels — emit typedefs only (defining the
++// selection tables here duplicates dllimport-owned statics, C2491)
++defineTurbulenceModelTypes
+ (
+     geometricOneField,
+     volScalarField,
+diff --git a/kOmegaSSTPDA_compressible/myTurbulentFluidThermoModels.C b/kOmegaSSTPDA_compressible/myTurbulentFluidThermoModels.C
+index 552e05e..22ec06b 100644
+--- a/kOmegaSSTPDA_compressible/myTurbulentFluidThermoModels.C
++++ b/kOmegaSSTPDA_compressible/myTurbulentFluidThermoModels.C
+@@ -45,7 +45,10 @@ defineTurbulenceModelTypes
+     fluidThermo
+ );
+ 
+-makeBaseTurbulenceModel
++// Windows/MSVC: the fluidThermo combo tables already live in
++// libcompressibleTurbulenceModels — emit typedefs only (defining the
++// selection tables here duplicates dllimport-owned statics, C2491)
++defineTurbulenceModelTypes
+ (
+     geometricOneField,
+     volScalarField,

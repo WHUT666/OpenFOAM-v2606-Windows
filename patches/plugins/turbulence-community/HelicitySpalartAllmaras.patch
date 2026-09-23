@@ -1,0 +1,58 @@
+diff --git a/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.C b/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.C
+index 596b614..1caf1e0 100644
+--- a/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.C
++++ b/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.C
+@@ -40,7 +40,10 @@ defineTurbulenceModelTypes
+     fluidThermo
+ );
+ 
+-makeBaseTurbulenceModel
++// Windows/MSVC: the fluidThermo combo tables already live in
++// libcompressibleTurbulenceModels — emit typedefs only (defining the
++// selection tables here duplicates dllimport-owned statics, C2491)
++defineTurbulenceModelTypes
+ (
+     geometricOneField,
+     volScalarField,
+diff --git a/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.H b/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.H
+index ad16c92..54c5699 100644
+--- a/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.H
++++ b/compressible/turbulentFluidThermoModels/myTurbulentFluidThermoModels.H
+@@ -25,7 +25,7 @@ License
+ 
+ \*---------------------------------------------------------------------------*/
+ 
+-#include "CompressibleTurbulenceModel.H"
++#include "CompressibleTurbulenceModel_tpl.H"
+ #include "compressibleTransportModel.H"
+ #include "fluidThermo.H"
+ #include "addToRunTimeSelectionTable.H"
+diff --git a/incompressible/turbulentTransportModels/myTurbulentTransportModels.C b/incompressible/turbulentTransportModels/myTurbulentTransportModels.C
+index b454889..84edf8d 100644
+--- a/incompressible/turbulentTransportModels/myTurbulentTransportModels.C
++++ b/incompressible/turbulentTransportModels/myTurbulentTransportModels.C
+@@ -39,7 +39,10 @@ defineTurbulenceModelTypes
+     transportModel
+ );
+ 
+-makeBaseTurbulenceModel
++// Windows/MSVC: the transportModel combo tables already live in
++// libincompressibleTurbulenceModels — emit typedefs only (defining the
++// selection tables here duplicates dllimport-owned statics, C2491)
++defineTurbulenceModelTypes
+ (
+     geometricOneField,
+     geometricOneField,
+diff --git a/incompressible/turbulentTransportModels/myTurbulentTransportModels.H b/incompressible/turbulentTransportModels/myTurbulentTransportModels.H
+index 817594c..1d88f4e 100644
+--- a/incompressible/turbulentTransportModels/myTurbulentTransportModels.H
++++ b/incompressible/turbulentTransportModels/myTurbulentTransportModels.H
+@@ -25,7 +25,7 @@ License
+ 
+ \*---------------------------------------------------------------------------*/
+ 
+-#include "IncompressibleTurbulenceModel.H"
++#include "IncompressibleTurbulenceModel_tpl.H"
+ #include "incompressible/transportModel/transportModel.H"
+ #include "addToRunTimeSelectionTable.H"
+ #include "makeTurbulenceModel.H"

@@ -1,0 +1,15 @@
+diff --git a/meshLibrary/utilities/meshes/polyMeshGen/boundaryPatch/boundaryPatchBase.C b/meshLibrary/utilities/meshes/polyMeshGen/boundaryPatch/boundaryPatchBase.C
+index d1818a2..4d06219 100644
+--- a/meshLibrary/utilities/meshes/polyMeshGen/boundaryPatch/boundaryPatchBase.C
++++ b/meshLibrary/utilities/meshes/polyMeshGen/boundaryPatch/boundaryPatchBase.C
+@@ -28,6 +28,10 @@ License
+ 
+ \*---------------------------------------------------------------------------*/
+ 
++// Windows/MSVC: this TU defines the IOPtrList<boundaryPatchBase> statics
++// (defineTemplateTypeNameAndDebugWithName below) - opt out of dllimport
++#define Foam_IOPtrList_defines_typeName
++
+ #include "boundaryPatchBase.H"
+ #include "Ostream.H"
+ #include "Istream.H"

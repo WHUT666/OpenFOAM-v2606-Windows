@@ -55,6 +55,24 @@
 - ✅ **兼容性修复**:空 compound 类型名污染 token 表导致的并行反序列化
   bug、`argv[0]` 反斜杠/`.exe` 后缀、conda-forge metis 的 pre-UCRT stdio
   shim(`__iob_func`)、MSVC 名称限定与模板显式实例化等
+- ✅ **社区插件/模块接入**:`plugins/` + `modules/` 走同一条
+  wmake2cmake 管线,已产出 **17 个插件 DLL + 19 个插件 exe**:
+  cfmesh(meshLibrary + cartesianMesh/cartesian2DMesh/pMesh/tetMesh/
+  zipUpMesh)、avalanche(faAvalanche + 3 个有限面积求解器 + 3 个工具)、
+  research(porousPimpleFoam/aniPorousPimpleFoam/projectionFoam/
+  preciseFoam1-5)、turbulence-community 全部 15 个湍流模型库
+  (SAH/PDA/CND/GammaSST/SpalartAllmarasRC/EllipticBlending/
+  MachineLearning/dynamicSmagorinsky/WallModelledLES/HelicalForce)。
+  需 ADIOS2/PETSc/ParaView/VTK/Python 的模块及 OpenQBMM 暂保持关闭
+- ✅ **回归测试套件**:`etc/run-test-apps.ps1` 一键跑全部
+  `Test-*.exe`(自动映射源目录、合成 controlDict、`-Parallel` 走
+  mpiexec);基线 **253 PASS / 2 FAIL / 1 TIMEOUT / 57 SKIP**
+  (SKIP 为需真实算例/参数,MPI 通信原语 6 项实测通过)
+- ✅ **崩溃堆栈诊断**:`src/OSspecific/MSwindows/printStack` 经
+  DbgHelp + `CaptureStackBackTrace` 输出 demangle 后的函数名 +
+  源文件:行号(配 `FOAM_ENABLE_PDB` 的 `/Zi`/`/DEBUG`);
+  `FOAM_ABORT=1` 下 FatalError 实测打出完整调用链;
+  可执行文件统一 `/STACK:8MB` 对齐 Linux 默认栈
 
 ### 已验证工作流(共享 DLL 构建)
 
@@ -72,10 +90,15 @@
 - `controlDict` `libs ("libutilityFunctionObjects");` 动态插件加载;
   不存在的库优雅告警不崩溃
 - GitHub Actions 自动打包(`.github/workflows/windows-package.yml`):
-  推送 `v*` tag 或手动触发即构建共享 DLL 全套(不含 test 应用),
-  产出 `OpenFOAM-v2606-Windows-x64.7z`(bin+lib+imp+include+etc+
-  tutorials+第三方运行时),并在包内冒烟验证 blockMesh/icoFoam/
-  checkMesh/foamToCcm 后上传 artifact/Release
+  推送 `v*` tag 或手动触发即构建共享 DLL 全套,
+  **构建后自动跑回归套件**(`Test-*`,跳过 2 个已知平台差异项)并上传
+  日志 artifact,产出 `OpenFOAM-v2606-Windows-x64.7z`(bin+lib+imp+
+  include+etc+tutorials+第三方运行时,默认不含 Test-*/PDB),
+  并在包内冒烟验证 blockMesh/icoFoam/checkMesh/foamToCcm 后上传
+  artifact/Release
+- avalanche deposition 教程端到端跑通(t=0→15 s 瞬态,releaseArea
+  映射 → faSavageHutterFoam → 正常收敛退出)
+- cfmesh `cartesianMesh` 真实网格生成教程验证通过
 - `foamToCcm -mesh`(cavity → `meshExport-*.ccmg`)→ `ccmToFoam`
   读回 → `checkMesh` 网格 OK(882 点/400 单元,patch 名称保留)
 - 测试应用:`Test-dummyLib`(WM_* 编译期值正确)、`Test-volField`、

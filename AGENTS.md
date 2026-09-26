@@ -284,6 +284,15 @@ Windows' 1MB default overflows on OpenFOAM's large automatic objects
   dll-interface class may not carry dllspec). Core convention is
   member-level only (see dragModel.H); QBMM had both after bulk
   annotation → stripped all 311 class-level tags.
+- OpenQBMM upstream bug (fixed in our patch):
+  `mappedList::listToLabel` accumulated each index tuple TWICE —
+  upstream commit 1fd0cd6b added an integer-power loop for 10^k but
+  left the old `pow()` loop in place, so map keys were doubled while
+  `calcMapIndex` lookups stayed single → every variadic
+  `mappedList::operator()`/`found()` access failed ("X not found in
+  table"). Removed the stale `pow` loop; all multivariate
+  moment-inversion tests pass (CHyQMOM, conditional, monoKinetic,
+  sizeCHyQMOM, populationBalance). Worth submitting upstream.
 - Filename-collision, QBMM edition: OpenQBMM carries its own
   `phaseCompressibleTurbulenceModel.H` shadowing core's
   `PhaseCompressibleTurbulenceModel.H` — case-insensitive FS resolves

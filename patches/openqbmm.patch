@@ -1544,24 +1544,64 @@ index f6e7613e..dd43c2cf 100644
          autoPtr,
          viscosityModel,
          dictionary,
-diff --git a/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H b/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/pdPhaseCompressibleTurbulenceModel.H
-similarity index 90%
-rename from applications/solvers/multiphase/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H
-rename to applications/solvers/multiphase/phaseCompressibleTurbulenceModels/pdPhaseCompressibleTurbulenceModel.H
-index d869907a..eddb649c 100644
+diff --git a/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H b/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H
+deleted file mode 100644
+index d869907a..00000000
 --- a/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H
-+++ b/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/pdPhaseCompressibleTurbulenceModel.H
-@@ -33,7 +33,9 @@ Description
- #define phaseCompressibleTurbulenceModel_H
- 
- #include "phaseCompressibleTurbulenceModelFwd.H"
++++ /dev/null
+@@ -1,52 +0,0 @@
+-/*---------------------------------------------------------------------------*\
+-  =========                 |
+-  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+-   \\    /   O peration     |
+-    \\  /    A nd           | Copyright (C) 2015-2016 OpenFOAM Foundation
+-     \\/     M anipulation  |
+--------------------------------------------------------------------------------
+-License
+-    This file is part of OpenFOAM.
+-
+-    OpenFOAM is free software: you can redistribute it and/or modify it
+-    under the terms of the GNU General Public License as published by
+-    the Free Software Foundation, either version 3 of the License, or
+-    (at your option) any later version.
+-
+-    OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+-    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+-    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+-    for more details.
+-
+-    You should have received a copy of the GNU General Public License
+-    along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+-
+-Typedef
+-    Foam::phaseCompressibleTurbulenceModel
+-
+-Description
+-    Typedef for phaseCompressibleTurbulenceModel
+-
+-\*---------------------------------------------------------------------------*/
+-
+-#ifndef phaseCompressibleTurbulenceModel_H
+-#define phaseCompressibleTurbulenceModel_H
+-
+-#include "phaseCompressibleTurbulenceModelFwd.H"
 -#include "PhaseCompressibleTurbulenceModel.H"
-+// Angle brackets: on Windows this file's name case-collides with the core
-+// header - a quoted include would resolve back to this same file.
-+#include <PhaseCompressibleTurbulenceModel.H>
- #include "ThermalDiffusivity.H"
- #include "phaseModel.H"
- 
+-#include "ThermalDiffusivity.H"
+-#include "phaseModel.H"
+-
+-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+-
+-namespace Foam
+-{
+-      typedef ThermalDiffusivity<PhaseCompressibleTurbulenceModel<phaseModel>>
+-          phaseCompressibleTurbulenceModel;
+-}
+-
+-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+-
+-#endif
+-
+-// ************************************************************************* //
 diff --git a/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModels.C b/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModels.C
 index 2932a680..e9924492 100644
 --- a/applications/solvers/multiphase/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModels.C
@@ -2743,24 +2783,64 @@ index 97603db5..8aa1c41f 100644
  
  
      // Constructors
-diff --git a/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H b/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/pbePhaseCompressibleTurbulenceModel.H
-similarity index 90%
-rename from applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H
-rename to applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/pbePhaseCompressibleTurbulenceModel.H
-index 39a7eccd..3fe3bb76 100644
+diff --git a/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H b/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H
+deleted file mode 100644
+index 39a7eccd..00000000
 --- a/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModel.H
-+++ b/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/pbePhaseCompressibleTurbulenceModel.H
-@@ -33,7 +33,9 @@ Description
- #define phaseCompressibleTurbulenceModel_H
- 
- #include "phaseCompressibleTurbulenceModelFwd.H"
++++ /dev/null
+@@ -1,52 +0,0 @@
+-/*---------------------------------------------------------------------------*\
+-  =========                 |
+-  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+-   \\    /   O peration     |
+-    \\  /    A nd           | Copyright (C) 2015-2019 OpenFOAM Foundation
+-     \\/     M anipulation  |
+--------------------------------------------------------------------------------
+-License
+-    This file is part of OpenFOAM.
+-
+-    OpenFOAM is free software: you can redistribute it and/or modify it
+-    under the terms of the GNU General Public License as published by
+-    the Free Software Foundation, either version 3 of the License, or
+-    (at your option) any later version.
+-
+-    OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+-    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+-    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+-    for more details.
+-
+-    You should have received a copy of the GNU General Public License
+-    along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+-
+-Typedef
+-    Foam::phaseCompressibleTurbulenceModel
+-
+-Description
+-    Typedef for phaseCompressibleTurbulenceModel
+-
+-\*---------------------------------------------------------------------------*/
+-
+-#ifndef phaseCompressibleTurbulenceModel_H
+-#define phaseCompressibleTurbulenceModel_H
+-
+-#include "phaseCompressibleTurbulenceModelFwd.H"
 -#include "PhaseCompressibleTurbulenceModel.H"
-+// Angle brackets: on Windows this file's name case-collides with the core
-+// header - a quoted include would resolve back to this same file.
-+#include <PhaseCompressibleTurbulenceModel.H>
- #include "ThermalDiffusivity.H"
- #include "phaseModel.H"
- 
+-#include "ThermalDiffusivity.H"
+-#include "phaseModel.H"
+-
+-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+-
+-namespace Foam
+-{
+-      typedef ThermalDiffusivity<PhaseCompressibleTurbulenceModel<phaseModel>>
+-          phaseCompressibleTurbulenceModel;
+-}
+-
+-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+-
+-#endif
+-
+-// ************************************************************************* //
 diff --git a/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModels.C b/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModels.C
 index 0f17f9da..69c3dbb7 100644
 --- a/applications/solvers/velocityDistributionTransport/phaseCompressibleTurbulenceModels/phaseCompressibleTurbulenceModels.C
@@ -2954,6 +3034,22 @@ index 79d29acf..525662e6 100644
  
  
      // Constructors
+diff --git a/src/mappedList/mappedList.C b/src/mappedList/mappedList.C
+index 37bc6c8d..3e1b6daa 100644
+--- a/src/mappedList/mappedList.C
++++ b/src/mappedList/mappedList.C
+@@ -58,11 +58,6 @@ Foam::mappedList<mappedType>::listToLabel
+     label listLabel = 0;
+     label size = max(nDimensions, list.size());
+ 
+-    forAll(list, dimi)
+-    {
+-        listLabel += list[dimi]*pow(scalar(10), size - dimi - 1);
+-    }
+-
+     forAll(list, dimi)
+     {
+         const label exponent = size - dimi - 1;
 diff --git a/src/quadratureMethods/fieldMomentInversion/basicFieldMomentInversion/basicFieldMomentInversion.H b/src/quadratureMethods/fieldMomentInversion/basicFieldMomentInversion/basicFieldMomentInversion.H
 index e7298947..629ca162 100644
 --- a/src/quadratureMethods/fieldMomentInversion/basicFieldMomentInversion/basicFieldMomentInversion.H

@@ -212,14 +212,21 @@ auto-detected from output), handful expected-abort tests
 processor0..N-1 dirs (each with system/controlDict) since `-parallel`
 argList checks them. Verified under MS-MPI: broadcastCopy,
 parallel-barrier1, parallel-file-write1, parallel-scan,
-readBroadcast1, treeComms all PASS. `Test-one-sided1` HANGS under
-MS-MPI — all RMA output completes but the process never exits
-(MPI_Win/MPI_Fetch_and_op passive-target quirk; thin wrapper, likely
-MS-MPI limitation rather than port bug). `Test-decomposedBlockData`
-needs a real decomposedBlockData-format file (decomposed case) — kept
-as SKIP; feeding it a plain list makes it read-loop + ~3GB alloc.
-`Test-processorTopology` needs a decomposed mesh (decomposePar
-output) — SKIP.
+readBroadcast1, treeComms, one-sided1 all PASS.
+`Test-decomposedBlockData` needs a real decomposedBlockData-format
+file (decomposed case) — kept as SKIP; feeding it a plain list makes
+it read-loop + ~3GB alloc. `Test-processorTopology` needs a
+decomposed mesh (decomposePar output) — SKIP unless a case with
+processor dirs is supplied.
+
+MS-MPI RMA caveat (worked around, kept for reference): a
+`MPI_Win_lock_all` epoch containing ops queued for MORE THAN ONE
+target rank deadlocks inside `MPI_Win_unlock_all` (single-target
+epochs are fine). Reproduced standalone — genuine MS-MPI limitation,
+not a port bug. `UPstreamWindow::mpi_win_unlocking` issues
+`MPI_Win_flush_all` before `MPI_Win_unlock_all` under `MSMPI_VER`,
+which completes the queued ops first and avoids the deadlock
+(`Test-one-sided1` now finalises cleanly).
 
 Executables link `/STACK:8388608` (8MB, matching the Linux default):
 Windows' 1MB default overflows on OpenFOAM's large automatic objects

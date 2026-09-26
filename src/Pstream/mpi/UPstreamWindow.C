@@ -430,6 +430,12 @@ void Foam::UPstream::Window::mpi_win_unlocking(int rank)
     {
         if (rank < 0)
         {
+            #ifdef MSMPI_VER
+            // MS-MPI deadlocks in unlock_all when the epoch has RMA ops
+            // queued for more than one target. flush_all completes them
+            // first, leaving nothing pending for unlock_all to stall on.
+            MPI_Win_flush_all(win);
+            #endif
             MPI_Win_unlock_all(win);
         }
         else

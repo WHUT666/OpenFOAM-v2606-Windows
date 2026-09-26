@@ -70,10 +70,10 @@ jobs:
         run: cmake --build build-shared --config Release --parallel 2 -- /nr:false /v:m
 
       # Regression suite over applications/test/Test-*.exe. Known-bad list
-      # (skipped so the step stays green): Test-one-sided1 hangs in MS-MPI
-      # passive-target RMA; Test-cubicEqn has a marginal MSVC FP-tolerance
-      # deviation. Any NEW failure fails this step - flip continue-on-error
-      # to false to gate packaging on it once the baseline is trusted.
+      # (skipped so the step stays green): Test-cubicEqn has a marginal
+      # MSVC FP-tolerance deviation. Any NEW failure fails this step -
+      # flip continue-on-error to false to gate packaging on it once the
+      # baseline is trusted.
       - name: Regression tests (Test-* suite)
         shell: pwsh
         working-directory: Z:\
@@ -81,7 +81,7 @@ jobs:
         run: |
           powershell -NoProfile -ExecutionPolicy Bypass `
             -File etc\run-test-apps.ps1 -Parallel -OutDir _regression-logs `
-            -Skip Test-one-sided1,Test-cubicEqn
+            -Skip Test-cubicEqn
 
       - name: Upload regression logs
         if: always()

@@ -5,6 +5,7 @@ memInfo/memInfo.C
 
 memory/MemoryPool.cxx
 
+signals/crashDump.cxx
 signals/sigFpe.cxx
 signals/sigInt.cxx
 signals/sigQuit.cxx

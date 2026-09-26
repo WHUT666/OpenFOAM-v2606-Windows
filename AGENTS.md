@@ -248,6 +248,46 @@ Windows' 1MB default overflows on OpenFOAM's large automatic objects
   `faTwoLayerAvalancheFoam`, `faParkerFukushimaFoam`, `gridToSTL`,
   `releaseAreaMapping`, `slopeMesh`; `deposition` tutorial runs to
   endTime=15 (slopeMesh → makeFaMesh → releaseAreaMapping → solver).
+- modules/OpenQBMM: 22 libs + 28 exes all build. Six libs form two
+  DLL dependency cycles (pbePhaseModels↔pbeInterfacialModels↔
+  pbeTurbulenceModels; pdPhaseSystem↔pdEulerianInterfacialModels↔
+  pdTurbulenceModels) that CMake's acyclicity check rejects.
+  Broken via `FOAM_LINK_AS_FILE_<target>` in modules/CMakeLists.txt:
+  the hub→spoke edges become raw PRIVATE import-lib paths (PRIVATE is
+  mandatory — PUBLIC propagates the spoke's own .lib back onto its own
+  link line → LNK1149), spokes→hub stay target deps for ordering.
+  Stub import libs for fresh trees: `etc/seed-cyclic-stubs.ps1`.
+  Verified: denseAGFoam fluidizedBed tutorial, 3-rank mpiexec +
+  scotch decomposition, kineticTheory/KongFox/SyamlalOBrien models
+  all selected, runs to completion.
+- Registration-only DLLs (`*Decomp`: scotchDecomp/metisDecomp/
+  ptscotchDecomp/kahipDecomp) are linked into decomposePar/
+  redistributePar/renumberMesh/foamyHexMesh* purely for static
+  initialisers. MSVC silently DROPS a DLL from the import table when
+  no symbol is referenced → "Unknown decompositionMethod type scotch".
+  Fixed by `/INCLUDE:__imp_?typeName@<lib>@Foam@@2Vword@2@B` on the
+  exe link line (foam_add_executable, shared builds only) — forces the
+  DLL into the dependency list so its self-registration runs.
+  Same fix is needed wherever a DLL is linked only for static init.
+- QBMM cross-DLL statics: `static const dimensionSet dimF/dimK/dimD`
+  member declarations in model base headers needed explicit
+  `<Lib>_API` (member-level) — bulk annotation only covered
+  TypeName/runTimeSelection macros. And NEVER combine class-level
+  `<Lib>_API` with member-level `*Api` annotations — C2487 (member of
+  dll-interface class may not carry dllspec). Core convention is
+  member-level only (see dragModel.H); QBMM had both after bulk
+  annotation → stripped all 311 class-level tags.
+- Filename-collision, QBMM edition: OpenQBMM carries its own
+  `phaseCompressibleTurbulenceModel.H` shadowing core's
+  `PhaseCompressibleTurbulenceModel.H` — case-insensitive FS resolves
+  `"PhaseCompressibleTurbulenceModel.H"` to the QBMM file itself even
+  via <>. Renamed to `pbePhaseCompressibleTurbulenceModel.H` /
+  `pdPhaseCompressibleTurbulenceModel.H`.
+- `IOobject::scopeSeparator` is `'_'` on Windows (`':'` clashes with
+  drive letters) → runtime field names are `thermo_rho.particles`,
+  not `thermo:rho.particles`. Upstream tutorial dicts using `:` in
+  scheme/field names need `_` on Windows (fvSchemes regexes match the
+  literal name).
 
 ## Caution
 

@@ -49,6 +49,7 @@ Description
 #define WIN32_LEAN_AND_MEAN
 #include <csignal>
 #include <io.h>     // For _close
+#include <winsock2.h>
 #include <windows.h>
 
 #define EXT_SO  "dll"
@@ -1170,15 +1171,75 @@ bool Foam::ping
     const label timeOut
 )
 {
-    // Appears that socket calls require administrator privileges.
-    // Skip for now.
-
-    if (MSwindows::debug)
+    // One-time Winsock initialisation
+    static const bool wsaInit = []()
     {
-        Info<< "MSwindows does not support ping" << endl;
+        WSADATA wsa;
+        return (::WSAStartup(MAKEWORD(2, 2), &wsa) == 0);
+    }();
+
+    if (!wsaInit)
+    {
+        return false;
     }
 
-    return false;
+    const hostent* hostPtr = ::gethostbyname(destName.c_str());
+    if (hostPtr == nullptr || hostPtr->h_addr_list == nullptr)
+    {
+        if (MSwindows::debug)
+        {
+            InfoInFunction
+                << "cannot resolve host " << destName << endl;
+        }
+        return false;
+    }
+
+    const SOCKET sock = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (sock == INVALID_SOCKET)
+    {
+        return false;
+    }
+
+    // Non-blocking connect + select() timeout
+    u_long nonBlocking = 1;
+    ::ioctlsocket(sock, FIONBIO, &nonBlocking);
+
+    sockaddr_in destAddr;
+    std::memset(&destAddr, 0, sizeof(destAddr));
+    destAddr.sin_family = AF_INET;
+    destAddr.sin_port = htons(static_cast<u_short>(destPort));
+    destAddr.sin_addr =
+        *reinterpret_cast<in_addr*>(hostPtr->h_addr_list[0]);
+
+    ::connect
+    (
+        sock,
+        reinterpret_cast<const sockaddr*>(&destAddr),
+        sizeof(destAddr)
+    );
+
+    // NB: WSAPoll not select() - the FD_SET macros use the 'far' keyword
+    // that msvcCompat.h undefines.
+    WSAPOLLFD pfd;
+    pfd.fd = sock;
+    pfd.events = POLLOUT;
+    pfd.revents = 0;
+
+    bool connected = false;
+    if (::WSAPoll(&pfd, 1, timeOut * 1000) > 0)
+    {
+        int soError = 0;
+        int len = sizeof(soError);
+        ::getsockopt
+        (
+            sock, SOL_SOCKET, SO_ERROR,
+            reinterpret_cast<char*>(&soError), &len
+        );
+        connected = (soError == 0);
+    }
+
+    ::closesocket(sock);
+    return connected;
 }
 
 
@@ -1190,13 +1251,57 @@ bool Foam::ping(const std::string& host, const label timeOut)
 
 int Foam::system(const std::string& command, const bool bg)
 {
-    if (MSwindows::debug && bg)
+    if (command.empty())
     {
-        InfoInFunction
-            << "MSwindows does not support background (fork) tasks" << endl;
+        return 0;
     }
 
-    return std::system(command.c_str());
+    if (!bg)
+    {
+        return std::system(command.c_str());
+    }
+
+    // Background task: spawn "cmd /c command" detached, matching the
+    // POSIX vfork + redirects(bg) + immediate-return semantics.
+
+    std::string cmdLine = "cmd.exe /c " + command;
+
+    STARTUPINFOA si;
+    std::memset(&si, 0, sizeof(si));
+    si.cb = sizeof(si);
+
+    PROCESS_INFORMATION pi;
+    std::memset(&pi, 0, sizeof(pi));
+
+    const BOOL ok = ::CreateProcessA
+    (
+        nullptr,
+        cmdLine.data(),             // mutable buffer required
+        nullptr,
+        nullptr,
+        false,                      // no handle inheritance
+        DETACHED_PROCESS | CREATE_NO_WINDOW,
+        nullptr,                    // inherit environment
+        nullptr,                    // inherit cwd
+        &si,
+        &pi
+    );
+
+    if (!ok)
+    {
+        if (MSwindows::debug)
+        {
+            InfoInFunction
+                << "CreateProcess failed for background command "
+                << command << " : " << MSwindows::lastError() << endl;
+        }
+        return -1;
+    }
+
+    ::CloseHandle(pi.hThread);
+    ::CloseHandle(pi.hProcess);
+
+    return 0;
 }
 
 

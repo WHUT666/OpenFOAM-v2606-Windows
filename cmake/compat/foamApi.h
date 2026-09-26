@@ -679,6 +679,66 @@
 #  define pairPatchAgglomeration_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
 #endif
 
+#ifdef pbeInterfacialModels_EXPORTS
+#  define pbeInterfacialModels_API FOAM_EXPORT__
+#  define pbeInterfacialModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define pbeInterfacialModels_TEMPLATE_IMPORT(...)
+#else
+#  define pbeInterfacialModels_API FOAM_IMPORT__
+#  define pbeInterfacialModels_TEMPLATE_EXPORT(...)
+#  define pbeInterfacialModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef pbePhaseModels_EXPORTS
+#  define pbePhaseModels_API FOAM_EXPORT__
+#  define pbePhaseModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define pbePhaseModels_TEMPLATE_IMPORT(...)
+#else
+#  define pbePhaseModels_API FOAM_IMPORT__
+#  define pbePhaseModels_TEMPLATE_EXPORT(...)
+#  define pbePhaseModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef pbeTurbulenceModels_EXPORTS
+#  define pbeTurbulenceModels_API FOAM_EXPORT__
+#  define pbeTurbulenceModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define pbeTurbulenceModels_TEMPLATE_IMPORT(...)
+#else
+#  define pbeTurbulenceModels_API FOAM_IMPORT__
+#  define pbeTurbulenceModels_TEMPLATE_EXPORT(...)
+#  define pbeTurbulenceModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef pdEulerianInterfacialModels_EXPORTS
+#  define pdEulerianInterfacialModels_API FOAM_EXPORT__
+#  define pdEulerianInterfacialModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define pdEulerianInterfacialModels_TEMPLATE_IMPORT(...)
+#else
+#  define pdEulerianInterfacialModels_API FOAM_IMPORT__
+#  define pdEulerianInterfacialModels_TEMPLATE_EXPORT(...)
+#  define pdEulerianInterfacialModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef pdPhaseSystem_EXPORTS
+#  define pdPhaseSystem_API FOAM_EXPORT__
+#  define pdPhaseSystem_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define pdPhaseSystem_TEMPLATE_IMPORT(...)
+#else
+#  define pdPhaseSystem_API FOAM_IMPORT__
+#  define pdPhaseSystem_TEMPLATE_EXPORT(...)
+#  define pdPhaseSystem_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef pdTurbulenceModels_EXPORTS
+#  define pdTurbulenceModels_API FOAM_EXPORT__
+#  define pdTurbulenceModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define pdTurbulenceModels_TEMPLATE_IMPORT(...)
+#else
+#  define pdTurbulenceModels_API FOAM_IMPORT__
+#  define pdTurbulenceModels_TEMPLATE_EXPORT(...)
+#  define pdTurbulenceModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
 #ifdef phaseCompressible_EXPORTS
 #  define phaseCompressible_API FOAM_EXPORT__
 #  define phaseCompressible_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
@@ -1417,6 +1477,168 @@
 #  define TestDummyMpi_API FOAM_IMPORT__
 #  define TestDummyMpi_TEMPLATE_EXPORT(...)
 #  define TestDummyMpi_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+//-- OpenQBMM libraries -----------------------------------------------
+
+#ifdef ButcherTable_EXPORTS
+#  define ButcherTable_API FOAM_EXPORT__
+#  define ButcherTable_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define ButcherTable_TEMPLATE_IMPORT(...)
+#else
+#  define ButcherTable_API FOAM_IMPORT__
+#  define ButcherTable_TEMPLATE_EXPORT(...)
+#  define ButcherTable_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef compressibleSystem_EXPORTS
+#  define compressibleSystem_API FOAM_EXPORT__
+#  define compressibleSystem_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define compressibleSystem_TEMPLATE_IMPORT(...)
+#else
+#  define compressibleSystem_API FOAM_IMPORT__
+#  define compressibleSystem_TEMPLATE_EXPORT(...)
+#  define compressibleSystem_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef errorEstimator_EXPORTS
+#  define errorEstimator_API FOAM_EXPORT__
+#  define errorEstimator_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define errorEstimator_TEMPLATE_IMPORT(...)
+#else
+#  define errorEstimator_API FOAM_IMPORT__
+#  define errorEstimator_TEMPLATE_EXPORT(...)
+#  define errorEstimator_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef fieldMomentInversion_EXPORTS
+#  define fieldMomentInversion_API FOAM_EXPORT__
+#  define fieldMomentInversion_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define fieldMomentInversion_TEMPLATE_IMPORT(...)
+#else
+#  define fieldMomentInversion_API FOAM_IMPORT__
+#  define fieldMomentInversion_TEMPLATE_EXPORT(...)
+#  define fieldMomentInversion_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef fvOptionPhaseMeanVelocityForce_EXPORTS
+#  define fvOptionPhaseMeanVelocityForce_API FOAM_EXPORT__
+#  define fvOptionPhaseMeanVelocityForce_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define fvOptionPhaseMeanVelocityForce_TEMPLATE_IMPORT(...)
+#else
+#  define fvOptionPhaseMeanVelocityForce_API FOAM_IMPORT__
+#  define fvOptionPhaseMeanVelocityForce_TEMPLATE_EXPORT(...)
+#  define fvOptionPhaseMeanVelocityForce_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef hermiteQuadrature_EXPORTS
+#  define hermiteQuadrature_API FOAM_EXPORT__
+#  define hermiteQuadrature_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define hermiteQuadrature_TEMPLATE_IMPORT(...)
+#else
+#  define hermiteQuadrature_API FOAM_IMPORT__
+#  define hermiteQuadrature_TEMPLATE_EXPORT(...)
+#  define hermiteQuadrature_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef mixing_EXPORTS
+#  define mixing_API FOAM_EXPORT__
+#  define mixing_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define mixing_TEMPLATE_IMPORT(...)
+#else
+#  define mixing_API FOAM_IMPORT__
+#  define mixing_TEMPLATE_EXPORT(...)
+#  define mixing_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef momentAdvection_EXPORTS
+#  define momentAdvection_API FOAM_EXPORT__
+#  define momentAdvection_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define momentAdvection_TEMPLATE_IMPORT(...)
+#else
+#  define momentAdvection_API FOAM_IMPORT__
+#  define momentAdvection_TEMPLATE_EXPORT(...)
+#  define momentAdvection_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef momentGenerationModels_EXPORTS
+#  define momentGenerationModels_API FOAM_EXPORT__
+#  define momentGenerationModels_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define momentGenerationModels_TEMPLATE_IMPORT(...)
+#else
+#  define momentGenerationModels_API FOAM_IMPORT__
+#  define momentGenerationModels_TEMPLATE_EXPORT(...)
+#  define momentGenerationModels_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef momentInversion_EXPORTS
+#  define momentInversion_API FOAM_EXPORT__
+#  define momentInversion_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define momentInversion_TEMPLATE_IMPORT(...)
+#else
+#  define momentInversion_API FOAM_IMPORT__
+#  define momentInversion_TEMPLATE_EXPORT(...)
+#  define momentInversion_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef momentSets_EXPORTS
+#  define momentSets_API FOAM_EXPORT__
+#  define momentSets_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define momentSets_TEMPLATE_IMPORT(...)
+#else
+#  define momentSets_API FOAM_IMPORT__
+#  define momentSets_TEMPLATE_EXPORT(...)
+#  define momentSets_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef PDFTransportModel_EXPORTS
+#  define PDFTransportModel_API FOAM_EXPORT__
+#  define PDFTransportModel_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define PDFTransportModel_TEMPLATE_IMPORT(...)
+#else
+#  define PDFTransportModel_API FOAM_IMPORT__
+#  define PDFTransportModel_TEMPLATE_EXPORT(...)
+#  define PDFTransportModel_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef populationBalance_EXPORTS
+#  define populationBalance_API FOAM_EXPORT__
+#  define populationBalance_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define populationBalance_TEMPLATE_IMPORT(...)
+#else
+#  define populationBalance_API FOAM_IMPORT__
+#  define populationBalance_TEMPLATE_EXPORT(...)
+#  define populationBalance_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef quadratureApproximation_EXPORTS
+#  define quadratureApproximation_API FOAM_EXPORT__
+#  define quadratureApproximation_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define quadratureApproximation_TEMPLATE_IMPORT(...)
+#else
+#  define quadratureApproximation_API FOAM_IMPORT__
+#  define quadratureApproximation_TEMPLATE_EXPORT(...)
+#  define quadratureApproximation_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef quadratureNode_EXPORTS
+#  define quadratureNode_API FOAM_EXPORT__
+#  define quadratureNode_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define quadratureNode_TEMPLATE_IMPORT(...)
+#else
+#  define quadratureNode_API FOAM_IMPORT__
+#  define quadratureNode_TEMPLATE_EXPORT(...)
+#  define quadratureNode_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
+#endif
+
+#ifdef vandermonde_EXPORTS
+#  define vandermonde_API FOAM_EXPORT__
+#  define vandermonde_TEMPLATE_EXPORT(...) FOAM_TEMPLATE_EXPORT__(__VA_ARGS__)
+#  define vandermonde_TEMPLATE_IMPORT(...)
+#else
+#  define vandermonde_API FOAM_IMPORT__
+#  define vandermonde_TEMPLATE_EXPORT(...)
+#  define vandermonde_TEMPLATE_IMPORT(...) FOAM_TEMPLATE_IMPORT__(__VA_ARGS__)
 #endif
 
 #endif // FOAM_API_H

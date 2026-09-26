@@ -258,6 +258,42 @@ _ASSIGN_RE = re.compile(
     r'^\s*([A-Za-z_][A-Za-z0-9_]*)\s*(:=|\?=|\+=|=)\s*(.*)$')
 
 
+def _eval_pp(expr, ev):
+    """Evaluate a cpp-style #if expression for Make/files guards.
+
+    Supports: defined(NAME), numeric comparisons, &&, ||, !, parens.
+    Identifiers resolve to their variable value (non-numeric -> 0).
+    Unknown/complex expressions evaluate to True (keep the branch).
+    """
+    s = expr.strip()
+
+    def repl_defined(m):
+        return 'True' if m.group(1) in ev.vars else 'False'
+
+    s = re.sub(r'defined\s*\(\s*([A-Za-z_][A-Za-z0-9_]*)\s*\)',
+               repl_defined, s)
+    s = re.sub(r'defined\s+([A-Za-z_][A-Za-z0-9_]*)', repl_defined, s)
+
+    def repl_ident(m):
+        name = m.group(0)
+        if name in ('and', 'or', 'not', 'True', 'False'):
+            return name
+        val = ev.expand(ev.vars.get(name, '')).strip()
+        return val if re.fullmatch(r'-?\d+', val) else '0'
+
+    s = re.sub(r'[A-Za-z_][A-Za-z0-9_]*', repl_ident, s)
+    s = s.replace('&&', ' and ').replace('||', ' or ')
+    s = re.sub(r'!(?!=)', ' not ', s)
+
+    if not re.fullmatch(r'[\s\d()<>!=&|a-z]+', s):
+        return True  # unknown construct - keep branch contents
+
+    try:
+        return bool(eval(s, {'__builtins__': {}}, {}))
+    except Exception:
+        return True
+
+
 def _emit_lines(lines, ev):
     """Run lines through make-style conditionals + cpp #if guards.
     Returns list of expanded text lines."""
@@ -275,6 +311,19 @@ def _emit_lines(lines, ev):
             continue
 
         # --- preprocessor directives (rare, cpp runs over Make/files) ---
+        # cond entry: (parent_active, this_active, any_branch_taken)
+        if line.startswith('#if ') or line.startswith('#if('):
+            val = active and _eval_pp(line[3:], ev)
+            cond.append((active, val, val))
+            active = is_active()
+            continue
+        if line.startswith('#elif'):
+            if cond:
+                p, cur, taken = cond.pop()
+                val = p and not taken and _eval_pp(line[5:], ev)
+                cond.append((p, val, taken or val))
+                active = is_active()
+            continue
         if line.startswith('#ifdef'):
             name = line.split(None, 1)[1].strip()
             cond.append((active, active and name in ev.vars, False))
@@ -287,8 +336,8 @@ def _emit_lines(lines, ev):
             continue
         if line.startswith('#else') or line == '#else':
             if cond:
-                p, cur, _ = cond.pop()
-                cond.append((p, p and not cur, True))
+                p, cur, taken = cond.pop()
+                cond.append((p, p and not taken, True))
             continue
         if line.startswith('#endif'):
             if cond:
@@ -321,13 +370,14 @@ def _emit_lines(lines, ev):
         m = re.match(r'ifndef\s+([A-Za-z_][A-Za-z0-9_]*)', line)
         if m:
             name = m.group(1)
-            cond.append((active, active and not ev.vars.get(name), False))
+            cond.append((active, active and not ev.vars.get(name),
+                         active and not ev.vars.get(name)))
             active = is_active()
             continue
         if re.match(r'else\b', line):
             if cond:
-                p, cur, _ = cond.pop()
-                cond.append((p, p and not cur, True))
+                p, cur, taken = cond.pop()
+                cond.append((p, p and not taken, True))
             continue
         if re.match(r'endif\b', line):
             if cond:

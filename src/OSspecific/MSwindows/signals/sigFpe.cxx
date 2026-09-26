@@ -31,6 +31,7 @@ License
 #include "error.H"
 #include "JobInfo.H"
 #include "OSspecific.H"
+#include "MSwindows.H"
 #include "IOstreams.H"
 #include "UList.H"
 #include "Switch.H"
@@ -140,6 +141,7 @@ void Foam::sigFpe::set(bool verbose)
 
         _controlfp(newFpe, _MCW_EM);
 
+        MSwindows::installCrashDump();
         setHandler("SIGFPE", SIGFPE, sigHandler);
 
         sigActive_ = true;

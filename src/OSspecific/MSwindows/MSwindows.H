@@ -57,6 +57,12 @@ namespace MSwindows
 
     //- The user-name from Windows API GetUserName
     std::string userName();
+
+    //- Install the vectored crash-dump handler (idempotent).
+    //  Writes foam-crash-<pid>-<ticks>.dmp on hard crashes
+    //  (access violation, stack overflow, FPE...). Disabled by
+    //  the FOAM_NO_CRASH_DUMP environment variable.
+    OpenFOAM_API void installCrashDump();
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

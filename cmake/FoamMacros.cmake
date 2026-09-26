@@ -451,16 +451,28 @@ function(foam_add_library dir)
 
     # Link libraries
     set(linklibs "")
+    set(linklibs_private "")
     foreach(l ${FOAM_LIBS})
         foam_map_lib(t "${l}")
-        if(t)
+        # Cyclic shared-lib groups (eg OpenQBMM pbePhaseModels <->
+        # pbeInterfacialModels): edges listed in FOAM_LINK_AS_FILE_<name>
+        # resolve to the raw import-lib path instead of a target
+        # reference, so CMake's acyclic-dependency check passes. The
+        # import lib must exist at link time - seed a stub via
+        # etc/seed-cyclic-stubs.ps1 on a fresh build tree.
+        # Raw-path edges must stay PRIVATE: propagating them transitively
+        # feeds the spoke's own import lib back onto its own link line
+        # (LNK1149 output-matches-input).
+        if(t AND "${t}" IN_LIST FOAM_LINK_AS_FILE_${name})
+            list(APPEND linklibs_private "${FOAM_IMPBIN_DIR}/$<CONFIG>/${t}.lib")
+        elseif(t)
             list(APPEND linklibs "${t}")
         endif()
     endforeach()
     if(NOT A_OBJECT)
         # PUBLIC for static libs so transitive deps propagate to exes
         if(FOAM_STATIC_LIBS)
-            target_link_libraries(${name} PUBLIC ${linklibs})
+            target_link_libraries(${name} PUBLIC ${linklibs} ${linklibs_private})
         else()
             # Shared: every DLL must link its dependencies' import libs
             # explicitly. wmake links -lOpenFOAM implicitly for all libs,
@@ -473,6 +485,9 @@ function(foam_add_library dir)
             # under-declare direct deps (eg conformalVoronoiMesh uses
             # finiteVolume via dynamicMesh but never links -lfiniteVolume)
             target_link_libraries(${name} PUBLIC ${linklibs})
+            if(linklibs_private)
+                target_link_libraries(${name} PRIVATE ${linklibs_private})
+            endif()
         endif()
     endif()
 
@@ -577,10 +592,30 @@ function(foam_add_executable dir)
     set(linklibs "")
     foreach(l ${FOAM_LIBS})
         foam_map_lib(t "${l}")
+        if(t AND "${t}" IN_LIST FOAM_LINK_AS_FILE_${name})
+            set(t "${FOAM_IMPBIN_DIR}/$<CONFIG>/${t}.lib")
+        endif()
         if(t)
             list(APPEND linklibs "${t}")
         endif()
     endforeach()
+    # Registration-only plugin libs (*Decomp: scotch/metis/ptscotch/kahip):
+    # exes link them purely for their static initialisers - MSVC drops
+    # DLL dependencies that contribute no referenced symbols, so the DLL
+    # never loads and its runTimeSelection entry never registers.
+    # /INCLUDE the class typeName static to force the import.
+    if(NOT FOAM_STATIC_LIBS)
+        set(forceincs "")
+        foreach(t ${linklibs})
+            if(t MATCHES "Decomp$" AND TARGET "${t}")
+                list(APPEND forceincs
+                    "/INCLUDE:__imp_?typeName@${t}@Foam@@2Vword@2@B")
+            endif()
+        endforeach()
+        if(forceincs)
+            target_link_options(${name} PRIVATE ${forceincs})
+        endif()
+    endif()
     # Static builds: each Foam library propagates its own /WHOLEARCHIVE via
     # INTERFACE_LINK_OPTIONS, so linking the direct libs (plus OpenFOAM)
     # whole-archives the full transitive dependency closure and keeps all

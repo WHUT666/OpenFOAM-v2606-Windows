@@ -16,6 +16,15 @@ function(foam_module dir)
         message(STATUS "  [skip] ${dir} (no Make/files - submodule not checked out?)")
         return()
     endif()
+    if(NOT A_TYPE)
+        # Auto-dispatch: an EXE= assignment in Make/files marks an app
+        file(STRINGS "${dir}/Make/files" _exe REGEX "^[ \t]*(SEXE|EXE)[ \t]*=")
+        if(_exe)
+            set(A_TYPE EXE)
+        else()
+            set(A_TYPE LIB)
+        endif()
+    endif()
     if(A_TYPE STREQUAL "EXE")
         foam_add_executable("${dir}")
     else()
@@ -40,18 +49,28 @@ if(FOAM_MODULE_VISUALIZATION)
     foam_module("${_M}/visualization/src/paraview-plugins/foamReader/library")
 endif()
 
-option(FOAM_MODULE_OPENQBMM "Build modules/OpenQBMM (~50 targets, unverified)" OFF)
+option(FOAM_MODULE_OPENQBMM "Build modules/OpenQBMM (~50 targets)" ON)
 if(FOAM_MODULE_OPENQBMM)
-    file(GLOB_RECURSE _qbmm_files "${_M}/OpenQBMM/src/*/Make/files")
+    # OpenQBMM's phase-system libs are mutually referential (Linux ELF
+    # allows cyclic DT_NEEDED; MSVC does not). Break the hub->spoke
+    # edges into raw import-lib paths; spoke->hub target deps keep the
+    # hub built first. Fresh build trees need the spoke import libs
+    # seeded once - see etc/seed-cyclic-stubs.ps1.
+    set(FOAM_LINK_AS_FILE_pbePhaseModels
+        pbeInterfacialModels pbeTurbulenceModels)
+    set(FOAM_LINK_AS_FILE_pdPhaseSystem
+        pdEulerianInterfacialModels pdTurbulenceModels)
+    # foam_module auto-dispatches LIB vs EXE from Make/files;
+    # applications/ contains both solver exes and helper libraries.
+    # Targets nest at varying depth: recurse the whole tree and pick
+    # Make/files entries (GLOB_RECURSE * doesn't span path components).
+    file(GLOB_RECURSE _qbmm_files "${_M}/OpenQBMM/*")
     foreach(_f ${_qbmm_files})
+        if(NOT _f MATCHES "/(src|applications|test)/.*/Make/files$")
+            continue()
+        endif()
         get_filename_component(_d "${_f}" DIRECTORY)
         get_filename_component(_d "${_d}" DIRECTORY)
         foam_module("${_d}")
-    endforeach()
-    file(GLOB_RECURSE _qbmm_files "${_M}/OpenQBMM/applications/*/Make/files")
-    foreach(_f ${_qbmm_files})
-        get_filename_component(_d "${_f}" DIRECTORY)
-        get_filename_component(_d "${_d}" DIRECTORY)
-        foam_module("${_d}" TYPE EXE)
     endforeach()
 endif()

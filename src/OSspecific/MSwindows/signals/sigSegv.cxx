@@ -30,6 +30,7 @@ License
 #include "error.H"
 #include "JobInfo.H"
 #include "IOstreams.H"
+#include "MSwindows.H"
 
 // File-local functions
 #include "signalMacros.cxx"
@@ -78,6 +79,7 @@ void Foam::sigSegv::set(bool)
     }
     sigActive_ = true;
 
+    MSwindows::installCrashDump();
     setHandler("SIGSEGV", SIGSEGV, sigHandler);
 }
 

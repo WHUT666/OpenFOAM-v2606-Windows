@@ -203,7 +203,8 @@ the case needs a mesh, synthesizes a minimal `system/controlDict` for
 tests that only need `Time`. Results CSV + per-test logs under
 `$env:TEMP\of-test-logs-*`; exit code = failure count.
 
-Baseline (shared build): ~250 PASS, ~55 SKIP (mpiexec/args/mesh/stdin —
+Baseline (shared build): 254 PASS, 2 FAIL (FixedList2 + cubicEqn
+sentinels), 57 SKIP (mpiexec/args/mesh/stdin —
 auto-detected from output), handful expected-abort tests
 (`Test-sigFpe` etc. — deliberate error paths, identical upstream).
 
@@ -266,7 +267,12 @@ Windows' 1MB default overflows on OpenFOAM's large automatic objects
   Stub import libs for fresh trees: `etc/seed-cyclic-stubs.ps1`.
   Verified: denseAGFoam fluidizedBed tutorial, 3-rank mpiexec +
   scotch decomposition, kineticTheory/KongFox/SyamlalOBrien models
-  all selected, runs to completion.
+  all selected, runs to t~0.68 then diverges numerically
+  (`alpha.particles` → NaN residuals — stiff case, not a port defect).
+  Unit tests: 11/11 pass (run each from its test dir — CHyQMOM needs
+  its `quadratureProperties`, quadratureApproximation +
+  populationBalanceModel need their `testCase/`; run `blockMesh`
+  first for populationBalanceModel).
 - Registration-only DLLs (`*Decomp`: scotchDecomp/metisDecomp/
   ptscotchDecomp/kahipDecomp) are linked into decomposePar/
   redistributePar/renumberMesh/foamyHexMesh* purely for static
@@ -403,8 +409,8 @@ targets through the same wmake2cmake pipeline (per-dir `Make/files` +
 `Make/options` → `foam_parse_dir`). Gated by `FOAM_PLUGINS`/`FOAM_MODULES`
 (ON). Only self-contained targets are wired in — anything needing
 ADIOS2/PETSc/ParaView/VTK/Python (adios, external-solver, visualization,
-vtk-hdf, pyOFTools, pybFoam, OpenQBMM) stays OFF until the dependency is
-vendored.
+vtk-hdf, pyOFTools, pybFoam) stays OFF until the dependency is
+vendored. OpenQBMM is fully ported (see "OpenQBMM" notes above).
 
 Ported so far:
 

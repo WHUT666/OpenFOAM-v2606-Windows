@@ -335,9 +335,9 @@
 <section class="soft">
   <div class="wrap">
     <div class="stats">
-      <div class="stat reveal"><div class="num" data-to="615">0</div><div class="lbl"><span lang-en>app targets, zero errors</span><span lang-zh>应用目标,零编译错误</span></div></div>
-      <div class="stat reveal d1"><div class="num" data-to="152">0</div><div class="lbl"><span lang-en>shared libraries (DLL)</span><span lang-zh>共享库 DLL</span></div></div>
-      <div class="stat reveal d2"><div class="num" data-to="253">0</div><div class="lbl"><span lang-en>Test-* apps passing</span><span lang-zh>项测试通过</span></div></div>
+      <div class="stat reveal"><div class="num" data-to="642">0</div><div class="lbl"><span lang-en>app targets, zero errors</span><span lang-zh>应用目标,零编译错误</span></div></div>
+      <div class="stat reveal d1"><div class="num" data-to="174">0</div><div class="lbl"><span lang-en>shared libraries (DLL)</span><span lang-zh>共享库 DLL</span></div></div>
+      <div class="stat reveal d2"><div class="num" data-to="254">0</div><div class="lbl"><span lang-en>Test-* apps passing</span><span lang-zh>项测试通过</span></div></div>
       <div class="stat reveal d3"><div class="num" data-to="3.8" data-suffix="M">0</div><div class="lbl"><span lang-en>cells, snappyHexMesh</span><span lang-zh>单元,snappyHexMesh 实测</span></div></div>
     </div>
   </div>
@@ -393,8 +393,8 @@
       <div class="card reveal">
         <span class="ico">🛠</span>
         <h3 lang-en>Visual Studio native</h3><h3 lang-zh>VS2022 原生工程</h3>
-        <p lang-en>A real CMake-generated <code>.sln</code>. Open it, set a breakpoint inside a solver, hit F5. Rebuild any of the 615 targets individually.</p>
-        <p lang-zh>CMake 生成的真 <code>.sln</code>。打开、在求解器里打断点、按 F5。615 个目标都可单独重编。</p>
+        <p lang-en>A real CMake-generated <code>.sln</code>. Open it, set a breakpoint inside a solver, hit F5. Rebuild any of the 642 targets individually.</p>
+        <p lang-zh>CMake 生成的真 <code>.sln</code>。打开、在求解器里打断点、按 F5。642 个目标都可单独重编。</p>
       </div>
       <div class="card reveal d1">
         <span class="ico">⚡</span>
@@ -411,8 +411,8 @@
       <div class="card reveal">
         <span class="ico">🧩</span>
         <h3 lang-en>Static or DLL</h3><h3 lang-zh>静态 / DLL 双模式</h3>
-        <p lang-en>One source tree, two link models — <code>/WHOLEARCHIVE</code> statics or 152 DLLs with <code>controlDict libs()</code> runtime plugins.</p>
-        <p lang-zh>一套源码两种链接 —— <code>/WHOLEARCHIVE</code> 静态,或 152 个 DLL 支持 <code>libs()</code> 运行时插件。</p>
+        <p lang-en>One source tree, two link models — <code>/WHOLEARCHIVE</code> statics or 174 DLLs with <code>controlDict libs()</code> runtime plugins.</p>
+        <p lang-zh>一套源码两种链接 —— <code>/WHOLEARCHIVE</code> 静态,或 174 个 DLL 支持 <code>libs()</code> 运行时插件。</p>
       </div>
       <div class="card reveal d1">
         <span class="ico">🌊</span>
@@ -470,16 +470,16 @@
         <span class="tag" lang-en>Now — shipped</span><span class="tag" lang-zh>现在 — 已交付</span>
         <h3 lang-en>v2606, fully native</h3><h3 lang-zh>v2606 完整原生移植</h3>
         <ul>
-          <li lang-en>615 app targets + 152 DLLs, static &amp; shared builds, zero errors</li>
-          <li lang-zh>615 个应用 + 152 个 DLL,静态/共享双构建,零错误</li>
-          <li lang-en>MS-MPI end-to-end, four real decomposition backends</li>
-          <li lang-zh>MS-MPI 端到端,四种真实分解后端</li>
+          <li lang-en>642 app targets + 174 DLLs, static &amp; shared builds, zero errors</li>
+          <li lang-zh>642 个应用 + 174 个 DLL,静态/共享双构建,零错误</li>
+          <li lang-en>MS-MPI end-to-end, four real decomposition backends; multi-target RMA unlock deadlock fixed</li>
+          <li lang-zh>MS-MPI 端到端,四种真实分解后端;多目标 RMA unlock_all 死锁已修复</li>
           <li lang-en>CGAL meshing, CCM conversion, cfmesh + avalanche plugins</li>
           <li lang-zh>CGAL 网格、CCM 转换、cfmesh + avalanche 插件</li>
-          <li lang-en>All 15 turbulence-community model libs + research apps</li>
-          <li lang-zh>全部 15 个湍流社区模型库 + research 求解器</li>
-          <li lang-en>253-test regression suite in CI; DbgHelp crash stacks with PDB file:line</li>
-          <li lang-zh>253 项回归测试接入 CI;DbgHelp 崩溃栈定位到文件:行号</li>
+          <li lang-en>OpenQBMM module: 22 libs + 12 solvers, all 11 unit tests green, denseAGFoam on MPI</li>
+          <li lang-zh>OpenQBMM 模块:22 库 + 12 求解器,11 个单元测试全绿,denseAGFoam MPI 实跑</li>
+          <li lang-en>254-test regression suite in CI; DbgHelp crash stacks + minidumps</li>
+          <li lang-zh>254 项回归测试接入 CI;DbgHelp 崩溃栈 + minidump 落盘</li>
         </ul>
       </div>
       <div class="phase p2 reveal d1">
@@ -506,8 +506,8 @@
           <li lang-zh>pybFoam / pyOFTools Python 绑定跑在原生 CPython 上</li>
           <li lang-en>foamyHexMeshSurfaceSimplify (needs fastdualoctree_sgp + OpenGL)</li>
           <li lang-zh>foamyHexMeshSurfaceSimplify(依赖 fastdualoctree_sgp + OpenGL)</li>
-          <li lang-en>Work around MS-MPI's MPI-2 ceiling — one-sided RMA, or an alternative MPI runtime</li>
-          <li lang-zh>突破 MS-MPI 的 MPI-2 天花板 —— 单边 RMA 修复或换用新 MPI 运行时</li>
+          <li lang-en>Alternative MPI runtime beyond MS-MPI's MPI-2 ceiling (e.g. MPI-3 neighbour collectives)</li>
+          <li lang-zh>MS-MPI MPI-2 之外的替代运行时(如 MPI-3 邻居集合通信)</li>
           <li lang-en>MSVC profile-guided optimisation &amp; build-time improvements</li>
           <li lang-zh>MSVC PGO 优化与构建提速</li>
         </ul>
@@ -542,7 +542,7 @@
           <li>metis / scotch / ptscotch / kahip decomposition backends</li>
           <li>foamToCcm ↔ ccmToFoam — .ccmg round-trip verified</li>
           <li>foamyHexMesh, cfmesh, avalanche deposition tutorial (t=0→15 s)</li>
-          <li>253 Test-* apps in CI regression; crash stacks to file:line</li>
+          <li>254 Test-* apps in CI regression; crash stacks + minidumps</li>
         </ul>
       </div>
     </div>

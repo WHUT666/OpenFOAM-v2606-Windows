@@ -26,9 +26,9 @@
   `TableInsert/TableSet/TableErase` 成员函数封装跨 DLL 访问,
   模板静态成员用 `Foam_<Class>_defines_typeName` opt-out 保证单一属主;
   `cmake/genExportsDef.py` 从 obj 收割强符号生成 `.def` 导出表
-- ✅ **全部应用默认可构建**:596 个应用目标全部启用
+- ✅ **全部应用默认可构建**:642 个应用目标全部启用
   (`FOAM_APP_<路径>` 默认 ON,可用 `-DFOAM_APP_<路径>=OFF` 关闭单个),
-  共享构建产出 **596 个 exe + 135 个 DLL,零编译/链接错误**;
+  共享构建产出 **642 个 exe + 174 个 DLL,零编译/链接错误**;
   应用级本地库(湍流模型、相系统、DSMC、conformalVoronoiMesh 等
   28 个)同样以 DLL 构建并被依赖应用正确链接
 - ✅ **CCM 转换**:vendored `libccmio` 2.6.1(foam-extend 公开源码包,
@@ -63,15 +63,22 @@
   preciseFoam1-5)、turbulence-community 全部 15 个湍流模型库
   (SAH/PDA/CND/GammaSST/SpalartAllmarasRC/EllipticBlending/
   MachineLearning/dynamicSmagorinsky/WallModelledLES/HelicalForce)。
-  需 ADIOS2/PETSc/ParaView/VTK/Python 的模块及 OpenQBMM 暂保持关闭
+- ✅ **OpenQBMM 模块**:全部接入 —— 22 个库 + 12 个求解器 +
+  工具/测试共 51 个 target;循环 DLL 依赖经 stub 导入库破解,
+  `denseAGFoam` 流化床教程 `mpiexec -n 3` 实跑;上游
+  `mappedList::listToLabel` 双重累加 bug 一并修复,
+  **11 个单元测试全部通过**。需 ADIOS2/PETSc/ParaView/VTK/Python
+  的模块保持关闭
 - ✅ **回归测试套件**:`etc/run-test-apps.ps1` 一键跑全部
   `Test-*.exe`(自动映射源目录、合成 controlDict、`-Parallel` 走
-  mpiexec);基线 **253 PASS / 2 FAIL / 1 TIMEOUT / 57 SKIP**
-  (SKIP 为需真实算例/参数,MPI 通信原语 6 项实测通过)
+  mpiexec);基线 **254 PASS / 2 FAIL / 57 SKIP**,超时项归零
+  —— `Test-one-sided1` 的 MS-MPI 多目标 `MPI_Win_unlock_all`
+  死锁已修复(`unlock` 前先 `flush_all`,#ifdef MSMPI_VER)
 - ✅ **崩溃堆栈诊断**:`src/OSspecific/MSwindows/printStack` 经
   DbgHelp + `CaptureStackBackTrace` 输出 demangle 后的函数名 +
   源文件:行号(配 `FOAM_ENABLE_PDB` 的 `/Zi`/`/DEBUG`);
-  `FOAM_ABORT=1` 下 FatalError 实测打出完整调用链;
+  `FOAM_ABORT=1` 下 FatalError 实测打出完整调用链;崩溃时经
+  `MiniDumpWriteDump` 生成 `foam-crash-*.dmp`(可拖进 VS/WinDbg);
   可执行文件统一 `/STACK:8MB` 对齐 Linux 默认栈
 
 ### 已验证工作流(共享 DLL 构建)
@@ -98,6 +105,9 @@
   artifact/Release
 - avalanche deposition 教程端到端跑通(t=0→15 s 瞬态,releaseArea
   映射 → faSavageHutterFoam → 正常收敛退出)
+- OpenQBMM `denseAGFoam` 流化床教程:`blockMesh → setFields →
+  decomposePar(scotch) → mpiexec -n 3` 实跑推进(六组循环依赖
+  DLL 运行时全部加载、动理学模型注册完整)
 - cfmesh `cartesianMesh` 真实网格生成教程验证通过
 - `foamToCcm -mesh`(cavity → `meshExport-*.ccmg`)→ `ccmToFoam`
   读回 → `checkMesh` 网格 OK(882 点/400 单元,patch 名称保留)
@@ -142,7 +152,7 @@ blockMesh -help
 mpiexec -n 2 icoFoam -case <case> -parallel
 ```
 
-应用默认全部构建(596 个目标);关闭单个应用:
+应用默认全部构建(642 个目标);关闭单个应用:
 `cmake -B <build> -DFOAM_APP_<路径>=OFF`;关闭全部 test 应用:
 `-DFOAM_APP_TESTS=OFF`。MSBuild 全量构建建议
 `/m:2` 并行度(更高并行可能触发 C1060 编译器内存耗尽)。

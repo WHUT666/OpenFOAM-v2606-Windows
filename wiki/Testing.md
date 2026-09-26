@@ -31,29 +31,33 @@ harness can't supply).
 
 ### Baseline (shared build)
 
-- **253 PASS / 2 FAIL / 1 TIMEOUT / 57 SKIP** (313 total)
+- **254 PASS / 2 FAIL / 57 SKIP** (313 total)
 - The 2 FAILs: `Test-FixedList2` (1 MB default stack overflow —
   exes now link `/STACK:8MB`, fix verified via `editbin`),
   `Test-cubicEqn` (2 of ~1.1 M random cubics at the 1e-8 tolerance
   boundary — MSVC FP codegen difference, kept as sentinel).
-- The TIMEOUT is `Test-one-sided1` (MS-MPI passive-target RMA hang).
+- `Test-one-sided1` used to hang under MS-MPI: a `MPI_Win_lock_all`
+  epoch with RMA ops queued for more than one target deadlocks in
+  `MPI_Win_unlock_all` (standalone reproducer — genuine MS-MPI
+  limitation). `UPstreamWindow` now issues `MPI_Win_flush_all`
+  before `unlock_all` under `MSMPI_VER` and the test finalises
+  cleanly.
 - A handful of expected-abort tests (`Test-sigFpe` etc.) exercise
   deliberate error paths — identical behaviour upstream.
 - MPI tests verified under MS-MPI: `broadcastCopy`,
   `parallel-barrier1`, `parallel-file-write1`, `parallel-scan`,
-  `readBroadcast1`, `treeComms`.
+  `readBroadcast1`, `treeComms`, `one-sided1`.
 
 ### Known failures / skips
 
 | Test | Status | Reason |
 |---|---|---|
-| `Test-one-sided1` | hangs | MS-MPI passive-target RMA quirk (`MPI_Win` + `MPI_Fetch_and_op` never exit) — all output completes; MS-MPI limitation, not a port bug |
 | `Test-decomposedBlockData` | SKIP | needs a real decomposedBlockData-format file (decomposed case) |
 | `Test-processorTopology` | SKIP | needs a decomposed mesh (`decomposePar` output) |
 | `Test-cubicEqn` | known-bad | marginal MSVC FP-tolerance deviation |
 
 The CI workflow runs the suite with
-`-Skip Test-one-sided1,Test-cubicEqn` and uploads the logs as the
+`-Skip Test-cubicEqn` and uploads the logs as the
 `regression-logs` artifact.
 
 ### Verified end-to-end workflows
@@ -129,28 +133,31 @@ powershell ... -Parallel -NProcs 4     # 同时跑 MPI 测试(mpiexec)
 
 ### 基线(共享构建)
 
-- **253 PASS / 2 FAIL / 1 TIMEOUT / 57 SKIP**(共 313 项)
+- **254 PASS / 2 FAIL / 57 SKIP**(共 313 项)
 - 2 个 FAIL:`Test-FixedList2`(默认 1 MB 栈溢出 —— exe 已统一
   `/STACK:8MB`,editbin 实测修复)、`Test-cubicEqn`(~113 万随机
   三次方程中 2 项卡在 1e-8 容差边界 —— MSVC 浮点代码生成差异,
   保留作哨兵)。
-- TIMEOUT 为 `Test-one-sided1`(MS-MPI 被动目标 RMA 挂起)。
+- `Test-one-sided1` 曾在 MS-MPI 下挂起:`MPI_Win_lock_all` epoch
+  内对多个目标排队的 RMA 操作会在 `MPI_Win_unlock_all` 死锁
+  (独立复现器确认 —— MS-MPI 自身缺陷)。`UPstreamWindow` 现在在
+  `MSMPI_VER` 下先 `MPI_Win_flush_all` 再 `unlock_all`,
+  测试干净收尾。
 - 少量预期中止测试(`Test-sigFpe` 等)走刻意错误路径 —— 与上游
   行为一致。
 - MS-MPI 下已验证 MPI 测试:`broadcastCopy`、`parallel-barrier1`、
   `parallel-file-write1`、`parallel-scan`、`readBroadcast1`、
-  `treeComms`。
+  `treeComms`、`one-sided1`。
 
 ### 已知失败 / 跳过
 
 | 测试 | 状态 | 原因 |
 |---|---|---|
-| `Test-one-sided1` | 挂起 | MS-MPI passive-target RMA 怪癖(`MPI_Win` + `MPI_Fetch_and_op` 不退出)—— 输出已全部完成;MS-MPI 限制,非移植 bug |
 | `Test-decomposedBlockData` | SKIP | 需要真实 decomposedBlockData 格式文件(已分解案例) |
 | `Test-processorTopology` | SKIP | 需要已分解网格(`decomposePar` 输出) |
 | `Test-cubicEqn` | 已知不良 | MSVC 浮点容差轻微偏差 |
 
-CI 以 `-Skip Test-one-sided1,Test-cubicEqn` 跑该套件,日志作为
+CI 以 `-Skip Test-cubicEqn` 跑该套件,日志作为
 `regression-logs` artifact 上传。
 
 ### 已验证端到端工作流

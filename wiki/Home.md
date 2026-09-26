@@ -56,7 +56,7 @@ that gap.
 
 ### Status at a glance
 
-- **596 app targets + 135 libraries** build with zero compile/link
+- **642 app targets + 174 libraries** build with zero compile/link
   errors
 - `blockMesh → decomposePar → mpiexec -n N icoFoam -parallel →
   reconstructPar` verified end-to-end (9-rank MPI)
@@ -68,11 +68,17 @@ that gap.
 - **17 plugin DLLs + 19 plugin executables**: cfmesh meshers,
   avalanche finite-area solvers, research apps, all 15
   turbulence-community model libraries
-- **253 `Test-*` apps pass** (2 known-difference, 1 MS-MPI hang,
-  57 auto-detected skips); one-command regression via
+- **OpenQBMM module fully ported**: 22 libraries + 12 solvers +
+  utilities/tests (cyclic-DLL ring broken via stub import libs);
+  `denseAGFoam` fluidised-bed tutorial runs under `mpiexec -n 3`;
+  all 11 unit tests pass — including an upstream
+  `mappedList::listToLabel` double-counting bug we fixed
+- **254 `Test-*` apps pass** (2 known-difference, 57 auto-detected
+  skips, zero timeouts); one-command regression via
   `etc/run-test-apps.ps1`, wired into CI
 - Crash stack traces resolve to file:line via DbgHelp + PDB
-  (`FOAM_ABORT=1` forces a trace on FatalError); exes link 8 MB stacks
+  (`FOAM_ABORT=1` forces a trace on FatalError); crashes also write
+  `foam-crash-*.dmp` minidumps; exes link 8 MB stacks
 - GitHub Actions builds the Windows package on `v*` tags, runs the
   regression suite and smoke-tests it (blockMesh / icoFoam /
   checkMesh / foamToCcm)
@@ -164,7 +170,7 @@ OpenFOAM 官方对 Windows 的支持有两条路,但都有明显短板:
 
 ### 当前状态速览
 
-- **596 个应用目标 + 135 个库**全部构建通过,零编译/链接错误
+- **642 个应用目标 + 135 个库**全部构建通过,零编译/链接错误
 - `blockMesh → decomposePar → mpiexec -n N icoFoam -parallel →
   reconstructPar` 完整闭环(9 进程 MPI 验证)
 - `snappyHexMesh` motorBike(380 万单元,串行 + MPI)、`simpleFoam`
@@ -174,10 +180,15 @@ OpenFOAM 官方对 Windows 的支持有两条路,但都有明显短板:
 - **17 个插件 DLL + 19 个插件可执行文件**:cfmesh 网格器、
   avalanche 有限面积求解器、research 应用、全部 15 个
   turbulence-community 湍流模型库
-- **253 个 `Test-*` 测试通过**(2 项已知平台差异、1 项 MS-MPI 挂起、
-  57 项自动识别跳过),`etc/run-test-apps.ps1` 一键回归且已接入 CI
+- **OpenQBMM 模块完整移植**:22 个库 + 12 个求解器 + 工具/测试
+  (循环 DLL 依赖经 stub 导入库破解);`denseAGFoam` 流化床教程
+  `mpiexec -n 3` 实跑;11 个单元测试全过 —— 顺带修复了上游
+  `mappedList::listToLabel` 双重累加 bug
+- **254 个 `Test-*` 测试通过**(2 项已知平台差异、57 项自动识别
+  跳过、超时归零),`etc/run-test-apps.ps1` 一键回归且已接入 CI
 - 崩溃栈经 DbgHelp + PDB 解析到文件:行号(`FOAM_ABORT=1` 可让
-  FatalError 强制打印);可执行文件统一 8 MB 栈
+  FatalError 强制打印);崩溃时自动生成 `foam-crash-*.dmp` 小转储;
+  可执行文件统一 8 MB 栈
 - GitHub Actions 推送 `v*` tag 即自动跑回归套件、产出 Windows
   安装包并做冒烟测试
 

@@ -191,6 +191,9 @@ foam_app("test/Enum")
 foam_app("test/FieldFields1")
 foam_app("test/FieldFields2")
 foam_app("test/FixedList")
+# fixedLabel/vector cases put ~10MB of FixedList<> objects on the stack —
+# the 8MB default still overflows on Windows; reserve 32MB for this exe.
+set(FOAM_STACK_RESERVE_Test-FixedList2 "33554432")
 foam_app("test/FixedList2")
 foam_app("test/Function1")
 foam_app("test/GAMGAgglomeration")

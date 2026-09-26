@@ -317,10 +317,22 @@ function(foam_gen_lemon outvar name)
         endif()
         # Generated parser code includes OpenFOAM C++ headers - always C++
         set(outf "${cc}")
+        # lemon always rewrites its outputs; run it into a staging dir and
+        # copy_if_different back so unchanged content keeps the old mtime
+        # (otherwise every build re-touches the .cc/.h and MSBuild rebuilds
+        # the entire downstream TU set each time).
         add_custom_command(
             OUTPUT "${outf}"
-            COMMAND "${FOAM_LEMON_EXE}" "-T${FOAM_LEMPAR}" "-d${gdir}"
+            BYPRODUCTS "${gdir}/${fbase}.h" "${gdir}/${fbase}.out"
+            COMMAND "${CMAKE_COMMAND}" -E make_directory "${gdir}/stage"
+            COMMAND "${FOAM_LEMON_EXE}" "-T${FOAM_LEMPAR}" "-d${gdir}/stage"
                     ${lemon_args} "-Dm4" "${lyy}"
+            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                    "${gdir}/stage/${fbase}.cc" "${outf}"
+            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                    "${gdir}/stage/${fbase}.h" "${gdir}/${fbase}.h"
+            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                    "${gdir}/stage/${fbase}.out" "${gdir}/${fbase}.out"
             DEPENDS "${lyy}"
             COMMENT "lemon ${fbase}.lyy -> ${outf}"
             VERBATIM
@@ -389,11 +401,15 @@ function(foam_add_library dir)
     foreach(f ${FOAM_FLEX_SOURCES})
         get_filename_component(fbase "${f}" NAME_WE)
         set(fout "${FOAM_GEN_DIR}/flex/${name}/${fbase}.C")
+        # Generate to .gen then copy_if_different: flex always rewrites its
+        # output, and a fresh mtime would rebuild every dependent TU.
         add_custom_command(
             OUTPUT "${fout}"
             COMMAND "${CMAKE_COMMAND}" -E make_directory
                     "${FOAM_GEN_DIR}/flex/${name}"
-            COMMAND "${FOAM_FLEX_EXE}" --c++ "--outfile=${fout}" "${f}"
+            COMMAND "${FOAM_FLEX_EXE}" --c++ "--outfile=${fout}.gen" "${f}"
+            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                    "${fout}.gen" "${fout}"
             DEPENDS "${f}"
             COMMENT "flex ${fbase}.L -> ${fout}"
             VERBATIM
@@ -543,11 +559,15 @@ function(foam_add_executable dir)
     foreach(f ${FOAM_FLEX_SOURCES})
         get_filename_component(fbase "${f}" NAME_WE)
         set(fout "${FOAM_GEN_DIR}/flex/${name}/${fbase}.C")
+        # Generate to .gen then copy_if_different: flex always rewrites its
+        # output, and a fresh mtime would rebuild every dependent TU.
         add_custom_command(
             OUTPUT "${fout}"
             COMMAND "${CMAKE_COMMAND}" -E make_directory
                     "${FOAM_GEN_DIR}/flex/${name}"
-            COMMAND "${FOAM_FLEX_EXE}" --c++ "--outfile=${fout}" "${f}"
+            COMMAND "${FOAM_FLEX_EXE}" --c++ "--outfile=${fout}.gen" "${f}"
+            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                    "${fout}.gen" "${fout}"
             DEPENDS "${f}"
             COMMENT "flex ${fbase}.L -> ${fout}"
             VERBATIM

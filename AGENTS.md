@@ -295,6 +295,16 @@ Windows' 1MB default overflows on OpenFOAM's large automatic objects
   not `thermo:rho.particles`. Upstream tutorial dicts using `:` in
   scheme/field names need `_` on Windows (fvSchemes regexes match the
   literal name).
+- flex/lemon generators stage their output and `copy_if_different`
+  into place — identical content keeps the old mtime, preventing the
+  every-build regen → full-downstream-recompile storm. Never use
+  `-t:Rebuild` on targets with project references: it cascades
+  through the whole dependency chain.
+- Stale `src/Pstream.vcxproj`/`OpenFOAM_bootstrap.vcxproj` from
+  pre-merge configurations may linger in old build trees — they are
+  NOT in the current `OpenFOAM.sln`; Pstream sources are folded into
+  `src/OpenFOAM.vcxproj` (shared) / a static `Pstream` lib (static).
+  Build those, never the leftovers.
 
 ## Caution
 

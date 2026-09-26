@@ -71,7 +71,7 @@
   的模块保持关闭
 - ✅ **回归测试套件**:`etc/run-test-apps.ps1` 一键跑全部
   `Test-*.exe`(自动映射源目录、合成 controlDict、`-Parallel` 走
-  mpiexec);基线 **254 PASS / 2 FAIL / 57 SKIP**,超时项归零
+  mpiexec);基线 **254 PASS / 1 FAIL / 58 SKIP**(CI run 36211300099 实测),超时项归零;唯一 FAIL `Test-FixedList2` 系 8MB 栈不足,已按目标加配 32MB(`FOAM_STACK_RESERVE_<name>`)待下轮 CI 确认
   —— `Test-one-sided1` 的 MS-MPI 多目标 `MPI_Win_unlock_all`
   死锁已修复(`unlock` 前先 `flush_all`,#ifdef MSMPI_VER)
 - ✅ **崩溃堆栈诊断**:`src/OSspecific/MSwindows/printStack` 经

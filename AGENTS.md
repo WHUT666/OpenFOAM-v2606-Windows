@@ -203,8 +203,9 @@ the case needs a mesh, synthesizes a minimal `system/controlDict` for
 tests that only need `Time`. Results CSV + per-test logs under
 `$env:TEMP\of-test-logs-*`; exit code = failure count.
 
-Baseline (shared build): 254 PASS, 2 FAIL (FixedList2 + cubicEqn
-sentinels), 57 SKIP (mpiexec/args/mesh/stdin —
+Baseline (shared build): 254 PASS, 1 FAIL (FixedList2 — now given
+32MB reserve via FOAM_STACK_RESERVE_<name>), 58 SKIP; cubicEqn is
+a deliberate user-skip sentinel (mpiexec/args/mesh/stdin —
 auto-detected from output), handful expected-abort tests
 (`Test-sigFpe` etc. — deliberate error paths, identical upstream).
 

@@ -73,7 +73,7 @@ that gap.
   `denseAGFoam` fluidised-bed tutorial runs under `mpiexec -n 3`;
   all 11 unit tests pass — including an upstream
   `mappedList::listToLabel` double-counting bug we fixed
-- **254 `Test-*` apps pass** (2 known-difference, 57 auto-detected
+- **254 `Test-*` apps pass** (1 stack-fail now fixed, 58 auto-detected
   skips, zero timeouts); one-command regression via
   `etc/run-test-apps.ps1`, wired into CI
 - Crash stack traces resolve to file:line via DbgHelp + PDB
@@ -184,7 +184,7 @@ OpenFOAM 官方对 Windows 的支持有两条路,但都有明显短板:
   (循环 DLL 依赖经 stub 导入库破解);`denseAGFoam` 流化床教程
   `mpiexec -n 3` 实跑;11 个单元测试全过 —— 顺带修复了上游
   `mappedList::listToLabel` 双重累加 bug
-- **254 个 `Test-*` 测试通过**(2 项已知平台差异、57 项自动识别
+- **254 个 `Test-*` 测试通过**(1 项栈溢出已修复、58 项自动识别
   跳过、超时归零),`etc/run-test-apps.ps1` 一键回归且已接入 CI
 - 崩溃栈经 DbgHelp + PDB 解析到文件:行号(`FOAM_ABORT=1` 可让
   FatalError 强制打印);崩溃时自动生成 `foam-crash-*.dmp` 小转储;

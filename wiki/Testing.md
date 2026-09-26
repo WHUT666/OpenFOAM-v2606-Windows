@@ -31,10 +31,11 @@ harness can't supply).
 
 ### Baseline (shared build)
 
-- **254 PASS / 2 FAIL / 57 SKIP** (313 total)
-- The 2 FAILs: `Test-FixedList2` (1 MB default stack overflow —
-  exes now link `/STACK:8MB`, fix verified via `editbin`),
-  `Test-cubicEqn` (2 of ~1.1 M random cubics at the 1e-8 tolerance
+- **254 PASS / 1 FAIL / 58 SKIP** (313 total, CI run 36211300099)
+- The 1 FAIL was `Test-FixedList2`: its `-vector`/`-fixedLabel`
+  cases place ~10 MB of `FixedList<>` objects on the stack —
+  more than the 8 MB reserve. `FOAM_STACK_RESERVE_<name>` now
+  gives it 32 MB (verified locally). `Test-cubicEqn` (2 of ~1.1 M random cubics at the 1e-8 tolerance
   boundary — MSVC FP codegen difference, kept as sentinel).
 - `Test-one-sided1` used to hang under MS-MPI: a `MPI_Win_lock_all`
   epoch with RMA ops queued for more than one target deadlocks in
@@ -133,9 +134,11 @@ powershell ... -Parallel -NProcs 4     # 同时跑 MPI 测试(mpiexec)
 
 ### 基线(共享构建)
 
-- **254 PASS / 2 FAIL / 57 SKIP**(共 313 项)
-- 2 个 FAIL:`Test-FixedList2`(默认 1 MB 栈溢出 —— exe 已统一
-  `/STACK:8MB`,editbin 实测修复)、`Test-cubicEqn`(~113 万随机
+- **254 PASS / 1 FAIL / 58 SKIP**(共 313 项,CI run 36211300099 实测)
+- 1 个 FAIL:`Test-FixedList2` —— `-vector`/`-fixedLabel` 用例把
+  ~10MB `FixedList<>` 对象放上栈,超出 8MB 预留;新增
+  `FOAM_STACK_RESERVE_<name>` 给该目标配 32MB(本地已验证)。
+  `Test-cubicEqn`(~113 万随机
   三次方程中 2 项卡在 1e-8 容差边界 —— MSVC 浮点代码生成差异,
   保留作哨兵)。
 - `Test-one-sided1` 曾在 MS-MPI 下挂起:`MPI_Win_lock_all` epoch
